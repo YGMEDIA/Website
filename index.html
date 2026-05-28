@@ -1,291 +1,972 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YG MEDIA | Digital Systems That Grow Brands</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Syne:wght@600;700;800&display=swap">
-    <style>
-        :root {
-            --teal: #0ABFBC;
-            --text: #F0F0F0;
-            --secondary: #8888AA;
-        }
-        
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body {
-            font-family: 'DM Sans', system-ui, sans-serif;
-            color: var(--text);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YG MEDIA | Digital Systems That Grow Brands</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --teal: #1c5b82;
+  --teal-dim: rgba(24,57,77,0.2);
+  --teal-glow: rgba(29,80,112,0.5);
+  --bg: #07070F;
+  --surface: #0D0D1A;
+  --card: #0A1018;
+  --text: #F0F0F0;
+  --muted: #8888AA;
+  --faint: #444466;
+  --border: rgba(255,255,255,0.07);
+  --glass: rgba(255,255,255,0.03);
+}
 
-        /* ANIMATED BACKGROUND (wie gewünscht) */
-        .background {
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: linear-gradient(135deg, #07070F 0%, #001F22 50%, #0A1F2A 100%);
-            z-index: -2;
-            animation: gradientShift 30s ease infinite;
-        }
-        
-        .background::before {
-            content: '';
-            position: absolute;
-            top: -50%; left: -50%;
-            width: 200%; height: 200%;
-            background: radial-gradient(circle at 30% 40%, rgba(10, 191, 188, 0.28), transparent 50%),
-                        radial-gradient(circle at 80% 70%, rgba(10, 191, 188, 0.22), transparent 60%);
-            filter: blur(90px);
-            animation: blurMove 45s ease infinite alternate;
-            z-index: -1;
-        }
-        
-        @keyframes gradientShift { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
-        @keyframes blurMove { 0% { transform: translate(0, 0) rotate(2deg); } 100% { transform: translate(12%, 10%) rotate(-4deg); } }
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; width: 100%; }
 
-        h1, h2, h3 { font-family: 'Syne', sans-serif; font-weight: 700; }
-        .container { max-width: 1280px; margin: 0 auto; padding: 0 2rem; position: relative; z-index: 2; }
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+  line-height: 1.65;
+  width: 100%;
+}
 
-        nav {
-            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-            background: rgba(7,7,15,0.9); backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255,255,255,0.06);
-        }
-        .logo-img { height: 54px; width: auto; }
+/* BACKGROUND SYSTEM */
+#bg-canvas {
+  position: fixed; inset: 0; z-index: 0;
+  pointer-events: none;
+}
+.orb-wrap { position: fixed; inset: 0; z-index: 1; pointer-events: none; overflow: hidden; }
+.orb { position: absolute; border-radius: 50%; filter: blur(120px); }
+.orb-1 {
+  width: 900px; height: 900px;
+  background: radial-gradient(circle, rgba(28,91,130,0.5) 0%, rgba(10,30,60,0.2) 50%, transparent 70%);
+  top: -300px; left: -200px;
+  animation: orb1 25s ease-in-out infinite alternate;
+}
+.orb-2 {
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(10,60,120,0.45) 0%, transparent 70%);
+  bottom: 5%; right: -150px;
+  animation: orb2 32s ease-in-out infinite alternate;
+}
+.orb-3 {
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(28,91,130,0.3) 0%, transparent 70%);
+  top: 40%; left: 45%;
+  animation: orb3 40s ease-in-out infinite alternate;
+}
+.orb-4 {
+  width: 350px; height: 350px;
+  background: radial-gradient(circle, rgba(5,40,90,0.5) 0%, transparent 70%);
+  top: 20%; right: 20%;
+  animation: orb1 18s ease-in-out infinite alternate-reverse;
+}
+@keyframes orb1 {
+  0%   { transform: translate(0,0) scale(1) rotate(0deg); }
+  33%  { transform: translate(80px,-60px) scale(1.15) rotate(5deg); }
+  66%  { transform: translate(-40px,80px) scale(0.9) rotate(-3deg); }
+  100% { transform: translate(60px,40px) scale(1.1) rotate(8deg); }
+}
+@keyframes orb2 {
+  0%   { transform: translate(0,0) scale(1); }
+  50%  { transform: translate(-100px,-80px) scale(1.2); }
+  100% { transform: translate(60px,-40px) scale(0.85); }
+}
+@keyframes orb3 {
+  0%   { transform: translate(0,0) scale(1) rotate(0deg); }
+  100% { transform: translate(-80px,100px) scale(1.3) rotate(-10deg); }
+}
 
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-        }
-        .hero h1 {
-            font-size: clamp(3rem, 8vw, 5.8rem);
-            line-height: 1.05;
-            margin-bottom: 1.2rem;
-        }
-        .hero .highlight { color: var(--teal); font-style: italic; }
+/* GRID OVERLAY */
+.grid-overlay {
+  position: fixed; inset: 0; z-index: 10; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(28,91,130,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(28,91,130,0.04) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+}
 
-        .glass-card {
-            background: rgba(255,255,255,0.03);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 24px;
-            padding: 3rem 2.5rem;
-            transition: all 0.4s ease;
-        }
-        .glass-card:hover {
-            transform: translateY(-12px);
-            border-color: var(--teal);
-        }
 
-        .btn {
-            padding: 1.1rem 2.4rem;
-            border-radius: 9999px;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s;
-        }
-        .btn-primary {
-            background: var(--teal);
-            color: #07070F;
-        }
-        .btn-primary:hover { transform: translateY(-4px); box-shadow: 0 20px 30px -10px rgba(10,191,188,0.4); }
 
-        .section { padding: 8rem 0; }
-        .section-title { font-size: 2.8rem; text-align: center; margin-bottom: 4rem; }
+/* GRAIN */
+body::after {
+  content: '';
+  position: fixed; inset: 0; z-index: 4;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+  pointer-events: none; opacity: 0.5;
+}
 
-        .founder-photo {
-            width: 100%;
-            border-radius: 24px;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  background: rgba(7,7,15,0.85);
+  backdrop-filter: blur(24px);
+  border-bottom: 1px solid var(--border);
+  padding: 1.1rem 0;
+}
+.nav-inner {
+  max-width: 1240px; margin: 0 auto; padding: 0 2.5rem;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-logo img { height: 48px; width: auto; display: block; }
+.nav-links { display: flex; align-items: center; gap: 2.5rem; }
+.nav-links a {
+  color: var(--muted); text-decoration: none;
+  font-size: 0.9rem; font-weight: 500;
+  transition: color 0.2s; letter-spacing: 0.01em;
+}
+.nav-links a:hover { color: var(--text); }
+.nav-cta {
+  background: var(--teal) !important;
+  color: #fff !important;
+  padding: 0.55rem 1.4rem;
+  border-radius: 99px;
+  font-weight: 600 !important;
+  transition: transform 0.2s, box-shadow 0.2s !important;
+}
+.nav-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 24px var(--teal-glow); }
+.nav-burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+.nav-burger span { display: block; width: 24px; height: 2px; background: var(--text); border-radius: 2px; }
 
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-        }
-        .project-card {
-            border-radius: 20px;
-            overflow: hidden;
-            position: relative;
-            height: 420px;
-            background-size: cover;
-            background-position: center;
-            transition: all 0.4s ease;
-        }
-        .project-card:hover { transform: scale(1.03); }
-        .project-overlay {
-            position: absolute;
-            bottom: 0; left: 0; right: 0;
-            background: linear-gradient(transparent, rgba(7,7,15,0.95));
-            padding: 2.5rem 2rem 2rem;
-        }
-    </style>
+/* LAYOUT */
+.wrap { max-width: 1240px; margin: 0 auto; padding: 0 2.5rem; position: relative; z-index: 10; width: 100%; }
+
+/* HERO */
+.hero { min-height: 100vh; display: flex; align-items: center; padding: 140px 0 80px; }
+.hero-inner { display: grid; grid-template-columns: 55% 45%; gap: 3rem; align-items: center; }
+.hero-label {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--teal); font-weight: 600;
+  border: 1px solid rgba(24,57,77,0.5);
+  padding: 0.35rem 0.9rem; border-radius: 99px;
+  margin-bottom: 1.8rem;
+  background: rgba(24,57,77,0.12);
+}
+.hero-label::before {
+  content: ''; width: 6px; height: 6px;
+  background: var(--teal); border-radius: 50%;
+  animation: pulse 2s ease infinite;
+}
+@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+.hero h1 {
+  font-size: clamp(2.8rem, 4.8vw, 5.2rem);
+  font-weight: 900; line-height: 1.04;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.5rem;
+  word-break: keep-all;
+  overflow-wrap: normal;
+}
+.hero h1 em { font-style: italic; color: var(--teal); font-weight: 900; }
+.hero-sub { font-size: 1.1rem; color: var(--muted); max-width: 480px; margin-bottom: 2.5rem; line-height: 1.75; }
+.hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+.btn {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.85rem 2rem; border-radius: 99px;
+  font-weight: 600; font-size: 0.92rem;
+  text-decoration: none; transition: all 0.3s;
+  border: none; cursor: pointer; font-family: 'Inter', sans-serif;
+  letter-spacing: -0.01em;
+}
+.btn-primary { background: var(--teal); color: #fff; }
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 16px 32px -8px var(--teal-glow); }
+.btn-ghost { background: transparent; border: 1px solid var(--border); color: var(--text); }
+.btn-ghost:hover { border-color: rgba(255,255,255,0.2); background: rgba(255,255,255,0.04); }
+
+/* HERO CARD */
+.hero-visual { position: relative; display: flex; align-items: center; justify-content: center; }
+.hero-card-stack { position: relative; width: 100%; max-width: 420px; }
+.hero-card {
+  background: var(--glass);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(20px);
+  border-radius: 20px; padding: 1.8rem 2rem;
+}
+.hero-card-main { position: relative; z-index: 10; box-shadow: 0 32px 80px -20px rgba(0,0,0,0.6); }
+.hero-card-back {
+  position: absolute; top: -18px; left: 18px; right: -18px;
+  background: rgba(24,57,77,0.1); border-color: rgba(24,57,77,0.25); z-index: 1;
+}
+.card-metric { margin-bottom: 1.2rem; }
+.card-metric-label { font-size: 0.72rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.3rem; font-weight: 500; }
+.card-metric-val { font-size: 2.6rem; font-weight: 900; color: var(--teal); letter-spacing: -0.03em; line-height: 1; }
+.card-metric-sub { font-size: 0.82rem; color: var(--muted); margin-top: 0.3rem; }
+.card-divider { height: 1px; background: var(--border); margin: 1.2rem 0; }
+.card-row { display: flex; justify-content: space-between; align-items: center; }
+.card-num { font-size: 1.7rem; font-weight: 900; letter-spacing: -0.03em; }
+.card-badge {
+  font-size: 0.68rem; font-weight: 600; letter-spacing: 0.06em;
+  padding: 0.25rem 0.7rem; border-radius: 99px;
+  background: rgba(24,57,77,0.2); color: var(--teal);
+  border: 1px solid rgba(24,57,77,0.4);
+}
+
+/* STATS */
+.stats {
+  position: relative; z-index: 10;
+  padding: 3rem 0;
+  width: 100%;
+}
+.stats-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1rem; }
+.stat-item {
+  text-align: center; padding: 2.5rem 1.5rem;
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 20px;
+  transition: border-color 0.3s, transform 0.3s;
+}
+.stat-item:hover { border-color: rgba(28,91,130,0.4); transform: translateY(-4px); }
+.stat-num { font-size: 3rem; font-weight: 900; color: var(--teal); line-height: 1; margin-bottom: 0.5rem; letter-spacing: -0.03em; }
+.stat-label { font-size: 0.85rem; color: var(--muted); font-weight: 400; }
+
+/* SECTIONS */
+section { padding: 7rem 0; position: relative; z-index: 10; width: 100%; }
+.section-eyebrow {
+  display: block; font-size: 0.72rem;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--teal); font-weight: 700;
+  margin-bottom: 0.9rem;
+}
+.section-title {
+  font-size: clamp(2rem,4vw,3.2rem);
+  font-weight: 900; line-height: 1.08;
+  margin-bottom: 1.2rem;
+  letter-spacing: -0.03em;
+}
+.section-sub { font-size: 1.05rem; color: var(--muted); max-width: 560px; line-height: 1.75; margin-left: 0; }
+
+/* SERVICES */
+.services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 4rem; }
+.service-card {
+  background: var(--glass); border: 1px solid var(--border);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  border-radius: 20px; padding: 2.5rem 2rem;
+  transition: all 0.4s ease; position: relative; overflow: hidden;
+}
+.service-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--teal), transparent);
+  opacity: 0; transition: opacity 0.4s;
+}
+.service-card:hover { border-color: rgba(28,91,130,0.5); transform: translateY(-6px); }
+.service-card:hover::before { opacity: 1; }
+.service-icon {
+  width: 48px; height: 48px; border-radius: 12px;
+  background: var(--teal-dim); border: 1px solid rgba(24,57,77,0.35);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 1.5rem; font-size: 1.4rem;
+}
+.service-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.8rem; letter-spacing: -0.02em; }
+.service-card p { color: var(--muted); font-size: 0.93rem; line-height: 1.7; }
+.service-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
+.tag {
+  font-size: 0.7rem; font-weight: 500;
+  padding: 0.2rem 0.65rem; border-radius: 99px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border); color: var(--muted);
+}
+
+/* DACH */
+.dach-section {
+  background: linear-gradient(135deg, rgba(24,57,77,0.12) 0%, rgba(10,30,50,0.4) 100%);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(24,57,77,0.3); border-radius: 28px;
+  padding: 5rem; display: grid; grid-template-columns: 1fr 1fr;
+  gap: 4rem; align-items: center; width: 100%;
+}
+.dach-flag-row { display: flex; gap: 1rem; margin-bottom: 1.5rem; }
+.dach-flag {
+  font-size: 2rem; width: 52px; height: 52px;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 12px;
+}
+.dach-visual { background: var(--glass); border: 1px solid var(--border); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-radius: 20px; padding: 2rem; }
+.dach-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 0.9rem 0; border-bottom: 1px solid var(--border); font-size: 0.9rem;
+}
+.dach-row:last-child { border-bottom: none; }
+.dach-row-label { color: var(--muted); }
+.dach-row-val { color: var(--teal); font-weight: 600; font-size: 0.88rem; }
+
+/* PORTFOLIO */
+.portfolio-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 4rem; }
+.project-card {
+  border-radius: 20px; overflow: hidden; height: 340px;
+  position: relative; background: var(--card);
+  border: 1px solid var(--border); transition: all 0.4s ease; cursor: pointer;
+}
+.project-card:hover { transform: scale(1.025); border-color: rgba(28,91,130,0.5); }
+.project-card:hover .project-overlay { opacity: 1; }
+.project-bg { position: absolute; inset: 0; background-size: cover; background-position: center; transition: transform 0.4s ease; }
+.project-card:hover .project-bg { transform: scale(1.05); }
+.project-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(7,7,15,0.97) 0%, rgba(7,7,15,0.5) 50%, transparent 100%);
+  padding: 2rem; display: flex; flex-direction: column; justify-content: flex-end;
+  opacity: 0.85; transition: opacity 0.3s;
+}
+.project-tag { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.5rem; }
+.project-card h3 { font-size: 1.05rem; font-weight: 700; letter-spacing: -0.02em; }
+.project-card p { font-size: 0.82rem; color: var(--muted); margin-top: 0.3rem; }
+.project-card-app {
+  background: linear-gradient(135deg, rgba(24,57,77,0.15), rgba(10,30,50,0.5));
+  border-color: rgba(24,57,77,0.35);
+}
+
+/* WHY */
+.why-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 4rem; }
+.why-card { background: var(--glass); border: 1px solid var(--border); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-radius: 20px; padding: 2.5rem 2rem; }
+.why-num {
+  font-size: 3.5rem; font-weight: 900; line-height: 1; margin-bottom: 1.2rem;
+  -webkit-text-stroke: 1px rgba(28,91,130,0.5); color: transparent;
+  letter-spacing: -0.04em;
+}
+.why-card h3 { font-size: 1.08rem; font-weight: 700; margin-bottom: 0.8rem; letter-spacing: -0.02em; }
+.why-card p { color: var(--muted); font-size: 0.93rem; line-height: 1.7; }
+
+/* TESTIMONIALS */
+.testi-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 4rem; }
+.testi-card { background: var(--glass); border: 1px solid var(--border); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-radius: 20px; padding: 2rem; }
+.testi-stars { color: var(--teal); font-size: 0.85rem; margin-bottom: 1rem; letter-spacing: 2px; }
+.testi-text { font-size: 0.92rem; color: var(--muted); line-height: 1.75; margin-bottom: 1.5rem; }
+.testi-author { display: flex; align-items: center; gap: 0.8rem; }
+.testi-avatar {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--teal-dim); border: 1px solid rgba(24,57,77,0.5);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.75rem; font-weight: 700; color: var(--teal);
+}
+.testi-name { font-weight: 600; font-size: 0.88rem; letter-spacing: -0.01em; }
+.testi-role { font-size: 0.75rem; color: var(--muted); }
+
+/* ABOUT */
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; margin-top: 4rem; }
+.about-img { width: 100%; border-radius: 24px; border: 1px solid var(--border); display: block; }
+.about-img-placeholder {
+  width: 100%; aspect-ratio: 4/5; border-radius: 24px;
+  background: linear-gradient(135deg, rgba(24,57,77,0.15), rgba(10,30,50,0.5));
+  border: 1px solid rgba(24,57,77,0.35);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 5rem;
+}
+.about-tag-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 2rem; }
+.skill-tag {
+  font-size: 0.75rem; font-weight: 600;
+  padding: 0.3rem 0.85rem; border-radius: 99px;
+  background: rgba(24,57,77,0.15); border: 1px solid rgba(24,57,77,0.35);
+  color: var(--teal); letter-spacing: -0.01em;
+}
+.lang-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+.lang-tag {
+  font-size: 0.75rem; font-weight: 500;
+  padding: 0.25rem 0.75rem; border-radius: 99px;
+  background: rgba(255,255,255,0.04); border: 1px solid var(--border); color: var(--muted);
+}
+
+/* CONTACT */
+.contact-wrap {
+  max-width: 680px; margin: 4rem auto 0;
+  background: var(--glass); border: 1px solid var(--border);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  border-radius: 24px; padding: 3.5rem;
+}
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+.form-full { grid-column: 1 / -1; }
+.form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+.form-label { font-size: 0.78rem; color: var(--muted); font-weight: 500; letter-spacing: 0.02em; }
+.form-input, .form-select, .form-textarea {
+  background: rgba(255,255,255,0.04); border: 1px solid var(--border);
+  border-radius: 12px; padding: 0.85rem 1.1rem;
+  color: var(--text); font-family: 'Inter', sans-serif;
+  font-size: 0.92rem; outline: none; transition: border-color 0.2s; width: 100%;
+}
+.form-input:focus, .form-select:focus, .form-textarea:focus { border-color: rgba(28,91,130,0.6); }
+.form-select { appearance: none; cursor: pointer; }
+.form-textarea { resize: vertical; min-height: 120px; }
+.form-input::placeholder, .form-textarea::placeholder { color: var(--faint); }
+.btn-submit { width: 100%; margin-top: 0.8rem; padding: 1.05rem; }
+
+/* FOOTER */
+footer {
+  background: #05050A; border-top: 1px solid var(--border);
+  padding: 3.5rem 0 2rem; position: relative; z-index: 10;
+  width: 100%;
+}
+.footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 2rem; }
+.footer-links { display: flex; gap: 2rem; flex-wrap: wrap; }
+.footer-links a { color: var(--muted); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+.footer-links a:hover { color: var(--text); }
+.footer-socials { display: flex; gap: 1rem; }
+.social-btn {
+  width: 38px; height: 38px; border-radius: 10px;
+  background: var(--glass); border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  text-decoration: none; color: var(--muted); font-size: 0.82rem;
+  transition: all 0.2s; font-weight: 700;
+}
+.social-btn:hover { border-color: rgba(28,91,130,0.6); color: var(--teal); }
+.footer-copy { font-size: 0.8rem; color: var(--faint); text-align: center; }
+
+/* FAQ */
+.faq-list { margin-top: 3.5rem; max-width: 760px; margin-left: auto; margin-right: auto; }
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-q {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1.4rem 0; cursor: pointer; font-weight: 500; font-size: 0.97rem;
+  transition: color 0.2s; letter-spacing: -0.01em;
+}
+.faq-q:hover { color: var(--teal); }
+.faq-icon { font-size: 1.2rem; color: var(--teal); transition: transform 0.3s; flex-shrink: 0; }
+.faq-a {
+  font-size: 0.92rem; color: var(--muted);
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s; line-height: 1.75;
+}
+.faq-item.open .faq-a { max-height: 300px; padding-bottom: 1.4rem; }
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+
+/* REVEAL */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .hero-visual { display: none; }
+  .services-grid, .why-grid, .testi-grid { grid-template-columns: 1fr 1fr; }
+  .dach-section { grid-template-columns: 1fr; padding: 3rem; }
+  .portfolio-grid { grid-template-columns: 1fr 1fr; }
+  .stats-grid { grid-template-columns: repeat(2,1fr); }
+  .stat-item { padding: 1.8rem 1rem; }
+}
+@media (max-width: 768px) {
+  nav { padding: 1rem 0; }
+  .nav-inner { padding: 0 1.5rem; }
+  .nav-links {
+    display: none; position: absolute; top: 100%; left: 0; right: 0;
+    flex-direction: column; background: rgba(7,7,15,0.97);
+    padding: 1.5rem; gap: 1.5rem; border-bottom: 1px solid var(--border);
+  }
+  .nav-links.open { display: flex; }
+  .nav-burger { display: flex; }
+  .wrap { padding: 0 1.5rem; }
+  section { padding: 5rem 0; }
+  .services-grid, .why-grid, .testi-grid, .portfolio-grid { grid-template-columns: 1fr; }
+  .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .form-grid { grid-template-columns: 1fr; }
+  .contact-wrap { padding: 2rem; }
+  .footer-inner { flex-direction: column; text-align: center; }
+  .dach-section { padding: 2rem; }
+}
+</style>
 </head>
 <body>
-    <div class="background"></div>
 
-    <!-- NAV -->
-    <nav>
-        <div class="container" style="display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 2rem;">
-            <a href="#"><img src="assets/YG-Logo-Weiss-No-Background.png" alt="YG MEDIA" class="logo-img"></a>
-            <div style="display: flex; gap: 2rem; font-size: 1.05rem;">
-                <a href="#services" style="color: var(--secondary); text-decoration: none;">Services</a>
-                <a href="#work" style="color: var(--secondary); text-decoration: none;">Work</a>
-                <a href="#why" style="color: var(--secondary); text-decoration: none;">Why Us</a>
-                <a href="#contact" style="color: var(--teal); font-weight: 600;">Get in touch</a>
+<canvas id="bg-canvas"></canvas>
+<div class="grid-overlay"></div>
+<div class="orb-wrap">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+  <div class="orb orb-4"></div>
+</div>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <img src="assets/YG-Logo-Weiss-No-Background.png" alt="YG MEDIA" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span style="display:none;font-size:1.2rem;font-weight:900;color:var(--teal);letter-spacing:-0.02em">YG MEDIA</span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#services">Services</a>
+      <a href="#work">Work</a>
+      <a href="#dach">DACH</a>
+      <a href="#about">About</a>
+      <a href="#contact" class="nav-cta">Get in touch</a>
+    </div>
+    <div class="nav-burger" id="burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-label reveal">Available for new projects</div>
+        <h1 class="reveal" style="animation-delay:0.1s">
+          <span style="display:block;white-space:nowrap">We Build</span><span style="display:block;white-space:nowrap">Digital Systems</span><span style="display:block;white-space:nowrap">That <em>Grow Brands</em>.</span>
+        </h1>
+        <p class="hero-sub reveal" style="animation-delay:0.2s">
+          UI/UX Design. Performance Marketing. AI Automation. One studio that thinks in systems, builds for results, and executes end-to-end.
+        </p>
+        <div class="hero-btns reveal" style="animation-delay:0.3s">
+          <a href="#contact" class="btn btn-primary">Book a Free Call</a>
+          <a href="#work" class="btn btn-ghost">See Our Work</a>
+        </div>
+      </div>
+      <div class="hero-visual reveal" style="animation-delay:0.2s">
+        <div class="hero-card-stack">
+          <div class="hero-card hero-card-back"></div>
+          <div class="hero-card hero-card-main">
+            <div class="card-metric">
+              <div class="card-metric-label">Revenue Generated</div>
+              <div class="card-metric-val">€85K+</div>
+              <div class="card-metric-sub">for clients in Q4 2025 alone</div>
             </div>
-        </div>
-    </nav>
-
-    <!-- HERO -->
-    <section class="hero">
-        <div class="container" style="padding-top: 140px;">
-            <h1>We Build Digital Systems<br>That <span class="highlight">Grow Brands</span>.</h1>
-            <p style="font-size: 1.35rem; color: var(--secondary); max-width: 560px; margin-bottom: 2.8rem;">
-                UI/UX Design. Performance Marketing. AI Automation.<br>One studio. End-to-end.
-            </p>
-            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                <a href="#contact" class="btn btn-primary">Book a Free Call</a>
-                <a href="#work" class="btn" style="background: transparent; border: 1px solid rgba(255,255,255,0.25); color: white;">See Our Work</a>
+            <div class="card-divider"></div>
+            <div class="card-row">
+              <div>
+                <div class="card-metric-label">Target Hit</div>
+                <div class="card-num">139%</div>
+              </div>
+              <div>
+                <div class="card-metric-label">Brands Served</div>
+                <div class="card-num">60+</div>
+              </div>
+              <div class="card-badge">Q4 2025</div>
             </div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- STATS -->
-    <section style="background: rgba(13,13,26,0.8); padding: 3.5rem 0; border-top: 1px solid rgba(255,255,255,0.06);">
-        <div class="container">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; text-align: center;">
-                <div><h3 style="font-size: 3rem; color: var(--teal);">60+</h3><p style="color: var(--secondary);">Brands Served</p></div>
-                <div><h3 style="font-size: 3rem; color: var(--teal);">€85K+</h3><p style="color: var(--secondary);">Revenue Generated</p></div>
-                <div><h3 style="font-size: 3rem; color: var(--teal);">139%</h3><p style="color: var(--secondary);">Target Hit Q4 2025</p></div>
-                <div><h3 style="font-size: 3rem; color: var(--teal);">10+</h3><p style="color: var(--secondary);">Years Experience</p></div>
-            </div>
+<!-- STATS -->
+<div class="stats">
+  <div class="wrap">
+    <div class="stats-grid">
+      <div class="stat-item reveal"><div class="stat-num">60+</div><div class="stat-label">Brands Served</div></div>
+      <div class="stat-item reveal" style="animation-delay:0.1s"><div class="stat-num">€85K+</div><div class="stat-label">Revenue Generated for Clients</div></div>
+      <div class="stat-item reveal" style="animation-delay:0.2s"><div class="stat-num">139%</div><div class="stat-label">Target Hit — Q4 2025</div></div>
+      <div class="stat-item reveal" style="animation-delay:0.3s"><div class="stat-num">10+</div><div class="stat-label">Years of Creative Experience</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <span class="section-eyebrow reveal">What We Do</span>
+    <h2 class="section-title reveal">Every project is a system.<br>Not a deliverable.</h2>
+    <p class="section-sub reveal">We combine design thinking, data-driven growth, and AI automation into one integrated offering. No hand-offs. No gaps.</p>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-icon">🎨</div>
+        <h3>UI/UX Design</h3>
+        <p>Interfaces that guide users intuitively, convert measurably, and represent your brand with precision. From concept to pixel-perfect.</p>
+        <div class="service-tags">
+          <span class="tag">Figma</span><span class="tag">Design Systems</span><span class="tag">Framer</span><span class="tag">Responsive</span>
         </div>
-    </section>
-
-    <!-- SERVICES -->
-    <section id="services" class="section">
-        <div class="container">
-            <h2 class="section-title">What We Do</h2>
-            <p style="text-align: center; max-width: 620px; margin: 0 auto 4rem; color: var(--secondary); font-size: 1.25rem;">
-                Every project is a system. Not a deliverable.
-            </p>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 2rem;">
-                <div class="glass-card">
-                    <h3 style="color: var(--teal);">UI/UX Design</h3>
-                    <p style="color: var(--secondary);">Figma, Design Systems, Framer, Responsive. Interfaces that convert and represent your brand with precision.</p>
-                </div>
-                <div class="glass-card">
-                    <h3 style="color: var(--teal);">Performance Marketing</h3>
-                    <p style="color: var(--secondary);">Google Ads, SEO, Conversion Optimization, Landing Pages. Growth systems, not campaigns.</p>
-                </div>
-                <div class="glass-card">
-                    <h3 style="color: var(--teal);">AI Automation + Growth</h3>
-                    <p style="color: var(--secondary);">AI-powered lead pipelines, automated funnels and smarter workflows for leaner operations.</p>
-                </div>
-            </div>
+      </div>
+      <div class="service-card reveal" style="animation-delay:0.1s">
+        <div class="service-icon">📈</div>
+        <h3>Performance Marketing</h3>
+        <p>Google Ads, SEO, conversion optimization, landing pages. We build growth systems — not campaigns. Data-driven, scalable, ROI-focused.</p>
+        <div class="service-tags">
+          <span class="tag">Google Ads</span><span class="tag">SEO</span><span class="tag">CRO</span><span class="tag">Analytics</span>
         </div>
-    </section>
-
-    <!-- DACH -->
-    <section class="section" style="background: linear-gradient(135deg, #0A1018, #0D0D1A);">
-        <div class="container" style="text-align: center; max-width: 760px; margin: 0 auto;">
-            <h2 class="section-title">Your Gateway to the German-Speaking Market</h2>
-            <p style="font-size: 1.3rem; color: var(--secondary); margin-bottom: 3rem;">
-                Most international startups struggle to enter DACH. Wrong messaging, wrong channels, wrong UX for German users. 
-                YG MEDIA is native to German markets.
-            </p>
-            <a href="#contact" class="btn btn-primary">Talk to us about DACH strategy</a>
+      </div>
+      <div class="service-card reveal" style="animation-delay:0.2s">
+        <div class="service-icon">🤖</div>
+        <h3>AI Automation + Growth</h3>
+        <p>AI-powered lead pipelines, automated funnels, and smarter workflows. We integrate intelligence into your operations where it actually moves numbers.</p>
+        <div class="service-tags">
+          <span class="tag">Lead Automation</span><span class="tag">CRM</span><span class="tag">AI Funnels</span>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- PORTFOLIO -->
-    <section id="work" class="section">
-        <div class="container">
-            <h2 class="section-title">Selected Work</h2>
-            <div class="portfolio-grid">
-                <div class="project-card" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('https://picsum.photos/id/1015/800/600');"><div class="project-overlay"><h3>Glassmorphism Landing Page</h3></div></div>
-                <div class="project-card" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('https://picsum.photos/id/201/800/600');"><div class="project-overlay"><h3>Modern Portfolio Website</h3></div></div>
-                <div class="project-card" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('https://picsum.photos/id/106/800/600');"><div class="project-overlay"><h3>Fashion E-Commerce</h3></div></div>
-                <div class="project-card" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('https://picsum.photos/id/180/800/600');"><div class="project-overlay"><h3>Dermatology Website</h3></div></div>
-                <div class="project-card" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('https://picsum.photos/id/201/800/600');"><div class="project-overlay"><h3>YOU — Personal Life OS</h3><p style="color:#ccc;">iOS App • Solo Built</p></div></div>
-                <div class="project-card" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('https://picsum.photos/id/133/800/600');"><div class="project-overlay"><h3>TinyGifts — Christmas Countdown</h3><p style="color:#ccc;">App Store</p></div></div>
-            </div>
+<!-- DACH -->
+<section id="dach">
+  <div class="wrap">
+    <div class="dach-section reveal">
+      <div>
+        <div class="dach-flag-row">
+          <div class="dach-flag">🇩🇪</div>
+          <div class="dach-flag">🇦🇹</div>
+          <div class="dach-flag">🇨🇭</div>
         </div>
-    </section>
+        <span class="section-eyebrow">Unique Specialization</span>
+        <h2 class="section-title">Your Gateway to the German-Speaking Market</h2>
+        <p style="color:var(--muted);line-height:1.75;margin-bottom:2rem;font-size:0.97rem;">
+          Most international startups struggle to enter DACH. Wrong messaging, wrong channels, wrong UX for German users. YG MEDIA is native to these markets — we run ads in German, design for German UX expectations, and know exactly how to position brands in Germany, Austria, and Switzerland.
+        </p>
+        <a href="#contact" class="btn btn-primary">Talk to us about DACH strategy</a>
+      </div>
+      <div class="dach-visual">
+        <div class="dach-row"><span class="dach-row-label">Market Language</span><span class="dach-row-val">Native German</span></div>
+        <div class="dach-row"><span class="dach-row-label">Google Ads</span><span class="dach-row-val">German Campaigns</span></div>
+        <div class="dach-row"><span class="dach-row-label">UX Standards</span><span class="dach-row-val">DACH-Optimized</span></div>
+        <div class="dach-row"><span class="dach-row-label">Brand Positioning</span><span class="dach-row-val">EU Market Ready</span></div>
+        <div class="dach-row"><span class="dach-row-label">Target Region</span><span class="dach-row-val">DE / AT / CH</span></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- WHY YG MEDIA -->
-    <section id="why" class="section">
-        <div class="container">
-            <h2 class="section-title">Why YG MEDIA</h2>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-                <div class="glass-card"><h3>We think in systems</h3><p style="color:var(--secondary);">Every design decision connects to conversion, growth and brand clarity.</p></div>
-                <div class="glass-card"><h3>Design + Marketing in one</h3><p style="color:var(--secondary);">No coordination needed. We do both and they work together by default.</p></div>
-                <div class="glass-card"><h3>We have been on both sides</h3><p style="color:var(--secondary);">As founders and marketers ourselves, we understand what it costs when design does not perform.</p></div>
-            </div>
+<!-- PORTFOLIO -->
+<section id="work">
+  <div class="wrap">
+    <span class="section-eyebrow reveal">Selected Work</span>
+    <h2 class="section-title reveal">Where design, function,<br>and strategy come together.</h2>
+    <div class="portfolio-grid">
+      <div class="project-card reveal" onclick="window.open('https://www.behance.net/gallery/195062751/Audi-Dashboard-Spatial-Design-VisionPro-Concept','_blank')" style="cursor:pointer;">
+        <div class="project-bg" style="background-image:url('assets/audi-1.jpg');background-size:cover;background-position:center;"></div>
+        <div class="project-overlay"><div class="project-tag">UI/UX · Vision Pro</div><h3>Audi App Concept</h3><span style="font-size:0.72rem;color:var(--teal);margin-top:0.5rem;display:block;letter-spacing:0.05em;">View on Behance ↗</span></div>
+      </div>
+      <div class="project-card reveal" style="animation-delay:0.1s" onclick="window.open('https://www.behance.net/gallery/209289491/Adidas-App-Concept-Apple-Vision-Pro-in-Spatial-Design','_blank')">
+        <div class="project-bg" style="background-image:url('assets/adidas-1.png');background-size:cover;background-position:center;"></div>
+        <div class="project-overlay"><div class="project-tag">UI/UX · Vision Pro</div><h3>Adidas App Concept</h3><span style="font-size:0.72rem;color:var(--teal);margin-top:0.5rem;display:block;letter-spacing:0.05em;">View on Behance ↗</span></div>
+      </div>
+      <div class="project-card reveal" style="animation-delay:0.2s" onclick="window.open('https://www.behance.net/gallery/222521161/Fashion-E-Commerce-Website-Web-Design-Cards-Bento-Grid','_blank')">
+        <div class="project-bg" style="background-image:url('assets/fashion-1.png');background-size:cover;background-position:center;"></div>
+        <div class="project-overlay"><div class="project-tag">E-Commerce</div><h3>Fashion Shop — AURÉA</h3><span style="font-size:0.72rem;color:var(--teal);margin-top:0.5rem;display:block;letter-spacing:0.05em;">View on Behance ↗</span></div>
+      </div>
+      <div class="project-card reveal" style="animation-delay:0.1s" onclick="window.open('https://www.behance.net/gallery/227766229/SkincareHealth-Website-for-a-Modern-Dermatology','_blank')">
+        <div class="project-bg" style="background-image:url('assets/derma-1.jpg');background-size:cover;background-position:center;"></div>
+        <div class="project-overlay"><div class="project-tag">UI/UX · Healthcare</div><h3>Dermatology Modern Website</h3><span style="font-size:0.72rem;color:var(--teal);margin-top:0.5rem;display:block;letter-spacing:0.05em;">View on Behance ↗</span></div>
+      </div>
+      <div class="project-card reveal" style="animation-delay:0.2s" onclick="window.open('https://www.behance.net/gallery/195066889/Modern-SaaS-Accounting-App-UIUX-Design','_blank')">
+        <div class="project-bg" style="background-image:url('assets/usely-1.png');background-size:cover;background-position:center;"></div>
+        <div class="project-overlay"><div class="project-tag">iOS App · SaaS</div><h3>USELY — Business Management App</h3><span style="font-size:0.72rem;color:var(--teal);margin-top:0.5rem;display:block;letter-spacing:0.05em;">View on Behance ↗</span></div>
+      </div>
+      <div class="project-card reveal" style="animation-delay:0.3s" onclick="window.open('https://www.behance.net/gallery/217934173/Web-Design-Landingpage-Glassmorphism-Design-for-Website','_blank')">
+        <div class="project-bg" style="background-image:url('assets/lila-1.jpg');background-size:cover;background-position:center;"></div>
+        <div class="project-overlay"><div class="project-tag">Webdesign · Brand</div><h3>Marken & Events Website</h3><span style="font-size:0.72rem;color:var(--teal);margin-top:0.5rem;display:block;letter-spacing:0.05em;">View on Behance ↗</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section id="why">
+  <div class="wrap">
+    <span class="section-eyebrow reveal">Why YG MEDIA</span>
+    <h2 class="section-title reveal">Why founders and startups<br>choose us.</h2>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="why-num">01</div>
+        <h3>We think in systems</h3>
+        <p>Every design decision connects to conversion, growth, and brand clarity. Not isolated deliverables — integrated outcomes.</p>
+      </div>
+      <div class="why-card reveal" style="animation-delay:0.1s">
+        <div class="why-num">02</div>
+        <h3>Design and Marketing in one</h3>
+        <p>No coordination needed between designer and marketer. We do both and they work together by default. Less friction. More speed.</p>
+      </div>
+      <div class="why-card reveal" style="animation-delay:0.2s">
+        <div class="why-num">03</div>
+        <h3>We have been on both sides</h3>
+        <p>As founders and marketers ourselves, we understand what it costs when design does not perform. We build for results, not awards.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section>
+  <div class="wrap">
+    <span class="section-eyebrow reveal">Client Feedback</span>
+    <h2 class="section-title reveal">What our clients say.</h2>
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Yasin combines aesthetic precision with a real understanding of growth strategy. One of the few designers who thinks commercially."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">TL</div>
+          <div><div class="testi-name">Tobias Leiser</div><div class="testi-role">CEO</div></div>
         </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section class="section">
-        <div class="container">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center;">
-                <div>
-                    <h2 style="font-size: 3rem; margin-bottom: 2rem;">Hi, I’m Yasin Gündogdu</h2>
-                    <p style="font-size: 1.2rem; color: var(--secondary); margin-bottom: 2rem;">
-                        Designer, performance marketer and founder. For over ten years I have been helping companies and startups build digital presences that perform.
-                    </p>
-                    <p style="color: var(--secondary);">Based between Germany and Limassol, Cyprus.</p>
-                </div>
-                <div>
-                    <img src="assets/YG-Founder.png" alt="Yasin Gündogdu" class="founder-photo">
-                </div>
-            </div>
+      </div>
+      <div class="testi-card reveal" style="animation-delay:0.1s">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Working with YG MEDIA transformed how we think about design. Strategic, clear, and always focused on what matters — results."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">AK</div>
+          <div><div class="testi-name">Anna Kaiser</div><div class="testi-role">Product Manager</div></div>
         </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="section" style="background: rgba(13,13,26,0.9);">
-        <div class="container">
-            <h2 class="section-title">Let’s Build Something Great</h2>
-            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" style="max-width: 680px; margin: 0 auto; background: rgba(255,255,255,0.03); padding: 3rem; border-radius: 24px; border: 1px solid rgba(255,255,255,0.08);">
-                <input type="text" name="name" placeholder="Your name" required style="width:100%; padding:1rem; margin-bottom:1.5rem; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:12px; color:white;">
-                <input type="email" name="email" placeholder="Email address" required style="width:100%; padding:1rem; margin-bottom:1.5rem; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:12px; color:white;">
-                <textarea name="message" rows="6" placeholder="Tell us about your project..." required style="width:100%; padding:1rem; margin-bottom:1.5rem; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:12px; color:white;"></textarea>
-                <button type="submit" class="btn btn-primary" style="width:100%; padding:1.3rem;">Send Message</button>
-            </form>
+      </div>
+      <div class="testi-card reveal" style="animation-delay:0.2s">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Had experience with web design before, but YG MEDIA thinks at a significantly different level. Design that actually conveys purpose and identity."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">DH</div>
+          <div><div class="testi-name">Daniel Hofmann</div><div class="testi-role">CEO</div></div>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- FOOTER -->
-    <footer style="background: #05050A; padding: 4rem 0 2rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.08);">
-        <div class="container">
-            <div style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap;">
-                <a href="#services" style="color:var(--secondary);">Services</a>
-                <a href="#work" style="color:var(--secondary);">Work</a>
-                <a href="#why" style="color:var(--secondary);">Why Us</a>
-                <a href="#contact" style="color:var(--secondary);">Contact</a>
-            </div>
-            <p style="color: var(--secondary);">YG MEDIA · Lauda-Königshofen / Limassol, Cyprus © 2026 Yasin Gündogdu</p>
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <span class="section-eyebrow reveal">About</span>
+    <div class="about-grid">
+      <div>
+        <h2 class="section-title reveal">Hi, I'm Yasin Gündogdu.</h2>
+        <p style="font-size:1.05rem;color:var(--muted);line-height:1.8;margin-bottom:1.5rem;" class="reveal">
+          Designer, performance marketer, and founder. For over ten years I have been helping companies and startups build digital presences that perform.
+        </p>
+        <p style="color:var(--muted);line-height:1.8;margin-bottom:1.5rem;font-size:0.95rem;" class="reveal">
+          I combine UI/UX design with performance marketing strategy and brand thinking. 60+ brands. Two iOS apps built solo as a developer. Currently based between Germany and Limassol, Cyprus — working globally.
+        </p>
+        <div class="about-tag-row reveal">
+          <span class="skill-tag">UI/UX Design</span><span class="skill-tag">Google Ads</span>
+          <span class="skill-tag">Figma</span><span class="skill-tag">Framer</span>
+          <span class="skill-tag">SEO</span><span class="skill-tag">AI Automation</span>
+          <span class="skill-tag">iOS Dev</span><span class="skill-tag">Brand Strategy</span>
         </div>
-    </footer>
+        <div class="lang-row reveal">
+          <span class="lang-tag">🇩🇪 German — Native</span>
+          <span class="lang-tag">🇬🇧 English — Fluent</span>
+        </div>
+      </div>
+      <div class="reveal">
+        <img src="assets/YG-Founder.png" alt="Yasin Gündogdu" class="about-img" style="max-width:420px;margin:0 auto;display:block;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="about-img-placeholder" style="display:none">👤</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-            });
-        });
-    </script>
+<!-- CONTACT -->
+<section id="contact">>
+  <div class="wrap">
+    <div style="text-align:center">
+      <span class="section-eyebrow reveal">Get in Touch</span>
+      <h2 class="section-title reveal">Let's Build Something Great.</h2>
+      <p class="section-sub reveal" style="margin:0 auto">Tell us about your project. We'll get back within 24 hours.</p>
+    </div>
+    <div class="contact-wrap reveal">
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="form-grid">
+          <div class="form-group">
+            <label class="form-label">Your Name</label>
+            <input type="text" name="name" class="form-input" placeholder="Yasin Gündogdu" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Company</label>
+            <input type="text" name="company" class="form-input" placeholder="YG MEDIA">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email Address</label>
+            <input type="email" name="email" class="form-input" placeholder="hello@company.com" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Country</label>
+            <input type="text" name="country" class="form-input" placeholder="Germany, Cyprus...">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Budget</label>
+            <select name="budget" class="form-select">
+              <option value="">Select budget range</option>
+              <option>Under €1,000</option>
+              <option>€1,000 – €3,000</option>
+              <option>€3,000 – €10,000</option>
+              <option>€10,000+</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Project Type</label>
+            <select name="type" class="form-select">
+              <option value="">Select project type</option>
+              <option>UI/UX Design</option>
+              <option>Performance Marketing</option>
+              <option>AI Automation</option>
+              <option>DACH Market Strategy</option>
+              <option>Full Package</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group form-full">
+            <label class="form-label">Tell us about your project</label>
+            <textarea name="message" class="form-textarea" placeholder="What are you building? What's the challenge?" required></textarea>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="wrap">
+    <span class="section-eyebrow reveal">FAQ</span>
+    <h2 class="section-title reveal">Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <div class="faq-item"><div class="faq-q">Do you understand my business or just design?<span class="faq-icon">+</span></div><div class="faq-a">Both. Every project starts with a strategic brief. We research your market, competitors, and target audience before touching a pixel or writing a single ad.</div></div>
+      <div class="faq-item"><div class="faq-q">Do I need to bring technical know-how?<span class="faq-icon">+</span></div><div class="faq-a">No. We handle the technical side. You focus on your business. We communicate clearly at every step so you always know what is happening.</div></div>
+      <div class="faq-item"><div class="faq-q">What does a project cost?<span class="faq-icon">+</span></div><div class="faq-a">Projects start at €1,000 for focused deliverables and scale based on scope. We offer fixed-price projects and monthly retainers. Book a free call to get a clear quote within 48 hours.</div></div>
+      <div class="faq-item"><div class="faq-q">Do you work with templates?<span class="faq-icon">+</span></div><div class="faq-a">Never. Every project is built from scratch, specific to your brand, your audience, and your goals.</div></div>
+      <div class="faq-item"><div class="faq-q">Design and development — both with you?<span class="faq-icon">+</span></div><div class="faq-a">Yes. We design and build. No hand-off to a separate developer. One point of contact, full ownership, from concept to live.</div></div>
+      <div class="faq-item"><div class="faq-q">Do you work with startups in Limassol or Cyprus?<span class="faq-icon">+</span></div><div class="faq-a">Yes, actively. YG MEDIA is based in Limassol and working with local and international startups in tech, fintech, and gaming. Reach out directly.</div></div>
+      <div class="faq-item"><div class="faq-q">Can you help us enter the German market?<span class="faq-icon">+</span></div><div class="faq-a">Yes. DACH market strategy is a core specialization. We run German Google Ads, optimize UX for German-speaking users, and position brands for Germany, Austria, and Switzerland.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="#services">Services</a><a href="#work">Work</a><a href="#dach">DACH</a>
+        <a href="#about">About</a><a href="#contact">Contact</a>
+        <a href="#">Imprint</a><a href="#">Privacy</a>
+      </div>
+      <div class="footer-socials">
+        <a href="https://behance.net/yasinguendogdu" target="_blank" class="social-btn" title="Behance">Be</a>
+        <a href="https://pinterest.com" target="_blank" class="social-btn" title="Pinterest">Pi</a>
+        <a href="https://linkedin.com" target="_blank" class="social-btn" title="LinkedIn">in</a>
+      </div>
+    </div>
+    <p class="footer-copy">YG MEDIA · Lauda-Königshofen / Limassol, Cyprus · © 2026 Yasin Gündogdu</p>
+  </div>
+</footer>
+
+<script>
+const burger = document.getElementById('burger');
+const navLinks = document.getElementById('navLinks');
+burger.addEventListener('click', () => navLinks.classList.toggle('open'));
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+    navLinks.classList.remove('open');
+  });
+});
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+document.querySelectorAll('.faq-q').forEach(q => {
+  q.addEventListener('click', () => {
+    const item = q.parentElement;
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  });
+});
+
+// PARTICLE CANVAS
+const canvas = document.getElementById('bg-canvas');
+const ctx = canvas.getContext('2d');
+let W, H, particles, mouse = { x: -9999, y: -9999 };
+
+function resize() {
+  W = canvas.width = window.innerWidth;
+  H = canvas.height = window.innerHeight;
+}
+
+function Particle() {
+  this.reset = function() {
+    this.x = Math.random() * W;
+    this.y = Math.random() * H;
+    this.vx = (Math.random() - 0.5) * 0.3;
+    this.vy = (Math.random() - 0.5) * 0.3;
+    this.r = Math.random() * 1.5 + 0.3;
+    this.alpha = Math.random() * 0.5 + 0.1;
+    this.life = 0;
+    this.maxLife = Math.random() * 300 + 200;
+  };
+  this.reset();
+}
+
+function initParticles() {
+  particles = Array.from({ length: 120 }, () => new Particle());
+}
+
+function drawConnections() {
+  for (let i = 0; i < particles.length; i++) {
+    for (let j = i + 1; j < particles.length; j++) {
+      const dx = particles[i].x - particles[j].x;
+      const dy = particles[i].y - particles[j].y;
+      const dist = Math.sqrt(dx*dx + dy*dy);
+      if (dist < 140) {
+        const alpha = (1 - dist / 140) * 0.12;
+        ctx.beginPath();
+        ctx.strokeStyle = `rgba(28,91,130,${alpha})`;
+        ctx.lineWidth = 0.5;
+        ctx.moveTo(particles[i].x, particles[i].y);
+        ctx.lineTo(particles[j].x, particles[j].y);
+        ctx.stroke();
+      }
+    }
+    // Mouse connections
+    const dx = particles[i].x - mouse.x;
+    const dy = particles[i].y - mouse.y;
+    const dist = Math.sqrt(dx*dx + dy*dy);
+    if (dist < 200) {
+      const alpha = (1 - dist / 200) * 0.3;
+      ctx.beginPath();
+      ctx.strokeStyle = `rgba(28,91,130,${alpha})`;
+      ctx.lineWidth = 0.8;
+      ctx.moveTo(particles[i].x, particles[i].y);
+      ctx.lineTo(mouse.x, mouse.y);
+      ctx.stroke();
+    }
+  }
+}
+
+function animate() {
+  ctx.clearRect(0, 0, W, H);
+  drawConnections();
+  particles.forEach(p => {
+    p.life++;
+    if (p.life > p.maxLife) p.reset();
+
+    // Mouse repulsion
+    const dx = p.x - mouse.x;
+    const dy = p.y - mouse.y;
+    const dist = Math.sqrt(dx*dx + dy*dy);
+    if (dist < 120) {
+      const force = (120 - dist) / 120 * 0.8;
+      p.vx += (dx / dist) * force;
+      p.vy += (dy / dist) * force;
+    }
+
+    p.vx *= 0.99;
+    p.vy *= 0.99;
+    p.x += p.vx;
+    p.y += p.vy;
+
+    if (p.x < 0) p.x = W;
+    if (p.x > W) p.x = 0;
+    if (p.y < 0) p.y = H;
+    if (p.y > H) p.y = 0;
+
+    const fadeAlpha = p.life < 60 ? p.life/60 : p.life > p.maxLife - 60 ? (p.maxLife - p.life)/60 : 1;
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(28,91,130,${p.alpha * fadeAlpha})`;
+    ctx.fill();
+  });
+  requestAnimationFrame(animate);
+}
+
+window.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; });
+window.addEventListener('mouseleave', () => { mouse.x = -9999; mouse.y = -9999; });
+window.addEventListener('resize', () => { resize(); initParticles(); });
+resize();
+initParticles();
+animate();
+</script>
 </body>
 </html>
