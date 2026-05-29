@@ -12,7 +12,7 @@
 <meta property="og:url" content="https://yg-media.de">
 <link rel="canonical" href="https://yg-media.de">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,900;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,900;1,900&family=Playfair+Display:ital,wght@1,500;1,600;1,700&display=swap" rel="stylesheet">
 <style>
 :root {
   --teal: #1c5b82;
@@ -44,6 +44,7 @@ body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--tex
 @keyframes orb2 { 0% { transform: translate(0,0) scale(1); } 100% { transform: translate(-80px,-60px) scale(1.15); } }
 @keyframes orb3 { 0% { transform: translate(0,0); } 100% { transform: translate(-60px,80px) scale(1.2); } }
 
+
 .grid-overlay { position: fixed; inset: 0; z-index: 2; pointer-events: none; background-image: linear-gradient(rgba(28,91,130,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(28,91,130,0.03) 1px, transparent 1px); background-size: 80px 80px; mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 100%); }
 body::after { content: ''; position: fixed; inset: 0; z-index: 3; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E"); pointer-events: none; opacity: 0.5; }
 
@@ -66,22 +67,22 @@ nav.scrolled { background: rgba(12,14,28,0.65); backdrop-filter: blur(28px); -we
 section { padding: 8rem 0; position: relative; z-index: 10; }
 
 /* EYEBROW — subtle glow on teal text */
-.eyebrow { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--teal); font-weight: 700; margin-bottom: 1.2rem; text-shadow: 0 0 12px rgba(28,91,130,0.5); }
-.eyebrow::before { content: ''; width: 20px; height: 1px; background: var(--teal); display: block; box-shadow: 0 0 6px rgba(28,91,130,0.8); }
+.eyebrow { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--teal-bright); font-weight: 700; margin-bottom: 1.2rem; text-shadow: 0 0 14px rgba(36,120,170,0.5); }
 
 /* HERO */
-.hero { min-height: 100vh; display: flex; align-items: center; padding: 130px 0 60px; overflow: hidden; }
+.hero { min-height: 100vh; display: flex; align-items: center; padding: 130px 0 60px; }
 .hero-inner { display: grid; grid-template-columns: 1fr 420px; gap: 4rem; align-items: center; }
 .hero-badge { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); font-weight: 600; border: 1px solid rgba(28,91,130,0.4); padding: 0.35rem 1rem 0.35rem 0.7rem; border-radius: 99px; margin-bottom: 2rem; background: rgba(28,91,130,0.08); width: fit-content; animation: fadeSlideDown 0.6s ease both; }
 .hero-badge-dot { width: 6px; height: 6px; background: var(--teal); border-radius: 50%; animation: pulse 2s ease infinite; box-shadow: 0 0 6px rgba(28,91,130,0.8); }
 @keyframes pulse { 0%,100% { opacity:1; transform: scale(1); } 50% { opacity:0.4; transform: scale(0.8); } }
 
-.hero-h1 { font-size: clamp(3.2rem, 5.5vw, 6rem); font-weight: 900; line-height: 1.02; letter-spacing: -0.035em; margin-bottom: 2rem; overflow: hidden; }
-.hero-h1 .line { display: block; overflow: hidden; }
+.hero-h1 { font-size: clamp(2.8rem, 4.8vw, 5.2rem); font-weight: 900; line-height: 1.06; letter-spacing: -0.035em; margin-bottom: 2rem; }
+.hero-h1 .line { display: block; overflow: visible; }
 .hero-h1 .line-inner { display: block; transform: translateY(110%); animation: slideUp 0.8s cubic-bezier(0.16,1,0.3,1) both; }
 .hero-h1 .line:nth-child(2) .line-inner { animation-delay: 0.08s; }
+.hero-h1 .line:nth-child(3) .line-inner { animation-delay: 0.16s; }
 /* H1 teal accent — clear glow */
-.hero-h1 em { font-style: italic; color: var(--teal); text-shadow: 0 0 30px rgba(28,91,130,0.55), 0 0 60px rgba(28,91,130,0.2); }
+.hero-h1 em { font-family: 'Playfair Display', serif; font-style: italic; font-weight: 600; color: var(--teal-bright); text-shadow: 0 0 30px rgba(36,120,170,0.5), 0 0 60px rgba(36,120,170,0.2); letter-spacing: -0.01em; }
 
 .hero-sub { font-size: 1.05rem; color: var(--muted); max-width: 500px; margin-bottom: 3rem; line-height: 1.8; animation: fadeSlideUp 0.8s 0.3s ease both; }
 .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; animation: fadeSlideUp 0.8s 0.45s ease both; }
@@ -98,7 +99,7 @@ section { padding: 8rem 0; position: relative; z-index: 10; }
 
 /* HERO CARD */
 .hero-visual { position: relative; animation: fadeSlideUp 1s 0.2s ease both; }
-.hero-card { background: rgba(12,14,28,0.65); border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(28px); -webkit-backdrop-filter: blur(28px); border-radius: 24px; padding: 2.2rem 2.4rem; box-shadow: 0 40px 80px -20px rgba(0,0,0,0.5); position: relative; z-index: 2; }
+.hero-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.18); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-radius: 24px; padding: 2.2rem 2.4rem; box-shadow: 0 40px 80px -20px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.12); position: relative; z-index: 2; }
 .hero-card-bg { position: absolute; top: -16px; left: 16px; right: -16px; bottom: 0; background: rgba(28,91,130,0.06); border: 1px solid rgba(28,91,130,0.15); border-radius: 24px; z-index: 1; }
 .card-metric-label { font-size: 0.68rem; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.4rem; font-weight: 600; }
 /* Hero card big number — glow */
@@ -112,10 +113,10 @@ section { padding: 8rem 0; position: relative; z-index: 10; }
 
 /* REALITÄT */
 .reality-section { padding: 8rem 0; }
-.reality-inner { max-width: 900px; margin: 0 auto; text-align: center; }
-.reality-title { font-size: clamp(2.2rem, 4vw, 3.8rem); font-weight: 900; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 2.5rem; }
+.reality-inner { max-width: 1000px; margin: 0 auto; text-align: center; }
+.reality-title { font-size: clamp(2rem, 3.4vw, 3.2rem); font-weight: 900; letter-spacing: -0.03em; line-height: 1.12; margin-bottom: 2.5rem; }
 /* Teal italic accent in Realität */
-.reality-title strong { color: var(--teal); font-style: italic; text-shadow: 0 0 30px rgba(28,91,130,0.4); }
+.reality-title strong { font-family: 'Playfair Display', serif; color: var(--teal-bright); font-style: italic; font-weight: 600; text-shadow: 0 0 30px rgba(36,120,170,0.4); white-space: nowrap; letter-spacing: -0.01em; }
 .reality-text { font-size: 1.1rem; color: var(--muted); line-height: 1.9; max-width: 680px; margin: 0 auto; }
 
 /* SERVICES */
@@ -143,7 +144,10 @@ section { padding: 8rem 0; position: relative; z-index: 10; }
 .ref-title { font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 900; letter-spacing: -0.03em; line-height: 1.08; }
 .ref-lead { color: var(--muted); font-size: 1rem; line-height: 1.8; }
 .ref-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-.ref-card { background: rgba(12,14,28,0.65); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 2.5rem; backdrop-filter: blur(28px); -webkit-backdrop-filter: blur(28px); transition: border-color 0.3s, transform 0.3s; position: relative; overflow: hidden; }
+.ref-image { width: 100%; height: 180px; border-radius: 14px; object-fit: cover; margin-bottom: 1.5rem; border: 1px solid rgba(255,255,255,0.1); display: block; background: linear-gradient(135deg, rgba(28,91,130,0.15), rgba(10,30,50,0.4)); }
+.ref-link { display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 1.4rem; font-size: 0.8rem; font-weight: 600; color: var(--teal-bright); text-decoration: none; transition: gap 0.2s, text-shadow 0.2s; }
+.ref-card:hover .ref-link { gap: 0.7rem; text-shadow: 0 0 12px rgba(36,120,170,0.6); }
+.ref-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; padding: 2.5rem; backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.1); transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden; }
 .ref-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(28,91,130,0.5), transparent); transform: scaleX(0); transition: transform 0.4s; }
 .ref-card:hover { border-color: rgba(28,91,130,0.3); transform: translateY(-4px); }
 .ref-card:hover::before { transform: scaleX(1); }
@@ -158,10 +162,10 @@ section { padding: 8rem 0; position: relative; z-index: 10; }
 .vorteile-title { font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 900; letter-spacing: -0.04em; line-height: 1.0; }
 .vorteile-title span { display: block; }
 /* Vorteile accent — glow */
-.vorteile-title .accent { color: var(--teal); font-style: italic; text-shadow: 0 0 30px rgba(28,91,130,0.4); }
+.vorteile-title .accent { font-family: 'Playfair Display', serif; color: var(--teal-bright); font-style: italic; font-weight: 600; text-shadow: 0 0 30px rgba(36,120,170,0.4); letter-spacing: -0.01em; }
 .vorteile-sub { color: var(--muted); font-size: 1rem; line-height: 1.8; align-self: end; }
 .vorteile-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.5rem; }
-.vorteil-card { padding: 2.2rem 2rem; border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; background: rgba(12,14,28,0.65); backdrop-filter: blur(28px); -webkit-backdrop-filter: blur(28px); transition: border-color 0.3s, transform 0.3s; }
+.vorteil-card { padding: 2.2rem 2rem; border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; background: rgba(255,255,255,0.04); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.1); transition: border-color 0.3s, transform 0.3s; }
 .vorteil-card:hover { border-color: rgba(28,91,130,0.4); transform: translateY(-4px); }
 /* Vorteil outline numbers — teal glow on stroke */
 .vorteil-num { font-size: 4rem; font-weight: 900; line-height: 1; margin-bottom: 1.5rem; -webkit-text-stroke: 1px rgba(28,91,130,0.55); color: transparent; letter-spacing: -0.05em; filter: drop-shadow(0 0 6px rgba(28,91,130,0.3)); }
@@ -174,7 +178,7 @@ section { padding: 8rem 0; position: relative; z-index: 10; }
 .prozess-title { font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 900; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 1.5rem; }
 .prozess-sub { color: var(--muted); font-size: 0.97rem; line-height: 1.8; margin-bottom: 2.5rem; }
 .prozess-steps { display: flex; flex-direction: column; gap: 1rem; }
-.prozess-step { padding: 2rem 2rem; border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; background: rgba(12,14,28,0.65); backdrop-filter: blur(28px); -webkit-backdrop-filter: blur(28px); display: grid; grid-template-columns: 48px 1fr; gap: 1.5rem; align-items: start; transition: border-color 0.3s; }
+.prozess-step { padding: 2rem 2rem; border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; background: rgba(255,255,255,0.04); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.1); display: grid; grid-template-columns: 48px 1fr; gap: 1.5rem; align-items: start; transition: border-color 0.3s; }
 .prozess-step:hover { border-color: rgba(28,91,130,0.35); }
 /* Prozess step number — glow */
 .prozess-step-num { font-size: 0.72rem; font-weight: 700; color: var(--teal); letter-spacing: 0.08em; padding-top: 0.2rem; text-shadow: 0 0 10px rgba(28,91,130,0.5); }
@@ -185,7 +189,7 @@ section { padding: 8rem 0; position: relative; z-index: 10; }
 .about-inner { display: grid; grid-template-columns: 1fr 400px; gap: 6rem; align-items: center; }
 .about-tagline { font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 900; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 2rem; }
 /* About tagline em — glow */
-.about-tagline em { color: var(--teal); font-style: italic; text-shadow: 0 0 24px rgba(28,91,130,0.45); }
+.about-tagline em { font-family: 'Playfair Display', serif; color: var(--teal-bright); font-style: italic; font-weight: 600; text-shadow: 0 0 24px rgba(36,120,170,0.45); letter-spacing: -0.01em; }
 .about-text { color: var(--muted); font-size: 0.97rem; line-height: 1.85; margin-bottom: 1.4rem; }
 .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 2.2rem; }
 .skill-tag { font-size: 0.73rem; font-weight: 600; padding: 0.3rem 0.9rem; border-radius: 99px; background: rgba(28,91,130,0.12); border: 1px solid rgba(28,91,130,0.3); color: var(--teal); }
@@ -195,7 +199,7 @@ section { padding: 8rem 0; position: relative; z-index: 10; }
 
 /* CTA */
 .cta-section { text-align: center; }
-.cta-inner { border: 1px solid rgba(255,255,255,0.1); border-radius: 28px; padding: 7rem 5rem; background: rgba(12,14,28,0.65); backdrop-filter: blur(28px); -webkit-backdrop-filter: blur(28px); position: relative; overflow: hidden; }
+.cta-inner { border: 1px solid rgba(255,255,255,0.15); border-radius: 28px; padding: 7rem 5rem; background: rgba(255,255,255,0.04); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.1); position: relative; overflow: hidden; }
 .cta-inner::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 600px; height: 600px; background: radial-gradient(circle, rgba(28,91,130,0.12) 0%, transparent 70%); pointer-events: none; }
 .cta-title { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; letter-spacing: -0.04em; line-height: 1.05; margin-bottom: 1.8rem; position: relative; }
 .cta-sub { font-size: 1.05rem; color: var(--muted); max-width: 500px; margin: 0 auto 3.5rem; line-height: 1.8; position: relative; }
@@ -207,10 +211,15 @@ section { padding: 8rem 0; position: relative; z-index: 10; }
 .contact-title { font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 900; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 1.5rem; }
 .contact-sub { color: var(--muted); font-size: 0.97rem; line-height: 1.8; margin-bottom: 2.5rem; }
 .contact-info { display: flex; flex-direction: column; gap: 1rem; }
+.contact-name { font-size: 1.05rem; font-weight: 700; color: var(--text); letter-spacing: -0.01em; line-height: 1.4; margin-bottom: 0.3rem; }
+.contact-name span { font-weight: 400; color: var(--muted); }
 .contact-info-item { display: flex; align-items: center; gap: 0.8rem; color: var(--muted); font-size: 0.88rem; }
 /* Contact dots — glow */
 .contact-info-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal); flex-shrink: 0; box-shadow: 0 0 6px rgba(28,91,130,0.7); }
-.contact-form { background: rgba(12,14,28,0.65); border: 1px solid rgba(255,255,255,0.1); border-radius: 24px; padding: 3rem; backdrop-filter: blur(28px); -webkit-backdrop-filter: blur(28px); }
+.contact-socials { display: flex; gap: 0.7rem; margin-top: 1.8rem; }
+.contact-social { width: 40px; height: 40px; border-radius: 11px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center; text-decoration: none; color: var(--muted); font-size: 0.78rem; font-weight: 700; transition: all 0.2s; }
+.contact-social:hover { border-color: rgba(36,120,170,0.5); color: var(--teal-bright); transform: translateY(-2px); }
+.contact-form { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.15); border-radius: 24px; padding: 3rem; backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.1); }
 .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-bottom: 1.2rem; }
 .form-full { grid-column: 1 / -1; }
 .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
@@ -226,6 +235,22 @@ section { padding: 8rem 0; position: relative; z-index: 10; }
 .form-success p { color: var(--teal); font-weight: 600; font-size: 1rem; }
 
 /* FOOTER */
+/* VIDEO SHOWCASE */
+.showcase-card { position: relative; border-radius: 28px; overflow: hidden; border: 1px solid rgba(255,255,255,0.14); background: rgba(255,255,255,0.04); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.1), 0 40px 80px -30px rgba(0,0,0,0.5); display: grid; grid-template-columns: 1.15fr 0.85fr; align-items: stretch; margin-top: 4rem; }
+.showcase-card::before { content: ''; position: absolute; top: -40%; right: -10%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(36,120,170,0.25) 0%, transparent 70%); pointer-events: none; z-index: 0; }
+.showcase-video-wrap { position: relative; overflow: hidden; min-height: 380px; background: linear-gradient(135deg, rgba(28,91,130,0.18), rgba(10,30,50,0.4)); }
+.showcase-video-wrap video { width: 100%; height: 100%; object-fit: cover; display: block; position: absolute; inset: 0; }
+.showcase-video-overlay { position: absolute; inset: 0; background: linear-gradient(90deg, transparent 55%, rgba(10,12,24,0.55) 100%); pointer-events: none; }
+.showcase-content { padding: 3.5rem; display: flex; flex-direction: column; justify-content: center; position: relative; z-index: 2; }
+.showcase-badge { display: inline-flex; align-items: center; gap: 0.5rem; width: fit-content; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: var(--teal-bright); border: 1px solid rgba(36,120,170,0.4); border-radius: 99px; padding: 0.3rem 0.9rem; margin-bottom: 1.5rem; background: rgba(36,120,170,0.1); text-shadow: 0 0 12px rgba(36,120,170,0.5); }
+.showcase-badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal-bright); box-shadow: 0 0 8px rgba(36,120,170,0.9); animation: pulse 2s ease infinite; }
+.showcase-content h3 { font-size: clamp(1.6rem, 2.5vw, 2.2rem); font-weight: 900; letter-spacing: -0.03em; line-height: 1.12; margin-bottom: 1.2rem; }
+.showcase-content h3 em { font-family: 'Playfair Display', serif; font-style: italic; font-weight: 600; color: var(--teal-bright); text-shadow: 0 0 24px rgba(36,120,170,0.45); letter-spacing: -0.01em; }
+.showcase-content p { color: var(--muted); font-size: 0.95rem; line-height: 1.8; margin-bottom: 1.8rem; }
+.showcase-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.8rem; }
+.showcase-link { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; font-weight: 600; color: var(--teal-bright); text-decoration: none; transition: gap 0.2s, text-shadow 0.2s; width: fit-content; }
+.showcase-link:hover { gap: 0.7rem; text-shadow: 0 0 12px rgba(36,120,170,0.6); }
+
 footer { background: rgba(12,14,28,0.65); backdrop-filter: blur(28px); -webkit-backdrop-filter: blur(28px); border-top: 1px solid rgba(255,255,255,0.1); padding: 4rem 0 2.5rem; position: relative; z-index: 10; }
 .footer-top { display: grid; grid-template-columns: 260px 1fr; gap: 4rem; margin-bottom: 3rem; }
 .footer-logo img { height: 36px; display: block; margin-bottom: 1rem; }
@@ -270,6 +295,8 @@ footer { background: rgba(12,14,28,0.65); backdrop-filter: blur(28px); -webkit-b
   .prozess-inner { grid-template-columns: 1fr; }
   .prozess-sticky { position: static; }
   .ref-intro { grid-template-columns: 1fr; gap: 1.5rem; }
+  .showcase-card { grid-template-columns: 1fr; }
+  .showcase-video-wrap { min-height: 260px; }
   .vorteile-head { grid-template-columns: 1fr; gap: 1.5rem; }
   .footer-top { grid-template-columns: 1fr; }
   .services-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
@@ -289,6 +316,7 @@ footer { background: rgba(12,14,28,0.65); backdrop-filter: blur(28px); -webkit-b
   .form-grid { grid-template-columns: 1fr; }
   .footer-links-grid { grid-template-columns: 1fr 1fr; }
   .cta-inner { padding: 4rem 2rem; }
+  .showcase-content { padding: 2rem; }
   .cta-title { font-size: 2.2rem; }
 }
 </style>
@@ -325,10 +353,10 @@ footer { background: rgba(12,14,28,0.65); backdrop-filter: blur(28px); -webkit-b
       <div>
         <div class="hero-badge"><span class="hero-badge-dot"></span>Verfügbar für neue Projekte</div>
         <h1 class="hero-h1">
-          <span class="line"><span class="line-inner">Ich baue dein</span></span>
-          <span class="line"><span class="line-inner">Business <em>digital auf.</em></span></span>
+          <span class="line"><span class="line-inner">Mehr Kunden.</span></span>
+          <span class="line"><span class="line-inner"><em>Digital&nbsp;aufgebaut.</em></span></span>
         </h1>
-        <p class="hero-sub">Die meisten Unternehmer sind gut in ihrem Handwerk. Aber eine Website die konvertiert, Google Ads die rentabel sind und Prozesse die automatisch laufen — das ist eine andere Welt. Genau da komme ich rein.</p>
+        <p class="hero-sub">Du bist Experte in deinem Geschäft. Ich mache dich online sichtbar und nehme dir die digitale Arbeit ab. Professionelle Website, Google Ads, SEO und KI-Automatisierung aus einer Hand. Damit neue Kunden dich finden und deine Prozesse von allein laufen.</p>
         <div class="hero-btns">
           <a href="https://calendly.com/yg-media/30min" target="_blank" rel="noopener" class="btn btn-primary">Kostenloses Erstgespräch <span class="btn-arrow">↗</span></a>
           <a href="#referenzen" class="btn btn-ghost">Projekte ansehen</a>
@@ -357,8 +385,8 @@ footer { background: rgba(12,14,28,0.65); backdrop-filter: blur(28px); -webkit-b
   <div class="wrap">
     <div class="reality-inner reveal">
       <span class="eyebrow">Die Realität</span>
-      <h2 class="reality-title">Du bist gut in dem was du tust.<br><strong>Digital aufgestellt zu sein ist eine andere Disziplin.</strong></h2>
-      <p class="reality-text">Viele Unternehmer die zu mir kommen haben dasselbe Problem. Sie haben ein gutes Produkt oder eine gute Dienstleistung. Aber ihre Website wirkt nicht professionell, sie tauchen bei Google kaum auf, und von Automatisierung haben sie keine Ahnung. Das kostet sie täglich Kunden die sie nie zu Gesicht bekommen. Ich bringe Struktur, Strategie und Umsetzung in einem.</p>
+      <h2 class="reality-title">Dein Produkt ist gut.<br><strong>Aber online findet dich niemand.</strong></h2>
+      <p class="reality-text">Die meisten Unternehmer kennen das Problem. Eine veraltete Website, kaum Sichtbarkeit bei Google und jede Menge manuelle Arbeit die täglich Zeit frisst. Genau hier setze ich an. Als Digital Business Builder verbinde ich professionelles Webdesign, datengetriebenes Online Marketing und moderne KI-Automatisierung zu einem System das messbar mehr Anfragen bringt und dir Arbeit abnimmt.</p>
     </div>
   </div>
 </section>
@@ -370,39 +398,39 @@ footer { background: rgba(12,14,28,0.65); backdrop-filter: blur(28px); -webkit-b
         <span class="eyebrow">Was ich mache</span>
         <h2 class="services-title">Website. App.<br>Marketing. Automation.</h2>
       </div>
-      <p class="services-sub reveal-right">Vier Disziplinen. Eine Person. Du bekommst das komplette digitale Fundament von jemandem der alle vier wirklich beherrscht.</p>
+      <p class="services-sub reveal-right">Vier Disziplinen, eine Person. Du bekommst dein komplettes digitales Fundament von jemandem der Webdesign, Marketing, App-Entwicklung und KI-Automatisierung wirklich beherrscht.</p>
     </div>
     <div class="services-grid reveal">
       <a href="/website" class="service-card">
         <div class="service-num">01</div>
         <div class="service-icon-wrap">🌐</div>
-        <h3>Website und Webdesign</h3>
-        <p>Kein Template das tausend andere auch haben. Ich analysiere dein Business, deine Zielgruppe und deine Konkurrenz und baue eine Präsenz die dich klar positioniert und Besucher in Kunden verwandelt.</p>
+        <h3>Website erstellen lassen</h3>
+        <p>Eine professionelle Website die nicht nur gut aussieht, sondern bei Google gefunden wird und Besucher in Kunden verwandelt. SEO-optimiert, schnell und auf deine Zielgruppe zugeschnitten. Kein Baukasten von der Stange.</p>
         <div class="service-tags"><span class="stag">Webdesign</span><span class="stag">WordPress</span><span class="stag">Framer</span><span class="stag">SEO</span></div>
         <span class="service-arrow">Mehr erfahren →</span>
       </a>
       <a href="/apps" class="service-card">
         <div class="service-num">02</div>
         <div class="service-icon-wrap">📱</div>
-        <h3>Apps und Software</h3>
-        <p>Du hast eine Idee. Ich mache daraus ein fertiges Produkt im App Store. Von der ersten Skizze bis zum Launch. Ich habe selbst zwei Apps solo entwickelt und weiß was es wirklich braucht.</p>
-        <div class="service-tags"><span class="stag">iOS</span><span class="stag">SwiftUI</span><span class="stag">Web Apps</span><span class="stag">UX Design</span></div>
+        <h3>App entwickeln lassen</h3>
+        <p>Aus deiner Idee wird ein fertiges Produkt im App Store. Von der Skizze bis zum Launch, alles aus einer Hand. Zwei eigene iOS Apps solo entwickelt mit moderner KI-Integration. Ich weiß was es braucht damit eine App wirklich funktioniert.</p>
+        <div class="service-tags"><span class="stag">iOS</span><span class="stag">SwiftUI</span><span class="stag">Web Apps</span><span class="stag">KI-Integration</span></div>
         <span class="service-arrow">Mehr erfahren →</span>
       </a>
       <a href="/marketing" class="service-card">
         <div class="service-num">03</div>
         <div class="service-icon-wrap">📈</div>
-        <h3>Online Marketing</h3>
-        <p>Mehr Kunden durch Google, SEO und gezielte Werbung. Ich baue keine Kampagnen die gut aussehen. Ich baue Systeme die nachweisbar mehr Umsatz bringen. Messbar, optimierbar, skalierbar.</p>
+        <h3>Online Marketing und SEO</h3>
+        <p>Mehr qualifizierte Anfragen durch Google Ads, lokale Suchmaschinenoptimierung und gezielte Werbung. Ich baue keine Kampagnen die nur Budget verbrennen, sondern Systeme die nachweisbar mehr Umsatz bringen. Messbar und skalierbar.</p>
         <div class="service-tags"><span class="stag">Google Ads</span><span class="stag">SEO</span><span class="stag">Performance</span></div>
         <span class="service-arrow">Mehr erfahren →</span>
       </a>
       <a href="/automation" class="service-card">
         <div class="service-num">04</div>
         <div class="service-icon-wrap">⚡</div>
-        <h3>AI Automation</h3>
-        <p>Manuelle Prozesse kosten dich täglich Zeit die du besser einsetzen könntest. Lead-Pipelines die automatisch laufen. CRM-Systeme die sich selbst befüllen. E-Mail-Sequenzen die konvertieren.</p>
-        <div class="service-tags"><span class="stag">Make.com</span><span class="stag">AI</span><span class="stag">CRM</span><span class="stag">Automation</span></div>
+        <h3>KI und Automatisierung</h3>
+        <p>Manuelle Prozesse kosten dich täglich wertvolle Zeit. Ich automatisiere deine Abläufe mit KI: Chatbots die Anfragen rund um die Uhr beantworten, Lead-Pipelines die von allein laufen und CRM-Systeme die sich selbst befüllen.</p>
+        <div class="service-tags"><span class="stag">KI-Chatbots</span><span class="stag">Make.com</span><span class="stag">CRM</span><span class="stag">Automatisierung</span></div>
         <span class="service-arrow">Mehr erfahren →</span>
       </a>
     </div>
@@ -412,29 +440,70 @@ footer { background: rgba(12,14,28,0.65); backdrop-filter: blur(28px); -webkit-b
 <section id="referenzen">
   <div class="wrap">
     <div class="ref-intro">
-      <div class="reveal-left"><span class="eyebrow">Referenzen</span><h2 class="ref-title">Was ich aufgebaut habe.</h2></div>
-      <p class="ref-lead reveal-right">Von der Arztpraxis bis zum Tech-Startup. Von der Buchhaltungssoftware bis zur iOS App. Echte Projekte, echte Ergebnisse.</p>
+      <div class="reveal-left"><span class="eyebrow">Referenzen</span><h2 class="ref-title">Ausgewählte Projekte.</h2></div>
+      <p class="ref-lead reveal-right">Vom Handwerksbetrieb über die Arztpraxis bis zur eigenen Software und iOS App. Echte Projekte mit messbaren Ergebnissen, nicht nur schöne Konzepte.</p>
     </div>
     <div class="ref-grid">
       <div class="ref-card reveal">
-        <span class="ref-tag">Automobilbranche · TikTok · Webdesign</span>
+        <img src="assets/Felgen-Brillant.jpg" alt="Felgen Brillant Marketing und Webdesign Projekt" class="ref-image" onerror="this.style.display='none'">
+        <span class="ref-tag">Automobil · TikTok · Webdesign</span>
         <h3>Von null zur etablierten Marke im Felgen-Bereich.</h3>
-        <p>Keine Markenidentität, keine Website, null Social Media. TikTok auf 3.801 Follower mit 272.000 Views. Google Ads. Komplette Vermarktung aufgebaut. Das Ergebnis: mehr Bekanntheit, mehr Vertrauen, messbarer Umsatzanstieg.</p>
+        <p>Keine Markenidentität, keine Website, null Social Media. Ich habe das komplette digitale Fundament aufgebaut: TikTok auf 3.801 Follower mit 272.000 Views, Google Ads und laufende Vermarktung. Ergebnis: mehr Bekanntheit, mehr Vertrauen, messbarer Umsatzanstieg.</p>
+        <a href="https://www.felgen-brillant.com" target="_blank" rel="noopener" class="ref-link">Website ansehen →</a>
       </div>
       <div class="ref-card reveal" data-delay="1">
-        <span class="ref-tag">Arztpraxis · Website · GMB · App</span>
+        <img src="assets/Kinderarzt-Praxis-TBB.png" alt="Kinderarztpraxis Tauberbischofsheim Website und App Projekt" class="ref-image" onerror="this.style.display='none'">
+        <span class="ref-tag">Arztpraxis · Website · Google My Business · App</span>
         <h3>Neue Praxis. Vom ersten Tag an professionell positioniert.</h3>
-        <p>Dr. Karabul hat eine Kinderarztpraxis übernommen. Von Anfang an als moderne, kompetente Ärztin wahrgenommen werden. Website, Google My Business und Praxis-App aufgebaut. Fachliche Kompetenz konsequent in den Vordergrund gestellt.</p>
+        <p>Dr. Karabul hat eine Kinderarztpraxis übernommen und sollte sofort als moderne, kompetente Ärztin wahrgenommen werden. Ich habe Website, Google My Business und Praxis-App aufgebaut und die fachliche Kompetenz konsequent in den Vordergrund gestellt.</p>
+        <a href="https://kinderarzt-tbb.de/" target="_blank" rel="noopener" class="ref-link">Website ansehen →</a>
       </div>
       <div class="ref-card reveal" data-delay="1">
+        <img src="assets/usely-1.png" alt="USELY Buchhaltungssoftware UI Design Projekt" class="ref-image" onerror="this.style.display='none'">
         <span class="ref-tag">SaaS · Buchhaltung · Gründer · Würzburg</span>
         <h3>USELY — Buchhaltungssoftware für Kleinunternehmer.</h3>
         <p>Konzept, Branding, UI/UX Design und digitale Präsenz komplett entwickelt. Gefördert durch IGZ Würzburg, Brainstation Lauda und Campus Founders. Heute täglich genutzt von Selbstständigen die damit Angebote und Rechnungen schreiben.</p>
+        <a href="https://www.behance.net/gallery/195066889" target="_blank" rel="noopener" class="ref-link">Auf Behance ansehen →</a>
       </div>
       <div class="ref-card reveal" data-delay="2">
-        <span class="ref-tag">iOS App · SwiftUI · Supabase · AI</span>
+        <img src="assets/You-Logo.png" alt="YOU App iOS Entwicklung Projekt" class="ref-image" onerror="this.style.display='none'">
+        <span class="ref-tag">iOS App · SwiftUI · Supabase · KI</span>
         <h3>YOU — ein persönliches Life Operating System. Solo entwickelt.</h3>
-        <p>Von Konzept bis App Store komplett allein gebaut. SwiftUI, Supabase, Claude AI API. 89-Step Onboarding, 5 Module für Körper, Geist und Reflexion. Eigene KI-Plan-Engine die Trainingspläne personalisiert generiert.</p>
+        <p>YOU ist ein persönliches Life Operating System für Körper und Geist. Eine KI-gestützte App die durch Selbstreflexion, tägliches Training und messbaren Fortschritt dabei hilft, die beste Version seiner selbst zu werden. Mit intelligenter Plan-Engine, die individuelle Trainings- und Gewohnheitspläne erstellt.</p>
+        <a href="https://www.behance.net/gallery/217934173" target="_blank" rel="noopener" class="ref-link">Auf Behance ansehen →</a>
+      </div>
+      <div class="ref-card reveal" data-delay="1">
+        <img src="assets/derma-1.jpg" alt="Dermatologie Website Design Projekt" class="ref-image" onerror="this.style.display='none'">
+        <span class="ref-tag">Dermatologie · Webdesign · UI/UX</span>
+        <h3>Skincare und Health Website für eine moderne Dermatologie.</h3>
+        <p>Ein klares, vertrauenswürdiges Webdesign für eine moderne Hautarztpraxis. Im Mittelpunkt stehen eine ruhige Bildsprache, eine übersichtliche Leistungsstruktur und ein professioneller Auftritt der Kompetenz und Sorgfalt vermittelt. Patienten finden sich vom ersten Moment an zurecht.</p>
+        <a href="https://www.behance.net/gallery/227766229/SkincareHealth-Website-for-a-Modern-Dermatology" target="_blank" rel="noopener" class="ref-link">Auf Behance ansehen →</a>
+      </div>
+      <div class="ref-card reveal" data-delay="2">
+        <img src="assets/audi-2.jpg" alt="Audi Dashboard Spatial Design VisionPro Concept" class="ref-image" onerror="this.style.display='none'">
+        <span class="ref-tag">Automotive · Spatial Design · Concept</span>
+        <h3>Audi Dashboard — Spatial Design Concept für VisionPro.</h3>
+        <p>Ein Konzept für ein räumliches Fahrzeug-Dashboard auf Apple VisionPro. Fahrdaten, Navigation und Fahrzeugsteuerung werden in einer immersiven, dreidimensionalen Oberfläche neu gedacht. Eine Studie darüber wie sich Mobilität und Spatial Computing in Zukunft verbinden lassen.</p>
+        <a href="https://www.behance.net/gallery/195062751/Audi-Dashboard-Spatial-Design-VisionPro-Concept" target="_blank" rel="noopener" class="ref-link">Auf Behance ansehen →</a>
+      </div>
+    </div>
+
+    <div class="showcase-card reveal">
+      <div class="showcase-video-wrap">
+        <video autoplay muted loop playsinline>
+          <source src="assets/AI-Auomation-Video.mov" type="video/mp4">
+          <source src="assets/AI-Auomation-Video.mp4" type="video/mp4">
+        </video>
+        <div class="showcase-video-overlay"></div>
+      </div>
+      <div class="showcase-content">
+        <span class="showcase-badge"><span class="showcase-badge-dot"></span>KI Konzept</span>
+        <h3>KI-Hotel-Website mit <em>Glass Design</em> und digitalen Hologrammen.</h3>
+        <p>Ein futuristisches Konzept das zeigt wohin die digitale Reise geht. Eine Hotel-Website mit transluzentem Glass-Design, KI-gestützter Buchung und holografischen Elementen die das Erlebnis in eine neue Dimension heben. So sieht moderne, immersive Markenkommunikation von morgen aus.</p>
+        <div class="showcase-tags">
+          <span class="stag">KI</span><span class="stag">Glass Design</span><span class="stag">Hologramm</span><span class="stag">Motion</span>
+        </div>
+        <a href="https://www.behance.net/gallery/229054665/AI-Hotel-Website-Glass-Design-Digital-Hotel-Holograms" target="_blank" rel="noopener" class="showcase-link">Auf Behance ansehen →</a>
       </div>
     </div>
   </div>
@@ -445,18 +514,17 @@ footer { background: rgba(12,14,28,0.65); backdrop-filter: blur(28px); -webkit-b
     <div class="vorteile-head">
       <div class="reveal-left">
         <h2 class="vorteile-title">
-          <span>Eine Person.</span>
-          <span class="accent">Volle Verantwortung.</span>
-          <span>Kein Overhead.</span>
+          <span>Warum Unternehmer</span>
+          <span class="accent">mit mir arbeiten.</span>
         </h2>
       </div>
-      <p class="vorteile-sub reveal-right">Kein Koordinationsaufwand zwischen Designer, Marketer und Entwickler. Du hast immer mich als direkten Ansprechpartner — von der ersten Idee bis zum fertigen Ergebnis.</p>
+      <p class="vorteile-sub reveal-right">Keine Agentur mit fünf Ansprechpartnern und hohen Kosten. Kein Koordinationsaufwand zwischen Designer, Marketer und Entwickler. Du hast einen Experten der dein gesamtes digitales Wachstum verantwortet.</p>
     </div>
     <div class="vorteile-grid">
-      <div class="vorteil-card reveal"><div class="vorteil-num">01</div><h3>Ein Ansprechpartner</h3><p>Du redest mit mir. Nicht mit einem Junior der deine E-Mails beantwortet und dann weiterleitet. Ich kenne dein Business, ich treffe die Entscheidungen, ich liefere.</p></div>
-      <div class="vorteil-card reveal" data-delay="1"><div class="vorteil-num">02</div><h3>Breites Skill-Set</h3><p>Design, Entwicklung, Marketing und Automation. Kein Koordinieren zwischen vier Dienstleistern die sich gegenseitig die Schuld geben wenn etwas nicht klappt.</p></div>
-      <div class="vorteil-card reveal" data-delay="2"><div class="vorteil-num">03</div><h3>Nachweisbare Ergebnisse</h3><p>60+ Brands aufgebaut. Zwei iOS Apps solo entwickelt. TikTok-Kanal von null auf 272.000 Views. Ich zeige was ich gemacht habe und was dabei rausgekommen ist.</p></div>
-      <div class="vorteil-card reveal" data-delay="3"><div class="vorteil-num">04</div><h3>Erfahrung aus echten Branchen</h3><p>Tech-Startups, E-Commerce, Handwerksbetriebe, Arztpraxen, Industrie. Ich habe in unterschiedlichsten Märkten gearbeitet und weiß was in welchem Umfeld funktioniert.</p></div>
+      <div class="vorteil-card reveal"><div class="vorteil-num">01</div><h3>Ein Ansprechpartner</h3><p>Du redest direkt mit dem Macher, nicht mit einem Junior der E-Mails weiterleitet. Ich kenne dein Business, treffe die Entscheidungen und liefere. Kurze Wege, schnelle Umsetzung.</p></div>
+      <div class="vorteil-card reveal" data-delay="1"><div class="vorteil-num">02</div><h3>Alles aus einer Hand</h3><p>Webdesign, SEO, Google Ads, App-Entwicklung und KI-Automatisierung. Alles greift ineinander statt aus vier Quellen zusammengestückelt zu werden die nicht zusammenpassen.</p></div>
+      <div class="vorteil-card reveal" data-delay="2"><div class="vorteil-num">03</div><h3>Nachweisbare Ergebnisse</h3><p>Über 60 Brands aufgebaut, zwei iOS Apps solo entwickelt, ein TikTok-Kanal von null auf 272.000 Views gebracht. Ich rede nicht nur, ich zeige Resultate.</p></div>
+      <div class="vorteil-card reveal" data-delay="3"><div class="vorteil-num">04</div><h3>Erfahrung aus echten Branchen</h3><p>Vom Handwerksbetrieb über die Arztpraxis bis zum Tech-Startup und Industrie. Ich kenne die unterschiedlichsten Märkte und weiß was in deinem Umfeld funktioniert.</p></div>
     </div>
   </div>
 </section>
@@ -467,7 +535,7 @@ footer { background: rgba(12,14,28,0.65); backdrop-filter: blur(28px); -webkit-b
       <div class="prozess-sticky reveal-left">
         <span class="eyebrow">Der Prozess</span>
         <h2 class="prozess-title">So arbeiten wir zusammen.</h2>
-        <p class="prozess-sub">Kein Briefing-Ping-Pong. Kein Agentur-Prozess. Drei klare Schritte von der ersten Anfrage bis zum fertigen Ergebnis.</p>
+        <p class="prozess-sub">Ein klarer und transparenter Ablauf in drei Schritten. Von der ersten Anfrage bis zum fertigen Ergebnis weißt du jederzeit genau wo dein Projekt steht und was als Nächstes passiert.</p>
         <a href="https://calendly.com/yg-media/30min" target="_blank" rel="noopener" class="btn btn-primary">Jetzt starten <span class="btn-arrow">↗</span></a>
       </div>
       <div class="prozess-steps reveal-right">
@@ -513,8 +581,8 @@ footer { background: rgba(12,14,28,0.65); backdrop-filter: blur(28px); -webkit-b
 <section class="cta-section">
   <div class="wrap">
     <div class="cta-inner reveal">
-      <h2 class="cta-title">Bereit dein Business<br>digital aufzustellen?</h2>
-      <p class="cta-sub">Buch dir ein kostenloses 30-Minuten-Gespräch. Kein Verkaufsgespräch. Ein ehrliches Gespräch darüber ob und wie ich dir helfen kann.</p>
+      <h2 class="cta-title">Lass uns dein digitales<br>Fundament aufbauen.</h2>
+      <p class="cta-sub">In einem kostenlosen Erstgespräch analysieren wir gemeinsam wo du stehst und welche Schritte dich wirklich weiterbringen. Konkret, ehrlich und ohne Verpflichtung.</p>
       <a href="https://calendly.com/yg-media/30min" target="_blank" rel="noopener" class="btn btn-primary">Jetzt 30-Min-Termin buchen <span class="btn-arrow">↗</span></a>
       <span class="cta-subtext">Kostenlos · Unverbindlich · 30 Minuten</span>
     </div>
@@ -527,11 +595,15 @@ footer { background: rgba(12,14,28,0.65); backdrop-filter: blur(28px); -webkit-b
       <div class="contact-left reveal-left">
         <span class="eyebrow">Kontakt</span>
         <h2 class="contact-title">Schreib mir direkt.</h2>
-        <p class="contact-sub">Anfragen werden in der Regel innerhalb von 24 Stunden beantwortet.</p>
+        <p class="contact-sub">Erzähl mir kurz wo du stehst und was du erreichen willst. Ich melde mich so schnell wie möglich und bearbeite jede Anfrage persönlich.</p>
         <div class="contact-info">
+          <div class="contact-name">YG MEDIA<br><span>Yasin Gündogdu</span></div>
           <div class="contact-info-item"><span class="contact-info-dot"></span>info@yg-media.de</div>
-          <div class="contact-info-item"><span class="contact-info-dot"></span>+49 151 29 799 468</div>
-          <div class="contact-info-item"><span class="contact-info-dot"></span>yg-media.de</div>
+        </div>
+        <div class="contact-socials">
+          <a href="https://behance.net/yasinguendogdu" target="_blank" rel="noopener" class="contact-social" aria-label="Behance">Be</a>
+          <a href="https://x.com/ysn_gdu" target="_blank" rel="noopener" class="contact-social" aria-label="X">X</a>
+          <a href="https://pinterest.com" target="_blank" rel="noopener" class="contact-social" aria-label="Pinterest">Pin</a>
         </div>
       </div>
       <div class="contact-form reveal-right">
