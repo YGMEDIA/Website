@@ -1,472 +1,295 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>YG MEDIA | Digital Systems That Grow Brands</title>
+<title>YG MEDIA — Digitaler Aufbau für Unternehmer | Website, App, Marketing</title>
+<meta name="description" content="Ich baue dein Business digital auf. Website, App, Marketing und Automation aus einer Hand. Für Unternehmer die sich auf ihr Handwerk konzentrieren wollen.">
+<meta name="keywords" content="Digitalagentur für Unternehmer, digitale Präsenz aufbauen lassen, Website und Marketing aus einer Hand, Digital Business Builder Deutschland, Webdesigner Würzburg, Digitalagentur Würzburg, Online Marketing Würzburg">
+<meta property="og:title" content="YG MEDIA — Digitaler Aufbau für Unternehmer">
+<meta property="og:description" content="Website, App, Marketing und Automation aus einer Hand.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://yg-media.de">
+<link rel="canonical" href="https://yg-media.de">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,900;1,900&display=swap" rel="stylesheet">
 <style>
 :root {
   --teal: #1c5b82;
+  --teal-bright: #2478aa;
   --teal-dim: rgba(24,57,77,0.2);
-  --teal-glow: rgba(29,80,112,0.5);
+  --teal-glow: rgba(29,80,112,0.45);
   --bg: #07070F;
   --surface: #0D0D1A;
   --card: #0A1018;
   --text: #F0F0F0;
   --muted: #8888AA;
-  --faint: #444466;
+  --faint: #333355;
   --border: rgba(255,255,255,0.07);
   --glass: rgba(255,255,255,0.03);
 }
 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; width: 100%; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; line-height: 1.65; }
 
-body {
-  font-family: 'Inter', sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  overflow-x: hidden;
-  line-height: 1.65;
-  width: 100%;
-}
-
-/* BACKGROUND SYSTEM */
-#bg-canvas {
-  position: fixed; inset: 0; z-index: 0;
-  pointer-events: none;
-}
+#bg-canvas { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
 .orb-wrap { position: fixed; inset: 0; z-index: 1; pointer-events: none; overflow: hidden; }
 .orb { position: absolute; border-radius: 50%; filter: blur(120px); }
-.orb-1 {
-  width: 900px; height: 900px;
-  background: radial-gradient(circle, rgba(28,91,130,0.5) 0%, rgba(10,30,60,0.2) 50%, transparent 70%);
-  top: -300px; left: -200px;
-  animation: orb1 25s ease-in-out infinite alternate;
-}
-.orb-2 {
-  width: 600px; height: 600px;
-  background: radial-gradient(circle, rgba(10,60,120,0.45) 0%, transparent 70%);
-  bottom: 5%; right: -150px;
-  animation: orb2 32s ease-in-out infinite alternate;
-}
-.orb-3 {
-  width: 500px; height: 500px;
-  background: radial-gradient(circle, rgba(28,91,130,0.3) 0%, transparent 70%);
-  top: 40%; left: 45%;
-  animation: orb3 40s ease-in-out infinite alternate;
-}
-.orb-4 {
-  width: 350px; height: 350px;
-  background: radial-gradient(circle, rgba(5,40,90,0.5) 0%, transparent 70%);
-  top: 20%; right: 20%;
-  animation: orb1 18s ease-in-out infinite alternate-reverse;
-}
-@keyframes orb1 {
-  0%   { transform: translate(0,0) scale(1) rotate(0deg); }
-  33%  { transform: translate(80px,-60px) scale(1.15) rotate(5deg); }
-  66%  { transform: translate(-40px,80px) scale(0.9) rotate(-3deg); }
-  100% { transform: translate(60px,40px) scale(1.1) rotate(8deg); }
-}
-@keyframes orb2 {
-  0%   { transform: translate(0,0) scale(1); }
-  50%  { transform: translate(-100px,-80px) scale(1.2); }
-  100% { transform: translate(60px,-40px) scale(0.85); }
-}
-@keyframes orb3 {
-  0%   { transform: translate(0,0) scale(1) rotate(0deg); }
-  100% { transform: translate(-80px,100px) scale(1.3) rotate(-10deg); }
-}
+.orb-1 { width: 900px; height: 900px; background: radial-gradient(circle, rgba(28,91,130,0.45) 0%, transparent 70%); top: -300px; left: -200px; animation: orb1 25s ease-in-out infinite alternate; }
+.orb-2 { width: 600px; height: 600px; background: radial-gradient(circle, rgba(10,60,120,0.4) 0%, transparent 70%); bottom: 5%; right: -150px; animation: orb2 32s ease-in-out infinite alternate; }
+.orb-3 { width: 500px; height: 500px; background: radial-gradient(circle, rgba(28,91,130,0.25) 0%, transparent 70%); top: 40%; left: 45%; animation: orb3 40s ease-in-out infinite alternate; }
+.orb-4 { width: 350px; height: 350px; background: radial-gradient(circle, rgba(5,40,90,0.4) 0%, transparent 70%); top: 20%; right: 20%; animation: orb1 18s ease-in-out infinite alternate-reverse; }
+@keyframes orb1 { 0% { transform: translate(0,0) scale(1); } 50% { transform: translate(60px,-40px) scale(1.1); } 100% { transform: translate(-30px,60px) scale(0.95); } }
+@keyframes orb2 { 0% { transform: translate(0,0) scale(1); } 100% { transform: translate(-80px,-60px) scale(1.15); } }
+@keyframes orb3 { 0% { transform: translate(0,0); } 100% { transform: translate(-60px,80px) scale(1.2); } }
 
-/* GRID OVERLAY */
-.grid-overlay {
-  position: fixed; inset: 0; z-index: 10; pointer-events: none;
-  background-image:
-    linear-gradient(rgba(28,91,130,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(28,91,130,0.04) 1px, transparent 1px);
-  background-size: 80px 80px;
-  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
-  -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
-}
-
-
-
-/* GRAIN */
-body::after {
-  content: '';
-  position: fixed; inset: 0; z-index: 4;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
-  pointer-events: none; opacity: 0.5;
-}
+.grid-overlay { position: fixed; inset: 0; z-index: 2; pointer-events: none; background-image: linear-gradient(rgba(28,91,130,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(28,91,130,0.03) 1px, transparent 1px); background-size: 80px 80px; mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 100%); }
+body::after { content: ''; position: fixed; inset: 0; z-index: 3; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E"); pointer-events: none; opacity: 0.5; }
 
 /* NAV */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-  background: rgba(7,7,15,0.85);
-  backdrop-filter: blur(24px);
-  border-bottom: 1px solid var(--border);
-  padding: 1.1rem 0;
-}
-.nav-inner {
-  max-width: 1240px; margin: 0 auto; padding: 0 2.5rem;
-  display: flex; align-items: center; justify-content: space-between;
-}
-.nav-logo img { height: 48px; width: auto; display: block; }
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1.1rem 0; transition: background 0.3s, border-color 0.3s; }
+nav.scrolled { background: rgba(12,14,28,0.65); backdrop-filter: blur(28px); -webkit-backdrop-filter: blur(28px); border-bottom: 1px solid rgba(255,255,255,0.1); }
+.nav-inner { max-width: 1240px; margin: 0 auto; padding: 0 2.5rem; display: flex; align-items: center; justify-content: space-between; }
+.nav-logo img { height: 44px; width: auto; display: block; }
+.nav-logo-text { display: none; font-size: 1.2rem; font-weight: 900; color: var(--teal); letter-spacing: -0.02em; }
 .nav-links { display: flex; align-items: center; gap: 2.5rem; }
-.nav-links a {
-  color: var(--muted); text-decoration: none;
-  font-size: 0.9rem; font-weight: 500;
-  transition: color 0.2s; letter-spacing: 0.01em;
-}
+.nav-links a { color: var(--muted); text-decoration: none; font-size: 0.88rem; font-weight: 500; transition: color 0.2s; letter-spacing: 0.01em; }
 .nav-links a:hover { color: var(--text); }
-.nav-cta {
-  background: var(--teal) !important;
-  color: #fff !important;
-  padding: 0.55rem 1.4rem;
-  border-radius: 99px;
-  font-weight: 600 !important;
-  transition: transform 0.2s, box-shadow 0.2s !important;
-}
-.nav-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 24px var(--teal-glow); }
+.nav-cta { background: var(--teal) !important; color: #fff !important; padding: 0.55rem 1.4rem; border-radius: 99px; font-weight: 600 !important; transition: transform 0.2s, box-shadow 0.2s !important; }
+.nav-cta:hover { transform: translateY(-2px); box-shadow: 0 0 24px rgba(28,91,130,0.6), 0 8px 24px rgba(28,91,130,0.3); }
 .nav-burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
-.nav-burger span { display: block; width: 24px; height: 2px; background: var(--text); border-radius: 2px; }
+.nav-burger span { display: block; width: 24px; height: 2px; background: var(--text); border-radius: 2px; transition: transform 0.3s, opacity 0.3s; }
 
 /* LAYOUT */
-.wrap { max-width: 1240px; margin: 0 auto; padding: 0 2.5rem; position: relative; z-index: 10; width: 100%; }
+.wrap { max-width: 1240px; margin: 0 auto; padding: 0 2.5rem; position: relative; z-index: 10; }
+section { padding: 8rem 0; position: relative; z-index: 10; }
+
+/* EYEBROW — subtle glow on teal text */
+.eyebrow { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--teal); font-weight: 700; margin-bottom: 1.2rem; text-shadow: 0 0 12px rgba(28,91,130,0.5); }
+.eyebrow::before { content: ''; width: 20px; height: 1px; background: var(--teal); display: block; box-shadow: 0 0 6px rgba(28,91,130,0.8); }
 
 /* HERO */
-.hero { min-height: 100vh; display: flex; align-items: center; padding: 140px 0 80px; }
-.hero-inner { display: grid; grid-template-columns: 55% 45%; gap: 3rem; align-items: center; }
-.hero-label {
-  display: inline-flex; align-items: center; gap: 0.5rem;
-  font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
-  color: var(--teal); font-weight: 600;
-  border: 1px solid rgba(24,57,77,0.5);
-  padding: 0.35rem 0.9rem; border-radius: 99px;
-  margin-bottom: 1.8rem;
-  background: rgba(24,57,77,0.12);
-}
-.hero-label::before {
-  content: ''; width: 6px; height: 6px;
-  background: var(--teal); border-radius: 50%;
-  animation: pulse 2s ease infinite;
-}
-@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+.hero { min-height: 100vh; display: flex; align-items: center; padding: 130px 0 60px; overflow: hidden; }
+.hero-inner { display: grid; grid-template-columns: 1fr 420px; gap: 4rem; align-items: center; }
+.hero-badge { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); font-weight: 600; border: 1px solid rgba(28,91,130,0.4); padding: 0.35rem 1rem 0.35rem 0.7rem; border-radius: 99px; margin-bottom: 2rem; background: rgba(28,91,130,0.08); width: fit-content; animation: fadeSlideDown 0.6s ease both; }
+.hero-badge-dot { width: 6px; height: 6px; background: var(--teal); border-radius: 50%; animation: pulse 2s ease infinite; box-shadow: 0 0 6px rgba(28,91,130,0.8); }
+@keyframes pulse { 0%,100% { opacity:1; transform: scale(1); } 50% { opacity:0.4; transform: scale(0.8); } }
 
-.hero h1 {
-  font-size: clamp(2.8rem, 4.8vw, 5.2rem);
-  font-weight: 900; line-height: 1.04;
-  letter-spacing: -0.03em;
-  margin-bottom: 1.5rem;
-  word-break: keep-all;
-  overflow-wrap: normal;
-}
-.hero h1 em { font-style: italic; color: var(--teal); font-weight: 900; }
-.hero-sub { font-size: 1.1rem; color: var(--muted); max-width: 480px; margin-bottom: 2.5rem; line-height: 1.75; }
-.hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+.hero-h1 { font-size: clamp(3.2rem, 5.5vw, 6rem); font-weight: 900; line-height: 1.02; letter-spacing: -0.035em; margin-bottom: 2rem; overflow: hidden; }
+.hero-h1 .line { display: block; overflow: hidden; }
+.hero-h1 .line-inner { display: block; transform: translateY(110%); animation: slideUp 0.8s cubic-bezier(0.16,1,0.3,1) both; }
+.hero-h1 .line:nth-child(2) .line-inner { animation-delay: 0.08s; }
+/* H1 teal accent — clear glow */
+.hero-h1 em { font-style: italic; color: var(--teal); text-shadow: 0 0 30px rgba(28,91,130,0.55), 0 0 60px rgba(28,91,130,0.2); }
 
-.btn {
-  display: inline-flex; align-items: center; gap: 0.5rem;
-  padding: 0.85rem 2rem; border-radius: 99px;
-  font-weight: 600; font-size: 0.92rem;
-  text-decoration: none; transition: all 0.3s;
-  border: none; cursor: pointer; font-family: 'Inter', sans-serif;
-  letter-spacing: -0.01em;
-}
+.hero-sub { font-size: 1.05rem; color: var(--muted); max-width: 500px; margin-bottom: 3rem; line-height: 1.8; animation: fadeSlideUp 0.8s 0.3s ease both; }
+.hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; animation: fadeSlideUp 0.8s 0.45s ease both; }
+
+/* BUTTONS */
+.btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.9rem 2.2rem; border-radius: 99px; font-weight: 600; font-size: 0.9rem; text-decoration: none; transition: all 0.3s; border: none; cursor: pointer; font-family: 'Inter', sans-serif; letter-spacing: -0.01em; }
 .btn-primary { background: var(--teal); color: #fff; }
-.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 16px 32px -8px var(--teal-glow); }
+/* Button hover — glow around button */
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 0 28px rgba(28,91,130,0.55), 0 12px 30px rgba(28,91,130,0.3); }
 .btn-ghost { background: transparent; border: 1px solid var(--border); color: var(--text); }
 .btn-ghost:hover { border-color: rgba(255,255,255,0.2); background: rgba(255,255,255,0.04); }
+.btn-arrow { width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.08); border: 1px solid var(--border); display: inline-flex; align-items: center; justify-content: center; font-size: 0.9rem; transition: background 0.2s; }
+.btn:hover .btn-arrow { background: rgba(255,255,255,0.15); }
 
 /* HERO CARD */
-.hero-visual { position: relative; display: flex; align-items: center; justify-content: center; }
-.hero-card-stack { position: relative; width: 100%; max-width: 420px; }
-.hero-card {
-  background: var(--glass);
-  border: 1px solid var(--border);
-  backdrop-filter: blur(20px);
-  border-radius: 20px; padding: 1.8rem 2rem;
-}
-.hero-card-main { position: relative; z-index: 10; box-shadow: 0 32px 80px -20px rgba(0,0,0,0.6); }
-.hero-card-back {
-  position: absolute; top: -18px; left: 18px; right: -18px;
-  background: rgba(24,57,77,0.1); border-color: rgba(24,57,77,0.25); z-index: 1;
-}
-.card-metric { margin-bottom: 1.2rem; }
-.card-metric-label { font-size: 0.72rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.3rem; font-weight: 500; }
-.card-metric-val { font-size: 2.6rem; font-weight: 900; color: var(--teal); letter-spacing: -0.03em; line-height: 1; }
-.card-metric-sub { font-size: 0.82rem; color: var(--muted); margin-top: 0.3rem; }
-.card-divider { height: 1px; background: var(--border); margin: 1.2rem 0; }
-.card-row { display: flex; justify-content: space-between; align-items: center; }
-.card-num { font-size: 1.7rem; font-weight: 900; letter-spacing: -0.03em; }
-.card-badge {
-  font-size: 0.68rem; font-weight: 600; letter-spacing: 0.06em;
-  padding: 0.25rem 0.7rem; border-radius: 99px;
-  background: rgba(24,57,77,0.2); color: var(--teal);
-  border: 1px solid rgba(24,57,77,0.4);
-}
+.hero-visual { position: relative; animation: fadeSlideUp 1s 0.2s ease both; }
+.hero-card { background: rgba(12,14,28,0.65); border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(28px); -webkit-backdrop-filter: blur(28px); border-radius: 24px; padding: 2.2rem 2.4rem; box-shadow: 0 40px 80px -20px rgba(0,0,0,0.5); position: relative; z-index: 2; }
+.hero-card-bg { position: absolute; top: -16px; left: 16px; right: -16px; bottom: 0; background: rgba(28,91,130,0.06); border: 1px solid rgba(28,91,130,0.15); border-radius: 24px; z-index: 1; }
+.card-metric-label { font-size: 0.68rem; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.4rem; font-weight: 600; }
+/* Hero card big number — glow */
+.card-metric-val { font-size: 2.8rem; font-weight: 900; color: var(--teal); letter-spacing: -0.04em; line-height: 1; text-shadow: 0 0 24px rgba(28,91,130,0.5); }
+.card-metric-sub { font-size: 0.8rem; color: var(--muted); margin-top: 0.4rem; }
+.card-divider { height: 1px; background: var(--border); margin: 1.5rem 0; }
+.card-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 0.4rem; }
+.card-stat-label { font-size: 0.68rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.3rem; font-weight: 600; }
+/* Stat values — subtle glow */
+.card-stat-val { font-size: 1.9rem; font-weight: 900; letter-spacing: -0.03em; text-shadow: 0 0 16px rgba(28,91,130,0.25); }
 
-/* STATS */
-.stats {
-  position: relative; z-index: 10;
-  padding: 3rem 0;
-  width: 100%;
-}
-.stats-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1rem; }
-.stat-item {
-  text-align: center; padding: 2.5rem 1.5rem;
-  background: rgba(255,255,255,0.03);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255,255,255,0.07);
-  border-radius: 20px;
-  transition: border-color 0.3s, transform 0.3s;
-}
-.stat-item:hover { border-color: rgba(28,91,130,0.4); transform: translateY(-4px); }
-.stat-num { font-size: 3rem; font-weight: 900; color: var(--teal); line-height: 1; margin-bottom: 0.5rem; letter-spacing: -0.03em; }
-.stat-label { font-size: 0.85rem; color: var(--muted); font-weight: 400; }
-
-/* SECTIONS */
-section { padding: 7rem 0; position: relative; z-index: 10; width: 100%; }
-.section-eyebrow {
-  display: block; font-size: 0.72rem;
-  letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--teal); font-weight: 700;
-  margin-bottom: 0.9rem;
-}
-.section-title {
-  font-size: clamp(2rem,4vw,3.2rem);
-  font-weight: 900; line-height: 1.08;
-  margin-bottom: 1.2rem;
-  letter-spacing: -0.03em;
-}
-.section-sub { font-size: 1.05rem; color: var(--muted); max-width: 560px; line-height: 1.75; margin-left: 0; }
+/* REALITÄT */
+.reality-section { padding: 8rem 0; }
+.reality-inner { max-width: 900px; margin: 0 auto; text-align: center; }
+.reality-title { font-size: clamp(2.2rem, 4vw, 3.8rem); font-weight: 900; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 2.5rem; }
+/* Teal italic accent in Realität */
+.reality-title strong { color: var(--teal); font-style: italic; text-shadow: 0 0 30px rgba(28,91,130,0.4); }
+.reality-text { font-size: 1.1rem; color: var(--muted); line-height: 1.9; max-width: 680px; margin: 0 auto; }
 
 /* SERVICES */
-.services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 4rem; }
-.service-card {
-  background: var(--glass); border: 1px solid var(--border);
-  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-  border-radius: 20px; padding: 2.5rem 2rem;
-  transition: all 0.4s ease; position: relative; overflow: hidden;
-}
-.service-card::before {
-  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
-  background: linear-gradient(90deg, transparent, var(--teal), transparent);
-  opacity: 0; transition: opacity 0.4s;
-}
-.service-card:hover { border-color: rgba(28,91,130,0.5); transform: translateY(-6px); }
-.service-card:hover::before { opacity: 1; }
-.service-icon {
-  width: 48px; height: 48px; border-radius: 12px;
-  background: var(--teal-dim); border: 1px solid rgba(24,57,77,0.35);
-  display: flex; align-items: center; justify-content: center;
-  margin-bottom: 1.5rem; font-size: 1.4rem;
-}
-.service-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.8rem; letter-spacing: -0.02em; }
-.service-card p { color: var(--muted); font-size: 0.93rem; line-height: 1.7; }
-.service-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
-.tag {
-  font-size: 0.7rem; font-weight: 500;
-  padding: 0.2rem 0.65rem; border-radius: 99px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid var(--border); color: var(--muted);
-}
+.services-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 4rem; }
+.services-title { font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 900; letter-spacing: -0.03em; line-height: 1.08; }
+.services-sub { max-width: 360px; color: var(--muted); font-size: 0.95rem; line-height: 1.75; text-align: right; padding-bottom: 0.5rem; }
+.services-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 20px; overflow: hidden; }
+.service-card { background: var(--bg); padding: 2.5rem 2rem 2rem; transition: background 0.35s; position: relative; overflow: hidden; text-decoration: none; color: inherit; display: flex; flex-direction: column; }
+.service-card::after { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(28,91,130,0.06) 0%, transparent 60%); opacity: 0; transition: opacity 0.35s; }
+.service-card:hover { background: rgba(28,91,130,0.05); }
+.service-card:hover::after { opacity: 1; }
+.service-num { font-size: 0.7rem; font-weight: 700; color: var(--faint); letter-spacing: 0.12em; margin-bottom: 2rem; }
+.service-icon-wrap { width: 44px; height: 44px; border-radius: 12px; background: rgba(28,91,130,0.12); border: 1px solid rgba(28,91,130,0.25); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin-bottom: 1.5rem; transition: background 0.3s; }
+.service-card:hover .service-icon-wrap { background: rgba(28,91,130,0.2); }
+.service-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.8rem; letter-spacing: -0.02em; }
+.service-card p { color: var(--muted); font-size: 0.88rem; line-height: 1.7; flex: 1; }
+.service-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1.5rem; }
+.stag { font-size: 0.65rem; font-weight: 600; padding: 0.2rem 0.6rem; border-radius: 99px; background: rgba(255,255,255,0.04); border: 1px solid var(--border); color: var(--muted); }
+/* Service arrow — teal glow on hover */
+.service-arrow { margin-top: 1.5rem; font-size: 0.82rem; font-weight: 600; color: var(--teal); display: flex; align-items: center; gap: 0.4rem; transition: gap 0.2s, text-shadow 0.2s; }
+.service-card:hover .service-arrow { gap: 0.7rem; text-shadow: 0 0 12px rgba(28,91,130,0.6); }
 
-/* DACH */
-.dach-section {
-  background: linear-gradient(135deg, rgba(24,57,77,0.12) 0%, rgba(10,30,50,0.4) 100%);
-  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(24,57,77,0.3); border-radius: 28px;
-  padding: 5rem; display: grid; grid-template-columns: 1fr 1fr;
-  gap: 4rem; align-items: center; width: 100%;
-}
-.dach-flag-row { display: flex; gap: 1rem; margin-bottom: 1.5rem; }
-.dach-flag {
-  font-size: 2rem; width: 52px; height: 52px;
-  display: flex; align-items: center; justify-content: center;
-  background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 12px;
-}
-.dach-visual { background: var(--glass); border: 1px solid var(--border); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-radius: 20px; padding: 2rem; }
-.dach-row {
-  display: flex; justify-content: space-between; align-items: center;
-  padding: 0.9rem 0; border-bottom: 1px solid var(--border); font-size: 0.9rem;
-}
-.dach-row:last-child { border-bottom: none; }
-.dach-row-label { color: var(--muted); }
-.dach-row-val { color: var(--teal); font-weight: 600; font-size: 0.88rem; }
+/* REFERENZEN */
+.ref-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: end; margin-bottom: 4rem; }
+.ref-title { font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 900; letter-spacing: -0.03em; line-height: 1.08; }
+.ref-lead { color: var(--muted); font-size: 1rem; line-height: 1.8; }
+.ref-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.ref-card { background: rgba(12,14,28,0.65); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 2.5rem; backdrop-filter: blur(28px); -webkit-backdrop-filter: blur(28px); transition: border-color 0.3s, transform 0.3s; position: relative; overflow: hidden; }
+.ref-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(28,91,130,0.5), transparent); transform: scaleX(0); transition: transform 0.4s; }
+.ref-card:hover { border-color: rgba(28,91,130,0.3); transform: translateY(-4px); }
+.ref-card:hover::before { transform: scaleX(1); }
+/* Ref tag — teal glow */
+.ref-tag { display: inline-block; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 1.2rem; text-shadow: 0 0 10px rgba(28,91,130,0.45); }
+.ref-card h3 { font-size: 1.05rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 1rem; line-height: 1.4; }
+.ref-card p { font-size: 0.9rem; color: var(--muted); line-height: 1.8; }
 
-/* PORTFOLIO */
-.portfolio-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 4rem; }
-.project-card {
-  border-radius: 20px; overflow: hidden; height: 340px;
-  position: relative; background: var(--card);
-  border: 1px solid var(--border); transition: all 0.4s ease; cursor: pointer;
-}
-.project-card:hover { transform: scale(1.025); border-color: rgba(28,91,130,0.5); }
-.project-card:hover .project-overlay { opacity: 1; }
-.project-bg { position: absolute; inset: 0; background-size: cover; background-position: center; transition: transform 0.4s ease; }
-.project-card:hover .project-bg { transform: scale(1.05); }
-.project-overlay {
-  position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(7,7,15,0.97) 0%, rgba(7,7,15,0.5) 50%, transparent 100%);
-  padding: 2rem; display: flex; flex-direction: column; justify-content: flex-end;
-  opacity: 0.85; transition: opacity 0.3s;
-}
-.project-tag { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.5rem; }
-.project-card h3 { font-size: 1.05rem; font-weight: 700; letter-spacing: -0.02em; }
-.project-card p { font-size: 0.82rem; color: var(--muted); margin-top: 0.3rem; }
-.project-card-app {
-  background: linear-gradient(135deg, rgba(24,57,77,0.15), rgba(10,30,50,0.5));
-  border-color: rgba(24,57,77,0.35);
-}
+/* VORTEILE */
+.vorteile-section { }
+.vorteile-head { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: end; margin-bottom: 5rem; }
+.vorteile-title { font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 900; letter-spacing: -0.04em; line-height: 1.0; }
+.vorteile-title span { display: block; }
+/* Vorteile accent — glow */
+.vorteile-title .accent { color: var(--teal); font-style: italic; text-shadow: 0 0 30px rgba(28,91,130,0.4); }
+.vorteile-sub { color: var(--muted); font-size: 1rem; line-height: 1.8; align-self: end; }
+.vorteile-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.5rem; }
+.vorteil-card { padding: 2.2rem 2rem; border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; background: rgba(12,14,28,0.65); backdrop-filter: blur(28px); -webkit-backdrop-filter: blur(28px); transition: border-color 0.3s, transform 0.3s; }
+.vorteil-card:hover { border-color: rgba(28,91,130,0.4); transform: translateY(-4px); }
+/* Vorteil outline numbers — teal glow on stroke */
+.vorteil-num { font-size: 4rem; font-weight: 900; line-height: 1; margin-bottom: 1.5rem; -webkit-text-stroke: 1px rgba(28,91,130,0.55); color: transparent; letter-spacing: -0.05em; filter: drop-shadow(0 0 6px rgba(28,91,130,0.3)); }
+.vorteil-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.7rem; letter-spacing: -0.02em; }
+.vorteil-card p { color: var(--muted); font-size: 0.88rem; line-height: 1.7; }
 
-/* WHY */
-.why-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 4rem; }
-.why-card { background: var(--glass); border: 1px solid var(--border); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-radius: 20px; padding: 2.5rem 2rem; }
-.why-num {
-  font-size: 3.5rem; font-weight: 900; line-height: 1; margin-bottom: 1.2rem;
-  -webkit-text-stroke: 1px rgba(28,91,130,0.5); color: transparent;
-  letter-spacing: -0.04em;
-}
-.why-card h3 { font-size: 1.08rem; font-weight: 700; margin-bottom: 0.8rem; letter-spacing: -0.02em; }
-.why-card p { color: var(--muted); font-size: 0.93rem; line-height: 1.7; }
-
-/* TESTIMONIALS */
-.testi-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 4rem; }
-.testi-card { background: var(--glass); border: 1px solid var(--border); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-radius: 20px; padding: 2rem; }
-.testi-stars { color: var(--teal); font-size: 0.85rem; margin-bottom: 1rem; letter-spacing: 2px; }
-.testi-text { font-size: 0.92rem; color: var(--muted); line-height: 1.75; margin-bottom: 1.5rem; }
-.testi-author { display: flex; align-items: center; gap: 0.8rem; }
-.testi-avatar {
-  width: 36px; height: 36px; border-radius: 50%;
-  background: var(--teal-dim); border: 1px solid rgba(24,57,77,0.5);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 0.75rem; font-weight: 700; color: var(--teal);
-}
-.testi-name { font-weight: 600; font-size: 0.88rem; letter-spacing: -0.01em; }
-.testi-role { font-size: 0.75rem; color: var(--muted); }
+/* PROZESS */
+.prozess-inner { display: grid; grid-template-columns: 380px 1fr; gap: 6rem; align-items: start; }
+.prozess-sticky { position: sticky; top: 9rem; }
+.prozess-title { font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 900; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 1.5rem; }
+.prozess-sub { color: var(--muted); font-size: 0.97rem; line-height: 1.8; margin-bottom: 2.5rem; }
+.prozess-steps { display: flex; flex-direction: column; gap: 1rem; }
+.prozess-step { padding: 2rem 2rem; border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; background: rgba(12,14,28,0.65); backdrop-filter: blur(28px); -webkit-backdrop-filter: blur(28px); display: grid; grid-template-columns: 48px 1fr; gap: 1.5rem; align-items: start; transition: border-color 0.3s; }
+.prozess-step:hover { border-color: rgba(28,91,130,0.35); }
+/* Prozess step number — glow */
+.prozess-step-num { font-size: 0.72rem; font-weight: 700; color: var(--teal); letter-spacing: 0.08em; padding-top: 0.2rem; text-shadow: 0 0 10px rgba(28,91,130,0.5); }
+.prozess-step h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.6rem; letter-spacing: -0.02em; }
+.prozess-step p { color: var(--muted); font-size: 0.9rem; line-height: 1.75; }
 
 /* ABOUT */
-.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; margin-top: 4rem; }
-.about-img { width: 100%; border-radius: 24px; border: 1px solid var(--border); display: block; }
-.about-img-placeholder {
-  width: 100%; aspect-ratio: 4/5; border-radius: 24px;
-  background: linear-gradient(135deg, rgba(24,57,77,0.15), rgba(10,30,50,0.5));
-  border: 1px solid rgba(24,57,77,0.35);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 5rem;
-}
-.about-tag-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 2rem; }
-.skill-tag {
-  font-size: 0.75rem; font-weight: 600;
-  padding: 0.3rem 0.85rem; border-radius: 99px;
-  background: rgba(24,57,77,0.15); border: 1px solid rgba(24,57,77,0.35);
-  color: var(--teal); letter-spacing: -0.01em;
-}
-.lang-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
-.lang-tag {
-  font-size: 0.75rem; font-weight: 500;
-  padding: 0.25rem 0.75rem; border-radius: 99px;
-  background: rgba(255,255,255,0.04); border: 1px solid var(--border); color: var(--muted);
-}
+.about-inner { display: grid; grid-template-columns: 1fr 400px; gap: 6rem; align-items: center; }
+.about-tagline { font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 900; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 2rem; }
+/* About tagline em — glow */
+.about-tagline em { color: var(--teal); font-style: italic; text-shadow: 0 0 24px rgba(28,91,130,0.45); }
+.about-text { color: var(--muted); font-size: 0.97rem; line-height: 1.85; margin-bottom: 1.4rem; }
+.skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 2.2rem; }
+.skill-tag { font-size: 0.73rem; font-weight: 600; padding: 0.3rem 0.9rem; border-radius: 99px; background: rgba(28,91,130,0.12); border: 1px solid rgba(28,91,130,0.3); color: var(--teal); }
+.about-img-wrap { position: relative; }
+.about-img { width: 100%; border-radius: 20px; border: 1px solid var(--border); display: block; max-height: 440px; object-fit: cover; object-position: top; }
+.about-img-placeholder { width: 100%; aspect-ratio: 3/4; border-radius: 20px; background: linear-gradient(135deg, rgba(28,91,130,0.1), rgba(10,30,50,0.4)); border: 1px solid rgba(28,91,130,0.3); display: flex; align-items: center; justify-content: center; font-size: 4rem; }
+
+/* CTA */
+.cta-section { text-align: center; }
+.cta-inner { border: 1px solid rgba(255,255,255,0.1); border-radius: 28px; padding: 7rem 5rem; background: rgba(12,14,28,0.65); backdrop-filter: blur(28px); -webkit-backdrop-filter: blur(28px); position: relative; overflow: hidden; }
+.cta-inner::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 600px; height: 600px; background: radial-gradient(circle, rgba(28,91,130,0.12) 0%, transparent 70%); pointer-events: none; }
+.cta-title { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; letter-spacing: -0.04em; line-height: 1.05; margin-bottom: 1.8rem; position: relative; }
+.cta-sub { font-size: 1.05rem; color: var(--muted); max-width: 500px; margin: 0 auto 3.5rem; line-height: 1.8; position: relative; }
+.cta-subtext { display: block; font-size: 0.78rem; color: var(--faint); margin-top: 1.5rem; letter-spacing: 0.04em; }
 
 /* CONTACT */
-.contact-wrap {
-  max-width: 680px; margin: 4rem auto 0;
-  background: var(--glass); border: 1px solid var(--border);
-  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-  border-radius: 24px; padding: 3.5rem;
-}
-.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+.contact-inner { display: grid; grid-template-columns: 1fr 560px; gap: 6rem; align-items: start; }
+.contact-left { position: sticky; top: 9rem; }
+.contact-title { font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 900; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 1.5rem; }
+.contact-sub { color: var(--muted); font-size: 0.97rem; line-height: 1.8; margin-bottom: 2.5rem; }
+.contact-info { display: flex; flex-direction: column; gap: 1rem; }
+.contact-info-item { display: flex; align-items: center; gap: 0.8rem; color: var(--muted); font-size: 0.88rem; }
+/* Contact dots — glow */
+.contact-info-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal); flex-shrink: 0; box-shadow: 0 0 6px rgba(28,91,130,0.7); }
+.contact-form { background: rgba(12,14,28,0.65); border: 1px solid rgba(255,255,255,0.1); border-radius: 24px; padding: 3rem; backdrop-filter: blur(28px); -webkit-backdrop-filter: blur(28px); }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-bottom: 1.2rem; }
 .form-full { grid-column: 1 / -1; }
 .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
-.form-label { font-size: 0.78rem; color: var(--muted); font-weight: 500; letter-spacing: 0.02em; }
-.form-input, .form-select, .form-textarea {
-  background: rgba(255,255,255,0.04); border: 1px solid var(--border);
-  border-radius: 12px; padding: 0.85rem 1.1rem;
-  color: var(--text); font-family: 'Inter', sans-serif;
-  font-size: 0.92rem; outline: none; transition: border-color 0.2s; width: 100%;
-}
-.form-input:focus, .form-select:focus, .form-textarea:focus { border-color: rgba(28,91,130,0.6); }
-.form-select { appearance: none; cursor: pointer; }
-.form-textarea { resize: vertical; min-height: 120px; }
+.form-label { font-size: 0.75rem; color: var(--muted); font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; }
+.form-input, .form-select, .form-textarea { background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 12px; padding: 0.85rem 1.1rem; color: var(--text); font-family: 'Inter', sans-serif; font-size: 0.92rem; outline: none; transition: border-color 0.2s, background 0.2s; width: 100%; }
+.form-input:focus, .form-select:focus, .form-textarea:focus { border-color: rgba(28,91,130,0.6); background: rgba(28,91,130,0.04); }
+.form-select { appearance: none; cursor: pointer; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238888AA' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; padding-right: 2.5rem; }
+.form-textarea { resize: vertical; min-height: 130px; }
 .form-input::placeholder, .form-textarea::placeholder { color: var(--faint); }
-.btn-submit { width: 100%; margin-top: 0.8rem; padding: 1.05rem; }
+.btn-submit { width: 100%; padding: 1rem; margin-top: 0.5rem; justify-content: center; }
+.form-success { display: none; text-align: center; padding: 3rem 2rem; }
+.form-success-icon { font-size: 3rem; margin-bottom: 1rem; }
+.form-success p { color: var(--teal); font-weight: 600; font-size: 1rem; }
 
 /* FOOTER */
-footer {
-  background: #05050A; border-top: 1px solid var(--border);
-  padding: 3.5rem 0 2rem; position: relative; z-index: 10;
-  width: 100%;
-}
-.footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 2rem; }
-.footer-links { display: flex; gap: 2rem; flex-wrap: wrap; }
-.footer-links a { color: var(--muted); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
-.footer-links a:hover { color: var(--text); }
-.footer-socials { display: flex; gap: 1rem; }
-.social-btn {
-  width: 38px; height: 38px; border-radius: 10px;
-  background: var(--glass); border: 1px solid var(--border);
-  display: flex; align-items: center; justify-content: center;
-  text-decoration: none; color: var(--muted); font-size: 0.82rem;
-  transition: all 0.2s; font-weight: 700;
-}
-.social-btn:hover { border-color: rgba(28,91,130,0.6); color: var(--teal); }
-.footer-copy { font-size: 0.8rem; color: var(--faint); text-align: center; }
+footer { background: rgba(12,14,28,0.65); backdrop-filter: blur(28px); -webkit-backdrop-filter: blur(28px); border-top: 1px solid rgba(255,255,255,0.1); padding: 4rem 0 2.5rem; position: relative; z-index: 10; }
+.footer-top { display: grid; grid-template-columns: 260px 1fr; gap: 4rem; margin-bottom: 3rem; }
+.footer-logo img { height: 36px; display: block; margin-bottom: 1rem; }
+.footer-logo-text { font-size: 1.1rem; font-weight: 900; color: var(--teal); letter-spacing: -0.02em; margin-bottom: 1rem; display: none; }
+.footer-tagline { font-size: 0.85rem; color: var(--muted); line-height: 1.7; }
+.footer-links-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem; }
+.footer-col-title { font-size: 0.72rem; font-weight: 700; color: var(--text); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1.2rem; }
+.footer-col a { display: block; color: var(--muted); text-decoration: none; font-size: 0.85rem; margin-bottom: 0.6rem; transition: color 0.2s; }
+.footer-col a:hover { color: var(--text); }
+.footer-bottom { border-top: 1px solid var(--border); padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+.footer-copy { font-size: 0.78rem; color: var(--faint); }
+.footer-socials { display: flex; gap: 0.8rem; }
+.social-btn { width: 36px; height: 36px; border-radius: 10px; background: var(--glass); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; text-decoration: none; color: var(--muted); font-size: 0.8rem; transition: all 0.2s; font-weight: 700; }
+.social-btn:hover { border-color: rgba(28,91,130,0.5); color: var(--teal); }
 
-/* FAQ */
-.faq-list { margin-top: 3.5rem; max-width: 760px; margin-left: auto; margin-right: auto; }
-.faq-item { border-bottom: 1px solid var(--border); }
-.faq-q {
-  display: flex; justify-content: space-between; align-items: center;
-  padding: 1.4rem 0; cursor: pointer; font-weight: 500; font-size: 0.97rem;
-  transition: color 0.2s; letter-spacing: -0.01em;
-}
-.faq-q:hover { color: var(--teal); }
-.faq-icon { font-size: 1.2rem; color: var(--teal); transition: transform 0.3s; flex-shrink: 0; }
-.faq-a {
-  font-size: 0.92rem; color: var(--muted);
-  max-height: 0; overflow: hidden;
-  transition: max-height 0.4s ease, padding 0.3s; line-height: 1.75;
-}
-.faq-item.open .faq-a { max-height: 300px; padding-bottom: 1.4rem; }
-.faq-item.open .faq-icon { transform: rotate(45deg); }
+/* ANIMATIONS */
+@keyframes slideUp { from { transform: translateY(110%); } to { transform: translateY(0); } }
+@keyframes fadeSlideUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeSlideDown { from { opacity: 0; transform: translateY(-12px); } to { opacity: 1; transform: translateY(0); } }
 
-/* REVEAL */
-.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
 .reveal.visible { opacity: 1; transform: none; }
+.reveal-left { opacity: 0; transform: translateX(-32px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+.reveal-left.visible { opacity: 1; transform: none; }
+.reveal-right { opacity: 0; transform: translateX(32px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+.reveal-right.visible { opacity: 1; transform: none; }
+[data-delay="1"] { transition-delay: 0.1s; }
+[data-delay="2"] { transition-delay: 0.2s; }
+[data-delay="3"] { transition-delay: 0.3s; }
+[data-delay="4"] { transition-delay: 0.4s; }
 
 /* RESPONSIVE */
-@media (max-width: 1024px) {
-  .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+@media (max-width: 1100px) {
+  .hero-inner { grid-template-columns: 1fr; }
   .hero-visual { display: none; }
-  .services-grid, .why-grid, .testi-grid { grid-template-columns: 1fr 1fr; }
-  .dach-section { grid-template-columns: 1fr; padding: 3rem; }
-  .portfolio-grid { grid-template-columns: 1fr 1fr; }
-  .stats-grid { grid-template-columns: repeat(2,1fr); }
-  .stat-item { padding: 1.8rem 1rem; }
+  .services-grid { grid-template-columns: repeat(2,1fr); }
+  .vorteile-grid { grid-template-columns: repeat(2,1fr); }
+  .about-inner { grid-template-columns: 1fr; }
+  .about-img-wrap { max-width: 380px; }
+  .contact-inner { grid-template-columns: 1fr; }
+  .contact-left { position: static; }
+  .prozess-inner { grid-template-columns: 1fr; }
+  .prozess-sticky { position: static; }
+  .ref-intro { grid-template-columns: 1fr; gap: 1.5rem; }
+  .vorteile-head { grid-template-columns: 1fr; gap: 1.5rem; }
+  .footer-top { grid-template-columns: 1fr; }
+  .services-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  .services-sub { text-align: left; max-width: 100%; }
 }
 @media (max-width: 768px) {
-  nav { padding: 1rem 0; }
+  nav { padding: 0.9rem 0; }
   .nav-inner { padding: 0 1.5rem; }
-  .nav-links {
-    display: none; position: absolute; top: 100%; left: 0; right: 0;
-    flex-direction: column; background: rgba(7,7,15,0.97);
-    padding: 1.5rem; gap: 1.5rem; border-bottom: 1px solid var(--border);
-  }
+  .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; background: rgba(7,7,15,0.97); padding: 1.5rem; gap: 1.5rem; border-bottom: 1px solid var(--border); backdrop-filter: blur(24px); }
   .nav-links.open { display: flex; }
   .nav-burger { display: flex; }
   .wrap { padding: 0 1.5rem; }
   section { padding: 5rem 0; }
-  .services-grid, .why-grid, .testi-grid, .portfolio-grid { grid-template-columns: 1fr; }
-  .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .services-grid { grid-template-columns: 1fr; }
+  .ref-grid { grid-template-columns: 1fr; }
+  .vorteile-grid { grid-template-columns: 1fr; }
   .form-grid { grid-template-columns: 1fr; }
-  .contact-wrap { padding: 2rem; }
-  .footer-inner { flex-direction: column; text-align: center; }
-  .dach-section { padding: 2rem; }
+  .footer-links-grid { grid-template-columns: 1fr 1fr; }
+  .cta-inner { padding: 4rem 2rem; }
+  .cta-title { font-size: 2.2rem; }
 }
 </style>
 </head>
@@ -475,69 +298,54 @@ footer {
 <canvas id="bg-canvas"></canvas>
 <div class="grid-overlay"></div>
 <div class="orb-wrap">
-  <div class="orb orb-1"></div>
-  <div class="orb orb-2"></div>
-  <div class="orb orb-3"></div>
-  <div class="orb orb-4"></div>
+  <div class="orb orb-1"></div><div class="orb orb-2"></div>
+  <div class="orb orb-3"></div><div class="orb orb-4"></div>
 </div>
 
-<nav>
+<nav id="nav">
   <div class="nav-inner">
-    <a href="#" class="nav-logo">
+    <a href="/" class="nav-logo">
       <img src="assets/YG-Logo-Weiss-No-Background.png" alt="YG MEDIA" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-      <span style="display:none;font-size:1.2rem;font-weight:900;color:var(--teal);letter-spacing:-0.02em">YG MEDIA</span>
+      <span class="nav-logo-text">YG MEDIA</span>
     </a>
     <div class="nav-links" id="navLinks">
-      <a href="#services">Services</a>
-      <a href="#work">Work</a>
-      <a href="#dach">DACH</a>
-      <a href="#about">About</a>
-      <a href="#contact" class="nav-cta">Get in touch</a>
+      <a href="/website">Website</a>
+      <a href="/apps">Apps</a>
+      <a href="/marketing">Marketing</a>
+      <a href="/automation">Automation</a>
+      <a href="https://calendly.com/yg-media/30min" target="_blank" rel="noopener" class="nav-cta">Erstgespräch buchen</a>
     </div>
-    <div class="nav-burger" id="burger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </div>
+    <div class="nav-burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></div>
   </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="wrap">
     <div class="hero-inner">
       <div>
-        <div class="hero-label reveal">Available for new projects</div>
-        <h1 class="reveal" style="animation-delay:0.1s">
-          <span style="display:block;white-space:nowrap">We Build</span><span style="display:block;white-space:nowrap">Digital Systems</span><span style="display:block;white-space:nowrap">That <em>Grow Brands</em>.</span>
+        <div class="hero-badge"><span class="hero-badge-dot"></span>Verfügbar für neue Projekte</div>
+        <h1 class="hero-h1">
+          <span class="line"><span class="line-inner">Ich baue dein</span></span>
+          <span class="line"><span class="line-inner">Business <em>digital auf.</em></span></span>
         </h1>
-        <p class="hero-sub reveal" style="animation-delay:0.2s">
-          UI/UX Design. Performance Marketing. AI Automation. One studio that thinks in systems, builds for results, and executes end-to-end.
-        </p>
-        <div class="hero-btns reveal" style="animation-delay:0.3s">
-          <a href="#contact" class="btn btn-primary">Book a Free Call</a>
-          <a href="#work" class="btn btn-ghost">See Our Work</a>
+        <p class="hero-sub">Die meisten Unternehmer sind gut in ihrem Handwerk. Aber eine Website die konvertiert, Google Ads die rentabel sind und Prozesse die automatisch laufen — das ist eine andere Welt. Genau da komme ich rein.</p>
+        <div class="hero-btns">
+          <a href="https://calendly.com/yg-media/30min" target="_blank" rel="noopener" class="btn btn-primary">Kostenloses Erstgespräch <span class="btn-arrow">↗</span></a>
+          <a href="#referenzen" class="btn btn-ghost">Projekte ansehen</a>
         </div>
       </div>
-      <div class="hero-visual reveal" style="animation-delay:0.2s">
-        <div class="hero-card-stack">
-          <div class="hero-card hero-card-back"></div>
-          <div class="hero-card hero-card-main">
-            <div class="card-metric">
-              <div class="card-metric-label">Revenue Generated</div>
-              <div class="card-metric-val">€85K+</div>
-              <div class="card-metric-sub">for clients in Q4 2025 alone</div>
-            </div>
-            <div class="card-divider"></div>
-            <div class="card-row">
-              <div>
-                <div class="card-metric-label">Target Hit</div>
-                <div class="card-num">139%</div>
-              </div>
-              <div>
-                <div class="card-metric-label">Brands Served</div>
-                <div class="card-num">60+</div>
-              </div>
-              <div class="card-badge">Q4 2025</div>
-            </div>
+      <div class="hero-visual">
+        <div class="hero-card-bg"></div>
+        <div class="hero-card">
+          <div class="card-metric-label">Projekte abgeschlossen</div>
+          <div class="card-metric-val">60+</div>
+          <div class="card-metric-sub">Website · App · Marketing · Automation</div>
+          <div class="card-divider"></div>
+          <div class="card-stats">
+            <div><div class="card-stat-label">iOS Apps</div><div class="card-stat-val">2</div></div>
+            <div><div class="card-stat-label">Erfahrung</div><div class="card-stat-val">10+ J.</div></div>
+            <div><div class="card-stat-label">Wahlkampagnen</div><div class="card-stat-val">2</div></div>
+            <div><div class="card-stat-label">Status</div><div class="card-stat-val" style="font-size:1.1rem;line-height:1.3;padding-top:0.3rem">Verfügbar</div></div>
           </div>
         </div>
       </div>
@@ -545,428 +353,305 @@ footer {
   </div>
 </section>
 
-<!-- STATS -->
-<div class="stats">
+<section class="reality-section">
   <div class="wrap">
-    <div class="stats-grid">
-      <div class="stat-item reveal"><div class="stat-num">60+</div><div class="stat-label">Brands Served</div></div>
-      <div class="stat-item reveal" style="animation-delay:0.1s"><div class="stat-num">€85K+</div><div class="stat-label">Revenue Generated for Clients</div></div>
-      <div class="stat-item reveal" style="animation-delay:0.2s"><div class="stat-num">139%</div><div class="stat-label">Target Hit — Q4 2025</div></div>
-      <div class="stat-item reveal" style="animation-delay:0.3s"><div class="stat-num">10+</div><div class="stat-label">Years of Creative Experience</div></div>
+    <div class="reality-inner reveal">
+      <span class="eyebrow">Die Realität</span>
+      <h2 class="reality-title">Du bist gut in dem was du tust.<br><strong>Digital aufgestellt zu sein ist eine andere Disziplin.</strong></h2>
+      <p class="reality-text">Viele Unternehmer die zu mir kommen haben dasselbe Problem. Sie haben ein gutes Produkt oder eine gute Dienstleistung. Aber ihre Website wirkt nicht professionell, sie tauchen bei Google kaum auf, und von Automatisierung haben sie keine Ahnung. Das kostet sie täglich Kunden die sie nie zu Gesicht bekommen. Ich bringe Struktur, Strategie und Umsetzung in einem.</p>
     </div>
   </div>
-</div>
+</section>
 
-<!-- SERVICES -->
 <section id="services">
   <div class="wrap">
-    <span class="section-eyebrow reveal">What We Do</span>
-    <h2 class="section-title reveal">Every project is a system.<br>Not a deliverable.</h2>
-    <p class="section-sub reveal">We combine design thinking, data-driven growth, and AI automation into one integrated offering. No hand-offs. No gaps.</p>
-    <div class="services-grid">
-      <div class="service-card reveal">
-        <div class="service-icon">🎨</div>
-        <h3>UI/UX Design</h3>
-        <p>Interfaces that guide users intuitively, convert measurably, and represent your brand with precision. From concept to pixel-perfect.</p>
-        <div class="service-tags">
-          <span class="tag">Figma</span><span class="tag">Design Systems</span><span class="tag">Framer</span><span class="tag">Responsive</span>
-        </div>
+    <div class="services-header">
+      <div class="reveal-left">
+        <span class="eyebrow">Was ich mache</span>
+        <h2 class="services-title">Website. App.<br>Marketing. Automation.</h2>
       </div>
-      <div class="service-card reveal" style="animation-delay:0.1s">
-        <div class="service-icon">📈</div>
-        <h3>Performance Marketing</h3>
-        <p>Google Ads, SEO, conversion optimization, landing pages. We build growth systems — not campaigns. Data-driven, scalable, ROI-focused.</p>
-        <div class="service-tags">
-          <span class="tag">Google Ads</span><span class="tag">SEO</span><span class="tag">CRO</span><span class="tag">Analytics</span>
-        </div>
-      </div>
-      <div class="service-card reveal" style="animation-delay:0.2s">
-        <div class="service-icon">🤖</div>
-        <h3>AI Automation + Growth</h3>
-        <p>AI-powered lead pipelines, automated funnels, and smarter workflows. We integrate intelligence into your operations where it actually moves numbers.</p>
-        <div class="service-tags">
-          <span class="tag">Lead Automation</span><span class="tag">CRM</span><span class="tag">AI Funnels</span>
-        </div>
-      </div>
+      <p class="services-sub reveal-right">Vier Disziplinen. Eine Person. Du bekommst das komplette digitale Fundament von jemandem der alle vier wirklich beherrscht.</p>
+    </div>
+    <div class="services-grid reveal">
+      <a href="/website" class="service-card">
+        <div class="service-num">01</div>
+        <div class="service-icon-wrap">🌐</div>
+        <h3>Website und Webdesign</h3>
+        <p>Kein Template das tausend andere auch haben. Ich analysiere dein Business, deine Zielgruppe und deine Konkurrenz und baue eine Präsenz die dich klar positioniert und Besucher in Kunden verwandelt.</p>
+        <div class="service-tags"><span class="stag">Webdesign</span><span class="stag">WordPress</span><span class="stag">Framer</span><span class="stag">SEO</span></div>
+        <span class="service-arrow">Mehr erfahren →</span>
+      </a>
+      <a href="/apps" class="service-card">
+        <div class="service-num">02</div>
+        <div class="service-icon-wrap">📱</div>
+        <h3>Apps und Software</h3>
+        <p>Du hast eine Idee. Ich mache daraus ein fertiges Produkt im App Store. Von der ersten Skizze bis zum Launch. Ich habe selbst zwei Apps solo entwickelt und weiß was es wirklich braucht.</p>
+        <div class="service-tags"><span class="stag">iOS</span><span class="stag">SwiftUI</span><span class="stag">Web Apps</span><span class="stag">UX Design</span></div>
+        <span class="service-arrow">Mehr erfahren →</span>
+      </a>
+      <a href="/marketing" class="service-card">
+        <div class="service-num">03</div>
+        <div class="service-icon-wrap">📈</div>
+        <h3>Online Marketing</h3>
+        <p>Mehr Kunden durch Google, SEO und gezielte Werbung. Ich baue keine Kampagnen die gut aussehen. Ich baue Systeme die nachweisbar mehr Umsatz bringen. Messbar, optimierbar, skalierbar.</p>
+        <div class="service-tags"><span class="stag">Google Ads</span><span class="stag">SEO</span><span class="stag">Performance</span></div>
+        <span class="service-arrow">Mehr erfahren →</span>
+      </a>
+      <a href="/automation" class="service-card">
+        <div class="service-num">04</div>
+        <div class="service-icon-wrap">⚡</div>
+        <h3>AI Automation</h3>
+        <p>Manuelle Prozesse kosten dich täglich Zeit die du besser einsetzen könntest. Lead-Pipelines die automatisch laufen. CRM-Systeme die sich selbst befüllen. E-Mail-Sequenzen die konvertieren.</p>
+        <div class="service-tags"><span class="stag">Make.com</span><span class="stag">AI</span><span class="stag">CRM</span><span class="stag">Automation</span></div>
+        <span class="service-arrow">Mehr erfahren →</span>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- DACH -->
-<section id="dach">
+<section id="referenzen">
   <div class="wrap">
-    <div class="dach-section reveal">
-      <div>
-        <div class="dach-flag-row">
-          <div class="dach-flag">🇩🇪</div>
-          <div class="dach-flag">🇦🇹</div>
-          <div class="dach-flag">🇨🇭</div>
-        </div>
-        <span class="section-eyebrow">Unique Specialization</span>
-        <h2 class="section-title">Your Gateway to the German-Speaking Market</h2>
-        <p style="color:var(--muted);line-height:1.75;margin-bottom:2rem;font-size:0.97rem;">
-          Most international startups struggle to enter DACH. Wrong messaging, wrong channels, wrong UX for German users. YG MEDIA is native to these markets — we run ads in German, design for German UX expectations, and know exactly how to position brands in Germany, Austria, and Switzerland.
-        </p>
-        <a href="#contact" class="btn btn-primary">Talk to us about DACH strategy</a>
+    <div class="ref-intro">
+      <div class="reveal-left"><span class="eyebrow">Referenzen</span><h2 class="ref-title">Was ich aufgebaut habe.</h2></div>
+      <p class="ref-lead reveal-right">Von der Arztpraxis bis zum Tech-Startup. Von der Buchhaltungssoftware bis zur iOS App. Echte Projekte, echte Ergebnisse.</p>
+    </div>
+    <div class="ref-grid">
+      <div class="ref-card reveal">
+        <span class="ref-tag">Automobilbranche · TikTok · Webdesign</span>
+        <h3>Von null zur etablierten Marke im Felgen-Bereich.</h3>
+        <p>Keine Markenidentität, keine Website, null Social Media. TikTok auf 3.801 Follower mit 272.000 Views. Google Ads. Komplette Vermarktung aufgebaut. Das Ergebnis: mehr Bekanntheit, mehr Vertrauen, messbarer Umsatzanstieg.</p>
       </div>
-      <div class="dach-visual">
-        <div class="dach-row"><span class="dach-row-label">Market Language</span><span class="dach-row-val">Native German</span></div>
-        <div class="dach-row"><span class="dach-row-label">Google Ads</span><span class="dach-row-val">German Campaigns</span></div>
-        <div class="dach-row"><span class="dach-row-label">UX Standards</span><span class="dach-row-val">DACH-Optimized</span></div>
-        <div class="dach-row"><span class="dach-row-label">Brand Positioning</span><span class="dach-row-val">EU Market Ready</span></div>
-        <div class="dach-row"><span class="dach-row-label">Target Region</span><span class="dach-row-val">DE / AT / CH</span></div>
+      <div class="ref-card reveal" data-delay="1">
+        <span class="ref-tag">Arztpraxis · Website · GMB · App</span>
+        <h3>Neue Praxis. Vom ersten Tag an professionell positioniert.</h3>
+        <p>Dr. Karabul hat eine Kinderarztpraxis übernommen. Von Anfang an als moderne, kompetente Ärztin wahrgenommen werden. Website, Google My Business und Praxis-App aufgebaut. Fachliche Kompetenz konsequent in den Vordergrund gestellt.</p>
+      </div>
+      <div class="ref-card reveal" data-delay="1">
+        <span class="ref-tag">SaaS · Buchhaltung · Gründer · Würzburg</span>
+        <h3>USELY — Buchhaltungssoftware für Kleinunternehmer.</h3>
+        <p>Konzept, Branding, UI/UX Design und digitale Präsenz komplett entwickelt. Gefördert durch IGZ Würzburg, Brainstation Lauda und Campus Founders. Heute täglich genutzt von Selbstständigen die damit Angebote und Rechnungen schreiben.</p>
+      </div>
+      <div class="ref-card reveal" data-delay="2">
+        <span class="ref-tag">iOS App · SwiftUI · Supabase · AI</span>
+        <h3>YOU — ein persönliches Life Operating System. Solo entwickelt.</h3>
+        <p>Von Konzept bis App Store komplett allein gebaut. SwiftUI, Supabase, Claude AI API. 89-Step Onboarding, 5 Module für Körper, Geist und Reflexion. Eigene KI-Plan-Engine die Trainingspläne personalisiert generiert.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PORTFOLIO -->
-<section id="work">
+<section id="vorteile" class="vorteile-section">
   <div class="wrap">
-    <span class="section-eyebrow reveal">Selected Work</span>
-    <h2 class="section-title reveal">Where design, function,<br>and strategy come together.</h2>
-    <div class="portfolio-grid">
-      <div class="project-card reveal" onclick="window.open('https://www.behance.net/gallery/195062751/Audi-Dashboard-Spatial-Design-VisionPro-Concept','_blank')" style="cursor:pointer;">
-        <div class="project-bg" style="background-image:url('assets/audi-1.jpg');background-size:cover;background-position:center;"></div>
-        <div class="project-overlay"><div class="project-tag">UI/UX · Vision Pro</div><h3>Audi App Concept</h3><span style="font-size:0.72rem;color:var(--teal);margin-top:0.5rem;display:block;letter-spacing:0.05em;">View on Behance ↗</span></div>
+    <div class="vorteile-head">
+      <div class="reveal-left">
+        <h2 class="vorteile-title">
+          <span>Eine Person.</span>
+          <span class="accent">Volle Verantwortung.</span>
+          <span>Kein Overhead.</span>
+        </h2>
       </div>
-      <div class="project-card reveal" style="animation-delay:0.1s" onclick="window.open('https://www.behance.net/gallery/209289491/Adidas-App-Concept-Apple-Vision-Pro-in-Spatial-Design','_blank')">
-        <div class="project-bg" style="background-image:url('assets/adidas-1.png');background-size:cover;background-position:center;"></div>
-        <div class="project-overlay"><div class="project-tag">UI/UX · Vision Pro</div><h3>Adidas App Concept</h3><span style="font-size:0.72rem;color:var(--teal);margin-top:0.5rem;display:block;letter-spacing:0.05em;">View on Behance ↗</span></div>
-      </div>
-      <div class="project-card reveal" style="animation-delay:0.2s" onclick="window.open('https://www.behance.net/gallery/222521161/Fashion-E-Commerce-Website-Web-Design-Cards-Bento-Grid','_blank')">
-        <div class="project-bg" style="background-image:url('assets/fashion-1.png');background-size:cover;background-position:center;"></div>
-        <div class="project-overlay"><div class="project-tag">E-Commerce</div><h3>Fashion Shop — AURÉA</h3><span style="font-size:0.72rem;color:var(--teal);margin-top:0.5rem;display:block;letter-spacing:0.05em;">View on Behance ↗</span></div>
-      </div>
-      <div class="project-card reveal" style="animation-delay:0.1s" onclick="window.open('https://www.behance.net/gallery/227766229/SkincareHealth-Website-for-a-Modern-Dermatology','_blank')">
-        <div class="project-bg" style="background-image:url('assets/derma-1.jpg');background-size:cover;background-position:center;"></div>
-        <div class="project-overlay"><div class="project-tag">UI/UX · Healthcare</div><h3>Dermatology Modern Website</h3><span style="font-size:0.72rem;color:var(--teal);margin-top:0.5rem;display:block;letter-spacing:0.05em;">View on Behance ↗</span></div>
-      </div>
-      <div class="project-card reveal" style="animation-delay:0.2s" onclick="window.open('https://www.behance.net/gallery/195066889/Modern-SaaS-Accounting-App-UIUX-Design','_blank')">
-        <div class="project-bg" style="background-image:url('assets/usely-1.png');background-size:cover;background-position:center;"></div>
-        <div class="project-overlay"><div class="project-tag">iOS App · SaaS</div><h3>USELY — Business Management App</h3><span style="font-size:0.72rem;color:var(--teal);margin-top:0.5rem;display:block;letter-spacing:0.05em;">View on Behance ↗</span></div>
-      </div>
-      <div class="project-card reveal" style="animation-delay:0.3s" onclick="window.open('https://www.behance.net/gallery/217934173/Web-Design-Landingpage-Glassmorphism-Design-for-Website','_blank')">
-        <div class="project-bg" style="background-image:url('assets/lila-1.jpg');background-size:cover;background-position:center;"></div>
-        <div class="project-overlay"><div class="project-tag">Webdesign · Brand</div><h3>Marken & Events Website</h3><span style="font-size:0.72rem;color:var(--teal);margin-top:0.5rem;display:block;letter-spacing:0.05em;">View on Behance ↗</span></div>
-      </div>
+      <p class="vorteile-sub reveal-right">Kein Koordinationsaufwand zwischen Designer, Marketer und Entwickler. Du hast immer mich als direkten Ansprechpartner — von der ersten Idee bis zum fertigen Ergebnis.</p>
+    </div>
+    <div class="vorteile-grid">
+      <div class="vorteil-card reveal"><div class="vorteil-num">01</div><h3>Ein Ansprechpartner</h3><p>Du redest mit mir. Nicht mit einem Junior der deine E-Mails beantwortet und dann weiterleitet. Ich kenne dein Business, ich treffe die Entscheidungen, ich liefere.</p></div>
+      <div class="vorteil-card reveal" data-delay="1"><div class="vorteil-num">02</div><h3>Breites Skill-Set</h3><p>Design, Entwicklung, Marketing und Automation. Kein Koordinieren zwischen vier Dienstleistern die sich gegenseitig die Schuld geben wenn etwas nicht klappt.</p></div>
+      <div class="vorteil-card reveal" data-delay="2"><div class="vorteil-num">03</div><h3>Nachweisbare Ergebnisse</h3><p>60+ Brands aufgebaut. Zwei iOS Apps solo entwickelt. TikTok-Kanal von null auf 272.000 Views. Ich zeige was ich gemacht habe und was dabei rausgekommen ist.</p></div>
+      <div class="vorteil-card reveal" data-delay="3"><div class="vorteil-num">04</div><h3>Erfahrung aus echten Branchen</h3><p>Tech-Startups, E-Commerce, Handwerksbetriebe, Arztpraxen, Industrie. Ich habe in unterschiedlichsten Märkten gearbeitet und weiß was in welchem Umfeld funktioniert.</p></div>
     </div>
   </div>
 </section>
 
-<!-- WHY -->
-<section id="why">
+<section id="prozess">
   <div class="wrap">
-    <span class="section-eyebrow reveal">Why YG MEDIA</span>
-    <h2 class="section-title reveal">Why founders and startups<br>choose us.</h2>
-    <div class="why-grid">
-      <div class="why-card reveal">
-        <div class="why-num">01</div>
-        <h3>We think in systems</h3>
-        <p>Every design decision connects to conversion, growth, and brand clarity. Not isolated deliverables — integrated outcomes.</p>
+    <div class="prozess-inner">
+      <div class="prozess-sticky reveal-left">
+        <span class="eyebrow">Der Prozess</span>
+        <h2 class="prozess-title">So arbeiten wir zusammen.</h2>
+        <p class="prozess-sub">Kein Briefing-Ping-Pong. Kein Agentur-Prozess. Drei klare Schritte von der ersten Anfrage bis zum fertigen Ergebnis.</p>
+        <a href="https://calendly.com/yg-media/30min" target="_blank" rel="noopener" class="btn btn-primary">Jetzt starten <span class="btn-arrow">↗</span></a>
       </div>
-      <div class="why-card reveal" style="animation-delay:0.1s">
-        <div class="why-num">02</div>
-        <h3>Design and Marketing in one</h3>
-        <p>No coordination needed between designer and marketer. We do both and they work together by default. Less friction. More speed.</p>
-      </div>
-      <div class="why-card reveal" style="animation-delay:0.2s">
-        <div class="why-num">03</div>
-        <h3>We have been on both sides</h3>
-        <p>As founders and marketers ourselves, we understand what it costs when design does not perform. We build for results, not awards.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section>
-  <div class="wrap">
-    <span class="section-eyebrow reveal">Client Feedback</span>
-    <h2 class="section-title reveal">What our clients say.</h2>
-    <div class="testi-grid">
-      <div class="testi-card reveal">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">"Yasin combines aesthetic precision with a real understanding of growth strategy. One of the few designers who thinks commercially."</p>
-        <div class="testi-author">
-          <div class="testi-avatar">TL</div>
-          <div><div class="testi-name">Tobias Leiser</div><div class="testi-role">CEO</div></div>
+      <div class="prozess-steps reveal-right">
+        <div class="prozess-step">
+          <div class="prozess-step-num">01</div>
+          <div><h3>Ich lerne dein Business kennen.</h3><p>Bevor ich irgendetwas umsetze führen wir ein ausführliches Gespräch. Ich will verstehen wo du stehst, was deine Herausforderungen sind und was du dir für die nächsten 12 Monate vorstellst. Die meisten kommen mit einem konkreten Wunsch. Oft ist das eigentliche Problem aber ein anderes.</p></div>
         </div>
-      </div>
-      <div class="testi-card reveal" style="animation-delay:0.1s">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">"Working with YG MEDIA transformed how we think about design. Strategic, clear, and always focused on what matters — results."</p>
-        <div class="testi-author">
-          <div class="testi-avatar">AK</div>
-          <div><div class="testi-name">Anna Kaiser</div><div class="testi-role">Product Manager</div></div>
+        <div class="prozess-step">
+          <div class="prozess-step-num">02</div>
+          <div><h3>Du bekommst einen konkreten Plan, kein Angebot.</h3><p>Ich erstelle ein klares Konzept was wir umsetzen, warum wir es so umsetzen und was es kostet. Kein Fachjargon, keine versteckten Kosten. Du verstehst genau was du bekommst bevor du ja sagst.</p></div>
         </div>
-      </div>
-      <div class="testi-card reveal" style="animation-delay:0.2s">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">"Had experience with web design before, but YG MEDIA thinks at a significantly different level. Design that actually conveys purpose and identity."</p>
-        <div class="testi-author">
-          <div class="testi-avatar">DH</div>
-          <div><div class="testi-name">Daniel Hofmann</div><div class="testi-role">CEO</div></div>
+        <div class="prozess-step">
+          <div class="prozess-step-num">03</div>
+          <div><h3>Ich übernehme. Du konzentrierst dich auf dein Business.</h3><p>Sobald wir loslegen kümmere ich mich um alles. Du wirst regelmäßig informiert, kannst jederzeit Fragen stellen, aber musst nichts selbst koordinieren. Keine fünf verschiedenen Ansprechpartner. Nur ich.</p></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ABOUT -->
 <section id="about">
   <div class="wrap">
-    <span class="section-eyebrow reveal">About</span>
-    <div class="about-grid">
+    <div class="about-inner">
       <div>
-        <h2 class="section-title reveal">Hi, I'm Yasin Gündogdu.</h2>
-        <p style="font-size:1.05rem;color:var(--muted);line-height:1.8;margin-bottom:1.5rem;" class="reveal">
-          Designer, performance marketer, and founder. For over ten years I have been helping companies and startups build digital presences that perform.
-        </p>
-        <p style="color:var(--muted);line-height:1.8;margin-bottom:1.5rem;font-size:0.95rem;" class="reveal">
-          I combine UI/UX design with performance marketing strategy and brand thinking. 60+ brands. Two iOS apps built solo as a developer. Currently based between Germany and Limassol, Cyprus — working globally.
-        </p>
-        <div class="about-tag-row reveal">
-          <span class="skill-tag">UI/UX Design</span><span class="skill-tag">Google Ads</span>
-          <span class="skill-tag">Figma</span><span class="skill-tag">Framer</span>
-          <span class="skill-tag">SEO</span><span class="skill-tag">AI Automation</span>
-          <span class="skill-tag">iOS Dev</span><span class="skill-tag">Brand Strategy</span>
-        </div>
-        <div class="lang-row reveal">
-          <span class="lang-tag">🇩🇪 German — Native</span>
-          <span class="lang-tag">🇬🇧 English — Fluent</span>
+        <span class="eyebrow reveal">Über mich</span>
+        <h2 class="about-tagline reveal">Yasin Gündogdu,<br><em>Inhaber.</em></h2>
+        <p class="about-text reveal">Ich arbeite seit über 10 Jahren an der Schnittstelle von Design, Technologie und Marketing. Für über 60 Unternehmen gearbeitet. Zwei Wahlkampagnen gewonnen. Zwei eigene iOS Apps solo entwickelt und gelauncht.</p>
+        <p class="about-text reveal">Meine Kunden kommen aus Deutschland, Österreich und der Schweiz. Was mich von einer Agentur unterscheidet: Du hast einen direkten Ansprechpartner der das Gesamtbild kennt und Verantwortung übernimmt.</p>
+        <div class="skill-tags reveal">
+          <span class="skill-tag">UI/UX Design</span><span class="skill-tag">Google Ads</span><span class="skill-tag">SEO</span>
+          <span class="skill-tag">iOS Entwicklung</span><span class="skill-tag">AI Automation</span><span class="skill-tag">Brand Strategy</span>
+          <span class="skill-tag">Framer</span><span class="skill-tag">Figma</span>
         </div>
       </div>
-      <div class="reveal">
-        <img src="assets/YG-Founder.png" alt="Yasin Gündogdu" class="about-img" style="max-width:420px;margin:0 auto;display:block;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="about-img-wrap reveal-right">
+        <img src="assets/YG-Founder.png" alt="Yasin Gündogdu, Inhaber YG MEDIA" class="about-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="about-img-placeholder" style="display:none">👤</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact">>
+<section class="cta-section">
   <div class="wrap">
-    <div style="text-align:center">
-      <span class="section-eyebrow reveal">Get in Touch</span>
-      <h2 class="section-title reveal">Let's Build Something Great.</h2>
-      <p class="section-sub reveal" style="margin:0 auto">Tell us about your project. We'll get back within 24 hours.</p>
+    <div class="cta-inner reveal">
+      <h2 class="cta-title">Bereit dein Business<br>digital aufzustellen?</h2>
+      <p class="cta-sub">Buch dir ein kostenloses 30-Minuten-Gespräch. Kein Verkaufsgespräch. Ein ehrliches Gespräch darüber ob und wie ich dir helfen kann.</p>
+      <a href="https://calendly.com/yg-media/30min" target="_blank" rel="noopener" class="btn btn-primary">Jetzt 30-Min-Termin buchen <span class="btn-arrow">↗</span></a>
+      <span class="cta-subtext">Kostenlos · Unverbindlich · 30 Minuten</span>
     </div>
-    <div class="contact-wrap reveal">
-      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-        <div class="form-grid">
-          <div class="form-group">
-            <label class="form-label">Your Name</label>
-            <input type="text" name="name" class="form-input" placeholder="Yasin Gündogdu" required>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Company</label>
-            <input type="text" name="company" class="form-input" placeholder="YG MEDIA">
-          </div>
-          <div class="form-group">
-            <label class="form-label">Email Address</label>
-            <input type="email" name="email" class="form-input" placeholder="hello@company.com" required>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Country</label>
-            <input type="text" name="country" class="form-input" placeholder="Germany, Cyprus...">
-          </div>
-          <div class="form-group">
-            <label class="form-label">Budget</label>
-            <select name="budget" class="form-select">
-              <option value="">Select budget range</option>
-              <option>Under €1,000</option>
-              <option>€1,000 – €3,000</option>
-              <option>€3,000 – €10,000</option>
-              <option>€10,000+</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Project Type</label>
-            <select name="type" class="form-select">
-              <option value="">Select project type</option>
-              <option>UI/UX Design</option>
-              <option>Performance Marketing</option>
-              <option>AI Automation</option>
-              <option>DACH Market Strategy</option>
-              <option>Full Package</option>
-              <option>Other</option>
-            </select>
-          </div>
-          <div class="form-group form-full">
-            <label class="form-label">Tell us about your project</label>
-            <textarea name="message" class="form-textarea" placeholder="What are you building? What's the challenge?" required></textarea>
-          </div>
+  </div>
+</section>
+
+<section id="kontakt">
+  <div class="wrap">
+    <div class="contact-inner">
+      <div class="contact-left reveal-left">
+        <span class="eyebrow">Kontakt</span>
+        <h2 class="contact-title">Schreib mir direkt.</h2>
+        <p class="contact-sub">Anfragen werden in der Regel innerhalb von 24 Stunden beantwortet.</p>
+        <div class="contact-info">
+          <div class="contact-info-item"><span class="contact-info-dot"></span>info@yg-media.de</div>
+          <div class="contact-info-item"><span class="contact-info-dot"></span>+49 151 29 799 468</div>
+          <div class="contact-info-item"><span class="contact-info-dot"></span>yg-media.de</div>
         </div>
-        <button type="submit" class="btn btn-primary btn-submit">Send Message</button>
-      </form>
+      </div>
+      <div class="contact-form reveal-right">
+        <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="form-grid">
+            <div class="form-group"><label class="form-label">Dein Name</label><input type="text" name="name" class="form-input" placeholder="Max Mustermann" required></div>
+            <div class="form-group"><label class="form-label">E-Mail</label><input type="email" name="email" class="form-input" placeholder="max@firma.de" required></div>
+            <div class="form-group form-full"><label class="form-label">Bereich</label>
+              <select name="bereich" class="form-select">
+                <option value="">Bereich auswählen</option>
+                <option>Website</option><option>App</option>
+                <option>Online Marketing</option><option>AI Automation</option>
+                <option>Ich bin nicht sicher</option>
+              </select>
+            </div>
+            <div class="form-group form-full"><label class="form-label">Wo stehst du gerade?</label><textarea name="message" class="form-textarea" placeholder="Erzähl mir kurz was du vorhast oder wo dein Problem liegt." required></textarea></div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-submit">Nachricht senden</button>
+        </form>
+        <div class="form-success" id="formSuccess">
+          <div class="form-success-icon">✓</div>
+          <p>Ihre Nachricht wurde erfolgreich übermittelt. Sie erhalten zeitnah eine Rückmeldung.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- FAQ -->
-<section>
-  <div class="wrap">
-    <span class="section-eyebrow reveal">FAQ</span>
-    <h2 class="section-title reveal">Frequently Asked Questions</h2>
-    <div class="faq-list">
-      <div class="faq-item"><div class="faq-q">Do you understand my business or just design?<span class="faq-icon">+</span></div><div class="faq-a">Both. Every project starts with a strategic brief. We research your market, competitors, and target audience before touching a pixel or writing a single ad.</div></div>
-      <div class="faq-item"><div class="faq-q">Do I need to bring technical know-how?<span class="faq-icon">+</span></div><div class="faq-a">No. We handle the technical side. You focus on your business. We communicate clearly at every step so you always know what is happening.</div></div>
-      <div class="faq-item"><div class="faq-q">What does a project cost?<span class="faq-icon">+</span></div><div class="faq-a">Projects start at €1,000 for focused deliverables and scale based on scope. We offer fixed-price projects and monthly retainers. Book a free call to get a clear quote within 48 hours.</div></div>
-      <div class="faq-item"><div class="faq-q">Do you work with templates?<span class="faq-icon">+</span></div><div class="faq-a">Never. Every project is built from scratch, specific to your brand, your audience, and your goals.</div></div>
-      <div class="faq-item"><div class="faq-q">Design and development — both with you?<span class="faq-icon">+</span></div><div class="faq-a">Yes. We design and build. No hand-off to a separate developer. One point of contact, full ownership, from concept to live.</div></div>
-      <div class="faq-item"><div class="faq-q">Do you work with startups in Limassol or Cyprus?<span class="faq-icon">+</span></div><div class="faq-a">Yes, actively. YG MEDIA is based in Limassol and working with local and international startups in tech, fintech, and gaming. Reach out directly.</div></div>
-      <div class="faq-item"><div class="faq-q">Can you help us enter the German market?<span class="faq-icon">+</span></div><div class="faq-a">Yes. DACH market strategy is a core specialization. We run German Google Ads, optimize UX for German-speaking users, and position brands for Germany, Austria, and Switzerland.</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
 <footer>
   <div class="wrap">
-    <div class="footer-inner">
-      <div class="footer-links">
-        <a href="#services">Services</a><a href="#work">Work</a><a href="#dach">DACH</a>
-        <a href="#about">About</a><a href="#contact">Contact</a>
-        <a href="#">Imprint</a><a href="#">Privacy</a>
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">
+          <img src="assets/YG-Logo-Weiss-No-Background.png" alt="YG MEDIA" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <div class="footer-logo-text">YG MEDIA</div>
+        </div>
+        <p class="footer-tagline">Digital Business Builder.<br>Website · App · Marketing · Automation.</p>
       </div>
-      <div class="footer-socials">
-        <a href="https://behance.net/yasinguendogdu" target="_blank" class="social-btn" title="Behance">Be</a>
-        <a href="https://pinterest.com" target="_blank" class="social-btn" title="Pinterest">Pi</a>
-        <a href="https://linkedin.com" target="_blank" class="social-btn" title="LinkedIn">in</a>
+      <div class="footer-links-grid">
+        <div class="footer-col">
+          <div class="footer-col-title">Services</div>
+          <a href="/website">Website</a><a href="/apps">Apps</a>
+          <a href="/marketing">Marketing</a><a href="/automation">Automation</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Unternehmen</div>
+          <a href="#about">Über mich</a><a href="#referenzen">Referenzen</a>
+          <a href="#prozess">Prozess</a><a href="/en">English</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Rechtliches</div>
+          <a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a>
+        </div>
       </div>
     </div>
-    <p class="footer-copy">YG MEDIA · Lauda-Königshofen / Limassol, Cyprus · © 2026 Yasin Gündogdu</p>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 YG MEDIA · Yasin Gündogdu</p>
+      <div class="footer-socials">
+        <a href="https://behance.net/yasinguendogdu" target="_blank" rel="noopener" class="social-btn" aria-label="Behance">Be</a>
+        <a href="https://x.com/ysn_gdu" target="_blank" rel="noopener" class="social-btn" aria-label="X">X</a>
+      </div>
+    </div>
   </div>
 </footer>
 
 <script>
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 40); }, { passive: true });
 const burger = document.getElementById('burger');
 const navLinks = document.getElementById('navLinks');
 burger.addEventListener('click', () => navLinks.classList.toggle('open'));
+document.querySelectorAll('.nav-links a').forEach(a => { a.addEventListener('click', () => navLinks.classList.remove('open')); });
 document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    const target = document.querySelector(a.getAttribute('href'));
-    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
-    navLinks.classList.remove('open');
-  });
+  a.addEventListener('click', e => { const t = document.querySelector(a.getAttribute('href')); if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); } });
 });
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.12 });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-document.querySelectorAll('.faq-q').forEach(q => {
-  q.addEventListener('click', () => {
-    const item = q.parentElement;
-    const wasOpen = item.classList.contains('open');
-    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-    if (!wasOpen) item.classList.add('open');
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => io.observe(el));
+const form = document.getElementById('contactForm');
+if (form) {
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    const btn = form.querySelector('.btn-submit');
+    btn.textContent = 'Wird gesendet...'; btn.disabled = true;
+    try {
+      const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } });
+      if (res.ok) { form.style.display = 'none'; document.getElementById('formSuccess').style.display = 'block'; }
+      else { btn.textContent = 'Fehler. Nochmal versuchen.'; btn.disabled = false; }
+    } catch { btn.textContent = 'Fehler. Nochmal versuchen.'; btn.disabled = false; }
   });
-});
-
-// PARTICLE CANVAS
+}
 const canvas = document.getElementById('bg-canvas');
 const ctx = canvas.getContext('2d');
 let W, H, particles, mouse = { x: -9999, y: -9999 };
-
-function resize() {
-  W = canvas.width = window.innerWidth;
-  H = canvas.height = window.innerHeight;
-}
-
+function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
 function Particle() {
-  this.reset = function() {
-    this.x = Math.random() * W;
-    this.y = Math.random() * H;
-    this.vx = (Math.random() - 0.5) * 0.3;
-    this.vy = (Math.random() - 0.5) * 0.3;
-    this.r = Math.random() * 1.5 + 0.3;
-    this.alpha = Math.random() * 0.5 + 0.1;
-    this.life = 0;
-    this.maxLife = Math.random() * 300 + 200;
-  };
-  this.reset();
+  this.reset = () => { this.x = Math.random()*W; this.y = Math.random()*H; this.vx = (Math.random()-0.5)*0.3; this.vy = (Math.random()-0.5)*0.3; this.r = Math.random()*1.4+0.3; this.alpha = Math.random()*0.45+0.08; this.life = 0; this.maxLife = Math.random()*300+200; }; this.reset();
 }
-
-function initParticles() {
-  particles = Array.from({ length: 120 }, () => new Particle());
-}
-
-function drawConnections() {
-  for (let i = 0; i < particles.length; i++) {
-    for (let j = i + 1; j < particles.length; j++) {
-      const dx = particles[i].x - particles[j].x;
-      const dy = particles[i].y - particles[j].y;
-      const dist = Math.sqrt(dx*dx + dy*dy);
-      if (dist < 140) {
-        const alpha = (1 - dist / 140) * 0.12;
-        ctx.beginPath();
-        ctx.strokeStyle = `rgba(28,91,130,${alpha})`;
-        ctx.lineWidth = 0.5;
-        ctx.moveTo(particles[i].x, particles[i].y);
-        ctx.lineTo(particles[j].x, particles[j].y);
-        ctx.stroke();
-      }
-    }
-    // Mouse connections
-    const dx = particles[i].x - mouse.x;
-    const dy = particles[i].y - mouse.y;
-    const dist = Math.sqrt(dx*dx + dy*dy);
-    if (dist < 200) {
-      const alpha = (1 - dist / 200) * 0.3;
-      ctx.beginPath();
-      ctx.strokeStyle = `rgba(28,91,130,${alpha})`;
-      ctx.lineWidth = 0.8;
-      ctx.moveTo(particles[i].x, particles[i].y);
-      ctx.lineTo(mouse.x, mouse.y);
-      ctx.stroke();
-    }
-  }
-}
-
+function initParticles() { particles = Array.from({length:100}, () => new Particle()); }
 function animate() {
-  ctx.clearRect(0, 0, W, H);
-  drawConnections();
+  ctx.clearRect(0,0,W,H);
+  for (let i=0;i<particles.length;i++) {
+    for (let j=i+1;j<particles.length;j++) { const dx=particles[i].x-particles[j].x,dy=particles[i].y-particles[j].y,d=Math.sqrt(dx*dx+dy*dy); if(d<130){ctx.beginPath();ctx.strokeStyle=`rgba(28,91,130,${(1-d/130)*0.1})`;ctx.lineWidth=0.5;ctx.moveTo(particles[i].x,particles[i].y);ctx.lineTo(particles[j].x,particles[j].y);ctx.stroke();} }
+    const dx=particles[i].x-mouse.x,dy=particles[i].y-mouse.y,d=Math.sqrt(dx*dx+dy*dy); if(d<180){ctx.beginPath();ctx.strokeStyle=`rgba(28,91,130,${(1-d/180)*0.25})`;ctx.lineWidth=0.7;ctx.moveTo(particles[i].x,particles[i].y);ctx.lineTo(mouse.x,mouse.y);ctx.stroke();}
+  }
   particles.forEach(p => {
-    p.life++;
-    if (p.life > p.maxLife) p.reset();
-
-    // Mouse repulsion
-    const dx = p.x - mouse.x;
-    const dy = p.y - mouse.y;
-    const dist = Math.sqrt(dx*dx + dy*dy);
-    if (dist < 120) {
-      const force = (120 - dist) / 120 * 0.8;
-      p.vx += (dx / dist) * force;
-      p.vy += (dy / dist) * force;
-    }
-
-    p.vx *= 0.99;
-    p.vy *= 0.99;
-    p.x += p.vx;
-    p.y += p.vy;
-
-    if (p.x < 0) p.x = W;
-    if (p.x > W) p.x = 0;
-    if (p.y < 0) p.y = H;
-    if (p.y > H) p.y = 0;
-
-    const fadeAlpha = p.life < 60 ? p.life/60 : p.life > p.maxLife - 60 ? (p.maxLife - p.life)/60 : 1;
-    ctx.beginPath();
-    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-    ctx.fillStyle = `rgba(28,91,130,${p.alpha * fadeAlpha})`;
-    ctx.fill();
+    p.life++; if(p.life>p.maxLife) p.reset();
+    const dx=p.x-mouse.x,dy=p.y-mouse.y,d=Math.sqrt(dx*dx+dy*dy); if(d<100){const f=(100-d)/100*0.7;p.vx+=(dx/d)*f;p.vy+=(dy/d)*f;}
+    p.vx*=0.99;p.vy*=0.99;p.x+=p.vx;p.y+=p.vy;
+    if(p.x<0)p.x=W;if(p.x>W)p.x=0;if(p.y<0)p.y=H;if(p.y>H)p.y=0;
+    const fa=p.life<60?p.life/60:p.life>p.maxLife-60?(p.maxLife-p.life)/60:1;
+    ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=`rgba(28,91,130,${p.alpha*fa})`;ctx.fill();
   });
   requestAnimationFrame(animate);
 }
-
-window.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; });
-window.addEventListener('mouseleave', () => { mouse.x = -9999; mouse.y = -9999; });
-window.addEventListener('resize', () => { resize(); initParticles(); });
-resize();
-initParticles();
-animate();
+window.addEventListener('mousemove', e => { mouse.x=e.clientX; mouse.y=e.clientY; }, {passive:true});
+window.addEventListener('mouseleave', () => { mouse.x=-9999; mouse.y=-9999; });
+window.addEventListener('resize', () => { resize(); initParticles(); }, {passive:true});
+resize(); initParticles(); animate();
 </script>
 </body>
 </html>
