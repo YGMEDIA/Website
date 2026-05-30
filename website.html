@@ -181,8 +181,8 @@ section { padding: 8rem 0; position: relative; z-index: 10; }
 .faq-icon { width: 28px; height: 28px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--muted); font-size: 1rem; transition: transform 0.3s, border-color 0.3s; }
 .faq-item.open .faq-icon { transform: rotate(45deg); border-color: rgba(28,91,130,0.5); color: var(--teal-bright); }
 .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.16,1,0.3,1); }
-.faq-a-inner { padding: 0 1.6rem 1.4rem; color: var(--muted); font-size: 0.9rem; line-height: 1.8; }
-.faq-item.open .faq-a { max-height: 300px; }
+.faq-a-inner { padding: 0 1.6rem 1.4rem; color: var(--muted); font-size: 0.9rem; line-height: 1.8; } .faq-a-inner strong { color: var(--text); font-weight: 600; }
+.faq-item.open .faq-a { max-height: 600px; }
 
 /* FOOTER */
 footer { background: rgba(12,14,28,0.65); backdrop-filter: blur(28px); -webkit-backdrop-filter: blur(28px); border-top: 1px solid rgba(255,255,255,0.1); padding: 4rem 0 2.5rem; position: relative; z-index: 10; }
@@ -290,9 +290,8 @@ footer { background: rgba(12,14,28,0.65); backdrop-filter: blur(28px); -webkit-b
       <div>
         <div class="hero-badge"><span class="hero-badge-dot"></span>Webdesign &amp; SEO</div>
         <h1 class="hero-h1">
-          <span class="line"><span class="line-inner">Website die</span></span>
-          <span class="line"><span class="line-inner">Kunden bringt.</span></span>
-          <span class="line"><span class="line-inner"><em>Nicht&nbsp;nur gut aussieht.</em></span></span>
+          <span class="line"><span class="line-inner">Website die Kunden bringt.</span></span>
+          <span class="line"><span class="line-inner"><em>Nicht nur gut aussieht.</em></span></span>
         </h1>
         <p class="hero-sub">Eine professionelle Website ist deine wichtigste Vertriebsmaschine. Ich baue Websites die bei Google gefunden werden, Vertrauen aufbauen und Besucher in zahlende Kunden verwandeln. Kein Baukasten. Keine 08/15-Vorlage. Individuell, schnell und auf dein Unternehmen zugeschnitten.</p>
         <div class="hero-btns">
@@ -324,8 +323,8 @@ footer { background: rgba(12,14,28,0.65); backdrop-filter: blur(28px); -webkit-b
   <div class="wrap">
     <div class="reality-inner reveal">
       <span class="eyebrow">Das Problem</span>
-      <h2 class="reality-title">Eine Website zu haben reicht nicht.<br><strong>Sie muss gefunden werden und überzeugen.</strong></h2>
-      <p class="reality-text">Die meisten Unternehmen haben eine Website die kaum jemand sieht und die Besucher nicht in Anfragen umwandelt. Schlechtes SEO, langsame Ladezeiten, kein klares Angebot. Das kostet dich täglich potenzielle Kunden. Ich baue Websites die das Gegenteil tun: sichtbar bei Google, überzeugend im ersten Eindruck, messbar im Ergebnis.</p>
+      <h2 class="reality-title">Eine Website zu haben reicht nicht.<br><strong>Sie muss auch wirklich funktionieren.</strong></h2>
+      <p class="reality-text">Eine erfolgreiche Website ist mehr als eine schöne Oberfläche. Sie muss technisch einwandfrei laufen, visuell überzeugen, die Marke klar kommunizieren, inhaltlich strukturiert sein und aus UX-Sicht intuitiv funktionieren. Dazu kommt SEO für Sichtbarkeit bei Google, schnelle Ladezeiten damit Besucher bleiben, und eine saubere Anbindung aller Funktionen, von Buchungstools über Formulare bis hin zu individuellen Rechnern oder integrierten Systemen. Erst wenn all diese Schichten zusammenspielen, wird eine Website zur echten Vertriebsmaschine.</p>
     </div>
   </div>
 </section>
@@ -338,7 +337,7 @@ footer { background: rgba(12,14,28,0.65); backdrop-filter: blur(28px); -webkit-b
         <span class="eyebrow">Leistungen</span>
         <h2 class="leistungen-title">Alles für deine<br>digitale Präsenz.</h2>
       </div>
-      <p class="leistungen-sub reveal-right">Von der Strategie bis zum Launch. Ich kümmere mich um Design, Technik, Texte und SEO, damit du dich auf dein Unternehmen konzentrieren kannst.</p>
+      <p class="leistungen-sub reveal-right">Von der Strategie bis zum Launch. Design, Technik, Inhalte, SEO und alle Anbindungen aus einer Hand, damit du dich auf dein Unternehmen konzentrieren kannst.</p>
     </div>
     <div class="leistungen-grid">
       <div class="leistung-card reveal">
@@ -355,9 +354,9 @@ footer { background: rgba(12,14,28,0.65); backdrop-filter: blur(28px); -webkit-b
       </div>
       <div class="leistung-card reveal" data-delay="2">
         <div class="leistung-icon">🔧</div>
-        <h3>WordPress Development</h3>
-        <p>WordPress-Websites die du selbst pflegen kannst ohne technisches Wissen. Mit Elementor, ACF oder vollständig custom, je nach Anforderung. Sicher, schnell und leicht erweiterbar.</p>
-        <div class="leistung-tags"><span class="ltag">WordPress</span><span class="ltag">Elementor</span><span class="ltag">Custom</span></div>
+        <h3>CMS-Entwicklung</h3>
+        <p>WordPress, Shopify, Wix oder ein anderes System, je nach Anforderung und Budget wird das passende CMS gewählt. Für maximale Flexibilität ist auch eine vollständige Entwicklung in HTML, CSS und JavaScript möglich.</p>
+        <div class="leistung-tags"><span class="ltag">WordPress</span><span class="ltag">Shopify</span><span class="ltag">HTML/Custom</span></div>
       </div>
       <div class="leistung-card reveal">
         <div class="leistung-icon">🔍</div>
@@ -367,15 +366,21 @@ footer { background: rgba(12,14,28,0.65); backdrop-filter: blur(28px); -webkit-b
       </div>
       <div class="leistung-card reveal" data-delay="1">
         <div class="leistung-icon">📱</div>
-        <h3>Mobile-First Design</h3>
-        <p>Über 70% der Website-Besuche kommen vom Smartphone. Deine Website sieht auf jedem Gerät perfekt aus und ist vollständig responsiv. Keine abgeschnittenen Elemente, kein horizontales Scrollen.</p>
+        <h3>Mobile-First &amp; Responsive</h3>
+        <p>Über 70% der Website-Besuche kommen vom Smartphone. Jede Website wird mobile-first entwickelt und sieht auf jedem Gerät, Desktop, Tablet und Smartphone, perfekt aus. Keine Kompromisse.</p>
         <div class="leistung-tags"><span class="ltag">Responsive</span><span class="ltag">Mobile</span><span class="ltag">Tablet</span></div>
       </div>
       <div class="leistung-card reveal" data-delay="2">
         <div class="leistung-icon">🚀</div>
         <h3>Launch &amp; laufende Betreuung</h3>
-        <p>Von der Domain-Einrichtung bis zum Go-Live kümmere ich mich um alles. Auch nach dem Launch bin ich dein direkter Ansprechpartner für Updates, Anpassungen und Erweiterungen.</p>
-        <div class="leistung-tags"><span class="ltag">Hosting</span><span class="ltag">Wartung</span><span class="ltag">Support</span></div>
+        <p>Von der Domain-Einrichtung bis zum Go-Live wird alles begleitet. Auch nach dem Launch gibt es einen direkten Ansprechpartner für Updates, Anpassungen und Erweiterungen.</p>
+        <div class="leistung-tags"><span class="ltag">Hosting-Setup</span><span class="ltag">Wartung</span><span class="ltag">Support</span></div>
+      </div>
+      <div class="leistung-card reveal" data-delay="3">
+        <div class="leistung-icon">🔗</div>
+        <h3>Integrationen &amp; individuelle Features</h3>
+        <p>Buchungstools, Kalender-APIs, Rechnungsgeneratoren, Kalkulator-Tools, CRM-Anbindungen oder eigene kleine Applikationen innerhalb der Website. Was gebraucht wird, wird technisch sauber eingebunden.</p>
+        <div class="leistung-tags"><span class="ltag">API-Anbindung</span><span class="ltag">Kalkulatoren</span><span class="ltag">Custom Features</span></div>
       </div>
     </div>
   </div>
@@ -387,9 +392,9 @@ footer { background: rgba(12,14,28,0.65); backdrop-filter: blur(28px); -webkit-b
     <div class="warum-inner">
       <div class="reveal-left">
         <span class="eyebrow">Warum YG MEDIA</span>
-        <h2>Kein Agentur-Overhead.<br><em>Ein Ansprechpartner.</em></h2>
-        <p>Bei mir bekommst du nicht fünf verschiedene Ansprechpartner und Wochen auf eine Antwort. Ich arbeite direkt mit dir, kenne dein Projekt vollständig und bin jederzeit erreichbar.</p>
-        <p>Das Ergebnis: schnellere Umsetzung, bessere Ergebnisse und eine Website die wirklich zu dir und deinem Unternehmen passt.</p>
+        <h2>Strategie, Design und<br><em>Technik aus einer Hand.</em></h2>
+        <p>Gute Websites entstehen nicht durch Templates und schnelle Umsetzung. Sie entstehen durch ein klares Verständnis der Marke, der Zielgruppe und der Ziele dahinter. Erst dann folgt das Design, die Entwicklung und die technische Einbindung aller Systeme.</p>
+        <p>Mit über 10 Jahren Erfahrung und mehr als 60 realisierten Projekten steht YG MEDIA für durchdachte digitale Präsenzen die messbar performen und langfristig tragen.</p>
         <br>
         <a href="https://calendly.com/yg-media/30min" target="_blank" rel="noopener" class="btn btn-primary">Jetzt Erstgespräch buchen <span class="btn-arrow">↗</span></a>
       </div>
@@ -397,19 +402,19 @@ footer { background: rgba(12,14,28,0.65); backdrop-filter: blur(28px); -webkit-b
         <div class="warum-right">
           <div class="warum-item">
             <div class="warum-num">01</div>
-            <div><h4>Strategie vor Design</h4><p>Ich fange nicht mit dem Design an bevor ich dein Unternehmen, deine Zielgruppe und dein Ziel verstehe. Jede Entscheidung hat einen Grund.</p></div>
+            <div><h4>Strategie vor Design</h4><p>Vor dem ersten Pixel steht das Konzept. Zielgruppe, Markenpositionierung, Inhaltsstruktur und UX-Recherche bilden das Fundament. Das Design folgt der Strategie, nicht umgekehrt.</p></div>
           </div>
           <div class="warum-item">
             <div class="warum-num">02</div>
-            <div><h4>SEO von Anfang an</h4><p>Keine nachträgliche SEO-Optimierung. Die Suchmaschinenoptimierung ist Teil des Bauprozesses, nicht ein teures Add-on hinterher.</p></div>
+            <div><h4>SEO und Performance von Anfang an</h4><p>Suchmaschinenoptimierung und Ladegeschwindigkeit sind keine nachträglichen Add-ons. Sie sind fester Bestandteil jedes Projekts, von der technischen Struktur bis zur Indexierung bei Google.</p></div>
           </div>
           <div class="warum-item">
             <div class="warum-num">03</div>
-            <div><h4>Ergebnisse die messbar sind</h4><p>Ich liefere keine Websites die einfach online sind. Ich liefere Websites die Anfragen generieren. Google Analytics zeigt dir was passiert.</p></div>
+            <div><h4>Messbare Ergebnisse</h4><p>Google Analytics, Search Console, Conversion-Tracking und alle relevanten Tools werden sauber eingerichtet. Was gebaut wird, lässt sich messen. Was messbar ist, lässt sich verbessern.</p></div>
           </div>
           <div class="warum-item">
             <div class="warum-num">04</div>
-            <div><h4>Faire Preise, klare Leistung</h4><p>Kein verstecktes Kleingedrucktes. Du weisst vor dem Start was du bekommst, was es kostet und wann es fertig ist.</p></div>
+            <div><h4>Transparente Preise, klare Leistung</h4><p>Vor dem Start ist klar was im Scope ist, was es kostet und wann es fertig wird. Kein Kleingedrucktes, keine versteckten Zusatzkosten, keine Überraschungen.</p></div>
           </div>
         </div>
       </div>
@@ -427,28 +432,48 @@ footer { background: rgba(12,14,28,0.65); backdrop-filter: blur(28px); -webkit-b
           <span class="accent">bekommst.</span>
         </h2>
       </div>
-      <p class="vorteile-sub reveal-right">Keine Kompromisse. Jede Website die ich baue erfüllt diese Standards, denn weniger ist keine Option wenn es um deinen digitalen Auftritt geht.</p>
+      <p class="vorteile-sub reveal-right">Was du mit jeder Website bekommst. Kein Kompromiss, kein Feature das extra kostet und eigentlich selbstverständlich sein sollte.</p>
     </div>
     <div class="vorteile-grid">
       <div class="vorteil-card reveal">
         <div class="vorteil-num">01</div>
-        <h3>Top Google-Ranking</h3>
-        <p>SEO-Grundlagen sind Pflicht, keine Option. Deine Website ist von Anfang an für Suchmaschinen optimiert.</p>
+        <h3>Individuelles Design</h3>
+        <p>Kein Template. Deine Website wird nach deiner Marke, deiner Zielgruppe und deinen Zielen gestaltet. Modern, hochwertig und unverwechselbar.</p>
       </div>
       <div class="vorteil-card reveal" data-delay="1">
         <div class="vorteil-num">02</div>
-        <h3>Schnelle Ladezeiten</h3>
-        <p>Core Web Vitals im grünen Bereich. Langsame Websites verlieren Besucher. Deine nicht.</p>
+        <h3>Technisch sauber &amp; schnell</h3>
+        <p>Core Web Vitals im grünen Bereich, sauberer Code, schnelle Ladezeiten auf jedem Gerät. Technische Exzellenz als Standard, nicht als Option.</p>
       </div>
       <div class="vorteil-card reveal" data-delay="2">
         <div class="vorteil-num">03</div>
-        <h3>Conversion-optimiert</h3>
-        <p>Klare Call-to-Actions, strukturierte Inhalte und psychologisch durchdachte Nutzerführung die Anfragen erzeugt.</p>
+        <h3>SEO &amp; Google-Ranking</h3>
+        <p>Von Anfang an für Suchmaschinen optimiert. On-Page SEO, technisches SEO und korrekte Indexierung damit du bei Google gefunden wirst.</p>
       </div>
       <div class="vorteil-card reveal" data-delay="3">
         <div class="vorteil-num">04</div>
+        <h3>Alle Funktionen integriert</h3>
+        <p>Buchungstools, Formulare, Kalkulatoren, CRM-Anbindungen, APIs und individuelle Features, alles was du brauchst wird nahtlos eingebaut.</p>
+      </div>
+      <div class="vorteil-card reveal">
+        <div class="vorteil-num">05</div>
+        <h3>Inhalte inklusive</h3>
+        <p>Texte, Bilder und bei Bedarf auch Videos werden mit erstellt. Ein Ansprechpartner der alles liefert, nicht nur den Code.</p>
+      </div>
+      <div class="vorteil-card reveal" data-delay="1">
+        <div class="vorteil-num">06</div>
         <h3>DSGVO-konform</h3>
-        <p>Cookie-Banner, Datenschutzerklärung und rechtssichere Einbindung aller Dienste inklusive.</p>
+        <p>Cookie-Banner, Datenschutzerklärung und rechtssichere Einbindung aller Dienste. Kein juristisches Risiko für dein Unternehmen.</p>
+      </div>
+      <div class="vorteil-card reveal" data-delay="2">
+        <div class="vorteil-num">07</div>
+        <h3>Conversion-optimiert</h3>
+        <p>Klare Nutzerführung, strategische Call-to-Actions und eine Struktur die Besucher in Anfragen verwandelt. Nicht nur schön, sondern wirksam.</p>
+      </div>
+      <div class="vorteil-card reveal" data-delay="3">
+        <div class="vorteil-num">08</div>
+        <h3>Analytics &amp; Tracking</h3>
+        <p>Google Analytics, Search Console und Conversion-Tracking sauber eingerichtet. Du siehst was auf deiner Website passiert und kannst Entscheidungen auf Basis echter Daten treffen.</p>
       </div>
     </div>
   </div>
@@ -475,15 +500,15 @@ footer { background: rgba(12,14,28,0.65); backdrop-filter: blur(28px); -webkit-b
         <div class="prozess-step reveal" data-delay="1">
           <div class="prozess-step-num">02</div>
           <div>
-            <h3>Konzept &amp; Design</h3>
-            <p>Ich erstelle das Design deiner Website in Figma. Du siehst wie dein Auftritt aussehen wird bevor eine Zeile Code geschrieben wird. Feedback-Runden bis du vollständig zufrieden bist.</p>
+            <h3>Konzept, Design &amp; Inhalte</h3>
+            <p>Das Design entsteht in Figma, du siehst deinen Auftritt bevor eine Zeile Code geschrieben wird. Parallel werden Texte, Bilder und Inhalte erarbeitet. Feedback-Runden bis alles sitzt.</p>
           </div>
         </div>
         <div class="prozess-step reveal" data-delay="2">
           <div class="prozess-step-num">03</div>
           <div>
-            <h3>Entwicklung &amp; SEO</h3>
-            <p>Ich baue deine Website und optimiere sie gleichzeitig für Google. Performance, mobile Darstellung und alle technischen Details werden von Anfang an richtig gemacht.</p>
+            <h3>Entwicklung, SEO &amp; Anbindungen</h3>
+            <p>Die Website wird gebaut, für Google optimiert und alle gewünschten Funktionen integriert. Buchungstools, Formulare, Kalkulatoren, CRM-Anbindungen oder individuelle Features, alles wird sauber eingebunden und getestet.</p>
           </div>
         </div>
         <div class="prozess-step reveal" data-delay="3">
@@ -516,11 +541,18 @@ footer { background: rgba(12,14,28,0.65); backdrop-filter: blur(28px); -webkit-b
         </div>
         <div class="faq-item">
           <button class="faq-q">Kann ich meine Website nach dem Launch selbst bearbeiten? <span class="faq-icon">+</span></button>
-          <div class="faq-a"><div class="faq-a-inner">Ja, bei WordPress-Projekten bekommst du eine Einweisung und kannst Texte, Bilder und Inhalte selbst aktualisieren. Für Framer-Websites übernehme ich die Pflege oder schulde dich ein. Du bist nie auf mich angewiesen wenn du nicht willst.</div></div>
+          <div class="faq-a"><div class="faq-a-inner">Bei allen CMS- und Baukastensystemen wie WordPress, Framer, Shopify oder Wix bekommst du nach dem Launch eine Einweisung und kannst Texte, Bilder und Inhalte eigenständig aktualisieren. Bei komplett individuell entwickelten HTML-Websites ist die Selbstpflege technisch aufwendiger. In diesem Fall übernehmen wir die laufende Pflege und Aktualisierungen für dich.</div></div>
         </div>
         <div class="faq-item">
-          <button class="faq-q">Was ist der Unterschied zwischen WordPress und Framer? <span class="faq-icon">+</span></button>
-          <div class="faq-a"><div class="faq-a-inner">WordPress ist das flexiblere, selbst verwaltbare System mit riesigem Plugin-Ökosystem. Framer ist schneller, moderner und produziert visuell hochwertigere Ergebnisse, ist aber etwas weniger flexibel bei komplexen Anforderungen. Ich empfehle dir was zu deinem Projekt passt.</div></div>
+          <button class="faq-q">Welches CMS-System ist das richtige für mich? <span class="faq-icon">+</span></button>
+          <div class="faq-a"><div class="faq-a-inner">
+            Das hängt von deinem Ziel, deinem Budget und deinen Anforderungen ab. Hier ein kurzer Überblick:<br><br>
+            <strong>Framer</strong> — Ideal für moderne Landingpages, Portfolios und Startups die mit einem hochwertigen, animierten Auftritt schnell starten wollen. Sehr gute Performance, einfach zu bedienen.<br><br>
+            <strong>WordPress</strong> — Der Klassiker für umfangreichere Websites mit Blog, vielen Seiten oder komplexeren Strukturen. Riesiges Plugin-Ökosystem, sehr flexibel und gut selbst pflegbar.<br><br>
+            <strong>Shopify</strong> — Die erste Wahl für E-Commerce. Wer Produkte online verkaufen will, ist mit Shopify am besten aufgestellt. Integriertes Zahlungssystem, Lagerverwaltung und Shop-Funktionen inklusive.<br><br>
+            <strong>Wix</strong> — Gut für einfache Websites mit eigenem Pflegeanspruch. Schnell aufgesetzt, aber in Flexibilität und Design-Qualität begrenzt.<br><br>
+            <strong>Individuelle HTML-Entwicklung</strong> — Die stärkste Lösung für maximale Individualität. Keine Abhängigkeit von Drittanbietern, keine Plugin-Updates, keine Einschränkungen. Alles wird genau so gebaut wie es gebraucht wird. Empfehlenswert wenn Einzigartigkeit, Skalierbarkeit und vollständige Kontrolle im Vordergrund stehen.
+          </div></div>
         </div>
         <div class="faq-item">
           <button class="faq-q">Übernimmst du auch Hosting und Domain? <span class="faq-icon">+</span></button>
