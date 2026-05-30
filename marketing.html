@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Online Marketing & SEO | Google Ads, Performance — YG MEDIA</title>
+<meta name="description" content="Online Marketing und SEO das messbar mehr Kunden bringt. Google Ads, lokale Suchmaschinenoptimierung und Performance Marketing aus einer Hand. Für Unternehmer in Deutschland die skalierbar wachsen wollen.">
+<meta name="keywords" content="Online Marketing Agentur, Google Ads Agentur, SEO Agentur Deutschland, Suchmaschinenoptimierung, Performance Marketing, lokales SEO, Google Werbung schalten, SEO Würzburg">
+<meta property="og:title" content="Online Marketing & SEO — YG MEDIA">
+<meta property="og:description" content="Mehr qualifizierte Anfragen durch Google Ads, SEO und gezieltes Performance Marketing.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://yg-media.de/marketing">
+<link rel="canonical" href="https://yg-media.de/marketing">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,900;1,900&family=Playfair+Display:ital,wght@1,500;1,600;1,700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --teal: #226886;
+  --teal-bright: #2b86a7;
+  --teal-dim: rgba(24, 59, 77, 0.2);
+  --teal-glow: rgba(29, 86, 112, 0.45);
+  --bg: #07070F;
+  --surface: #0D0D1A;
+  --card: #0A1018;
+  --text: #F0F0F0;
+  --muted: #8888AA;
+  --faint: #333355;
+  --border: rgba(255,255,255,0.07);
+  --glass: rgba(255, 255, 255, 0.012);
+}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; line-height: 1.65; }
+#bg-canvas { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
+.orb-wrap { position: fixed; inset: 0; z-index: 1; pointer-events: none; overflow: hidden; }
+.orb { position: absolute; border-radius: 50%; filter: blur(120px); }
+.orb-1 { width: 900px; height: 900px; background: radial-gradient(circle, rgba(28,91,130,0.45) 0%, transparent 70%); top: -300px; left: -200px; animation: orb1 25s ease-in-out infinite alternate; }
+.orb-2 { width: 600px; height: 600px; background: radial-gradient(circle, rgba(10,60,120,0.4) 0%, transparent 70%); bottom: 5%; right: -150px; animation: orb2 32s ease-in-out infinite alternate; }
+.orb-3 { width: 500px; height: 500px; background: radial-gradient(circle, rgba(28,91,130,0.25) 0%, transparent 70%); top: 40%; left: 45%; animation: orb3 40s ease-in-out infinite alternate; }
+.orb-4 { width: 350px; height: 350px; background: radial-gradient(circle, rgba(5,40,90,0.4) 0%, transparent 70%); top: 20%; right: 20%; animation: orb1 18s ease-in-out infinite alternate-reverse; }
+@keyframes orb1 { 0% { transform: translate(0,0) scale(1); } 50% { transform: translate(60px,-40px) scale(1.1); } 100% { transform: translate(-30px,60px) scale(0.95); } }
+@keyframes orb2 { 0% { transform: translate(0,0) scale(1); } 100% { transform: translate(-80px,-60px) scale(1.15); } }
+@keyframes orb3 { 0% { transform: translate(0,0); } 100% { transform: translate(-60px,80px) scale(1.2); } }
+.grid-overlay { position: fixed; inset: 0; z-index: 2; pointer-events: none; background-image: linear-gradient(rgba(28,91,130,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(28,91,130,0.03) 1px, transparent 1px); background-size: 80px 80px; mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 100%); }
+body::after { content: ''; position: fixed; inset: 0; z-index: 3; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E"); pointer-events: none; opacity: 0.5; }
+
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1.1rem 0; transition: background 0.3s, border-color 0.3s; }
+nav.scrolled { background: rgba(12,14,28,0.65); backdrop-filter: blur(28px); -webkit-backdrop-filter: blur(28px); border-bottom: 1px solid rgba(255,255,255,0.1); }
+.nav-inner { max-width: 1240px; margin: 0 auto; padding: 0 2.5rem; display: flex; align-items: center; justify-content: space-between; }
+.nav-logo img { height: 44px; width: auto; display: block; }
+.nav-logo-text { display: none; font-size: 1.2rem; font-weight: 900; color: var(--teal); letter-spacing: -0.02em; }
+.nav-links { display: flex; align-items: center; gap: 2.5rem; }
+.nav-links a { color: var(--muted); text-decoration: none; font-size: 0.88rem; font-weight: 500; transition: color 0.2s; letter-spacing: 0.01em; }
+.nav-links a:hover, .nav-links a.active { color: var(--text); }
+.nav-cta { background: var(--teal) !important; color: #fff !important; padding: 0.55rem 1.4rem; border-radius: 99px; font-weight: 600 !important; transition: transform 0.2s, box-shadow 0.2s !important; }
+.nav-cta:hover { transform: translateY(-2px); box-shadow: 0 0 24px rgba(28,91,130,0.6), 0 8px 24px rgba(28,91,130,0.3); }
+.nav-burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+.nav-burger span { display: block; width: 24px; height: 2px; background: var(--text); border-radius: 2px; transition: transform 0.3s, opacity 0.3s; }
+
+.wrap { max-width: 1240px; margin: 0 auto; padding: 0 2.5rem; position: relative; z-index: 10; }
+section { padding: 8rem 0; position: relative; z-index: 10; }
+.eyebrow { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--teal-bright); font-weight: 700; margin-bottom: 1.2rem; text-shadow: 0 0 14px rgba(36,120,170,0.5); }
+
+.hero { min-height: 100vh; display: flex; align-items: center; padding: 130px 0 60px; }
+.hero-inner { display: flex; flex-direction: column; align-items: center; text-align: center; max-width: 820px; margin: 0 auto; }
+.hero-badge { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); font-weight: 600; border: 1px solid rgba(28,91,130,0.4); padding: 0.35rem 1rem 0.35rem 0.7rem; border-radius: 99px; background: rgba(28,91,130,0.08); width: fit-content; margin: 0 auto 2rem; animation: fadeSlideDown 0.6s ease both; }
+.hero-badge-dot { width: 6px; height: 6px; background: var(--teal); border-radius: 50%; animation: pulse 2s ease infinite; box-shadow: 0 0 6px rgba(28,91,130,0.8); }
+@keyframes pulse { 0%,100% { opacity:1; transform: scale(1); } 50% { opacity:0.4; transform: scale(0.8); } }
+.hero-h1 { font-size: clamp(2.8rem, 4.8vw, 5.2rem); font-weight: 900; line-height: 1.06; letter-spacing: -0.035em; margin-bottom: 2rem; }
+.hero-h1 .line { display: block; overflow: visible; }
+.hero-h1 .line-inner { display: block; transform: translateY(110%); animation: slideUp 0.8s cubic-bezier(0.16,1,0.3,1) both; }
+.hero-h1 .line:nth-child(2) .line-inner { animation-delay: 0.08s; }
+.hero-h1 .line:nth-child(3) .line-inner { animation-delay: 0.16s; }
+.hero-h1 em { font-family: 'Playfair Display', serif; font-style: italic; font-weight: 600; color: var(--teal-bright); text-shadow: 0 0 30px rgba(36,120,170,0.5), 0 0 60px rgba(36,120,170,0.2); letter-spacing: -0.01em; }
+.hero-sub { font-size: 1.05rem; color: var(--muted); max-width: 600px; margin: 0 auto 3rem; line-height: 1.8; animation: fadeSlideUp 0.8s 0.3s ease both; }
+.hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; animation: fadeSlideUp 0.8s 0.45s ease both; }
+
+.btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.9rem 2.2rem; border-radius: 99px; font-weight: 600; font-size: 0.9rem; text-decoration: none; transition: all 0.3s; border: none; cursor: pointer; font-family: 'Inter', sans-serif; letter-spacing: -0.01em; }
+.btn-primary { background: var(--teal); color: #fff; }
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 0 28px rgba(28,91,130,0.55), 0 12px 30px rgba(28,91,130,0.3); }
+.btn-ghost { background: transparent; border: 1px solid var(--border); color: var(--text); }
+.btn-ghost:hover { border-color: rgba(255,255,255,0.2); background: rgba(255,255,255,0.04); }
+.btn-arrow { width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.08); border: 1px solid var(--border); display: inline-flex; align-items: center; justify-content: center; font-size: 0.9rem; transition: background 0.2s; }
+.btn:hover .btn-arrow { background: rgba(255,255,255,0.15); }
+
+.hero-visual { display: none; }
+.hero-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.18); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-radius: 24px; padding: 2.2rem 2.4rem; box-shadow: 0 40px 80px -20px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.12); position: relative; z-index: 2; }
+.hero-card-bg { position: absolute; top: -16px; left: 16px; right: -16px; bottom: 0; background: rgba(28,91,130,0.06); border: 1px solid rgba(28,91,130,0.15); border-radius: 24px; z-index: 1; }
+.card-metric-label { font-size: 0.68rem; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.4rem; font-weight: 600; }
+.card-metric-val { font-size: 2.8rem; font-weight: 900; color: var(--teal); letter-spacing: -0.04em; line-height: 1; text-shadow: 0 0 24px rgba(28,91,130,0.5); }
+.card-metric-sub { font-size: 0.8rem; color: var(--muted); margin-top: 0.4rem; }
+.card-divider { height: 1px; background: var(--border); margin: 1.5rem 0; }
+.card-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 0.4rem; }
+.card-stat-label { font-size: 0.68rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.3rem; font-weight: 600; }
+.card-stat-val { font-size: 1.9rem; font-weight: 900; letter-spacing: -0.03em; text-shadow: 0 0 16px rgba(28,91,130,0.25); }
+
+.reality-inner { max-width: 1000px; margin: 0 auto; text-align: center; }
+.reality-title { font-size: clamp(2rem, 3.4vw, 3.2rem); font-weight: 900; letter-spacing: -0.03em; line-height: 1.12; margin-bottom: 2.5rem; }
+.reality-title strong { font-family: 'Playfair Display', serif; color: var(--teal-bright); font-style: italic; font-weight: 600; text-shadow: 0 0 30px rgba(36,120,170,0.4); white-space: nowrap; letter-spacing: -0.01em; }
+.reality-text { font-size: 1.1rem; color: var(--muted); line-height: 1.9; max-width: 680px; margin: 0 auto; }
+
+.leistungen-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 4rem; }
+.leistungen-title { font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 900; letter-spacing: -0.03em; line-height: 1.08; }
+.leistungen-sub { max-width: 360px; color: var(--muted); font-size: 0.95rem; line-height: 1.75; text-align: right; padding-bottom: 0.5rem; }
+.leistungen-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
+.leistung-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; padding: 2.5rem 2rem; backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.1); transition: border-color 0.3s, transform 0.3s; position: relative; overflow: hidden; }
+.leistung-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(28,91,130,0.5), transparent); transform: scaleX(0); transition: transform 0.4s; }
+.leistung-card:hover { border-color: rgba(28,91,130,0.35); transform: translateY(-4px); }
+.leistung-card:hover::before { transform: scaleX(1); }
+.leistung-icon { width: 48px; height: 48px; border-radius: 14px; background: rgba(28,91,130,0.12); border: 1px solid rgba(28,91,130,0.25); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 1.5rem; }
+.leistung-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.8rem; letter-spacing: -0.02em; }
+.leistung-card p { color: var(--muted); font-size: 0.9rem; line-height: 1.75; }
+.leistung-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1.5rem; }
+.ltag { font-size: 0.65rem; font-weight: 600; padding: 0.2rem 0.65rem; border-radius: 99px; background: rgba(255,255,255,0.04); border: 1px solid var(--border); color: var(--muted); }
+
+/* REFERENZ HIGHLIGHT */
+.ref-highlight { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.15); border-radius: 24px; padding: 3.5rem; backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.1); display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; position: relative; overflow: hidden; }
+.ref-highlight::before { content: ''; position: absolute; top: -40%; right: -10%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(36,120,170,0.12) 0%, transparent 70%); pointer-events: none; }
+.ref-highlight-tag { display: inline-block; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 1.2rem; text-shadow: 0 0 10px rgba(28,91,130,0.45); }
+.ref-highlight h3 { font-size: clamp(1.6rem, 2.5vw, 2.2rem); font-weight: 900; letter-spacing: -0.03em; line-height: 1.12; margin-bottom: 1.2rem; }
+.ref-highlight h3 em { font-family: 'Playfair Display', serif; font-style: italic; font-weight: 600; color: var(--teal-bright); text-shadow: 0 0 24px rgba(36,120,170,0.45); }
+.ref-highlight p { color: var(--muted); font-size: 0.95rem; line-height: 1.8; margin-bottom: 1.8rem; }
+.ref-highlight-link { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; font-weight: 600; color: var(--teal-bright); text-decoration: none; transition: gap 0.2s, text-shadow 0.2s; }
+.ref-highlight-link:hover { gap: 0.7rem; text-shadow: 0 0 12px rgba(36,120,170,0.6); }
+.ref-stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+.ref-stat { padding: 1.8rem; border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; background: rgba(255,255,255,0.03); }
+.ref-stat-val { font-size: 2.4rem; font-weight: 900; color: var(--teal); letter-spacing: -0.04em; line-height: 1; text-shadow: 0 0 20px rgba(28,91,130,0.45); }
+.ref-stat-label { font-size: 0.75rem; color: var(--muted); margin-top: 0.5rem; line-height: 1.4; }
+
+.warum-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
+.warum-left h2 { font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 900; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 1.5rem; }
+.warum-left h2 em { font-family: 'Playfair Display', serif; color: var(--teal-bright); font-style: italic; font-weight: 600; text-shadow: 0 0 24px rgba(36,120,170,0.45); }
+.warum-left p { color: var(--muted); font-size: 0.97rem; line-height: 1.85; margin-bottom: 1.2rem; }
+.warum-right { display: flex; flex-direction: column; gap: 1rem; }
+.warum-item { display: grid; grid-template-columns: 48px 1fr; gap: 1.2rem; align-items: start; padding: 1.6rem; border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; background: rgba(255,255,255,0.03); transition: border-color 0.3s; }
+.warum-item:hover { border-color: rgba(28,91,130,0.3); }
+.warum-num { font-size: 0.72rem; font-weight: 700; color: var(--teal); letter-spacing: 0.08em; padding-top: 0.2rem; text-shadow: 0 0 10px rgba(28,91,130,0.5); }
+.warum-item h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem; letter-spacing: -0.01em; }
+.warum-item p { color: var(--muted); font-size: 0.87rem; line-height: 1.7; }
+
+.prozess-inner { display: grid; grid-template-columns: 380px 1fr; gap: 6rem; align-items: start; }
+.prozess-sticky { position: sticky; top: 9rem; }
+.prozess-title { font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 900; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 1.5rem; }
+.prozess-sub { color: var(--muted); font-size: 0.97rem; line-height: 1.8; margin-bottom: 2.5rem; }
+.prozess-steps { display: flex; flex-direction: column; gap: 1rem; }
+.prozess-step { padding: 2rem 2rem; border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; background: rgba(255,255,255,0.04); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.1); display: grid; grid-template-columns: 48px 1fr; gap: 1.5rem; align-items: start; transition: border-color 0.3s; }
+.prozess-step:hover { border-color: rgba(28,91,130,0.35); }
+.prozess-step-num { font-size: 0.72rem; font-weight: 700; color: var(--teal); letter-spacing: 0.08em; padding-top: 0.2rem; text-shadow: 0 0 10px rgba(28,91,130,0.5); }
+.prozess-step h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.6rem; letter-spacing: -0.02em; }
+.prozess-step p { color: var(--muted); font-size: 0.9rem; line-height: 1.75; }
+
+.vorteile-head { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: end; margin-bottom: 5rem; }
+.vorteile-title { font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 900; letter-spacing: -0.04em; line-height: 1.0; }
+.vorteile-title span { display: block; }
+.vorteile-title .accent { font-family: 'Playfair Display', serif; color: var(--teal-bright); font-style: italic; font-weight: 600; text-shadow: 0 0 30px rgba(36,120,170,0.4); letter-spacing: -0.01em; }
+.vorteile-sub { color: var(--muted); font-size: 1rem; line-height: 1.8; align-self: end; }
+.vorteile-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.5rem; }
+.vorteil-card { padding: 2.2rem 2rem; border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; background: rgba(255,255,255,0.04); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.1); transition: border-color 0.3s, transform 0.3s; }
+.vorteil-card:hover { border-color: rgba(28,91,130,0.4); transform: translateY(-4px); }
+.vorteil-num { font-size: 4rem; font-weight: 900; line-height: 1; margin-bottom: 1.5rem; -webkit-text-stroke: 1px rgba(28,91,130,0.55); color: transparent; letter-spacing: -0.05em; filter: drop-shadow(0 0 6px rgba(28,91,130,0.3)); }
+.vorteil-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.7rem; letter-spacing: -0.02em; }
+.vorteil-card p { color: var(--muted); font-size: 0.88rem; line-height: 1.7; }
+
+.cta-section { text-align: center; }
+.cta-inner { border: 1px solid rgba(255,255,255,0.15); border-radius: 28px; padding: 7rem 5rem; background: rgba(255,255,255,0.04); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.1); position: relative; overflow: hidden; }
+.cta-inner::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 600px; height: 600px; background: radial-gradient(circle, rgba(28,91,130,0.12) 0%, transparent 70%); pointer-events: none; }
+.cta-title { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; letter-spacing: -0.04em; line-height: 1.05; margin-bottom: 1.8rem; position: relative; }
+.cta-title em { font-family: 'Playfair Display', serif; font-style: italic; font-weight: 600; color: var(--teal-bright); text-shadow: 0 0 30px rgba(36,120,170,0.4); }
+.cta-sub { font-size: 1.05rem; color: var(--muted); max-width: 500px; margin: 0 auto 3.5rem; line-height: 1.8; position: relative; }
+.cta-subtext { display: block; font-size: 0.78rem; color: var(--faint); margin-top: 1.5rem; letter-spacing: 0.04em; }
+
+.faq-inner { max-width: 820px; margin: 0 auto; }
+.faq-title { font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 900; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 0.8rem; }
+.faq-lead { color: var(--muted); font-size: 1rem; line-height: 1.8; margin-bottom: 4rem; }
+.faq-list { display: flex; flex-direction: column; gap: 0.8rem; }
+.faq-item { border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; background: rgba(255,255,255,0.03); overflow: hidden; transition: border-color 0.3s; }
+.faq-item.open { border-color: rgba(28,91,130,0.3); }
+.faq-q { width: 100%; background: none; border: none; color: var(--text); font-family: 'Inter', sans-serif; font-size: 0.97rem; font-weight: 600; text-align: left; padding: 1.4rem 1.6rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; letter-spacing: -0.01em; }
+.faq-icon { width: 28px; height: 28px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--muted); font-size: 1rem; transition: transform 0.3s, border-color 0.3s; }
+.faq-item.open .faq-icon { transform: rotate(45deg); border-color: rgba(28,91,130,0.5); color: var(--teal-bright); }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.16,1,0.3,1); }
+.faq-a-inner { padding: 0 1.6rem 1.4rem; color: var(--muted); font-size: 0.9rem; line-height: 1.8; }
+.faq-item.open .faq-a { max-height: 300px; }
+
+footer { background: rgba(12,14,28,0.65); backdrop-filter: blur(28px); -webkit-backdrop-filter: blur(28px); border-top: 1px solid rgba(255,255,255,0.1); padding: 4rem 0 2.5rem; position: relative; z-index: 10; }
+.footer-top { display: grid; grid-template-columns: 260px 1fr; gap: 4rem; margin-bottom: 3rem; }
+.footer-logo img { height: 36px; display: block; margin-bottom: 1rem; }
+.footer-logo-text { font-size: 1.1rem; font-weight: 900; color: var(--teal); letter-spacing: -0.02em; margin-bottom: 1rem; display: none; }
+.footer-tagline { font-size: 0.85rem; color: var(--muted); line-height: 1.7; }
+.footer-links-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem; }
+.footer-col-title { font-size: 0.72rem; font-weight: 700; color: var(--text); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1.2rem; }
+.footer-col a { display: block; color: var(--muted); text-decoration: none; font-size: 0.85rem; margin-bottom: 0.6rem; transition: color 0.2s; }
+.footer-col a:hover { color: var(--text); }
+.footer-bottom { border-top: 1px solid var(--border); padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+.footer-copy { font-size: 0.78rem; color: var(--faint); }
+.footer-socials { display: flex; gap: 0.8rem; }
+.social-btn { width: 36px; height: 36px; border-radius: 10px; background: var(--glass); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; text-decoration: none; color: var(--muted); font-size: 0.8rem; transition: all 0.2s; font-weight: 700; }
+.social-btn:hover { border-color: rgba(28,91,130,0.5); color: var(--teal); }
+
+.cookie-banner { position: fixed; bottom: 1.5rem; left: 1.5rem; right: 1.5rem; max-width: 480px; z-index: 2000; padding: 1.6rem 1.8rem; background: rgba(12,14,28,0.85); backdrop-filter: blur(28px); -webkit-backdrop-filter: blur(28px); border: 1px solid rgba(255,255,255,0.12); border-radius: 20px; box-shadow: 0 30px 60px -20px rgba(0,0,0,0.6); transform: translateY(150%); transition: transform 0.5s cubic-bezier(0.16,1,0.3,1); }
+.cookie-banner.show { transform: translateY(0); }
+.cookie-title { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.5rem; }
+.cookie-text { font-size: 0.82rem; color: var(--muted); line-height: 1.6; margin-bottom: 1.2rem; }
+.cookie-text a { color: var(--teal-bright); text-decoration: none; }
+.cookie-btns { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+.cookie-btn { flex: 1; min-width: 120px; padding: 0.7rem 1.2rem; border-radius: 99px; font-size: 0.82rem; font-weight: 600; cursor: pointer; border: none; font-family: 'Inter', sans-serif; transition: all 0.2s; }
+.cookie-accept { background: var(--teal); color: #fff; }
+.cookie-accept:hover { box-shadow: 0 0 20px rgba(28,91,130,0.5); transform: translateY(-1px); }
+.cookie-decline { background: rgba(255,255,255,0.06); color: var(--text); border: 1px solid rgba(255,255,255,0.12); }
+.cookie-decline:hover { background: rgba(255,255,255,0.1); }
+
+@keyframes slideUp { from { transform: translateY(110%); } to { transform: translateY(0); } }
+@keyframes fadeSlideUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeSlideDown { from { opacity: 0; transform: translateY(-12px); } to { opacity: 1; transform: translateY(0); } }
+.reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+.reveal.visible { opacity: 1; transform: none; }
+.reveal-left { opacity: 0; transform: translateX(-32px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+.reveal-left.visible { opacity: 1; transform: none; }
+.reveal-right { opacity: 0; transform: translateX(32px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+.reveal-right.visible { opacity: 1; transform: none; }
+[data-delay="1"] { transition-delay: 0.1s; }
+[data-delay="2"] { transition-delay: 0.2s; }
+[data-delay="3"] { transition-delay: 0.3s; }
+
+@media (max-width: 1100px) {
+  /* hero already single column */
+  /* hero-visual hidden globally */
+  .leistungen-grid { grid-template-columns: repeat(2,1fr); }
+  .warum-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .vorteile-grid { grid-template-columns: repeat(2,1fr); }
+  .vorteile-head { grid-template-columns: 1fr; gap: 1.5rem; }
+  .prozess-inner { grid-template-columns: 1fr; }
+  .prozess-sticky { position: static; }
+  .ref-highlight { grid-template-columns: 1fr; gap: 2.5rem; }
+  .footer-top { grid-template-columns: 1fr; }
+  .leistungen-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  .leistungen-sub { text-align: left; max-width: 100%; }
+}
+@media (max-width: 768px) {
+  nav { padding: 0.9rem 0; }
+  .nav-inner { padding: 0 1.5rem; }
+  .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; background: rgba(7,7,15,0.97); padding: 1.5rem; gap: 1.5rem; border-bottom: 1px solid var(--border); backdrop-filter: blur(24px); }
+  .nav-links.open { display: flex; }
+  .nav-burger { display: flex; }
+  .wrap { padding: 0 1.5rem; }
+  section { padding: 5rem 0; }
+  .leistungen-grid { grid-template-columns: 1fr; }
+  .vorteile-grid { grid-template-columns: 1fr; }
+  .cta-inner { padding: 4rem 2rem; }
+  .footer-links-grid { grid-template-columns: 1fr 1fr; }
+  .ref-stats-grid { grid-template-columns: 1fr 1fr; }
+  .cookie-banner { left: 1rem; right: 1rem; bottom: 1rem; padding: 1.4rem; }
+}
+</style>
+</head>
+<body>
+
+<canvas id="bg-canvas"></canvas>
+<div class="grid-overlay"></div>
+<div class="orb-wrap">
+  <div class="orb orb-1"></div><div class="orb orb-2"></div>
+  <div class="orb orb-3"></div><div class="orb orb-4"></div>
+</div>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <img src="assets/YG-Logo-Weiss-No-Background.png" alt="YG MEDIA" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span class="nav-logo-text">YG MEDIA</span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="/website">Website</a>
+      <a href="/apps">Apps</a>
+      <a href="/marketing" class="active">Marketing</a>
+      <a href="/automation">Automation</a>
+      <a href="https://calendly.com/yg-media/30min" target="_blank" rel="noopener" class="nav-cta">Erstgespräch buchen</a>
+    </div>
+    <div class="nav-burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-badge"><span class="hero-badge-dot"></span>Google Ads · SEO · Performance</div>
+        <h1 class="hero-h1">
+          <span class="line"><span class="line-inner">Mehr Anfragen.</span></span>
+          <span class="line"><span class="line-inner">Weniger Budgetverschwendung.</span></span>
+          <span class="line"><span class="line-inner"><em>Messbare&nbsp;Ergebnisse.</em></span></span>
+        </h1>
+        <p class="hero-sub">Online Marketing das wirklich funktioniert. Ich baue Kampagnen die qualifizierte Anfragen liefern, kein Budget verbrennen und skalierbar wachsen. Google Ads, lokales SEO und Performance Marketing aus einer Hand, mit direkter Verantwortung und echten Zahlen.</p>
+        <div class="hero-btns">
+          <a href="https://calendly.com/yg-media/30min" target="_blank" rel="noopener" class="btn btn-primary">Kostenloses Erstgespräch <span class="btn-arrow">↗</span></a>
+          <a href="#leistungen" class="btn btn-ghost">Leistungen ansehen</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card-bg"></div>
+        <div class="hero-card">
+          <div class="card-metric-label">Wahlkampagnen gewonnen</div>
+          <div class="card-metric-val">2</div>
+          <div class="card-metric-sub">Ergebnis zählt. Nicht Impressionen.</div>
+          <div class="card-divider"></div>
+          <div class="card-stats">
+            <div><div class="card-stat-label">Erfahrung</div><div class="card-stat-val">10+ J.</div></div>
+            <div><div class="card-stat-label">TikTok Views</div><div class="card-stat-val">272k</div></div>
+            <div><div class="card-stat-label">Kanäle</div><div class="card-stat-val" style="font-size:1.1rem;line-height:1.4;padding-top:0.3rem">Google · Social · SEO</div></div>
+            <div><div class="card-stat-label">Messung</div><div class="card-stat-val" style="font-size:1.1rem;line-height:1.4;padding-top:0.3rem">Transparent &amp; laufend</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="reality-inner reveal">
+      <span class="eyebrow">Das Problem</span>
+      <h2 class="reality-title">Die meisten Marketing-Budgets<br><strong>verbrennen Geld ohne messbare Ergebnisse.</strong></h2>
+      <p class="reality-text">Falsch aufgesetzte Google Ads, Keywords ohne Kaufabsicht, Landingpages die nicht konvertieren. Das Ergebnis: du zahlst für Klicks die nie zu Kunden werden. Ich baue Marketing-Systeme die auf Ergebnisse optimiert sind. Mit transparentem Reporting damit du immer weisst was dein Budget bewirkt.</p>
+    </div>
+  </div>
+</section>
+
+<section id="leistungen">
+  <div class="wrap">
+    <div class="leistungen-header">
+      <div class="reveal-left">
+        <span class="eyebrow">Leistungen</span>
+        <h2 class="leistungen-title">Marketing das<br>Kunden bringt.</h2>
+      </div>
+      <p class="leistungen-sub reveal-right">Kein Marketing-Blabla. Konkrete Kanäle, klare Ziele, messbare Ergebnisse. So arbeite ich.</p>
+    </div>
+    <div class="leistungen-grid">
+      <div class="leistung-card reveal">
+        <div class="leistung-icon">📈</div>
+        <h3>Google Ads</h3>
+        <p>Suchkampagnen die genau die Menschen erreichen die gerade nach deinem Angebot suchen. Keyword-Recherche, Anzeigentexte, Bidding-Strategie und laufende Optimierung. Jeder Euro Budget wird auf Ergebnis optimiert.</p>
+        <div class="leistung-tags"><span class="ltag">Search Ads</span><span class="ltag">Display</span><span class="ltag">Conversion-Tracking</span></div>
+      </div>
+      <div class="leistung-card reveal" data-delay="1">
+        <div class="leistung-icon">🔍</div>
+        <h3>Suchmaschinenoptimierung (SEO)</h3>
+        <p>Organische Sichtbarkeit die nicht von Werbebudget abhängt. Lokales SEO für Unternehmen die in ihrer Region gefunden werden wollen. On-Page, technisches SEO und Backlink-Strategie für nachhaltige Rankings.</p>
+        <div class="leistung-tags"><span class="ltag">On-Page SEO</span><span class="ltag">Lokales SEO</span><span class="ltag">Google Business</span></div>
+      </div>
+      <div class="leistung-card reveal" data-delay="2">
+        <div class="leistung-icon">🎯</div>
+        <h3>Performance Marketing</h3>
+        <p>Datengetriebenes Marketing mit klarem ROAS-Fokus. Ich tracke jeden Klick, jede Anfrage und jede Conversion damit du weisst was funktioniert und was nicht. Kein Bauchgefühl, nur Zahlen.</p>
+        <div class="leistung-tags"><span class="ltag">Analytics</span><span class="ltag">Conversion-Optimierung</span><span class="ltag">ROAS</span></div>
+      </div>
+      <div class="leistung-card reveal">
+        <div class="leistung-icon">📊</div>
+        <h3>Content Marketing &amp; SEO-Texte</h3>
+        <p>Inhalte die Google und deine Kunden gleichermassen überzeugen. Keyword-optimierte Landingpages, Blogartikel und Servicetexte die Vertrauen aufbauen und Anfragen generieren.</p>
+        <div class="leistung-tags"><span class="ltag">SEO-Texte</span><span class="ltag">Landingpages</span><span class="ltag">Content-Strategie</span></div>
+      </div>
+      <div class="leistung-card reveal" data-delay="1">
+        <div class="leistung-icon">📱</div>
+        <h3>Social Media Marketing</h3>
+        <p>Organische und bezahlte Social-Media-Strategien die Reichweite und Anfragen bringen. TikTok, Instagram und LinkedIn, je nach Zielgruppe. Ich habe mit TikTok-Content 272.000 organische Views erzielt.</p>
+        <div class="leistung-tags"><span class="ltag">TikTok</span><span class="ltag">Instagram</span><span class="ltag">LinkedIn Ads</span></div>
+      </div>
+      <div class="leistung-card reveal" data-delay="2">
+        <div class="leistung-icon">🗺️</div>
+        <h3>Lokales SEO &amp; Google Business</h3>
+        <p>Für lokale Unternehmen die in ihrer Stadt oder Region gefunden werden wollen. Google Business Profil-Optimierung, lokale Keywords und Bewertungsstrategien für mehr Laufkundschaft und Anfragen.</p>
+        <div class="leistung-tags"><span class="ltag">Google Business</span><span class="ltag">Lokale Maps</span><span class="ltag">Bewertungen</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REFERENZ: Felgen Brillant -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow reveal">Echte Referenz</span>
+    <div class="ref-highlight reveal">
+      <div>
+        <div class="ref-highlight-tag">Automobil · TikTok · Google Ads · Webdesign</div>
+        <h3>Felgen Brillant — <em>Von null zur etablierten Marke.</em></h3>
+        <p>Keine Markenidentität, keine Website, null Social Media Präsenz. Ich habe das komplette digitale Fundament aufgebaut: TikTok auf 3.801 Follower gewachsen mit 272.000 organischen Views, Google Ads aufgesetzt und die laufende Vermarktung übernommen. Ergebnis: mehr Bekanntheit, mehr Vertrauen und messbarer Umsatzanstieg.</p>
+        <a href="https://www.felgen-brillant.com" target="_blank" rel="noopener" class="ref-highlight-link">Website ansehen →</a>
+      </div>
+      <div class="ref-stats-grid">
+        <div class="ref-stat">
+          <div class="ref-stat-val">272k</div>
+          <div class="ref-stat-label">Organische TikTok Views</div>
+        </div>
+        <div class="ref-stat">
+          <div class="ref-stat-val">3.801</div>
+          <div class="ref-stat-label">TikTok Follower aufgebaut</div>
+        </div>
+        <div class="ref-stat">
+          <div class="ref-stat-val">0 → 1</div>
+          <div class="ref-stat-label">Komplett von Null aufgebaut</div>
+        </div>
+        <div class="ref-stat">
+          <div class="ref-stat-val">Live</div>
+          <div class="ref-stat-label">Laufende Betreuung und Wachstum</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="warum-inner">
+      <div class="reveal-left">
+        <span class="eyebrow">Warum YG MEDIA</span>
+        <h2>Marketing mit<br><em>Unternehmer-Perspektive.</em></h2>
+        <p>Ich habe selbst Unternehmen aufgebaut und vermarktet. Ich denke nicht in Impressionen, sondern in Anfragen und Umsatz. Das macht den Unterschied zwischen Marketing das aussieht gut und Marketing das funktioniert.</p>
+        <p>Kein versteckter Overhead, kein Agentur-Kleingedrucktes. Du weisst was dein Budget bewirkt.</p>
+        <br>
+        <a href="https://calendly.com/yg-media/30min" target="_blank" rel="noopener" class="btn btn-primary">Marketing-Gespräch buchen <span class="btn-arrow">↗</span></a>
+      </div>
+      <div class="reveal-right">
+        <div class="warum-right">
+          <div class="warum-item">
+            <div class="warum-num">01</div>
+            <div><h4>Keine leeren KPI-Versprechen</h4><p>Ich optimiere auf das was wirklich zählt: qualifizierte Anfragen, Anrufe und Käufe. Nicht auf Reichweite die nichts kostet und nichts bringt.</p></div>
+          </div>
+          <div class="warum-item">
+            <div class="warum-num">02</div>
+            <div><h4>Transparentes Reporting</h4><p>Du bekommst monatliche Berichte die du verstehst. Welche Keywords konvertieren, wie hoch der CPA ist, was optimiert wird. Keine Blackbox.</p></div>
+          </div>
+          <div class="warum-item">
+            <div class="warum-num">03</div>
+            <div><h4>Website und Marketing zusammen</h4><p>Marketing auf eine schlecht konvertierende Website zu schalten verbrennt Budget. Ich optimiere beides zusammen für maximales Ergebnis.</p></div>
+          </div>
+          <div class="warum-item">
+            <div class="warum-num">04</div>
+            <div><h4>Skalierbar aufgebaut</h4><p>Ich baue Systeme die mitwachsen. Was heute bei 500 Euro Monatsbudget funktioniert, skaliert genauso bei 5.000 Euro.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="vorteile-head">
+      <div class="reveal-left">
+        <h2 class="vorteile-title">
+          <span>Marketing das</span>
+          <span class="accent">funktioniert.</span>
+        </h2>
+      </div>
+      <p class="vorteile-sub reveal-right">Diese Prinzipien gelten für jedes Projekt, denn schlechtes Marketing gibt es bei mir nicht.</p>
+    </div>
+    <div class="vorteile-grid">
+      <div class="vorteil-card reveal">
+        <div class="vorteil-num">01</div>
+        <h3>Conversion-First</h3>
+        <p>Jede Kampagne ist auf Conversions optimiert. Traffic ist kein Ziel, Anfragen und Umsatz sind das Ziel.</p>
+      </div>
+      <div class="vorteil-card reveal" data-delay="1">
+        <div class="vorteil-num">02</div>
+        <h3>Datenbasiert</h3>
+        <p>Entscheidungen basieren auf echten Daten. A/B-Tests, Search Console, Analytics und Heatmaps zeigen was funktioniert.</p>
+      </div>
+      <div class="vorteil-card reveal" data-delay="2">
+        <div class="vorteil-num">03</div>
+        <h3>DSGVO-konform</h3>
+        <p>Tracking und Analytics vollständig DSGVO-konform aufgesetzt. Kein juristisches Risiko für dein Unternehmen.</p>
+      </div>
+      <div class="vorteil-card reveal" data-delay="3">
+        <div class="vorteil-num">04</div>
+        <h3>Laufende Optimierung</h3>
+        <p>Marketing ist kein Einmalsetup. Ich optimiere kontinuierlich damit dein Budget immer effizienter eingesetzt wird.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="prozess">
+  <div class="wrap">
+    <div class="prozess-inner">
+      <div class="prozess-sticky">
+        <span class="eyebrow reveal">Der Prozess</span>
+        <h2 class="prozess-title reveal">Von der Strategie zu messbaren Ergebnissen.</h2>
+        <p class="prozess-sub reveal">Strukturiert, transparent und immer auf dein Budget und deine Ziele abgestimmt.</p>
+        <a href="https://calendly.com/yg-media/30min" target="_blank" rel="noopener" class="btn btn-primary reveal">Jetzt starten <span class="btn-arrow">↗</span></a>
+      </div>
+      <div class="prozess-steps">
+        <div class="prozess-step reveal">
+          <div class="prozess-step-num">01</div>
+          <div><h3>Analyse &amp; Strategie</h3><p>Ich analysiere dein Unternehmen, deine Wettbewerber und deine Zielgruppe. Das Ergebnis ist eine konkrete Marketing-Strategie mit klarem Kanal-Mix, Budget-Empfehlung und messbaren KPIs.</p></div>
+        </div>
+        <div class="prozess-step reveal" data-delay="1">
+          <div class="prozess-step-num">02</div>
+          <div><h3>Setup &amp; Tracking</h3><p>Ich richte alle Kampagnen, Tracking und Analytics auf. Google Ads, Search Console, Google Analytics 4 und Conversion-Tracking, alles korrekt und DSGVO-konform aufgesetzt bevor ein Euro ausgegeben wird.</p></div>
+        </div>
+        <div class="prozess-step reveal" data-delay="2">
+          <div class="prozess-step-num">03</div>
+          <div><h3>Launch &amp; Lernphase</h3><p>Kampagnen live schalten, Daten sammeln, lernen. Die ersten 4 Wochen sind die Lernphase in der ich die Kampagnen eng beobachte und erste Optimierungen vornehme um schnell aus der Budget-Verbrennungsphase herauszukommen.</p></div>
+        </div>
+        <div class="prozess-step reveal" data-delay="3">
+          <div class="prozess-step-num">04</div>
+          <div><h3>Optimierung &amp; Skalierung</h3><p>Mit echten Daten optimiere ich laufend. Was funktioniert, wird skaliert. Was nicht funktioniert, wird gestoppt oder verändert. Monatliches Reporting damit du immer informiert bist.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="faq-inner">
+      <span class="eyebrow reveal">FAQ</span>
+      <h2 class="faq-title reveal">Häufige Fragen.</h2>
+      <p class="faq-lead reveal">Was du über Online Marketing wissen solltest bevor wir starten.</p>
+      <div class="faq-list reveal">
+        <div class="faq-item">
+          <button class="faq-q">Wie viel Budget brauche ich für Google Ads? <span class="faq-icon">+</span></button>
+          <div class="faq-a"><div class="faq-a-inner">Das hängt von deiner Branche und Region ab. Als Faustregel: mit 300 bis 500 Euro Monatsbudget lässt sich ein erster sinnvoller Test fahren. Für wettbewerbsintensive Branchen wie Rechtsanwälte oder Versicherungen sind 1.000 Euro und mehr realistischer. Im Erstgespräch gebe ich dir eine ehrliche Einschätzung.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Wie lange dauert es bis SEO Ergebnisse zeigt? <span class="faq-icon">+</span></button>
+          <div class="faq-a"><div class="faq-a-inner">SEO ist ein mittelfristiges Spiel. Erste Verbesserungen sind oft nach 2 bis 3 Monaten sichtbar. Signifikante Ergebnisse nach 4 bis 8 Monaten. Im Gegensatz zu Google Ads baut SEO einen dauerhaften Wert auf der nach dem Ende der Betreuung weiter wirkt.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Was ist der Unterschied zwischen SEO und Google Ads? <span class="faq-icon">+</span></button>
+          <div class="faq-a"><div class="faq-a-inner">Google Ads liefert sofortige Sichtbarkeit solange du zahlst. SEO baut organische Sichtbarkeit auf die auch nach Ende der Betreuung bleibt. Ideales Marketing kombiniert beides: Ads für sofortige Ergebnisse, SEO für nachhaltiges Wachstum.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Übernimmst du auch laufende Kampagnen-Betreuung? <span class="faq-icon">+</span></button>
+          <div class="faq-a"><div class="faq-a-inner">Ja, ich biete laufende Betreuung auf monatlicher Basis an. Das umfasst Kampagnen-Optimierung, Reporting und strategische Anpassungen. Die monatliche Betreuungsgebühr ist abhängig vom Umfang und wird im Erstgespräch besprochen.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Kann ich meine bestehenden Kampagnen analysieren lassen? <span class="faq-icon">+</span></button>
+          <div class="faq-a"><div class="faq-a-inner">Ja. Ich analysiere deine bestehenden Google Ads Kampagnen und zeige dir konkret was Budget verschwendet und was optimiert werden kann. Das Analyse-Gespräch ist kostenlos und unverbindlich.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="wrap">
+    <div class="cta-inner reveal">
+      <h2 class="cta-title">Mehr Anfragen.<br><em>Weniger Budgetverschwendung.</em></h2>
+      <p class="cta-sub">Buch dir ein kostenloses Erstgespräch. Ich schaue mir deine aktuelle Situation an und zeige dir konkret was ich anders machen würde und was das kosten würde.</p>
+      <a href="https://calendly.com/yg-media/30min" target="_blank" rel="noopener" class="btn btn-primary">Jetzt 30-Min-Termin buchen <span class="btn-arrow">↗</span></a>
+      <span class="cta-subtext">Kostenlos · Unverbindlich · 30 Minuten</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">
+          <img src="assets/YG-Logo-Weiss-No-Background.png" alt="YG MEDIA" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <div class="footer-logo-text">YG MEDIA</div>
+        </div>
+        <p class="footer-tagline">Digital Business Builder.<br>Website · App · Marketing · Automation.</p>
+      </div>
+      <div class="footer-links-grid">
+        <div class="footer-col">
+          <div class="footer-col-title">Services</div>
+          <a href="/website">Website</a><a href="/apps">Apps</a>
+          <a href="/marketing">Marketing</a><a href="/automation">Automation</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Unternehmen</div>
+          <a href="/#about">Über mich</a><a href="/#referenzen">Referenzen</a>
+          <a href="/#prozess">Prozess</a><a href="/en">English</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Rechtliches</div>
+          <a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 YG MEDIA · Yasin Gündogdu</p>
+      <div class="footer-socials">
+        <a href="https://behance.net/yasinguendogdu" target="_blank" rel="noopener" class="social-btn" aria-label="Behance">Be</a>
+        <a href="https://x.com/ysn_gdu" target="_blank" rel="noopener" class="social-btn" aria-label="X">X</a>
+        <a href="https://de.pinterest.com/YG_369/" target="_blank" rel="noopener" class="social-btn" aria-label="Pinterest">Pin</a>
+        <a href="https://www.pexels.com/de-de/@ysngdu/" target="_blank" rel="noopener" class="social-btn" aria-label="Pexels">Px</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="cookie-banner" id="cookieBanner">
+  <div class="cookie-title">Diese Website verwendet Cookies</div>
+  <div class="cookie-text">Ich nutze Cookies um die Nutzung der Website zu analysieren. Mehr dazu in der <a href="/datenschutz">Datenschutzerklärung</a>.</div>
+  <div class="cookie-btns">
+    <button class="cookie-btn cookie-decline" id="cookieDecline">Nur notwendige</button>
+    <button class="cookie-btn cookie-accept" id="cookieAccept">Alle akzeptieren</button>
+  </div>
+</div>
+
+<script>
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 40); }, { passive: true });
+const burger = document.getElementById('burger');
+const navLinks = document.getElementById('navLinks');
+burger.addEventListener('click', () => navLinks.classList.toggle('open'));
+document.querySelectorAll('.nav-links a').forEach(a => { a.addEventListener('click', () => navLinks.classList.remove('open')); });
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => { const t = document.querySelector(a.getAttribute('href')); if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); } });
+});
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => io.observe(el));
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+const canvas = document.getElementById('bg-canvas');
+const ctx = canvas.getContext('2d');
+let W, H, particles, mouse = { x: -9999, y: -9999 };
+function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
+function Particle() { this.reset = () => { this.x = Math.random()*W; this.y = Math.random()*H; this.vx = (Math.random()-0.5)*0.3; this.vy = (Math.random()-0.5)*0.3; this.r = Math.random()*1.4+0.3; this.alpha = Math.random()*0.45+0.08; this.life = 0; this.maxLife = Math.random()*300+200; }; this.reset(); }
+function initParticles() { particles = Array.from({length:100}, () => new Particle()); }
+function animate() {
+  ctx.clearRect(0,0,W,H);
+  for (let i=0;i<particles.length;i++) {
+    for (let j=i+1;j<particles.length;j++) { const dx=particles[i].x-particles[j].x,dy=particles[i].y-particles[j].y,d=Math.sqrt(dx*dx+dy*dy); if(d<130){ctx.beginPath();ctx.strokeStyle=`rgba(28,91,130,${(1-d/130)*0.1})`;ctx.lineWidth=0.5;ctx.moveTo(particles[i].x,particles[i].y);ctx.lineTo(particles[j].x,particles[j].y);ctx.stroke();} }
+    const dx=particles[i].x-mouse.x,dy=particles[i].y-mouse.y,d=Math.sqrt(dx*dx+dy*dy); if(d<180){ctx.beginPath();ctx.strokeStyle=`rgba(28,91,130,${(1-d/180)*0.25})`;ctx.lineWidth=0.7;ctx.moveTo(particles[i].x,particles[i].y);ctx.lineTo(mouse.x,mouse.y);ctx.stroke();}
+  }
+  particles.forEach(p => {
+    p.life++; if(p.life>p.maxLife) p.reset();
+    const dx=p.x-mouse.x,dy=p.y-mouse.y,d=Math.sqrt(dx*dx+dy*dy); if(d<100){const f=(100-d)/100*0.7;p.vx+=(dx/d)*f;p.vy+=(dy/d)*f;}
+    p.vx*=0.99;p.vy*=0.99;p.x+=p.vx;p.y+=p.vy;
+    if(p.x<0)p.x=W;if(p.x>W)p.x=0;if(p.y<0)p.y=H;if(p.y>H)p.y=0;
+    const fa=p.life<60?p.life/60:p.life>p.maxLife-60?(p.maxLife-p.life)/60:1;
+    ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=`rgba(28,91,130,${p.alpha*fa})`;ctx.fill();
+  });
+  requestAnimationFrame(animate);
+}
+window.addEventListener('mousemove', e => { mouse.x=e.clientX; mouse.y=e.clientY; }, {passive:true});
+window.addEventListener('mouseleave', () => { mouse.x=-9999; mouse.y=-9999; });
+window.addEventListener('resize', () => { resize(); initParticles(); }, {passive:true});
+resize(); initParticles(); animate();
+(function() {
+  const GA_ID = 'G-MHQJ0HLBM3';
+  const banner = document.getElementById('cookieBanner');
+  const KEY = 'yg_cookie_consent';
+  function loadAnalytics() { if (!GA_ID) return; const s = document.createElement('script'); s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID; document.head.appendChild(s); window.dataLayer = window.dataLayer || []; function gtag(){ dataLayer.push(arguments); } window.gtag = gtag; gtag('js', new Date()); gtag('config', GA_ID, { anonymize_ip: true }); }
+  const consent = localStorage.getItem(KEY);
+  if (consent === 'accepted') { loadAnalytics(); }
+  else if (consent !== 'declined') { setTimeout(() => banner.classList.add('show'), 1200); }
+  document.getElementById('cookieAccept').addEventListener('click', () => { localStorage.setItem(KEY, 'accepted'); banner.classList.remove('show'); loadAnalytics(); });
+  document.getElementById('cookieDecline').addEventListener('click', () => { localStorage.setItem(KEY, 'declined'); banner.classList.remove('show'); });
+})();
+</script>
+</body>
+</html>
