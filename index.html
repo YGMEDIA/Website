@@ -266,6 +266,21 @@ footer { background: rgba(12,14,28,0.65); backdrop-filter: blur(28px); -webkit-b
 .social-btn { width: 36px; height: 36px; border-radius: 10px; background: var(--glass); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; text-decoration: none; color: var(--muted); font-size: 0.8rem; transition: all 0.2s; font-weight: 700; }
 .social-btn:hover { border-color: rgba(28,91,130,0.5); color: var(--teal); }
 
+/* COOKIE BANNER */
+.cookie-banner { position: fixed; bottom: 1.5rem; left: 1.5rem; right: 1.5rem; max-width: 480px; margin: 0 auto; z-index: 2000; padding: 1.6rem 1.8rem; background: rgba(12,14,28,0.85); backdrop-filter: blur(28px); -webkit-backdrop-filter: blur(28px); border: 1px solid rgba(255,255,255,0.12); border-radius: 20px; box-shadow: 0 30px 60px -20px rgba(0,0,0,0.6); transform: translateY(150%); transition: transform 0.5s cubic-bezier(0.16,1,0.3,1); }
+.cookie-banner.show { transform: translateY(0); }
+.cookie-title { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.5rem; letter-spacing: -0.01em; }
+.cookie-text { font-size: 0.82rem; color: var(--muted); line-height: 1.6; margin-bottom: 1.2rem; }
+.cookie-text a { color: var(--teal-bright); text-decoration: none; }
+.cookie-text a:hover { text-decoration: underline; }
+.cookie-btns { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+.cookie-btn { flex: 1; min-width: 120px; padding: 0.7rem 1.2rem; border-radius: 99px; font-size: 0.82rem; font-weight: 600; cursor: pointer; border: none; font-family: 'Inter', sans-serif; transition: all 0.2s; }
+.cookie-accept { background: var(--teal); color: #fff; }
+.cookie-accept:hover { box-shadow: 0 0 20px rgba(28,91,130,0.5); transform: translateY(-1px); }
+.cookie-decline { background: rgba(255,255,255,0.06); color: var(--text); border: 1px solid rgba(255,255,255,0.12); }
+.cookie-decline:hover { background: rgba(255,255,255,0.1); }
+@media (max-width: 768px) { .cookie-banner { left: 1rem; right: 1rem; bottom: 1rem; padding: 1.4rem; } }
+
 /* ANIMATIONS */
 @keyframes slideUp { from { transform: translateY(110%); } to { transform: translateY(0); } }
 @keyframes fadeSlideUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
@@ -608,7 +623,7 @@ footer { background: rgba(12,14,28,0.65); backdrop-filter: blur(28px); -webkit-b
         </div>
       </div>
       <div class="contact-form reveal-right">
-        <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <form id="contactForm" action="https://formspree.io/f/xojbbzad" method="POST">
           <div class="form-grid">
             <div class="form-group"><label class="form-label">Dein Name</label><input type="text" name="name" class="form-input" placeholder="Max Mustermann" required></div>
             <div class="form-group"><label class="form-label">E-Mail</label><input type="email" name="email" class="form-input" placeholder="max@firma.de" required></div>
@@ -728,5 +743,40 @@ window.addEventListener('mouseleave', () => { mouse.x=-9999; mouse.y=-9999; });
 window.addEventListener('resize', () => { resize(); initParticles(); }, {passive:true});
 resize(); initParticles(); animate();
 </script>
+<!-- COOKIE BANNER -->
+<div class="cookie-banner" id="cookieBanner">
+  <div class="cookie-title">Diese Website verwendet Cookies</div>
+  <div class="cookie-text">Ich nutze Cookies um die Nutzung der Website zu analysieren und mein Angebot zu verbessern. Du entscheidest selbst was du zulässt. Mehr dazu in der <a href="/datenschutz">Datenschutzerklärung</a>.</div>
+  <div class="cookie-btns">
+    <button class="cookie-btn cookie-decline" id="cookieDecline">Nur notwendige</button>
+    <button class="cookie-btn cookie-accept" id="cookieAccept">Alle akzeptieren</button>
+  </div>
+</div>
+
+<script>
+// COOKIE CONSENT + ANALYTICS
+(function() {
+  const GA_ID = 'G-MHQJ0HLBM3';
+  const banner = document.getElementById('cookieBanner');
+  const KEY = 'yg_cookie_consent';
+  function loadAnalytics() {
+    if (!GA_ID) return;
+    const s = document.createElement('script');
+    s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', GA_ID, { anonymize_ip: true });
+  }
+  const consent = localStorage.getItem(KEY);
+  if (consent === 'accepted') { loadAnalytics(); }
+  else if (consent !== 'declined') { setTimeout(() => banner.classList.add('show'), 1200); }
+  document.getElementById('cookieAccept').addEventListener('click', () => { localStorage.setItem(KEY, 'accepted'); banner.classList.remove('show'); loadAnalytics(); });
+  document.getElementById('cookieDecline').addEventListener('click', () => { localStorage.setItem(KEY, 'declined'); banner.classList.remove('show'); });
+})();
+</script>
+
 </body>
 </html>
