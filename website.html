@@ -76,7 +76,7 @@ section { padding: 8rem 0; position: relative; z-index: 10; }
 .hero-h1 { font-size: clamp(2.8rem, 4.8vw, 5.2rem); font-weight: 900; line-height: 1.06; letter-spacing: -0.035em; margin-bottom: 2rem; }
 .hero-h1--website { font-size: clamp(2.2rem, 3.8vw, 4.2rem); }
 .hero-h1 .line { display: block; overflow: visible; }
-.hero-h1 .line-inner { display: block; transform: translateY(110%); animation: slideUp 0.8s cubic-bezier(0.16,1,0.3,1) both; }
+.hero-h1 .line-inner { display: block; transform: translateY(110%); animation: slideUp 0.8s cubic-bezier(0.16,1,0.3,1) both; white-space: nowrap; }
 .hero-h1 .line:nth-child(2) .line-inner { animation-delay: 0.08s; }
 .hero-h1 .line:nth-child(3) .line-inner { animation-delay: 0.16s; }
 .hero-h1 em { font-family: 'Playfair Display', serif; font-style: italic; font-weight: 600; color: var(--teal-bright); text-shadow: 0 0 30px rgba(36,120,170,0.5), 0 0 60px rgba(36,120,170,0.2); letter-spacing: -0.01em; }
@@ -230,8 +230,6 @@ footer { background: rgba(12,14,28,0.65); backdrop-filter: blur(28px); -webkit-b
 
 /* RESPONSIVE */
 @media (max-width: 1100px) {
-  /* hero already single column */
-  /* hero-visual hidden globally */
   .leistungen-grid { grid-template-columns: repeat(2,1fr); }
   .warum-inner { grid-template-columns: 1fr; gap: 3rem; }
   .vorteile-grid { grid-template-columns: repeat(2,1fr); }
@@ -250,6 +248,7 @@ footer { background: rgba(12,14,28,0.65); backdrop-filter: blur(28px); -webkit-b
   .nav-burger { display: flex; }
   .wrap { padding: 0 1.5rem; }
   section { padding: 5rem 0; }
+  .hero-h1 .line-inner { white-space: normal; }
   .leistungen-grid { grid-template-columns: 1fr; }
   .vorteile-grid { grid-template-columns: 1fr; }
   .cta-inner { padding: 4rem 2rem; }
@@ -607,7 +606,10 @@ footer { background: rgba(12,14,28,0.65); backdrop-filter: blur(28px); -webkit-b
       <p class="footer-copy">© 2026 YG MEDIA · Yasin Gündogdu</p>
       <div class="footer-socials">
         <a href="https://behance.net/yasinguendogdu" target="_blank" rel="noopener" class="social-btn" aria-label="Behance">Be</a>
-        <a href="https://x.com/ysn_gdu" target="_blank" rel="noopener" class="social-btn" aria-label="X">X</a>      </div>
+        <a href="https://x.com/ysn_gdu" target="_blank" rel="noopener" class="social-btn" aria-label="X">X</a>
+        <a href="https://de.pinterest.com/YG_369/" target="_blank" rel="noopener" class="social-btn" aria-label="Pinterest">Pin</a>
+        <a href="https://www.pexels.com/de-de/@ysngdu/" target="_blank" rel="noopener" class="social-btn" aria-label="Pexels">Px</a>
+      </div>
     </div>
   </div>
 </footer>
