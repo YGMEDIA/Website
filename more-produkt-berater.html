@@ -659,7 +659,7 @@ function renderResults(){
   if(state.goals.length>0&&ROUTINES[state.goals[0]]){
     const r=ROUTINES[state.goals[0]];
     const intake=(r.intake||[]).map(x=>`<div class="intake-row"><div class="intake-when">${x[0]}</div><div class="intake-what">${x[1]}</div></div>`).join("");
-    rw.innerHTML=`<div class="routine-card"><h3>${r.icon} ${r.title}</h3><p>${r.text}</p><div class="rsteps">${r.steps.map(s=>`<div class="rstep"><span class="em">✓</span><span>${s}</span></div>`).join("")}</div>
+    rw.innerHTML=`<div class="routine-card"><h3>${r.icon} ${r.title}</h3><p>${r.text}</p>
       <div class="intake"><h4>📋 So baust du es in deinen Tag ein</h4>${intake}</div></div>`;
   } else rw.innerHTML="";
   const ps=document.getElementById("perfectSection");
