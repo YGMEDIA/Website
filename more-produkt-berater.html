@@ -153,10 +153,6 @@
   .matchring .mr-inner{width:42px;height:42px;border-radius:50%;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1}
   .matchring .pct{font-size:13px;font-weight:900}
   .matchring .pct-label{font-size:7.5px;font-weight:800;text-transform:uppercase;color:var(--stone-500);letter-spacing:.04em}
-  .cart-icon{position:absolute;bottom:10px;right:10px;width:42px;height:42px;border-radius:12px;background:var(--pink);color:#fff;display:flex;align-items:center;justify-content:center;font-size:19px;box-shadow:0 6px 16px rgba(237,0,140,.4);transition:transform .14s,background .2s}
-  .cart-icon:hover{background:var(--pink-dark);transform:scale(1.08)}
-  .cart-icon:active{transform:scale(.92)}
-  .cart-icon.added{background:var(--black)}
   .pbody{padding:16px;display:flex;flex-direction:column;flex:1}
   .pname{font-weight:800;font-size:16.5px;line-height:1.2}
   .pclaim{color:var(--stone-500);font-size:13.5px;margin-top:3px;line-height:1.4}
@@ -293,11 +289,8 @@
   <section class="screen" id="screen-context">
     <div class="question">
       <p class="q-eyebrow">Frage 5 von 5</p>
-      <h2 class="q-title">Wann &amp; für welches Budget?</h2>
-      <p class="q-sub">Hilf uns, deine Routine in deinen Alltag einzupassen. Beides optional.</p>
-      <p class="q-sub" style="font-size:13px;font-weight:800;color:var(--black);margin-bottom:10px">Zu welchem Anlass?</p>
-      <div class="cards small" id="occasionCards"></div>
-      <p class="q-sub" style="font-size:13px;font-weight:800;color:var(--black);margin:24px 0 10px">Dein Budget pro Produkt?</p>
+      <h2 class="q-title">Welches Budget pro Produkt?</h2>
+      <p class="q-sub">Damit wir deine Empfehlung in deinen Rahmen einpassen. Optional – oder lass es offen.</p>
       <div class="cards small" id="budgetCards"></div>
       <div class="live-hint" id="contextHint" style="display:none"></div>
     </div>
@@ -576,7 +569,6 @@ function toggleSel(listName,id){
   if(listName==="tastes")renderTastes();
   if(listName==="forms")renderForms();
   if(listName==="diets")renderDiet();
-  if(listName==="occasions")renderContext();
   updateNav();
 }
 function toggleCaffeine(){state.caffeineFree=!state.caffeineFree;document.getElementById("caffeineSwitch").classList.toggle("on",state.caffeineFree);renderForms()}
@@ -593,12 +585,6 @@ function renderDiet(){
   hint.innerHTML=`✨&nbsp;Aktuell passen <b>&nbsp;${n}&nbsp;</b>&nbsp;${n===1?"Produkt":"Produkte"} zu deiner Auswahl.`;
 }
 function renderContext(){
-  // Anlässe
-  state.occasions=state.occasions.filter(o=>occasionAvailable(o));
-  document.getElementById("occasionCards").innerHTML=OCCASIONS.map(o=>{
-    const dis=!occasionAvailable(o.id);
-    return makeCard(o,"occasions",false,dis,"Dafür haben wir gerade nichts");
-  }).join("");
   // Budget (single-select)
   if(state.budget && !budgetAvailable(state.budget)) state.budget=null;
   document.getElementById("budgetCards").innerHTML=BUDGETS.map(b=>{
@@ -629,7 +615,6 @@ function matchProducts(){
     if(forms.length>0&&!forms.includes(p.form))continue;
     if(caffeineFree&&!p.caffeineFree)continue;
     if(state.diets.length>0 && !state.diets.every(d=>p[DIETS.find(x=>x.id===d).flag]))continue;
-    if(state.occasions.length>0 && !state.occasions.some(o=>(p.occasions||[]).includes(o)))continue;
     if(state.budget && p.priceClass!==state.budget)continue;
     const goalHits=goals.filter(g=>p.goals.includes(g)),tasteHits=tastes.filter(t=>p.tastes.includes(t));
     if(goals.length>0&&goalHits.length===0)continue;
@@ -667,7 +652,7 @@ function productCard(p,idx){
 }
 function renderResults(){
   const {perfect,also}=matchProducts();
-  const tags=[...state.goals.map(g=>`<span class="ptag"><b>Ziel</b>${labelOf(GOALS,g)}</span>`),...state.tastes.map(t=>`<span class="ptag">${labelOf(TASTES,t)}</span>`),...state.forms.map(f=>`<span class="ptag">${labelOf(FORMS,f)}</span>`),...(state.caffeineFree?[`<span class="ptag">Ohne Koffein</span>`]:[]),...state.diets.map(d=>`<span class="ptag">${labelOf(DIETS,d)}</span>`),...state.occasions.map(o=>`<span class="ptag">${labelOf(OCCASIONS,o)}</span>`),...(state.budget?[`<span class="ptag">${labelOf(BUDGETS,state.budget)}</span>`]:[])].join("")+`<button class="btn-edit" onclick="goTo('goals')">Anpassen</button>`;
+  const tags=[...state.goals.map(g=>`<span class="ptag"><b>Ziel</b>${labelOf(GOALS,g)}</span>`),...state.tastes.map(t=>`<span class="ptag">${labelOf(TASTES,t)}</span>`),...state.forms.map(f=>`<span class="ptag">${labelOf(FORMS,f)}</span>`),...(state.caffeineFree?[`<span class="ptag">Ohne Koffein</span>`]:[]),...state.diets.map(d=>`<span class="ptag">${labelOf(DIETS,d)}</span>`),...(state.budget?[`<span class="ptag">${labelOf(BUDGETS,state.budget)}</span>`]:[])].join("")+`<button class="btn-edit" onclick="goTo('goals')">Anpassen</button>`;
   document.getElementById("profileTags").innerHTML=tags;
   document.getElementById("resultsHeadline").innerHTML=perfect.length>0?`${perfect.length} <em>${perfect.length===1?"Match":"Matches"}</em> für dich`:`Fast <em>geschafft</em>`;
   const rw=document.getElementById("routineWrap");
@@ -718,7 +703,7 @@ function renderCrossSell(perfect,also){
   cs.innerHTML=`<div class="also-divider"><h3 class="sec-title">🧩 Das rundet deine Routine ab</h3><p class="sec-sub">Diese Produkte ergänzen dein Ziel sinnvoll – beliebt bei anderen mit ähnlichem Profil.</p><div class="grid">${cards}</div></div>`;
 }
 
-function addToCart(id,btn){const p=PRODUCTS.find(x=>x.id===id);if(!p||p.soldout)return;const ex=state.cart.find(i=>i.id===id);if(ex)ex.qty++;else state.cart.push({id,qty:1});if(btn){btn.classList.add("added");btn.innerHTML="✓";}updateCartUI(true)}
+function addToCart(id,btn){const p=PRODUCTS.find(x=>x.id===id);if(!p||p.soldout)return;const ex=state.cart.find(i=>i.id===id);if(ex)ex.qty++;else state.cart.push({id,qty:1});if(btn){btn.classList.add("added");btn.innerHTML="✓ Im Warenkorb";}updateCartUI(true)}
 function changeQty(id,d){const it=state.cart.find(i=>i.id===id);if(!it)return;it.qty+=d;if(it.qty<=0)state.cart=state.cart.filter(i=>i.id!==id);updateCartUI(false);renderCartItems()}
 function updateCartUI(bump){const count=state.cart.reduce((s,i)=>s+i.qty,0);document.getElementById("cartCount").textContent=count;const fab=document.getElementById("fab");if(bump){fab.classList.remove("bump");void fab.offsetWidth;fab.classList.add("bump");}}
 function renderCartItems(){
