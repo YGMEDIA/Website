@@ -260,7 +260,7 @@
     <div class="question">
       <p class="q-eyebrow">Frage 3 von 5</p>
       <h2 class="q-title">Wie nimmst du's am liebsten?</h2>
-      <p class="q-sub">Wir zeigen dir nur Formen, die es für deine bisherige Auswahl <b>wirklich gibt</b>. Optional – oder lass alles offen.</p>
+      <p class="q-sub">Wir zeigen dir alle Formen, die es für dein Ziel gibt. Kapseln &amp; Gummies bleiben immer wählbar – sie sind geschmacksneutral. Optional.</p>
       <div class="cards small" id="formCards"></div>
       <div class="toggle-row" id="caffeineRow" onclick="toggleCaffeine()">
         <div>
@@ -526,7 +526,6 @@ function availableForms(){
   const set=new Set();
   productsForGoals().forEach(p=>{
     if(state.caffeineFree&&!p.caffeineFree)return;
-    if(state.tastes.length>0&&p.hasFlavours&&!state.tastes.some(t=>p.tastes.includes(t)))return;
     set.add(p.form);
   });
   return set;
@@ -554,9 +553,8 @@ function renderForms(){
   const avail=availableForms();
   state.forms=state.forms.filter(f=>avail.has(f));
   document.getElementById("formCards").innerHTML=FORMS.map(f=>{
-    const dis=!avail.has(f.id);let txt="Für deine Auswahl nicht verfügbar";
-    if(state.tastes.length>0&&dis)txt="Gibt es nicht in deiner Geschmacksrichtung";
-    return makeCard(f,"forms",false,dis,txt);
+    const dis=!avail.has(f.id);
+    return makeCard(f,"forms",false,dis,"Für dein Ziel nicht verfügbar");
   }).join("");
   const row=document.getElementById("caffeineRow"),sw=document.getElementById("caffeineSwitch"),ch=document.getElementById("caffeineHint");
   if(!caffeineToggleRelevant()){row.classList.add("disabled");row.onclick=null;ch.textContent="Deine aktuelle Auswahl ist bereits koffeinfrei";state.caffeineFree=false;sw.classList.remove("on");}
