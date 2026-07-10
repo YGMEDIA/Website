@@ -97,8 +97,8 @@ button{font-family:inherit}
 .pub-badge{position:absolute;top:12px;left:12px;z-index:2;font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#fff;background:var(--pink);border-radius:99px;padding:6px 12px;font-weight:800;box-shadow:0 6px 16px rgba(237,0,140,.5)}
 
 .cvr-shade{position:absolute;inset:0}
-.ed-shade{background:linear-gradient(180deg, rgba(22,17,24,.25) 0%, rgba(22,17,24,0) 32%, rgba(22,17,24,.85) 76%, rgba(22,17,24,.96) 100%)}
-.bold-shade{background:linear-gradient(180deg, rgba(22,17,24,.5) 0%, rgba(22,17,24,.08) 38%, rgba(22,17,24,.9) 80%),linear-gradient(100deg, rgba(237,0,140,.35) 0%, rgba(237,0,140,0) 48%)}
+.ed-shade{background:linear-gradient(180deg, rgba(0,0,0,.25) 0%, rgba(0,0,0,0) 32%, rgba(0,0,0,.85) 76%, rgba(0,0,0,1) 92%)}
+.bold-shade{background:linear-gradient(180deg, rgba(0,0,0,.5) 0%, rgba(0,0,0,.08) 38%, rgba(0,0,0,.9) 78%, rgba(0,0,0,1) 90%)}
 .cvr-inner{position:absolute;inset:0;padding:17px;display:flex;flex-direction:column}
 
 .ed-eyebrow{font-size:10px;letter-spacing:.2em;text-transform:uppercase;font-weight:800;color:rgba(255,255,255,.92)}
@@ -209,7 +209,7 @@ button{font-family:inherit}
 .pg .toc-row .n{color:var(--stone-400);font-weight:700}
 .pg.cover-pg{background:var(--black);color:#fff;border:0}
 .pg.cover-pg .pg-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.88}
-.pg.cover-pg .cover-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,17,24,.25),rgba(22,17,24,0) 35%,rgba(22,17,24,.94) 82%)}
+.pg.cover-pg .cover-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.25),rgba(0,0,0,0) 35%,rgba(0,0,0,1) 88%)}
 .pg.cover-pg .pg-inner{justify-content:flex-end}
 .pg.cover-pg h3{color:#fff;font-size:27px}
 .pg.cover-pg h3 em{color:var(--pink)}
@@ -1282,8 +1282,8 @@ renderProducts();
 
 /* Buch-ID → PDF-Dateiname (liegen im Ordner pdfs/ neben dieser HTML-Datei) */
 const BOOK_PDF = {
-  'nicht-schwach': 'pdfs/du-bist-nicht-schwach.pdf',
-  'cheatcode': 'pdfs/der-heisshunger-cheatcode.pdf',
+  'nicht-schwach': 'pdfs/Du-bist-nicht-schwach.pdf',
+  'cheatcode': 'pdfs/Der-heisshunger-Cheatcode.pdf',
 };
 function downloadPdf(){
   /* current ist gesetzt, sobald ein Buch-Detail offen war (Header-Button + Reader-Button nutzen denselben current-Stand) */
