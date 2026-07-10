@@ -405,8 +405,8 @@ const GOALS = {
   "Fitness":["Muskelaufbau","Gewicht aufbauen"], "Psyche":["Fressattacken","Stressessen"],
 };
 
-/* ══ E-BOOK: vollständige Seiten nach Framework ══ */
-const PAGES = [
+/* ══ E-BOOK 1 "Du bist nicht schwach": vollständige Seiten nach Framework ══ */
+const PAGES_NICHT_SCHWACH = [
 {t:'cover'},
 {t:'toc'},
 
@@ -587,8 +587,8 @@ const PAGES = [
  boxText:'Dieses Buch ersetzt keine medizinische Beratung. Bei ausgeprägten Essstörungen wie Binge-Eating hol dir bitte zusätzlich professionelle Unterstützung — das ist kein Widerspruch zu allem hier, sondern die stärkste Form von Umfeld-Design.'},
 ];
 
-/* Inhaltsverzeichnis automatisch */
-const TOC = [
+/* Inhaltsverzeichnis Buch 1 */
+const TOC_NICHT_SCHWACH = [
  ['1 · Du hast kein Willensproblem','3'],['Dein Quick-Win: Der 10-Minuten-Notfall','5'],
  ['2 · Warum dein Gehirn dich zu viel essen lässt','6'],['3 · Was Fressattacken wirklich sind','9'],
  ['4 · Behandle dich wie eine Ratte','12'],['5 · Trigger-Foods raus','15'],
@@ -596,6 +596,173 @@ const TOC = [
  ['8 · Dein Haushalt zieht mit','24'],['9 · Dein einfacher Alltagsplan','28'],
  ['Praxisteil: Rezepte, Listen, 7-Tage-Start','30']
 ];
+
+/* Inhaltsverzeichnis Buch 2 "Der Heißhunger-Cheatcode" */
+const TOC_CHEATCODE = [
+ ['1 · Der Moment, in dem du aufwachst','3'],
+ ['2 · Fressattacken sind kein Charakterfehler','6'],
+ ['3 · Was die Ozempic-Studie zeigt','9'],
+ ['4 · Warum Scham alles schlimmer macht','12'],
+ ['5 · Der Protein-Trick, der alles ändert','14'],
+ ['6 · Nicht kompensieren','18'],
+ ['7 · Deine Trigger sind individuell','21'],
+ ['8 · Der 10-Minuten-Umweg','24'],
+ ['9 · Dein Alltagsplan','27'],
+ ['Praxisteil: Rezept, Tauschliste, 7-Tage-Start','29']
+];
+
+/* ══ E-BOOK 2 "Der Heißhunger-Cheatcode": eigenständiger Inhalt, Coaching-Call-Aufbau ══ */
+const PAGES_CHEATCODE = [
+{t:'cover'},
+{t:'toc'},
+
+{t:'ch', n:'1', k:'Kapitel 1', h:'Der Moment, in dem du <em>aufwachst</em>',
+ lede:'Neben leeren Packungen. Neben Dingen, die du schon weggeworfen hattest — und dann wieder rausgeholt hast. Kenne ich. Und es gibt nichts daran, wofür du dich schämen musst.',
+ ps:['Ich beschäftige mich seit über 15 Jahren mit Fettverlust und emotionalem Essen und habe über 500.000 Menschen dabei geholfen, ihre Ziele zu erreichen. Ich habe meine erste Diät mit elf, zwölf Jahren gemacht und bin früh ins Thema Fressattacken reingerutscht — weil ich selbst immer ein emotionaler Esser war.',
+ 'Dieses Buch geht in drei Schritten vor, genau wie das Gespräch, aus dem es entstanden ist: Erst verstehen wir, was Fressattacken überhaupt sind. Dann, wie man das Ganze löst. Und zum Schluss, was du sofort im Alltag verändern kannst.']},
+{t:'tx', k:'Kapitel 1', run:'Der Moment, in dem du aufwachst',
+ h4:'Ein echtes Gespräch',
+ ps:['Vieles in diesem Buch stammt aus einem echten Coaching-Gespräch mit Gina. Gina hatte mir erzählt, dass sie Fressattacken hat. Das Erste, was ich ihr gesagt habe: Es gibt nichts, wofür du dich schämen musst.'],
+ quote:'„Es gibt nichts, wofür du dich schämen musst. Ich bin auch schon im Bett aufgewacht neben x Packungen und habe teilweise Sachen, die ich schon weggeworfen habe, nochmal angefangen zu essen.“',
+ ps2:['Wenn du dich in diesem Satz wiedererkennst: Du bist nicht die Ausnahme, die etwas falsch macht. Du bist mitten in einem Mechanismus, den dieses Buch dir erklärt — und den du umbauen kannst, ohne gegen dich selbst zu kämpfen.']},
+
+{t:'ch', n:'2', k:'Kapitel 2', h:'Fressattacken sind <em>kein Charakterfehler</em>',
+ lede:'Der wichtigste Schritt zuerst: verstehen, was da eigentlich passiert, wenn du isst, obwohl du „eigentlich“ nicht wolltest.',
+ ps:['Bei Gina fing es meistens gleich an: ein Proteinriegel, dann noch einer, dann Lust auf Brot, dann nochmal etwas Süßes. Von außen sieht das aus wie Kontrollverlust. Von innen ist es etwas anderes.']},
+{t:'tx', k:'Kapitel 2', run:'Fressattacken sind kein Charakterfehler',
+ h4:'Ein Ventil, kein Fehler',
+ ps:['Wenn wir Stress haben, Emotionen, dann ist es normal, dass wir sie irgendwie verarbeiten müssen. Es gibt Menschen, die dabei gewalttätig werden. Es gibt Menschen, die zu Drogen greifen. Es gibt Menschen mit anderen destruktiven Verhaltensweisen.',
+ 'Auf diesem Spektrum ist Essen eine der weniger schlimmen Optionen — nicht, weil es harmlos ist, sondern weil es im Vergleich seltener existenzielle Schäden anrichtet. Das nimmt dem Thema nichts von seiner Ernsthaftigkeit. Es verändert nur, wie wir es behandeln sollten: nicht als Charakterschwäche, sondern als Bewältigungsstrategie, die gerade die falschen Kosten hat.'],
+ boxTitle:'Der Perspektivwechsel',
+ boxText:'Die Frage ist nie „Wie werde ich stärker, damit ich nicht mehr esse?“ Die Frage ist: „Wie baue ich mir eine Bewältigungsstrategie, die mich nicht mehr kostet, als sie mir bringt?“'},
+
+{t:'ch', n:'3', k:'Kapitel 3', h:'Was die <em>Ozempic-Studie</em> zeigt',
+ lede:'Eine der Beobachtungen, die mich am meisten fasziniert haben, kommt ausgerechnet aus der Abnehmspritzen-Forschung.',
+ ps:['Bei Ozempic und ähnlichen Medikamenten hat man festgestellt: Manche Menschen entwickeln depressive Symptome, obwohl sie abnehmen. Der Grund war nicht das Abnehmen selbst.']},
+{t:'tx', k:'Kapitel 3', run:'Was die Ozempic-Studie zeigt',
+ h4:'Wenn das Ventil fehlt',
+ ps:['Diesen Menschen fehlte plötzlich ihr gewohnter Kompensationsmechanismus des Essens. Sie waren weiterhin in stressigen, emotionalen Situationen — konnten das Essen aber nicht mehr nutzen, um die Emotion zu verarbeiten. Und wurden dadurch teils trauriger als vorher, obwohl sie abgenommen hatten.',
+ 'Und es wirkt tatsächlich: Der Stress nimmt kurzfristig ab. Genau deshalb greift dein Kopf immer wieder danach.'],
+ quote:'„Selbst wenn dein Wunsch ‚nie wieder Fressattacken‘ morgen in Erfüllung ginge, ohne dass sich sonst etwas ändert, hättest du womöglich ein größeres Problem.“',
+ ps2:['Das Ziel dieses Buches ist deshalb nicht, dir dein Ventil wegzunehmen. Das Ziel ist, es so umzubauen, dass es dich nichts mehr kostet.']},
+
+{t:'ch', n:'4', k:'Kapitel 4', h:'Warum <em>Scham</em> alles schlimmer macht',
+ lede:'Der zweite Grund, warum Fressattacken sich verfestigen, hat nichts mit Essen zu tun. Er hat mit dem zu tun, was danach in deinem Kopf passiert.',
+ ps:['Scham fühlt sich an wie eine logische Reaktion — „ich sollte das nicht tun, also fühle ich mich schlecht“. In Wirklichkeit ist Scham beim Essverhalten kein Bremser. Sie ist Brandbeschleuniger.']},
+{t:'tx', k:'Kapitel 4', run:'Warum Scham alles schlimmer macht',
+ h4:'Warum Alleinsein alles verstärkt',
+ ps:['Wer sich nach einer Attacke wertlos fühlt, greift schneller zur nächsten — weil das Essen wieder das Einzige ist, das den Zustand kurzfristig lindert. Und Alleinsein verschärft das zusätzlich: dieses „jetzt sieht mich keiner, jetzt darf ich“, das viele aus eigener Erfahrung kennen.',
+ 'Deshalb geht dieses Buch einen anderen Weg als Verbote und schlechtes Gewissen. Wir bauen dein Umfeld so um, dass die Situation gar nicht mehr schambehaftet ist. Du darfst abends viel essen. Wir sorgen nur dafür, dass es das Richtige ist — dazu kommt gleich das ganze Kapitel 5.'],
+ boxTitle:'Merksatz',
+ boxText:'Scham hat noch nie eine einzige Fressattacke verhindert. Sie hat nur die nächste wahrscheinlicher gemacht.'},
+
+{t:'ch', n:'5', k:'Kapitel 5', h:'Der <em>Protein-Trick</em>, der alles ändert',
+ lede:'Das hier ist der Wendepunkt des ganzen Systems — eine Erkenntnis, die mein eigenes Verhältnis zum Essen komplett verändert hat.',
+ ps:['Die gängige Annahme: Ein Kalorienüberschuss führt immer zum Zunehmen. Das stimmt so pauschal nicht.']},
+{t:'tx', k:'Kapitel 5', run:'Der Protein-Trick, der alles ändert',
+ h4:'Was die Meta-Analyse zeigt',
+ ps:['Zu diesem Thema gibt es eine Meta-Analyse: Menschen mit einem Kalorienüberschuss von über 900 Kalorien über mehrere Wochen haben nicht an Fett zugenommen — weil der größte Teil des Überschusses aus Protein kam.',
+ 'Der wahrscheinliche Grund: Der Weg von Protein zu Fett ist im Körper aufwendig. Protein wird zunächst in Aminosäuren zerlegt. Um daraus Fett zu machen, müsste der Körper diese Aminosäuren erst per Gluconeogenese in Glucose umwandeln — und dann per Denovolipogenese in Fett. Diese Kette ist energetisch so teuer, dass sie in der Praxis meist gar nicht in diesem Ausmaß stattfindet.'],
+ boxTitle:'Kein Freifahrtschein',
+ boxText:'Das heißt nicht, dass Protein-Kalorien nicht zählen oder dass beliebig viel davon folgenlos bleibt. Es heißt: Ein proteinreicher Überschuss ist stoffwechselphysiologisch etwas anderes als ein Überschuss aus Fett und Zucker — und genau diesen Unterschied nutzt dieses Buch.'},
+{t:'tx', k:'Kapitel 5', run:'Der Protein-Trick, der alles ändert',
+ h4:'Was das für dich bedeutet',
+ ps:['Dieses Wissen gibt dir eine unglaubliche Freiheit im Kopf. Wenn du abends merkst, dass du noch richtig viel Hunger hast und nicht hungrig ins Bett gehen willst, kannst du dich entscheiden, mehr zu essen — solange es proteinreich ist.',
+ 'Das ist zwar dann ein Tag ohne Kaloriendefizit. Aber es ist eben auch kein Tag mit Rückschritt. Und du gehst nicht mit dem Gefühl ins Bett, dass du morgen etwas „aufholen“ musst — dazu mehr in Kapitel 6.']},
+
+{t:'ch', n:'6', k:'Kapitel 6', h:'Nicht <em>kompensieren</em>',
+ lede:'Der gefährlichste Reflex nach einer Fressattacke ist nicht die Attacke selbst. Es ist der Versuch, sie am nächsten Tag wieder auszugleichen.',
+ ps:['Genau das hatte Romy erlebt: Nach einer Fressattacke versuchte sie, nur noch zwei Riegel am Tag zu essen. Das hat zwei Tage funktioniert. Am dritten Tag hatte sie die nächste Fressattacke.']},
+{t:'tx', k:'Kapitel 6', run:'Nicht kompensieren',
+ h4:'Der Teufelskreis',
+ ps:['So sieht das Muster aus, das du durchbrechen musst: Du isst mehr. Am nächsten Tag versuchst du es krass zu kompensieren — nur zwei, drei Shakes. Dadurch hast du am übernächsten Tag schon wieder so viel Hunger, dass du in die nächste Fressattacke hineinläufst.',
+ 'Das ist eine der wichtigsten Regeln in diesem ganzen Buch: Versuch nicht, das krass zu kompensieren. Auch wenn es sich falsch anfühlt, weil du weißt, dass du mehr gegessen hast, als geplant.'],
+ quote:'„Du hast dann zwar einen Tag, an dem du nicht im Defizit bist — aber du hast keinen Tag, an dem du Rückschritte machst.“',
+ ps2:['Das war für mich eine der Erkenntnisse, die mein Leben am meisten verändert haben. Kein Crash-Ausgleich. Einfach am nächsten Tag normal weitermachen.']},
+
+{t:'ch', n:'7', k:'Kapitel 7', h:'Deine Trigger sind <em>individuell</em>',
+ lede:'Ich habe Gina gefragt, was sie typischerweise isst, wenn Stressessen bei ihr passiert. Ihre Antwort zeigt ein Muster, das fast jeder kennt.',
+ ps:['Bei ihr fing es meist mit einem Proteinriegel an. Dann noch einer. Dann Lust auf Brot. Dann nochmal etwas Süßes.']},
+{t:'tx', k:'Kapitel 7', run:'Deine Trigger sind individuell',
+ h4:'Sofort verfügbar ist der eigentliche Trigger',
+ ps:['In Stresssituationen greifen wir zu Lebensmitteln, die sofort verfügbar sind — die man nur aufreißen und direkt essen kann. Brot, Proteinriegel, Fertiggerichte. Genau diese Sofort-Verfügbarkeit ist der eigentliche Trigger, nicht das Lebensmittel an sich.',
+ 'Deshalb macht es Sinn, deine Umgebung anzupassen: diese Dinge zumindest für eine Zeit nicht zu Hause zu haben. Wenn dein Partner oder deine Freunde vorbeikommen und ihr kocht, kann er die Riegel einfach wieder mitnehmen. Trigger-Foods sind super individuell — was für dich zutrifft, musst du selbst herausfinden.'],
+ boxTitle:'Der Selbst-Test',
+ boxText:'Frag dich bei jedem Lebensmittel in deiner Küche: „Habe ich davon schon mal deutlich mehr gegessen, als ich wollte?“ Bei Gina waren es Proteinriegel und -wraps. Bei dir kann es etwas völlig anderes sein.'},
+{t:'tx', k:'Kapitel 7', run:'Deine Trigger sind individuell',
+ h4:'Alleinsein ist kein Ausnahmezustand',
+ ps:['Es ist völlig normal, dass man alleine mehr Probleme hat, sich selbst zu kontrollieren, als in Gesellschaft. Viele kennen dieses Gefühl: „Jetzt darf ich, jetzt ist keiner da.“',
+ 'Deshalb ist es oft einfacher, das zu akzeptieren, statt dagegen anzukämpfen — und stattdessen die Umgebung so zu verändern, dass die Situation gar nicht mehr schambehaftet ist. Hab Obst da, hab Eier da, hab Flohsamenschalen da, hab Proteingrießpudding oder Magerquark da. Sachen, auf die du wirklich Lust hast — nicht Gurken mit Salz, bis du satt bist.']},
+
+{t:'ch', n:'8', k:'Kapitel 8', h:'Der <em>10-Minuten-Umweg</em>',
+ lede:'Das ist die konkreteste Regel in diesem Buch — und die, die im echten Coaching-Gespräch am meisten bewirkt hat.',
+ ps:['Der Trick ist nicht, dir etwas zu verbieten. Der Trick ist, zwischen dich und das Trigger-Food ein paar Minuten aktiven Aufwand zu bauen.']},
+{t:'tx', k:'Kapitel 8', run:'Der 10-Minuten-Umweg',
+ h4:'Das Coole am Proteingrießpudding',
+ ps:['Ich kann nicht einfach eine Packung aufreißen und mir den Proteingrieß in den Mund schütten. Der muss erst gekocht werden. Ich nehme eine Schüssel, mache ein Ei auf, gebe Flohsamenschalen dazu, mache Wasser heiß, rühre um, warte, schneide in der Zeit Obst, packe alles zusammen.',
+ 'Allein diese zehn Minuten sorgen dafür, dass ich ein viel besseres Sättigungsgefühl bekomme und mich bewusster mit meinem Essen auseinandersetze. Deshalb habe ich zu Hause keine sehr schnell verfügbaren Lebensmittel, bei denen ich nur die Packung aufreißen und direkt essen kann.'],
+ quote:'„Ich habe zum Beispiel nie eine große Menge an Proteinriegeln da, wenn ich sie nicht essen will. Denn Proteinriegel sind — auch wenn sie die bessere Variante sind — am Ende trotzdem Süßigkeiten.“'},
+{t:'tx', k:'Kapitel 8', run:'Der 10-Minuten-Umweg',
+ h4:'Die Auto-Geschichte',
+ ps:['Ich habe selbst versucht, mir Riegel, wenn ich weiß, dass ich alleine bin, ins Auto zu legen statt in die Küche. Das Ergebnis war ehrlich: Manchmal bin ich trotzdem zum Auto gegangen und habe sie geholt.',
+ 'Der Punkt ist nicht, dass jede Barriere hundertprozentig hält. Der Punkt ist: Wenn ich um 23 Uhr im Bett liege und der Riegel liegt in der Küche, bin ich schneller wieder auf als wenn ich dafür erst einkaufen müsste. Um 23 Uhr würde ich gar nicht mehr in den Supermarkt gehen. Selbst um 16 Uhr würde ich mich wahrscheinlich nicht extra rausbewegen. Die Hürde reicht — auch wenn sie nicht perfekt ist.']},
+
+{t:'plan', k:'Kapitel 9', run:'Dein Alltagsplan', h:'Deine Wenn-Dann-Pläne',
+ rows:[['Wenn ich abends noch richtig viel Hunger habe,','dann mache ich mir eine proteinreiche Bowl und esse mich satt — kein Defizit-Tag ist kein Rückschritts-Tag.'],
+ ['Wenn ich eine Fressattacke hatte,','dann esse ich am nächsten Tag ganz normal weiter. Keine Kompensation, keine zwei Shakes.'],
+ ['Wenn ich merke, dass ich alleine bin und der Gedanke „jetzt darf ich“ kommt,','dann hole ich bewusst etwas aus meiner Da-Liste statt aus dem Trigger-Schrank.'],
+ ['Wenn ich Lust auf mein Trigger-Food habe,','dann baue ich mir bewusst 10 Minuten Aufwand dazwischen — kochen statt aufreißen.'],
+ ['Wenn ein Trigger-Food doch mal zu Hause ist,','dann bitte ich jemanden, es mitzunehmen oder außer Reichweite zu legen — kein Kampf mit Willenskraft.']]},
+
+{t:'ch', n:'✦', k:'Praxisteil', h:'Rezept, Tauschliste & <em>dein Start</em>',
+ lede:'Der Teil zum Wiederfinden: das Signature-Rezept aus dem Coaching-Gespräch, deine Tauschliste für den Süßhunger und dein 7-Tage-Start.',
+ ps:['Ein Hinweis zur Ehrlichkeit: Rezept 1 ist Chris\' eigenes Beispiel aus dem Gespräch. Zwei weitere Varianten in diesem Kapitel sind sinnvoll ergänzte Beispiele nach derselben Logik — sie sind klar gekennzeichnet und können jederzeit durch echte Rezepte aus Chris\' Kanälen ersetzt werden.']},
+{t:'rec', k:'Rezept 01 · Das Original aus dem Gespräch', h:'Die große Proteingrieß-Bowl',
+ meta:['10 Min.','~45 g Protein','1 große Portion'],
+ ing:['60 g Proteingrieß','250 ml Wasser oder Milch','1 Ei','1 EL Flohsamenschalen','1 Apfel & eine Handvoll Himbeeren','Etwas dunkle Schokolade (70%+)'],
+ steps:['Wasser heiß machen, Grieß mit Ei und Flohsamenschalen anrühren, unter Rühren aufschlagen.','Währenddessen Obst schneiden — das ist Absicht, nicht Zeitverschwendung.','Alles in eine große Schüssel, Schokolade darüber. So isst du dich richtig satt, auch an einem stressigen Abend.']},
+{t:'rec', k:'Rezept 02 · Konstruiertes Beispiel, ersetzbar', h:'Die 3-Minuten-Quark-Bowl',
+ meta:['3 Min.','~35 g Protein','1 Portion'],
+ ing:['250 g Magerquark oder Skyr','Ein Schuss Milch','1 TL Kakao oder Zimt','1 Banane oder Beeren'],
+ steps:['Quark mit Milch cremig rühren.','Kakao und Obst unterrühren.','Für Abende, an denen selbst 10 Minuten zu lang wirken — bewusst nach derselben Protein-Logik gebaut, wie Chris sie im Gespräch beschreibt.']},
+{t:'rec', k:'Rezept 03 · Konstruiertes Beispiel, ersetzbar', h:'Das Sattmacher-Rührei',
+ meta:['8 Min.','~30 g Protein','1 Portion'],
+ ing:['3 Eier','100 g Hüttenkäse','Gemüse nach Wahl','Salz, Pfeffer'],
+ steps:['Eier verquirlen, Gemüse kurz anbraten.','Eier dazu, stocken lassen, Hüttenkäse unterheben.','Herzhaftes Stressessen — auch das funktioniert nach demselben Prinzip.']},
+{t:'swap', k:'Praxisteil', run:'Clevere Alternativen', h:'Statt X → nimm Y',
+ intro:'Links das Sofort-verfügbare, das dich in den Teufelskreis zieht. Rechts das, was denselben Job macht — mit eingebautem 10-Minuten-Umweg.',
+ rows:[['Proteinriegel-Box in der Küche','Ein Riegel — unterwegs gekauft, wenn du ihn willst'],
+ ['Brot aus Stress, ohne nachzudenken','Die 3-Minuten-Quark-Bowl, bewusst gemacht'],
+ ['Zwei Shakes als Kompensation am Tag danach','Ganz normal weiteressen — kein Rückschritt, nur ein Tag ohne Defizit'],
+ ['Süßes allein und heimlich','Süßes sozial: mit jemandem, den du magst']]},
+{t:'plan', k:'Praxisteil', run:'Dein Start', h:'Die ersten 7 Tage',
+ rows:[['Tag 1','Küchen-Check: Welche Lebensmittel sind bei dir „sofort verfügbar“ und lösen den Trigger aus?'],
+ ['Tag 2','Zutaten für die Proteingrieß-Bowl besorgen. Einmal bewusst zubereiten.'],
+ ['Tag 3','Dein persönliches Trigger-Food für eine Zeit aus der Wohnung — verschenken oder auslagern.'],
+ ['Tag 4','Deine 5 Wenn-Dann-Pläne aufschreiben und sichtbar aufhängen.'],
+ ['Tag 5','Falls es eine Fressattacke gab: bewusst NICHT kompensieren. Einfach normal weitermachen.'],
+ ['Tag 6','Süßes bewusst einplanen — mit jemandem, nicht heimlich.'],
+ ['Tag 7','Kurz zurückschauen: Wo hat der 10-Minuten-Umweg funktioniert? Wo war er zu leicht zu umgehen?']]},
+{t:'tx', k:'Zum Schluss', run:'Der Heißhunger-Cheatcode',
+ h4:'Kein Wunder, ein System',
+ ps:['Du wirst wieder Abende haben, an denen es nicht läuft. Das ist kein Beweis, dass das System nicht funktioniert — es ist ein Datenpunkt: Irgendwo war der Umweg zu kurz oder das Trigger-Food zu nah.',
+ 'Kein Verbot, keine Kompensation, kein schlechtes Gewissen. Nur ein paar Minuten Umweg zwischen dir und dem Reflex — und die Erlaubnis, satt zu werden, ohne dass es dich etwas kostet.',
+ 'Wir sehen uns. — Chris'],
+ boxTitle:'Hinweis',
+ boxText:'Dieses Buch ersetzt keine medizinische Beratung. Bei ausgeprägten Essstörungen wie Binge-Eating hol dir bitte zusätzlich professionelle Unterstützung — das ist kein Widerspruch zu allem hier, sondern die stärkste Form von Umfeld-Design.'},
+];
+
+/* Zentrale Zuordnung: welches Buch zeigt welchen Reader-Inhalt */
+const BOOK_PAGES = { 'nicht-schwach': PAGES_NICHT_SCHWACH, 'cheatcode': PAGES_CHEATCODE };
+const BOOK_TOC   = { 'nicht-schwach': TOC_NICHT_SCHWACH,   'cheatcode': TOC_CHEATCODE };
+const BOOK_COVER = {
+  'nicht-schwach': { kind:'editorial', img:IMG_LEAN, imgPos:'', kicker:'Christian Wolf', title:'Du bist<br><span class="ed-strong">nicht schwach</span>', sub:'Das System gegen Heißhunger, Fressattacken &amp; Stressessen' },
+  'cheatcode':     { kind:'bold', img:IMG_CAP, imgPos:'object-fit:cover;object-position:center 12%', kicker:'/// Christian Wolf', title:'DER<br><span class="cc-accent">HEISS-<br>HUNGER</span><br>CHEATCODE', sub:'Willenskraft ist nicht die Lösung.' },
+};
+/* Aktuell aktive Seiten/Inhalt des geöffneten Buchs (wird von openReader() gesetzt) */
+let PAGES = PAGES_NICHT_SCHWACH;
+let TOC = TOC_NICHT_SCHWACH;
+let BOOK_COVER_ACTIVE = BOOK_COVER['nicht-schwach'];
 
 /* ── Regal ── */
 const row = document.getElementById('row');
@@ -735,7 +902,7 @@ function openDetail(b){
       ${miniProds(b)}
       <div class="ovl-actions">
         ${b.published
-          ? `<button class="btn-main" onclick="alert('Prototyp: Hier geht es später zum Shop / zur Buchseite.')">Zum Buch</button>
+          ? `<a class="btn-main" href="https://www.amazon.de/Protein-Fasten-Trick-Abnehm-Buch-Jo-Jo-Effekt-Hei%C3%9Fhunger-reduzieren/dp/3689360536/" target="_blank" rel="noopener" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center">Zum Buch</a>
              <button class="btn-ghost" onclick="closeDetail()">Zurück ins Regal</button>`
           : `<button class="btn-main" onclick="openReader()">Blättern</button>
              <button class="btn-ghost" onclick="downloadPdf()">↓ Download</button>
@@ -758,13 +925,20 @@ function pageHTML(p, idx){
   const run = p.run ? `<div class="pg-run">${p.run}</div>` : '';
   const edge = '<div class="pg-edge"></div>';
   if (p.t==='cover') return `
-    <img class="pg-photo" src="${IMG_LEAN}" alt="">
-    <div class="cover-shade"></div>
+    <img class="pg-photo" src="${BOOK_COVER_ACTIVE.img}" alt="" style="${BOOK_COVER_ACTIVE.imgPos||''}">
+    <div class="cover-shade${BOOK_COVER_ACTIVE.kind==='bold'?' bold-shade':' ed-shade'}"></div>
+    ${BOOK_COVER_ACTIVE.kind==='bold' ? `
     <div class="pg-inner">
-      <div class="k" style="color:var(--pink)">Christian Wolf</div>
-      <h3>Du bist <em>nicht schwach</em></h3>
-      <p style="color:rgba(242,235,224,.78);font-size:11.5px">Das System gegen Heißhunger, Fressattacken &amp; Stressessen</p>
-    </div>`;
+      <div class="cc-eyebrow" style="font-size:11px">${BOOK_COVER_ACTIVE.kicker}</div>
+      <div class="cc-title" style="font-size:clamp(30px,7vw,44px)">${BOOK_COVER_ACTIVE.title}</div>
+      <div class="cc-sub" style="font-size:12.5px;margin-top:8px">${BOOK_COVER_ACTIVE.sub}</div>
+    </div>` : `
+    <div class="pg-inner">
+      <div class="ed-eyebrow" style="font-size:11px">${BOOK_COVER_ACTIVE.kicker}</div>
+      <div class="ed-title" style="font-size:clamp(28px,6.5vw,42px)">${BOOK_COVER_ACTIVE.title}</div>
+      <div class="ed-rule"></div>
+      <div class="ed-sub" style="font-size:11.5px">${BOOK_COVER_ACTIVE.sub}</div>
+    </div>`}`;
   if (p.t==='toc') return edge + `
     <div class="pg-inner">
       <div class="k">Inhalt</div>
@@ -850,6 +1024,11 @@ function turn(dir){
 }
 function openReader(){
   closeDetail();
+  /* Jedes Buch bekommt seinen eigenen Reader-Inhalt statt immer der gleichen PAGES */
+  const bookId = current ? current.id : 'nicht-schwach';
+  PAGES = BOOK_PAGES[bookId] || PAGES_NICHT_SCHWACH;
+  TOC = BOOK_TOC[bookId] || TOC_NICHT_SCHWACH;
+  BOOK_COVER_ACTIVE = BOOK_COVER[bookId] || BOOK_COVER['nicht-schwach'];
   document.getElementById('rdTitle').innerHTML = `Du liest: <b>${current ? current.title : ''}</b>`;
   page = 0; renderPage();
   reader.classList.add('show');
@@ -1101,8 +1280,25 @@ function miniProds(b){
 }
 renderProducts();
 
+/* Buch-ID → PDF-Dateiname (liegen im Ordner pdfs/ neben dieser HTML-Datei) */
+const BOOK_PDF = {
+  'nicht-schwach': 'pdfs/du-bist-nicht-schwach.pdf',
+  'cheatcode': 'pdfs/der-heisshunger-cheatcode.pdf',
+};
 function downloadPdf(){
-  alert('Prototyp: Hier startet später der Download des fertigen E-Book-PDFs.');
+  /* current ist gesetzt, sobald ein Buch-Detail offen war (Header-Button + Reader-Button nutzen denselben current-Stand) */
+  const bookId = current ? current.id : null;
+  const pdfPath = BOOK_PDF[bookId];
+  if (!pdfPath){
+    alert('Für dieses Buch ist noch kein PDF hinterlegt.');
+    return;
+  }
+  const a = document.createElement('a');
+  a.href = pdfPath;
+  a.download = pdfPath.split('/').pop();
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
 }
 
 /* Video-Hintergrund: Autoplay-Fallback (falls der Browser blockiert) */
