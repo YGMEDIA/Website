@@ -257,6 +257,13 @@ footer { background: rgba(12,14,28,0.65); backdrop-filter: blur(28px); -webkit-b
   .cookie-banner { left: 1rem; right: 1rem; bottom: 1rem; padding: 1.4rem; }
   .usecase-card { grid-template-columns: 1fr; }
 }
+
+/* LANGUAGE SWITCH */
+.lang-switch { display: flex; gap: 0.5rem; align-items: center; }
+.lang-btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.42rem 0.95rem; border-radius: 99px; border: 1px solid var(--border); background: var(--glass); color: var(--muted); text-decoration: none; font-size: 0.76rem; font-weight: 700; letter-spacing: 0.04em; transition: all 0.2s; }
+.lang-btn svg { width: 17px; height: 12px; border-radius: 2.5px; display: block; box-shadow: 0 0 0 1px rgba(255,255,255,0.12); }
+a.lang-btn:hover { border-color: rgba(28,91,130,0.5); color: var(--text); }
+.lang-btn.active { border-color: rgba(28,91,130,0.5); color: var(--text); background: rgba(28,91,130,0.12); }
 </style>
 <script type="application/ld+json">
 {
@@ -641,7 +648,7 @@ footer { background: rgba(12,14,28,0.65); backdrop-filter: blur(28px); -webkit-b
         <div class="footer-col">
           <div class="footer-col-title">Unternehmen</div>
           <a href="/#about">Über mich</a><a href="/#referenzen">Referenzen</a>
-          <a href="/#prozess">Prozess</a><a href="/en">English</a>
+          <a href="/#prozess">Prozess</a>
         </div>
         <div class="footer-col">
           <div class="footer-col-title">Rechtliches</div>
@@ -651,6 +658,10 @@ footer { background: rgba(12,14,28,0.65); backdrop-filter: blur(28px); -webkit-b
     </div>
     <div class="footer-bottom">
       <p class="footer-copy">© 2026 YG MEDIA · Yasin Gündogdu</p>
+      <div class="lang-switch" aria-label="Sprache / Language">
+        <span class="lang-btn active"><svg viewBox="0 0 5 3" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="5" height="1" fill="#111"/><rect y="1" width="5" height="1" fill="#DD0000"/><rect y="2" width="5" height="1" fill="#FFCE00"/></svg>DE</span>
+        <a href="/en/" class="lang-btn" aria-label="Switch to English"><svg viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><clipPath id="ljc"><path d="M0,0 v30 h60 v-30 z"/></clipPath><g clip-path="url(#ljc)"><path d="M0,0 v30 h60 v-30 z" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#C8102E" stroke-width="4"/><path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/><path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/></g></svg>EN</a>
+      </div>
       <div class="footer-socials">
         <a href="https://behance.net/yasinguendogdu" target="_blank" rel="noopener" class="social-btn" aria-label="Behance">Be</a>
         <a href="https://x.com/ysn_gdu" target="_blank" rel="noopener" class="social-btn" aria-label="X">X</a>      </div>
