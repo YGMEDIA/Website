@@ -3,23 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Webdesign Würzburg | Website erstellen lassen — YG MEDIA</title>
-<meta name="description" content="Professionelle Website erstellen lassen die bei Google gefunden wird und Besucher in Kunden verwandelt. Webdesign, WordPress, Framer und SEO aus einer Hand. Für Unternehmer in Würzburg und dem gesamten DACH-Raum.">
-<meta name="keywords" content="Website erstellen lassen, professionelles Webdesign, WordPress Agentur, Framer Website, SEO Webdesign Deutschland, Website für Unternehmer, Webdesigner Würzburg">
-<meta property="og:title" content="Website erstellen lassen — YG MEDIA">
-<meta property="og:description" content="Professionelle Websites die bei Google gefunden werden und Besucher in Kunden verwandeln.">
+<title>USELY | Buchhaltungs App für Kleinunternehmer — YG MEDIA</title>
+<meta name="description" content="USELY ist die Buchhaltungs App fürs iPhone: in 60 Sekunden kalkulieren, Angebote und Rechnungen schreiben, Belege scannen, EÜR exportieren. GoBD-konform, §19 UStG, E-Rechnung. Kostenlos laden.">
+<meta name="keywords" content="Buchhaltungs App, Rechnung App, Angebot schreiben App, Buchhaltung Kleinunternehmer, Rechnungs App Handwerker, EÜR App, E-Rechnung App, USELY">
+<meta property="og:title" content="USELY | Buchhaltungs App für Kleinunternehmer">
+<meta property="og:description" content="Kalkulieren. Abrechnen. Fertig. Angebote, Rechnungen und Ausgaben in Sekunden, direkt auf dem iPhone. Kostenlos im App Store.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://yg-media.de/website">
-<meta property="og:image" content="https://yg-media.de/assets/og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://yg-media.de/usely">
+<meta property="og:image" content="https://yg-media.de/assets/usely-1.png">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="1024">
 <meta property="og:site_name" content="YG MEDIA">
 <meta property="og:locale" content="de_DE">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Website erstellen lassen — YG MEDIA">
-<meta name="twitter:description" content="Professionelle Websites die bei Google gefunden werden und Besucher in Kunden verwandeln.">
-<meta name="twitter:image" content="https://yg-media.de/assets/og-image.png">
-<link rel="canonical" href="https://yg-media.de/website">
+<meta name="twitter:title" content="USELY | Buchhaltungs App für Kleinunternehmer">
+<meta name="twitter:description" content="Kalkulieren. Abrechnen. Fertig. Angebote, Rechnungen und Ausgaben in Sekunden, direkt auf dem iPhone.">
+<meta name="twitter:image" content="https://yg-media.de/assets/usely-1.png">
+<link rel="canonical" href="https://yg-media.de/usely">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,900;1,900&family=Playfair+Display:ital,wght@1,500;1,600;1,700&display=swap" rel="stylesheet">
 <style>
@@ -264,52 +264,61 @@ footer { background: rgba(12,14,28,0.65); backdrop-filter: blur(28px); -webkit-b
   .footer-links-grid { grid-template-columns: 1fr 1fr; }
   .cookie-banner { left: 1rem; right: 1rem; bottom: 1rem; padding: 1.4rem; }
 }
+
+/* USELY PAGE */
+.app-hero-shot { margin-top: 4rem; animation: fadeSlideUp 0.9s 0.6s ease both; }
+.app-hero-shot img { width: min(300px, 68vw); border-radius: 40px; border: 1px solid rgba(255,255,255,0.16); box-shadow: 0 60px 120px -40px rgba(0,0,0,0.7), 0 0 80px rgba(28,91,130,0.18), inset 0 1px 0 rgba(255,255,255,0.1); display: block; }
+.feature-rows { display: flex; flex-direction: column; gap: 7rem; margin-top: 5rem; }
+.feature-row { display: grid; grid-template-columns: 400px 1fr; gap: 5.5rem; align-items: center; }
+.feature-row.flip { grid-template-columns: 1fr 400px; }
+.feature-shot img { width: min(300px, 100%); border-radius: 36px; border: 1px solid rgba(255,255,255,0.14); box-shadow: 0 40px 90px -30px rgba(0,0,0,0.65), inset 0 1px 0 rgba(255,255,255,0.08); display: block; margin: 0 auto; }
+.feature-copy h3 { font-size: clamp(1.5rem, 2.4vw, 2rem); font-weight: 900; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 1rem; }
+.feature-copy h3 em { font-family: 'Playfair Display', serif; font-style: italic; font-weight: 600; color: var(--teal-bright); text-shadow: 0 0 24px rgba(36,120,170,0.45); }
+.feature-copy p { color: var(--muted); font-size: 0.95rem; line-height: 1.85; margin-bottom: 1.4rem; }
+.feature-points { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
+.feature-points li { display: flex; gap: 0.8rem; align-items: baseline; color: var(--muted); font-size: 0.88rem; line-height: 1.6; }
+.feature-points li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--teal-bright); box-shadow: 0 0 8px rgba(36,120,170,0.7); flex-shrink: 0; transform: translateY(-2px); }
+.dl-band { display: flex; justify-content: space-between; align-items: center; gap: 2rem; flex-wrap: wrap; border: 1px solid rgba(255,255,255,0.15); border-radius: 24px; padding: 2.6rem 3rem; background: rgba(255,255,255,0.04); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.1); }
+.dl-band-title { font-size: 1.3rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.3rem; }
+.dl-band-sub { color: var(--muted); font-size: 0.88rem; }
+.cta-crosslink { display: block; margin-top: 2.2rem; font-size: 0.85rem; color: var(--muted); position: relative; }
+.cta-crosslink a { color: var(--teal-bright); text-decoration: none; font-weight: 600; }
+@media (max-width: 1100px) {
+  .feature-row, .feature-row.flip { grid-template-columns: 1fr; gap: 2.5rem; }
+  .feature-row.flip .feature-shot { order: -1; }
+  .feature-rows { gap: 5rem; }
+}
+@media (max-width: 768px) {
+  .dl-band { padding: 2rem 1.6rem; }
+}
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "USELY",
+  "operatingSystem": "iOS",
+  "applicationCategory": "BusinessApplication",
+  "description": "USELY ist eine Buchhaltungs App für Gründer, Kleinunternehmer, Soloselbstständige und Handwerker. Vor Ort kalkulieren, Angebote und Rechnungen schreiben, Belege scannen, EÜR exportieren. GoBD-konform, §14 und §19 UStG, DSGVO, E-Rechnung mit XRechnung und ZUGFeRD.",
+  "url": "https://yg-media.de/usely",
+  "downloadUrl": "https://apps.apple.com/de/app/usely/id6783429050",
+  "inLanguage": ["de", "en"],
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+  "author": { "@type": "Person", "name": "Yasin Gündogdu" },
+  "publisher": { "@type": "Organization", "name": "YG MEDIA", "url": "https://yg-media.de" }
+}
+</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Was kostet eine professionelle Website?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Der Preis hängt vom Umfang ab. Eine einfache Business-Website startet ab 1.500 Euro. Komplexere Projekte mit SEO, Mehrsprachigkeit oder Onlineshop-Anbindung können mehr kosten. Eine ehrliche Übersicht aller Preisspannen findest du im Kosten-Ratgeber auf yg-media.de/website-kosten. In unserem Erstgespräch bekommst du ein konkretes Angebot, ohne versteckte Kosten."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wie lange dauert die Erstellung meiner Website?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Eine Standard-Business-Website ist in 2 bis 4 Wochen fertig. Komplexere Projekte dauern 4 bis 8 Wochen. Der genaue Zeitplan wird im Erstgespräch festgelegt und ich halte ihn ein."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Kann ich meine Website nach dem Launch selbst bearbeiten?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Bei allen CMS- und Baukastensystemen wie WordPress, Framer, Shopify oder Wix bekommst du nach dem Launch eine Einweisung und kannst Texte, Bilder und Inhalte eigenständig aktualisieren. Bei komplett individuell entwickelten HTML-Websites ist die Selbstpflege technisch aufwendiger. In diesem Fall übernehmen wir die laufende Pflege und Aktualisierungen für dich."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Welches CMS-System ist das richtige für mich?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Das hängt von deinem Ziel, deinem Budget und deinen Anforderungen ab. Hier ein kurzer Überblick: Framer: Ideal für moderne Landingpages, Portfolios und Startups die mit einem hochwertigen, animierten Auftritt schnell starten wollen. Sehr gute Performance, einfach zu bedienen. WordPress: Der Klassiker für umfangreichere Websites mit Blog, vielen Seiten oder komplexeren Strukturen. Riesiges Plugin-Ökosystem, sehr flexibel und gut selbst pflegbar. Shopify: Die erste Wahl für E-Commerce. Wer Produkte online verkaufen will, ist mit Shopify am besten aufgestellt. Integriertes Zahlungssystem, Lagerverwaltung und Shop-Funktionen inklusive. Wix: Gut für einfache Websites mit eigenem Pflegeanspruch. Schnell aufgesetzt, aber in Flexibilität und Design-Qualität begrenzt. Individuelle HTML-Entwicklung: Die stärkste Lösung für maximale Individualität. Keine Abhängigkeit von Drittanbietern, keine Plugin-Updates, keine Einschränkungen. Alles wird genau so gebaut wie es gebraucht wird. Empfehlenswert wenn Einzigartigkeit, Skalierbarkeit und vollständige Kontrolle im Vordergrund stehen."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Übernimmst du auch Hosting und Domain?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ich helfe dir bei der Auswahl und Einrichtung von Hosting und Domain. Du behältst die volle Kontrolle und zahlst direkt beim Anbieter. Ich empfehle dir zuverlässige, DSGVO-konforme Anbieter in Deutschland."
-      }
-    }
+    { "@type": "Question", "name": "Was ist USELY und für wen ist die App gedacht?", "acceptedAnswer": { "@type": "Answer", "text": "USELY ist eine Buchhaltungs App fürs iPhone, entwickelt für Gründer, Kleinunternehmer, Soloselbstständige und Handwerker in Deutschland, Österreich und der Schweiz. Mit USELY kalkulierst du direkt beim Kunden vor Ort, schreibst Angebote und Rechnungen in Sekunden, erfasst Ausgaben per Beleg-Scan und exportierst deine EÜR für den Steuerberater." } },
+    { "@type": "Question", "name": "Was kostet USELY?", "acceptedAnswer": { "@type": "Answer", "text": "USELY ist kostenlos im App Store erhältlich und sofort nutzbar. Für den vollen Funktionsumfang gibt es USELY Pro als Abo direkt in der App. Keine versteckten Kosten, jederzeit kündbar." } },
+    { "@type": "Question", "name": "Ist USELY rechtssicher und GoBD-konform?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Belege sind unveränderbar und nachvollziehbar (GoBD), alle Pflichtangaben nach §14 UStG werden automatisch berücksichtigt und die Kleinunternehmerregelung nach §19 UStG wird unterstützt. Datenexport und Löschung sind nach DSGVO jederzeit möglich." } },
+    { "@type": "Question", "name": "Unterstützt USELY die E-Rechnung?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. USELY erstellt E-Rechnungen als XRechnung und ZUGFeRD für die E-Rechnungspflicht. Dazu kommt der EÜR-Export als PDF und CSV, bereit für deinen Steuerberater." } },
+    { "@type": "Question", "name": "Gibt es USELY auch für Android?", "acceptedAnswer": { "@type": "Answer", "text": "USELY ist aktuell exklusiv für das iPhone verfügbar und konsequent auf iOS optimiert. Du findest die App kostenlos im Apple App Store." } },
+    { "@type": "Question", "name": "Wer steht hinter USELY?", "acceptedAnswer": { "@type": "Answer", "text": "USELY wird von Yasin Gündogdu (YG MEDIA) aus Würzburg entwickelt: Konzept, Design, iOS Entwicklung und Backend komplett aus einer Hand. Das Projekt wurde von IGZ Würzburg, Brainstation Lauda und Campus Founders gefördert und begleitet." } }
   ]
 }
 </script>
@@ -330,7 +339,7 @@ footer { background: rgba(12,14,28,0.65); backdrop-filter: blur(28px); -webkit-b
       <span class="nav-logo-text">YG MEDIA</span>
     </a>
     <div class="nav-links" id="navLinks">
-      <a href="/website" class="active">Website</a>
+      <a href="/website">Website</a>
       <a href="/apps">Apps</a>
       <a href="/marketing">Marketing</a>
       <a href="/automation">Automation</a>
@@ -345,31 +354,19 @@ footer { background: rgba(12,14,28,0.65); backdrop-filter: blur(28px); -webkit-b
   <div class="wrap">
     <div class="hero-inner">
       <div>
-        <div class="hero-badge"><span class="hero-badge-dot"></span>Webdesign &amp; SEO</div>
-        <h1 class="hero-h1 hero-h1--website">
-          <span class="line"><span class="line-inner">Website die Kunden bringt.</span></span>
-          <span class="line"><span class="line-inner"><em>Nicht nur gut aussieht.</em></span></span>
+        <div class="hero-badge"><span class="hero-badge-dot"></span>Eigenes Produkt · Jetzt im App Store</div>
+        <h1 class="hero-h1">
+          <span class="line"><span class="line-inner">Kalkulieren. Abrechnen.</span></span>
+          <span class="line"><span class="line-inner"><em>Fertig.</em></span></span>
         </h1>
-        <p class="hero-sub">Professionelles Webdesign aus Würzburg. Eine Website ist deine wichtigste Vertriebsmaschine. Ich baue Websites die bei Google gefunden werden, Vertrauen aufbauen und Besucher in zahlende Kunden verwandeln. Kein Baukasten. Keine 08/15-Vorlage. Individuell, schnell und auf dein Unternehmen zugeschnitten.</p>
+        <p class="hero-sub">USELY ist die Buchhaltungs App fürs iPhone. Für Gründer, Kleinunternehmer, Soloselbstständige und Handwerker die keine Zeit für komplizierte Software haben. Vor Ort beim Kunden kalkulieren, Angebot und Rechnung in Sekunden erstellen, Belege scannen, fertig. Rechtssicher, GoBD-konform und kostenlos startbar.</p>
         <div class="hero-btns">
-          <a href="https://calendly.com/yg-media/30min" target="_blank" rel="noopener" class="btn btn-primary">Kostenloses Erstgespräch <span class="btn-arrow">↗</span></a>
-          <a href="#leistungen" class="btn btn-ghost">Leistungen ansehen</a>
+          <a href="https://apps.apple.com/de/app/usely/id6783429050" target="_blank" rel="noopener" class="btn btn-primary">Kostenlos im App Store laden <span class="btn-arrow">↗</span></a>
+          <a href="#features" class="btn btn-ghost">Features ansehen</a>
         </div>
       </div>
-      <div class="hero-visual">
-        <div class="hero-card-bg"></div>
-        <div class="hero-card">
-          <div class="card-metric-label">Websites gebaut</div>
-          <div class="card-metric-val">40+</div>
-          <div class="card-metric-sub">Für Unternehmer, Praxen &amp; Startups</div>
-          <div class="card-divider"></div>
-          <div class="card-stats">
-            <div><div class="card-stat-label">Erfahrung</div><div class="card-stat-val">10+ J.</div></div>
-            <div><div class="card-stat-label">SEO-optimiert</div><div class="card-stat-val">100%</div></div>
-            <div><div class="card-stat-label">Tools</div><div class="card-stat-val" style="font-size:1.1rem;line-height:1.4;padding-top:0.3rem">WordPress · Framer · Custom</div></div>
-            <div><div class="card-stat-label">Support</div><div class="card-stat-val" style="font-size:1.1rem;line-height:1.4;padding-top:0.3rem">Direkt &amp; persönlich</div></div>
-          </div>
-        </div>
+      <div class="app-hero-shot">
+        <img src="assets/usely-welcome.webp" alt="USELY Buchhaltungs App für iPhone: Willkommensbildschirm mit Slogan Kalkulieren, Abrechnen, Fertig" width="300" height="652">
       </div>
     </div>
   </div>
@@ -379,200 +376,157 @@ footer { background: rgba(12,14,28,0.65); backdrop-filter: blur(28px); -webkit-b
 <section>
   <div class="wrap">
     <div class="reality-inner reveal">
-      <span class="eyebrow">Das Problem</span>
-      <h2 class="reality-title">Eine Website zu haben reicht nicht.<br><strong>Sie muss auch wirklich funktionieren.</strong></h2>
-      <p class="reality-text">Eine erfolgreiche Website ist mehr als eine schöne Oberfläche. Sie muss technisch einwandfrei laufen, visuell überzeugen, die Marke klar kommunizieren, inhaltlich strukturiert sein und aus UX-Sicht intuitiv funktionieren. Dazu kommt SEO für Sichtbarkeit bei Google, schnelle Ladezeiten damit Besucher bleiben, und eine saubere Anbindung aller Funktionen, von Buchungstools über Formulare bis hin zu individuellen Rechnern oder integrierten Systemen. Erst wenn all diese Schichten zusammenspielen, wird eine Website zur echten Vertriebsmaschine.</p>
+      <span class="eyebrow">Die Idee</span>
+      <h2 class="reality-title">Buchhaltung, die sich nicht<br><strong>wie Buchhaltung anfühlt.</strong></h2>
+      <p class="reality-text">Der Prozess vom Angebot bis zur Rechnung frisst Zeit und hält von der eigentlichen Arbeit ab. Genau dafür ist USELY gebaut: Du stehst beim Kunden, tippst die Posten ein, siehst sofort den Preis und speicherst alles als Projekt. Sagt der Kunde zu, wird daraus mit einem Tipp das Angebot, die Auftragsbestätigung und am Ende die Rechnung. Alles rechtssicher verknüpft, alles in der Hosentasche, alles in Sekunden statt Stunden.</p>
     </div>
   </div>
 </section>
 
-<!-- LEISTUNGEN -->
-<section id="leistungen">
+<!-- FEATURES -->
+<section id="features">
   <div class="wrap">
     <div class="leistungen-header">
       <div class="reveal-left">
-        <span class="eyebrow">Leistungen</span>
-        <h2 class="leistungen-title">Alles für deine<br>digitale Präsenz.</h2>
+        <span class="eyebrow">Features</span>
+        <h2 class="leistungen-title">Alles drin.<br>Nichts im Weg.</h2>
       </div>
-      <p class="leistungen-sub reveal-right">Von der Strategie bis zum Launch. Design, Technik, Inhalte, SEO und alle Anbindungen aus einer Hand, damit du dich auf dein Unternehmen konzentrieren kannst.</p>
+      <p class="leistungen-sub reveal-right">Von der ersten Kalkulation bis zum EÜR-Export für den Steuerberater. Jede Funktion ist auf einen einzigen Massstab hin gebaut: einfach und schnell.</p>
     </div>
-    <div class="leistungen-grid">
-      <div class="leistung-card reveal">
-        <div class="leistung-icon">🎨</div>
-        <h3>Individuelles Webdesign</h3>
-        <p>Kein Template von der Stange. Deine Website wird von Grund auf neu gestaltet, abgestimmt auf deine Marke, deine Zielgruppe und dein Angebot. Modern, klar und mit einem Design das Vertrauen aufbaut.</p>
-        <div class="leistung-tags"><span class="ltag">Figma</span><span class="ltag">UI/UX</span><span class="ltag">Branding</span></div>
+    <div class="feature-rows">
+
+      <div class="feature-row">
+        <div class="feature-shot reveal-left"><img src="assets/usely-screen-kalkulation.webp" alt="USELY App Screenshot: Kalkulation mit Posten Anfahrt, Montage und Material, Gesamtsumme in Echtzeit" loading="lazy" width="300" height="652"></div>
+        <div class="feature-copy reveal-right">
+          <span class="eyebrow">Kalkulation</span>
+          <h3>In 60 Sekunden <em>kalkuliert.</em></h3>
+          <p>Posten eintippen, Preis sofort sehen, als Projekt speichern. Direkt beim Kunden vor Ort, so einfach wie ein Taschenrechner. Kein Laptop, kein Excel, kein Abend am Schreibtisch.</p>
+          <ul class="feature-points">
+            <li>Summen aktualisieren sich in Echtzeit während du tippst</li>
+            <li>Mehrwertsteuer automatisch nach deinem Firmen-Standard</li>
+            <li>Aus jeder Kalkulation wird mit einem Tipp ein Angebot</li>
+          </ul>
+        </div>
       </div>
-      <div class="leistung-card reveal" data-delay="1">
-        <div class="leistung-icon">⚡</div>
-        <h3>Framer Websites</h3>
-        <p>Hochwertige Websites mit Framer gebaut: blitzschnell, animiert, pixelgenau. Perfekt für Unternehmen die online mit Premium-Auftritt punkten wollen. Läuft auf jedem Gerät ohne Kompromisse.</p>
-        <div class="leistung-tags"><span class="ltag">Framer</span><span class="ltag">Animationen</span><span class="ltag">Performance</span></div>
+
+      <div class="feature-row flip">
+        <div class="feature-copy reveal-left">
+          <span class="eyebrow">Belegkette</span>
+          <h3>Vom Angebot <em>zur Rechnung.</em></h3>
+          <p>Angebot, Auftragsbestätigung, Abschlagsrechnung und Schlussrechnung in einer lückenlosen Belegkette. Jeder Schritt rechtssicher verknüpft, jede Nummer im sauberen Nummernkreis.</p>
+          <ul class="feature-points">
+            <li>Angenommenes Angebot wird per Tipp zur Auftragsbestätigung</li>
+            <li>Abschlagsrechnungen direkt aus dem Projekt erstellen</li>
+            <li>Die Schlussrechnung zieht bezahlte Abschläge automatisch ab</li>
+          </ul>
+        </div>
+        <div class="feature-shot reveal-right"><img src="assets/usely-screen-belegkette.webp" alt="USELY App Screenshot: Belegkette von Angebot über Auftragsbestätigung zur Rechnung" loading="lazy" width="300" height="652"></div>
       </div>
-      <div class="leistung-card reveal" data-delay="2">
-        <div class="leistung-icon">🔧</div>
-        <h3>CMS-Entwicklung</h3>
-        <p>WordPress, Shopify, Wix oder ein anderes System, je nach Anforderung und Budget wird das passende CMS gewählt. Für maximale Flexibilität ist auch eine vollständige Entwicklung in HTML, CSS und JavaScript möglich.</p>
-        <div class="leistung-tags"><span class="ltag">WordPress</span><span class="ltag">Shopify</span><span class="ltag">HTML/Custom</span></div>
+
+      <div class="feature-row">
+        <div class="feature-shot reveal-left"><img src="assets/usely-screen-projekte.webp" alt="USELY App Screenshot: Projekt mit Kalkulation, Belegen und Ausgaben an einem Ort" loading="lazy" width="300" height="652"></div>
+        <div class="feature-copy reveal-right">
+          <span class="eyebrow">Projekte &amp; Kunden</span>
+          <h3>Ein Projekt <em>hält alles zusammen.</em></h3>
+          <p>Kalkulation, Belege und Ausgaben liegen an einem Ort und sind jedem Kunden zugeordnet. Du siehst auf einen Blick was offen ist, was bezahlt wurde und wo ein Vorgang gerade steht.</p>
+          <ul class="feature-points">
+            <li>Kundenverwaltung mit automatischen Kundennummern</li>
+            <li>Adress-Autovervollständigung beim Anlegen</li>
+            <li>Status jedes Belegs auf einen Blick: offen, gesendet, bezahlt</li>
+          </ul>
+        </div>
       </div>
-      <div class="leistung-card reveal">
-        <div class="leistung-icon">🔍</div>
-        <h3>Suchmaschinenoptimierung (SEO)</h3>
-        <p>Deine Website wird von Anfang an für Google optimiert. On-Page SEO, technische Optimierung, Ladezeiten, Meta-Tags und strukturierte Daten. Damit du bei den Suchanfragen landest die dir Kunden bringen.</p>
-        <div class="leistung-tags"><span class="ltag">On-Page SEO</span><span class="ltag">Core Web Vitals</span><span class="ltag">Lokales SEO</span></div>
+
+      <div class="feature-row flip">
+        <div class="feature-copy reveal-left">
+          <span class="eyebrow">Ausgaben &amp; Belege</span>
+          <h3>Scannen statt <em>abtippen.</em></h3>
+          <p>Beleg abfotografieren, Text wird automatisch erkannt, Betrag und Kategorie sind sofort erfasst. Ausgaben lassen sich direkt einem Projekt zuordnen, auch wiederkehrende Fixkosten.</p>
+          <ul class="feature-points">
+            <li>Automatische Texterkennung direkt auf dem iPhone</li>
+            <li>Wiederkehrende Ausgaben werden automatisch angelegt</li>
+            <li>Jede Ausgabe optional einem Projekt zugeordnet</li>
+          </ul>
+        </div>
+        <div class="feature-shot reveal-right"><img src="assets/usely-screen-ausgaben.webp" alt="USELY App Screenshot: Beleg scannen, Summe wird automatisch erkannt" loading="lazy" width="300" height="652"></div>
       </div>
-      <div class="leistung-card reveal" data-delay="1">
-        <div class="leistung-icon">📱</div>
-        <h3>Mobile-First &amp; Responsive</h3>
-        <p>Über 70% der Website-Besuche kommen vom Smartphone. Jede Website wird mobile-first entwickelt und sieht auf jedem Gerät, Desktop, Tablet und Smartphone, perfekt aus. Keine Kompromisse.</p>
-        <div class="leistung-tags"><span class="ltag">Responsive</span><span class="ltag">Mobile</span><span class="ltag">Tablet</span></div>
+
+      <div class="feature-row">
+        <div class="feature-shot reveal-left"><img src="assets/usely-screen-rechtssicher.webp" alt="USELY App Screenshot: GoBD-konform, Paragraf 14 UStG, Paragraf 19 UStG Kleinunternehmerregelung und DSGVO" loading="lazy" width="300" height="652"></div>
+        <div class="feature-copy reveal-right">
+          <span class="eyebrow">Rechtssicherheit</span>
+          <h3>Rechtssicher <em>von Anfang an.</em></h3>
+          <p>Du musst kein Steuerrecht können, USELY kann es für dich. Alle Pflichtangaben und Regelungen werden automatisch berücksichtigt, bei jedem einzelnen Beleg.</p>
+          <ul class="feature-points">
+            <li>GoBD-konform: unveränderbare, nachvollziehbare Belege</li>
+            <li>Alle Pflichtangaben nach §14 UStG automatisch</li>
+            <li>Kleinunternehmerregelung nach §19 UStG berücksichtigt</li>
+            <li>DSGVO: Datenexport und Löschung jederzeit</li>
+          </ul>
+        </div>
       </div>
-      <div class="leistung-card reveal" data-delay="2">
-        <div class="leistung-icon">🚀</div>
-        <h3>Launch &amp; laufende Betreuung</h3>
-        <p>Von der Domain-Einrichtung bis zum Go-Live wird alles begleitet. Auch nach dem Launch gibt es einen direkten Ansprechpartner für Updates, Anpassungen und Erweiterungen.</p>
-        <div class="leistung-tags"><span class="ltag">Hosting-Setup</span><span class="ltag">Wartung</span><span class="ltag">Support</span></div>
+
+      <div class="feature-row flip">
+        <div class="feature-copy reveal-left">
+          <span class="eyebrow">E-Rechnung &amp; Export</span>
+          <h3>Bereit für deinen <em>Steuerberater.</em></h3>
+          <p>XRechnung und ZUGFeRD für die E-Rechnungspflicht, dazu der EÜR-Export als PDF und CSV. Am Jahresende exportierst du alles mit wenigen Tipps, sauber aufbereitet und vollständig.</p>
+          <ul class="feature-points">
+            <li>E-Rechnung als XRechnung und ZUGFeRD</li>
+            <li>Einnahmenüberschussrechnung (EÜR) als PDF und CSV</li>
+            <li>Vollständiger Datenexport deiner Buchhaltung</li>
+          </ul>
+        </div>
+        <div class="feature-shot reveal-right"><img src="assets/usely-screen-erechnung.webp" alt="USELY App Screenshot: E-Rechnung mit XRechnung, ZUGFeRD und EÜR-Export" loading="lazy" width="300" height="652"></div>
       </div>
-      <div class="leistung-card reveal" data-delay="3">
-        <div class="leistung-icon">🔗</div>
-        <h3>Integrationen &amp; individuelle Features</h3>
-        <p>Buchungstools, Kalender-APIs, Rechnungsgeneratoren, Kalkulator-Tools, CRM-Anbindungen oder eigene kleine Applikationen innerhalb der Website. Was gebraucht wird, wird technisch sauber eingebunden.</p>
-        <div class="leistung-tags"><span class="ltag">API-Anbindung</span><span class="ltag">Kalkulatoren</span><span class="ltag">Custom Features</span></div>
+
+    </div>
+
+    <div class="dl-band reveal" style="margin-top: 6rem;">
+      <div>
+        <div class="dl-band-title">Überzeug dich selbst.</div>
+        <div class="dl-band-sub">Kostenlos laden, in 2 Minuten startklar. Kein Buchhaltungswissen nötig.</div>
       </div>
+      <a href="https://apps.apple.com/de/app/usely/id6783429050" target="_blank" rel="noopener" class="btn btn-primary">Im App Store laden <span class="btn-arrow">↗</span></a>
     </div>
   </div>
 </section>
 
-<!-- WARUM -->
-<section>
+<!-- GESCHICHTE -->
+<section id="geschichte">
   <div class="wrap">
     <div class="warum-inner">
       <div class="reveal-left">
-        <span class="eyebrow">Warum YG MEDIA</span>
-        <h2>Strategie, Design und<br><em>Technik aus einer Hand.</em></h2>
-        <p>Gute Websites entstehen nicht durch Templates und schnelle Umsetzung. Sie entstehen durch ein klares Verständnis der Marke, der Zielgruppe und der Ziele dahinter. Erst dann folgt das Design, die Entwicklung und die technische Einbindung aller Systeme.</p>
-        <p>Mit über 10 Jahren Erfahrung und mehr als 60 realisierten Projekten steht YG MEDIA für durchdachte digitale Präsenzen die messbar performen und langfristig tragen. Als Ansprechpartner für Webdesign aus Würzburg betreue ich Unternehmen in der Region und im gesamten DACH-Raum persönlich, von der Strategie bis zum Launch.</p>
+        <span class="eyebrow">Die Geschichte</span>
+        <h2>Von der Baustelle<br><em>in den App Store.</em></h2>
+        <p>Die Idee zu USELY entstand 2022 im echten Arbeitsalltag: beim Beobachten auf der Baustelle und im Austausch mit Unternehmern im eigenen Umfeld. Der Weg vom Angebot bis zur Rechnung war überall dasselbe leidige Thema. Er kostet Abende, nervt und hält von der eigentlichen Arbeit ab.</p>
+        <p>Aus dieser Beobachtung wurde eine erste Web-Version, über die schon damals die regionale Presse berichtete. Begleitet und gefördert von IGZ Würzburg, Brainstation Lauda und Campus Founders wurde aus dem Prototyp ein durchdachtes Produkt: heute eine vollständig neu entwickelte, native iOS App, live im App Store.</p>
+        <p>USELY ist komplett solo entwickelt: Konzept, Branding, UI/UX Design, iOS Entwicklung, Backend und Launch aus einer Hand von YG MEDIA aus Würzburg.</p>
         <br>
-        <a href="https://calendly.com/yg-media/30min" target="_blank" rel="noopener" class="btn btn-primary">Jetzt Erstgespräch buchen <span class="btn-arrow">↗</span></a>
+        <a href="https://www.fnweb.de/orte/lauda-koenigshofen_artikel,-lauda-koenigshofen-starthilfe-fuer-gruendungswillige-_arid,1982643.html" target="_blank" rel="noopener" class="ref-link" style="margin-top:0">Zum Zeitungsartikel über die Anfänge →</a>
       </div>
       <div class="reveal-right">
-        <div class="warum-right">
-          <div class="warum-item">
-            <div class="warum-num">01</div>
-            <div><h4>Strategie vor Design</h4><p>Vor dem ersten Pixel steht das Konzept. Zielgruppe, Markenpositionierung, Inhaltsstruktur und UX-Recherche bilden das Fundament. Das Design folgt der Strategie, nicht umgekehrt.</p></div>
+        <div class="prozess-steps">
+          <div class="prozess-step">
+            <div class="prozess-step-num">2022</div>
+            <div>
+              <h3>Die Idee entsteht</h3>
+              <p>Aus dem Alltag auf der Baustelle wird ein Konzept: Geschäftsführung und Buchhaltung in einem Prozess, so einfach wie ein Taschenrechner. Die erste Web-Version geht live, über 2.000 Besucher finden den Weg auf die Seite und die regionale Presse berichtet.</p>
+            </div>
           </div>
-          <div class="warum-item">
-            <div class="warum-num">02</div>
-            <div><h4>SEO und Performance von Anfang an</h4><p>Suchmaschinenoptimierung und Ladegeschwindigkeit sind keine nachträglichen Add-ons. Sie sind fester Bestandteil jedes Projekts, von der technischen Struktur bis zur Indexierung bei Google.</p></div>
+          <div class="prozess-step">
+            <div class="prozess-step-num">2023</div>
+            <div>
+              <h3>Förderung &amp; Entwicklung</h3>
+              <p>IGZ Würzburg, Brainstation Lauda und Campus Founders begleiten das Projekt. In intensiven Gesprächen und mit echtem Nutzerfeedback wird aus dem Prototyp eine klare Produktvision.</p>
+            </div>
           </div>
-          <div class="warum-item">
-            <div class="warum-num">03</div>
-            <div><h4>Messbare Ergebnisse</h4><p>Google Analytics, Search Console, Conversion-Tracking und alle relevanten Tools werden sauber eingerichtet. Was gebaut wird, lässt sich messen. Was messbar ist, lässt sich verbessern.</p></div>
-          </div>
-          <div class="warum-item">
-            <div class="warum-num">04</div>
-            <div><h4>Transparente Preise, klare Leistung</h4><p>Vor dem Start ist klar was im Scope ist, was es kostet und wann es fertig wird. Kein Kleingedrucktes, keine versteckten Zusatzkosten, keine Überraschungen.</p></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- VORTEILE -->
-<section>
-  <div class="wrap">
-    <div class="vorteile-head">
-      <div class="reveal-left">
-        <h2 class="vorteile-title">
-          <span>Was du</span>
-          <span class="accent">bekommst.</span>
-        </h2>
-      </div>
-      <p class="vorteile-sub reveal-right">Was du mit jeder Website bekommst. Kein Kompromiss, kein Feature das extra kostet und eigentlich selbstverständlich sein sollte.</p>
-    </div>
-    <div class="vorteile-grid">
-      <div class="vorteil-card reveal">
-        <div class="vorteil-num">01</div>
-        <h3>Individuelles Design</h3>
-        <p>Kein Template. Deine Website wird nach deiner Marke, deiner Zielgruppe und deinen Zielen gestaltet. Modern, hochwertig und unverwechselbar.</p>
-      </div>
-      <div class="vorteil-card reveal" data-delay="1">
-        <div class="vorteil-num">02</div>
-        <h3>Technisch sauber &amp; schnell</h3>
-        <p>Core Web Vitals im grünen Bereich, sauberer Code, schnelle Ladezeiten auf jedem Gerät. Technische Exzellenz als Standard, nicht als Option.</p>
-      </div>
-      <div class="vorteil-card reveal" data-delay="2">
-        <div class="vorteil-num">03</div>
-        <h3>SEO &amp; Google-Ranking</h3>
-        <p>Von Anfang an für Suchmaschinen optimiert. On-Page SEO, technisches SEO und korrekte Indexierung damit du bei Google gefunden wirst.</p>
-      </div>
-      <div class="vorteil-card reveal" data-delay="3">
-        <div class="vorteil-num">04</div>
-        <h3>Alle Funktionen integriert</h3>
-        <p>Buchungstools, Formulare, Kalkulatoren, CRM-Anbindungen, APIs und individuelle Features, alles was du brauchst wird nahtlos eingebaut.</p>
-      </div>
-      <div class="vorteil-card reveal">
-        <div class="vorteil-num">05</div>
-        <h3>Inhalte inklusive</h3>
-        <p>Texte, Bilder und bei Bedarf auch Videos werden mit erstellt. Ein Ansprechpartner der alles liefert, nicht nur den Code.</p>
-      </div>
-      <div class="vorteil-card reveal" data-delay="1">
-        <div class="vorteil-num">06</div>
-        <h3>DSGVO-konform</h3>
-        <p>Cookie-Banner, Datenschutzerklärung und rechtssichere Einbindung aller Dienste. Kein juristisches Risiko für dein Unternehmen.</p>
-      </div>
-      <div class="vorteil-card reveal" data-delay="2">
-        <div class="vorteil-num">07</div>
-        <h3>Conversion-optimiert</h3>
-        <p>Klare Nutzerführung, strategische Call-to-Actions und eine Struktur die Besucher in Anfragen verwandelt. Nicht nur schön, sondern wirksam.</p>
-      </div>
-      <div class="vorteil-card reveal" data-delay="3">
-        <div class="vorteil-num">08</div>
-        <h3>Analytics &amp; Tracking</h3>
-        <p>Google Analytics, Search Console und Conversion-Tracking sauber eingerichtet. Du siehst was auf deiner Website passiert und kannst Entscheidungen auf Basis echter Daten treffen.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PROZESS -->
-<section id="prozess">
-  <div class="wrap">
-    <div class="prozess-inner">
-      <div class="prozess-sticky">
-        <span class="eyebrow reveal">Der Prozess</span>
-        <h2 class="prozess-title reveal">Von der Idee zur fertigen Website.</h2>
-        <p class="prozess-sub reveal">In vier klaren Schritten. Du weisst immer wo dein Projekt steht und was als Nächstes kommt.</p>
-        <a href="https://calendly.com/yg-media/30min" target="_blank" rel="noopener" class="btn btn-primary reveal">Jetzt starten <span class="btn-arrow">↗</span></a>
-      </div>
-      <div class="prozess-steps">
-        <div class="prozess-step reveal">
-          <div class="prozess-step-num">01</div>
-          <div>
-            <h3>Erstgespräch &amp; Strategie</h3>
-            <p>In einem kostenlosen 30-Minuten-Call lernen wir uns kennen. Du erzählst mir von deinem Unternehmen, deinen Zielen und deiner Zielgruppe. Ich analysiere was du brauchst und entwickle eine klare Strategie.</p>
-          </div>
-        </div>
-        <div class="prozess-step reveal" data-delay="1">
-          <div class="prozess-step-num">02</div>
-          <div>
-            <h3>Konzept, Design &amp; Inhalte</h3>
-            <p>Das Design entsteht in Figma, du siehst deinen Auftritt bevor eine Zeile Code geschrieben wird. Parallel werden Texte, Bilder und Inhalte erarbeitet. Feedback-Runden bis alles sitzt.</p>
-          </div>
-        </div>
-        <div class="prozess-step reveal" data-delay="2">
-          <div class="prozess-step-num">03</div>
-          <div>
-            <h3>Entwicklung, SEO &amp; Anbindungen</h3>
-            <p>Die Website wird gebaut, für Google optimiert und alle gewünschten Funktionen integriert. Buchungstools, Formulare, Kalkulatoren, CRM-Anbindungen oder individuelle Features, alles wird sauber eingebunden und getestet.</p>
-          </div>
-        </div>
-        <div class="prozess-step reveal" data-delay="3">
-          <div class="prozess-step-num">04</div>
-          <div>
-            <h3>Launch &amp; Übergabe</h3>
-            <p>Go-Live mit voller Begleitung. Domain-Einrichtung, Hosting-Setup, Google Analytics und Search Console, alles fertig eingerichtet. Du bekommst eine Einweisung und bleibst nie allein.</p>
+          <div class="prozess-step">
+            <div class="prozess-step-num">2026</div>
+            <div>
+              <h3>Live im App Store</h3>
+              <p>USELY wird komplett neu als native iOS App entwickelt und launcht im App Store. Rechtssicher, GoBD-konform und kostenlos startbar. Heute schreiben Selbstständige damit täglich Angebote und Rechnungen.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -586,34 +540,31 @@ footer { background: rgba(12,14,28,0.65); backdrop-filter: blur(28px); -webkit-b
     <div class="faq-inner">
       <span class="eyebrow reveal">FAQ</span>
       <h2 class="faq-title reveal">Häufige Fragen.</h2>
-      <p class="faq-lead reveal">Alles was du wissen willst bevor wir starten.</p>
+      <p class="faq-lead reveal">Alles was du über USELY wissen willst.</p>
       <div class="faq-list reveal">
         <div class="faq-item">
-          <button class="faq-q">Was kostet eine professionelle Website? <span class="faq-icon">+</span></button>
-          <div class="faq-a"><div class="faq-a-inner">Der Preis hängt vom Umfang ab. Eine einfache Business-Website startet ab 1.500 Euro. Komplexere Projekte mit SEO, Mehrsprachigkeit oder Onlineshop-Anbindung können mehr kosten. Eine ehrliche Übersicht aller Preisspannen findest du im <a href="/website-kosten" style="color:var(--teal-bright)">Kosten-Ratgeber</a>. In unserem Erstgespräch bekommst du ein konkretes Angebot, ohne versteckte Kosten.</div></div>
+          <button class="faq-q">Was ist USELY und für wen ist die App gedacht? <span class="faq-icon">+</span></button>
+          <div class="faq-a"><div class="faq-a-inner">USELY ist eine Buchhaltungs App fürs iPhone, entwickelt für Gründer, Kleinunternehmer, Soloselbstständige und Handwerker in Deutschland, Österreich und der Schweiz. Mit USELY kalkulierst du direkt beim Kunden vor Ort, schreibst Angebote und Rechnungen in Sekunden, erfasst Ausgaben per Beleg-Scan und exportierst deine EÜR für den Steuerberater.</div></div>
         </div>
         <div class="faq-item">
-          <button class="faq-q">Wie lange dauert die Erstellung meiner Website? <span class="faq-icon">+</span></button>
-          <div class="faq-a"><div class="faq-a-inner">Eine Standard-Business-Website ist in 2 bis 4 Wochen fertig. Komplexere Projekte dauern 4 bis 8 Wochen. Der genaue Zeitplan wird im Erstgespräch festgelegt und ich halte ihn ein.</div></div>
+          <button class="faq-q">Was kostet USELY? <span class="faq-icon">+</span></button>
+          <div class="faq-a"><div class="faq-a-inner">USELY ist <strong>kostenlos</strong> im App Store erhältlich und sofort nutzbar. Für den vollen Funktionsumfang gibt es <strong>USELY Pro</strong> als Abo direkt in der App. Keine versteckten Kosten, jederzeit kündbar.</div></div>
         </div>
         <div class="faq-item">
-          <button class="faq-q">Kann ich meine Website nach dem Launch selbst bearbeiten? <span class="faq-icon">+</span></button>
-          <div class="faq-a"><div class="faq-a-inner">Bei allen CMS- und Baukastensystemen wie WordPress, Framer, Shopify oder Wix bekommst du nach dem Launch eine Einweisung und kannst Texte, Bilder und Inhalte eigenständig aktualisieren. Bei komplett individuell entwickelten HTML-Websites ist die Selbstpflege technisch aufwendiger. In diesem Fall übernehmen wir die laufende Pflege und Aktualisierungen für dich.</div></div>
+          <button class="faq-q">Ist USELY rechtssicher und GoBD-konform? <span class="faq-icon">+</span></button>
+          <div class="faq-a"><div class="faq-a-inner">Ja. Belege sind unveränderbar und nachvollziehbar (<strong>GoBD</strong>), alle Pflichtangaben nach <strong>§14 UStG</strong> werden automatisch berücksichtigt und die Kleinunternehmerregelung nach <strong>§19 UStG</strong> wird unterstützt. Datenexport und Löschung sind nach <strong>DSGVO</strong> jederzeit möglich.</div></div>
         </div>
         <div class="faq-item">
-          <button class="faq-q">Welches CMS-System ist das richtige für mich? <span class="faq-icon">+</span></button>
-          <div class="faq-a"><div class="faq-a-inner">
-            Das hängt von deinem Ziel, deinem Budget und deinen Anforderungen ab. Hier ein kurzer Überblick:<br><br>
-            <strong>Framer</strong>: Ideal für moderne Landingpages, Portfolios und Startups die mit einem hochwertigen, animierten Auftritt schnell starten wollen. Sehr gute Performance, einfach zu bedienen.<br><br>
-            <strong>WordPress</strong>: Der Klassiker für umfangreichere Websites mit Blog, vielen Seiten oder komplexeren Strukturen. Riesiges Plugin-Ökosystem, sehr flexibel und gut selbst pflegbar.<br><br>
-            <strong>Shopify</strong>: Die erste Wahl für E-Commerce. Wer Produkte online verkaufen will, ist mit Shopify am besten aufgestellt. Integriertes Zahlungssystem, Lagerverwaltung und Shop-Funktionen inklusive.<br><br>
-            <strong>Wix</strong>: Gut für einfache Websites mit eigenem Pflegeanspruch. Schnell aufgesetzt, aber in Flexibilität und Design-Qualität begrenzt.<br><br>
-            <strong>Individuelle HTML-Entwicklung</strong>: Die stärkste Lösung für maximale Individualität. Keine Abhängigkeit von Drittanbietern, keine Plugin-Updates, keine Einschränkungen. Alles wird genau so gebaut wie es gebraucht wird. Empfehlenswert wenn Einzigartigkeit, Skalierbarkeit und vollständige Kontrolle im Vordergrund stehen.
-          </div></div>
+          <button class="faq-q">Unterstützt USELY die E-Rechnung? <span class="faq-icon">+</span></button>
+          <div class="faq-a"><div class="faq-a-inner">Ja. USELY erstellt E-Rechnungen als <strong>XRechnung</strong> und <strong>ZUGFeRD</strong> für die E-Rechnungspflicht. Dazu kommt der <strong>EÜR-Export</strong> als PDF und CSV, bereit für deinen Steuerberater.</div></div>
         </div>
         <div class="faq-item">
-          <button class="faq-q">Übernimmst du auch Hosting und Domain? <span class="faq-icon">+</span></button>
-          <div class="faq-a"><div class="faq-a-inner">Ich helfe dir bei der Auswahl und Einrichtung von Hosting und Domain. Du behältst die volle Kontrolle und zahlst direkt beim Anbieter. Ich empfehle dir zuverlässige, DSGVO-konforme Anbieter in Deutschland.</div></div>
+          <button class="faq-q">Gibt es USELY auch für Android? <span class="faq-icon">+</span></button>
+          <div class="faq-a"><div class="faq-a-inner">USELY ist aktuell exklusiv für das iPhone verfügbar und konsequent auf iOS optimiert. Du findest die App kostenlos im <a href="https://apps.apple.com/de/app/usely/id6783429050" target="_blank" rel="noopener" style="color:var(--teal-bright)">Apple App Store</a>.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Wer steht hinter USELY? <span class="faq-icon">+</span></button>
+          <div class="faq-a"><div class="faq-a-inner">USELY wird von Yasin Gündogdu (YG MEDIA) aus Würzburg entwickelt: Konzept, Design, iOS Entwicklung und Backend komplett aus einer Hand. Das Projekt wurde von IGZ Würzburg, Brainstation Lauda und Campus Founders gefördert und begleitet. Die <a href="/nutzungsbedingungen" style="color:var(--teal-bright)">Nutzungsbedingungen</a> findest du hier auf der Website.</div></div>
         </div>
       </div>
     </div>
@@ -624,10 +575,11 @@ footer { background: rgba(12,14,28,0.65); backdrop-filter: blur(28px); -webkit-b
 <section class="cta-section">
   <div class="wrap">
     <div class="cta-inner reveal">
-      <h2 class="cta-title">Deine Website.<br><em>In 4 Wochen live.</em></h2>
-      <p class="cta-sub">Buch dir jetzt ein kostenloses Erstgespräch. Wir analysieren gemeinsam was du brauchst und ich zeige dir wie deine neue Website aussehen kann. Für Unternehmen in Würzburg und dem gesamten DACH-Raum.</p>
-      <a href="https://calendly.com/yg-media/30min" target="_blank" rel="noopener" class="btn btn-primary">Jetzt 30-Min-Termin buchen <span class="btn-arrow">↗</span></a>
-      <span class="cta-subtext">Kostenlos · Unverbindlich · 30 Minuten</span>
+      <h2 class="cta-title">Dein Unternehmen.<br><em>In der Hosentasche.</em></h2>
+      <p class="cta-sub">Lade USELY kostenlos aufs iPhone und schreib dein nächstes Angebot in unter 60 Sekunden. Ohne Buchhaltungswissen, ohne Schreibtisch-Abende.</p>
+      <a href="https://apps.apple.com/de/app/usely/id6783429050" target="_blank" rel="noopener" class="btn btn-primary">Jetzt kostenlos im App Store laden <span class="btn-arrow">↗</span></a>
+      <span class="cta-subtext">Kostenlos · Für iPhone · Entwickelt in Würzburg</span>
+      <span class="cta-crosslink">Du willst so eine App für dein eigenes Business? <a href="/apps">App entwickeln lassen →</a></span>
     </div>
   </div>
 </section>
