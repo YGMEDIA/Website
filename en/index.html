@@ -354,8 +354,11 @@ a.lang-btn:hover { border-color: rgba(28,91,130,0.5); color: var(--text); }
 /* REF FEATURE (volle Breite, Bild + Text) */
 .ref-feature { display: grid; grid-template-columns: 1fr 1fr; align-items: stretch; border: 1px solid rgba(255,255,255,0.15); border-radius: 28px; background: rgba(255,255,255,0.04); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.1), 0 40px 80px -30px rgba(0,0,0,0.5); overflow: hidden; margin: 1.5rem 0; position: relative; transition: border-color 0.3s; }
 .ref-feature:hover { border-color: rgba(28,91,130,0.3); }
-.ref-feature-img { position: relative; aspect-ratio: 1 / 1; background: linear-gradient(135deg, rgba(28,91,130,0.15), rgba(10,30,50,0.4)); }
+.ref-feature-img { position: relative; overflow: hidden; min-height: 480px; background: linear-gradient(135deg, rgba(28,91,130,0.15), rgba(10,30,50,0.4)); }
 .ref-feature-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.badge-link { display: inline-flex; align-items: center; margin-top: 1.4rem; }
+.badge-link img { height: 46px; display: block; transition: transform 0.2s; }
+.badge-link:hover img { transform: translateY(-2px); }
 .ref-feature-content { padding: 3.5rem; display: flex; flex-direction: column; justify-content: center; }
 .ref-feature-content h3 { font-size: clamp(1.5rem, 2.4vw, 2rem); font-weight: 900; letter-spacing: -0.03em; line-height: 1.15; margin: 1rem 0 1.2rem; }
 .ref-feature-content p { color: var(--muted); font-size: 0.95rem; line-height: 1.85; }
@@ -363,6 +366,8 @@ a.lang-btn:hover { border-color: rgba(28,91,130,0.5); color: var(--text); }
   .ref-feature, .ref-feature.flip { grid-template-columns: 1fr; }
   .ref-feature.flip .ref-feature-img { order: -1; }
   .ref-feature-content { padding: 2.5rem 2rem; }
+  .ref-feature-img { min-height: 0; }
+  .ref-feature-img img { position: static; height: auto; }
 }
 
 /* NAV LANGUAGE DROPDOWN */
@@ -545,10 +550,10 @@ a.nav-lang-item:hover { background: rgba(255,255,255,0.06); color: var(--text); 
       <div class="ref-feature-content">
         <span class="ref-tag">iOS App · Accounting · Live on the App Store</span>
         <h3>USELY. Accounting app for small businesses.</h3>
-        <p>Built solo from idea to App Store: concept, branding, UI/UX design, native iOS development and backend. Supported by IGZ Würzburg, Brainstation Lauda and Campus Founders. Today, self-employed professionals use it to write quotes and invoices in seconds.</p>
-        <div style="display:flex;gap:1.8rem;flex-wrap:wrap">
+        <p>The accounting app for iPhone: calculate on site at the customer and create quotes, order confirmations and invoices in seconds, legally linked in one seamless document chain. Scan receipts with automatic text recognition, keep expenses per project in view, create e-invoices as XRechnung and ZUGFeRD and export your EÜR for the tax advisor. GoBD-conform, §14 and §19 UStG handled automatically. Free to start.</p>
+        <div style="display:flex;gap:1.8rem;align-items:center;flex-wrap:wrap">
           <a href="/en/usely" class="ref-link">Learn more →</a>
-          <a href="https://apps.apple.com/de/app/usely/id6783429050" target="_blank" rel="noopener" class="ref-link">Download on the App Store ↗</a>
+          <a href="https://apps.apple.com/de/app/usely/id6783429050" target="_blank" rel="noopener" class="badge-link"><img src="/assets/app-store-badge-en.svg" alt="Download on the App Store" onerror="this.style.display='none';this.nextElementSibling.style.display='inline-flex'"><span class="ref-link" style="display:none;margin-top:0">Download on the App Store ↗</span></a>
         </div>
       </div>
     </div>
@@ -746,7 +751,7 @@ a.nav-lang-item:hover { background: rgba(255,255,255,0.06); color: var(--text); 
         </div>
         <div class="footer-col">
           <div class="footer-col-title">Legal</div>
-          <a href="/impressum">Legal Notice</a><a href="/datenschutz">Privacy Policy</a><a href="/nutzungsbedingungen">Terms of Use</a>
+          <a href="/en/legal-notice">Legal Notice</a><a href="/en/privacy-policy">Privacy Policy</a><a href="/en/terms-of-use">Terms of Use</a>
         </div>
       </div>
     </div>
@@ -765,7 +770,7 @@ a.nav-lang-item:hover { background: rgba(255,255,255,0.06); color: var(--text); 
 
 <div class="cookie-banner" id="cookieBanner">
   <div class="cookie-title">This website uses cookies</div>
-  <div class="cookie-text">I use cookies to analyze how the website is used and to improve my services. Learn more in the <a href="/datenschutz">privacy policy</a>.</div>
+  <div class="cookie-text">I use cookies to analyze how the website is used and to improve my services. Learn more in the <a href="/en/privacy-policy">privacy policy</a>.</div>
   <div class="cookie-btns">
     <button class="cookie-btn cookie-decline" id="cookieDecline">Essential only</button>
     <button class="cookie-btn cookie-accept" id="cookieAccept">Accept all</button>
