@@ -1,28 +1,28 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>App entwickeln lassen | iOS, SwiftUI & Web Apps — YG MEDIA</title>
-<meta name="description" content="App entwickeln lassen von einem Entwickler der selbst zwei iOS Apps solo gebaut und gelauncht hat. iOS, SwiftUI, Web Apps und KI-Integration. Aus einer Hand, für Unternehmer und Gründer.">
-<meta name="keywords" content="App entwickeln lassen, iOS App Entwicklung, SwiftUI Entwickler, Web App bauen lassen, KI App Integration, App Entwickler Deutschland, App Startup Gründer">
-<meta property="og:title" content="App entwickeln lassen — YG MEDIA">
-<meta property="og:description" content="Aus deiner Idee wird eine fertige App im App Store. iOS, SwiftUI, Web Apps mit KI-Integration.">
+<title>USELY | Accounting App for Small Businesses — YG MEDIA</title>
+<meta name="description" content="USELY is the accounting app for iPhone: calculate in 60 seconds, write quotes and invoices, scan receipts, export your EÜR. GoBD-conform, §19 UStG, e-invoicing. Free download.">
+<meta name="keywords" content="accounting app, invoice app, quote app, small business accounting, invoicing app tradespeople, e-invoicing app, USELY">
+<meta property="og:title" content="USELY | Accounting app for small businesses">
+<meta property="og:description" content="Calculate. Invoice. Done. Quotes, invoices and expenses in seconds, right on your iPhone. Free in the App Store.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://yg-media.de/apps">
-<meta property="og:image" content="https://yg-media.de/assets/og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://yg-media.de/en/usely">
+<meta property="og:image" content="https://yg-media.de/assets/usely-1.png">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="1024">
 <meta property="og:site_name" content="YG MEDIA">
-<meta property="og:locale" content="de_DE">
+<meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="App entwickeln lassen — YG MEDIA">
-<meta name="twitter:description" content="Aus deiner Idee wird eine fertige App im App Store. iOS, SwiftUI, Web Apps mit KI-Integration.">
-<meta name="twitter:image" content="https://yg-media.de/assets/og-image.png">
-<link rel="canonical" href="https://yg-media.de/apps">
-<link rel="alternate" hreflang="de" href="https://yg-media.de/apps">
-<link rel="alternate" hreflang="en" href="https://yg-media.de/en/apps">
-<link rel="alternate" hreflang="x-default" href="https://yg-media.de/apps">
+<meta name="twitter:title" content="USELY | Accounting app for small businesses">
+<meta name="twitter:description" content="Calculate. Invoice. Done. Quotes, invoices and expenses in seconds, right on your iPhone.">
+<meta name="twitter:image" content="https://yg-media.de/assets/usely-1.png">
+<link rel="canonical" href="https://yg-media.de/en/usely">
+<link rel="alternate" hreflang="de" href="https://yg-media.de/usely">
+<link rel="alternate" hreflang="en" href="https://yg-media.de/en/usely">
+<link rel="alternate" hreflang="x-default" href="https://yg-media.de/usely">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,900;1,900&family=Playfair+Display:ital,wght@1,500;1,600;1,700&display=swap" rel="stylesheet">
 <style>
@@ -43,6 +43,7 @@
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; line-height: 1.65; }
+
 #bg-canvas { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
 .orb-wrap { position: fixed; inset: 0; z-index: 1; pointer-events: none; overflow: hidden; }
 .orb { position: absolute; border-radius: 50%; filter: blur(120px); }
@@ -53,9 +54,11 @@ body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--tex
 @keyframes orb1 { 0% { transform: translate(0,0) scale(1); } 50% { transform: translate(60px,-40px) scale(1.1); } 100% { transform: translate(-30px,60px) scale(0.95); } }
 @keyframes orb2 { 0% { transform: translate(0,0) scale(1); } 100% { transform: translate(-80px,-60px) scale(1.15); } }
 @keyframes orb3 { 0% { transform: translate(0,0); } 100% { transform: translate(-60px,80px) scale(1.2); } }
+
 .grid-overlay { position: fixed; inset: 0; z-index: 2; pointer-events: none; background-image: linear-gradient(rgba(28,91,130,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(28,91,130,0.03) 1px, transparent 1px); background-size: 80px 80px; mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 100%); }
 body::after { content: ''; position: fixed; inset: 0; z-index: 3; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E"); pointer-events: none; opacity: 0.5; }
 
+/* NAV */
 nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1.1rem 0; transition: background 0.3s, border-color 0.3s; }
 nav.scrolled { background: rgba(12,14,28,0.65); backdrop-filter: blur(28px); -webkit-backdrop-filter: blur(28px); border-bottom: 1px solid rgba(255,255,255,0.1); }
 .nav-inner { max-width: 1240px; margin: 0 auto; padding: 0 2.5rem; display: flex; align-items: center; justify-content: space-between; }
@@ -69,24 +72,30 @@ nav.scrolled { background: rgba(12,14,28,0.65); backdrop-filter: blur(28px); -we
 .nav-burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
 .nav-burger span { display: block; width: 24px; height: 2px; background: var(--text); border-radius: 2px; transition: transform 0.3s, opacity 0.3s; }
 
+/* LAYOUT */
 .wrap { max-width: 1240px; margin: 0 auto; padding: 0 2.5rem; position: relative; z-index: 10; }
 section { padding: 8rem 0; position: relative; z-index: 10; }
+
+/* EYEBROW */
 .eyebrow { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--teal-bright); font-weight: 700; margin-bottom: 1.2rem; text-shadow: 0 0 14px rgba(36,120,170,0.5); }
 
+/* HERO */
 .hero { min-height: 100vh; display: flex; align-items: center; padding: 130px 0 60px; }
 .hero-inner { display: flex; flex-direction: column; align-items: center; text-align: center; max-width: 820px; margin: 0 auto; }
 .hero-badge { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); font-weight: 600; border: 1px solid rgba(28,91,130,0.4); padding: 0.35rem 1rem 0.35rem 0.7rem; border-radius: 99px; background: rgba(28,91,130,0.08); width: fit-content; margin: 0 auto 2rem; animation: fadeSlideDown 0.6s ease both; }
 .hero-badge-dot { width: 6px; height: 6px; background: var(--teal); border-radius: 50%; animation: pulse 2s ease infinite; box-shadow: 0 0 6px rgba(28,91,130,0.8); }
 @keyframes pulse { 0%,100% { opacity:1; transform: scale(1); } 50% { opacity:0.4; transform: scale(0.8); } }
 .hero-h1 { font-size: clamp(2.2rem, 3.8vw, 4.2rem); font-weight: 900; line-height: 1.06; letter-spacing: -0.035em; margin-bottom: 2rem; }
+.hero-h1--website { font-size: clamp(2.2rem, 3.8vw, 4.2rem); }
 .hero-h1 .line { display: block; overflow: visible; }
-.hero-h1 .line-inner { display: block; transform: translateY(110%); animation: slideUp 0.8s cubic-bezier(0.16,1,0.3,1) both; }
+.hero-h1 .line-inner { display: block; transform: translateY(110%); animation: slideUp 0.8s cubic-bezier(0.16,1,0.3,1) both; white-space: nowrap; }
 .hero-h1 .line:nth-child(2) .line-inner { animation-delay: 0.08s; }
 .hero-h1 .line:nth-child(3) .line-inner { animation-delay: 0.16s; }
 .hero-h1 em { font-family: 'Playfair Display', serif; font-style: italic; font-weight: 600; color: var(--teal-bright); text-shadow: 0 0 30px rgba(36,120,170,0.5), 0 0 60px rgba(36,120,170,0.2); letter-spacing: -0.01em; }
 .hero-sub { font-size: 1.05rem; color: var(--muted); max-width: 600px; margin: 0 auto 3rem; line-height: 1.8; animation: fadeSlideUp 0.8s 0.3s ease both; }
 .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; animation: fadeSlideUp 0.8s 0.45s ease both; }
 
+/* BUTTONS */
 .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.9rem 2.2rem; border-radius: 99px; font-weight: 600; font-size: 0.9rem; text-decoration: none; transition: all 0.3s; border: none; cursor: pointer; font-family: 'Inter', sans-serif; letter-spacing: -0.01em; }
 .btn-primary { background: var(--teal); color: #fff; }
 .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 0 28px rgba(28,91,130,0.55), 0 12px 30px rgba(28,91,130,0.3); }
@@ -95,6 +104,7 @@ section { padding: 8rem 0; position: relative; z-index: 10; }
 .btn-arrow { width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.08); border: 1px solid var(--border); display: inline-flex; align-items: center; justify-content: center; font-size: 0.9rem; transition: background 0.2s; }
 .btn:hover .btn-arrow { background: rgba(255,255,255,0.15); }
 
+/* HERO CARD */
 .hero-visual { display: none; }
 .hero-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.18); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-radius: 24px; padding: 2.2rem 2.4rem; box-shadow: 0 40px 80px -20px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.12); position: relative; z-index: 2; }
 .hero-card-bg { position: absolute; top: -16px; left: 16px; right: -16px; bottom: 0; background: rgba(28,91,130,0.06); border: 1px solid rgba(28,91,130,0.15); border-radius: 24px; z-index: 1; }
@@ -106,11 +116,13 @@ section { padding: 8rem 0; position: relative; z-index: 10; }
 .card-stat-label { font-size: 0.68rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.3rem; font-weight: 600; }
 .card-stat-val { font-size: 1.9rem; font-weight: 900; letter-spacing: -0.03em; text-shadow: 0 0 16px rgba(28,91,130,0.25); }
 
+/* REALITY */
 .reality-inner { max-width: 1000px; margin: 0 auto; text-align: center; }
 .reality-title { font-size: clamp(2rem, 3.4vw, 3.2rem); font-weight: 900; letter-spacing: -0.03em; line-height: 1.12; margin-bottom: 2.5rem; }
 .reality-title strong { font-family: 'Playfair Display', serif; color: var(--teal-bright); font-style: italic; font-weight: 600; text-shadow: 0 0 30px rgba(36,120,170,0.4); white-space: nowrap; letter-spacing: -0.01em; }
 .reality-text { font-size: 1.1rem; color: var(--muted); line-height: 1.9; max-width: 680px; margin: 0 auto; }
 
+/* LEISTUNGEN GRID */
 .leistungen-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 4rem; }
 .leistungen-title { font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 900; letter-spacing: -0.03em; line-height: 1.08; }
 .leistungen-sub { max-width: 360px; color: var(--muted); font-size: 0.95rem; line-height: 1.75; text-align: right; padding-bottom: 0.5rem; }
@@ -125,20 +137,7 @@ section { padding: 8rem 0; position: relative; z-index: 10; }
 .leistung-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1.5rem; }
 .ltag { font-size: 0.65rem; font-weight: 600; padding: 0.2rem 0.65rem; border-radius: 99px; background: rgba(255,255,255,0.04); border: 1px solid var(--border); color: var(--muted); }
 
-/* REFERENZ-HIGHLIGHT */
-.ref-highlight { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.15); border-radius: 24px; padding: 3.5rem; backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.1); display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; position: relative; overflow: hidden; }
-.ref-highlight::before { content: ''; position: absolute; top: -40%; right: -10%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(36,120,170,0.12) 0%, transparent 70%); pointer-events: none; }
-.ref-highlight-tag { display: inline-block; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 1.2rem; text-shadow: 0 0 10px rgba(28,91,130,0.45); }
-.ref-highlight h3 { font-size: clamp(1.6rem, 2.5vw, 2.2rem); font-weight: 900; letter-spacing: -0.03em; line-height: 1.12; margin-bottom: 1.2rem; }
-.ref-highlight h3 em { font-family: 'Playfair Display', serif; font-style: italic; font-weight: 600; color: var(--teal-bright); text-shadow: 0 0 24px rgba(36,120,170,0.45); }
-.ref-highlight p { color: var(--muted); font-size: 0.95rem; line-height: 1.8; margin-bottom: 1.8rem; }
-.ref-highlight-link { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; font-weight: 600; color: var(--teal-bright); text-decoration: none; transition: gap 0.2s, text-shadow 0.2s; }
-.ref-highlight-link:hover { gap: 0.7rem; text-shadow: 0 0 12px rgba(36,120,170,0.6); }
-.ref-stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
-.ref-stat { padding: 1.8rem; border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; background: rgba(255,255,255,0.03); }
-.ref-stat-val { font-size: 2.4rem; font-weight: 900; color: var(--teal); letter-spacing: -0.04em; line-height: 1; text-shadow: 0 0 20px rgba(28,91,130,0.45); }
-.ref-stat-label { font-size: 0.75rem; color: var(--muted); margin-top: 0.5rem; line-height: 1.4; }
-
+/* WARUM SECTION */
 .warum-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
 .warum-left h2 { font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 900; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 1.5rem; }
 .warum-left h2 em { font-family: 'Playfair Display', serif; color: var(--teal-bright); font-style: italic; font-weight: 600; text-shadow: 0 0 24px rgba(36,120,170,0.45); }
@@ -150,6 +149,7 @@ section { padding: 8rem 0; position: relative; z-index: 10; }
 .warum-item h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem; letter-spacing: -0.01em; }
 .warum-item p { color: var(--muted); font-size: 0.87rem; line-height: 1.7; }
 
+/* PROZESS */
 .prozess-inner { display: grid; grid-template-columns: 380px 1fr; gap: 6rem; align-items: start; }
 .prozess-sticky { position: sticky; top: 9rem; }
 .prozess-title { font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 900; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 1.5rem; }
@@ -161,6 +161,7 @@ section { padding: 8rem 0; position: relative; z-index: 10; }
 .prozess-step h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.6rem; letter-spacing: -0.02em; }
 .prozess-step p { color: var(--muted); font-size: 0.9rem; line-height: 1.75; }
 
+/* VORTEILE */
 .vorteile-head { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: end; margin-bottom: 5rem; }
 .vorteile-title { font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 900; letter-spacing: -0.04em; line-height: 1.0; }
 .vorteile-title span { display: block; }
@@ -173,6 +174,7 @@ section { padding: 8rem 0; position: relative; z-index: 10; }
 .vorteil-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.7rem; letter-spacing: -0.02em; }
 .vorteil-card p { color: var(--muted); font-size: 0.88rem; line-height: 1.7; }
 
+/* CTA */
 .cta-section { text-align: center; }
 .cta-inner { border: 1px solid rgba(255,255,255,0.15); border-radius: 28px; padding: 7rem 5rem; background: rgba(255,255,255,0.04); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.1); position: relative; overflow: hidden; }
 .cta-inner::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 600px; height: 600px; background: radial-gradient(circle, rgba(28,91,130,0.12) 0%, transparent 70%); pointer-events: none; }
@@ -181,6 +183,7 @@ section { padding: 8rem 0; position: relative; z-index: 10; }
 .cta-sub { font-size: 1.05rem; color: var(--muted); max-width: 500px; margin: 0 auto 3.5rem; line-height: 1.8; position: relative; }
 .cta-subtext { display: block; font-size: 0.78rem; color: var(--faint); margin-top: 1.5rem; letter-spacing: 0.04em; }
 
+/* FAQ */
 .faq-inner { max-width: 820px; margin: 0 auto; }
 .faq-title { font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 900; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 0.8rem; }
 .faq-lead { color: var(--muted); font-size: 1rem; line-height: 1.8; margin-bottom: 4rem; }
@@ -191,9 +194,10 @@ section { padding: 8rem 0; position: relative; z-index: 10; }
 .faq-icon { width: 28px; height: 28px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--muted); font-size: 1rem; transition: transform 0.3s, border-color 0.3s; }
 .faq-item.open .faq-icon { transform: rotate(45deg); border-color: rgba(28,91,130,0.5); color: var(--teal-bright); }
 .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.16,1,0.3,1); }
-.faq-a-inner { padding: 0 1.6rem 1.4rem; color: var(--muted); font-size: 0.9rem; line-height: 1.8; }
-.faq-item.open .faq-a { max-height: 300px; }
+.faq-a-inner { padding: 0 1.6rem 1.4rem; color: var(--muted); font-size: 0.9rem; line-height: 1.8; } .faq-a-inner strong { color: var(--text); font-weight: 600; }
+.faq-item.open .faq-a { max-height: 600px; }
 
+/* FOOTER */
 footer { background: rgba(12,14,28,0.65); backdrop-filter: blur(28px); -webkit-backdrop-filter: blur(28px); border-top: 1px solid rgba(255,255,255,0.1); padding: 4rem 0 2.5rem; position: relative; z-index: 10; }
 .footer-top { display: grid; grid-template-columns: 260px 1fr; gap: 4rem; margin-bottom: 3rem; }
 .footer-logo img { height: 36px; display: block; margin-bottom: 1rem; }
@@ -209,6 +213,7 @@ footer { background: rgba(12,14,28,0.65); backdrop-filter: blur(28px); -webkit-b
 .social-btn { width: 36px; height: 36px; border-radius: 10px; background: var(--glass); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; text-decoration: none; color: var(--muted); font-size: 0.8rem; transition: all 0.2s; font-weight: 700; }
 .social-btn:hover { border-color: rgba(28,91,130,0.5); color: var(--teal); }
 
+/* COOKIE BANNER */
 .cookie-banner { position: fixed; bottom: 1.5rem; left: 1.5rem; right: 1.5rem; max-width: 480px; z-index: 2000; padding: 1.6rem 1.8rem; background: rgba(12,14,28,0.85); backdrop-filter: blur(28px); -webkit-backdrop-filter: blur(28px); border: 1px solid rgba(255,255,255,0.12); border-radius: 20px; box-shadow: 0 30px 60px -20px rgba(0,0,0,0.6); transform: translateY(150%); transition: transform 0.5s cubic-bezier(0.16,1,0.3,1); }
 .cookie-banner.show { transform: translateY(0); }
 .cookie-title { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.5rem; }
@@ -221,6 +226,7 @@ footer { background: rgba(12,14,28,0.65); backdrop-filter: blur(28px); -webkit-b
 .cookie-decline { background: rgba(255,255,255,0.06); color: var(--text); border: 1px solid rgba(255,255,255,0.12); }
 .cookie-decline:hover { background: rgba(255,255,255,0.1); }
 
+/* ANIMATIONS */
 @keyframes slideUp { from { transform: translateY(110%); } to { transform: translateY(0); } }
 @keyframes fadeSlideUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes fadeSlideDown { from { opacity: 0; transform: translateY(-12px); } to { opacity: 1; transform: translateY(0); } }
@@ -234,16 +240,14 @@ footer { background: rgba(12,14,28,0.65); backdrop-filter: blur(28px); -webkit-b
 [data-delay="2"] { transition-delay: 0.2s; }
 [data-delay="3"] { transition-delay: 0.3s; }
 
+/* RESPONSIVE */
 @media (max-width: 1100px) {
-  /* hero already single column */
-  /* hero-visual hidden globally */
   .leistungen-grid { grid-template-columns: repeat(2,1fr); }
   .warum-inner { grid-template-columns: 1fr; gap: 3rem; }
   .vorteile-grid { grid-template-columns: repeat(2,1fr); }
   .vorteile-head { grid-template-columns: 1fr; gap: 1.5rem; }
   .prozess-inner { grid-template-columns: 1fr; }
   .prozess-sticky { position: static; }
-  .ref-highlight { grid-template-columns: 1fr; gap: 2.5rem; }
   .footer-top { grid-template-columns: 1fr; }
   .leistungen-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
   .leistungen-sub { text-align: left; max-width: 100%; }
@@ -256,12 +260,39 @@ footer { background: rgba(12,14,28,0.65); backdrop-filter: blur(28px); -webkit-b
   .nav-burger { display: flex; }
   .wrap { padding: 0 1.5rem; }
   section { padding: 5rem 0; }
+  .hero-h1 .line-inner { white-space: normal; }
   .leistungen-grid { grid-template-columns: 1fr; }
   .vorteile-grid { grid-template-columns: 1fr; }
   .cta-inner { padding: 4rem 2rem; }
   .footer-links-grid { grid-template-columns: 1fr 1fr; }
-  .ref-stats-grid { grid-template-columns: 1fr 1fr; }
   .cookie-banner { left: 1rem; right: 1rem; bottom: 1rem; padding: 1.4rem; }
+}
+
+/* USELY PAGE */
+.app-hero-shot { margin-top: 4rem; animation: fadeSlideUp 0.9s 0.6s ease both; }
+.app-hero-shot img { width: min(400px, 78vw); border-radius: 32px; border: 1px solid rgba(255,255,255,0.16); box-shadow: 0 60px 120px -40px rgba(0,0,0,0.7), 0 0 80px rgba(28,91,130,0.18), inset 0 1px 0 rgba(255,255,255,0.1); display: block; }
+.feature-rows { display: flex; flex-direction: column; gap: 7rem; margin-top: 5rem; }
+.feature-row { display: grid; grid-template-columns: 400px 1fr; gap: 5.5rem; align-items: center; }
+.feature-row.flip { grid-template-columns: 1fr 400px; }
+.feature-shot img { width: min(300px, 100%); border-radius: 36px; border: 1px solid rgba(255,255,255,0.14); box-shadow: 0 40px 90px -30px rgba(0,0,0,0.65), inset 0 1px 0 rgba(255,255,255,0.08); display: block; margin: 0 auto; }
+.feature-copy h3 { font-size: clamp(1.5rem, 2.4vw, 2rem); font-weight: 900; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 1rem; }
+.feature-copy h3 em { font-family: 'Playfair Display', serif; font-style: italic; font-weight: 600; color: var(--teal-bright); text-shadow: 0 0 24px rgba(36,120,170,0.45); }
+.feature-copy p { color: var(--muted); font-size: 0.95rem; line-height: 1.85; margin-bottom: 1.4rem; }
+.feature-points { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
+.feature-points li { display: flex; gap: 0.8rem; align-items: baseline; color: var(--muted); font-size: 0.88rem; line-height: 1.6; }
+.feature-points li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--teal-bright); box-shadow: 0 0 8px rgba(36,120,170,0.7); flex-shrink: 0; transform: translateY(-2px); }
+.dl-band { display: flex; justify-content: space-between; align-items: center; gap: 2rem; flex-wrap: wrap; border: 1px solid rgba(255,255,255,0.15); border-radius: 24px; padding: 2.6rem 3rem; background: rgba(255,255,255,0.04); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.1); }
+.dl-band-title { font-size: 1.3rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.3rem; }
+.dl-band-sub { color: var(--muted); font-size: 0.88rem; }
+.cta-crosslink { display: block; margin-top: 2.2rem; font-size: 0.85rem; color: var(--muted); position: relative; }
+.cta-crosslink a { color: var(--teal-bright); text-decoration: none; font-weight: 600; }
+@media (max-width: 1100px) {
+  .feature-row, .feature-row.flip { grid-template-columns: 1fr; gap: 2.5rem; }
+  .feature-row.flip .feature-shot { order: -1; }
+  .feature-rows { gap: 5rem; }
+}
+@media (max-width: 768px) {
+  .dl-band { padding: 2rem 1.6rem; }
 }
 
 /* LANGUAGE SWITCH */
@@ -289,48 +320,30 @@ a.nav-lang-item:hover { background: rgba(255,255,255,0.06); color: var(--text); 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "USELY",
+  "operatingSystem": "iOS",
+  "applicationCategory": "BusinessApplication",
+  "description": "USELY is an accounting app for founders, small business owners, self-employed professionals and tradespeople. Calculate on site, write quotes and invoices, scan receipts, export your EÜR. GoBD-conform, §14 and §19 UStG, GDPR, e-invoicing with XRechnung and ZUGFeRD.",
+  "url": "https://yg-media.de/en/usely",
+  "downloadUrl": "https://apps.apple.com/de/app/usely/id6783429050",
+  "inLanguage": ["de", "en"],
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+  "author": { "@type": "Person", "name": "Yasin Gündogdu" },
+  "publisher": { "@type": "Organization", "name": "YG MEDIA", "url": "https://yg-media.de" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Was kostet es eine App entwickeln zu lassen?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "App-Entwicklung ist stark von Umfang und Komplexität abhängig. Eine einfache Business-App startet ab 5.000 Euro. Apps mit Backend, KI-Integration und komplexem Design können 15.000 Euro und mehr kosten. Im Erstgespräch bekommst du eine konkrete Einschätzung."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Wie lange dauert die App-Entwicklung?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Eine einfache App ist in 6 bis 10 Wochen fertig. Komplexere Projekte dauern 3 bis 6 Monate. Wir definieren gemeinsam den Scope und ich halte den vereinbarten Zeitplan ein."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Baut ihr auch Android Apps?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Der Schwerpunkt liegt auf iOS (SwiftUI) und Web Apps. Wenn Android jedoch gewünscht ist, kann auch das umgesetzt werden. Eine weitere Option sind Progressive Web Apps (PWAs) die auf Android und iOS gleichermassen funktionieren und keinen separaten App-Store-Prozess benötigen."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Was brauche ich um im App Store veröffentlichen zu können?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Du brauchst ein Apple Developer Account (99 Euro pro Jahr). Den Rest übernehme ich: Einreichung, Screenshots, App Store Beschreibung und die Kommunikation mit Apple falls es Rückfragen gibt."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Gehört mir der Code nach dem Projekt?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja, mit vollständiger Zahlung gehört dir der komplette Quellcode. Du bekommst Zugang zum Git-Repository und kannst den Code selbst oder mit einem anderen Entwickler weiterentwickeln."
-      }
-    }
+    { "@type": "Question", "name": "What is USELY and who is the app for?", "acceptedAnswer": { "@type": "Answer", "text": "USELY is an accounting app for iPhone, built for founders, small business owners, self-employed professionals and tradespeople in Germany, Austria and Switzerland. With USELY you calculate on site at the customer, write quotes and invoices in seconds, capture expenses via receipt scan and export your EÜR for your tax advisor." } },
+    { "@type": "Question", "name": "How much does USELY cost?", "acceptedAnswer": { "@type": "Answer", "text": "USELY is free to download from the App Store and ready to use immediately. For the full feature set there is USELY Pro as a subscription directly in the app. No hidden costs, cancel anytime." } },
+    { "@type": "Question", "name": "Is USELY legally compliant and GoBD-conform?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Documents are immutable and traceable (GoBD), all mandatory details under German §14 UStG are handled automatically and the small business regulation under §19 UStG is supported. Data export and deletion are possible at any time under GDPR." } },
+    { "@type": "Question", "name": "Does USELY support e-invoicing?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. USELY creates e-invoices as XRechnung and ZUGFeRD for the German e-invoicing mandate. Plus the EÜR export as PDF and CSV, ready for your tax advisor." } },
+    { "@type": "Question", "name": "Is USELY available for Android?", "acceptedAnswer": { "@type": "Answer", "text": "USELY is currently exclusive to iPhone and consistently optimized for iOS. You can find the app for free in the Apple App Store." } },
+    { "@type": "Question", "name": "Who is behind USELY?", "acceptedAnswer": { "@type": "Answer", "text": "USELY is developed by Yasin Gündogdu (YG MEDIA) from Würzburg, Germany: concept, design, iOS development and backend entirely from one source. The project was supported by IGZ Würzburg, Brainstation Lauda and Campus Founders." } }
   ]
 }
 </script>
@@ -346,21 +359,21 @@ a.nav-lang-item:hover { background: rgba(255,255,255,0.06); color: var(--text); 
 
 <nav id="nav">
   <div class="nav-inner">
-    <a href="/" class="nav-logo">
-      <img src="assets/YG-Logo-Weiss-No-Background.png" alt="YG MEDIA" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+    <a href="/en/" class="nav-logo">
+      <img src="/assets/YG-Logo-Weiss-No-Background.png" alt="YG MEDIA" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
       <span class="nav-logo-text">YG MEDIA</span>
     </a>
     <div class="nav-links" id="navLinks">
-      <a href="/website">Website</a>
-      <a href="/apps" class="active">Apps</a>
-      <a href="/marketing">Marketing</a>
-      <a href="/automation">Automation</a>
-      <a href="https://calendly.com/yg-media/30min" target="_blank" rel="noopener" class="nav-cta">Erstgespräch buchen</a>
+      <a href="/en/website">Website</a>
+      <a href="/en/apps">Apps</a>
+      <a href="/en/marketing">Marketing</a>
+      <a href="/en/automation">Automation</a>
+      <a href="https://calendly.com/yg-media/30min" target="_blank" rel="noopener" class="nav-cta">Book a free call</a>
       <div class="nav-lang" id="navLang">
-        <button class="nav-lang-btn" aria-label="Sprache wählen" aria-haspopup="true"><svg viewBox="0 0 5 3" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="5" height="1" fill="#111"/><rect y="1" width="5" height="1" fill="#DD0000"/><rect y="2" width="5" height="1" fill="#FFCE00"/></svg><span class="nav-lang-caret">▾</span></button>
+        <button class="nav-lang-btn" aria-label="Select language" aria-haspopup="true"><svg viewBox="0 0 5 3" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="5" height="1" fill="#111"/><rect y="1" width="5" height="1" fill="#DD0000"/><rect y="2" width="5" height="1" fill="#FFCE00"/></svg><span class="nav-lang-caret">▾</span></button>
         <div class="nav-lang-menu">
-          <span class="nav-lang-item active"><svg viewBox="0 0 5 3" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="5" height="1" fill="#111"/><rect y="1" width="5" height="1" fill="#DD0000"/><rect y="2" width="5" height="1" fill="#FFCE00"/></svg>Deutsch</span>
-          <a href="/en/apps" class="nav-lang-item"><svg viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><clipPath id="ljn"><path d="M0,0 v30 h60 v-30 z"/></clipPath><g clip-path="url(#ljn)"><path d="M0,0 v30 h60 v-30 z" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#C8102E" stroke-width="4"/><path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/><path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/></g></svg>English</a>
+          <a href="/usely" class="nav-lang-item"><svg viewBox="0 0 5 3" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="5" height="1" fill="#111"/><rect y="1" width="5" height="1" fill="#DD0000"/><rect y="2" width="5" height="1" fill="#FFCE00"/></svg>Deutsch</a>
+          <span class="nav-lang-item active"><svg viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><clipPath id="ljn"><path d="M0,0 v30 h60 v-30 z"/></clipPath><g clip-path="url(#ljn)"><path d="M0,0 v30 h60 v-30 z" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#C8102E" stroke-width="4"/><path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/><path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/></g></svg>English</span>
         </div>
       </div>
     </div>
@@ -368,192 +381,184 @@ a.nav-lang-item:hover { background: rgba(255,255,255,0.06); color: var(--text); 
   </div>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
   <div class="wrap">
     <div class="hero-inner">
       <div>
-        <div class="hero-badge"><span class="hero-badge-dot"></span>iOS · Web Apps · KI-Integration</div>
+        <div class="hero-badge"><span class="hero-badge-dot"></span>Own product · Now in the App Store</div>
         <h1 class="hero-h1">
-          <span class="line"><span class="line-inner">Deine Idee.</span></span>
-          <span class="line"><span class="line-inner">Eine fertige App.</span></span>
-          <span class="line"><span class="line-inner"><em>Im&nbsp;App&nbsp;Store.</em></span></span>
+          <span class="line"><span class="line-inner">Calculate. Invoice.</span></span>
+          <span class="line"><span class="line-inner"><em>Done.</em></span></span>
         </h1>
-        <p class="hero-sub">Du willst eine App entwickeln lassen? Mit zwei selbst entwickelten und gelaunchten iOS Apps im App Store weiss YG MEDIA was es braucht damit eine App wirklich funktioniert. Nicht nur technisch, sondern als Produkt das Menschen nutzen, behalten und weiterempfehlen. Von der Idee bis zum Release und darüber hinaus, alles aus einer Hand.</p>
+        <p class="hero-sub">USELY is the accounting app for iPhone. For founders, small business owners, self-employed professionals and tradespeople who have no time for complicated software. Calculate on site at the customer, create quotes and invoices in seconds, scan receipts, done. Legally compliant, GoBD-conform and free to start.</p>
         <div class="hero-btns">
-          <a href="https://calendly.com/yg-media/30min" target="_blank" rel="noopener" class="btn btn-primary">Kostenloses Erstgespräch <span class="btn-arrow">↗</span></a>
-          <a href="#leistungen" class="btn btn-ghost">Leistungen ansehen</a>
+          <a href="https://apps.apple.com/de/app/usely/id6783429050" target="_blank" rel="noopener" class="btn btn-primary">Download free on the App Store <span class="btn-arrow">↗</span></a>
+          <a href="#features" class="btn btn-ghost">See the features</a>
         </div>
       </div>
-      <div class="hero-visual">
-        <div class="hero-card-bg"></div>
-        <div class="hero-card">
-          <div class="card-metric-label">Eigene Apps solo entwickelt</div>
-          <div class="card-metric-val">2</div>
-          <div class="card-metric-sub">iOS Apps im App Store gelauncht</div>
-          <div class="card-divider"></div>
-          <div class="card-stats">
-            <div><div class="card-stat-label">Erfahrung</div><div class="card-stat-val">10+ J.</div></div>
-            <div><div class="card-stat-label">KI-Integration</div><div class="card-stat-val">100%</div></div>
-            <div><div class="card-stat-label">Stack</div><div class="card-stat-val" style="font-size:1.1rem;line-height:1.4;padding-top:0.3rem">Swift · SwiftUI · Supabase</div></div>
-            <div><div class="card-stat-label">Support</div><div class="card-stat-val" style="font-size:1.1rem;line-height:1.4;padding-top:0.3rem">Direkt &amp; persönlich</div></div>
-          </div>
-        </div>
+      <div class="app-hero-shot">
+        <img src="/assets/usely-keyvisual.webp" alt="USELY accounting app: keyvisual with glass U and wordmark" width="400" height="400">
       </div>
     </div>
   </div>
 </section>
 
+<!-- REALITÄT -->
 <section>
   <div class="wrap">
     <div class="reality-inner reveal">
-      <span class="eyebrow">Die Realität</span>
-      <h2 class="reality-title">Die meisten App-Ideen scheitern<br><strong>nicht an der Umsetzung, sondern an der Vermarktung.</strong></h2>
-      <p class="reality-text">Viele Entwickler können coden, aber sie wissen nicht wie man ein Produkt vermarktet. Wie man sich in einer Nische platziert, Sichtbarkeit erlangt und die richtigen Menschen erreicht, ob über App-Store-Optimierung, Social Media, SEO oder gezielte Google Ads Kampagnen. Eine App die niemand findet, wird auch niemand nutzen. YG MEDIA denkt von Anfang an in beiden Dimensionen: Entwicklung und Vermarktung.</p>
+      <span class="eyebrow">The Idea</span>
+      <h2 class="reality-title">Accounting that does not<br><strong>feel like accounting.</strong></h2>
+      <p class="reality-text">The path from quote to invoice eats time and keeps you from the actual work. That is exactly what USELY is built for: you stand at the customer, type in the items, see the price instantly and save everything as a project. If the customer says yes, one tap turns it into the quote, the order confirmation and finally the invoice. All legally linked, all in your pocket, all in seconds instead of hours.</p>
     </div>
   </div>
 </section>
 
-<section id="leistungen">
+<!-- FEATURES -->
+<section id="features">
   <div class="wrap">
     <div class="leistungen-header">
       <div class="reveal-left">
-        <span class="eyebrow">Leistungen</span>
-        <h2 class="leistungen-title">Von der Skizze<br>bis zum Launch.</h2>
+        <span class="eyebrow">Features</span>
+        <h2 class="leistungen-title">Everything in.<br>Nothing in the way.</h2>
       </div>
-      <p class="leistungen-sub reveal-right">Technisch stark. Visuell überzeugend. Strategisch durchdacht und vermarktungsorientiert. So entstehen Apps die Nutzer behalten.</p>
+      <p class="leistungen-sub reveal-right">From the first calculation to the EÜR export for your tax advisor. Every feature is built to a single standard: simple and fast.</p>
     </div>
-    <div class="leistungen-grid">
-      <div class="leistung-card reveal">
-        <div class="leistung-icon">📱</div>
-        <h3>iOS App Entwicklung</h3>
-        <p>Native iOS Apps mit SwiftUI. Schnell, smooth und mit der typischen Apple-Qualität die Nutzer erwarten. Von einfachen Business-Apps bis zu komplexen datengetriebenen Produkten mit Backend-Anbindung.</p>
-        <div class="leistung-tags"><span class="ltag">Swift</span><span class="ltag">SwiftUI</span><span class="ltag">Xcode</span></div>
+    <div class="feature-rows">
+
+      <div class="feature-row">
+        <div class="feature-shot reveal-left"><img src="/assets/usely-screen-kalkulation.webp" alt="USELY app screenshot: calculation with line items and real-time total" loading="lazy" width="300" height="652"></div>
+        <div class="feature-copy reveal-right">
+          <span class="eyebrow">Calculation</span>
+          <h3>Calculated in <em>60 seconds.</em></h3>
+          <p>Type in the items, see the price instantly, save it as a project. Right on site at the customer, as simple as a calculator. No laptop, no Excel, no evening at the desk.</p>
+          <ul class="feature-points">
+            <li>Totals update in real time while you type</li>
+            <li>VAT applied automatically based on your company default</li>
+            <li>Every calculation becomes a quote with one tap</li>
+          </ul>
+        </div>
       </div>
-      <div class="leistung-card reveal" data-delay="1">
-        <div class="leistung-icon">🌐</div>
-        <h3>Web Apps &amp; PWAs</h3>
-        <p>Web-basierte Anwendungen die auf jedem Gerät laufen ohne App-Store-Abhängigkeit. Progressive Web Apps die sich wie native Apps anfühlen, aber im Browser funktionieren. Ideal für B2B-Tools und interne Systeme.</p>
-        <div class="leistung-tags"><span class="ltag">React</span><span class="ltag">PWA</span><span class="ltag">Responsive</span></div>
+
+      <div class="feature-row flip">
+        <div class="feature-copy reveal-left">
+          <span class="eyebrow">Document chain</span>
+          <h3>From quote <em>to invoice.</em></h3>
+          <p>Quote, order confirmation, partial invoice and final invoice in one seamless document chain. Every step legally linked, every number in a clean numbering sequence.</p>
+          <ul class="feature-points">
+            <li>An accepted quote becomes an order confirmation with one tap</li>
+            <li>Create partial invoices directly from the project</li>
+            <li>The final invoice automatically deducts paid partial invoices</li>
+          </ul>
+        </div>
+        <div class="feature-shot reveal-right"><img src="/assets/usely-screen-belegkette.webp" alt="USELY app screenshot: document chain from quote via order confirmation to invoice" loading="lazy" width="300" height="652"></div>
       </div>
-      <div class="leistung-card reveal" data-delay="2">
-        <div class="leistung-icon">🤖</div>
-        <h3>KI-Integration in Apps</h3>
-        <p>Ich baue echte KI-Features in deine App ein. Intelligente Empfehlungen, natürliche Sprachverarbeitung, personalisierte Nutzeserfahrungen. Nicht KI als Buzzword, sondern als Funktion die echten Mehrwert schafft.</p>
-        <div class="leistung-tags"><span class="ltag">OpenAI</span><span class="ltag">Core ML</span><span class="ltag">API-Integration</span></div>
+
+      <div class="feature-row">
+        <div class="feature-shot reveal-left"><img src="/assets/usely-screen-projekte.webp" alt="USELY app screenshot: project with calculation, documents and expenses in one place" loading="lazy" width="300" height="652"></div>
+        <div class="feature-copy reveal-right">
+          <span class="eyebrow">Projects &amp; customers</span>
+          <h3>One project <em>holds it all together.</em></h3>
+          <p>Calculation, documents and expenses live in one place, assigned to each customer. You see at a glance what is open, what has been paid and where a job currently stands.</p>
+          <ul class="feature-points">
+            <li>Customer management with automatic customer numbers</li>
+            <li>Address autocompletion when creating entries</li>
+            <li>Status of every document at a glance: open, sent, paid</li>
+          </ul>
+        </div>
       </div>
-      <div class="leistung-card reveal">
-        <div class="leistung-icon">🗄️</div>
-        <h3>Backend &amp; Datenbank</h3>
-        <p>Jede App braucht ein solides, skalierbares Fundament. Aufgebaut auf Supabase und Firebase mit Authentifizierung, Echtzeit-Daten und sicherer Datenspeicherung. DSGVO-konform, zuverlässig und langfristig planbar.</p>
-        <div class="leistung-tags"><span class="ltag">Supabase</span><span class="ltag">Firebase</span><span class="ltag">REST API</span></div>
+
+      <div class="feature-row flip">
+        <div class="feature-copy reveal-left">
+          <span class="eyebrow">Expenses &amp; receipts</span>
+          <h3>Scan instead of <em>typing.</em></h3>
+          <p>Photograph a receipt, the text is recognized automatically, amount and category are captured instantly. Expenses can be assigned directly to a project, including recurring fixed costs.</p>
+          <ul class="feature-points">
+            <li>Automatic text recognition right on the iPhone</li>
+            <li>Recurring expenses are created automatically</li>
+            <li>Every expense optionally assigned to a project</li>
+          </ul>
+        </div>
+        <div class="feature-shot reveal-right"><img src="/assets/usely-screen-ausgaben.webp" alt="USELY app screenshot: scan a receipt, the total is recognized automatically" loading="lazy" width="300" height="652"></div>
       </div>
-      <div class="leistung-card reveal" data-delay="1">
-        <div class="leistung-icon">🎨</div>
-        <h3>UI/UX Design</h3>
-        <p>Design und Entwicklung aus einer Hand. Jede App wird zuerst in Figma konzipiert und prototypisiert, iteriert bis das Ergebnis stimmt, und dann entwickelt. Kein Übersetzen zwischen Designer und Entwickler.</p>
-        <div class="leistung-tags"><span class="ltag">Figma</span><span class="ltag">Prototyping</span><span class="ltag">Human Interface</span></div>
+
+      <div class="feature-row">
+        <div class="feature-shot reveal-left"><img src="/assets/usely-screen-rechtssicher.webp" alt="USELY app screenshot: GoBD-conform, §14 UStG, §19 UStG small business regulation and GDPR" loading="lazy" width="300" height="652"></div>
+        <div class="feature-copy reveal-right">
+          <span class="eyebrow">Legal compliance</span>
+          <h3>Legally compliant <em>from day one.</em></h3>
+          <p>You do not have to know tax law, USELY knows it for you. All mandatory details and regulations are handled automatically, on every single document.</p>
+          <ul class="feature-points">
+            <li>GoBD-conform: immutable, traceable documents</li>
+            <li>All mandatory details under §14 UStG handled automatically</li>
+            <li>Small business regulation under §19 UStG supported</li>
+            <li>GDPR: data export and deletion at any time</li>
+          </ul>
+        </div>
       </div>
-      <div class="leistung-card reveal" data-delay="2">
-        <div class="leistung-icon">🚀</div>
-        <h3>App Store Launch &amp; Vermarktung</h3>
-        <p>App Store Optimierung (ASO), Screenshots, App Preview Video und der gesamte Einreichungsprozess. Dazu Vermarktungsstrategien über App-Store-Ads, Social Media und SEO damit deine App auch gefunden wird.</p>
-        <div class="leistung-tags"><span class="ltag">ASO</span><span class="ltag">App-Store-Ads</span><span class="ltag">Launch-Strategie</span></div>
+
+      <div class="feature-row flip">
+        <div class="feature-copy reveal-left">
+          <span class="eyebrow">E-invoicing &amp; export</span>
+          <h3>Ready for your <em>tax advisor.</em></h3>
+          <p>XRechnung and ZUGFeRD for the e-invoicing mandate, plus the EÜR export as PDF and CSV. At the end of the year you export everything with a few taps, cleanly prepared and complete.</p>
+          <ul class="feature-points">
+            <li>E-invoices as XRechnung and ZUGFeRD</li>
+            <li>Income statement (EÜR) as PDF and CSV</li>
+            <li>Complete data export of your accounting</li>
+          </ul>
+        </div>
+        <div class="feature-shot reveal-right"><img src="/assets/usely-screen-erechnung.webp" alt="USELY app screenshot: e-invoicing with XRechnung, ZUGFeRD and EÜR export" loading="lazy" width="300" height="652"></div>
       </div>
+
+    </div>
+
+    <div class="dl-band reveal" style="margin-top: 6rem;">
+      <div>
+        <div class="dl-band-title">See for yourself.</div>
+        <div class="dl-band-sub">Free to download, ready in 2 minutes. No accounting knowledge needed.</div>
+      </div>
+      <a href="https://apps.apple.com/de/app/usely/id6783429050" target="_blank" rel="noopener" class="btn btn-primary">Get it on the App Store <span class="btn-arrow">↗</span></a>
     </div>
   </div>
 </section>
 
-<!-- REFERENZEN -->
-<section>
-  <div class="wrap">
-    <span class="eyebrow reveal">Eigene Referenzen</span>
-    <div class="ref-highlight reveal">
-      <div>
-        <div class="ref-highlight-tag">iOS App · SwiftUI · Supabase · KI</div>
-        <h3>YOU App. <em>Life Operating System.</em></h3>
-        <p>YOU ist ein persönliches Life Operating System für Körper und Geist. Eine KI-gestützte iOS App die durch Selbstreflexion, tägliches Training und messbaren Fortschritt dabei hilft, die beste Version von sich selbst zu werden. Entwickelt mit SwiftUI und Supabase, inklusive intelligenter Plan-Engine die individuelle Trainings- und Gewohnheitspläne erstellt. Konzept, Design, Backend, KI-Integration und App Store Launch komplett aus einer Hand.</p>
-        <a href="https://www.behance.net/gallery/217934173" target="_blank" rel="noopener" class="ref-highlight-link">Auf Behance ansehen →</a>
-      </div>
-      <div class="ref-stats-grid">
-        <div class="ref-stat">
-          <div class="ref-stat-val">SwiftUI</div>
-          <div class="ref-stat-label">Native iOS mit modernstem Apple-Stack</div>
-        </div>
-        <div class="ref-stat">
-          <div class="ref-stat-val">KI</div>
-          <div class="ref-stat-label">Intelligente Plan-Engine für individuelle Pläne</div>
-        </div>
-        <div class="ref-stat">
-          <div class="ref-stat-val">Supabase</div>
-          <div class="ref-stat-label">Skalierbares Backend mit Echtzeit-Daten</div>
-        </div>
-        <div class="ref-stat">
-          <div class="ref-stat-val">Live</div>
-          <div class="ref-stat-label">Im App Store verfügbar</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="ref-highlight reveal" style="margin-top: 1.5rem;">
-      <div>
-        <div class="ref-highlight-tag">SaaS · Buchhaltung · SwiftUI · Würzburg</div>
-        <h3>USELY. <em>Buchhaltung für Kleinunternehmer.</em></h3>
-        <p>USELY ist eine Buchhaltungssoftware die speziell für Selbstständige und Kleinunternehmer entwickelt wurde. Mit USELY schreiben Nutzer täglich Angebote und Rechnungen, schnell, übersichtlich und ohne Buchhaltungskenntnisse. Gefördert durch IGZ Würzburg, Brainstation Lauda und Campus Founders. Konzept, Branding, UI/UX Design, iOS Entwicklung und Backend vollständig aus einer Hand. Seit 2026 live im App Store.</p>
-        <div style="display:flex;gap:1.8rem;flex-wrap:wrap">
-          <a href="/usely" class="ref-highlight-link">Mehr erfahren →</a>
-          <a href="https://apps.apple.com/de/app/usely/id6783429050" target="_blank" rel="noopener" class="ref-highlight-link">Im App Store laden ↗</a>
-        </div>
-      </div>
-      <div class="ref-stats-grid">
-        <div class="ref-stat">
-          <div class="ref-stat-val">SaaS</div>
-          <div class="ref-stat-label">Software as a Service für Selbstständige</div>
-        </div>
-        <div class="ref-stat">
-          <div class="ref-stat-val">Gefördert</div>
-          <div class="ref-stat-label">IGZ Würzburg · Brainstation · Campus Founders</div>
-        </div>
-        <div class="ref-stat">
-          <div class="ref-stat-val">Live</div>
-          <div class="ref-stat-label">Täglich genutzt von Selbstständigen</div>
-        </div>
-        <div class="ref-stat">
-          <div class="ref-stat-val">360°</div>
-          <div class="ref-stat-label">Von Branding bis Launch aus einer Hand</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section>
+<!-- GESCHICHTE -->
+<section id="geschichte">
   <div class="wrap">
     <div class="warum-inner">
       <div class="reveal-left">
-        <span class="eyebrow">Warum YG MEDIA</span>
-        <h2>Nicht nur Entwicklung.<br><em>Auch Vermarktung.</em></h2>
-        <p>YG MEDIA ist keine klassische Entwickleragentur. Apps werden nicht nur gebaut, sondern auch vermarktet und dort platziert wo die Zielgruppe sucht und sich aufhält. Ob App-Store-Optimierung, Social Media, SEO oder Google Ads, Sichtbarkeit ist genauso Teil des Auftrags wie sauberer Code.</p>
-        <p>Als Allrounder wird jedes Projekt aus mehreren Perspektiven gedacht: Technologie, Design, Nutzerverhalten und Geschäftsmodell. Wer hier eine App entwickeln lassen möchte, bekommt ein Produkt das nicht nur funktioniert, sondern auch wächst.</p>
+        <span class="eyebrow">The Story</span>
+        <h2>From the construction site<br><em>to the App Store.</em></h2>
+        <p>The idea for USELY was born in 2022 in real working life: observing on the construction site and talking to business owners in the personal environment. The path from quote to invoice was the same painful topic everywhere. It costs evenings, is annoying and keeps people from the actual work.</p>
+        <p>That observation became a first web version, which regional press already reported on back then. Supported by IGZ Würzburg, Brainstation Lauda and Campus Founders, the prototype grew into a well-thought-out product: today a completely newly built, native iOS app, live in the App Store.</p>
+        <p>USELY is entirely built solo: concept, branding, UI/UX design, iOS development, backend and launch from one source by YG MEDIA from Würzburg, Germany.</p>
         <br>
-        <a href="https://calendly.com/yg-media/30min" target="_blank" rel="noopener" class="btn btn-primary">Idee besprechen <span class="btn-arrow">↗</span></a>
+        <a href="https://www.fnweb.de/orte/lauda-koenigshofen_artikel,-lauda-koenigshofen-starthilfe-fuer-gruendungswillige-_arid,1982643.html" target="_blank" rel="noopener" class="ref-link" style="margin-top:0">Read the newspaper article about the beginnings (German) →</a>
       </div>
       <div class="reveal-right">
-        <div class="warum-right">
-          <div class="warum-item">
-            <div class="warum-num">01</div>
-            <div><h4>Produkt-Denken statt Auftrags-Denken</h4><p>Im Mittelpunkt steht immer der Endnutzer. Durch eigene Erfahrung in der App-Entwicklung ist bekannt wie intuitiv Apps sein müssen damit Nutzer sie nutzen, kaufen und empfehlen.</p></div>
+        <div class="prozess-steps">
+          <div class="prozess-step">
+            <div class="prozess-step-num">2022</div>
+            <div>
+              <h3>The idea is born</h3>
+              <p>Daily life on the construction site becomes a concept: business management and accounting in one process, as simple as a calculator. The first web version goes live, over 2,000 visitors find the site and regional press reports.</p>
+            </div>
           </div>
-          <div class="warum-item">
-            <div class="warum-num">02</div>
-            <div><h4>Design, Code und Vermarktung aus einer Hand</h4><p>Ein Ansprechpartner für alles. Kein Übersetzen zwischen Designer, Entwickler und Marketingagentur. Von der ersten Skizze bis zur Launch-Kampagne läuft alles aus einer Hand.</p></div>
+          <div class="prozess-step">
+            <div class="prozess-step-num">2023</div>
+            <div>
+              <h3>Support &amp; development</h3>
+              <p>IGZ Würzburg, Brainstation Lauda and Campus Founders accompany the project. Through intensive conversations and real user feedback, the prototype turns into a clear product vision.</p>
+            </div>
           </div>
-          <div class="warum-item">
-            <div class="warum-num">03</div>
-            <div><h4>Skalierbare Architektur von Anfang an</h4><p>Datenbanken und Backend-Architektur werden so aufgebaut dass sie langfristig tragen. Was heute 100 Nutzer hat, soll auch bei 100.000 stabil laufen, ohne kompletten Neuaufbau.</p></div>
-          </div>
-          <div class="warum-item">
-            <div class="warum-num">04</div>
-            <div><h4>Nach Launch weiter dabei</h4><p>App-Entwicklung endet nicht beim Go-Live. Updates, neue Features, technische Weiterentwicklung und Vermarktungsanpassungen gehören zur laufenden Zusammenarbeit.</p></div>
+          <div class="prozess-step">
+            <div class="prozess-step-num">2026</div>
+            <div>
+              <h3>Live in the App Store</h3>
+              <p>USELY is rebuilt from scratch as a native iOS app and launches in the App Store. Legally compliant, GoBD-conform and free to start. Today, self-employed professionals write quotes and invoices with it every day.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -561,112 +566,52 @@ a.nav-lang-item:hover { background: rgba(255,255,255,0.06); color: var(--text); 
   </div>
 </section>
 
-<section>
-  <div class="wrap">
-    <div class="vorteile-head">
-      <div class="reveal-left">
-        <h2 class="vorteile-title">
-          <span>Was du</span>
-          <span class="accent">bekommst.</span>
-        </h2>
-      </div>
-      <p class="vorteile-sub reveal-right">Jede App die bei YG MEDIA entsteht hält diese Standards. Keine Abkürzungen, keine technische Schuld die später teuer wird.</p>
-    </div>
-    <div class="vorteile-grid">
-      <div class="vorteil-card reveal">
-        <div class="vorteil-num">01</div>
-        <h3>Native Performance</h3>
-        <p>Keine Hybrid-Kompromisse. iOS Apps laufen mit nativem Swift und SwiftUI, smooth und schnell wie Apple es erwartet.</p>
-      </div>
-      <div class="vorteil-card reveal" data-delay="1">
-        <div class="vorteil-num">02</div>
-        <h3>Sauberer Code</h3>
-        <p>Gut strukturierter, dokumentierter Code den du oder ein anderer Entwickler später problemlos weiterentwickeln kann.</p>
-      </div>
-      <div class="vorteil-card reveal" data-delay="2">
-        <div class="vorteil-num">03</div>
-        <h3>App Store Ready</h3>
-        <p>Alle Apple-Richtlinien eingehalten. App Store Screenshots, Preview und Beschreibung inklusive Einreichung.</p>
-      </div>
-      <div class="vorteil-card reveal" data-delay="3">
-        <div class="vorteil-num">04</div>
-        <h3>Datenschutz &amp; Sicherheit</h3>
-        <p>DSGVO-konforme Datenspeicherung, sichere Authentifizierung und transparenter Datenschutz für deine Nutzer.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="prozess">
-  <div class="wrap">
-    <div class="prozess-inner">
-      <div class="prozess-sticky">
-        <span class="eyebrow reveal">Der Prozess</span>
-        <h2 class="prozess-title reveal">Von der Idee zur fertigen App.</h2>
-        <p class="prozess-sub reveal">Transparent, strukturiert und mit klaren Meilensteinen. Du weisst immer wo dein Projekt steht.</p>
-        <a href="https://calendly.com/yg-media/30min" target="_blank" rel="noopener" class="btn btn-primary reveal">Idee besprechen <span class="btn-arrow">↗</span></a>
-      </div>
-      <div class="prozess-steps">
-        <div class="prozess-step reveal">
-          <div class="prozess-step-num">01</div>
-          <div><h3>Discovery &amp; Konzept</h3><p>Idee, Zielgruppe, wichtigste Features und Geschäftsmodell werden gemeinsam analysiert. Das Ergebnis ist ein klares Konzept und eine realistische Roadmap mit definierten Meilensteinen.</p></div>
-        </div>
-        <div class="prozess-step reveal" data-delay="1">
-          <div class="prozess-step-num">02</div>
-          <div><h3>Design &amp; Prototyp</h3><p>Das komplette UI/UX-Design entsteht in Figma inklusive interaktivem Prototyp. Die App wird sichtbar und testbar bevor eine Zeile Code geschrieben wird. Feedback-Runden bis das Design sitzt.</p></div>
-        </div>
-        <div class="prozess-step reveal" data-delay="2">
-          <div class="prozess-step-num">03</div>
-          <div><h3>Entwicklung &amp; Testing</h3><p>Die App wird in Sprints entwickelt mit regelmässigen Updates und Testversionen auf echten Geräten. Kein Überraschungsmoment am Ende, sondern kontinuierliche Transparenz über den Fortschritt.</p></div>
-        </div>
-        <div class="prozess-step reveal" data-delay="3">
-          <div class="prozess-step-num">04</div>
-          <div><h3>Launch, Vermarktung &amp; Wachstum</h3><p>App Store Einreichung, ASO und Launch-Strategie. Dazu Vermarktungsmassnahmen für Sichtbarkeit in der Zielgruppe. Nach dem Go-Live bleibt YG MEDIA Ansprechpartner für Updates, neue Features und Wachstumsstrategie.</p></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
+<!-- FAQ -->
 <section>
   <div class="wrap">
     <div class="faq-inner">
       <span class="eyebrow reveal">FAQ</span>
-      <h2 class="faq-title reveal">Häufige Fragen.</h2>
-      <p class="faq-lead reveal">Alles was du über App-Entwicklung wissen solltest.</p>
+      <h2 class="faq-title reveal">Frequently asked questions.</h2>
+      <p class="faq-lead reveal">Everything you want to know about USELY.</p>
       <div class="faq-list reveal">
         <div class="faq-item">
-          <button class="faq-q">Was kostet es eine App entwickeln zu lassen? <span class="faq-icon">+</span></button>
-          <div class="faq-a"><div class="faq-a-inner">App-Entwicklung ist stark von Umfang und Komplexität abhängig. Eine einfache Business-App startet ab 5.000 Euro. Apps mit Backend, KI-Integration und komplexem Design können 15.000 Euro und mehr kosten. Im Erstgespräch bekommst du eine konkrete Einschätzung.</div></div>
+          <button class="faq-q">What is USELY and who is the app for? <span class="faq-icon">+</span></button>
+          <div class="faq-a"><div class="faq-a-inner">USELY is an accounting app for iPhone, built for founders, small business owners, self-employed professionals and tradespeople in Germany, Austria and Switzerland. With USELY you calculate on site at the customer, write quotes and invoices in seconds, capture expenses via receipt scan and export your EÜR for your tax advisor.</div></div>
         </div>
         <div class="faq-item">
-          <button class="faq-q">Wie lange dauert die App-Entwicklung? <span class="faq-icon">+</span></button>
-          <div class="faq-a"><div class="faq-a-inner">Eine einfache App ist in 6 bis 10 Wochen fertig. Komplexere Projekte dauern 3 bis 6 Monate. Wir definieren gemeinsam den Scope und ich halte den vereinbarten Zeitplan ein.</div></div>
+          <button class="faq-q">How much does USELY cost? <span class="faq-icon">+</span></button>
+          <div class="faq-a"><div class="faq-a-inner">USELY is <strong>free</strong> to download from the App Store and ready to use immediately. For the full feature set there is <strong>USELY Pro</strong> as a subscription directly in the app. No hidden costs, cancel anytime.</div></div>
         </div>
         <div class="faq-item">
-          <button class="faq-q">Baut ihr auch Android Apps? <span class="faq-icon">+</span></button>
-          <div class="faq-a"><div class="faq-a-inner">Der Schwerpunkt liegt auf iOS (SwiftUI) und Web Apps. Wenn Android jedoch gewünscht ist, kann auch das umgesetzt werden. Eine weitere Option sind Progressive Web Apps (PWAs) die auf Android und iOS gleichermassen funktionieren und keinen separaten App-Store-Prozess benötigen.</div></div>
+          <button class="faq-q">Is USELY legally compliant and GoBD-conform? <span class="faq-icon">+</span></button>
+          <div class="faq-a"><div class="faq-a-inner">Yes. Documents are immutable and traceable (<strong>GoBD</strong>), all mandatory details under <strong>§14 UStG</strong> are handled automatically and the small business regulation under <strong>§19 UStG</strong> is supported. Data export and deletion are possible at any time under <strong>GDPR</strong>.</div></div>
         </div>
         <div class="faq-item">
-          <button class="faq-q">Was brauche ich um im App Store veröffentlichen zu können? <span class="faq-icon">+</span></button>
-          <div class="faq-a"><div class="faq-a-inner">Du brauchst ein Apple Developer Account (99 Euro pro Jahr). Den Rest übernehme ich: Einreichung, Screenshots, App Store Beschreibung und die Kommunikation mit Apple falls es Rückfragen gibt.</div></div>
+          <button class="faq-q">Does USELY support e-invoicing? <span class="faq-icon">+</span></button>
+          <div class="faq-a"><div class="faq-a-inner">Yes. USELY creates e-invoices as <strong>XRechnung</strong> and <strong>ZUGFeRD</strong> for the German e-invoicing mandate. Plus the <strong>EÜR export</strong> as PDF and CSV, ready for your tax advisor.</div></div>
         </div>
         <div class="faq-item">
-          <button class="faq-q">Gehört mir der Code nach dem Projekt? <span class="faq-icon">+</span></button>
-          <div class="faq-a"><div class="faq-a-inner">Ja, mit vollständiger Zahlung gehört dir der komplette Quellcode. Du bekommst Zugang zum Git-Repository und kannst den Code selbst oder mit einem anderen Entwickler weiterentwickeln.</div></div>
+          <button class="faq-q">Is USELY available for Android? <span class="faq-icon">+</span></button>
+          <div class="faq-a"><div class="faq-a-inner">USELY is currently exclusive to iPhone and consistently optimized for iOS. You can find the app for free in the <a href="https://apps.apple.com/de/app/usely/id6783429050" target="_blank" rel="noopener" style="color:var(--teal-bright)">Apple App Store</a>.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Who is behind USELY? <span class="faq-icon">+</span></button>
+          <div class="faq-a"><div class="faq-a-inner">USELY is developed by Yasin Gündogdu (YG MEDIA) from Würzburg, Germany: concept, design, iOS development and backend entirely from one source. The project was supported by IGZ Würzburg, Brainstation Lauda and Campus Founders. The <a href="/nutzungsbedingungen" style="color:var(--teal-bright)">terms of use</a> (German) are available on this website.</div></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- CTA -->
 <section class="cta-section">
   <div class="wrap">
     <div class="cta-inner reveal">
-      <h2 class="cta-title">Deine App-Idee.<br><em>Lass sie uns bauen.</em></h2>
-      <p class="cta-sub">In einem kostenlosen Erstgespräch schaue ich mir deine Idee an und sage dir ehrlich was machbar ist, was es kostet und wie wir es angehen. Keine Versprechungen. Nur echte Einschätzungen.</p>
-      <a href="https://calendly.com/yg-media/30min" target="_blank" rel="noopener" class="btn btn-primary">Jetzt 30-Min-Termin buchen <span class="btn-arrow">↗</span></a>
-      <span class="cta-subtext">Kostenlos · Unverbindlich · 30 Minuten</span>
+      <h2 class="cta-title">Your business.<br><em>In your pocket.</em></h2>
+      <p class="cta-sub">Download USELY free on your iPhone and write your next quote in under 60 seconds. No accounting knowledge, no evenings at the desk.</p>
+      <a href="https://apps.apple.com/de/app/usely/id6783429050" target="_blank" rel="noopener" class="btn btn-primary">Download free on the App Store now <span class="btn-arrow">↗</span></a>
+      <span class="cta-subtext">Free · For iPhone · Built in Würzburg, Germany</span>
+      <span class="cta-crosslink">Want an app like this for your own business? <a href="/en/apps">Have your app developed →</a></span>
     </div>
   </div>
 </section>
@@ -676,7 +621,7 @@ a.nav-lang-item:hover { background: rgba(255,255,255,0.06); color: var(--text); 
     <div class="footer-top">
       <div>
         <div class="footer-logo">
-          <img src="assets/YG-Logo-Weiss-No-Background.png" alt="YG MEDIA" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <img src="/assets/YG-Logo-Weiss-No-Background.png" alt="YG MEDIA" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
           <div class="footer-logo-text">YG MEDIA</div>
         </div>
         <p class="footer-tagline">Digital Business Builder.<br>Website · App · Marketing · Automation.</p>
@@ -684,39 +629,40 @@ a.nav-lang-item:hover { background: rgba(255,255,255,0.06); color: var(--text); 
       <div class="footer-links-grid">
         <div class="footer-col">
           <div class="footer-col-title">Services</div>
-          <a href="/website">Website</a><a href="/apps">Apps</a>
-          <a href="/marketing">Marketing</a><a href="/automation">Automation</a>
+          <a href="/en/website">Website</a><a href="/en/apps">Apps</a>
+          <a href="/en/marketing">Marketing</a><a href="/en/automation">Automation</a>
         </div>
         <div class="footer-col">
-          <div class="footer-col-title">Unternehmen</div>
-          <a href="/#about">Über mich</a><a href="/#referenzen">Referenzen</a>
-          <a href="/#prozess">Prozess</a>
+          <div class="footer-col-title">Company</div>
+          <a href="/en/#about">About me</a><a href="/en/#references">Projects</a>
+          <a href="/en/#process">Process</a>
         </div>
         <div class="footer-col">
-          <div class="footer-col-title">Rechtliches</div>
-          <a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a><a href="/nutzungsbedingungen">Nutzungsbedingungen</a>
+          <div class="footer-col-title">Legal</div>
+          <a href="/impressum">Legal Notice</a><a href="/datenschutz">Privacy Policy</a><a href="/nutzungsbedingungen">Terms of Use</a>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
       <p class="footer-copy">© 2026 YG MEDIA · Yasin Gündogdu</p>
       <div class="lang-switch" aria-label="Sprache / Language">
-        <span class="lang-btn active"><svg viewBox="0 0 5 3" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="5" height="1" fill="#111"/><rect y="1" width="5" height="1" fill="#DD0000"/><rect y="2" width="5" height="1" fill="#FFCE00"/></svg>DE</span>
-        <a href="/en/apps" class="lang-btn" aria-label="Switch to English"><svg viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><clipPath id="ljc"><path d="M0,0 v30 h60 v-30 z"/></clipPath><g clip-path="url(#ljc)"><path d="M0,0 v30 h60 v-30 z" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#C8102E" stroke-width="4"/><path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/><path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/></g></svg>EN</a>
+        <a href="/usely" class="lang-btn" aria-label="Zur deutschen Version wechseln"><svg viewBox="0 0 5 3" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="5" height="1" fill="#111"/><rect y="1" width="5" height="1" fill="#DD0000"/><rect y="2" width="5" height="1" fill="#FFCE00"/></svg>DE</a>
+        <span class="lang-btn active"><svg viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><clipPath id="ljc"><path d="M0,0 v30 h60 v-30 z"/></clipPath><g clip-path="url(#ljc)"><path d="M0,0 v30 h60 v-30 z" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#C8102E" stroke-width="4"/><path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/><path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/></g></svg>EN</span>
       </div>
       <div class="footer-socials">
         <a href="https://behance.net/yasinguendogdu" target="_blank" rel="noopener" class="social-btn" aria-label="Behance">Be</a>
-        <a href="https://x.com/ysn_gdu" target="_blank" rel="noopener" class="social-btn" aria-label="X">X</a>      </div>
+        <a href="https://x.com/ysn_gdu" target="_blank" rel="noopener" class="social-btn" aria-label="X">X</a>
+      </div>
     </div>
   </div>
 </footer>
 
 <div class="cookie-banner" id="cookieBanner">
-  <div class="cookie-title">Diese Website verwendet Cookies</div>
-  <div class="cookie-text">Ich nutze Cookies um die Nutzung der Website zu analysieren. Mehr dazu in der <a href="/datenschutz">Datenschutzerklärung</a>.</div>
+  <div class="cookie-title">This website uses cookies</div>
+  <div class="cookie-text">I use cookies to analyze how the website is used and to improve my services. Learn more in the <a href="/datenschutz">privacy policy</a>.</div>
   <div class="cookie-btns">
-    <button class="cookie-btn cookie-decline" id="cookieDecline">Nur notwendige</button>
-    <button class="cookie-btn cookie-accept" id="cookieAccept">Alle akzeptieren</button>
+    <button class="cookie-btn cookie-decline" id="cookieDecline">Essential only</button>
+    <button class="cookie-btn cookie-accept" id="cookieAccept">Accept all</button>
   </div>
 </div>
 
@@ -740,6 +686,8 @@ const io = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => io.observe(el));
+
+// FAQ
 document.querySelectorAll('.faq-q').forEach(btn => {
   btn.addEventListener('click', () => {
     const item = btn.closest('.faq-item');
@@ -748,11 +696,15 @@ document.querySelectorAll('.faq-q').forEach(btn => {
     if (!isOpen) item.classList.add('open');
   });
 });
+
+// CANVAS
 const canvas = document.getElementById('bg-canvas');
 const ctx = canvas.getContext('2d');
 let W, H, particles, mouse = { x: -9999, y: -9999 };
 function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
-function Particle() { this.reset = () => { this.x = Math.random()*W; this.y = Math.random()*H; this.vx = (Math.random()-0.5)*0.3; this.vy = (Math.random()-0.5)*0.3; this.r = Math.random()*1.4+0.3; this.alpha = Math.random()*0.45+0.08; this.life = 0; this.maxLife = Math.random()*300+200; }; this.reset(); }
+function Particle() {
+  this.reset = () => { this.x = Math.random()*W; this.y = Math.random()*H; this.vx = (Math.random()-0.5)*0.3; this.vy = (Math.random()-0.5)*0.3; this.r = Math.random()*1.4+0.3; this.alpha = Math.random()*0.45+0.08; this.life = 0; this.maxLife = Math.random()*300+200; }; this.reset();
+}
 function initParticles() { particles = Array.from({length:100}, () => new Particle()); }
 function animate() {
   ctx.clearRect(0,0,W,H);
@@ -774,11 +726,23 @@ window.addEventListener('mousemove', e => { mouse.x=e.clientX; mouse.y=e.clientY
 window.addEventListener('mouseleave', () => { mouse.x=-9999; mouse.y=-9999; });
 window.addEventListener('resize', () => { resize(); initParticles(); }, {passive:true});
 resize(); initParticles(); animate();
+
+// COOKIE
 (function() {
   const GA_ID = 'G-MHQJ0HLBM3';
   const banner = document.getElementById('cookieBanner');
   const KEY = 'yg_cookie_consent';
-  function loadAnalytics() { if (!GA_ID) return; const s = document.createElement('script'); s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID; document.head.appendChild(s); window.dataLayer = window.dataLayer || []; function gtag(){ dataLayer.push(arguments); } window.gtag = gtag; gtag('js', new Date()); gtag('config', GA_ID, { anonymize_ip: true }); }
+  function loadAnalytics() {
+    if (!GA_ID) return;
+    const s = document.createElement('script');
+    s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', GA_ID, { anonymize_ip: true });
+  }
   const consent = localStorage.getItem(KEY);
   if (consent === 'accepted') { loadAnalytics(); }
   else if (consent !== 'declined') { setTimeout(() => banner.classList.add('show'), 1200); }

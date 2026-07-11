@@ -20,6 +20,9 @@
 <meta name="twitter:description" content="KI-Chatbots, Make.com Workflows und CRM-Automatisierung die dir täglich Stunden sparen.">
 <meta name="twitter:image" content="https://yg-media.de/assets/og-image.png">
 <link rel="canonical" href="https://yg-media.de/automation">
+<link rel="alternate" hreflang="de" href="https://yg-media.de/automation">
+<link rel="alternate" hreflang="en" href="https://yg-media.de/en/automation">
+<link rel="alternate" hreflang="x-default" href="https://yg-media.de/automation">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,900;1,900&family=Playfair+Display:ital,wght@1,500;1,600;1,700&display=swap" rel="stylesheet">
 <style>
@@ -264,6 +267,21 @@ footer { background: rgba(12,14,28,0.65); backdrop-filter: blur(28px); -webkit-b
 .lang-btn svg { width: 17px; height: 12px; border-radius: 2.5px; display: block; box-shadow: 0 0 0 1px rgba(255,255,255,0.12); }
 a.lang-btn:hover { border-color: rgba(28,91,130,0.5); color: var(--text); }
 .lang-btn.active { border-color: rgba(28,91,130,0.5); color: var(--text); background: rgba(28,91,130,0.12); }
+
+/* NAV LANGUAGE DROPDOWN */
+.nav-lang { position: relative; }
+.nav-lang-btn { display: inline-flex; align-items: center; gap: 0.45rem; background: var(--glass); border: 1px solid var(--border); border-radius: 99px; padding: 0.5rem 0.85rem; cursor: pointer; color: var(--muted); font-family: 'Inter', sans-serif; font-size: 0.62rem; transition: all 0.2s; }
+.nav-lang-btn svg { width: 18px; height: 13px; border-radius: 2.5px; display: block; box-shadow: 0 0 0 1px rgba(255,255,255,0.14); }
+.nav-lang-btn:hover { border-color: rgba(28,91,130,0.5); color: var(--text); }
+.nav-lang-caret { transition: transform 0.2s; }
+.nav-lang.open .nav-lang-caret { transform: rotate(180deg); }
+.nav-lang-menu { position: absolute; top: calc(100% + 10px); right: 0; min-width: 160px; background: rgba(12,14,28,0.92); backdrop-filter: blur(28px); -webkit-backdrop-filter: blur(28px); border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; padding: 0.4rem; display: none; flex-direction: column; gap: 0.15rem; box-shadow: 0 20px 40px -12px rgba(0,0,0,0.6); z-index: 1001; }
+.nav-lang.open .nav-lang-menu { display: flex; }
+.nav-lang-item { display: flex; align-items: center; gap: 0.6rem; padding: 0.55rem 0.8rem; border-radius: 10px; color: var(--muted); text-decoration: none; font-size: 0.82rem; font-weight: 600; transition: background 0.2s, color 0.2s; }
+.nav-lang-item svg { width: 18px; height: 13px; border-radius: 2.5px; box-shadow: 0 0 0 1px rgba(255,255,255,0.14); }
+a.nav-lang-item:hover { background: rgba(255,255,255,0.06); color: var(--text); }
+.nav-lang-item.active { color: var(--text); background: rgba(28,91,130,0.15); }
+@media (max-width: 768px) { .nav-lang-menu { position: static; margin-top: 0.5rem; min-width: 0; } }
 </style>
 <script type="application/ld+json">
 {
@@ -335,6 +353,13 @@ a.lang-btn:hover { border-color: rgba(28,91,130,0.5); color: var(--text); }
       <a href="/marketing">Marketing</a>
       <a href="/automation" class="active">Automation</a>
       <a href="https://calendly.com/yg-media/30min" target="_blank" rel="noopener" class="nav-cta">Erstgespräch buchen</a>
+      <div class="nav-lang" id="navLang">
+        <button class="nav-lang-btn" aria-label="Sprache wählen" aria-haspopup="true"><svg viewBox="0 0 5 3" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="5" height="1" fill="#111"/><rect y="1" width="5" height="1" fill="#DD0000"/><rect y="2" width="5" height="1" fill="#FFCE00"/></svg><span class="nav-lang-caret">▾</span></button>
+        <div class="nav-lang-menu">
+          <span class="nav-lang-item active"><svg viewBox="0 0 5 3" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="5" height="1" fill="#111"/><rect y="1" width="5" height="1" fill="#DD0000"/><rect y="2" width="5" height="1" fill="#FFCE00"/></svg>Deutsch</span>
+          <a href="/en/automation" class="nav-lang-item"><svg viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><clipPath id="ljn"><path d="M0,0 v30 h60 v-30 z"/></clipPath><g clip-path="url(#ljn)"><path d="M0,0 v30 h60 v-30 z" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#C8102E" stroke-width="4"/><path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/><path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/></g></svg>English</a>
+        </div>
+      </div>
     </div>
     <div class="nav-burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></div>
   </div>
@@ -660,7 +685,7 @@ a.lang-btn:hover { border-color: rgba(28,91,130,0.5); color: var(--text); }
       <p class="footer-copy">© 2026 YG MEDIA · Yasin Gündogdu</p>
       <div class="lang-switch" aria-label="Sprache / Language">
         <span class="lang-btn active"><svg viewBox="0 0 5 3" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="5" height="1" fill="#111"/><rect y="1" width="5" height="1" fill="#DD0000"/><rect y="2" width="5" height="1" fill="#FFCE00"/></svg>DE</span>
-        <a href="/en/" class="lang-btn" aria-label="Switch to English"><svg viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><clipPath id="ljc"><path d="M0,0 v30 h60 v-30 z"/></clipPath><g clip-path="url(#ljc)"><path d="M0,0 v30 h60 v-30 z" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#C8102E" stroke-width="4"/><path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/><path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/></g></svg>EN</a>
+        <a href="/en/automation" class="lang-btn" aria-label="Switch to English"><svg viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><clipPath id="ljc"><path d="M0,0 v30 h60 v-30 z"/></clipPath><g clip-path="url(#ljc)"><path d="M0,0 v30 h60 v-30 z" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#C8102E" stroke-width="4"/><path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/><path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/></g></svg>EN</a>
       </div>
       <div class="footer-socials">
         <a href="https://behance.net/yasinguendogdu" target="_blank" rel="noopener" class="social-btn" aria-label="Behance">Be</a>
@@ -684,6 +709,12 @@ window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', windo
 const burger = document.getElementById('burger');
 const navLinks = document.getElementById('navLinks');
 burger.addEventListener('click', () => navLinks.classList.toggle('open'));
+const navLang = document.getElementById('navLang');
+if (navLang) {
+  navLang.querySelector('.nav-lang-btn').addEventListener('click', e => { e.stopPropagation(); navLang.classList.toggle('open'); });
+  document.addEventListener('click', () => navLang.classList.remove('open'));
+}
+
 document.querySelectorAll('.nav-links a').forEach(a => { a.addEventListener('click', () => navLinks.classList.remove('open')); });
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => { const t = document.querySelector(a.getAttribute('href')); if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); } });

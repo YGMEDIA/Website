@@ -248,11 +248,11 @@ section { padding: 8rem 0; position: relative; z-index: 10; }
 
 /* FOOTER */
 /* VIDEO SHOWCASE */
-.showcase-card { position: relative; border-radius: 28px; overflow: hidden; border: 1px solid rgba(255,255,255,0.14); background: rgba(255,255,255,0.04); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.1), 0 40px 80px -30px rgba(0,0,0,0.5); display: grid; grid-template-columns: 1.15fr 0.85fr; align-items: stretch; margin-top: 4rem; }
+.showcase-card { position: relative; border-radius: 28px; overflow: hidden; border: 1px solid rgba(255,255,255,0.14); background: rgba(255,255,255,0.04); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.1), 0 40px 80px -30px rgba(0,0,0,0.5); display: grid; grid-template-columns: 1fr; margin-top: 0; }
 .showcase-card::before { content: ''; position: absolute; top: -40%; right: -10%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(36,120,170,0.25) 0%, transparent 70%); pointer-events: none; z-index: 0; }
-.showcase-video-wrap { position: relative; overflow: hidden; min-height: 380px; background: linear-gradient(135deg, rgba(28,91,130,0.18), rgba(10,30,50,0.4)); }
+.showcase-video-wrap { position: relative; overflow: hidden; aspect-ratio: 16 / 9; background: linear-gradient(135deg, rgba(28,91,130,0.18), rgba(10,30,50,0.4)); }
 .showcase-video-wrap video { width: 100%; height: 100%; object-fit: cover; display: block; position: absolute; inset: 0; }
-.showcase-video-overlay { position: absolute; inset: 0; background: linear-gradient(90deg, transparent 55%, rgba(10,12,24,0.55) 100%); pointer-events: none; }
+.showcase-video-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 60%, rgba(10,12,24,0.5) 100%); pointer-events: none; }
 .showcase-content { padding: 3.5rem; display: flex; flex-direction: column; justify-content: center; position: relative; z-index: 2; }
 .showcase-badge { display: inline-flex; align-items: center; gap: 0.5rem; width: fit-content; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: var(--teal-bright); border: 1px solid rgba(36,120,170,0.4); border-radius: 99px; padding: 0.3rem 0.9rem; margin-bottom: 1.5rem; background: rgba(36,120,170,0.1); text-shadow: 0 0 12px rgba(36,120,170,0.5); }
 .showcase-badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal-bright); box-shadow: 0 0 8px rgba(36,120,170,0.9); animation: pulse 2s ease infinite; }
@@ -322,8 +322,6 @@ footer { background: rgba(12,14,28,0.65); backdrop-filter: blur(28px); -webkit-b
   .prozess-inner { grid-template-columns: 1fr; }
   .prozess-sticky { position: static; }
   .ref-intro { grid-template-columns: 1fr; gap: 1.5rem; }
-  .showcase-card { grid-template-columns: 1fr; }
-  .showcase-video-wrap { min-height: 260px; }
   .vorteile-head { grid-template-columns: 1fr; gap: 1.5rem; }
   .footer-top { grid-template-columns: 1fr; }
   .services-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
@@ -353,6 +351,35 @@ footer { background: rgba(12,14,28,0.65); backdrop-filter: blur(28px); -webkit-b
 .lang-btn svg { width: 17px; height: 12px; border-radius: 2.5px; display: block; box-shadow: 0 0 0 1px rgba(255,255,255,0.12); }
 a.lang-btn:hover { border-color: rgba(28,91,130,0.5); color: var(--text); }
 .lang-btn.active { border-color: rgba(28,91,130,0.5); color: var(--text); background: rgba(28,91,130,0.12); }
+
+/* REF FEATURE (volle Breite, Bild + Text) */
+.ref-feature { display: grid; grid-template-columns: 1fr 1fr; align-items: stretch; border: 1px solid rgba(255,255,255,0.15); border-radius: 28px; background: rgba(255,255,255,0.04); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.1), 0 40px 80px -30px rgba(0,0,0,0.5); overflow: hidden; margin: 1.5rem 0; position: relative; transition: border-color 0.3s; }
+.ref-feature:hover { border-color: rgba(28,91,130,0.3); }
+.ref-feature-img { position: relative; aspect-ratio: 1 / 1; background: linear-gradient(135deg, rgba(28,91,130,0.15), rgba(10,30,50,0.4)); }
+.ref-feature-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.ref-feature-content { padding: 3.5rem; display: flex; flex-direction: column; justify-content: center; }
+.ref-feature-content h3 { font-size: clamp(1.5rem, 2.4vw, 2rem); font-weight: 900; letter-spacing: -0.03em; line-height: 1.15; margin: 1rem 0 1.2rem; }
+.ref-feature-content p { color: var(--muted); font-size: 0.95rem; line-height: 1.85; }
+@media (max-width: 1100px) {
+  .ref-feature, .ref-feature.flip { grid-template-columns: 1fr; }
+  .ref-feature.flip .ref-feature-img { order: -1; }
+  .ref-feature-content { padding: 2.5rem 2rem; }
+}
+
+/* NAV LANGUAGE DROPDOWN */
+.nav-lang { position: relative; }
+.nav-lang-btn { display: inline-flex; align-items: center; gap: 0.45rem; background: var(--glass); border: 1px solid var(--border); border-radius: 99px; padding: 0.5rem 0.85rem; cursor: pointer; color: var(--muted); font-family: 'Inter', sans-serif; font-size: 0.62rem; transition: all 0.2s; }
+.nav-lang-btn svg { width: 18px; height: 13px; border-radius: 2.5px; display: block; box-shadow: 0 0 0 1px rgba(255,255,255,0.14); }
+.nav-lang-btn:hover { border-color: rgba(28,91,130,0.5); color: var(--text); }
+.nav-lang-caret { transition: transform 0.2s; }
+.nav-lang.open .nav-lang-caret { transform: rotate(180deg); }
+.nav-lang-menu { position: absolute; top: calc(100% + 10px); right: 0; min-width: 160px; background: rgba(12,14,28,0.92); backdrop-filter: blur(28px); -webkit-backdrop-filter: blur(28px); border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; padding: 0.4rem; display: none; flex-direction: column; gap: 0.15rem; box-shadow: 0 20px 40px -12px rgba(0,0,0,0.6); z-index: 1001; }
+.nav-lang.open .nav-lang-menu { display: flex; }
+.nav-lang-item { display: flex; align-items: center; gap: 0.6rem; padding: 0.55rem 0.8rem; border-radius: 10px; color: var(--muted); text-decoration: none; font-size: 0.82rem; font-weight: 600; transition: background 0.2s, color 0.2s; }
+.nav-lang-item svg { width: 18px; height: 13px; border-radius: 2.5px; box-shadow: 0 0 0 1px rgba(255,255,255,0.14); }
+a.nav-lang-item:hover { background: rgba(255,255,255,0.06); color: var(--text); }
+.nav-lang-item.active { color: var(--text); background: rgba(28,91,130,0.15); }
+@media (max-width: 768px) { .nav-lang-menu { position: static; margin-top: 0.5rem; min-width: 0; } }
 </style>
 <script type="application/ld+json">
 {
@@ -470,6 +497,13 @@ a.lang-btn:hover { border-color: rgba(28,91,130,0.5); color: var(--text); }
       <a href="/marketing">Marketing</a>
       <a href="/automation">Automation</a>
       <a href="https://calendly.com/yg-media/30min" target="_blank" rel="noopener" class="nav-cta">Erstgespräch buchen</a>
+      <div class="nav-lang" id="navLang">
+        <button class="nav-lang-btn" aria-label="Sprache wählen" aria-haspopup="true"><svg viewBox="0 0 5 3" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="5" height="1" fill="#111"/><rect y="1" width="5" height="1" fill="#DD0000"/><rect y="2" width="5" height="1" fill="#FFCE00"/></svg><span class="nav-lang-caret">▾</span></button>
+        <div class="nav-lang-menu">
+          <span class="nav-lang-item active"><svg viewBox="0 0 5 3" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="5" height="1" fill="#111"/><rect y="1" width="5" height="1" fill="#DD0000"/><rect y="2" width="5" height="1" fill="#FFCE00"/></svg>Deutsch</span>
+          <a href="/en/" class="nav-lang-item"><svg viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><clipPath id="ljn"><path d="M0,0 v30 h60 v-30 z"/></clipPath><g clip-path="url(#ljn)"><path d="M0,0 v30 h60 v-30 z" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#C8102E" stroke-width="4"/><path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/><path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/></g></svg>English</a>
+        </div>
+      </div>
     </div>
     <div class="nav-burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></div>
   </div>
@@ -585,8 +619,11 @@ a.lang-btn:hover { border-color: rgba(28,91,130,0.5); color: var(--text); }
         <p>Dr. Karabul hat eine Kinderarztpraxis übernommen und sollte sofort als moderne, kompetente Ärztin wahrgenommen werden. Ich habe Website, Google My Business und Praxis-App aufgebaut und die fachliche Kompetenz konsequent in den Vordergrund gestellt.</p>
         <a href="https://kinderarzt-tbb.de/" target="_blank" rel="noopener" class="ref-link">Website ansehen →</a>
       </div>
-      <div class="ref-card reveal" data-delay="1">
-        <img src="assets/usely-1.png" alt="USELY Buchhaltungssoftware UI Design Projekt" class="ref-image" onerror="this.style.display='none'">
+    </div>
+
+    <div class="ref-feature reveal">
+      <div class="ref-feature-img"><img src="assets/usely-1.png" alt="USELY Buchhaltungs App Keyvisual mit Glas-U" loading="lazy"></div>
+      <div class="ref-feature-content">
         <span class="ref-tag">iOS App · Buchhaltung · Live im App Store</span>
         <h3>USELY. Buchhaltungs App für Kleinunternehmer.</h3>
         <p>Von der Idee bis in den App Store komplett solo entwickelt: Konzept, Branding, UI/UX Design, native iOS Entwicklung und Backend. Gefördert durch IGZ Würzburg, Brainstation Lauda und Campus Founders. Heute schreiben Selbstständige damit Angebote und Rechnungen in Sekunden.</p>
@@ -595,13 +632,9 @@ a.lang-btn:hover { border-color: rgba(28,91,130,0.5); color: var(--text); }
           <a href="https://apps.apple.com/de/app/usely/id6783429050" target="_blank" rel="noopener" class="ref-link">Im App Store laden ↗</a>
         </div>
       </div>
-      <div class="ref-card reveal" data-delay="2">
-        <img src="assets/You-Logo.png" alt="YOU App iOS Entwicklung Projekt" class="ref-image" onerror="this.style.display='none'">
-        <span class="ref-tag">Gesundheit · Psychologie · iOS App · KI</span>
-        <h3>YOU. Ein persönliches Life Operating System. Solo entwickelt.</h3>
-        <p>YOU ist ein persönliches Life Operating System für Körper und Geist. Eine KI-gestützte App die durch Selbstreflexion, tägliches Training und messbaren Fortschritt dabei hilft, die beste Version seiner selbst zu werden. Mit intelligenter Plan-Engine, die individuelle Trainings- und Gewohnheitspläne erstellt.</p>
-        <a href="https://www.behance.net/gallery/217934173" target="_blank" rel="noopener" class="ref-link">Auf Behance ansehen →</a>
-      </div>
+    </div>
+
+    <div class="ref-grid">
       <div class="ref-card reveal" data-delay="1">
         <img src="assets/derma-1.jpg" alt="Dermatologie Website Design Projekt" class="ref-image" onerror="this.style.display='none'">
         <span class="ref-tag">Dermatologie · Webdesign · UI/UX</span>
@@ -616,6 +649,18 @@ a.lang-btn:hover { border-color: rgba(28,91,130,0.5); color: var(--text); }
         <p>Ein Konzept für ein räumliches Fahrzeug-Dashboard auf Apple VisionPro. Fahrdaten, Navigation und Fahrzeugsteuerung werden in einer immersiven, dreidimensionalen Oberfläche neu gedacht. Eine Studie darüber wie sich Mobilität und Spatial Computing in Zukunft verbinden lassen.</p>
         <a href="https://www.behance.net/gallery/195062751/Audi-Dashboard-Spatial-Design-VisionPro-Concept" target="_blank" rel="noopener" class="ref-link">Auf Behance ansehen →</a>
       </div>
+    </div>
+
+    <div class="ref-feature flip reveal">
+      <div class="ref-feature-content">
+        <span class="ref-tag">Gesundheit · Psychologie · iOS App · KI</span>
+        <h3>YOU. Ein persönliches Life Operating System. Solo entwickelt.</h3>
+        <p>YOU ist ein persönliches Life Operating System für Körper und Geist. Eine KI-gestützte App die durch Selbstreflexion, tägliches Training und messbaren Fortschritt dabei hilft, die beste Version seiner selbst zu werden. Mit intelligenter Plan-Engine, die individuelle Trainings- und Gewohnheitspläne erstellt.</p>
+        <div style="display:flex;gap:1.8rem;flex-wrap:wrap">
+          <a href="https://www.behance.net/gallery/217934173" target="_blank" rel="noopener" class="ref-link">Auf Behance ansehen →</a>
+        </div>
+      </div>
+      <div class="ref-feature-img"><img src="assets/You-Logo.png" alt="YOU App Keyvisual" loading="lazy"></div>
     </div>
 
     <div class="showcase-card reveal">
@@ -806,6 +851,12 @@ window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', windo
 const burger = document.getElementById('burger');
 const navLinks = document.getElementById('navLinks');
 burger.addEventListener('click', () => navLinks.classList.toggle('open'));
+const navLang = document.getElementById('navLang');
+if (navLang) {
+  navLang.querySelector('.nav-lang-btn').addEventListener('click', e => { e.stopPropagation(); navLang.classList.toggle('open'); });
+  document.addEventListener('click', () => navLang.classList.remove('open'));
+}
+
 document.querySelectorAll('.nav-links a').forEach(a => { a.addEventListener('click', () => navLinks.classList.remove('open')); });
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => { const t = document.querySelector(a.getAttribute('href')); if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); } });
