@@ -100,7 +100,7 @@
   .hero .blob{position:absolute;border-radius:50%;filter:blur(60px);z-index:-1;opacity:.55}
   .hero .blob.a{width:420px;height:420px;background:rgba(76,64,168,.35);top:-120px;right:-80px}
   .hero .blob.b{width:340px;height:340px;background:rgba(233,70,81,.22);bottom:-120px;left:-60px}
-  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+  .hero-grid{display:grid;grid-template-columns:0.92fr 1.08fr;gap:56px;align-items:center}
   .badge{
     display:inline-flex;align-items:center;gap:8px;
     background:var(--white-glass);backdrop-filter:blur(8px);
@@ -126,7 +126,7 @@
     border:1px solid rgba(255,255,255,.8);
     position:relative;
   }
-  .hero-photo img{width:100%;height:100%;object-fit:cover;aspect-ratio:16/12}
+  .hero-photo img{width:100%;height:auto;display:block}
   .glass-card{
     position:absolute;
     background:rgba(255,255,255,.62);
@@ -140,7 +140,7 @@
   .glass-card.stat{left:-26px;bottom:34px;display:flex;align-items:center;gap:14px}
   .glass-card.stat .num{font-family:'Fraunces',serif;font-size:1.9rem;font-weight:600;color:var(--indigo);line-height:1}
   .glass-card.stat .lbl{font-size:.82rem;color:var(--muted);max-width:11em}
-  .glass-card.pill{right:-14px;top:26px;display:flex;align-items:center;gap:10px;font-weight:600;font-size:.9rem;color:var(--indigo)}
+  .glass-card.pill{right:-14px;bottom:34px;display:flex;align-items:center;gap:10px;font-weight:600;font-size:.9rem;color:var(--indigo)}
   .glass-card.pill .ic{width:34px;height:34px;border-radius:50%;background:var(--indigo);color:#fff;display:grid;place-items:center;font-size:1rem}
 
   /* ---------- Section base ---------- */
@@ -297,8 +297,10 @@
     .foot-grid{grid-template-columns:1fr}
     .section-pad{padding:70px 0}
     .hero{padding:140px 0 70px}
-    .glass-card.stat{left:0}
-    .glass-card.pill{right:0}
+    .hero-visual{display:flex;flex-direction:column;gap:12px}
+    .glass-card{position:static;inset:auto;margin:0;width:100%}
+    .glass-card.stat{order:2}
+    .glass-card.pill{order:3;justify-content:center}
     .wrap{padding:0 20px}
   }
 </style>
