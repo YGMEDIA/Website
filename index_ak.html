@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zahnarztpraxis Dr. med. dent. Anna Klingbeil – Bad Mergentheim</title>
+<meta name="description" content="Zahnarztpraxis Dr. med. dent. Anna Klingbeil in Bad Mergentheim. Persönliche Behandlung durch die Zahnärztin, moderne Zahnmedizin, Zeit für jeden Patienten. Termin: 07931 43838.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue:#1f6aa5;
+    --blue-deep:#123f63;
+    --blue-soft:#5aa0cf;
+    --ink:#2a2620;
+    --muted:#6c6459;
+    --cream:#faf6ef;
+    --cream-2:#f3ece1;
+    --line:#e8ded0;
+    --white:#ffffff;
+    --radius:18px;
+    --shadow-sm:0 2px 12px rgba(60,48,30,.06);
+    --shadow-md:0 18px 44px rgba(60,48,30,.10);
+    --shadow-lg:0 34px 80px rgba(40,45,60,.16);
+    --max:1160px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:var(--ink);background:var(--cream);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  h1,h2,h3{line-height:1.1;letter-spacing:-.01em}
+  .serif{font-family:'Fraunces',Georgia,serif;font-weight:500}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 30px}
+
+  /* eyebrow with leading line */
+  .eyebrow{display:inline-flex;align-items:center;gap:12px;font-weight:600;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--blue);margin-bottom:20px}
+  .eyebrow::before{content:"";width:34px;height:1.5px;background:var(--blue)}
+  .eyebrow.center{justify-content:center}
+
+  /* buttons */
+  .btn{display:inline-flex;align-items:center;gap:.6em;font-weight:600;font-size:1rem;padding:15px 30px;border-radius:999px;transition:transform .25s ease,box-shadow .25s ease,background .25s ease,color .25s ease;cursor:pointer;border:none;white-space:nowrap}
+  .btn-primary{background:var(--blue);color:#fff;box-shadow:0 10px 26px rgba(31,106,165,.28)}
+  .btn-primary:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(31,106,165,.4)}
+  .btn-line{background:transparent;color:var(--blue);border:1.5px solid var(--blue)}
+  .btn-line:hover{background:var(--blue);color:#fff;transform:translateY(-3px)}
+
+  /* header */
+  header{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .35s,box-shadow .35s,padding .35s;padding:22px 0}
+  header.scrolled{background:rgba(250,246,239,.82);backdrop-filter:blur(16px) saturate(140%);-webkit-backdrop-filter:blur(16px) saturate(140%);box-shadow:0 1px 0 rgba(60,48,30,.08);padding:13px 0}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:24px}
+  .brand{display:flex;align-items:center;gap:13px}
+  .brand .mark{width:48px;height:48px;border-radius:50%;border:1.5px solid var(--blue);color:var(--blue);display:grid;place-items:center;font-family:'Fraunces',serif;font-weight:600;font-size:1.15rem;letter-spacing:.02em}
+  .brand .name{font-family:'Fraunces',serif;font-weight:600;font-size:1.12rem;color:var(--ink);line-height:1.08}
+  .brand .name small{display:block;font-family:'Inter',sans-serif;font-weight:500;font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .nav-links{display:flex;align-items:center;gap:34px}
+  .nav-links a{font-weight:500;font-size:.96rem;color:var(--ink);position:relative;transition:color .2s}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;height:1.5px;width:0;background:var(--blue);transition:width .28s}
+  .nav-links a:hover{color:var(--blue)}
+  .nav-links a:hover::after{width:100%}
+  .nav-links a.nav-cta{padding:10px 22px;border:1.5px solid var(--blue);border-radius:999px;color:var(--blue);font-weight:600}
+  .nav-links a.nav-cta::after{display:none}
+  .nav-links a.nav-cta:hover{background:var(--blue);color:#fff}
+  .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
+  .burger span{width:26px;height:2.5px;background:var(--blue);border-radius:2px;transition:.3s}
+
+  /* HERO — editorial, arch image + solid caption */
+  .hero{padding:160px 0 40px;position:relative}
+  .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:60px;align-items:center}
+  .hero h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(2.6rem,5.2vw,4.1rem);letter-spacing:-.02em;color:var(--ink)}
+  .hero h1 em{font-style:italic;color:var(--blue)}
+  .hero p.lead{font-size:1.15rem;color:var(--muted);max-width:32em;margin:24px 0 34px}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+  .hero-actions .mini{font-size:.92rem;color:var(--muted)}
+  .hero-actions .mini b{color:var(--ink);font-weight:600}
+
+  .hero-figure{position:relative}
+  .hero-figure .frame{border-radius:200px 200px 22px 22px;overflow:hidden;box-shadow:var(--shadow-lg);position:relative;z-index:2}
+  .hero-figure .frame img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/4.4}
+  .hero-figure .outline{position:absolute;inset:22px -22px -22px 22px;border:1.5px solid var(--blue-soft);border-radius:200px 200px 22px 22px;z-index:1;opacity:.6}
+  .hero-figure .caption{position:absolute;left:24px;bottom:26px;z-index:3;background:var(--white);border-radius:14px;padding:14px 20px;box-shadow:var(--shadow-md);display:flex;align-items:center;gap:12px;max-width:74%}
+  .hero-figure .caption .ic{width:38px;height:38px;border-radius:50%;background:var(--blue);color:#fff;flex:none;display:grid;place-items:center}
+  .hero-figure .caption .t{font-size:.9rem;line-height:1.35}
+  .hero-figure .caption .t b{display:block;color:var(--ink);font-weight:600}
+  .hero-figure .caption .t span{color:var(--muted);font-size:.84rem}
+
+  /* USP ribbon */
+  .ribbon{border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:56px}
+  .ribbon .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+  .ribbon .item{display:flex;align-items:center;gap:12px;padding:26px 10px;font-weight:500;color:var(--ink);flex:1;min-width:220px}
+  .ribbon .item+.item{border-left:1px solid var(--line);padding-left:32px}
+  .ribbon .item .ic{width:40px;height:40px;border-radius:11px;background:var(--cream-2);color:var(--blue);display:grid;place-items:center;flex:none}
+  .ribbon .item .ic svg{width:21px;height:21px}
+
+  section{position:relative}
+  .section-pad{padding:100px 0}
+
+  /* LEISTUNGEN — numbered editorial list */
+  .services{background:var(--white)}
+  .svc-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:64px;align-items:start}
+  .svc-intro{position:sticky;top:120px}
+  .svc-intro h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(2rem,3.6vw,2.8rem);color:var(--ink)}
+  .svc-intro h2 em{font-style:italic;color:var(--blue)}
+  .svc-intro p{color:var(--muted);font-size:1.06rem;margin:18px 0 30px}
+  .svc-list{display:flex;flex-direction:column}
+  .svc-row{display:grid;grid-template-columns:auto 1fr;gap:26px;padding:26px 20px 26px 8px;border-top:1px solid var(--line);border-radius:14px;transition:background .3s,padding .3s;align-items:start}
+  .svc-row:last-child{border-bottom:1px solid var(--line)}
+  .svc-row .no{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:600;color:var(--blue-soft);transition:color .3s;line-height:1.2}
+  .svc-row h3{font-size:1.28rem;margin-bottom:6px;color:var(--ink)}
+  .svc-row p{color:var(--muted);font-size:.98rem}
+  .svc-row:hover{background:var(--cream);padding-left:22px}
+  .svc-row:hover .no{color:var(--blue)}
+
+  /* PRAXIS — centered, USP tiles + gallery row */
+  .praxis{background:var(--cream)}
+  .praxis .head{max-width:40em;margin:0 auto 46px;text-align:center}
+  .praxis .head h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(2rem,3.6vw,2.8rem);color:var(--ink)}
+  .praxis .head h2 em{font-style:italic;color:var(--blue)}
+  .praxis .head p{color:var(--muted);font-size:1.08rem;margin-top:16px}
+  .tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:44px}
+  .tile{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:26px 22px;transition:transform .3s,box-shadow .3s}
+  .tile:hover{transform:translateY(-6px);box-shadow:var(--shadow-md)}
+  .tile .ic{width:46px;height:46px;border-radius:12px;background:var(--cream-2);color:var(--blue);display:grid;place-items:center;margin-bottom:16px}
+  .tile .ic svg{width:23px;height:23px}
+  .tile b{display:block;font-size:1.02rem;color:var(--ink);margin-bottom:5px}
+  .tile span{font-size:.9rem;color:var(--muted)}
+  .gallery{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:16px}
+  .gallery a{border-radius:16px;overflow:hidden;box-shadow:var(--shadow-sm);display:block}
+  .gallery a img{width:100%;height:100%;object-fit:cover;aspect-ratio:3/2.4;transition:transform .5s}
+  .gallery a:hover img{transform:scale(1.06)}
+
+  /* SPRECHZEITEN — light, typographic */
+  .hours{background:var(--white)}
+  .hours-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:center}
+  .hours h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(2rem,3.4vw,2.7rem);color:var(--ink)}
+  .hours p{color:var(--muted);font-size:1.05rem;margin:16px 0 26px;max-width:30em}
+  .hours .note{font-size:.9rem;color:var(--muted);margin-top:20px;padding-top:18px;border-top:1px solid var(--line)}
+  .daylist{list-style:none}
+  .daylist li{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:17px 4px;border-bottom:1px dashed var(--line)}
+  .daylist li:first-child{border-top:1px dashed var(--line)}
+  .daylist .d{font-size:1.1rem;font-weight:500;color:var(--ink)}
+  .daylist .t{font-variant-numeric:tabular-nums;color:var(--muted);font-weight:500;text-align:right}
+  .daylist li.today{position:relative}
+  .daylist li.today .d{color:var(--blue);font-weight:600}
+  .daylist li.today .d::after{content:"Heute";margin-left:12px;font-size:.66rem;font-weight:600;letter-spacing:.06em;background:var(--blue);color:#fff;padding:3px 9px;border-radius:999px;vertical-align:middle}
+  .daylist li.closed .t{color:#b9ac98}
+
+  /* KONTAKT — wide single card */
+  .contact{background:var(--cream)}
+  .contact .head{text-align:center;margin-bottom:46px}
+  .contact .head h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(2rem,3.6vw,2.8rem);color:var(--ink)}
+  .contact .head h2 em{font-style:italic;color:var(--blue)}
+  .cbox{background:var(--white);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow-sm);overflow:hidden}
+  .cbox-cols{display:grid;grid-template-columns:repeat(3,1fr)}
+  .cbox-cols .col{padding:40px 38px}
+  .cbox-cols .col+.col{border-left:1px solid var(--line)}
+  .cbox .ic{width:44px;height:44px;border-radius:12px;background:var(--cream-2);color:var(--blue);display:grid;place-items:center;margin-bottom:16px}
+  .cbox .ic svg{width:22px;height:22px}
+  .cbox .k{font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:8px}
+  .cbox .v{font-size:1.06rem;font-weight:500;color:var(--ink);line-height:1.5}
+  .cbox a.v:hover{color:var(--blue)}
+  .cbar{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center;padding:26px 38px;background:var(--cream);border-top:1px solid var(--line)}
+  .cbar .adr{font-weight:500;color:var(--ink)}
+  .cbar .adr span{color:var(--muted);font-weight:400}
+  .cbar .acts{display:flex;gap:12px;flex-wrap:wrap}
+
+  /* FOOTER */
+  footer{background:var(--blue-deep);color:rgba(255,255,255,.72)}
+  .foot-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:26px;padding:56px 0 40px}
+  .foot-top .name{font-family:'Fraunces',serif;font-size:1.7rem;color:#fff;font-weight:600}
+  .foot-top .name span{display:block;font-family:'Inter',sans-serif;font-size:.9rem;font-weight:400;color:rgba(255,255,255,.7);margin-top:6px;letter-spacing:.02em}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.16);padding:22px 0 30px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;font-size:.88rem}
+  .foot-bottom nav{display:flex;gap:26px}
+  .foot-bottom a:hover{color:#fff}
+
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+  @media (max-width:940px){
+    .hero-grid,.svc-grid,.hours-grid{grid-template-columns:1fr;gap:44px}
+    .hero-figure{order:-1;max-width:460px}
+    .svc-intro{position:static}
+    .tiles{grid-template-columns:repeat(2,1fr)}
+    .gallery{grid-template-columns:1fr 1fr}
+    .cbox-cols{grid-template-columns:1fr}
+    .cbox-cols .col+.col{border-left:none;border-top:1px solid var(--line)}
+  }
+  @media (max-width:640px){
+    .nav-links{position:fixed;top:0;right:0;height:100vh;width:76%;max-width:320px;background:rgba(250,246,239,.97);backdrop-filter:blur(18px);flex-direction:column;align-items:flex-start;justify-content:center;gap:26px;padding:40px;transform:translateX(100%);transition:transform .35s;box-shadow:-20px 0 60px rgba(60,48,30,.14)}
+    .nav-links.open{transform:translateX(0)}
+    .nav-links a{font-size:1.15rem}
+    .burger{display:flex;z-index:110}
+    .burger.open span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+    .burger.open span:nth-child(2){opacity:0}
+    .burger.open span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+    .ribbon .item+.item{border-left:none;padding-left:10px;border-top:1px solid var(--line)}
+    .tiles{grid-template-columns:1fr}
+    .gallery{grid-template-columns:1fr}
+    .cbar{flex-direction:column;align-items:flex-start}
+    .section-pad{padding:72px 0}
+    .hero{padding:130px 0 30px}
+    .wrap{padding:0 22px}
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Startseite">
+      <span class="mark">AK</span>
+      <span class="name">Dr. Anna Klingbeil<small>Zahnärztin · Bad Mergentheim</small></span>
+    </a>
+    <nav class="nav-links" id="navlinks">
+      <a href="#leistungen">Therapiespektrum</a>
+      <a href="#praxis">Praxis</a>
+      <a href="#zeiten">Sprechzeiten</a>
+      <a href="#kontakt">Kontakt</a>
+      <a class="nav-cta" href="tel:+49793143838">07931 43838</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="reveal">
+      <span class="eyebrow">Zahnarztpraxis · Bad Mergentheim</span>
+      <h1>Ihre Zähne in <em>ruhigen,<br>erfahrenen</em> Händen.</h1>
+      <p class="lead">In der Praxis von Dr. med. dent. Anna Klingbeil behandelt die Zahnärztin jeden Patienten persönlich – mit ausführlicher Beratung, in der Regel ohne Wartezeit und ganz ohne Massenabfertigung.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="tel:+49793143838">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+          Termin: 07931 43838
+        </a>
+        <span class="mini">Terminvereinbarung bitte<br><b>immer telefonisch</b></span>
+      </div>
+    </div>
+    <div class="hero-figure reveal">
+      <span class="outline"></span>
+      <div class="frame"><img src="assets_02/sprechzimmer1.jpg" alt="Helles Behandlungszimmer der Zahnarztpraxis Dr. Anna Klingbeil"></div>
+      <div class="caption">
+        <span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+        <span class="t"><b>Behandlung persönlich</b><span>durch Dr. Anna Klingbeil</span></span>
+      </div>
+    </div>
+  </div>
+  <div class="ribbon reveal">
+    <div class="wrap">
+      <div class="item"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21a8 8 0 1 0-16 0"/><circle cx="12" cy="7" r="4"/></svg></span> Behandlung durch die Zahnärztin persönlich</div>
+      <div class="item"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span> In der Regel keine Wartezeiten</div>
+      <div class="item"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M9 4v16M4 9h5"/></svg></span> Barrierefrei · Fahrstuhl vorhanden</div>
+    </div>
+  </div>
+</section>
+
+<!-- LEISTUNGEN -->
+<section class="services section-pad" id="leistungen">
+  <div class="wrap svc-grid">
+    <div class="svc-intro reveal">
+      <span class="eyebrow">Therapiespektrum</span>
+      <h2>Was wir für <em>Sie</em> tun.</h2>
+      <p>Von der Vorsorge bis zum hochwertigen Zahnersatz – ausführliche, individuelle Beratung vor jedem Behandlungsbeginn.</p>
+      <a class="btn btn-line" href="tel:+49793143838">Termin vereinbaren</a>
+    </div>
+    <div class="svc-list">
+      <div class="svc-row reveal"><span class="no">01</span><div><h3>Prophylaxe</h3><p>Professionelle Zahnreinigung und Vorsorge – damit Ihre Zähne dauerhaft gesund bleiben.</p></div></div>
+      <div class="svc-row reveal"><span class="no">02</span><div><h3>Parodontologie</h3><p>Schonende Behandlung von Zahnfleischentzündungen – gesundes Zahnfleisch als Fundament.</p></div></div>
+      <div class="svc-row reveal"><span class="no">03</span><div><h3>Zahnerhaltung</h3><p>Ihre eigenen Zähne bewahren – mit modernen, zahnschonenden Füllungen und Verfahren.</p></div></div>
+      <div class="svc-row reveal"><span class="no">04</span><div><h3>Ästhetische Zahnmedizin</h3><p>Natürlich schöne Ergebnisse, die zu Ihrem Gesicht und Ihrem Lächeln passen.</p></div></div>
+      <div class="svc-row reveal"><span class="no">05</span><div><h3>Hochwertiger Zahnersatz</h3><p>Festsitzend, herausnehmbar oder kombiniert – passgenau und langlebig.</p></div></div>
+      <div class="svc-row reveal"><span class="no">06</span><div><h3>Funktionsdiagnostik &amp; Schienentherapie</h3><p>Diagnostik und Therapie von Funktionsstörungen, z. B. bei nächtlichem Zähneknirschen.</p></div></div>
+      <div class="svc-row reveal"><span class="no">07</span><div><h3>Kinderbehandlung</h3><p>Einfühlsame Betreuung der kleinen Patienten – für einen entspannten Start beim Zahnarzt.</p></div></div>
+      <div class="svc-row reveal"><span class="no">08</span><div><h3>Endodontie (Wurzelbehandlung)</h3><p>Erkrankte Zähne erhalten – schonend, sorgfältig und mit moderner Technik.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRAXIS -->
+<section class="praxis section-pad" id="praxis">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow center">Unsere Praxis</span>
+      <h2>Eine Praxis, die sich <em>Zeit nimmt</em>.</h2>
+      <p>Ruhige Atmosphäre statt Massenabfertigung – helle Räume, moderne Ausstattung und ein persönlicher Ablauf, bei dem Sie im Mittelpunkt stehen.</p>
+    </div>
+    <div class="tiles reveal">
+      <div class="tile"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21a8 8 0 1 0-16 0"/><circle cx="12" cy="7" r="4"/></svg></span><b>Persönlich</b><span>Alle Behandlungen durch die Zahnärztin selbst.</span></div>
+      <div class="tile"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><b>Ohne Wartezeit</b><span>In der Regel keine Wartezeiten, kein überfülltes Wartezimmer.</span></div>
+      <div class="tile"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M9 4v16M4 9h5"/></svg></span><b>Barrierefrei</b><span>Praxis mit Fahrstuhl bequem erreichbar.</span></div>
+      <div class="tile"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2v6h6"/><path d="M4 13V4a2 2 0 0 1 2-2h8l6 6v12a2 2 0 0 1-2 2H9"/><path d="m3 17 3 3 4-5"/></svg></span><b>Schnelle Reparaturen</b><span>Prothetische Reparaturen meist am selben Tag – mit Lieferservice.</span></div>
+    </div>
+    <div class="gallery reveal">
+      <a href="assets_02/empfang.jpg" target="_blank" rel="noopener"><img src="assets_02/empfang.jpg" alt="Empfangsbereich der Praxis"></a>
+      <a href="assets_02/sprechzimmer2.jpg" target="_blank" rel="noopener"><img src="assets_02/sprechzimmer2.jpg" alt="Behandlungszimmer 2"></a>
+      <a href="assets_02/opg.jpg" target="_blank" rel="noopener"><img src="assets_02/opg.jpg" alt="Röntgen-/OPG-Raum"></a>
+    </div>
+  </div>
+</section>
+
+<!-- SPRECHZEITEN -->
+<section class="hours section-pad" id="zeiten">
+  <div class="wrap hours-grid">
+    <div class="reveal">
+      <span class="eyebrow">Sprechzeiten</span>
+      <h2>Wann wir für <em>Sie</em> da sind.</h2>
+      <p>Bitte rufen Sie in jedem Fall zur Terminvereinbarung vorher an – so vermeiden wir Wartezeiten und nehmen uns die passende Zeit für Sie.</p>
+      <a class="btn btn-primary" href="tel:+49793143838">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+        Jetzt anrufen
+      </a>
+      <p class="note">Notdienst an Wochenenden &amp; Feiertagen: 0761 / 120 120 00 oder 01801 / 116 116 · kzvbw.de</p>
+    </div>
+    <ul class="daylist reveal" id="daylist">
+      <li data-day="1"><span class="d">Montag</span><span class="t">08:00–12:00 &nbsp;·&nbsp; 14:00–18:00</span></li>
+      <li data-day="2"><span class="d">Dienstag</span><span class="t">08:00–12:00 &nbsp;·&nbsp; 14:00–18:00</span></li>
+      <li data-day="3"><span class="d">Mittwoch</span><span class="t">08:00–12:00</span></li>
+      <li data-day="4"><span class="d">Donnerstag</span><span class="t">08:00–12:00 &nbsp;·&nbsp; 14:00–18:00</span></li>
+      <li data-day="5"><span class="d">Freitag</span><span class="t">08:00–12:00</span></li>
+      <li data-day="6" class="closed"><span class="d">Samstag &amp; Sonntag</span><span class="t">Notdienst</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- KONTAKT -->
+<section class="contact section-pad" id="kontakt">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow center">Kontakt &amp; Anfahrt</span>
+      <h2>So erreichen Sie <em>uns</em>.</h2>
+    </div>
+    <div class="cbox reveal">
+      <div class="cbox-cols">
+        <div class="col">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div class="k">Adresse</div>
+          <div class="v">Wachbacher Str. 14<br>97980 Bad Mergentheim</div>
+        </div>
+        <div class="col">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></div>
+          <div class="k">Telefon &amp; Fax</div>
+          <div class="v"><a class="v" href="tel:+49793143838">07931 43838</a><br>Fax 07931 9588999</div>
+        </div>
+        <div class="col">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+          <div class="k">Sprechzeiten</div>
+          <div class="v">Mo·Di·Do 08–12 &amp; 14–18<br>Mi·Fr 08–12 Uhr</div>
+        </div>
+      </div>
+      <div class="cbar">
+        <div class="adr">Zahnarztpraxis Dr. med. dent. Anna Klingbeil <span>· Wachbacher Str. 14, Bad Mergentheim</span></div>
+        <div class="acts">
+          <a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&query=Wachbacher+Str.+14+97980+Bad+Mergentheim" target="_blank" rel="noopener">Route planen</a>
+          <a class="btn btn-primary" href="tel:+49793143838">Anrufen</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="name">Dr. med. dent. Anna Klingbeil<span>Zahnarztpraxis in Bad Mergentheim</span></div>
+      <a class="btn btn-primary" href="tel:+49793143838" style="background:#fff;color:var(--blue-deep)">Termin: 07931 43838</a>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year"></span> Zahnarztpraxis Dr. med. dent. Anna Klingbeil</span>
+      <nav>
+        <a href="https://zahnarztpraxis-mgh.de/impressum.html" target="_blank" rel="noopener">Impressum</a>
+        <a href="https://zahnarztpraxis-mgh.de/datenschutz.html" target="_blank" rel="noopener">Datenschutz</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const header=document.getElementById('site-header');
+  const onScroll=()=>header.classList.toggle('scrolled',window.scrollY>20);
+  onScroll();window.addEventListener('scroll',onScroll,{passive:true});
+
+  const burger=document.getElementById('burger');
+  const nav=document.getElementById('navlinks');
+  burger.addEventListener('click',()=>{const open=nav.classList.toggle('open');burger.classList.toggle('open',open);burger.setAttribute('aria-expanded',open);});
+  nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');burger.classList.remove('open');burger.setAttribute('aria-expanded',false);}));
+
+  const todayIdx=new Date().getDay();
+  const map={1:1,2:2,3:3,4:4,5:5,6:6,0:6};
+  const t=document.querySelector('#daylist li[data-day="'+map[todayIdx]+'"]');
+  if(t&&!t.classList.contains('closed'))t.classList.add('today');
+
+  const io=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -50px 0px'});
+  document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%4*0.06)+'s';io.observe(el);});
+
+  document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
