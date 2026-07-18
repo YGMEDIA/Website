@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kinderarztpraxis Dr. Anna Weber – Kinder- &amp; Jugendmedizin in Würzburg</title>
+<meta name="description" content="Praxis für Kinder- und Jugendmedizin Dr. med. Anna Weber in Würzburg. Vorsorge, Impfberatung, klassische Homöopathie – einfühlsam und ganzheitlich. Termin: 0931 56768.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --orange:#ef8a1e;
+    --orange-deep:#d9760f;
+    --terra:#9e2b2b;
+    --terra-deep:#7f2222;
+    --sage:#7d9b6b;
+    --cream:#faf3e8;
+    --cream-2:#f4e9d8;
+    --cream-tint:#fdf9f2;
+    --ink:#3a2e28;
+    --muted:#8a7a6e;
+    --line:#ece0cf;
+    --bg:#ffffff;
+    --radius:24px;
+    --shadow-sm:0 2px 14px rgba(90,60,40,.08);
+    --shadow-md:0 20px 46px rgba(90,60,40,.14);
+    --shadow-lg:0 34px 80px rgba(90,60,40,.2);
+    --max:1160px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:var(--ink);background:var(--bg);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  h1,h2,h3{line-height:1.12;letter-spacing:-.01em}
+  .serif{font-family:'Fraunces',Georgia,serif;font-weight:500}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 30px}
+
+  .btn{display:inline-flex;align-items:center;gap:.6em;font-weight:600;font-size:1rem;padding:15px 30px;border-radius:999px;transition:transform .25s,box-shadow .25s,background .25s,color .25s;cursor:pointer;border:none;white-space:nowrap}
+  .btn-orange{background:var(--orange);color:#fff;box-shadow:0 10px 26px rgba(239,138,30,.32)}
+  .btn-orange:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(239,138,30,.44);background:var(--orange-deep)}
+  .btn-terra{background:var(--terra);color:#fff;box-shadow:0 10px 26px rgba(158,43,43,.26)}
+  .btn-terra:hover{transform:translateY(-3px);background:var(--terra-deep)}
+  .btn-line{background:transparent;color:var(--terra);border:1.5px solid var(--line)}
+  .btn-line:hover{border-color:var(--terra);transform:translateY(-3px)}
+
+  /* header */
+  header{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .35s,box-shadow .35s,padding .35s;padding:18px 0}
+  header.scrolled{background:rgba(250,243,232,.86);backdrop-filter:blur(16px) saturate(140%);-webkit-backdrop-filter:blur(16px) saturate(140%);box-shadow:0 1px 0 rgba(90,60,40,.08),0 10px 30px rgba(90,60,40,.07);padding:11px 0}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:24px}
+  .brand{display:flex;align-items:center;gap:13px}
+  .brand .mark{width:50px;height:50px;border-radius:50%;background:radial-gradient(circle at 35% 30%,var(--orange),var(--terra));color:#fff;display:grid;place-items:center;box-shadow:var(--shadow-sm)}
+  .brand .mark svg{width:28px;height:28px}
+  .brand .name{font-family:'Fraunces',serif;font-weight:600;font-size:1.08rem;color:var(--terra);line-height:1.06}
+  .brand .name small{display:block;font-family:'Inter',sans-serif;font-weight:500;font-size:.62rem;letter-spacing:.11em;text-transform:uppercase;color:var(--muted)}
+  .nav-links{display:flex;align-items:center;gap:28px}
+  .nav-links a{font-weight:500;font-size:.95rem;color:var(--ink);position:relative;transition:color .2s}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;height:2px;width:0;background:var(--orange);transition:width .28s}
+  .nav-links a:hover{color:var(--terra)}
+  .nav-links a:hover::after{width:100%}
+  .nav-links a.nav-cta{padding:11px 22px;border-radius:999px;background:var(--orange);color:#fff;font-weight:600}
+  .nav-links a.nav-cta::after{display:none}
+  .nav-links a.nav-cta:hover{background:var(--orange-deep)}
+  .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
+  .burger span{width:26px;height:2.5px;background:var(--terra);border-radius:2px;transition:.3s}
+
+  /* HERO */
+  .hero{position:relative;padding:130px 0 90px;background:linear-gradient(180deg,var(--cream),#fff 82%);overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1.04fr .96fr;gap:52px;align-items:center}
+  .hero .badge{display:inline-flex;align-items:center;gap:9px;background:#fff;border:1px solid var(--line);padding:8px 15px;border-radius:999px;font-size:.82rem;font-weight:600;color:var(--terra);box-shadow:var(--shadow-sm)}
+  .hero h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(2.5rem,5vw,3.9rem);letter-spacing:-.02em;color:var(--terra);margin:20px 0 18px}
+  .hero h1 em{font-style:italic;color:var(--orange-deep)}
+  .hero p.lead{font-size:1.15rem;color:var(--muted);max-width:32em;margin-bottom:30px}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .hero-mini{margin-top:26px;display:flex;gap:22px;flex-wrap:wrap;font-size:.9rem;color:var(--muted)}
+  .hero-mini div{display:flex;align-items:center;gap:8px}
+  .hero-mini svg{width:18px;height:18px;color:var(--sage)}
+  .hero-figure{position:relative}
+  .hero-figure .frame{border-radius:50% 50% 46% 46%/54% 54% 46% 46%;overflow:hidden;box-shadow:var(--shadow-lg);border:7px solid #fff;aspect-ratio:1/1.05}
+  .hero-figure .frame img{width:100%;height:100%;object-fit:cover}
+  .hero-figure .sig{position:absolute;left:-14px;bottom:26px;background:#fff;border-radius:16px;box-shadow:var(--shadow-md);padding:13px 20px}
+  .hero-figure .sig b{font-family:'Fraunces',serif;font-size:1.02rem;color:var(--terra);display:block}
+  .hero-figure .sig span{font-size:.78rem;color:var(--muted)}
+  .hero-figure .leaf{position:absolute;top:-10px;right:16px;width:64px;height:64px;border-radius:50%;background:var(--sage);opacity:.2}
+
+  section{position:relative}
+  .section-pad{padding:92px 0}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;color:var(--orange-deep);margin-bottom:14px}
+  .eyebrow::before{content:"";width:26px;height:2px;background:var(--orange)}
+  .eyebrow.center{justify-content:center}
+  .section-head{max-width:44em;margin-bottom:46px}
+  .section-head.center{margin-left:auto;margin-right:auto;text-align:center}
+  .section-head h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(2rem,3.7vw,2.8rem);color:var(--terra)}
+  .section-head h2 em{font-style:italic;color:var(--orange-deep)}
+  .section-head p{margin-top:14px;color:var(--muted);font-size:1.06rem}
+
+  /* LEISTUNGEN */
+  .services{background:var(--cream-tint)}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px 28px;box-shadow:var(--shadow-sm);transition:transform .3s,box-shadow .3s}
+  .card:hover{transform:translateY(-7px);box-shadow:var(--shadow-md)}
+  .card .ic{width:56px;height:56px;border-radius:16px;background:var(--cream-2);color:var(--terra);display:grid;place-items:center;margin-bottom:18px}
+  .card:nth-child(3n+2) .ic{background:rgba(239,138,30,.15);color:var(--orange-deep)}
+  .card:nth-child(3n+3) .ic{background:rgba(125,155,107,.18);color:var(--sage)}
+  .card .ic svg{width:27px;height:27px}
+  .card h3{font-size:1.14rem;color:var(--ink);margin-bottom:8px}
+  .card p{color:var(--muted);font-size:.95rem}
+
+  /* TEAM */
+  .team{background:var(--bg)}
+  .team-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  .team-photo{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-md)}
+  .team-photo img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3.4}
+  .team h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.8rem,3.4vw,2.5rem);color:var(--terra)}
+  .team h2 em{font-style:italic;color:var(--orange-deep)}
+  .team .lead{color:var(--muted);font-size:1.08rem;margin:16px 0 6px}
+  .docs{display:grid;gap:12px;margin-top:22px}
+  .docrow{display:flex;gap:14px;align-items:center;background:var(--cream-tint);border:1px solid var(--line);border-radius:16px;padding:16px 20px}
+  .docrow .av{width:44px;height:44px;border-radius:50%;background:radial-gradient(circle at 35% 30%,var(--orange),var(--terra));color:#fff;display:grid;place-items:center;font-family:'Fraunces',serif;font-weight:600;flex:none;font-size:.9rem}
+  .docrow b{font-size:1.02rem;color:var(--ink)}
+  .docrow span{display:block;color:var(--muted);font-size:.9rem}
+  .mfa{margin-top:16px;font-size:.92rem;color:var(--muted)}
+  .mfa b{color:var(--ink);font-weight:600}
+
+  /* ZEITEN */
+  .hours{background:var(--terra);color:#fff;position:relative;overflow:hidden}
+  .hours::after{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(239,138,30,.34),transparent 62%);top:-150px;right:-120px}
+  .hours-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:52px;align-items:center;position:relative;z-index:1}
+  .hours h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.9rem,3.3vw,2.6rem);color:#fff}
+  .hours h2 em{font-style:italic;color:#ffcf9e}
+  .hours p{color:rgba(255,255,255,.85);margin:14px 0 22px;max-width:30em}
+  .hours .call{display:inline-flex;align-items:center;gap:10px;font-weight:600;color:#fff;font-size:1.15rem}
+  .hours .call svg{width:20px;height:20px;color:#ffcf9e}
+  .htable{background:rgba(255,255,255,.1);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2);border-radius:var(--radius);overflow:hidden}
+  .htable .cap{padding:16px 26px;font-weight:600;border-bottom:1px solid rgba(255,255,255,.16)}
+  .htable .cap span{display:block;font-weight:400;font-size:.85rem;color:rgba(255,255,255,.75);margin-top:2px}
+  .htable .hrow{display:grid;grid-template-columns:1fr auto;gap:12px;padding:15px 26px;align-items:center}
+  .htable .hrow+.hrow{border-top:1px solid rgba(255,255,255,.14)}
+  .htable .hrow .d{font-weight:600}
+  .htable .hrow .t{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+  .htable .hrow .t span{background:rgba(255,255,255,.16);border-radius:8px;padding:5px 11px;font-size:.86rem;font-variant-numeric:tabular-nums}
+  .htable .hrow.today{background:rgba(255,255,255,.14)}
+  .htable .hrow.today .d::after{content:"Heute";margin-left:8px;font-size:.64rem;font-weight:600;background:var(--orange);color:#fff;padding:2px 8px;border-radius:999px;vertical-align:middle}
+  .htable .foot{padding:13px 26px;font-size:.86rem;color:rgba(255,255,255,.75);background:rgba(255,255,255,.06)}
+
+  /* KONTAKT */
+  .contact{background:var(--cream-tint)}
+  .contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:stretch}
+  .contact-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:40px;box-shadow:var(--shadow-sm)}
+  .contact-list{display:grid;gap:20px;margin-top:8px}
+  .contact-item{display:flex;gap:16px;align-items:flex-start}
+  .contact-item .ic{flex:none;width:46px;height:46px;border-radius:13px;background:var(--cream-2);color:var(--terra);display:grid;place-items:center}
+  .contact-item .ic svg{width:22px;height:22px}
+  .contact-item .k{font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:3px}
+  .contact-item .v{font-size:1.04rem;font-weight:500;color:var(--ink)}
+  .contact-item a.v:hover{color:var(--terra)}
+  .map-card{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow-sm);min-height:340px;display:block;position:relative;background:radial-gradient(120% 120% at 100% 0%,var(--cream-2),#fff);transition:transform .3s,box-shadow .3s}
+  .map-card::before{content:"";position:absolute;inset:0;opacity:.5;background-image:linear-gradient(rgba(158,43,43,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(158,43,43,.06) 1px,transparent 1px);background-size:38px 38px}
+  .map-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+  .map-inner{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;text-align:center;padding:30px}
+  .map-pin{width:64px;height:64px;border-radius:50%;background:var(--orange);color:#fff;display:grid;place-items:center;box-shadow:0 12px 30px rgba(239,138,30,.4)}
+  .map-pin svg{width:30px;height:30px}
+  .map-txt strong{display:block;font-family:'Fraunces',serif;font-size:1.25rem;color:var(--terra)}
+  .map-txt span{color:var(--muted);font-size:.94rem}
+  .map-btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--terra);background:rgba(255,255,255,.8);border:1px solid var(--line);padding:11px 22px;border-radius:999px;box-shadow:var(--shadow-sm)}
+
+  /* FOOTER */
+  footer{background:var(--terra-deep);color:rgba(255,255,255,.75);padding:56px 0 30px}
+  .foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px;margin-bottom:42px}
+  .foot-brand .name{font-family:'Fraunces',serif;font-size:1.3rem;color:#fff;margin-bottom:14px}
+  .foot-brand p{font-size:.95rem;max-width:26em}
+  footer h4{color:#fff;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:18px;font-weight:600}
+  footer ul{list-style:none;display:grid;gap:11px}
+  footer ul a,footer ul li{font-size:.95rem}
+  footer ul a:hover{color:#fff}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.16);padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.86rem}
+  .foot-bottom a:hover{color:#fff}
+
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+  @media (max-width:940px){
+    .hero-grid,.team-grid,.hours-grid,.contact-grid{grid-template-columns:1fr;gap:40px}
+    .hero-figure{order:-1;max-width:400px}
+    .team-photo{order:-1}
+    .cards{grid-template-columns:repeat(2,1fr)}
+    .foot-grid{grid-template-columns:1fr 1fr}
+  }
+  @media (max-width:640px){
+    .nav-links{position:fixed;top:0;right:0;height:100vh;width:76%;max-width:320px;background:rgba(250,243,232,.97);backdrop-filter:blur(18px);flex-direction:column;align-items:flex-start;justify-content:center;gap:26px;padding:40px;transform:translateX(100%);transition:transform .35s;box-shadow:-20px 0 60px rgba(90,60,40,.16)}
+    .nav-links.open{transform:translateX(0)}
+    .nav-links a{font-size:1.15rem}
+    .burger{display:flex;z-index:110}
+    .burger.open span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+    .burger.open span:nth-child(2){opacity:0}
+    .burger.open span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+    .cards{grid-template-columns:1fr}
+    .foot-grid{grid-template-columns:1fr}
+    .section-pad{padding:66px 0}
+    .hero{padding:108px 0 66px}
+    .hero-figure .sig{left:0}
+    .wrap{padding:0 20px}
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Startseite">
+      <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2.2"/><path d="M12 8v7"/><path d="M12 10l-5 3M12 10l5 3"/><path d="M9 21l3-4 3 4"/></svg></span>
+      <span class="name">Dr. Anna Weber<small>Kinder- &amp; Jugendmedizin · Würzburg</small></span>
+    </a>
+    <nav class="nav-links" id="navlinks">
+      <a href="#leistungen">Leistungen</a>
+      <a href="#team">Team</a>
+      <a href="#zeiten">Kontakt &amp; Zeiten</a>
+      <a href="#kontakt">Anfahrt</a>
+      <a class="nav-cta" href="tel:+4993156768">0931 56768</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="reveal">
+      <span class="badge">🌿 Kinderheilkunde &amp; klassische Homöopathie</span>
+      <h1>Für Ihr Kind da – mit <em>Herz</em> und Erfahrung.</h1>
+      <p class="lead">Die Praxis für Kinder- und Jugendmedizin Dr. med. Anna Weber im Herzen von Würzburg: einfühlsame Betreuung von den ersten Tagen an – schulmedizinisch fundiert und ganzheitlich gedacht.</p>
+      <div class="hero-actions">
+        <a class="btn btn-orange" href="tel:+4993156768">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+          Termin: 0931 56768
+        </a>
+        <a class="btn btn-line" href="https://kinderarztpraxis-weber.de" target="_blank" rel="noopener">Online-Termin buchen</a>
+      </div>
+      <div class="hero-mini">
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Zwei Kinderärztinnen &amp; erfahrenes Team</div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Zentral in der Handgasse</div>
+      </div>
+    </div>
+    <div class="hero-figure reveal">
+      <span class="leaf"></span>
+      <div class="frame"><img src="assets_02/weber-team.jpg" alt="Dr. med. Anna Weber, Fachärztin für Kinder- und Jugendmedizin"></div>
+      <div class="sig"><b>Dr. med. Anna Weber</b><span>Kinder- &amp; Jugendmedizin · Homöopathie</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- LEISTUNGEN -->
+<section class="services section-pad" id="leistungen">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow center">Unsere Leistungen</span>
+      <h2>Gesund aufwachsen – <em>ganzheitlich</em> begleitet.</h2>
+      <p>Von der Vorsorge bis zur klassischen Homöopathie – einfühlsame Medizin für Säuglinge, Kinder und Jugendliche.</p>
+    </div>
+    <div class="cards">
+      <article class="card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Vorsorgeuntersuchungen</h3>
+        <p>Alle U- und J-Untersuchungen (U2 bis J2) für Säuglinge, Kinder und Jugendliche.</p>
+      </article>
+      <article class="card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v6a6 6 0 0 0 12 0V3"/><path d="M6 3h12M9 21a3 3 0 0 1 6 0M12 15v6"/></svg></div>
+        <h3>Sport- &amp; ASU-Untersuchungen</h3>
+        <p>Sportuntersuchungen sowie ASU I/II im Rahmen des Jugendarbeitsschutzes.</p>
+      </article>
+      <article class="card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2 5 4-10 2 5h6"/></svg></div>
+        <h3>Diagnostik</h3>
+        <p>Ultraschall, Blutentnahme und EKG – schonend direkt in der Praxis.</p>
+      </article>
+      <article class="card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2l4 4-9 9-4 1 1-4z"/><path d="M2 22l6-2"/></svg></div>
+        <h3>Differenzierte Impfberatung</h3>
+        <p>Individuelle Beratung zu Impfungen – in Ruhe und auf Ihre Fragen abgestimmt.</p>
+      </article>
+      <article class="card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6-4.35-6-9a6 6 0 0 1 12 0c0 4.65-6 9-6 9z"/><circle cx="12" cy="12" r="1.5"/></svg></div>
+        <h3>Psychosomatische Grundversorgung</h3>
+        <p>Wenn Körper und Seele Zuwendung brauchen – wir hören zu und begleiten.</p>
+      </article>
+      <article class="card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8 6 6 9 6 13a6 6 0 0 0 12 0c0-4-2-7-6-11z"/><path d="M9 13c1-1 2-1 3-1"/></svg></div>
+        <h3>Klassische Homöopathie</h3>
+        <p>Auf Wunsch ergänzen wir die Behandlung um die klassische Homöopathie.</p>
+      </article>
+      <article class="card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2"/><circle cx="18" cy="6" r="2"/><circle cx="12" cy="18" r="2"/><path d="M7.5 7.5l3 8M16.5 7.5l-3 8M8 6h8"/></svg></div>
+        <h3>Gute Vernetzung</h3>
+        <p>Enge Zusammenarbeit mit Therapeuten, Hebammen, Frühförderstelle und Kinderkliniken.</p>
+      </article>
+      <article class="card reveal" style="display:flex;flex-direction:column;justify-content:center;background:linear-gradient(140deg,var(--terra),var(--terra-deep));border:none;color:#fff">
+        <h3 style="color:#fff">Noch Fragen?</h3>
+        <p style="color:rgba(255,255,255,.9);margin-bottom:20px">Rufen Sie uns an – wir nehmen uns gern Zeit für Ihr Anliegen.</p>
+        <a class="btn btn-orange" href="tel:+4993156768" style="align-self:flex-start">0931 56768</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="team section-pad" id="team">
+  <div class="wrap team-grid">
+    <div class="team-photo reveal">
+      <img src="assets_02/weber-team.jpg" alt="Dr. med. Anna Weber">
+    </div>
+    <div class="reveal">
+      <span class="eyebrow">Ihr Praxisteam</span>
+      <h2>Zwei Ärztinnen, ein <em>herzliches</em> Team.</h2>
+      <p class="lead">Bei uns werden Sie und Ihr Kind von erfahrenen Kinder- und Jugendärztinnen und einem eingespielten Team medizinischer Fachangestellter betreut.</p>
+      <div class="docs">
+        <div class="docrow"><span class="av">AW</span><div><b>Dr. Anna Weber</b><span>Fachärztin für Kinder- und Jugendmedizin · Homöopathie</span></div></div>
+        <div class="docrow"><span class="av">EE</span><div><b>Dr. Eva Engelke</b><span>Ärztin für Kinder- und Jugendmedizin</span></div></div>
+      </div>
+      <p class="mfa">Als medizinische Fachangestellte für Sie da: <b>Nadine Merz</b>, <b>Ulla Karle</b>, <b>Sarah Nonnenmacher</b> und <b>Carina Bauer</b>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ZEITEN -->
+<section class="hours section-pad" id="zeiten">
+  <div class="wrap hours-grid">
+    <div class="reveal">
+      <span class="eyebrow" style="color:#ffcf9e">Telefon- &amp; Sprechzeiten</span>
+      <h2>Wann wir für <em>Sie</em> erreichbar sind.</h2>
+      <p>Wir bitten in allen Fällen um eine telefonische Terminvereinbarung – so halten wir die Wartezeiten für alle Patienten so kurz wie möglich. Vorsorgen und Impfungen können Sie auch online buchen.</p>
+      <div class="call">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+        0931 56768
+      </div>
+    </div>
+    <div class="htable reveal" id="htable">
+      <div class="cap">Telefonische Erreichbarkeit<span>Termine bitte telefonisch oder online vereinbaren</span></div>
+      <div class="hrow" data-day="1"><span class="d">Montag</span><span class="t"><span>08:00–12:00</span><span>14:00–16:30</span></span></div>
+      <div class="hrow" data-day="2"><span class="d">Dienstag</span><span class="t"><span>08:00–12:00</span><span>14:00–16:30</span></span></div>
+      <div class="hrow" data-day="3"><span class="d">Mittwoch</span><span class="t"><span>08:00–12:00</span></span></div>
+      <div class="hrow" data-day="4"><span class="d">Donnerstag</span><span class="t"><span>08:00–12:00</span><span>14:00–16:30</span></span></div>
+      <div class="hrow" data-day="5"><span class="d">Freitag</span><span class="t"><span>08:00–12:00</span></span></div>
+      <div class="foot">Außerhalb der Sprechzeiten / im Notfall: ärztlicher Bereitschaftsdienst 116117</div>
+    </div>
+  </div>
+</section>
+
+<!-- KONTAKT -->
+<section class="contact section-pad" id="kontakt">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow center">Kontakt &amp; Anfahrt</span>
+      <h2>So erreichen Sie <em>uns</em>.</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card reveal">
+        <div class="contact-list">
+          <div class="contact-item">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            <div><div class="k">Adresse</div><div class="v">Handgasse 8<br>97070 Würzburg</div></div>
+          </div>
+          <div class="contact-item">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span>
+            <div><div class="k">Telefon &amp; Fax</div><a class="v" href="tel:+4993156768">0931 56768</a><div class="v" style="font-weight:400;color:var(--muted);font-size:.95rem">Fax 0931 3539152</div></div>
+          </div>
+          <div class="contact-item">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="m22 6-10 7L2 6"/></svg></span>
+            <div><div class="k">E-Mail</div><a class="v" href="mailto:info@kinderarztpraxis-weber.de">info@kinderarztpraxis-weber.de</a></div>
+          </div>
+        </div>
+        <a class="btn btn-orange" href="tel:+4993156768" style="margin-top:26px;width:100%;justify-content:center">Jetzt anrufen &amp; Termin vereinbaren</a>
+      </div>
+      <a class="map-card reveal" href="https://www.google.com/maps/search/?api=1&query=Handgasse+8+97070+W%C3%BCrzburg" target="_blank" rel="noopener" aria-label="Route zur Praxis planen">
+        <div class="map-inner">
+          <span class="map-pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+          <div class="map-txt"><strong>Handgasse 8</strong><span>97070 Würzburg</span></div>
+          <span class="map-btn">Route planen <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="name">Kinderarztpraxis Dr. Anna Weber</div>
+        <p>Praxis für Kinder- und Jugendmedizin · Dr. med. Anna Weber &amp; Dr. Eva Engelke · Handgasse 8, Würzburg.</p>
+      </div>
+      <div>
+        <h4>Praxis</h4>
+        <ul>
+          <li><a href="#leistungen">Leistungen</a></li>
+          <li><a href="#team">Team</a></li>
+          <li><a href="#zeiten">Sprechzeiten</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <ul>
+          <li><a href="tel:+4993156768">0931 56768</a></li>
+          <li><a href="mailto:info@kinderarztpraxis-weber.de">info@kinderarztpraxis-weber.de</a></li>
+          <li>Handgasse 8</li>
+          <li>97070 Würzburg</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year"></span> Praxis für Kinder- und Jugendmedizin Dr. med. Anna Weber</span>
+      <span style="display:flex;gap:20px">
+        <a href="https://kinderarztpraxis-weber.de/impressum/" target="_blank" rel="noopener">Impressum</a>
+        <a href="https://kinderarztpraxis-weber.de/datenschutz/" target="_blank" rel="noopener">Datenschutz</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const header=document.getElementById('site-header');
+  const onScroll=()=>header.classList.toggle('scrolled',window.scrollY>20);
+  onScroll();window.addEventListener('scroll',onScroll,{passive:true});
+
+  const burger=document.getElementById('burger');
+  const nav=document.getElementById('navlinks');
+  burger.addEventListener('click',()=>{const open=nav.classList.toggle('open');burger.classList.toggle('open',open);burger.setAttribute('aria-expanded',open);});
+  nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');burger.classList.remove('open');burger.setAttribute('aria-expanded',false);}));
+
+  const todayIdx=new Date().getDay();
+  const row=document.querySelector('#htable .hrow[data-day="'+todayIdx+'"]');
+  if(row)row.classList.add('today');
+
+  const io=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -50px 0px'});
+  document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%3*0.07)+'s';io.observe(el);});
+
+  document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
