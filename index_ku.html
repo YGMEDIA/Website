@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zahnarztpraxis Dr. Kuhmann – Zahnarzt in Würzburg</title>
+<meta name="description" content="Zahnarztpraxis Dr. Kuhmann in Würzburg, Domstraße 7. Moderne Zahnmedizin, sorgfältige Diagnostik, schonende Behandlung und langfristige Betreuung – damit Ihre Zähne ein Leben lang gesund bleiben. Termin online buchen.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue:#0069ba;
+    --blue-deep:#00518f;
+    --blue-dark:#023a66;
+    --blue-night:#012a4d;
+    --cyan:#2e9fe0;
+    --sky:#eaf4fb;
+    --sky-soft:#d8e9f7;
+    --ink:#14212d;
+    --muted:#59697a;
+    --line:#e1ebf3;
+    --paper:#ffffff;
+    --wash:#f4f9fd;
+    --radius:20px;
+    --shadow:0 20px 55px -26px rgba(1,58,102,.4);
+    --shadow-sm:0 10px 30px -18px rgba(1,58,102,.5);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  h1,h2,h3{line-height:1.13;letter-spacing:-.02em}
+  .serif{font-family:'Fraunces',Georgia,serif;font-weight:500;letter-spacing:-.01em}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{width:min(1180px,92vw);margin:0 auto}
+  .eyebrow{display:inline-flex;align-items:center;gap:.5em;font-size:.74rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+  .eyebrow::before{content:"";width:26px;height:1.5px;background:var(--cyan)}
+  .eyebrow.light{color:var(--cyan)}
+  .btn{display:inline-flex;align-items:center;gap:.55em;font-weight:600;font-size:.98rem;padding:.85em 1.5em;border-radius:100px;transition:transform .25s ease,box-shadow .25s ease,background .25s ease;cursor:pointer;border:none}
+  .btn-primary{background:var(--blue);color:#fff;box-shadow:0 12px 26px -12px rgba(0,105,186,.7)}
+  .btn-primary:hover{transform:translateY(-3px);background:var(--blue-deep);box-shadow:0 18px 34px -12px rgba(0,105,186,.8)}
+  .btn-light{background:#fff;color:var(--blue-deep)}
+  .btn-light:hover{transform:translateY(-3px);box-shadow:0 14px 30px -12px rgba(0,0,0,.3)}
+  .btn-ghost{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.35)}
+  .btn-ghost:hover{transform:translateY(-3px);background:rgba(255,255,255,.16)}
+  .btn-ghost-d{background:#fff;color:var(--blue-deep);border:1px solid var(--line)}
+  .btn-ghost-d:hover{transform:translateY(-3px);box-shadow:var(--shadow-sm)}
+
+  /* Header */
+  header{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.05rem 0;transition:padding .3s,background .3s,box-shadow .3s}
+  header.scrolled{padding:.55rem 0;background:rgba(255,255,255,.78);backdrop-filter:blur(16px) saturate(1.3);-webkit-backdrop-filter:blur(16px) saturate(1.3);box-shadow:0 1px 0 rgba(1,58,102,.09)}
+  .nav{display:flex;align-items:center;justify-content:space-between}
+  .brand{display:flex;align-items:center;gap:.65rem;font-weight:600;color:var(--blue-deep)}
+  .brand img{height:38px;width:auto}
+  .brand .bt{font-size:1rem;line-height:1.05;letter-spacing:-.01em}
+  .brand .bt small{display:block;font-size:.68rem;font-weight:500;color:var(--muted);letter-spacing:.03em}
+  header.hero-mode:not(.scrolled) .brand{color:#fff}
+  header.hero-mode:not(.scrolled) .brand img{filter:brightness(0) invert(1)}
+  header.hero-mode:not(.scrolled) .brand .bt small{color:rgba(255,255,255,.75)}
+  header.hero-mode:not(.scrolled) .nav-links a{color:#fff}
+  header.hero-mode:not(.scrolled) .nav-phone{color:#fff}
+  .nav-links{display:flex;align-items:center;gap:1.9rem}
+  .nav-links a{font-size:.94rem;font-weight:500;color:var(--blue-deep);opacity:.85;transition:opacity .2s}
+  .nav-links a:hover{opacity:1}
+  .nav-cta{display:flex;align-items:center;gap:1rem}
+  .nav-phone{font-weight:600;color:var(--blue-deep);font-size:.94rem;white-space:nowrap}
+  .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
+  .burger span{width:24px;height:2px;background:#fff;border-radius:2px;transition:.3s}
+  header.scrolled .burger span{background:var(--blue-deep)}
+  .mobile-menu{display:none}
+
+  /* Hero */
+  .hero{position:relative;padding:10rem 0 5.5rem;color:#fff;overflow:hidden;background:linear-gradient(155deg,var(--blue) 0%,var(--blue-deep) 42%,var(--blue-night) 100%)}
+  .hero::before{content:"";position:absolute;inset:0;z-index:0;background:radial-gradient(760px 520px at 82% 6%,rgba(46,159,224,.5),transparent 60%),radial-gradient(600px 500px at 6% 92%,rgba(0,105,186,.55),transparent 60%)}
+  .hero-arc{position:absolute;right:-6%;top:8%;width:min(560px,52vw);opacity:.16;z-index:0}
+  .hero-inner{position:relative;z-index:2;max-width:760px}
+  .hero .tagpill{display:inline-flex;align-items:center;gap:.55rem;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);backdrop-filter:blur(8px);border-radius:100px;padding:.5rem 1.05rem;font-size:.83rem;font-weight:500;margin-bottom:1.6rem}
+  .hero .tagpill .dot{width:8px;height:8px;border-radius:50%;background:#54e39b;box-shadow:0 0 0 4px rgba(84,227,155,.25)}
+  .hero h1{font-size:clamp(2.4rem,5vw,4rem);margin-bottom:1.3rem;letter-spacing:-.03em}
+  .hero h1 .serif{font-style:italic;font-weight:500;color:#bfe2fb}
+  .hero p.lead{font-size:1.15rem;color:rgba(255,255,255,.85);max-width:38em;margin-bottom:2.1rem}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:.85rem;align-items:center}
+  .hero-meta{display:flex;flex-wrap:wrap;gap:1.1rem;margin-top:2.6rem}
+  .hero-chip{display:flex;align-items:center;gap:.7rem;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(10px);border-radius:14px;padding:.75rem 1.05rem}
+  .hero-chip svg{flex:none;color:#bfe2fb}
+  .hero-chip b{display:block;font-size:.92rem;font-weight:600}
+  .hero-chip small{font-size:.76rem;color:rgba(255,255,255,.68)}
+  .hero-wave{position:absolute;left:0;right:0;bottom:-1px;z-index:1;line-height:0}
+
+  /* Journey (signature) */
+  .journey{padding:5rem 0 5.5rem}
+  .journey .sec-head{text-align:center;max-width:640px;margin:0 auto 3.2rem}
+  .journey-track{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:1.3rem}
+  .journey-track::before{content:"";position:absolute;top:34px;left:12%;right:12%;height:2px;background:linear-gradient(90deg,var(--sky-soft),var(--cyan),var(--sky-soft));z-index:0}
+  .jstep{position:relative;z-index:1;text-align:center;padding:0 .4rem}
+  .jnum{width:68px;height:68px;margin:0 auto 1.3rem;border-radius:50%;background:#fff;border:2px solid var(--sky-soft);display:grid;place-items:center;color:var(--blue);box-shadow:var(--shadow-sm);transition:transform .3s,border-color .3s,background .3s}
+  .jstep:hover .jnum{transform:translateY(-5px);border-color:var(--blue);background:var(--blue);color:#fff}
+  .jnum span{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:600}
+  .jstep h3{font-size:1.18rem;color:var(--blue-deep);margin-bottom:.5rem}
+  .jstep p{font-size:.92rem;color:var(--muted)}
+
+  /* Section basics */
+  .band{padding:5.5rem 0}
+  .sec-head h2{font-size:clamp(1.9rem,3.4vw,2.7rem);color:var(--blue-deep);margin:.9rem 0 .8rem}
+  .sec-head p{color:var(--muted);font-size:1.05rem}
+  .sec-head.center{text-align:center;max-width:640px;margin-inline:auto}
+
+  /* Welcome split */
+  .welcome{display:grid;grid-template-columns:1.05fr .95fr;gap:3.4rem;align-items:center}
+  .welcome-copy .big{font-family:'Fraunces',serif;font-size:1.7rem;color:var(--blue-deep);line-height:1.32;font-weight:500;margin:1rem 0 1.3rem;letter-spacing:-.01em}
+  .welcome-copy p{color:var(--muted);margin-bottom:1rem}
+  .lang-card{background:linear-gradient(160deg,var(--sky),#fff);border:1px solid var(--line);border-radius:24px;padding:2.2rem;box-shadow:var(--shadow-sm)}
+  .lang-card h3{font-size:1.15rem;color:var(--blue-deep);margin-bottom:.5rem}
+  .lang-card p{color:var(--muted);font-size:.93rem;margin-bottom:1.3rem}
+  .lang-list{display:flex;flex-wrap:wrap;gap:.55rem}
+  .lang-list span{background:#fff;border:1px solid var(--line);border-radius:100px;padding:.42em .95em;font-size:.85rem;font-weight:500;color:var(--blue-deep);transition:.2s}
+  .lang-list span:hover{background:var(--blue);color:#fff;border-color:var(--blue);transform:translateY(-2px)}
+
+  /* Leistungen */
+  .lst-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+  .lcard{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:1.9rem;transition:transform .3s,box-shadow .3s,border-color .3s;position:relative;overflow:hidden}
+  .lcard::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:linear-gradient(90deg,var(--blue),var(--cyan));transform:scaleX(0);transform-origin:left;transition:transform .35s ease}
+  .lcard:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:transparent}
+  .lcard:hover::after{transform:scaleX(1)}
+  .lcard .ic{width:50px;height:50px;border-radius:14px;background:var(--sky);color:var(--blue);display:grid;place-items:center;margin-bottom:1.1rem;transition:.3s}
+  .lcard:hover .ic{background:var(--blue);color:#fff}
+  .lcard h3{font-size:1.2rem;color:var(--blue-deep);margin-bottom:.5rem}
+  .lcard p{color:var(--muted);font-size:.94rem}
+  .lcard.wide{grid-column:span 3;display:flex;gap:2rem;align-items:center;background:linear-gradient(120deg,var(--sky),#fff)}
+  .lcard.wide .ic{flex:none;width:58px;height:58px;margin-bottom:0}
+  .lcard.wide div h3{margin-bottom:.3rem}
+
+  /* Tech band */
+  .tech{position:relative;background:var(--blue-deep);color:#fff;border-radius:32px;overflow:hidden}
+  .tech::before{content:"";position:absolute;inset:0;background:radial-gradient(680px 420px at 85% 12%,rgba(46,159,224,.4),transparent 62%),radial-gradient(520px 400px at 4% 92%,rgba(0,105,186,.4),transparent 60%)}
+  .tech-in{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:3rem;align-items:center;padding:3.4rem}
+  .tech h2{font-size:clamp(1.8rem,3vw,2.5rem);margin:.9rem 0 1rem}
+  .tech p{color:rgba(255,255,255,.82);margin-bottom:1rem}
+  .tech-stats{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
+  .tstat{background:rgba(255,255,255,.08);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.15);border-radius:18px;padding:1.5rem}
+  .tstat .n{font-family:'Fraunces',serif;font-size:2.1rem;font-weight:600;line-height:1;margin-bottom:.4rem}
+  .tstat small{color:rgba(255,255,255,.72);font-size:.86rem}
+
+  /* Hours + Contact */
+  .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:stretch}
+  .hours-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:2.4rem;box-shadow:var(--shadow-sm)}
+  .hours-card h3{font-size:1.3rem;color:var(--blue-deep);margin-bottom:1.4rem;display:flex;align-items:center;gap:.6rem}
+  .hrow{display:flex;justify-content:space-between;gap:1rem;padding:.75rem 0;border-bottom:1px solid var(--line);font-size:.96rem}
+  .hrow:last-of-type{border-bottom:none}
+  .hrow .d{color:var(--blue-deep);font-weight:600}
+  .hrow .t{color:var(--muted);text-align:right}
+  .hnote{margin-top:1rem;font-size:.85rem;color:var(--muted);background:var(--sky);border-radius:12px;padding:.7rem .9rem}
+  .contact-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:2.4rem;box-shadow:var(--shadow-sm);display:flex;flex-direction:column}
+  .contact-card h3{font-size:1.3rem;color:var(--blue-deep);margin-bottom:1.4rem}
+  .cline{display:flex;gap:.9rem;align-items:flex-start;margin-bottom:1.1rem}
+  .cline .ic{width:40px;height:40px;border-radius:11px;background:var(--sky);color:var(--blue);display:grid;place-items:center;flex:none}
+  .cline b{color:var(--blue-deep);display:block;font-size:.98rem}
+  .cline span{color:var(--muted);font-size:.92rem}
+  .standort-photo{margin-top:auto;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+  .standort-photo img{width:100%;height:150px;object-fit:cover;object-position:center 40%;transition:transform .5s}
+  .standort-photo:hover img{transform:scale(1.04)}
+
+  /* CTA */
+  .cta{position:relative;overflow:hidden;background:linear-gradient(150deg,var(--blue),var(--blue-night));border-radius:32px;padding:3.6rem;text-align:center;color:#fff}
+  .cta::before{content:"";position:absolute;inset:0;background:radial-gradient(600px 360px at 80% 15%,rgba(46,159,224,.4),transparent 60%)}
+  .cta .in{position:relative}
+  .cta h2{font-size:clamp(1.9rem,3vw,2.6rem);margin-bottom:.7rem}
+  .cta p{color:rgba(255,255,255,.85);max-width:40em;margin:0 auto 1.9rem;font-size:1.06rem}
+  .cta-actions{display:flex;gap:.9rem;justify-content:center;flex-wrap:wrap}
+
+  /* Footer */
+  footer{background:var(--blue-night);color:rgba(255,255,255,.72);padding:3.5rem 0 2rem;margin-top:5rem}
+  .foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:2.5rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.13)}
+  .foot-brand img{height:44px;filter:brightness(0) invert(1);margin-bottom:1rem;opacity:.95}
+  .foot-brand p{font-size:.9rem;max-width:26em}
+  .foot-col h4{color:#fff;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:1rem;font-weight:600}
+  .foot-col a,.foot-col span{display:block;font-size:.9rem;margin-bottom:.6rem;color:rgba(255,255,255,.72);transition:color .2s}
+  .foot-col a:hover{color:#bfe2fb}
+  .foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;padding-top:1.6rem;font-size:.82rem}
+  .foot-bottom a{color:rgba(255,255,255,.72)}
+  .foot-bottom a:hover{color:#fff}
+
+  /* Reveal */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal[data-d="1"]{transition-delay:.08s}
+  .reveal[data-d="2"]{transition-delay:.16s}
+  .reveal[data-d="3"]{transition-delay:.24s}
+
+  @media(max-width:960px){
+    .welcome{grid-template-columns:1fr;gap:2.2rem}
+    .journey-track{grid-template-columns:1fr 1fr;gap:2rem}
+    .journey-track::before{display:none}
+    .lst-grid{grid-template-columns:1fr 1fr}
+    .lcard.wide{grid-column:span 2;flex-direction:column;text-align:center;align-items:flex-start}
+    .tech-in{grid-template-columns:1fr;padding:2.4rem}
+    .info-grid{grid-template-columns:1fr}
+    .foot-grid{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:640px){
+    .nav-links,.nav-phone,.nav-cta{display:none}
+    .burger{display:flex}
+    .mobile-menu{display:block;position:fixed;inset:0 0 auto 0;top:0;z-index:99;background:rgba(255,255,255,.98);backdrop-filter:blur(20px);padding:5rem 2rem 2.5rem;transform:translateY(-100%);transition:transform .4s cubic-bezier(.4,0,.2,1);box-shadow:var(--shadow)}
+    .mobile-menu.open{transform:translateY(0)}
+    .mobile-menu a{display:block;font-size:1.15rem;font-weight:500;color:var(--blue-deep);padding:.9rem 0;border-bottom:1px solid var(--line)}
+    .mobile-menu .btn{margin-top:1.4rem;width:100%;justify-content:center}
+    .hero{padding-top:8rem}
+    .band,.journey{padding:4rem 0}
+    .journey-track{grid-template-columns:1fr;gap:1.4rem}
+    .jnum{margin-bottom:.9rem}
+    .jstep{display:flex;gap:1.1rem;text-align:left;align-items:flex-start}
+    .jstep .jnum{margin:0}
+    .lst-grid{grid-template-columns:1fr}
+    .lcard.wide{grid-column:span 1}
+    .foot-grid{grid-template-columns:1fr}
+    .tech-in,.cta,.hours-card,.contact-card,.tech{padding:1.8rem;border-radius:22px}
+    .tech-stats{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<header id="header" class="hero-mode">
+  <div class="wrap nav">
+    <a href="#top" class="brand">
+      <img src="assets_02/logo.png" alt="Logo Zahnarztpraxis Dr. Kuhmann">
+      <span class="bt">Dr. Kuhmann<small>Zahnarzt · Würzburg</small></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#weg">Ihr Weg</a>
+      <a href="#leistungen">Leistungen</a>
+      <a href="#praxis">Praxis</a>
+      <a href="#sprechzeiten">Sprechzeiten</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <div class="nav-cta">
+      <span class="nav-phone">0931 18081</span>
+      <a href="#termin" class="btn btn-light">Termin buchen</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#weg">Ihr Weg</a>
+  <a href="#leistungen">Leistungen</a>
+  <a href="#praxis">Praxis</a>
+  <a href="#sprechzeiten">Sprechzeiten</a>
+  <a href="#kontakt">Kontakt</a>
+  <a href="#termin" class="btn btn-primary">Termin online buchen</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <svg class="hero-arc" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M200 30c94 0 170 76 170 170s-76 170-170 170" stroke="#fff" stroke-width="2"/>
+    <path d="M200 90c61 0 110 49 110 110s-49 110-110 110" stroke="#fff" stroke-width="2"/>
+    <path d="M200 150c28 0 50 22 50 50s-22 50-50 50" stroke="#fff" stroke-width="2"/>
+  </svg>
+  <div class="wrap hero-inner reveal in">
+    <span class="tagpill"><span class="dot"></span>Zahnarztpraxis in der Würzburger Innenstadt</span>
+    <h1>Damit Ihre Zähne <span class="serif">ein Leben lang</span> gesund bleiben.</h1>
+    <p class="lead">Bei uns stehen Sie im Mittelpunkt: sorgfältige Diagnostik, schonende Behandlungen und eine langfristige Betreuung – damit Sie sich jederzeit sicher fühlen und Ihre Zahngesundheit dauerhaft erhalten bleibt.</p>
+    <div class="hero-actions">
+      <a href="#termin" class="btn btn-light">Termin online buchen</a>
+      <a href="tel:093118081" class="btn btn-ghost">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        0931 18081
+      </a>
+    </div>
+    <div class="hero-meta">
+      <div class="hero-chip">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <div><b>Domstraße 7</b><small>97070 Würzburg</small></div>
+      </div>
+      <div class="hero-chip">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        <div><b>Mo – Fr</b><small>8:00 – 12:30 &amp; 14:00 – 18:00</small></div>
+      </div>
+      <div class="hero-chip">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+        <div><b>Seit 2006</b><small>für Würzburg da</small></div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-wave">
+    <svg viewBox="0 0 1440 70" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:70px;display:block"><path d="M0,40 C240,72 480,72 720,48 C960,24 1200,24 1440,44 L1440,70 L0,70 Z" fill="#ffffff"/></svg>
+  </div>
+</section>
+
+<!-- JOURNEY (signature) -->
+<section class="journey" id="weg">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" style="justify-content:center;display:flex">Ihr Weg zu gesunden Zähnen</span>
+      <h2>In vier Schritten dauerhaft gesund</h2>
+      <p>Ein klarer, durchdachter Weg – von der Vorbeugung bis zur Nachsorge. So bleiben Ihre Zähne langfristig gesund.</p>
+    </div>
+    <div class="journey-track">
+      <div class="jstep reveal">
+        <div class="jnum"><span>1</span></div>
+        <div><h3>Vorbeugen</h3><p>Damit Probleme gar nicht erst entstehen: mit regelmäßiger Vorsorge und professioneller Reinigung.</p></div>
+      </div>
+      <div class="jstep reveal" data-d="1">
+        <div class="jnum"><span>2</span></div>
+        <div><h3>Erkennen</h3><p>Früh erkannt ist halb behandelt: Wir entdecken Risiken rechtzeitig, bevor größere Eingriffe nötig werden.</p></div>
+      </div>
+      <div class="jstep reveal" data-d="2">
+        <div class="jnum"><span>3</span></div>
+        <div><h3>Behandeln</h3><p>Schonend und effizient: mit modernen Methoden für nachhaltige Ergebnisse und den Erhalt Ihrer Zähne.</p></div>
+      </div>
+      <div class="jstep reveal" data-d="3">
+        <div class="jnum"><span>4</span></div>
+        <div><h3>Nachsorge</h3><p>Auch nach der Behandlung für Sie da: damit Ihre Zahngesundheit stabil bleibt und sich weiter verbessert.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WELCOME + LANGUAGES -->
+<section class="band" id="praxis" style="background:linear-gradient(180deg,#fff,var(--wash))">
+  <div class="wrap welcome">
+    <div class="welcome-copy reveal">
+      <span class="eyebrow">Willkommen bei Dr. Kuhmann</span>
+      <p class="big">„Moderne Zahnmedizin in Würzburg – für gesunde und schöne Zähne."</p>
+      <p>Mit moderner Technik und einem erfahrenen, qualifizierten Team sorgen wir für präzise Diagnosen und schonende Behandlungen. So können Sie sich darauf verlassen, dass Ihre Zähne langfristig gesund bleiben – in einer Praxis, die auf dem neuesten Stand der Zahnmedizin arbeitet.</p>
+      <p>Seit 2006 sind wir in der Domstraße mitten in Würzburg für Sie da – mit Sorgfalt, Zeit und einem offenen Ohr für Ihre Anliegen.</p>
+    </div>
+    <div class="lang-card reveal" data-d="1">
+      <h3>Bei uns sind Sie in vielen Sprachen willkommen</h3>
+      <p>Damit sich jede Patientin und jeder Patient gut aufgehoben fühlt, verständigen wir uns in Ihrer Sprache.</p>
+      <div class="lang-list">
+        <span>Deutsch</span><span>English</span><span>العربية</span><span>Türkçe</span><span>Español</span><span>Ελληνικά</span><span>Українська</span><span>Română</span><span>Shqip</span><span>हिन्दी</span><span>فارسی</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEISTUNGEN -->
+<section class="band" id="leistungen">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Unsere Leistungen</span>
+      <h2>Behandlung auf dem neuesten Stand</h2>
+      <p>Von der Vorsorge bis zum hochwertigen Zahnersatz – umfassend, schonend und individuell auf Sie abgestimmt.</p>
+    </div>
+    <div class="lst-grid">
+      <div class="lcard reveal">
+        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c-3 0-4.5 2-4.5 5 0 2 .5 3 .5 6s-1 5 1 8c.8 1 1.5-1 2-3s1-3 1-3 .5 1 1 3 1.2 4 2 3c2-3 1-5 1-8s.5-4 .5-6c0-3-1.5-5-4.5-5z"/></svg></div>
+        <h3>Vorsorge &amp; Prophylaxe</h3>
+        <p>Regelmäßige Kontrolle und professionelle Zahnreinigung – damit Probleme gar nicht erst entstehen.</p>
+      </div>
+      <div class="lcard reveal" data-d="1">
+        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <h3>Wurzelkanalbehandlung</h3>
+        <p>Mit moderner Technik erhalten wir Ihren eigenen Zahn – präzise und so schonend wie möglich.</p>
+      </div>
+      <div class="lcard reveal" data-d="2">
+        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.8H20l-4.9 3.6 1.9 5.8L12 14.6 7 18.2l1.9-5.8L4 8.8h6.1L12 3z"/></svg></div>
+        <h3>Ästhetische Zahnheilkunde</h3>
+        <p>Für ein natürlich schönes Lächeln: hochwertige, zahnfarbene Versorgung nach ästhetischen Gesichtspunkten.</p>
+      </div>
+      <div class="lcard reveal">
+        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12s2-6 8-6 8 6 8 6M4 12s2 6 8 6 8-6 8-6"/><circle cx="12" cy="12" r="2"/></svg></div>
+        <h3>Parodontosebehandlung</h3>
+        <p>Gesundes Zahnfleisch ist die Basis fester Zähne. Wir behandeln Entzündungen gezielt und nachhaltig.</p>
+      </div>
+      <div class="lcard reveal" data-d="1">
+        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M6 21V9l6-4 6 4v12M10 21v-5h4v5"/></svg></div>
+        <h3>Zahnersatz mit Implantaten</h3>
+        <p>Fester, natürlicher Zahnersatz auf Implantaten – für sicheres Kauen und ein unbeschwertes Lächeln.</p>
+      </div>
+      <div class="lcard reveal" data-d="2">
+        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6.7-4.35-9.33-8.5C.9 9.5 2 5.5 5.5 5.5 7.5 5.5 12 8 12 8s4.5-2.5 6.5-2.5c3.5 0 4.6 4 2.83 7C18.7 16.65 12 21 12 21z"/></svg></div>
+        <h3>Langfristige Betreuung</h3>
+        <p>Auch nach der Behandlung begleiten wir Sie mit strukturierter Nachsorge – für stabile Zahngesundheit.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TECH / QUALITÄT -->
+<section class="band" style="padding-top:1rem">
+  <div class="wrap">
+    <div class="tech reveal">
+      <div class="tech-in">
+        <div>
+          <span class="eyebrow light">Technik &amp; Qualität</span>
+          <h2>Präzise Diagnosen, schonende Behandlung</h2>
+          <p>Eine Praxis auf dem neuesten Stand der Zahnmedizin: Moderne Technik unterstützt uns dabei, Risiken früh zu erkennen und Sie so schonend wie möglich zu behandeln – mit nachhaltigen Ergebnissen.</p>
+          <p style="color:rgba(255,255,255,.72);font-size:.95rem">Transparente Kosten und eine ehrliche Beratung gehören für uns selbstverständlich dazu.</p>
+        </div>
+        <div class="tech-stats">
+          <div class="tstat"><div class="n">2006</div><small>in Würzburg für Sie da</small></div>
+          <div class="tstat"><div class="n">4</div><small>Schritte: Vorbeugen bis Nachsorge</small></div>
+          <div class="tstat"><div class="n">11</div><small>Sprachen in der Praxis</small></div>
+          <div class="tstat"><div class="n">100%</div><small>transparente Kosten</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPRECHZEITEN + KONTAKT -->
+<section class="band" id="sprechzeiten" style="background:linear-gradient(180deg,var(--wash),#fff)">
+  <div class="wrap">
+    <div class="sec-head reveal" id="kontakt">
+      <span class="eyebrow">Sprechzeiten &amp; Kontakt</span>
+      <h2>Wir sind für Sie da</h2>
+    </div>
+    <div class="info-grid">
+      <div class="hours-card reveal">
+        <h3><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>Sprechzeiten</h3>
+        <div class="hrow"><span class="d">Montag</span><span class="t">8:00 – 12:30 &nbsp;·&nbsp; 14:00 – 18:00</span></div>
+        <div class="hrow"><span class="d">Dienstag</span><span class="t">8:00 – 12:30 &nbsp;·&nbsp; 14:00 – 18:00</span></div>
+        <div class="hrow"><span class="d">Mittwoch</span><span class="t">8:00 – 12:30 &nbsp;·&nbsp; nachmittags geschlossen</span></div>
+        <div class="hrow"><span class="d">Donnerstag</span><span class="t">8:00 – 12:30 &nbsp;·&nbsp; 14:00 – 18:00</span></div>
+        <div class="hrow"><span class="d">Freitag</span><span class="t">8:00 – 12:30 &nbsp;·&nbsp; 14:00 – 16:00</span></div>
+      </div>
+      <div class="contact-card reveal" data-d="1">
+        <h3>Zahnarztpraxis Dr. Kuhmann</h3>
+        <div class="cline">
+          <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><b>Adresse</b><span>Domstraße 7, 97070 Würzburg – mitten in der Innenstadt</span></div>
+        </div>
+        <div class="cline">
+          <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <div><b>Telefon</b><span><a href="tel:093118081" style="color:var(--blue);font-weight:600">0931 18081</a></span></div>
+        </div>
+        <div class="standort-photo"><img src="assets_02/standort.jpg" alt="Standort der Praxis in der Domstraße, Würzburg"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="band" id="termin" style="padding-top:1rem">
+  <div class="wrap">
+    <div class="cta reveal">
+      <div class="in">
+        <span class="eyebrow light" style="justify-content:center;display:flex">Termin</span>
+        <h2>Buchen Sie Ihren Termin online</h2>
+        <p>Bequem und jederzeit: Vereinbaren Sie online Ihren Wunschtermin oder rufen Sie uns an. Wir freuen uns auf Sie.</p>
+        <div class="cta-actions">
+          <a href="tel:093118081" class="btn btn-light">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            0931 18081
+          </a>
+          <a href="#kontakt" class="btn btn-ghost">Termin online buchen</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img src="assets_02/logo.png" alt="Zahnarztpraxis Dr. Kuhmann">
+        <p>Moderne Zahnmedizin in Würzburg – sorgfältige Diagnostik, schonende Behandlung und langfristige Betreuung. Damit Ihre Zähne ein Leben lang gesund bleiben.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Praxis</h4>
+        <a href="#weg">Ihr Weg</a>
+        <a href="#leistungen">Leistungen</a>
+        <a href="#praxis">Über die Praxis</a>
+        <a href="#sprechzeiten">Sprechzeiten</a>
+      </div>
+      <div class="foot-col">
+        <h4>Kontakt</h4>
+        <span>Domstraße 7</span>
+        <span>97070 Würzburg</span>
+        <a href="tel:093118081">0931 18081</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2006 – 2026 Zahnarztpraxis Dr. Kuhmann · Würzburg</span>
+      <span><a href="#top">Impressum</a> · <a href="#top">Datenschutz</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const header=document.getElementById('header');
+  const onScroll=()=>header.classList.toggle('scrolled',window.scrollY>30);
+  onScroll();window.addEventListener('scroll',onScroll,{passive:true});
+  const burger=document.getElementById('burger');
+  const menu=document.getElementById('mobileMenu');
+  burger.addEventListener('click',()=>menu.classList.toggle('open'));
+  menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>menu.classList.remove('open')));
+  const io=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.14,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal:not(.in)').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
