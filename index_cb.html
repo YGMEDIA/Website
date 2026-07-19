@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zahnarztpraxis Dr. Cornelius Bechmann – Ihr Zahnarzt in Würzburg</title>
+<meta name="description" content="Zahnarztpraxis Dr. Cornelius Bechmann in Würzburg-Zellerau, Wilhelm-Dahl-Straße 14. Drei erfahrene Zahnärzte, schonende und schmerzfreie Behandlung, Cerec 3D in einer Sitzung. Reine Bestellpraxis – Termin unter 0931 41 52 22.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --rasp:#ba2052;
+    --rasp-deep:#97193f;
+    --steel:#4c6796;
+    --steel-deep:#3a5175;
+    --steel-night:#273a55;
+    --ice:#f1f5fa;
+    --ice-2:#e9eff7;
+    --paper:#ffffff;
+    --ink:#283040;
+    --muted:#66718a;
+    --line:#e2e8f2;
+    --radius:20px;
+    --shadow:0 24px 60px -28px rgba(39,58,85,.35);
+    --shadow-sm:0 14px 32px -20px rgba(39,58,85,.4);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Manrope',system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  h1,h2,h3{line-height:1.15;letter-spacing:-.015em}
+  .serif{font-family:'Lora',Georgia,serif;font-weight:500}
+  .serif-i{font-family:'Lora',Georgia,serif;font-style:italic;font-weight:500}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{width:min(1180px,92vw);margin:0 auto}
+  .eyebrow{display:inline-flex;align-items:center;gap:.55em;font-size:.73rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--rasp)}
+  .eyebrow::before{content:"";width:26px;height:2px;background:var(--rasp);border-radius:2px}
+  .eyebrow.center{justify-content:center;display:flex}
+  .eyebrow.light{color:#fff}
+  .eyebrow.light::before{background:rgba(255,255,255,.65)}
+  .btn{display:inline-flex;align-items:center;gap:.55em;font-weight:700;font-size:.97rem;padding:.88em 1.65em;border-radius:12px;transition:transform .25s ease,box-shadow .25s ease,background .25s ease;cursor:pointer;border:none}
+  .btn-primary{background:var(--rasp);color:#fff;box-shadow:0 14px 28px -12px rgba(186,32,82,.65)}
+  .btn-primary:hover{transform:translateY(-3px);background:var(--rasp-deep);box-shadow:0 20px 36px -12px rgba(186,32,82,.75)}
+  .btn-ghost{background:#fff;color:var(--steel-deep);border:1px solid var(--line)}
+  .btn-ghost:hover{transform:translateY(-3px);border-color:var(--steel);box-shadow:var(--shadow-sm)}
+  .btn-light{background:#fff;color:var(--steel-night)}
+  .btn-light:hover{transform:translateY(-3px);box-shadow:0 16px 32px -14px rgba(0,0,0,.3)}
+
+  /* Header */
+  header{position:fixed;top:0;left:0;right:0;z-index:100;padding:.95rem 0;transition:padding .3s,background .3s,box-shadow .3s}
+  header.scrolled{padding:.5rem 0;background:rgba(255,255,255,.85);backdrop-filter:blur(16px) saturate(1.4);-webkit-backdrop-filter:blur(16px) saturate(1.4);box-shadow:0 1px 0 rgba(39,58,85,.09)}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+  .brand img{height:52px;width:auto;mix-blend-mode:multiply}
+  .nav-links{display:flex;align-items:center;gap:1.7rem}
+  .nav-links a{font-size:.93rem;font-weight:600;color:var(--steel-deep);opacity:.85;transition:opacity .2s,color .2s}
+  .nav-links a:hover{opacity:1;color:var(--rasp)}
+  .nav-cta{display:flex;align-items:center;gap:1rem}
+  .nav-phone{font-weight:700;color:var(--steel-deep);font-size:.93rem;white-space:nowrap}
+  .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
+  .burger span{width:24px;height:2.5px;background:var(--steel-deep);border-radius:2px;transition:.3s}
+  .mobile-menu{display:none}
+
+  /* Hero */
+  .hero{position:relative;padding:9.2rem 0 5.4rem;overflow:hidden;background:linear-gradient(180deg,#fff 0%,var(--ice) 100%)}
+  .hero-band{position:absolute;inset:0;z-index:0;pointer-events:none}
+  .hero-band svg{position:absolute;right:-12%;top:6%;width:68%;opacity:.5}
+  .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.02fr .98fr;gap:3.2rem;align-items:center}
+  .hero-copy .tag{display:inline-flex;align-items:center;gap:.55rem;background:rgba(255,255,255,.8);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:100px;padding:.5rem 1.05rem;font-size:.82rem;font-weight:600;color:var(--steel-deep);margin-bottom:1.5rem;box-shadow:var(--shadow-sm)}
+  .hero-copy .tag .dot{width:8px;height:8px;border-radius:50%;background:var(--rasp)}
+  .hero-copy h1{font-size:clamp(2.3rem,4.5vw,3.55rem);color:var(--steel-night);margin-bottom:1.15rem;letter-spacing:-.02em}
+  .hero-copy h1 .serif-i{color:var(--rasp)}
+  .hero-copy p.lead{font-size:1.12rem;color:var(--muted);max-width:34em;margin-bottom:1.9rem}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:.85rem;align-items:center}
+  .hero-trust{display:flex;gap:1.7rem;flex-wrap:wrap;margin-top:2.2rem;padding-top:1.6rem;border-top:1px solid rgba(76,103,150,.2)}
+  .hero-trust div{font-size:.84rem;color:var(--muted)}
+  .hero-trust b{display:block;font-family:'Lora',serif;font-size:1.4rem;color:var(--steel-deep);font-weight:600}
+
+  /* Ärzte-Trio */
+  .trio{display:flex;gap:1rem;align-items:flex-start;justify-content:flex-end}
+  .doc-card{position:relative;flex:1;max-width:200px;border-radius:16px 16px 60px 16px;overflow:hidden;box-shadow:var(--shadow);background:#fff;transition:transform .35s ease,box-shadow .35s ease}
+  .doc-card:nth-child(1){transform:translateY(34px)}
+  .doc-card:nth-child(2){transform:translateY(0)}
+  .doc-card:nth-child(3){transform:translateY(58px)}
+  .doc-card:hover{transform:translateY(-6px)!important;box-shadow:0 30px 70px -30px rgba(39,58,85,.5)}
+  .doc-card img{width:100%;aspect-ratio:2/3;object-fit:cover}
+  .doc-chip{position:absolute;left:.55rem;right:.55rem;bottom:.55rem;background:rgba(255,255,255,.78);backdrop-filter:blur(12px) saturate(1.3);-webkit-backdrop-filter:blur(12px) saturate(1.3);border:1px solid rgba(255,255,255,.7);border-radius:12px;padding:.5rem .7rem;text-align:center}
+  .doc-chip b{display:block;font-size:.8rem;color:var(--steel-night);line-height:1.25}
+  .doc-chip span{font-size:.68rem;color:var(--rasp);font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+
+  /* Sections */
+  .band{padding:5.4rem 0}
+  .sec-head{max-width:660px;margin-bottom:2.8rem}
+  .sec-head.center{margin-inline:auto;text-align:center}
+  .sec-head h2{font-size:clamp(1.85rem,3.3vw,2.6rem);color:var(--steel-night);margin:.85rem 0 .75rem}
+  .sec-head h2 .serif-i{color:var(--rasp)}
+  .sec-head p{color:var(--muted);font-size:1.04rem}
+
+  /* Werte */
+  .val-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+  .vcard{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:2rem;transition:transform .3s,box-shadow .3s;position:relative;overflow:hidden}
+  .vcard::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--steel),var(--rasp));opacity:0;transition:opacity .3s}
+  .vcard:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+  .vcard:hover::before{opacity:1}
+  .vcard .ic{width:52px;height:52px;border-radius:14px;background:var(--ice);color:var(--steel-deep);display:grid;place-items:center;margin-bottom:1.1rem;transition:.3s}
+  .vcard:hover .ic{background:var(--rasp);color:#fff}
+  .vcard h3{font-size:1.18rem;color:var(--steel-night);margin-bottom:.5rem}
+  .vcard p{color:var(--muted);font-size:.94rem}
+
+  /* Cerec-Band */
+  .cerec{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--steel-deep),var(--steel-night));color:#fff;border-radius:26px}
+  .cerec::before{content:"";position:absolute;inset:0;background:radial-gradient(620px 380px at 85% 10%,rgba(186,32,82,.35),transparent 60%),radial-gradient(480px 360px at 8% 95%,rgba(76,103,150,.55),transparent 62%)}
+  .cerec-in{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:2.6rem;align-items:center;padding:3.1rem}
+  .cerec-in h2{font-size:clamp(1.7rem,2.9vw,2.35rem);margin:.85rem 0 .9rem}
+  .cerec-in h2 .serif-i{color:#ffb3cb}
+  .cerec-in p{color:rgba(255,255,255,.85);max-width:36em}
+  .cerec-chips{display:flex;flex-direction:column;gap:.8rem}
+  .cchip{display:flex;align-items:center;gap:.8rem;background:rgba(255,255,255,.1);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:.85rem 1.1rem;font-weight:600;font-size:.95rem}
+  .cchip svg{flex:none;color:#ffb3cb}
+
+  /* Leistungen */
+  .leist{background:linear-gradient(180deg,var(--ice) 0%,#fff 100%)}
+  .lst-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}
+  .lcard{background:#fff;border:1px solid var(--line);border-radius:16px;padding:1.55rem;transition:transform .3s,box-shadow .3s,border-color .3s}
+  .lcard:hover{transform:translateY(-5px);box-shadow:var(--shadow-sm);border-color:rgba(186,32,82,.35)}
+  .lcard .ic{width:44px;height:44px;border-radius:12px;background:var(--ice);color:var(--rasp);display:grid;place-items:center;margin-bottom:.9rem}
+  .lcard h3{font-size:1.02rem;color:var(--steel-night)}
+  .lcard p{color:var(--muted);font-size:.85rem;margin-top:.35rem}
+
+  /* Erstbesuch */
+  .first-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.4rem;align-items:center}
+  .first-copy p{color:var(--muted);margin-bottom:1rem;font-size:1.02rem}
+  .first-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:2.2rem;box-shadow:var(--shadow-sm)}
+  .first-card h3{font-size:1.15rem;color:var(--steel-night);margin-bottom:1.2rem}
+  .check{display:flex;gap:.85rem;align-items:flex-start;margin-bottom:1.05rem}
+  .check:last-child{margin-bottom:0}
+  .check .ci{flex:none;width:26px;height:26px;border-radius:50%;background:var(--ice);color:var(--rasp);display:grid;place-items:center;margin-top:.1rem}
+  .check p{font-size:.93rem;color:var(--ink)}
+  .check p small{display:block;color:var(--muted);font-size:.85rem}
+
+  /* Sprechzeiten */
+  .hours-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem}
+  .day{background:#fff;border:1px solid var(--line);border-radius:16px;padding:1.3rem 1.1rem;text-align:center;transition:transform .3s,box-shadow .3s}
+  .day:hover{transform:translateY(-4px);box-shadow:var(--shadow-sm)}
+  .day b{display:block;font-size:.95rem;color:var(--steel-night);margin-bottom:.7rem}
+  .slot{display:block;background:var(--ice);border-radius:9px;padding:.4rem .3rem;font-size:.82rem;font-weight:600;color:var(--steel-deep);margin-bottom:.45rem}
+  .slot.off{background:transparent;color:var(--muted);font-weight:500;font-size:.76rem;border:1px dashed var(--line)}
+  .hours-note{display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:center;margin-top:1.8rem}
+  .hnote-pill{display:inline-flex;align-items:center;gap:.6rem;background:#fff;border:1px solid var(--line);border-radius:100px;padding:.6rem 1.2rem;font-size:.88rem;font-weight:600;color:var(--steel-deep);box-shadow:var(--shadow-sm)}
+  .hnote-pill svg{color:var(--rasp)}
+  .hours-sub{text-align:center;color:var(--muted);font-size:.85rem;margin-top:1rem}
+
+  /* Bewerten */
+  .rate{background:var(--ice);border-radius:26px;padding:2.6rem;display:flex;flex-wrap:wrap;gap:1.6rem;align-items:center;justify-content:space-between}
+  .rate h3{font-size:1.35rem;color:var(--steel-night);margin-bottom:.35rem}
+  .rate p{color:var(--muted);font-size:.95rem;max-width:34em}
+  .rate-pills{display:flex;gap:.7rem;flex-wrap:wrap}
+  .rpill{background:#fff;border:1px solid var(--line);border-radius:100px;padding:.55rem 1.15rem;font-size:.88rem;font-weight:700;color:var(--steel-deep)}
+
+  /* Kontakt */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.2rem;align-items:stretch}
+  .contact-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:2.3rem;box-shadow:var(--shadow-sm)}
+  .contact-card h3{font-size:1.25rem;color:var(--steel-night);margin-bottom:1.35rem}
+  .cline{display:flex;gap:.9rem;align-items:flex-start;margin-bottom:1.1rem}
+  .cline:last-child{margin-bottom:0}
+  .cline .ic{width:40px;height:40px;border-radius:11px;background:var(--ice);color:var(--steel-deep);display:grid;place-items:center;flex:none}
+  .cline b{color:var(--steel-night);display:block;font-size:.96rem}
+  .cline span{color:var(--muted);font-size:.9rem}
+  .contact-side{border-radius:var(--radius);overflow:hidden;position:relative;background:linear-gradient(155deg,var(--steel-deep),var(--steel-night));color:#fff;padding:2.6rem;display:flex;flex-direction:column;justify-content:center}
+  .contact-side::before{content:"";position:absolute;inset:0;background:radial-gradient(480px 340px at 82% 12%,rgba(186,32,82,.4),transparent 60%)}
+  .contact-side .in{position:relative}
+  .contact-side .serif{font-size:1.65rem;display:block;margin-bottom:.7rem}
+  .contact-side p{color:rgba(255,255,255,.84);font-size:.95rem;margin-bottom:1.5rem;max-width:30em}
+
+  /* CTA */
+  .cta{position:relative;overflow:hidden;text-align:center;background:linear-gradient(140deg,var(--rasp),var(--rasp-deep));color:#fff;border-radius:26px;padding:3.4rem}
+  .cta::before{content:"";position:absolute;inset:0;background:radial-gradient(560px 320px at 15% 20%,rgba(255,255,255,.16),transparent 55%)}
+  .cta>*{position:relative}
+  .cta h2{font-size:clamp(1.85rem,3vw,2.5rem);margin-bottom:.7rem}
+  .cta p{color:rgba(255,255,255,.9);max-width:36em;margin:0 auto 1.8rem;font-size:1.03rem}
+  .cta-actions{display:flex;gap:.9rem;justify-content:center;flex-wrap:wrap}
+
+  /* Footer */
+  footer{background:var(--steel-night);color:rgba(255,255,255,.72);padding:3.4rem 0 2rem;margin-top:5rem}
+  .foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:2.4rem;padding-bottom:2.4rem;border-bottom:1px solid rgba(255,255,255,.13)}
+  .foot-brand .wm{font-family:'Lora',serif;font-size:1.35rem;color:#fff;font-weight:600}
+  .foot-brand .wm small{display:block;font-family:'Manrope',sans-serif;font-size:.7rem;letter-spacing:.24em;color:#e78aa8;font-weight:600;margin-top:.25rem}
+  .foot-brand p{font-size:.9rem;max-width:26em;margin-top:1rem}
+  .foot-col h4{color:#fff;font-size:.8rem;letter-spacing:.13em;text-transform:uppercase;margin-bottom:1rem;font-weight:700}
+  .foot-col a,.foot-col span{display:block;font-size:.9rem;margin-bottom:.55rem;color:rgba(255,255,255,.72);transition:color .2s}
+  .foot-col a:hover{color:#e78aa8}
+  .foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;padding-top:1.6rem;font-size:.82rem}
+  .foot-bottom a:hover{color:#fff}
+
+  /* Reveal */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal[data-d="1"]{transition-delay:.08s}
+  .reveal[data-d="2"]{transition-delay:.16s}
+  .reveal[data-d="3"]{transition-delay:.24s}
+
+  @media(max-width:960px){
+    .hero-grid{grid-template-columns:1fr;gap:2.8rem}
+    .trio{justify-content:center}
+    .doc-card:nth-child(1){transform:translateY(22px)}
+    .doc-card:nth-child(3){transform:translateY(40px)}
+    .val-grid{grid-template-columns:1fr}
+    .lst-grid{grid-template-columns:1fr 1fr}
+    .cerec-in{grid-template-columns:1fr;padding:2.3rem}
+    .first-grid{grid-template-columns:1fr}
+    .hours-grid{grid-template-columns:repeat(3,1fr)}
+    .contact-grid{grid-template-columns:1fr}
+    .foot-grid{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:640px){
+    .nav-links,.nav-phone,.nav-cta{display:none}
+    .burger{display:flex}
+    .mobile-menu{display:block;position:fixed;inset:0 0 auto 0;top:0;z-index:99;background:rgba(255,255,255,.97);backdrop-filter:blur(20px);padding:5rem 2rem 2.4rem;transform:translateY(-100%);transition:transform .4s cubic-bezier(.4,0,.2,1);box-shadow:var(--shadow)}
+    .mobile-menu.open{transform:translateY(0)}
+    .mobile-menu a{display:block;font-size:1.12rem;font-weight:600;color:var(--steel-deep);padding:.85rem 0;border-bottom:1px solid var(--line)}
+    .mobile-menu .btn{margin-top:1.4rem;width:100%;justify-content:center}
+    .hero{padding-top:7.4rem}
+    .band{padding:4rem 0}
+    .trio{gap:.55rem}
+    .doc-card{border-radius:12px 12px 34px 12px}
+    .doc-card:nth-child(1){transform:translateY(14px)}
+    .doc-card:nth-child(3){transform:translateY(26px)}
+    .doc-chip{left:.35rem;right:.35rem;bottom:.35rem;padding:.35rem .4rem}
+    .doc-chip b{font-size:.62rem}
+    .doc-chip span{font-size:.55rem}
+    .lst-grid{grid-template-columns:1fr}
+    .hours-grid{grid-template-columns:1fr 1fr}
+    .rate{padding:1.8rem}
+    .cerec-in,.contact-card,.contact-side,.cta{padding:1.8rem}
+    .cerec,.cta{border-radius:20px}
+    .foot-grid{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<header id="header">
+  <div class="wrap nav">
+    <a href="#top" class="brand"><img src="assets_02/cb-logo.jpg" alt="Zahnarztpraxis Dr. Cornelius Bechmann"></a>
+    <nav class="nav-links">
+      <a href="#praxis">Praxis</a>
+      <a href="#leistungen">Leistungen</a>
+      <a href="#erstbesuch">Ihr erster Besuch</a>
+      <a href="#zeiten">Sprechzeiten</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <div class="nav-cta">
+      <span class="nav-phone">0931 41 52 22</span>
+      <a href="tel:0931415222" class="btn btn-primary">Termin vereinbaren</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#praxis">Praxis</a>
+  <a href="#leistungen">Leistungen</a>
+  <a href="#erstbesuch">Ihr erster Besuch</a>
+  <a href="#zeiten">Sprechzeiten</a>
+  <a href="#kontakt">Kontakt</a>
+  <a href="tel:0931415222" class="btn btn-primary">Termin vereinbaren</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-band" aria-hidden="true">
+    <svg viewBox="0 0 600 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M-20 210 C 140 120, 300 260, 620 120" stroke="#4c6796" stroke-width="52" stroke-linecap="round" opacity=".16"/>
+      <path d="M-20 250 C 160 160, 320 300, 620 160" stroke="#ba2052" stroke-width="34" stroke-linecap="round" opacity=".14"/>
+    </svg>
+  </div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy reveal in">
+      <span class="tag"><span class="dot"></span>Zahnarztpraxis in Würzburg-Zellerau</span>
+      <h1>Ihr <span class="serif-i">Zahnarzt</span> in Würzburg – herzlich willkommen.</h1>
+      <p class="lead">In unserer Praxis erwartet Sie in angenehmer Atmosphäre ein hochmotiviertes Team, bei dem Sie als Patient mit Ihren Wünschen im Mittelpunkt stehen.</p>
+      <div class="hero-actions">
+        <a href="tel:0931415222" class="btn btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          0931 41 52 22
+        </a>
+        <a href="#zeiten" class="btn btn-ghost">Sprechzeiten ansehen</a>
+      </div>
+      <div class="hero-trust">
+        <div><b>3 Zahnärzte</b>ein eingespieltes Team</div>
+        <div><b>Bestellpraxis</b>kaum Wartezeiten</div>
+        <div><b>Cerec 3D</b>Keramik in 1 Sitzung</div>
+      </div>
+    </div>
+    <div class="hero-visual reveal in" data-d="1">
+      <div class="trio">
+        <div class="doc-card">
+          <img src="assets_02/cb-peter.jpg" alt="Dr. Peter Bechmann, Zahnarzt">
+          <div class="doc-chip"><span>Zahnarzt</span><b>Dr. Peter Bechmann</b></div>
+        </div>
+        <div class="doc-card">
+          <img src="assets_02/cb-cornelius.jpg" alt="Dr. Cornelius Bechmann, Zahnarzt">
+          <div class="doc-chip"><span>Praxisinhaber</span><b>Dr. Cornelius Bechmann</b></div>
+        </div>
+        <div class="doc-card">
+          <img src="assets_02/cb-johannes.jpg" alt="Dr. Johannes Boenke, Zahnarzt">
+          <div class="doc-chip"><span>Zahnarzt</span><b>Dr. Johannes Boenke</b></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WERTE -->
+<section class="band" id="praxis">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Das sind wir</span>
+      <h2>Eine Praxis, in der Sie im <span class="serif-i">Mittelpunkt</span> stehen</h2>
+      <p>Ihre Wünsche und Erwartungen werden von uns respektiert – und mit einem individuellen Behandlungskonzept erklären wir Ihnen vor jeder Behandlung, wie wir dieses umsetzen.</p>
+    </div>
+    <div class="val-grid">
+      <div class="vcard reveal">
+        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6.7-4.35-9.33-8.5C.9 9.5 2 5.5 5.5 5.5 7.5 5.5 12 8 12 8s4.5-2.5 6.5-2.5c3.5 0 4.6 4 2.83 7C18.7 16.65 12 21 12 21z"/></svg></div>
+        <h3>Schonend &amp; schmerzfrei</h3>
+        <p>Auf eine sorgfältige, schonende und schmerzfreie Zahnbehandlung legen wir großen Wert.</p>
+      </div>
+      <div class="vcard reveal" data-d="1">
+        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+        <h3>Kaum Wartezeiten</h3>
+        <p>Durch eine optimale Terminplanung lassen sich Wartezeiten für Sie fast vollständig vermeiden – wir führen eine reine Bestellpraxis.</p>
+      </div>
+      <div class="vcard reveal" data-d="2">
+        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg></div>
+        <h3>Individuelles Konzept</h3>
+        <p>Vor jeder Behandlung erarbeiten wir ein individuelles Behandlungskonzept und erklären Ihnen verständlich, wie wir es umsetzen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CEREC -->
+<section class="band" style="padding-top:.5rem">
+  <div class="wrap">
+    <div class="cerec reveal">
+      <div class="cerec-in">
+        <div>
+          <span class="eyebrow light">Moderne Technik</span>
+          <h2>Cerec 3D: Keramik in nur <span class="serif-i">einer Sitzung</span></h2>
+          <p>Mit modernster Cerec 3D-Technik stellen wir keramische Füllungen und Kronen in nur einer Behandlungssitzung her – ohne Abdruck und ohne Provisorium.</p>
+        </div>
+        <div class="cerec-chips">
+          <div class="cchip"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Nur eine Behandlungssitzung</div>
+          <div class="cchip"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Kein Abdruck nötig</div>
+          <div class="cchip"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Kein Provisorium nötig</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEISTUNGEN -->
+<section class="band leist" id="leistungen">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Unsere Leistungen</span>
+      <h2>Moderne Zahnmedizin – <span class="serif-i">verständlich erklärt</span></h2>
+      <p>Von der Vorsorge bis zur Wurzelbehandlung: Erfahren Sie, wie wir Ihnen mit moderner Zahnheilkunde helfen können.</p>
+    </div>
+    <div class="lst-grid">
+      <div class="lcard reveal">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3>Prophylaxe</h3>
+        <p>Tragen Sie durch regelmäßige Prophylaxe selbst zu Ihrer Zahngesundheit bei.</p>
+      </div>
+      <div class="lcard reveal" data-d="1">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6.7-4.35-9.33-8.5C.9 9.5 2 5.5 5.5 5.5 7.5 5.5 12 8 12 8s4.5-2.5 6.5-2.5c3.5 0 4.6 4 2.83 7C18.7 16.65 12 21 12 21z"/></svg></div>
+        <h3>Angstpatienten</h3>
+        <p>Wir nehmen Ihnen als Angstpatient die Angst vor der Behandlung.</p>
+      </div>
+      <div class="lcard reveal" data-d="2">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg></div>
+        <h3>Cerec 3D</h3>
+        <p>Keramische Füllungen und Kronen in nur einer Behandlungssitzung.</p>
+      </div>
+      <div class="lcard reveal" data-d="3">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c-3 0-4.5 2-4.5 5 0 2 .5 3 .5 6s-1 5 1 8c.8 1 1.5-1 2-3s1-3 1-3 .5 1 1 3 1.2 4 2 3c2-3 1-5 1-8s.5-4 .5-6c0-3-1.5-5-4.5-5z"/></svg></div>
+        <h3>Implantate</h3>
+        <p>Wie Implantate fehlende Zähne sicher und dauerhaft ersetzen können.</p>
+      </div>
+      <div class="lcard reveal">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg></div>
+        <h3>Amalgamsanierung</h3>
+        <p>Wann eine Amalgamsanierung sinnvoll ist und wie sie abläuft.</p>
+      </div>
+      <div class="lcard reveal" data-d="1">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.8H20l-4.9 3.6 1.9 5.8L12 14.6 7 18.2l1.9-5.8L4 8.8h6.1L12 3z"/></svg></div>
+        <h3>Ästhetische Zahnheilkunde</h3>
+        <p>Welche Möglichkeiten die ästhetische Zahnheilkunde heute bietet.</p>
+      </div>
+      <div class="lcard reveal" data-d="2">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12s2-6 8-6 8 6 8 6M4 12s2 6 8 6 8-6 8-6"/><circle cx="12" cy="12" r="2"/></svg></div>
+        <h3>Parodontitisbehandlung</h3>
+        <p>Damit nicht nur Ihre Zähne, sondern auch Ihr Zahnfleisch gesünder wird.</p>
+      </div>
+      <div class="lcard reveal" data-d="3">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l2.5 2.5M16.5 16.5 19 19M19 5l-2.5 2.5M7.5 16.5 5 19"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <h3>Endodontie</h3>
+        <p>Moderne Techniken der Wurzelbehandlung für den Zahnerhalt.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ERSTBESUCH -->
+<section class="band" id="erstbesuch" style="padding-top:1rem">
+  <div class="wrap first-grid">
+    <div class="first-copy reveal">
+      <span class="eyebrow">Ihr erster Besuch</span>
+      <h2 style="font-size:clamp(1.85rem,3.3vw,2.5rem);color:var(--steel-night);margin:.85rem 0 .9rem">Sie kommen das <span class="serif-i">erste Mal</span> zu uns?</h2>
+      <p>Vielen Dank, dass Sie uns Ihr Vertrauen schenken. Damit Ihre Anmeldung so einfach wie möglich wird, haben wir bereits einiges für Sie vorbereitet.</p>
+      <p>Bei Fragen helfen unsere Mitarbeiterinnen Ihnen jederzeit gerne weiter.</p>
+    </div>
+    <div class="first-card reveal" data-d="1">
+      <h3>So einfach geht die Anmeldung</h3>
+      <div class="check">
+        <div class="ci"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+        <p>Anamnesebogen bequem online ausfüllen<small>und verschlüsselt an uns übertragen – ein Bogen pro Person.</small></p>
+      </div>
+      <div class="check">
+        <div class="ci"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+        <p>Bogen auch in der Praxis erhältlich<small>Sie können alles selbstverständlich auch vor Ort ausfüllen.</small></p>
+      </div>
+      <div class="check">
+        <div class="ci"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+        <p>Bitte 15 Minuten früher da sein<small>beim ersten Termin – für Fragebogen und Aufnahme.</small></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPRECHZEITEN -->
+<section class="band leist" id="zeiten">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow center">Sprechzeiten</span>
+      <h2>Wann Sie uns <span class="serif-i">erreichen</span></h2>
+    </div>
+    <div class="hours-grid reveal">
+      <div class="day"><b>Montag</b><span class="slot">08:00 – 13:00</span><span class="slot">14:00 – 18:00</span></div>
+      <div class="day"><b>Dienstag</b><span class="slot">08:00 – 13:00</span><span class="slot">14:00 – 18:00</span></div>
+      <div class="day"><b>Mittwoch</b><span class="slot">08:00 – 13:00</span><span class="slot off">nachmittags geschlossen</span></div>
+      <div class="day"><b>Donnerstag</b><span class="slot">08:00 – 13:00</span><span class="slot">14:00 – 18:00</span></div>
+      <div class="day"><b>Freitag</b><span class="slot">08:00 – 13:00</span><span class="slot off">nachmittags geschlossen</span></div>
+    </div>
+    <div class="hours-note reveal" data-d="1">
+      <span class="hnote-pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4M16 2v4M3 10h18"/><rect x="3" y="4" width="18" height="18" rx="2"/></svg>Reine Bestellpraxis – bitte vereinbaren Sie vorab einen Termin</span>
+      <a href="tel:0931415222" class="btn btn-primary">Jetzt Termin vereinbaren</a>
+    </div>
+    <p class="hours-sub">Außerhalb der Sprechzeiten finden Sie den aktuellen zahnärztlichen Notdienstplan unter notdienst-zahn.de.</p>
+  </div>
+</section>
+
+<!-- BEWERTEN -->
+<section class="band" id="bewerten" style="padding-top:1rem">
+  <div class="wrap">
+    <div class="rate reveal">
+      <div>
+        <span class="eyebrow">Ihre Meinung</span>
+        <h3 style="margin-top:.6rem">Sie waren mit uns zufrieden?</h3>
+        <p>Teilen Sie Ihre Erfahrung – anderen Patienten hilft Ihre Meinung bei der Zahnarzt-Wahl, und uns hilft sie, unseren Qualitätsanspruch zu kontrollieren.</p>
+      </div>
+      <div class="rate-pills">
+        <span class="rpill">Jameda</span>
+        <span class="rpill">DocInsider</span>
+        <span class="rpill">Google</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KONTAKT -->
+<section class="band" id="kontakt" style="padding-top:1rem">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Kontakt &amp; Anfahrt</span>
+      <h2>So finden Sie <span class="serif-i">zu uns</span></h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card reveal">
+        <h3>Zahnarztpraxis Dr. Cornelius Bechmann</h3>
+        <div class="cline">
+          <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><b>Adresse</b><span>Wilhelm-Dahl-Straße 14, 97082 Würzburg – im Stadtteil Zellerau</span></div>
+        </div>
+        <div class="cline">
+          <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <div><b>Telefon</b><span><a href="tel:0931415222" style="color:var(--rasp);font-weight:700">0931 41 52 22</a> · Fax 0931 45 12 90</span></div>
+        </div>
+        <div class="cline">
+          <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></div>
+          <div><b>E-Mail</b><span>kontakt@praxis-bechmann.de</span></div>
+        </div>
+      </div>
+      <div class="contact-side reveal" data-d="1">
+        <div class="in">
+          <span class="serif">Mitten in der Zellerau.</span>
+          <p>Sie finden unsere Praxis in der Wilhelm-Dahl-Straße 14 in Würzburg. Wir freuen uns auf Ihren Besuch – vereinbaren Sie einfach vorab einen Termin.</p>
+          <a href="tel:0931415222" class="btn btn-light">Jetzt anrufen</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="band" id="termin" style="padding-top:.5rem">
+  <div class="wrap">
+    <div class="cta reveal">
+      <span class="eyebrow light center" style="justify-content:center">Termin</span>
+      <h2>Wir freuen uns auf Ihren Besuch</h2>
+      <p>Rufen Sie an und vereinbaren Sie einen Termin in unserer Zahnarztpraxis in Würzburg – Ihr Team der Praxis Dr. Bechmann.</p>
+      <div class="cta-actions">
+        <a href="tel:0931415222" class="btn btn-light">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          0931 41 52 22
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="wm">Dr. Cornelius Bechmann<small>ZAHNARZTPRAXIS · WÜRZBURG</small></div>
+        <p>Sorgfältige, schonende und schmerzfreie Zahnbehandlung in der Zellerau – mit einem hochmotivierten Team aus drei Zahnärzten.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Praxis</h4>
+        <a href="#praxis">Das sind wir</a>
+        <a href="#leistungen">Leistungen</a>
+        <a href="#erstbesuch">Ihr erster Besuch</a>
+        <a href="#zeiten">Sprechzeiten</a>
+        <a href="https://www.facebook.com/pages/Dres-Bechmann/178963728798601" target="_blank" rel="noopener">Facebook</a>
+      </div>
+      <div class="foot-col">
+        <h4>Kontakt</h4>
+        <span>Wilhelm-Dahl-Straße 14</span>
+        <span>97082 Würzburg</span>
+        <a href="tel:0931415222">0931 41 52 22</a>
+        <a href="mailto:kontakt@praxis-bechmann.de">kontakt@praxis-bechmann.de</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Zahnarztpraxis Dr. Cornelius Bechmann · Würzburg</span>
+      <span><a href="#top">Impressum</a> · <a href="#top">Datenschutz</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const header=document.getElementById('header');
+  const onScroll=()=>header.classList.toggle('scrolled',window.scrollY>30);
+  onScroll();window.addEventListener('scroll',onScroll,{passive:true});
+  const burger=document.getElementById('burger');
+  const menu=document.getElementById('mobileMenu');
+  burger.addEventListener('click',()=>menu.classList.toggle('open'));
+  menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>menu.classList.remove('open')));
+  const io=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.14,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal:not(.in)').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
