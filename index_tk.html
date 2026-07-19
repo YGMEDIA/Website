@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Frauenärztin Tatjana Kraft – Praxis für Frauenheilkunde in Würzburg</title>
+<meta name="description" content="Frauenarztpraxis Tatjana Kraft in Würzburg, Augustinerstraße 3. Fachärztin für Frauenheilkunde und Geburtshilfe mit 30 Jahren Erfahrung – Krebsfrüherkennung, Schwangerschaftsvorsorge, Kinderwunschberatung. Termin: 0931 53247.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --wine:#891624;
+    --wine-deep:#6e1220;
+    --wine-night:#4a0d17;
+    --blush:#faf3f2;
+    --blush-2:#f6e9e8;
+    --stone:#f4f2f2;
+    --paper:#ffffff;
+    --ink:#332527;
+    --muted:#82706f;
+    --line:#eddedd;
+    --radius:22px;
+    --shadow:0 26px 60px -28px rgba(74,13,23,.35);
+    --shadow-sm:0 14px 34px -20px rgba(74,13,23,.4);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Albert Sans',system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.68;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  h1,h2,h3{line-height:1.12;letter-spacing:-.01em}
+  .serif{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600}
+  .serif-i{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:600}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{width:min(1160px,92vw);margin:0 auto}
+  .eyebrow{display:inline-flex;align-items:center;gap:.55em;font-size:.73rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--wine)}
+  .eyebrow::before{content:"";width:28px;height:1.5px;background:var(--wine)}
+  .eyebrow.center{justify-content:center;display:flex}
+  .eyebrow.light{color:#f3cdd1}
+  .eyebrow.light::before{background:rgba(243,205,209,.7)}
+  .btn{display:inline-flex;align-items:center;gap:.55em;font-weight:600;font-size:.97rem;padding:.9em 1.7em;border-radius:100px;transition:transform .25s ease,box-shadow .25s ease,background .25s ease;cursor:pointer;border:none}
+  .btn-primary{background:var(--wine);color:#fff;box-shadow:0 14px 30px -12px rgba(137,22,36,.6)}
+  .btn-primary:hover{transform:translateY(-3px);background:var(--wine-deep);box-shadow:0 20px 38px -12px rgba(137,22,36,.7)}
+  .btn-ghost{background:#fff;color:var(--wine-deep);border:1px solid var(--line)}
+  .btn-ghost:hover{transform:translateY(-3px);border-color:var(--wine);box-shadow:var(--shadow-sm)}
+  .btn-light{background:#fff;color:var(--wine-night)}
+  .btn-light:hover{transform:translateY(-3px);box-shadow:0 16px 32px -14px rgba(0,0,0,.3)}
+
+  /* Header */
+  header{position:fixed;top:0;left:0;right:0;z-index:100;padding:.95rem 0;transition:padding .3s,background .3s,box-shadow .3s}
+  header.scrolled{padding:.5rem 0;background:rgba(255,255,255,.86);backdrop-filter:blur(16px) saturate(1.3);-webkit-backdrop-filter:blur(16px) saturate(1.3);box-shadow:0 1px 0 rgba(74,13,23,.09)}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+  .brand{display:flex;align-items:center;gap:.7rem}
+  .brand img{height:46px;width:auto}
+  .brand .bt b{display:block;font-family:'Cormorant Garamond',serif;font-size:1.12rem;font-weight:600;color:var(--wine-night);line-height:1.1}
+  .brand .bt span{font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .nav-links{display:flex;align-items:center;gap:1.7rem}
+  .nav-links a{font-size:.93rem;font-weight:500;color:var(--wine-night);opacity:.8;transition:opacity .2s,color .2s}
+  .nav-links a:hover{opacity:1;color:var(--wine)}
+  .nav-cta{display:flex;align-items:center;gap:1rem}
+  .nav-phone{font-weight:600;color:var(--wine-night);font-size:.93rem;white-space:nowrap}
+  .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
+  .burger span{width:24px;height:2px;background:var(--wine-night);border-radius:2px;transition:.3s}
+  .mobile-menu{display:none}
+
+  /* Hero */
+  .hero{position:relative;padding:9rem 0 5rem;overflow:hidden;background:linear-gradient(180deg,#fff 0%,var(--blush) 100%)}
+  .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(760px 520px at 88% 12%,var(--blush-2) 0%,rgba(246,233,232,0) 60%);z-index:0}
+  .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.04fr .96fr;gap:3.4rem;align-items:center}
+  .hero-copy .tag{display:inline-flex;align-items:center;gap:.55rem;background:rgba(255,255,255,.8);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:100px;padding:.5rem 1.1rem;font-size:.83rem;font-weight:600;color:var(--wine-deep);margin-bottom:1.5rem;box-shadow:var(--shadow-sm)}
+  .hero-copy .tag .dot{width:8px;height:8px;border-radius:50%;background:var(--wine)}
+  .hero-copy h1{font-size:clamp(2.4rem,4.7vw,3.7rem);color:var(--wine-night);margin-bottom:1.15rem;letter-spacing:-.015em}
+  .hero-copy h1 .serif-i{color:var(--wine);font-size:1.06em}
+  .hero-copy p.lead{font-size:1.13rem;color:var(--muted);max-width:33em;margin-bottom:1.9rem}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:.85rem;align-items:center}
+  .hero-trust{display:flex;gap:1.8rem;flex-wrap:wrap;margin-top:2.2rem;padding-top:1.7rem;border-top:1px solid rgba(137,22,36,.15)}
+  .hero-trust div{font-size:.85rem;color:var(--muted)}
+  .hero-trust b{display:block;font-family:'Cormorant Garamond',serif;font-size:1.65rem;color:var(--wine);font-weight:600;line-height:1.15}
+
+  .hero-visual{position:relative}
+  .hero-photo{position:relative;border-radius:999px 999px 30px 30px;overflow:hidden;box-shadow:var(--shadow);aspect-ratio:3/4;z-index:1;max-width:430px;margin-left:auto}
+  .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center top}
+  .hero-motif{position:absolute;left:-2.2rem;bottom:-1.8rem;width:150px;opacity:.16;z-index:0;transform:rotate(-6deg)}
+  .lang-chip{position:absolute;left:.2rem;top:2.4rem;z-index:2;background:rgba(255,255,255,.82);backdrop-filter:blur(14px) saturate(1.3);-webkit-backdrop-filter:blur(14px) saturate(1.3);border:1px solid rgba(255,255,255,.75);border-radius:16px;box-shadow:var(--shadow-sm);padding:.85rem 1.1rem}
+  .lang-chip b{display:block;font-size:.82rem;color:var(--wine-night)}
+  .lang-chip span{font-size:.74rem;color:var(--muted)}
+
+  /* Sections */
+  .band{padding:5.4rem 0}
+  .sec-head{max-width:660px;margin-bottom:2.8rem}
+  .sec-head.center{margin-inline:auto;text-align:center}
+  .sec-head h2{font-size:clamp(1.9rem,3.4vw,2.65rem);color:var(--wine-night);margin:.85rem 0 .75rem}
+  .sec-head h2 .serif-i{color:var(--wine);font-size:1.06em}
+  .sec-head p{color:var(--muted);font-size:1.04rem}
+
+  /* Vita */
+  .vita-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:3.4rem;align-items:center}
+  .vita-quote{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(1.5rem,2.7vw,2.05rem);color:var(--wine-night);line-height:1.4;font-weight:500}
+  .vita-quote .hl{color:var(--wine);font-style:italic}
+  .vita-sign{margin-top:1.6rem;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.3rem;color:var(--wine)}
+  .vita-sign small{display:block;font-family:'Albert Sans',sans-serif;font-style:normal;font-size:.8rem;color:var(--muted);letter-spacing:.06em;margin-top:.25rem}
+  .timeline{position:relative;padding-left:1.9rem}
+  .timeline::before{content:"";position:absolute;left:8px;top:10px;bottom:10px;width:2px;background:linear-gradient(180deg,var(--blush-2),var(--wine))}
+  .tl-item{position:relative;padding:0 0 1.7rem 1rem}
+  .tl-item:last-child{padding-bottom:0}
+  .tl-item::before{content:"";position:absolute;left:-1.9rem;top:8px;width:18px;height:18px;border-radius:50%;background:#fff;border:2px solid var(--wine);box-shadow:0 0 0 4px var(--blush)}
+  .tl-item b{display:block;font-size:1.05rem;color:var(--wine-night)}
+  .tl-item span{font-size:.92rem;color:var(--muted)}
+
+  /* Leistungen */
+  .leist{background:linear-gradient(180deg,var(--blush) 0%,#fff 100%)}
+  .lst-cols{display:grid;grid-template-columns:1fr 1fr;gap:0 3.4rem}
+  .lrow{display:flex;align-items:baseline;gap:1.2rem;padding:1.15rem .4rem;border-bottom:1px solid var(--line);transition:background .25s,transform .25s}
+  .lrow:hover{background:#fff;transform:translateX(6px);border-radius:12px}
+  .lrow .no{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:1.35rem;color:var(--wine);min-width:2.1em}
+  .lrow h3{font-size:1.06rem;color:var(--ink);font-weight:600;letter-spacing:0}
+  .lst-note{margin-top:1.8rem;text-align:center;color:var(--muted);font-size:.92rem}
+
+  /* Team */
+  .team-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:1.4rem}
+  .tcard{text-align:center;transition:transform .3s}
+  .tcard:hover{transform:translateY(-6px)}
+  .tcard .ava{width:100%;max-width:130px;aspect-ratio:1/1;border-radius:50%;overflow:hidden;margin:0 auto .85rem;border:3px solid #fff;box-shadow:var(--shadow-sm);background:var(--blush-2)}
+  .tcard .ava img{width:100%;height:100%;object-fit:cover;object-position:center top}
+  .tcard b{display:block;font-size:.92rem;color:var(--wine-night);line-height:1.3}
+  .tcard span{font-size:.78rem;color:var(--muted)}
+
+  /* Zeiten & Kontakt */
+  .zk-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:2.2rem;align-items:stretch}
+  .contact-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:2.3rem;box-shadow:var(--shadow-sm)}
+  .contact-card h3{font-size:1.25rem;color:var(--wine-night);margin-bottom:1.35rem}
+  .cline{display:flex;gap:.9rem;align-items:flex-start;margin-bottom:1.1rem}
+  .cline:last-child{margin-bottom:0}
+  .cline .ic{width:40px;height:40px;border-radius:12px;background:var(--blush);color:var(--wine);display:grid;place-items:center;flex:none}
+  .cline b{color:var(--wine-night);display:block;font-size:.96rem}
+  .cline span{color:var(--muted);font-size:.9rem}
+  .hours-panel{position:relative;overflow:hidden;border-radius:var(--radius);background:linear-gradient(155deg,var(--wine),var(--wine-night));color:#fff;padding:2.4rem}
+  .hours-panel::before{content:"";position:absolute;inset:0;background:radial-gradient(460px 320px at 85% 10%,rgba(243,205,209,.28),transparent 60%)}
+  .hours-panel .in{position:relative}
+  .hours-panel h3{font-size:1.35rem;margin-bottom:1.2rem}
+  .hrow{display:flex;justify-content:space-between;gap:1rem;padding:.62rem 0;border-bottom:1px solid rgba(255,255,255,.16);font-size:.95rem}
+  .hrow:last-of-type{border-bottom:none}
+  .hrow .d{font-weight:600;min-width:6.2em}
+  .hrow .t{color:rgba(255,255,255,.85);text-align:right;white-space:nowrap}
+  .habend{display:inline-flex;align-items:center;gap:.55rem;background:rgba(255,255,255,.13);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.22);border-radius:100px;padding:.55rem 1.1rem;font-size:.84rem;font-weight:600;margin-top:1.2rem}
+  .habend svg{color:#f3cdd1}
+
+  /* CTA */
+  .cta{position:relative;overflow:hidden;text-align:center;background:linear-gradient(150deg,var(--blush-2),var(--blush));border-radius:28px;padding:3.5rem}
+  .cta-motif{position:absolute;right:2rem;bottom:-2.2rem;width:190px;opacity:.12;transform:rotate(8deg)}
+  .cta>.in{position:relative}
+  .cta h2{font-size:clamp(1.9rem,3vw,2.55rem);color:var(--wine-night);margin-bottom:.7rem}
+  .cta h2 .serif-i{color:var(--wine)}
+  .cta p{color:var(--muted);max-width:36em;margin:0 auto 1.9rem;font-size:1.04rem}
+  .cta-actions{display:flex;gap:.9rem;justify-content:center;flex-wrap:wrap}
+
+  /* Footer */
+  footer{background:var(--wine-night);color:rgba(255,255,255,.75);padding:3.4rem 0 2rem;margin-top:5rem}
+  .foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:2.4rem;padding-bottom:2.4rem;border-bottom:1px solid rgba(255,255,255,.14)}
+  .foot-brand .wm{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:#fff;font-weight:600}
+  .foot-brand .wm small{display:block;font-family:'Albert Sans',sans-serif;font-size:.7rem;letter-spacing:.24em;color:#e0a7ae;font-weight:600;margin-top:.25rem}
+  .foot-brand p{font-size:.9rem;max-width:26em;margin-top:1rem}
+  .foot-col h4{color:#fff;font-size:.8rem;letter-spacing:.13em;text-transform:uppercase;margin-bottom:1rem;font-weight:600}
+  .foot-col a,.foot-col span{display:block;font-size:.9rem;margin-bottom:.55rem;color:rgba(255,255,255,.75);transition:color .2s}
+  .foot-col a:hover{color:#e0a7ae}
+  .foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;padding-top:1.6rem;font-size:.82rem}
+  .foot-bottom a:hover{color:#fff}
+
+  /* Reveal */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal[data-d="1"]{transition-delay:.08s}
+  .reveal[data-d="2"]{transition-delay:.16s}
+  .reveal[data-d="3"]{transition-delay:.24s}
+
+  @media(max-width:960px){
+    .hero-grid{grid-template-columns:1fr;gap:2.6rem}
+    .hero-visual{max-width:400px;margin:0 auto}
+    .hero-photo{margin:0 auto}
+    .vita-grid{grid-template-columns:1fr;gap:2.4rem}
+    .lst-cols{grid-template-columns:1fr;gap:0}
+    .team-grid{grid-template-columns:repeat(3,1fr);gap:1.6rem}
+    .zk-grid{grid-template-columns:1fr}
+    .foot-grid{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:640px){
+    .nav-links,.nav-phone,.nav-cta{display:none}
+    .burger{display:flex}
+    .mobile-menu{display:block;position:fixed;inset:0 0 auto 0;top:0;z-index:99;background:rgba(255,255,255,.97);backdrop-filter:blur(20px);padding:5rem 2rem 2.4rem;transform:translateY(-100%);transition:transform .4s cubic-bezier(.4,0,.2,1);box-shadow:var(--shadow)}
+    .mobile-menu.open{transform:translateY(0)}
+    .mobile-menu a{display:block;font-size:1.12rem;font-weight:500;color:var(--wine-night);padding:.85rem 0;border-bottom:1px solid var(--line)}
+    .mobile-menu .btn{margin-top:1.4rem;width:100%;justify-content:center}
+    .hero{padding-top:7.4rem}
+    .band{padding:4rem 0}
+    .team-grid{grid-template-columns:1fr 1fr}
+    .lang-chip{left:0;top:1.2rem}
+    .hours-panel,.contact-card,.cta{padding:1.8rem}
+    .cta{border-radius:20px}
+    .foot-grid{grid-template-columns:1fr}
+    .hrow{font-size:.86rem}
+  }
+</style>
+</head>
+<body>
+
+<header id="header">
+  <div class="wrap nav">
+    <a href="#top" class="brand">
+      <img src="assets_02/tk-logo.png" alt="Praxis-Logo Frauenärztin Tatjana Kraft">
+      <span class="bt"><b>Tatjana Kraft</b><span>Frauenärztin · Würzburg</span></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#ueber">Über mich</a>
+      <a href="#leistungen">Leistungen</a>
+      <a href="#team">Team</a>
+      <a href="#kontakt">Sprechzeiten &amp; Kontakt</a>
+    </nav>
+    <div class="nav-cta">
+      <span class="nav-phone">0931 53247</span>
+      <a href="tel:093153247" class="btn btn-primary">Termin vereinbaren</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#ueber">Über mich</a>
+  <a href="#leistungen">Leistungen</a>
+  <a href="#team">Team</a>
+  <a href="#kontakt">Sprechzeiten &amp; Kontakt</a>
+  <a href="tel:093153247" class="btn btn-primary">Termin vereinbaren</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="hero-copy reveal in">
+      <span class="tag"><span class="dot"></span>Praxis für Frauenheilkunde im Herzen Würzburgs</span>
+      <h1>Frauenärztin aus <span class="serif-i">Leidenschaft.</span></h1>
+      <p class="lead">In meiner Praxis in der Augustinerstraße stehe ich Ihnen für Fragen und Behandlungen rund um Ihre Gesundheit zur Verfügung – mit 30 Jahren Erfahrung in Gynäkologie und Geburtshilfe.</p>
+      <div class="hero-actions">
+        <a href="tel:093153247" class="btn btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          0931 53247
+        </a>
+        <a href="#kontakt" class="btn btn-ghost">Sprechzeiten ansehen</a>
+      </div>
+      <div class="hero-trust">
+        <div><b>30 Jahre</b>Gynäkologie &amp; Geburtshilfe</div>
+        <div><b>Oberärztin</b>zuletzt Klinik Kitzinger Land</div>
+        <div><b>Zentral</b>Augustinerstraße 3</div>
+      </div>
+    </div>
+    <div class="hero-visual reveal in" data-d="1">
+      <img class="hero-motif" src="assets_02/tk-logo.png" alt="" aria-hidden="true">
+      <div class="hero-photo"><img src="assets_02/tk-kraft.jpg" alt="Frauenärztin Tatjana Kraft"></div>
+      <div class="lang-chip"><b>Deutsch &amp; Русский</b><span>Beratung in zwei Sprachen</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- VITA -->
+<section class="band" id="ueber">
+  <div class="wrap vita-grid">
+    <div class="reveal">
+      <span class="eyebrow">Über mich</span>
+      <p class="vita-quote" style="margin-top:1rem">„Vor 30 Jahren habe ich angefangen, in der Gynäkologie und Geburtshilfe zu arbeiten. Nun freue ich mich, meine <span class="hl">eigene Praxis im Herzen Würzburgs</span> zu führen – und Sie dort zu begrüßen."</p>
+      <div class="vita-sign">Ihre Frauenärztin Tatjana Kraft<small>FACHÄRZTIN FÜR FRAUENHEILKUNDE UND GEBURTSHILFE</small></div>
+    </div>
+    <div class="timeline reveal" data-d="1">
+      <div class="tl-item">
+        <b>30 Jahre Erfahrung</b>
+        <span>in Gynäkologie und Geburtshilfe – für Fragen und Behandlungen an Ihrer Seite.</span>
+      </div>
+      <div class="tl-item">
+        <b>Oberärztin, Klinik Kitzinger Land</b>
+        <span>Zuletzt in leitender klinischer Verantwortung tätig.</span>
+      </div>
+      <div class="tl-item">
+        <b>Eigene Praxis im Herzen Würzburgs</b>
+        <span>Persönliche Betreuung in der Augustinerstraße – auf Deutsch und Russisch.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEISTUNGEN -->
+<section class="band leist" id="leistungen">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow center">Unsere Leistungen</span>
+      <h2>Für Ihre Gesundheit – <span class="serif-i">in jeder Lebensphase</span></h2>
+    </div>
+    <div class="lst-cols reveal" data-d="1">
+      <div>
+        <div class="lrow"><span class="no">01</span><h3>Krebsfrüherkennung</h3></div>
+        <div class="lrow"><span class="no">02</span><h3>Schwangerschaftsvorsorgeuntersuchung</h3></div>
+        <div class="lrow"><span class="no">03</span><h3>Individuelle Verhütungsberatung</h3></div>
+        <div class="lrow"><span class="no">04</span><h3>Ultraschalldiagnostik</h3></div>
+        <div class="lrow"><span class="no">05</span><h3>Kinderwunschberatung</h3></div>
+      </div>
+      <div>
+        <div class="lrow"><span class="no">06</span><h3>Tumornachsorgeuntersuchungen (DMP)</h3></div>
+        <div class="lrow"><span class="no">07</span><h3>Psychosomatische Grundversorgung</h3></div>
+        <div class="lrow"><span class="no">08</span><h3>Impfung</h3></div>
+        <div class="lrow"><span class="no">09</span><h3>Individuelle Gesundheitsleistung (IGeL)</h3></div>
+      </div>
+    </div>
+    <p class="lst-note reveal" data-d="2">Sie haben Fragen zu einer Leistung? Sprechen Sie uns gerne an – wir beraten Sie persönlich.</p>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="band" id="team">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow center">Das Team</span>
+      <h2>Wir sind <span class="serif-i">für Sie da</span></h2>
+    </div>
+    <div class="team-grid">
+      <div class="tcard reveal">
+        <div class="ava"><img src="assets_02/tk-team-kraft.jpg" alt="Tatjana Kraft, Frauenärztin"></div>
+        <b>Tatjana Kraft</b><span>Frauenärztin</span>
+      </div>
+      <div class="tcard reveal" data-d="1">
+        <div class="ava"><img src="assets_02/tk-team-schwan.jpg" alt="Maria Schwan, MFA"></div>
+        <b>Maria Schwan</b><span>MFA</span>
+      </div>
+      <div class="tcard reveal" data-d="2">
+        <div class="ava"><img src="assets_02/tk-team-zubiks.jpg" alt="Irina Zubiks, Praxismitarbeiterin"></div>
+        <b>Irina Zubiks</b><span>Praxismitarbeiterin</span>
+      </div>
+      <div class="tcard reveal" data-d="1">
+        <div class="ava"><img src="assets_02/tk-team-haslinger.jpg" alt="Manuela Haslinger, MFA (Teilzeit)"></div>
+        <b>Manuela Haslinger</b><span>MFA (Teilzeit)</span>
+      </div>
+      <div class="tcard reveal" data-d="2">
+        <div class="ava"><img src="assets_02/tk-team-eichmann.jpg" alt="Nadja Eichmann, Auszubildende"></div>
+        <b>Nadja Eichmann</b><span>Auszubildende</span>
+      </div>
+      <div class="tcard reveal" data-d="3">
+        <div class="ava"><img src="assets_02/tk-team-hluchnik.jpg" alt="Veronika Hluchnik, Auszubildende"></div>
+        <b>Veronika Hluchnik</b><span>Auszubildende in Mutterschutz</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPRECHZEITEN & KONTAKT -->
+<section class="band leist" id="kontakt">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Sprechzeiten &amp; Kontakt</span>
+      <h2>So erreichen Sie <span class="serif-i">uns</span></h2>
+    </div>
+    <div class="zk-grid">
+      <div class="contact-card reveal">
+        <h3>Praxis Tatjana Kraft</h3>
+        <div class="cline">
+          <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><b>Adresse</b><span>Augustinerstraße 3, 97070 Würzburg – im Herzen der Innenstadt</span></div>
+        </div>
+        <div class="cline">
+          <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <div><b>Telefon</b><span><a href="tel:093153247" style="color:var(--wine);font-weight:600">0931 53247</a> · Fax 0931 3537568</span></div>
+        </div>
+        <div class="cline">
+          <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></div>
+          <div><b>E-Mail</b><span>kontakt@wuerzburg-frauenarzt.de</span></div>
+        </div>
+        <a href="tel:093153247" class="btn btn-primary" style="margin-top:1.4rem">Jetzt anrufen</a>
+      </div>
+      <div class="hours-panel reveal" data-d="1">
+        <div class="in">
+          <h3>Unsere Sprechzeiten</h3>
+          <div class="hrow"><span class="d">Montag</span><span class="t">12:00 – 15:00 &amp; 16:00 – 19:00</span></div>
+          <div class="hrow"><span class="d">Dienstag</span><span class="t">08:30 – 12:30 &amp; 14:00 – 17:00</span></div>
+          <div class="hrow"><span class="d">Mittwoch</span><span class="t">08:30 – 13:30</span></div>
+          <div class="hrow"><span class="d">Donnerstag</span><span class="t">08:30 – 12:30 &amp; 14:00 – 17:00</span></div>
+          <div class="hrow"><span class="d">Freitag</span><span class="t">08:30 – 13:20</span></div>
+          <span class="habend"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"/></svg>Montags Abendsprechstunde bis 19 Uhr</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="band" id="termin" style="padding-top:1rem">
+  <div class="wrap">
+    <div class="cta reveal">
+      <img class="cta-motif" src="assets_02/tk-logo.png" alt="" aria-hidden="true">
+      <div class="in">
+        <span class="eyebrow center">Termin</span>
+        <h2>Ich freue mich, Sie in meiner <span class="serif-i">Praxis zu begrüßen</span></h2>
+        <p>Vereinbaren Sie telefonisch einen Termin – mein Team und ich sind gerne für Sie da.</p>
+        <div class="cta-actions">
+          <a href="tel:093153247" class="btn btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            0931 53247
+          </a>
+          <a href="mailto:kontakt@wuerzburg-frauenarzt.de" class="btn btn-light">E-Mail schreiben</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="wm">Tatjana Kraft<small>FRAUENÄRZTIN · WÜRZBURG</small></div>
+        <p>Fachärztin für Frauenheilkunde und Geburtshilfe – persönliche Betreuung im Herzen Würzburgs, auf Deutsch und Russisch.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Praxis</h4>
+        <a href="#ueber">Über mich</a>
+        <a href="#leistungen">Leistungen</a>
+        <a href="#team">Team</a>
+        <a href="#kontakt">Sprechzeiten</a>
+      </div>
+      <div class="foot-col">
+        <h4>Kontakt</h4>
+        <span>Augustinerstraße 3</span>
+        <span>97070 Würzburg</span>
+        <a href="tel:093153247">0931 53247</a>
+        <a href="mailto:kontakt@wuerzburg-frauenarzt.de">kontakt@wuerzburg-frauenarzt.de</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Frauenarztpraxis Tatjana Kraft · Würzburg</span>
+      <span><a href="#top">Impressum</a> · <a href="#top">Datenschutz</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const header=document.getElementById('header');
+  const onScroll=()=>header.classList.toggle('scrolled',window.scrollY>30);
+  onScroll();window.addEventListener('scroll',onScroll,{passive:true});
+  const burger=document.getElementById('burger');
+  const menu=document.getElementById('mobileMenu');
+  burger.addEventListener('click',()=>menu.classList.toggle('open'));
+  menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>menu.classList.remove('open')));
+  const io=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.14,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal:not(.in)').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
