@@ -11,7 +11,7 @@
 ### §A1 · Navbar, Footer und Seiten-DNA sind unantastbar [bewiesen]
 Jede Seite trägt identisch: Nav (Logo + Website/Apps/Marketing/Automation + Calendly-CTA "Erstgespräch buchen"/"Book a free call" + Sprachwechsler-Dropdown `.nav-lang`; transparent, Glass beim Scrollen, Burger mobil, aktiver Menüpunkt `.active`) · Footer (drei Spalten Services/Unternehmen/Rechtliches bzw. Services/Company/Legal, Logo + Tagline, Social nur Behance + X, DE/EN-Pills `.lang-switch`) · animierten Hintergrund (Canvas-Partikel mit Maus-Interaktion + 4 Orbs + Grid-Overlay + Grain, keine Planeten) · Glass-Cards, Reveal-Animationen, gleiche Section-Muster und Abstände. Cookie-Banner + consent-gated GA4 auf allen Seiten AUSSER Rechtsseiten (§D2). Sprachwechsler verlinkt IMMER seitenspezifisch aufs Pendant (/apps ↔ /en/apps), nie generisch auf die Startseite.
 Verstoß = eine öffentliche Seite ohne vollständige Nav/Footer/DNA oder mit vereinfachter Variante.
-**Scope (präzisiert 2026-07-19, Repo gewinnt):** Gilt für alle öffentlichen Seiten. Die internen noindex-Tools (buecher-cw, more-produkt-berater) sind eigenständige Projektseiten und bewusst von DNA und GA ausgenommen; verify.py prüft sie nur auf noindex, Links, lang und Em-Dashes.
+**Scope (präzisiert 2026-07-19, Repo gewinnt):** Gilt für alle öffentlichen Seiten. Die internen noindex-Tools (buecher-cw, more-produkt-berater) sind eigenständige Projektseiten und bewusst von DNA und GA ausgenommen; verify.py prüft sie nur auf noindex, Links, lang und Em-Dashes. Kunden-Preview-Seiten (index_*.html) sind eigenständige Kundendesigns ohne YG-Copy: noindex Pflicht, von DNA/GA UND von der Em-Dash-Regel ausgenommen (Kunden-Content); verify.py prüft sie nur auf noindex + lang und dass sie nie in der Sitemap stehen.
 
 ### §A2 · Keine Gedankenstriche [bewiesen]
 Kein Em-Dash (—) im sichtbaren Fließtext, deutsch wie englisch, auch nicht in FAQ-Schemas oder Meta-Descriptions. Einzige Ausnahme: die Title-Tag-Konvention "Seite — YG MEDIA". verify.py prüft das maschinell.
@@ -105,7 +105,7 @@ Inhaltliche Änderungen an Impressum, Datenschutzerklärung oder EULA nur mit Ya
 | GitHub-Plan: Repo öffentlich (Free) vs. Pro 4 $/Monat privat vs. interne Dateien auslagern | Governance 3 | offen (Yasin) |
 | Sitemap enthielt /impressum + /datenschutz trotz noindex (Drift Doku vs. Repo, von verify.py gefunden) | §C2 | **behoben 2026-07-19 (Repo-Übernahme)** — der Vormittags-Fix lag nur in der separaten v4.3-Arbeitskopie; im Repo auf 14 URLs bereinigt, Neueinreichung siehe Befund 2 |
 | Sichtbare Em-Dashes auf buecher-cw (2 Stellen) | §A2 | **behoben 2026-07-19 (Repo-Übernahme; Vormittags-Fix lag nur in der Arbeitskopie)**; JS-injizierte Buchbeschreibungen tragen weitere (intern, niedrig, Merkposten) |
-| 11 Kunden-Preview-Seiten (index_*.html) im Repo: indexierbar (kein noindex), nicht im verify-Inventar, dem Brain bisher unbekannt | §C2 | offen — Entscheidung: noindex + eigene verify-Kategorie (noindex + lang, DNA-/Em-Dash-frei wie interne Tools), nächster Bau-Schritt (STATUS) |
+| 11 Kunden-Preview-Seiten (index_*.html) im Repo: indexierbar (kein noindex), nicht im verify-Inventar, dem Brain bisher unbekannt | §C2 | **behoben 2026-07-19** — alle 11 auf noindex, PREVIEW_PAGES-Kategorie in verify.py (noindex + lang + Sitemap-Verbot), §A1-Scope ergänzt |
 
 ## Änderungslog
 | Datum | Änderung |

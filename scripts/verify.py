@@ -29,6 +29,12 @@ LEGAL_PAGES = [
     "nutzungsbedingungen.html", "en/terms-of-use.html",
 ]
 INTERNAL_PAGES = ["buecher-cw.html", "more-produkt-berater.html"]
+# Kunden-Preview-Seiten: eigenstaendige Kundendesigns, kein YG-Copy — Pruefumfang nur noindex + lang (§A1-Scope, §C2)
+PREVIEW_PAGES = [
+    "index_ac.html", "index_ak.html", "index_aw.html", "index_bw.html",
+    "index_ep.html", "index_gk.html", "index_gl.html", "index_jl.html",
+    "index_ku.html", "index_kw.html", "index_ul.html",
+]
 
 ALL_PAGES = [p for pair in INDEXABLE_PAIRS for p in pair] + LEGAL_PAGES + INTERNAL_PAGES
 
@@ -182,6 +188,18 @@ def check_page(path):
             err(f"{path}: totes Asset {src}")
 
 
+def check_preview(path):
+    if not os.path.exists(os.path.join(ROOT, path)):
+        err(f"{path}: Datei fehlt (Kunden-Preview im Inventar)")
+        return
+    html = read(path)
+    m = re.search(r"<html[^>]*\blang=\"([a-zA-Z-]+)\"", html)
+    if not m or m.group(1).lower().split("-")[0] != "de":
+        err(f"{path}: lang fehlt oder nicht de (Kunden-Preview)")
+    if not re.search(r"<meta[^>]*noindex", html):
+        err(f"{path}: noindex fehlt (Kunden-Preview, §C2)")
+
+
 def check_hreflang():
     for de, en in INDEXABLE_PAIRS:
         for path in (de, en):
@@ -218,6 +236,8 @@ def check_sitemap():
             err(f"sitemap.xml: Rechtsseite enthalten {u} (verboten, §C2)")
         if f in INTERNAL_PAGES:
             err(f"sitemap.xml: interne Seite enthalten {u} (verboten, §C2)")
+        if f in PREVIEW_PAGES:
+            err(f"sitemap.xml: Kunden-Preview enthalten {u} (verboten, §C2)")
     # Rueckrichtung: jede indexierbare Seite steht in der Sitemap
     missing = indexable_files - mapped
     for f in sorted(missing):
@@ -228,6 +248,8 @@ def main():
     check_invariants()
     for p in ALL_PAGES:
         check_page(p)
+    for p in PREVIEW_PAGES:
+        check_preview(p)
     check_hreflang()
     check_sitemap()
 
@@ -238,7 +260,7 @@ def main():
             print(f"FAIL  {e}")
         print(f"\nverify.py ROT — {len(errors)} Fehler, {len(warnings)} Warnungen. NICHT committen.")
         sys.exit(1)
-    print(f"verify.py GRUEN — {len(ALL_PAGES)} Seiten geprueft, 0 Fehler, {len(warnings)} Warnungen.")
+    print(f"verify.py GRUEN — {len(ALL_PAGES)} Seiten + {len(PREVIEW_PAGES)} Kunden-Previews geprueft, 0 Fehler, {len(warnings)} Warnungen.")
     sys.exit(0)
 
 
