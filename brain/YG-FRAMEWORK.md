@@ -79,8 +79,8 @@ GA4 `G-MHQJ0HLBM3` (Property 437337038), consent-gated via localStorage `yg_cook
 
 # TEIL IV · ROADMAP
 
-**A** Push + Search Console: aktuellen Stand deployen, Sitemap (14 URLs) neu einreichen, /en/ zur Indexierung anstoßen. — nächster Schritt
-**B** Deploy-Absicherung: Actions-Workflow aktivieren, damit brain/, scripts/, CLAUDE.md NIE live gehen (STATUS Befund 1). — mit A
+**A** Push + Search Console: aktuellen Stand deployen, Sitemap (14 URLs) neu einreichen, /en/ zur Indexierung anstoßen. — erledigt 2026-07-19
+**B** Deploy-Absicherung: Actions-Workflow aktivieren, damit brain/, scripts/, CLAUDE.md NIE live gehen (STATUS Befund 1). — erledigt 2026-07-19 (Pages-Source: GitHub Actions, Live-Check /brain/ = 404)
 **C** GitHub-Entscheidung (Yasin): Pro-Upgrade 4 $/Monat (Repo privat) ODER öffentlich lassen + interne Dateien auslagern. Vercel ist keine Option.
 **D** Kampagne K1: Google Ads ~7 €/Tag, Phrase, Zielseite /website (SEO-Konzept §7) — oder GSC-Daten abwarten. Geld = Yasin-Gate.
 **E** GSC-Loop wöchentlich: Paket auswerten, Maßnahmen ableiten (CTR-Rettungen, Content-Chancen).
@@ -129,6 +129,7 @@ INDEX zuerst, dann STATUS, dann Links. CLAUDE.md < 200 Zeilen — zeigt aufs Bra
 | Datum | Version | Änderung |
 |---|---|---|
 | 2026-07-19 | 1.0 | Erstfassung: konsolidiert aus Live-Site (v4.3-Stand), Projektanweisungen v5.0, SEO-Konzept Rev. 4 und Projekthistorie Juni–Juli 2026. Systematik übernommen aus den Brains von USELY (Framework/CLAUDE.md/Spec-Kette), YOU (STATUS-Verlauf, Vollautonomie-Detailregeln) und SPC (Loop-System, Protokoll-Format, Deploy-Absicherung, verify.py als Gate). |
+| 2026-07-19 | 1.1 | Roadmap-Blöcke A + B erledigt: Actions-Deploy aktiv (Brain bleibt privat), Sitemap 14 URLs in GSC neu eingereicht, 4 EN-URLs zur Indexierung beantragt, Enforce HTTPS aktiv (http→https 301). Details: 05-protokoll/2026-07-19-system-repo-uebernahme.md. |
 
 ---
 *YG FRAMEWORK v1.0 · Single Source of Truth · oberste Datei neben INDEX.md*

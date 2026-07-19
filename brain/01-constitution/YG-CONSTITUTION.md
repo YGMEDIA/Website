@@ -100,7 +100,7 @@ Inhaltliche Änderungen an Impressum, Datenschutzerklärung oder EULA nur mit Ya
 | Befund | Gesetz | Status |
 |---|---|---|
 | Brain-Going-Live-Risiko: Pages im Legacy-Modus würde brain/, scripts/ und CLAUDE.md öffentlich deployen (SPC-Präzedenzfall) | Governance 5 | **behoben 2026-07-19** — Pages-Source von Yasin auf "GitHub Actions" umgestellt (API: build_type=workflow) VOR dem ersten Brain-Push; deploy.yml aktiv, Live-Check nach erstem Actions-Deploy: /brain/ = 404 |
-| Sitemap nach v4.3-Push in GSC neu einreichen + /en/ anstoßen | §C2 | offen (Yasin, nach Deploy) |
+| Sitemap nach v4.3-Push in GSC neu einreichen + /en/ anstoßen | §C2 | **behoben 2026-07-19** — Sitemap (14 URLs) neu eingereicht, 4 EN-URLs per URL-Prüfung beantragt (Yasin) |
 | Vorlagen-Hinweissatz dt. Datenschutzerklärung + US-Drittlandübermittlung | §D4 | offen (Yasin) |
 | GitHub-Plan: Repo öffentlich (Free) vs. Pro 4 $/Monat privat vs. interne Dateien auslagern | Governance 3 | offen (Yasin) |
 | Sitemap enthielt /impressum + /datenschutz trotz noindex (Drift Doku vs. Repo, von verify.py gefunden) | §C2 | **behoben 2026-07-19 (Repo-Übernahme)** — der Vormittags-Fix lag nur in der separaten v4.3-Arbeitskopie; im Repo auf 14 URLs bereinigt, Neueinreichung siehe Befund 2 |
