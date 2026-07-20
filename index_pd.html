@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pfoten Docs Niederwerrn – Tierarztpraxis für Kleintiere im Landkreis Schweinfurt</title>
+<meta name="description" content="Pfoten Docs Niederwerrn, Praxis für Kleintiere, Jahnstraße 8. Tierärztliche Versorgung von Vorsorge bis Chirurgie: Impfungen, Diagnostik, Operationen, Inhouse-Labor, digitales Röntgen. Tel. 09721 74070.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700;800&family=Domine:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --olive:#808500;
+    --olive-deep:#5f6300;
+    --forest:#3a5715;
+    --forest-2:#4d6a28;
+    --mint:#eaf2b9;
+    --mint-2:#f4f8dd;
+    --paper:#ffffff;
+    --ink:#28311c;
+    --muted:#68705a;
+    --line:#dfe5cc;
+    --radius:22px;
+    --shadow:0 26px 60px -28px rgba(58,87,21,.32);
+    --shadow-sm:0 14px 32px -20px rgba(58,87,21,.38);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Mulish',system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  h1,h2,h3{font-family:'Domine',Georgia,serif;font-weight:600;line-height:1.16;letter-spacing:-.01em;color:var(--forest)}
+  .sans-b{font-family:'Mulish',sans-serif;font-weight:800}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{width:min(1180px,92vw);margin:0 auto}
+  .eyebrow{display:inline-flex;align-items:center;gap:.55em;font-size:.72rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--olive-deep)}
+  .eyebrow::before{content:"";width:26px;height:2px;background:var(--olive);border-radius:2px}
+  .eyebrow.center{justify-content:center;display:flex}
+  .eyebrow.light{color:#cfdd8e}
+  .eyebrow.light::before{background:rgba(207,221,142,.8)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:.55em;font-weight:800;font-size:.95rem;padding:.92em 1.7em;border-radius:100px;transition:transform .25s ease,box-shadow .25s ease,background .25s ease,border-color .25s ease;cursor:pointer;border:none}
+  .btn-forest{background:var(--forest);color:#fff;box-shadow:var(--shadow-sm)}
+  .btn-forest:hover{transform:translateY(-3px);background:var(--forest-2)}
+  .btn-olive{background:var(--olive);color:#fff;box-shadow:0 14px 30px -12px rgba(128,133,0,.5)}
+  .btn-olive:hover{transform:translateY(-3px);background:#939800}
+  .btn-ghost{background:transparent;color:var(--forest);border:1.5px solid var(--line)}
+  .btn-ghost:hover{transform:translateY(-3px);border-color:var(--olive);box-shadow:var(--shadow-sm);background:#fff}
+  .btn-light{background:#fff;color:var(--forest)}
+  .btn-light:hover{transform:translateY(-3px);box-shadow:0 16px 34px -14px rgba(0,0,0,.3)}
+
+  header{position:fixed;top:0;left:0;right:0;z-index:100;padding:.95rem 0;transition:padding .3s,background .3s,box-shadow .3s}
+  header.scrolled{padding:.5rem 0;background:rgba(255,255,255,.93);backdrop-filter:blur(16px) saturate(1.2);-webkit-backdrop-filter:blur(16px) saturate(1.2);box-shadow:0 1px 0 rgba(58,87,21,.1)}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+  .brand{background:#fff;border:1px solid var(--line);border-radius:12px;padding:.45rem .8rem;box-shadow:var(--shadow-sm);display:inline-flex}
+  .brand img{height:34px;width:auto}
+  .nav-links{display:flex;align-items:center;gap:1.55rem}
+  .nav-links a{font-size:.93rem;font-weight:700;color:var(--forest);opacity:.82;transition:opacity .2s}
+  .nav-links a:hover{opacity:1}
+  .nav-cta{display:flex;align-items:center;gap:.9rem}
+  .nav-burger{display:none;background:none;border:none;cursor:pointer;padding:.4rem}
+  .nav-burger span{display:block;width:24px;height:2.5px;background:var(--forest);margin:5px 0;border-radius:2px;transition:transform .3s,opacity .3s}
+  .mobile-nav{display:none;position:fixed;inset:0;background:rgba(40,49,28,.98);z-index:99;padding:6.5rem 8vw;flex-direction:column;gap:1.6rem;opacity:0;pointer-events:none;transition:opacity .3s}
+  .mobile-nav.open{opacity:1;pointer-events:auto}
+  .mobile-nav a{color:#fff;font-size:1.35rem;font-weight:700}
+  body.nav-open .nav-burger span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+  body.nav-open .nav-burger span:nth-child(2){opacity:0}
+  body.nav-open .nav-burger span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+
+  /* Hero mit Squircle-Foto + Pfotenspur */
+  .hero{background:linear-gradient(168deg,var(--mint-2) 0%,#fff 72%);padding:9.5rem 0 4.6rem;position:relative;overflow:hidden}
+  .paw-trail{position:absolute;top:110px;right:4%;opacity:.12;z-index:1}
+  .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:3.4rem;align-items:center;position:relative;z-index:2}
+  .hero h1{font-size:clamp(2.25rem,4.3vw,3.4rem)}
+  .hero h1 em{font-style:normal;color:var(--olive-deep)}
+  .hero-sub{font-size:1.06rem;color:var(--muted);max-width:35em;margin-top:1.2rem}
+  .hero-ctas{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:1.9rem}
+  .hero-chips{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.7rem}
+  .chip{display:inline-flex;align-items:center;gap:.5em;background:#fff;border:1px solid var(--line);color:var(--forest);font-size:.84rem;font-weight:700;padding:.55em 1.05em;border-radius:100px}
+  .chip svg{width:15px;height:15px;stroke:var(--olive-deep)}
+  .hero-media{position:relative;padding:1.6rem 0 0 1.6rem}
+  .hero-media::before{content:"";position:absolute;top:0;left:0;width:82%;height:86%;background:var(--mint);border-radius:38% 62% 55% 45%/45% 48% 52% 55%;z-index:0}
+  .hero-media img{position:relative;z-index:1;border-radius:var(--radius);box-shadow:var(--shadow);aspect-ratio:5/4;object-fit:cover;width:100%}
+
+  section{padding:5.6rem 0}
+  .sec-head{max-width:680px;margin-bottom:2.8rem}
+  .sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
+  .sec-head h2{font-size:clamp(1.7rem,3vw,2.35rem);margin-top:.6rem}
+  .sec-head p{color:var(--muted);margin-top:.8rem}
+
+  /* Willkommen */
+  .welcome-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:3.2rem;align-items:center}
+  .welcome-media{position:relative}
+  .welcome-media img{border-radius:var(--radius);box-shadow:var(--shadow-sm);width:100%}
+  .welcome-text .lead{font-family:'Domine',Georgia,serif;font-size:1.42rem;line-height:1.45;color:var(--forest);margin:.9rem 0 1.1rem}
+  .welcome-text .lead em{color:var(--olive-deep);font-style:italic}
+  .welcome-text p{color:var(--muted)}
+  .welcome-text p+p{margin-top:1rem}
+  .wpoints{margin-top:1.5rem;display:grid;gap:.7rem}
+  .wpoint{display:flex;gap:.7rem;align-items:flex-start;background:var(--mint-2);border:1px solid var(--line);border-radius:14px;padding:.85rem 1.05rem;font-size:.93rem;font-weight:700;color:var(--forest)}
+  .wpoint svg{width:18px;height:18px;flex:none;margin-top:.15em;stroke:var(--olive-deep)}
+
+  /* Leistungen */
+  .leist{background:linear-gradient(180deg,var(--mint-2) 0%,#fff 100%)}
+  .leist-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:1.6rem;align-items:stretch}
+  .leist-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:2rem 1.9rem;transition:transform .3s ease,box-shadow .3s ease}
+  .leist-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+  .leist-head{display:flex;align-items:center;gap:.85rem;margin-bottom:1.2rem}
+  .leist-head .ic{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:var(--mint);flex:none}
+  .leist-head .ic svg{width:22px;height:22px;stroke:var(--forest)}
+  .leist-card h3{font-size:1.18rem}
+  .leist-card ul{list-style:none;columns:2;column-gap:1.6rem}
+  .leist-card.single ul{columns:1}
+  .leist-card li{display:flex;gap:.6rem;align-items:flex-start;padding:.38em 0;font-size:.92rem;color:var(--muted);break-inside:avoid}
+  .leist-card li::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--olive);flex:none;margin-top:.55em}
+  .leist-note{margin-top:2rem;text-align:center;color:var(--muted);font-size:.94rem}
+
+  /* Philosophie-Band */
+  .philo{background:var(--forest);color:#fff;position:relative;overflow:hidden}
+  .philo::before{content:"";position:absolute;top:-140px;right:-140px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(234,242,185,.14),transparent 65%)}
+  .philo .sec-head h2{color:#fff}
+  .philo .sec-head p{color:#cfdd8e}
+  .philo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem;position:relative;z-index:2}
+  .philo-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-radius:var(--radius);padding:1.6rem 1.5rem;transition:background .3s,transform .3s}
+  .philo-card:hover{background:rgba(255,255,255,.12);transform:translateY(-4px)}
+  .philo-card svg{width:28px;height:28px;margin-bottom:.9rem;stroke:#cfdd8e}
+  .philo-card b{display:block;font-size:1rem;margin-bottom:.35rem}
+  .philo-card p{font-size:.87rem;color:#cfdd8e}
+
+  /* Zeiten */
+  .hours{background:#fff}
+  .hours-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:1.6rem;align-items:stretch}
+  .hours-card{background:var(--mint-2);border:1px solid var(--line);border-radius:var(--radius);padding:2.2rem 2.4rem}
+  .hours-card h3{font-size:1.25rem;margin-bottom:.5rem}
+  .hours-card .sub{font-size:.88rem;color:var(--muted);margin-bottom:1.2rem}
+  .day-row{display:flex;align-items:center;gap:1rem;padding:.68em 0;font-size:.94rem}
+  .day-row+.day-row{border-top:1px solid var(--line)}
+  .day-row b{width:34%;color:var(--forest)}
+  .slot{background:#fff;border:1px solid var(--line);border-radius:100px;font-size:.82rem;font-weight:700;color:var(--ink);padding:.35em .95em}
+  .slot.off{background:transparent;border-style:dashed;color:var(--muted);font-weight:600}
+  .contact-card{background:var(--olive);color:#fff;border-radius:var(--radius);padding:2.2rem 2.4rem;display:flex;flex-direction:column;box-shadow:var(--shadow)}
+  .contact-card h3{color:#fff;font-size:1.25rem;margin-bottom:1.2rem;font-family:'Domine',serif}
+  .contact-row{display:flex;gap:.85rem;align-items:flex-start;padding:.7rem 0;font-size:.96rem}
+  .contact-row+.contact-row{border-top:1px solid rgba(255,255,255,.2)}
+  .contact-row svg{width:19px;height:19px;flex:none;margin-top:.2em;stroke:#f0f5cf}
+  .contact-row a:hover{text-decoration:underline}
+  .contact-card .note{font-size:.86rem;color:#f0f5cf;margin-top:1rem}
+  .contact-card .btn{margin-top:auto;align-self:flex-start}
+
+  /* Notdienst + Jobs */
+  .duo{padding:0 0 5.6rem}
+  .duo-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem}
+  .info-card{display:flex;gap:1.2rem;align-items:flex-start;background:var(--mint-2);border:1px solid var(--line);border-radius:var(--radius);padding:1.8rem 1.9rem}
+  .info-card svg{width:30px;height:30px;stroke:var(--olive-deep);flex:none;margin-top:.2em}
+  .info-card b{display:block;font-size:1.02rem;color:var(--forest)}
+  .info-card p{font-size:.9rem;color:var(--muted);margin-top:.3rem}
+  .info-card .num{display:inline-block;margin-top:.6rem;background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:.5rem 1rem;font-weight:800;color:var(--forest)}
+
+  .cta{background:linear-gradient(168deg,var(--mint) 0%,var(--mint-2) 100%)}
+  .cta-inner{text-align:center;max-width:640px;margin:0 auto}
+  .cta h2{font-size:clamp(1.7rem,3vw,2.35rem)}
+  .cta p{color:var(--muted);margin:1rem 0 1.9rem}
+  .cta-btns{display:flex;gap:.9rem;justify-content:center;flex-wrap:wrap}
+
+  footer{background:var(--forest);color:#cfdd8e;padding:3.4rem 0 2rem}
+  .foot-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:2.5rem;padding-bottom:2.2rem;border-bottom:1px solid rgba(255,255,255,.14)}
+  .foot-brand{background:#fff;border-radius:12px;padding:.5rem .85rem;display:inline-flex;margin-bottom:1rem}
+  .foot-brand img{height:30px}
+  .foot-grid h4{color:#fff;font-size:.95rem;margin-bottom:.9rem;font-family:'Mulish',sans-serif}
+  .foot-grid p,.foot-grid a{font-size:.9rem;line-height:1.9}
+  .foot-grid a:hover{color:#fff}
+  .foot-bottom{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding-top:1.6rem;font-size:.82rem}
+  .foot-bottom a{opacity:.85}
+  .foot-bottom a:hover{opacity:1}
+
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  @media (max-width:1020px){
+    .hero-grid,.welcome-grid,.hours-grid{grid-template-columns:1fr;gap:2.4rem}
+    .leist-grid{grid-template-columns:1fr}
+    .philo-grid{grid-template-columns:1fr;max-width:520px;margin:0 auto}
+    .duo-grid{grid-template-columns:1fr}
+    .leist-card ul{columns:1}
+    .welcome-media{order:2}
+    .foot-grid{grid-template-columns:1fr 1fr}
+    .paw-trail{display:none}
+  }
+  @media (max-width:640px){
+    .nav-links{display:none}
+    .nav-cta .btn{display:none}
+    .nav-burger{display:block}
+    .mobile-nav{display:flex}
+    .day-row{flex-wrap:wrap;gap:.5rem}
+    .day-row b{width:100%}
+    .hours-card,.contact-card{padding:1.7rem 1.5rem}
+    section{padding:4rem 0}
+  }
+</style>
+</head>
+<body>
+
+<header id="header">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Pfoten Docs Niederwerrn – Startseite">
+      <img src="assets_02/pd-logo.png" alt="Logo Pfoten Docs Niederwerrn – Praxis für Kleintiere">
+    </a>
+    <nav class="nav-links" aria-label="Hauptnavigation">
+      <a href="#willkommen">Willkommen</a>
+      <a href="#leistungen">Leistungen</a>
+      <a href="#philosophie">Unsere Praxis</a>
+      <a href="#zeiten">Sprechzeiten</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-forest" href="tel:0972174070">09721 74070</a>
+      <button class="nav-burger" id="burger" aria-label="Menü öffnen" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="#willkommen">Willkommen</a>
+  <a href="#leistungen">Leistungen</a>
+  <a href="#philosophie">Unsere Praxis</a>
+  <a href="#zeiten">Sprechzeiten</a>
+  <a href="#kontakt">Kontakt</a>
+  <a class="btn btn-olive" href="tel:0972174070">09721 74070 anrufen</a>
+</div>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero" style="padding-bottom:4.2rem">
+    <svg class="paw-trail" width="220" height="320" viewBox="0 0 220 320" fill="var(--forest)" aria-hidden="true">
+      <g><ellipse cx="30" cy="30" rx="13" ry="16"/><ellipse cx="12" cy="12" rx="5" ry="7"/><ellipse cx="30" cy="6" rx="5" ry="7"/><ellipse cx="48" cy="12" rx="5" ry="7"/></g>
+      <g transform="translate(90 90) rotate(14)"><ellipse cx="30" cy="30" rx="13" ry="16"/><ellipse cx="12" cy="12" rx="5" ry="7"/><ellipse cx="30" cy="6" rx="5" ry="7"/><ellipse cx="48" cy="12" rx="5" ry="7"/></g>
+      <g transform="translate(20 180) rotate(-8)"><ellipse cx="30" cy="30" rx="13" ry="16"/><ellipse cx="12" cy="12" rx="5" ry="7"/><ellipse cx="30" cy="6" rx="5" ry="7"/><ellipse cx="48" cy="12" rx="5" ry="7"/></g>
+      <g transform="translate(110 250) rotate(10)"><ellipse cx="30" cy="30" rx="13" ry="16"/><ellipse cx="12" cy="12" rx="5" ry="7"/><ellipse cx="30" cy="6" rx="5" ry="7"/><ellipse cx="48" cy="12" rx="5" ry="7"/></g>
+    </svg>
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Praxis für Kleintiere · Niederwerrn</span>
+        <h1 style="margin-top:.8rem">Ihr Tierarzt für Kleintiere <em>im Landkreis Schweinfurt.</em></h1>
+        <p class="hero-sub">Herzlich willkommen bei Pfoten Docs Niederwerrn: Bei uns steht die Gesundheit Ihrer Lieblinge im Mittelpunkt – mit optimaler tierärztlicher Versorgung und höchster Qualität bei Diagnose und Therapie.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-olive" href="tel:0972174070">Jetzt Termin vereinbaren</a>
+          <a class="btn btn-ghost" href="mailto:info@pfoten-docs-niederwerrn.de">E-Mail schreiben</a>
+        </div>
+        <div class="hero-chips">
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Inhouse-Labor &amp; digitales Röntgen</span>
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Termine nach Vereinbarung</span>
+        </div>
+      </div>
+      <figure class="hero-media reveal">
+        <img src="assets_02/pd-tier2.png" alt="Glücklicher Hund auf der Wiese – Ihre Kleintiere in besten Händen" fetchpriority="high">
+      </figure>
+    </div>
+  </section>
+
+  <!-- WILLKOMMEN -->
+  <section id="willkommen">
+    <div class="wrap welcome-grid">
+      <div class="welcome-media reveal">
+        <img src="assets_02/pd-tier1.png" alt="Katze und Hund – Kleintiere bei den Pfoten Docs" loading="lazy">
+      </div>
+      <div class="welcome-text reveal">
+        <span class="eyebrow">Willkommen</span>
+        <p class="lead">Mit <em>Leidenschaft und Fachwissen</em> kümmern wir uns um das Wohl Ihrer Tiere – und haben stets ein offenes Ohr für Ihre Anliegen.</p>
+        <p>Vertrauen Sie auf die Erfahrung und das Einfühlungsvermögen unseres Teams aus Tierärzten und tiermedizinischen Fachangestellten. Wir setzen auf individuelle Beratung und gute Kommunikation – denn nur so können wir Ihre Bedürfnisse optimal erfüllen.</p>
+        <div class="wpoints">
+          <div class="wpoint"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg> Individuelle Behandlungspläne nach modernsten Erkenntnissen</div>
+          <div class="wpoint"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg> Ganzheitlicher Blick – inklusive Lebensumfeld und Verhalten</div>
+          <div class="wpoint"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg> Beratung und Betreuung der Tierhalter inbegriffen</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEISTUNGEN -->
+  <section class="leist" id="leistungen">
+    <div class="wrap">
+      <div class="sec-head center reveal">
+        <span class="eyebrow center">Unsere Leistungen</span>
+        <h2>Von der Vorsorge bis zur Chirurgie</h2>
+        <p>Moderne Tierheilkunde für Kleintiere – abgestimmt auf die Bedürfnisse Ihres Tieres.</p>
+      </div>
+      <div class="leist-grid">
+        <article class="leist-card reveal">
+          <div class="leist-head">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 21s-7-4.6-9.3-9A5.4 5.4 0 0 1 12 6.3 5.4 5.4 0 0 1 21.3 12c-2.3 4.4-9.3 9-9.3 9z"/></svg></span>
+            <h3>Medizinische Versorgung</h3>
+          </div>
+          <ul>
+            <li>Gesundheitsvorsorge und Impfungen</li>
+            <li>Parasitenbehandlung und Prophylaxe</li>
+            <li>Reiseprophylaxe</li>
+            <li>Allgemeine Tiermedizin</li>
+            <li>Diagnostik mit modernen Technologien</li>
+            <li>Gängige Weichteiloperationen (z. B. Kastration, Tumorentfernung)</li>
+            <li>Wundversorgung</li>
+            <li>Zahnsteinentfernung und Zahnextraktion (ohne Dentalröntgen)</li>
+            <li>Welpenberatung – auch vor dem Kauf</li>
+            <li>Individuelle Ernährungsberatung</li>
+            <li>Sterbebegleitung, auch zu Hause</li>
+            <li>und vieles mehr</li>
+          </ul>
+        </article>
+        <article class="leist-card single reveal">
+          <div class="leist-head">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/><circle cx="12" cy="12" r="3.5"/></svg></span>
+            <h3>Technische Ausstattung</h3>
+          </div>
+          <ul>
+            <li>Digitales Röntgen</li>
+            <li>Inhouse-Labor für schnelle, präzise Blutuntersuchungen</li>
+            <li>Mikroskopische Untersuchung (Kot, Urin, Ohr, Haut)</li>
+            <li>Inhalationsnarkose mit Monitoring der Vitalparameter</li>
+            <li>Ultraschall</li>
+          </ul>
+        </article>
+      </div>
+      <p class="leist-note">Ergänzend zur klassischen Schulmedizin bieten wir auch alternative Therapieansätze an.</p>
+    </div>
+  </section>
+
+  <!-- PHILOSOPHIE -->
+  <section class="philo" id="philosophie">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow light">Unsere Praxis</span>
+        <h2>Leidenschaft, Qualität, <span style="color:#cfdd8e">Vertrauen</span></h2>
+        <p>Entdecken Sie den Unterschied, den Leidenschaft, Qualität und Kundenzufriedenheit ausmachen können.</p>
+      </div>
+      <div class="philo-grid">
+        <div class="philo-card reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 21s-7-4.6-9.3-9A5.4 5.4 0 0 1 12 6.3 5.4 5.4 0 0 1 21.3 12c-2.3 4.4-9.3 9-9.3 9z"/></svg>
+          <b>Fürsorge für jeden Patienten</b>
+          <p>Unsere Leidenschaft für Tiere zeigt sich in der Aufmerksamkeit, die wir jedem einzelnen Patienten widmen.</p>
+        </div>
+        <div class="philo-card reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 2 3 7v6c0 5 3.8 8.4 9 9 5.2-.6 9-4 9-9V7z"/></svg>
+          <b>Qualität bei Diagnose &amp; Therapie</b>
+          <p>Moderne Technologien und regelmäßige Fortbildungen halten uns auf dem neuesten Stand der Tierheilkunde.</p>
+        </div>
+        <div class="philo-card reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M17 8a5 5 0 1 0-10 0c0 5-3 6-3 6h16s-3-1-3-6z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg>
+          <b>Offenes Ohr für Ihre Anliegen</b>
+          <p>Individuelle Beratung und gute Kommunikation – damit Ihr Liebling die bestmögliche Versorgung bekommt.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ZEITEN + KONTAKT -->
+  <section class="hours" id="zeiten">
+    <div class="wrap">
+      <div class="sec-head center reveal">
+        <span class="eyebrow center">Sprechzeiten &amp; Kontakt</span>
+        <h2>Wir sind für Sie da</h2>
+      </div>
+      <div class="hours-grid">
+        <div class="hours-card reveal">
+          <h3>Unsere Sprechzeiten</h3>
+          <p class="sub">Um unnötige Wartezeiten zu verhindern, bitten wir um telefonische Terminvereinbarung.</p>
+          <div class="day-row"><b>Montag</b><span class="slot">8:30 – 11:00</span><span class="slot">16:00 – 19:00</span></div>
+          <div class="day-row"><b>Dienstag</b><span class="slot">8:30 – 11:00</span><span class="slot">15:00 – 18:00</span></div>
+          <div class="day-row"><b>Mittwoch</b><span class="slot">8:30 – 11:00</span><span class="slot">14:00 – 17:00</span></div>
+          <div class="day-row"><b>Donnerstag</b><span class="slot">8:30 – 12:00</span><span class="slot off">nachmittags geschlossen</span></div>
+          <div class="day-row"><b>Freitag</b><span class="slot">8:30 – 11:00</span><span class="slot">15:00 – 18:00</span></div>
+        </div>
+        <div class="contact-card reveal" id="kontakt">
+          <h3>Pfoten Docs Niederwerrn</h3>
+          <div class="contact-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Jahnstraße 8<br>97464 Niederwerrn</span>
+          </div>
+          <div class="contact-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></svg>
+            <a href="tel:0972174070">09721 74070</a>
+          </div>
+          <div class="contact-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+            <a href="mailto:info@pfoten-docs-niederwerrn.de">info@pfoten-docs-niederwerrn.de</a>
+          </div>
+          <p class="note">Wir freuen uns darauf, Sie und Ihren vierbeinigen Freund kennenzulernen!</p>
+          <a class="btn btn-light" href="tel:0972174070">Jetzt anrufen</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOTDIENST + JOBS -->
+  <section class="duo">
+    <div class="wrap duo-grid">
+      <div class="info-card reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 2 3 7v6c0 5 3.8 8.4 9 9 5.2-.6 9-4 9-9V7z"/><path d="M12 8v5M12 16.5v.5"/></svg>
+        <div>
+          <b>Notfall außerhalb der Sprechzeiten?</b>
+          <p>Wenden Sie sich bitte an den Tierärztlichen Bezirksverband Unterfranken (kostenpflichtige Rufnummer).</p>
+          <span class="num">01805 00 96 82</span>
+        </div>
+      </div>
+      <div class="info-card reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M16 4a4 4 0 1 1-8 0M5 21a7 7 0 0 1 14 0"/><circle cx="12" cy="8" r="4"/></svg>
+        <div>
+          <b>Wir suchen Verstärkung – und bilden aus!</b>
+          <p>Aktuell suchen wir eine Tierärztin / einen Tierarzt in Voll- oder Teilzeit. Auch Ausbildungsplätze zur tiermedizinischen Fachangestellten sind zu vergeben.</p>
+          <span class="num" style="font-weight:700"><a href="mailto:info@pfoten-docs-niederwerrn.de">Jetzt bewerben</a></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="wrap cta-inner reveal">
+      <span class="eyebrow center">Lernen wir uns kennen</span>
+      <h2 style="margin-top:.6rem">Ihre Kleintiere in den besten Händen</h2>
+      <p>Wir freuen uns auf Ihren Besuch in der Jahnstraße 8 in Niederwerrn – im schönen Landkreis Schweinfurt.</p>
+      <div class="cta-btns">
+        <a class="btn btn-forest" href="tel:0972174070">09721 74070 anrufen</a>
+        <a class="btn btn-ghost" href="mailto:info@pfoten-docs-niederwerrn.de">E-Mail schreiben</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <span class="foot-brand"><img src="assets_02/pd-logo.png" alt="Pfoten Docs Niederwerrn"></span>
+        <p>Praxis für Kleintiere<br>im Landkreis Schweinfurt.</p>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <p>Jahnstraße 8 · 97464 Niederwerrn<br>
+        <a href="tel:0972174070">09721 74070</a><br>
+        <a href="mailto:info@pfoten-docs-niederwerrn.de">info@pfoten-docs-niederwerrn.de</a></p>
+      </div>
+      <div>
+        <h4>Sprechzeiten</h4>
+        <p>Mo – Fr: vormittags ab 8:30 Uhr<br>Mo, Di, Mi, Fr: auch nachmittags<br>Termine nach Vereinbarung</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Pfoten Docs Niederwerrn · Praxis für Kleintiere</span>
+      <span><a href="https://pfoten-docs-niederwerrn.de/impressum/" target="_blank" rel="noopener">Impressum</a> &nbsp;·&nbsp; <a href="https://pfoten-docs-niederwerrn.de/datenschutz/" target="_blank" rel="noopener">Datenschutz</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const header=document.getElementById('header');
+  addEventListener('scroll',()=>{header.classList.toggle('scrolled',scrollY>24)},{passive:true});
+
+  const burger=document.getElementById('burger'),mnav=document.getElementById('mobileNav');
+  burger.addEventListener('click',()=>{
+    const open=mnav.classList.toggle('open');
+    document.body.classList.toggle('nav-open',open);
+    burger.setAttribute('aria-expanded',open);
+    burger.setAttribute('aria-label',open?'Menü schließen':'Menü öffnen');
+  });
+  mnav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+    mnav.classList.remove('open');document.body.classList.remove('nav-open');
+    burger.setAttribute('aria-expanded','false');
+  }));
+
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.14});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
