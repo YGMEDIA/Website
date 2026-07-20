@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Praxis für Orthopädie und Schmerztherapie Dr. Tobias Heesen – Würzburg</title>
+<meta name="description" content="Praxis für Orthopädie und Schmerztherapie in der Juliuspromenade 28, Würzburg. Dr. Tobias Heesen und Agnieszka Kozuch-Heesen – spezialisiert auf Wirbelsäule, interventionelle Schmerztherapie und moderne Diagnostik. Termin: 0931 991 316 30 oder online.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,500;0,8..60,600;1,8..60,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --orange:#ef7900;
+    --orange-deep:#c96400;
+    --tint:#fdf1e3;
+    --tint-2:#fae3c8;
+    --slate:#242a33;
+    --slate-2:#2e3642;
+    --cream:#faf8f5;
+    --paper:#ffffff;
+    --ink:#272d36;
+    --muted:#6d7683;
+    --line:#eee4d6;
+    --radius:22px;
+    --shadow:0 26px 60px -28px rgba(36,42,51,.35);
+    --shadow-sm:0 14px 34px -20px rgba(36,42,51,.4);
+    --shadow-o:0 18px 40px -16px rgba(239,121,0,.45);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Outfit',system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  h1,h2,h3{line-height:1.14;letter-spacing:-.015em}
+  .serif{font-family:'Source Serif 4',Georgia,serif;font-weight:600}
+  .serif-i{font-family:'Source Serif 4',Georgia,serif;font-style:italic;font-weight:500}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{width:min(1180px,92vw);margin:0 auto}
+  .eyebrow{display:inline-flex;align-items:center;gap:.55em;font-size:.73rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--orange-deep)}
+  .eyebrow::before{content:"";width:26px;height:2px;background:var(--orange);border-radius:2px}
+  .eyebrow.center{justify-content:center;display:flex}
+  .eyebrow.light{color:#ffc98a}
+  .eyebrow.light::before{background:rgba(255,201,138,.7)}
+  .btn{display:inline-flex;align-items:center;gap:.55em;font-weight:600;font-size:.97rem;padding:.9em 1.65em;border-radius:14px;transition:transform .25s ease,box-shadow .25s ease,background .25s ease;cursor:pointer;border:none}
+  .btn-primary{background:var(--orange);color:#fff;box-shadow:var(--shadow-o)}
+  .btn-primary:hover{transform:translateY(-3px);background:var(--orange-deep);box-shadow:0 24px 46px -16px rgba(239,121,0,.55)}
+  .btn-ghost{background:#fff;color:var(--slate);border:1px solid var(--line)}
+  .btn-ghost:hover{transform:translateY(-3px);border-color:var(--orange);box-shadow:var(--shadow-sm)}
+  .btn-dark{background:var(--slate);color:#fff}
+  .btn-dark:hover{transform:translateY(-3px);background:var(--slate-2);box-shadow:var(--shadow-sm)}
+  .btn-light{background:#fff;color:var(--slate)}
+  .btn-light:hover{transform:translateY(-3px);box-shadow:0 16px 32px -14px rgba(0,0,0,.3)}
+
+  /* Header */
+  header{position:fixed;top:0;left:0;right:0;z-index:100;padding:.95rem 0;transition:padding .3s,background .3s,box-shadow .3s}
+  header.scrolled{padding:.55rem 0;background:rgba(255,255,255,.87);backdrop-filter:blur(16px) saturate(1.3);-webkit-backdrop-filter:blur(16px) saturate(1.3);box-shadow:0 1px 0 rgba(36,42,51,.08)}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+  .brand{background:#fff;border:1px solid var(--line);border-radius:12px;padding:.45rem .75rem;box-shadow:var(--shadow-sm);display:inline-flex}
+  .brand img{height:30px;width:auto}
+  .nav-links{display:flex;align-items:center;gap:1.7rem}
+  .nav-links a{font-size:.93rem;font-weight:500;color:var(--slate);opacity:.82;transition:opacity .2s,color .2s}
+  .nav-links a:hover{opacity:1;color:var(--orange-deep)}
+  .nav-cta{display:flex;align-items:center;gap:1rem}
+  .nav-phone{font-weight:600;color:var(--slate);font-size:.93rem;white-space:nowrap}
+  .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
+  .burger span{width:24px;height:2.5px;background:var(--slate);border-radius:2px;transition:.3s}
+  .mobile-menu{display:none}
+
+  /* Hero */
+  .hero{position:relative;padding:8.8rem 0 4.6rem;overflow:hidden;background:linear-gradient(180deg,#fff 0%,var(--cream) 100%)}
+  .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(720px 480px at 90% 8%,var(--tint) 0%,rgba(253,241,227,0) 62%)}
+  .hero-grid{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:3rem;align-items:center}
+  .hero-copy .tag{display:inline-flex;align-items:center;gap:.55rem;background:rgba(255,255,255,.85);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:100px;padding:.5rem 1.1rem;font-size:.83rem;font-weight:600;color:var(--slate);margin-bottom:1.5rem;box-shadow:var(--shadow-sm)}
+  .hero-copy .tag .dot{width:8px;height:8px;border-radius:50%;background:var(--orange)}
+  .hero-copy h1{font-size:clamp(2.3rem,4.4vw,3.5rem);color:var(--slate);margin-bottom:1.15rem;letter-spacing:-.02em}
+  .hero-copy h1 .serif-i{color:var(--orange-deep)}
+  .hero-copy p.lead{font-size:1.11rem;color:var(--muted);max-width:34em;margin-bottom:1.9rem}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:.85rem;align-items:center}
+  .hero-trust{display:flex;gap:1.8rem;flex-wrap:wrap;margin-top:2.2rem;padding-top:1.7rem;border-top:1px solid rgba(36,42,51,.12)}
+  .hero-trust div{font-size:.85rem;color:var(--muted)}
+  .hero-trust b{display:block;font-family:'Source Serif 4',serif;font-size:1.5rem;color:var(--orange-deep);font-weight:600;line-height:1.2}
+
+  .hero-visual{position:relative}
+  .duo-panel{position:relative;border-radius:30px;background:linear-gradient(160deg,var(--orange) 0%,var(--orange-deep) 100%);box-shadow:var(--shadow-o);padding:2.6rem 1.6rem 0;overflow:visible}
+  .duo-panel::before{content:"";position:absolute;inset:0;border-radius:30px;background:radial-gradient(420px 300px at 20% 15%,rgba(255,255,255,.25),transparent 60%)}
+  .duo-panel img{position:relative;width:88%;margin:-3.4rem auto 0;display:block;filter:drop-shadow(0 18px 30px rgba(36,42,51,.35))}
+  .duo-chip{position:absolute;left:1.1rem;right:1.1rem;bottom:1.1rem;display:flex;justify-content:space-between;gap:.8rem;background:rgba(255,255,255,.86);backdrop-filter:blur(14px) saturate(1.3);-webkit-backdrop-filter:blur(14px) saturate(1.3);border:1px solid rgba(255,255,255,.75);border-radius:16px;box-shadow:var(--shadow-sm);padding:.85rem 1.15rem}
+  .duo-chip div{text-align:left}
+  .duo-chip b{display:block;font-size:.85rem;color:var(--slate);line-height:1.25}
+  .duo-chip span{font-size:.72rem;color:var(--orange-deep);font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+
+  /* Sections */
+  .band{padding:5.4rem 0}
+  .sec-head{max-width:680px;margin-bottom:2.8rem}
+  .sec-head.center{margin-inline:auto;text-align:center}
+  .sec-head h2{font-size:clamp(1.85rem,3.3vw,2.55rem);color:var(--slate);margin:.85rem 0 .75rem}
+  .sec-head h2 .serif-i{color:var(--orange-deep)}
+  .sec-head p{color:var(--muted);font-size:1.04rem}
+
+  /* Werte */
+  .val-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+  .vcard{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:2rem;transition:transform .3s,box-shadow .3s}
+  .vcard:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+  .vcard .ic{width:52px;height:52px;border-radius:14px;background:var(--tint);color:var(--orange-deep);display:grid;place-items:center;margin-bottom:1.1rem;transition:.3s}
+  .vcard:hover .ic{background:var(--orange);color:#fff}
+  .vcard h3{font-size:1.16rem;color:var(--slate);margin-bottom:.5rem}
+  .vcard p{color:var(--muted);font-size:.94rem}
+
+  /* Diagnostik */
+  .diag{position:relative;overflow:hidden;background:linear-gradient(140deg,var(--slate),var(--slate-2));color:#fff;border-radius:28px}
+  .diag::before{content:"";position:absolute;inset:0;background:radial-gradient(600px 380px at 88% 8%,rgba(239,121,0,.28),transparent 60%)}
+  .diag-in{position:relative;padding:3rem}
+  .diag-head{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:end;margin-bottom:2rem}
+  .diag-head h2{font-size:clamp(1.7rem,2.9vw,2.3rem)}
+  .diag-head h2 .serif-i{color:#ffb868}
+  .diag-head p{color:rgba(255,255,255,.82);font-size:.98rem}
+  .diag-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem}
+  .dcard{background:rgba(255,255,255,.08);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.15);border-radius:18px;padding:1.5rem 1.3rem;transition:background .3s,transform .3s}
+  .dcard:hover{background:rgba(255,255,255,.14);transform:translateY(-4px)}
+  .dcard .ic{width:44px;height:44px;border-radius:12px;background:rgba(239,121,0,.25);color:#ffb868;display:grid;place-items:center;margin-bottom:.9rem}
+  .dcard b{display:block;font-size:1rem;margin-bottom:.3rem}
+  .dcard span{font-size:.84rem;color:rgba(255,255,255,.75)}
+
+  /* Leistungen */
+  .leist{background:linear-gradient(180deg,var(--cream) 0%,#fff 100%)}
+  .lst-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:2.6rem}
+  .lcol h3{font-family:'Source Serif 4',serif;font-weight:600;font-size:1.3rem;color:var(--slate);padding-bottom:.8rem;margin-bottom:1.1rem;border-bottom:2px solid var(--orange)}
+  .lcol ul{list-style:none}
+  .lcol li{display:flex;gap:.7rem;align-items:flex-start;padding:.45rem 0;font-size:.93rem;color:var(--ink)}
+  .lcol li svg{flex:none;margin-top:.25rem;color:var(--orange)}
+  .lst-note{margin-top:2.2rem;text-align:center}
+  .lst-note .pill{display:inline-flex;align-items:center;gap:.6rem;background:#fff;border:1px solid var(--line);border-radius:100px;padding:.6rem 1.3rem;font-size:.9rem;font-weight:600;color:var(--slate);box-shadow:var(--shadow-sm)}
+  .lst-note .pill svg{color:var(--orange)}
+
+  /* Kassen */
+  .kassen{background:var(--tint);border-radius:26px;padding:2.7rem;display:grid;grid-template-columns:1.15fr .85fr;gap:2.2rem;align-items:center}
+  .kassen h3{font-size:1.4rem;color:var(--slate);margin:.6rem 0 .6rem}
+  .kassen h3 .serif-i{color:var(--orange-deep)}
+  .kassen p{color:var(--muted);font-size:.96rem}
+  .kassen-pills{display:flex;flex-wrap:wrap;gap:.7rem;justify-content:flex-end}
+  .kpill{background:#fff;border:1px solid var(--tint-2);border-radius:100px;padding:.6rem 1.2rem;font-size:.88rem;font-weight:600;color:var(--slate);box-shadow:var(--shadow-sm)}
+
+  /* Ärzte */
+  .doc-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem}
+  .doc{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:grid;grid-template-columns:.42fr .58fr;transition:transform .3s,box-shadow .3s}
+  .doc:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+  .doc .ph{background:linear-gradient(170deg,var(--tint),var(--tint-2));display:flex;align-items:flex-end;justify-content:center;padding-top:1.2rem}
+  .doc .ph img{width:92%;max-width:190px}
+  .doc .tx{padding:1.7rem 1.6rem}
+  .doc .tx .role{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--orange-deep);font-weight:600}
+  .doc .tx h3{font-size:1.25rem;color:var(--slate);margin:.3rem 0 .7rem}
+  .doc .tx p{font-size:.88rem;color:var(--muted);margin-bottom:.6rem}
+  .doc .tx p:last-child{margin-bottom:0}
+
+  /* Zeiten & Kontakt */
+  .zk-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:2.2rem;align-items:stretch}
+  .hours-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:2.3rem;box-shadow:var(--shadow-sm)}
+  .hours-card h3{font-size:1.3rem;color:var(--slate);margin-bottom:1.2rem}
+  .hrow{display:flex;justify-content:space-between;gap:1rem;padding:.6rem 0;border-bottom:1px solid var(--line);font-size:.95rem}
+  .hrow:last-of-type{border-bottom:none}
+  .hrow .d{font-weight:600;color:var(--slate);min-width:6.4em}
+  .hrow .t{color:var(--muted);text-align:right;white-space:nowrap}
+  .hrow .t b{color:var(--ink);font-weight:600}
+  .hours-note{font-size:.86rem;color:var(--muted);margin-top:.9rem}
+  .oder{display:flex;align-items:center;gap:1rem;margin:1.4rem 0 .9rem;color:var(--muted);font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600}
+  .oder::before,.oder::after{content:"";flex:1;height:1px;background:var(--line)}
+  .contact-side{border-radius:var(--radius);overflow:hidden;position:relative;background:linear-gradient(155deg,var(--slate),var(--slate-2));color:#fff;padding:2.5rem;display:flex;flex-direction:column;justify-content:center}
+  .contact-side::before{content:"";position:absolute;inset:0;background:radial-gradient(460px 320px at 84% 10%,rgba(239,121,0,.32),transparent 60%)}
+  .contact-side .in{position:relative}
+  .contact-side .serif{font-size:1.6rem;display:block;margin-bottom:.8rem}
+  .cline{display:flex;gap:.85rem;align-items:flex-start;margin-bottom:1rem}
+  .cline .ic{width:38px;height:38px;border-radius:11px;background:rgba(255,255,255,.12);color:#ffb868;display:grid;place-items:center;flex:none}
+  .cline b{display:block;font-size:.94rem}
+  .cline span{color:rgba(255,255,255,.78);font-size:.88rem}
+
+  /* CTA */
+  .cta{position:relative;overflow:hidden;text-align:center;background:linear-gradient(145deg,var(--orange),var(--orange-deep));color:#fff;border-radius:28px;padding:3.4rem}
+  .cta::before{content:"";position:absolute;inset:0;background:radial-gradient(560px 320px at 14% 18%,rgba(255,255,255,.2),transparent 55%)}
+  .cta>*{position:relative}
+  .cta h2{font-size:clamp(1.85rem,3vw,2.5rem);margin-bottom:.7rem}
+  .cta p{color:rgba(255,255,255,.92);max-width:38em;margin:0 auto 1.8rem;font-size:1.03rem}
+  .cta-actions{display:flex;gap:.9rem;justify-content:center;flex-wrap:wrap}
+
+  /* Footer */
+  footer{background:var(--slate);color:rgba(255,255,255,.72);padding:3.4rem 0 2rem;margin-top:5rem}
+  .foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:2.4rem;padding-bottom:2.4rem;border-bottom:1px solid rgba(255,255,255,.13)}
+  .foot-brand .wm{font-family:'Source Serif 4',serif;font-size:1.32rem;color:#fff;font-weight:600;line-height:1.3}
+  .foot-brand .wm small{display:block;font-family:'Outfit',sans-serif;font-size:.7rem;letter-spacing:.22em;color:#ffb868;font-weight:600;margin-top:.3rem}
+  .foot-brand p{font-size:.9rem;max-width:26em;margin-top:1rem}
+  .foot-col h4{color:#fff;font-size:.8rem;letter-spacing:.13em;text-transform:uppercase;margin-bottom:1rem;font-weight:600}
+  .foot-col a,.foot-col span{display:block;font-size:.9rem;margin-bottom:.55rem;color:rgba(255,255,255,.72);transition:color .2s}
+  .foot-col a:hover{color:#ffb868}
+  .foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;padding-top:1.6rem;font-size:.82rem}
+  .foot-bottom a:hover{color:#fff}
+
+  /* Reveal */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal[data-d="1"]{transition-delay:.08s}
+  .reveal[data-d="2"]{transition-delay:.16s}
+  .reveal[data-d="3"]{transition-delay:.24s}
+
+  @media(max-width:960px){
+    .hero-grid{grid-template-columns:1fr;gap:3.4rem}
+    .hero-visual{max-width:430px;margin:0 auto;width:100%}
+    .val-grid{grid-template-columns:1fr}
+    .diag-head{grid-template-columns:1fr}
+    .diag-grid{grid-template-columns:1fr 1fr}
+    .lst-cols{grid-template-columns:1fr;gap:2rem}
+    .kassen{grid-template-columns:1fr}
+    .kassen-pills{justify-content:flex-start}
+    .doc-grid{grid-template-columns:1fr}
+    .zk-grid{grid-template-columns:1fr}
+    .foot-grid{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:640px){
+    .nav-links,.nav-phone,.nav-cta{display:none}
+    .burger{display:flex}
+    .mobile-menu{display:block;position:fixed;inset:0 0 auto 0;top:0;z-index:99;background:rgba(255,255,255,.97);backdrop-filter:blur(20px);padding:5rem 2rem 2.4rem;transform:translateY(-100%);transition:transform .4s cubic-bezier(.4,0,.2,1);box-shadow:var(--shadow)}
+    .mobile-menu.open{transform:translateY(0)}
+    .mobile-menu a{display:block;font-size:1.12rem;font-weight:500;color:var(--slate);padding:.85rem 0;border-bottom:1px solid var(--line)}
+    .mobile-menu .btn{margin-top:1.4rem;width:100%;justify-content:center}
+    .hero{padding-top:7.2rem}
+    .band{padding:4rem 0}
+    .duo-panel{padding:2rem 1rem 0}
+    .duo-panel img{margin-top:-2.4rem}
+    .duo-chip{position:static;margin:1rem 0 1.1rem;flex-direction:column;gap:.5rem}
+    .diag-in{padding:1.9rem}
+    .diag-grid{grid-template-columns:1fr}
+    .doc{grid-template-columns:1fr}
+    .doc .ph img{max-width:230px}
+    .kassen,.hours-card,.contact-side,.cta{padding:1.8rem}
+    .cta,.diag,.kassen{border-radius:20px}
+    .foot-grid{grid-template-columns:1fr}
+    .hrow{font-size:.88rem}
+  }
+</style>
+</head>
+<body>
+
+<header id="header">
+  <div class="wrap nav">
+    <a href="#top" class="brand"><img src="assets_02/he-logo.png" alt="Praxis für Orthopädie und Schmerztherapie Dr. Tobias Heesen"></a>
+    <nav class="nav-links">
+      <a href="#praxis">Praxis</a>
+      <a href="#diagnostik">Diagnostik</a>
+      <a href="#leistungen">Leistungen</a>
+      <a href="#aerzte">Über uns</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <div class="nav-cta">
+      <span class="nav-phone">0931 991 316 30</span>
+      <a href="https://webtermin.medatixx.de/#/6baf456b-559d-43c8-9e0b-fca191a131e3" target="_blank" rel="noopener" class="btn btn-primary">Termin buchen</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#praxis">Praxis</a>
+  <a href="#diagnostik">Diagnostik</a>
+  <a href="#leistungen">Leistungen</a>
+  <a href="#aerzte">Über uns</a>
+  <a href="#kontakt">Kontakt</a>
+  <a href="https://webtermin.medatixx.de/#/6baf456b-559d-43c8-9e0b-fca191a131e3" target="_blank" rel="noopener" class="btn btn-primary">Jetzt Termin buchen</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="hero-copy reveal in">
+      <span class="tag"><span class="dot"></span>Juliuspromenade 28 · Würzburg</span>
+      <h1>Praxis für Orthopädie und <span class="serif-i">Schmerztherapie</span></h1>
+      <p class="lead">Wir sind spezialisiert auf die Behandlung akuter und chronischer Beschwerden des Bewegungsapparates – insbesondere der Wirbelsäule. Dafür stehen uns modernste etablierte Behandlungsverfahren zur Verfügung.</p>
+      <div class="hero-actions">
+        <a href="https://webtermin.medatixx.de/#/6baf456b-559d-43c8-9e0b-fca191a131e3" target="_blank" rel="noopener" class="btn btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4M16 2v4M3 10h18"/><rect x="3" y="4" width="18" height="18" rx="2"/></svg>
+          Jetzt Termin buchen
+        </a>
+        <a href="tel:093199131630" class="btn btn-ghost">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          0931 991 316 30
+        </a>
+      </div>
+      <div class="hero-trust">
+        <div><b>2 Fachärzte</b>für Orthopädie</div>
+        <div><b>Wirbelsäule</b>als Spezialgebiet</div>
+        <div><b>Zeitnah</b>Termine – unabhängig vom Versicherungsstatus</div>
+      </div>
+    </div>
+    <div class="hero-visual reveal in" data-d="1">
+      <div class="duo-panel">
+        <img src="assets_02/he-duo.png" alt="Dr. Tobias Heesen und Agnieszka Kozuch-Heesen">
+        <div class="duo-chip">
+          <div><span>Facharzt für Orthopädie</span><b>Dr. Tobias Heesen</b></div>
+          <div><span>Fachärztin für Orthopädie</span><b>Agnieszka Kozuch-Heesen</b></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WERTE -->
+<section class="band" id="praxis">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Unsere Praxis</span>
+      <h2>Rasch zur richtigen <span class="serif-i">Behandlung</span></h2>
+      <p>Durch eine fundierte Ausbildung an namhaften Zentren für Orthopädie, Schmerztherapie und Wirbelsäulenchirurgie grenzen wir Ihre Beschwerden rasch ein – und behandeln sie gezielt.</p>
+    </div>
+    <div class="val-grid">
+      <div class="vcard reveal">
+        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+        <h3>Zeitnahe Termine</h3>
+        <p>Unabhängig vom Versicherungsstatus bemühen wir uns um eine zeitnahe Terminvergabe – telefonisch oder direkt online.</p>
+      </div>
+      <div class="vcard reveal" data-d="1">
+        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <h3>Zweitmeinung</h3>
+        <p>Gerne beraten wir Sie zu vorgeschlagenen operativen Maßnahmen – als unabhängige zweite Meinung.</p>
+      </div>
+      <div class="vcard reveal" data-d="2">
+        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <h3>Operationen vermeiden</h3>
+        <p>Durch unser breites Spektrum an interventionellen Therapieverfahren können operative Behandlungen häufig vermieden werden.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIAGNOSTIK -->
+<section class="band" id="diagnostik" style="padding-top:.5rem">
+  <div class="wrap">
+    <div class="diag reveal">
+      <div class="diag-in">
+        <div class="diag-head">
+          <div>
+            <span class="eyebrow light">Diagnostik</span>
+            <h2>Moderne Diagnostik – <span class="serif-i">direkt in der Praxis</span></h2>
+          </div>
+          <p>Gezielte interventionelle Behandlungen erfolgen bei uns unter strahlenarmer Röntgendurchleuchtung – so lassen sich z.&nbsp;B. akute Ischias- oder Nackenbeschwerden rasch, sicher und effektiv behandeln.</p>
+        </div>
+        <div class="diag-grid">
+          <div class="dcard">
+            <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M12 7v10M7 12h10"/></svg></div>
+            <b>Digitales Röntgen</b>
+            <span>Strahlenarm, neueste Generation</span>
+          </div>
+          <div class="dcard">
+            <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h4l3-8 4 16 3-8h6"/></svg></div>
+            <b>Sonographie</b>
+            <span>des Stütz- und Bewegungsapparates</span>
+          </div>
+          <div class="dcard">
+            <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v18M18 3v18M6 8h12M6 16h12"/></svg></div>
+            <b>Knochendichtemessung</b>
+            <span>mittels DEXA, neueste Generation</span>
+          </div>
+          <div class="dcard">
+            <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 9 9"/><path d="M12 8a4 4 0 1 0 4 4"/><circle cx="12" cy="12" r="1"/><path d="M21 3l-6 6"/></svg></div>
+            <b>C-Bogen</b>
+            <span>Strahlenarme Röntgendurchleuchtung</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEISTUNGEN -->
+<section class="band leist" id="leistungen">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow center">Unsere Leistungen</span>
+      <h2>Gezielte Therapie – <span class="serif-i">ambulant</span></h2>
+    </div>
+    <div class="lst-cols">
+      <div class="lcol reveal">
+        <h3>Injektionen unter Bildkontrolle</h3>
+        <ul>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Facettengelenksinjektionen der Hals-, Brust- und Lendenwirbelsäule</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Periradikuläre Injektionen der Wirbelsäule (PRT)</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Therapeutische Injektionen der Iliosakralgelenke</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Gezielte Injektionen an der Wirbelsäule unter Durchleuchtung</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Kaudalanästhesien</li>
+        </ul>
+      </div>
+      <div class="lcol reveal" data-d="1">
+        <h3>Minimalinvasiv &amp; Radiofrequenz</h3>
+        <ul>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Radiofrequenztherapie (Thermodenervation) der Facettengelenke</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Radiofrequenztherapie der Iliosakralgelenke – auch gekühlt</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Minimalinvasive Volumenreduktion der Bandscheibe mittels Laser- oder Radiofrequenztherapie</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Stoßwellenbehandlung</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Hyaluronsäurebehandlung</li>
+        </ul>
+      </div>
+      <div class="lcol reveal" data-d="2">
+        <h3>Schmerz- &amp; Begleittherapie</h3>
+        <ul>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Schmerztherapie bei chronisch schmerzkranken Patienten</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Botoxbehandlung bei chronischer Migräne</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>TENS-Therapie</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Infusionstherapien</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Ernährungsberatung bei Arthrose und Osteoporose</li>
+        </ul>
+      </div>
+    </div>
+    <div class="lst-note reveal" data-d="2">
+      <span class="pill"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Alle Leistungen können ambulant erfolgen</span>
+    </div>
+  </div>
+</section>
+
+<!-- KASSEN -->
+<section class="band" style="padding-top:1rem">
+  <div class="wrap">
+    <div class="kassen reveal">
+      <div>
+        <span class="eyebrow">Besondere Behandlungsangebote</span>
+        <h3>Bildgesteuerte Schmerztherapie – <span class="serif-i">als Kassenleistung</span></h3>
+        <p>Im Rahmen von Selektivverträgen verschiedener Krankenkassen erbringen wir Zusatzleistungen wie die bildgesteuerte Schmerztherapie an der Wirbelsäule. Erkundigen Sie sich bei uns, ob diese Möglichkeit auch für Sie besteht.</p>
+      </div>
+      <div class="kassen-pills">
+        <span class="kpill">Techniker Krankenkasse</span>
+        <span class="kpill">KKH</span>
+        <span class="kpill">IKK classic</span>
+        <span class="kpill">Betriebskrankenkassen</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ÄRZTE -->
+<section class="band" id="aerzte" style="padding-top:1rem">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Über uns</span>
+      <h2>Ihre Ärzte in der <span class="serif-i">Juliuspromenade</span></h2>
+    </div>
+    <div class="doc-grid">
+      <div class="doc reveal">
+        <div class="ph"><img src="assets_02/he-heesen.png" alt="Dr. Tobias Heesen, Facharzt für Orthopädie"></div>
+        <div class="tx">
+          <span class="role">Facharzt für Orthopädie</span>
+          <h3>Dr. Tobias Heesen</h3>
+          <p>Seit 2012 niedergelassener Facharzt für Orthopädie in Würzburg, seit 2014 mit Zulassung zur Behandlung chronisch schmerzkranker Patienten (spezielle Schmerztherapie).</p>
+          <p>Schwerpunkte: Schmerztherapie, minimalinvasive interventionelle Behandlungen an der Wirbelsäule, Arthrosetherapie. Mitglied im BVOU und in der IGOST.</p>
+        </div>
+      </div>
+      <div class="doc reveal" data-d="1">
+        <div class="ph"><img src="assets_02/he-kozuch.png" alt="Agnieszka Kozuch-Heesen, Fachärztin für Orthopädie"></div>
+        <div class="tx">
+          <span class="role">Fachärztin für Orthopädie</span>
+          <h3>Agnieszka Kozuch-Heesen</h3>
+          <p>Seit 2012 an der orthopädischen Klinik König-Ludwig-Haus in Würzburg tätig.</p>
+          <p>Schwerpunkte: Kinderorthopädie, Wirbelsäulenschmerztherapie und Osteoporosetherapie.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPRECHZEITEN & KONTAKT -->
+<section class="band leist" id="kontakt">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Sprechzeiten &amp; Kontakt</span>
+      <h2>So erreichen Sie <span class="serif-i">uns</span></h2>
+    </div>
+    <div class="zk-grid">
+      <div class="hours-card reveal">
+        <h3>Sprechzeiten</h3>
+        <div class="hrow"><span class="d">Montag</span><span class="t"><b>08:00 – 12:00</b> u. <b>13:00 – 17:00</b></span></div>
+        <div class="hrow"><span class="d">Dienstag</span><span class="t"><b>08:00 – 12:00</b> u. <b>13:00 – 17:00</b></span></div>
+        <div class="hrow"><span class="d">Mittwoch</span><span class="t"><b>08:00 – 13:00</b></span></div>
+        <div class="hrow"><span class="d">Donnerstag</span><span class="t"><b>08:00 – 12:00</b> u. <b>13:00 – 17:00</b></span></div>
+        <div class="hrow"><span class="d">Freitag</span><span class="t"><b>08:00 – 13:00</b></span></div>
+        <p class="hours-note">… und nach Vereinbarung.</p>
+        <div class="oder">Termin vereinbaren</div>
+        <div style="display:flex;gap:.8rem;flex-wrap:wrap">
+          <a href="tel:093199131630" class="btn btn-ghost">0931 991 316 30</a>
+          <a href="https://webtermin.medatixx.de/#/6baf456b-559d-43c8-9e0b-fca191a131e3" target="_blank" rel="noopener" class="btn btn-primary">Online Termin buchen</a>
+        </div>
+      </div>
+      <div class="contact-side reveal" data-d="1">
+        <div class="in">
+          <span class="serif">Mitten in Würzburg.</span>
+          <div class="cline">
+            <div class="ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div><b>Anschrift</b><span>Juliuspromenade 28, 97070 Würzburg</span></div>
+          </div>
+          <div class="cline">
+            <div class="ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+            <div><b>Telefon</b><span>0931 991 316 30</span></div>
+          </div>
+          <div class="cline">
+            <div class="ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></div>
+            <div><b>E-Mail</b><span>praxis@orthopaedie-juliuspromenade.de</span></div>
+          </div>
+          <a href="tel:093199131630" class="btn btn-light" style="margin-top:.6rem">Jetzt anrufen</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="band" id="termin" style="padding-top:1rem">
+  <div class="wrap">
+    <div class="cta reveal">
+      <span class="eyebrow light center" style="justify-content:center">Termin</span>
+      <h2>Sichern Sie sich Ihren Behandlungstermin</h2>
+      <p>Rufen Sie uns an oder buchen Sie Ihren Termin bequem online – wir bemühen uns um eine zeitnahe Terminvergabe.</p>
+      <div class="cta-actions">
+        <a href="https://webtermin.medatixx.de/#/6baf456b-559d-43c8-9e0b-fca191a131e3" target="_blank" rel="noopener" class="btn btn-light">Jetzt Termin buchen</a>
+        <a href="tel:093199131630" class="btn btn-dark">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          0931 991 316 30
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="wm">Praxis für Orthopädie und Schmerztherapie<small>DR. TOBIAS HEESEN · WÜRZBURG</small></div>
+        <p>Spezialisiert auf die Behandlung akuter und chronischer Beschwerden des Bewegungsapparates – insbesondere der Wirbelsäule.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Praxis</h4>
+        <a href="#praxis">Über die Praxis</a>
+        <a href="#diagnostik">Diagnostik</a>
+        <a href="#leistungen">Leistungen</a>
+        <a href="#aerzte">Ihre Ärzte</a>
+      </div>
+      <div class="foot-col">
+        <h4>Kontakt</h4>
+        <span>Juliuspromenade 28</span>
+        <span>97070 Würzburg</span>
+        <a href="tel:093199131630">0931 991 316 30</a>
+        <a href="mailto:praxis@orthopaedie-juliuspromenade.de">praxis@orthopaedie-juliuspromenade.de</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Praxis für Orthopädie und Schmerztherapie Dr. Tobias Heesen · Würzburg</span>
+      <span><a href="#top">Impressum</a> · <a href="#top">Datenschutz</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const header=document.getElementById('header');
+  const onScroll=()=>header.classList.toggle('scrolled',window.scrollY>30);
+  onScroll();window.addEventListener('scroll',onScroll,{passive:true});
+  const burger=document.getElementById('burger');
+  const menu=document.getElementById('mobileMenu');
+  burger.addEventListener('click',()=>menu.classList.toggle('open'));
+  menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>menu.classList.remove('open')));
+  const io=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.14,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal:not(.in)').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
