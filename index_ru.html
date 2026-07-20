@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orthopädie Dr. Florian Russ – Gerbrunn bei Würzburg</title>
+<meta name="description" content="Orthopädie Dr. Florian Russ in Gerbrunn bei Würzburg, St.-Nepomuk-Str. 13. Konservative Orthopädie, Sportmedizin, Chirotherapie, PRP und moderne Diagnostik. Zeitnahe Termine, kostenfreie Parkplätze. Termin: 0931 730 425 40 oder online.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --lime:#dedc00;
+    --lime-soft:#f4f3c4;
+    --lime-wash:#fafae8;
+    --graphite:#1e2321;
+    --graphite-2:#2a302d;
+    --mist:#f1f1f1;
+    --paper:#ffffff;
+    --ink:#232825;
+    --muted:#6b736e;
+    --line:#e6e8e2;
+    --radius:22px;
+    --shadow:0 26px 60px -28px rgba(30,35,33,.35);
+    --shadow-sm:0 14px 34px -20px rgba(30,35,33,.4);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Archivo',system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  h1,h2,h3{line-height:1.12;letter-spacing:-.015em}
+  .serif{font-family:'Newsreader',Georgia,serif;font-weight:600}
+  .serif-i{font-family:'Newsreader',Georgia,serif;font-style:italic;font-weight:500}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{width:min(1180px,92vw);margin:0 auto}
+  .eyebrow{display:inline-flex;align-items:center;gap:.55em;font-size:.73rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--graphite)}
+  .eyebrow::before{content:"";width:11px;height:11px;border-radius:50%;background:var(--lime);border:2.5px solid var(--graphite)}
+  .eyebrow.center{justify-content:center;display:flex}
+  .eyebrow.light{color:#fff}
+  .eyebrow.light::before{border-color:#fff}
+  .btn{display:inline-flex;align-items:center;gap:.55em;font-weight:700;font-size:.96rem;padding:.9em 1.65em;border-radius:100px;transition:transform .25s ease,box-shadow .25s ease,background .25s ease;cursor:pointer;border:none}
+  .btn-dark{background:var(--graphite);color:#fff;box-shadow:var(--shadow-sm)}
+  .btn-dark:hover{transform:translateY(-3px);background:var(--graphite-2);box-shadow:var(--shadow)}
+  .btn-lime{background:var(--lime);color:var(--graphite);box-shadow:0 14px 30px -14px rgba(222,220,0,.7)}
+  .btn-lime:hover{transform:translateY(-3px);background:#eeeb1c;box-shadow:0 20px 38px -14px rgba(222,220,0,.8)}
+  .btn-ghost{background:#fff;color:var(--graphite);border:1.5px solid var(--line)}
+  .btn-ghost:hover{transform:translateY(-3px);border-color:var(--graphite);box-shadow:var(--shadow-sm)}
+  .btn-light{background:#fff;color:var(--graphite)}
+  .btn-light:hover{transform:translateY(-3px);box-shadow:0 16px 32px -14px rgba(0,0,0,.3)}
+
+  /* Header */
+  header{position:fixed;top:0;left:0;right:0;z-index:100;padding:.9rem 0;transition:padding .3s,background .3s,box-shadow .3s}
+  header.scrolled{padding:.5rem 0;background:rgba(255,255,255,.88);backdrop-filter:blur(16px) saturate(1.3);-webkit-backdrop-filter:blur(16px) saturate(1.3);box-shadow:0 1px 0 rgba(30,35,33,.08)}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+  .brand{display:flex;align-items:center;gap:.7rem}
+  .brand img{height:46px;width:auto}
+  .brand .bt b{display:block;font-size:1.02rem;font-weight:700;color:var(--graphite);line-height:1.15;letter-spacing:-.01em}
+  .brand .bt span{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .nav-links{display:flex;align-items:center;gap:1.7rem}
+  .nav-links a{font-size:.93rem;font-weight:600;color:var(--graphite);opacity:.8;transition:opacity .2s}
+  .nav-links a:hover{opacity:1}
+  .nav-cta{display:flex;align-items:center;gap:1rem}
+  .nav-phone{font-weight:700;color:var(--graphite);font-size:.93rem;white-space:nowrap}
+  .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
+  .burger span{width:24px;height:2.5px;background:var(--graphite);border-radius:2px;transition:.3s}
+  .mobile-menu{display:none}
+
+  /* Hero */
+  .hero{position:relative;padding:8.8rem 0 4.8rem;overflow:hidden;background:linear-gradient(180deg,#fff 0%,var(--mist) 100%)}
+  .hero::before{content:"";position:absolute;width:560px;height:560px;border-radius:50%;background:var(--lime-wash);right:-140px;top:60px;z-index:0}
+  .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;gap:3.2rem;align-items:center}
+  .hero-copy .tag{display:inline-flex;align-items:center;gap:.55rem;background:rgba(255,255,255,.85);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:100px;padding:.5rem 1.1rem;font-size:.83rem;font-weight:600;color:var(--graphite);margin-bottom:1.5rem;box-shadow:var(--shadow-sm)}
+  .hero-copy .tag .dot{width:9px;height:9px;border-radius:50%;background:var(--lime);border:2px solid var(--graphite)}
+  .hero-copy h1{font-size:clamp(2.35rem,4.5vw,3.6rem);color:var(--graphite);margin-bottom:1.15rem;letter-spacing:-.02em}
+  .hero-copy h1 .serif-i{font-weight:500}
+  .hero-copy p.lead{font-size:1.11rem;color:var(--muted);max-width:33em;margin-bottom:1.9rem}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:.85rem;align-items:center}
+  .hero-trust{display:flex;gap:1.8rem;flex-wrap:wrap;margin-top:2.2rem;padding-top:1.7rem;border-top:1px solid rgba(30,35,33,.12)}
+  .hero-trust div{font-size:.85rem;color:var(--muted)}
+  .hero-trust b{display:block;font-family:'Newsreader',serif;font-size:1.5rem;color:var(--graphite);font-weight:600;line-height:1.2}
+
+  .hero-visual{position:relative;display:flex;justify-content:center}
+  .circle-photo{position:relative;width:min(420px,86%);aspect-ratio:1/1;border-radius:50%;overflow:hidden;box-shadow:var(--shadow);border:10px solid #fff;z-index:1}
+  .circle-photo img{width:100%;height:100%;object-fit:cover}
+  .circle-ring{position:absolute;inset:-26px;border-radius:50%;border:3px dashed var(--lime);opacity:.85;z-index:0;animation:spin 60s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .logo-badge{position:absolute;top:4%;left:2%;width:92px;height:92px;filter:drop-shadow(0 10px 22px rgba(30,35,33,.3));z-index:2}
+  .neu-chip{position:absolute;bottom:6%;right:0;z-index:2;background:rgba(255,255,255,.85);backdrop-filter:blur(14px) saturate(1.3);-webkit-backdrop-filter:blur(14px) saturate(1.3);border:1px solid rgba(255,255,255,.75);border-radius:16px;box-shadow:var(--shadow-sm);padding:.8rem 1.05rem}
+  .neu-chip b{display:block;font-size:.85rem;color:var(--graphite)}
+  .neu-chip span{font-size:.74rem;color:var(--muted)}
+
+  /* Sections */
+  .band{padding:5.4rem 0}
+  .sec-head{max-width:680px;margin-bottom:2.8rem}
+  .sec-head.center{margin-inline:auto;text-align:center}
+  .sec-head h2{font-size:clamp(1.85rem,3.3vw,2.55rem);color:var(--graphite);margin:.85rem 0 .75rem}
+  .sec-head h2 .serif-i{font-weight:500}
+  .sec-head p{color:var(--muted);font-size:1.04rem}
+
+  /* Story */
+  .story{background:var(--mist)}
+  .story-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:3rem;align-items:center}
+  .story-copy h2{font-size:clamp(1.85rem,3.2vw,2.5rem);color:var(--graphite);margin:.85rem 0 1rem}
+  .story-copy h2 .serif-i{font-weight:500}
+  .story-copy p{color:var(--muted);margin-bottom:1rem;font-size:1.02rem}
+  .story-copy p b{color:var(--ink)}
+  .story-facts{display:grid;gap:1rem}
+  .fact{display:flex;gap:1rem;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:18px;padding:1.35rem 1.5rem;transition:transform .3s,box-shadow .3s}
+  .fact:hover{transform:translateX(6px);box-shadow:var(--shadow-sm)}
+  .fact .ic{flex:none;width:46px;height:46px;border-radius:50%;background:var(--lime);color:var(--graphite);display:grid;place-items:center;border:2.5px solid var(--graphite)}
+  .fact b{display:block;font-size:1.02rem;color:var(--graphite)}
+  .fact span{font-size:.9rem;color:var(--muted)}
+
+  /* Leistungen */
+  .lst-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.3rem}
+  .lcard{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:transform .3s,box-shadow .3s}
+  .lcard:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+  .lcard .ph{aspect-ratio:16/10;overflow:hidden}
+  .lcard .ph img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+  .lcard:hover .ph img{transform:scale(1.06)}
+  .lcard .tx{padding:1.2rem 1.3rem 1.4rem}
+  .lcard h3{font-size:1.02rem;color:var(--graphite);margin-bottom:.35rem}
+  .lcard p{font-size:.85rem;color:var(--muted)}
+  .lcard .note{display:inline-block;margin-top:.6rem;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--graphite);background:var(--lime-soft);border-radius:100px;padding:.3rem .7rem}
+
+  /* Zeiten & Kontakt Band */
+  .zk{position:relative;overflow:hidden;background:linear-gradient(140deg,var(--graphite),var(--graphite-2));color:#fff;border-radius:28px}
+  .zk::before{content:"";position:absolute;width:480px;height:480px;border-radius:50%;border:3px dashed rgba(222,220,0,.4);right:-140px;bottom:-200px}
+  .zk::after{content:"";position:absolute;width:220px;height:220px;border-radius:50%;background:rgba(222,220,0,.12);left:-70px;top:-70px}
+  .zk-in{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:2.8rem;padding:3rem;z-index:1}
+  .zk h3{font-size:1.4rem;margin-bottom:1.2rem}
+  .hrow{display:flex;justify-content:space-between;gap:1rem;padding:.6rem 0;border-bottom:1px solid rgba(255,255,255,.14);font-size:.95rem}
+  .hrow:last-of-type{border-bottom:none}
+  .hrow .d{font-weight:700;min-width:3.4em}
+  .hrow .t{color:rgba(255,255,255,.85);text-align:right;white-space:nowrap}
+  .zk-note{font-size:.85rem;color:rgba(255,255,255,.65);margin-top:.9rem}
+  .cline{display:flex;gap:.85rem;align-items:flex-start;margin-bottom:1.05rem}
+  .cline .ic{width:40px;height:40px;border-radius:50%;background:rgba(222,220,0,.16);color:var(--lime);display:grid;place-items:center;flex:none}
+  .cline b{display:block;font-size:.95rem}
+  .cline span{color:rgba(255,255,255,.78);font-size:.89rem}
+  .zk-ctas{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.3rem}
+
+  /* CTA */
+  .cta{position:relative;overflow:hidden;text-align:center;background:var(--lime);color:var(--graphite);border-radius:28px;padding:3.4rem}
+  .cta::before{content:"";position:absolute;width:340px;height:340px;border-radius:50%;border:3px solid rgba(30,35,33,.15);right:-90px;top:-90px}
+  .cta::after{content:"";position:absolute;width:220px;height:220px;border-radius:50%;border:3px dashed rgba(30,35,33,.2);left:-60px;bottom:-80px}
+  .cta>*{position:relative}
+  .cta h2{font-size:clamp(1.85rem,3vw,2.5rem);margin-bottom:.7rem}
+  .cta p{color:rgba(30,35,33,.75);max-width:36em;margin:0 auto 1.8rem;font-size:1.04rem;font-weight:500}
+  .cta-actions{display:flex;gap:.9rem;justify-content:center;flex-wrap:wrap}
+
+  /* Footer */
+  footer{background:var(--graphite);color:rgba(255,255,255,.72);padding:3.4rem 0 2rem;margin-top:5rem}
+  .foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:2.4rem;padding-bottom:2.4rem;border-bottom:1px solid rgba(255,255,255,.13)}
+  .foot-brand{display:flex;gap:1rem;align-items:flex-start}
+  .foot-brand img{width:52px;height:52px}
+  .foot-brand .wm b{display:block;font-size:1.15rem;color:#fff;font-weight:700}
+  .foot-brand .wm small{display:block;font-size:.7rem;letter-spacing:.2em;color:var(--lime);font-weight:700;margin-top:.25rem}
+  .foot-brand .wm p{font-size:.88rem;max-width:24em;margin-top:.8rem;color:rgba(255,255,255,.72)}
+  .foot-col h4{color:#fff;font-size:.8rem;letter-spacing:.13em;text-transform:uppercase;margin-bottom:1rem;font-weight:700}
+  .foot-col a,.foot-col span{display:block;font-size:.9rem;margin-bottom:.55rem;color:rgba(255,255,255,.72);transition:color .2s}
+  .foot-col a:hover{color:var(--lime)}
+  .foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;padding-top:1.6rem;font-size:.82rem}
+  .foot-bottom a:hover{color:#fff}
+
+  /* Reveal */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal[data-d="1"]{transition-delay:.08s}
+  .reveal[data-d="2"]{transition-delay:.16s}
+  .reveal[data-d="3"]{transition-delay:.24s}
+
+  @media(max-width:960px){
+    .hero-grid{grid-template-columns:1fr;gap:2.8rem}
+    .story-grid{grid-template-columns:1fr;gap:2.2rem}
+    .lst-grid{grid-template-columns:1fr 1fr}
+    .zk-in{grid-template-columns:1fr;padding:2.2rem}
+    .foot-grid{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:640px){
+    .nav-links,.nav-phone,.nav-cta{display:none}
+    .burger{display:flex}
+    .mobile-menu{display:block;position:fixed;inset:0 0 auto 0;top:0;z-index:99;background:rgba(255,255,255,.97);backdrop-filter:blur(20px);padding:5rem 2rem 2.4rem;transform:translateY(-100%);transition:transform .4s cubic-bezier(.4,0,.2,1);box-shadow:var(--shadow)}
+    .mobile-menu.open{transform:translateY(0)}
+    .mobile-menu a{display:block;font-size:1.12rem;font-weight:600;color:var(--graphite);padding:.85rem 0;border-bottom:1px solid var(--line)}
+    .mobile-menu .btn{margin-top:1.4rem;width:100%;justify-content:center}
+    .hero{padding-top:7.2rem}
+    .band{padding:4rem 0}
+    .circle-ring{inset:-16px}
+    .logo-badge{width:68px;height:68px}
+    .lst-grid{grid-template-columns:1fr}
+    .cta{padding:1.9rem;border-radius:20px}
+    .zk{border-radius:20px}
+    .foot-grid{grid-template-columns:1fr}
+    .foot-brand{flex-direction:column}
+    .hrow{font-size:.88rem}
+  }
+</style>
+</head>
+<body>
+
+<header id="header">
+  <div class="wrap nav">
+    <a href="#top" class="brand">
+      <img src="assets_02/ru-logo.svg" alt="Logo Orthopädie Dr. Russ">
+      <span class="bt"><b>Orthopädie Dr. Russ</b><span>Gerbrunn bei Würzburg</span></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#praxis">Praxis</a>
+      <a href="#leistungen">Leistungen</a>
+      <a href="#zeiten">Sprechzeiten</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <div class="nav-cta">
+      <span class="nav-phone">0931 730 425 40</span>
+      <a href="https://app.arzt-direkt.de/dr-russ/booking" target="_blank" rel="noopener" class="btn btn-lime">Termin buchen</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#praxis">Praxis</a>
+  <a href="#leistungen">Leistungen</a>
+  <a href="#zeiten">Sprechzeiten</a>
+  <a href="#kontakt">Kontakt</a>
+  <a href="https://app.arzt-direkt.de/dr-russ/booking" target="_blank" rel="noopener" class="btn btn-lime">Jetzt Termin buchen</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="hero-copy reveal in">
+      <span class="tag"><span class="dot"></span>St.-Nepomuk-Str. 13 · Gerbrunn bei Würzburg</span>
+      <h1>Orthopädie <span class="serif-i">Dr. Florian Russ</span></h1>
+      <p class="lead">Ihr Experte für Orthopädie, Unfallchirurgie und Sportmedizin – mit moderner Medizin für Ihre Gesundheit. Bei uns steht die konservative, nicht-operative Orthopädie im Vordergrund: der Patient als Ganzes im Mittelpunkt.</p>
+      <div class="hero-actions">
+        <a href="https://app.arzt-direkt.de/dr-russ/booking" target="_blank" rel="noopener" class="btn btn-lime">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4M16 2v4M3 10h18"/><rect x="3" y="4" width="18" height="18" rx="2"/></svg>
+          Termin online buchen
+        </a>
+        <a href="tel:093173042540" class="btn btn-ghost">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          0931 730 425 40
+        </a>
+      </div>
+      <div class="hero-trust">
+        <div><b>Zeitnah</b>Termine für Sie</div>
+        <div><b>Kostenfrei</b>Parkplätze vor Ort</div>
+        <div><b>Modern</b>renoviert &amp; neueste Technik</div>
+      </div>
+    </div>
+    <div class="hero-visual reveal in" data-d="1">
+      <div style="position:relative">
+        <div class="circle-ring"></div>
+        <div class="circle-photo"><img src="assets_02/ru-sportmedizin.jpg" alt="Sportmedizinische Behandlung mit Kinesio-Tape"></div>
+        <img class="logo-badge" src="assets_02/ru-logo.svg" alt="" aria-hidden="true">
+        <div class="neu-chip"><b>Neu seit 01.01.2025</b><span>Übernahme der Praxis Dr. Piscalar</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="band story" id="praxis">
+  <div class="wrap story-grid">
+    <div class="story-copy reveal">
+      <span class="eyebrow">Unsere Praxis</span>
+      <h2>Neu übernommen, <span class="serif-i">komplett modernisiert</span></h2>
+      <p>Zum <b>1. Januar 2025</b> habe ich, Dr. Russ, die orthopädische Praxis Dr. Piscalar in Gerbrunn übernommen. Die Praxis wurde <b>renoviert, modernisiert und mit neuester Technik ausgestattet</b>, um unseren Patientinnen und Patienten eine optimale Versorgung zu bieten.</p>
+      <p>Dabei setze ich auf ein hochqualifiziertes Team in einem angenehmen Arbeitsumfeld. Eine sorgfältige Anamnese und gründliche körperliche Untersuchung sind bei uns gekoppelt mit hochmodernen Untersuchungsverfahren.</p>
+    </div>
+    <div class="story-facts reveal" data-d="1">
+      <div class="fact">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <div><b>Konservativ zuerst</b><span>Die nicht-operative Orthopädie steht bei uns im Vordergrund.</span></div>
+      </div>
+      <div class="fact">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <div><b>Der ganze Mensch</b><span>Der Patient als Ganzes steht im Mittelpunkt – nicht nur der Befund.</span></div>
+      </div>
+      <div class="fact">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8"/></svg></div>
+        <div><b>OP nur wenn nötig</b><span>Falls doch operiert werden muss, überweisen wir Sie schnell an spezialisierte Operateure.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEISTUNGEN -->
+<section class="band" id="leistungen">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow center">Leistungen</span>
+      <h2>Orthopädie &amp; Sportmedizin – <span class="serif-i">unser Spektrum</span></h2>
+      <p>In unserer Praxis bieten wir Ihnen ein breites Spektrum an orthopädischen und sportmedizinischen Leistungen.</p>
+    </div>
+    <div class="lst-grid">
+      <div class="lcard reveal">
+        <div class="ph"><img src="assets_02/ru-induktion.jpg" alt="Hochenergie-Induktionstherapie"></div>
+        <div class="tx"><h3>Hochenergie-Induktionstherapie</h3><p>Schmerzfrei und nicht-invasiv – bei Arthrose, Kalkschulter, Sehnenentzündungen und Sportverletzungen.</p></div>
+      </div>
+      <div class="lcard reveal" data-d="1">
+        <div class="ph"><img src="assets_02/ru-prp.jpg" alt="PRP-Therapie / Eigenbluttherapie"></div>
+        <div class="tx"><h3>PRP / Eigenbluttherapie</h3><p>Regenerative Therapie mit plättchenreichem Plasma – bei Sportverletzungen, Arthrose und Gelenkschmerzen.</p></div>
+      </div>
+      <div class="lcard reveal" data-d="2">
+        <div class="ph"><img src="assets_02/ru-hyaluron.jpg" alt="Hyaluronsäuretherapie"></div>
+        <div class="tx"><h3>Hyaluronsäuretherapie</h3><p>Gezielte Injektionen bei Arthrose – für bessere Stoßdämpfung und mehr Beweglichkeit.</p></div>
+      </div>
+      <div class="lcard reveal" data-d="3">
+        <div class="ph"><img src="assets_02/ru-akupunktur.jpg" alt="Akupunktur"></div>
+        <div class="tx"><h3>Akupunktur</h3><p>Traditionsreiche ergänzende Therapie bei Rücken- und Gelenkschmerzen.</p><span class="note">Selbstzahler / Privatkassen</span></div>
+      </div>
+      <div class="lcard reveal">
+        <div class="ph"><img src="assets_02/ru-sportmedizin.jpg" alt="Sportmedizin"></div>
+        <div class="tx"><h3>Sportmedizin</h3><p>Vorbeugung, Diagnose und Behandlung von Sportverletzungen – mit ärztlicher Zusatzbezeichnung.</p></div>
+      </div>
+      <div class="lcard reveal" data-d="1">
+        <div class="ph"><img src="assets_02/ru-chiro.jpg" alt="Chirotherapie / Manuelle Medizin"></div>
+        <div class="tx"><h3>Chirotherapie / Manuelle Medizin</h3><p>Blockaden lösen, Gelenke mobilisieren, Muskulatur entspannen.</p><span class="note">Kassenleistung</span></div>
+      </div>
+      <div class="lcard reveal" data-d="2">
+        <div class="ph"><img src="assets_02/ru-roentgen.jpg" alt="Digitales Röntgen"></div>
+        <div class="tx"><h3>Digitales Röntgen</h3><p>Präzise Diagnostik bei deutlich reduzierter Strahlenbelastung.</p></div>
+      </div>
+      <div class="lcard reveal" data-d="3">
+        <div class="ph"><img src="assets_02/ru-sono.jpg" alt="Ultraschall / Sonographie"></div>
+        <div class="tx"><h3>Ultraschall</h3><p>Strahlungsfreie Echtzeit-Diagnostik für Muskeln, Sehnen, Bänder und Gelenke – auch für Kinder geeignet.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ZEITEN & KONTAKT -->
+<section class="band" id="zeiten" style="padding-top:.5rem">
+  <div class="wrap">
+    <div class="zk reveal" id="kontakt">
+      <div class="zk-in">
+        <div>
+          <span class="eyebrow light">Telefonische Erreichbarkeit</span>
+          <h3 style="margin-top:.7rem">Wann Sie uns erreichen</h3>
+          <div class="hrow"><span class="d">Mo</span><span class="t">08:00 – 12:00, 13:00 – 17:00 Uhr</span></div>
+          <div class="hrow"><span class="d">Di</span><span class="t">08:00 – 12:00, 13:00 – 17:00 Uhr</span></div>
+          <div class="hrow"><span class="d">Mi</span><span class="t">08:00 – 12:30 Uhr</span></div>
+          <div class="hrow"><span class="d">Do</span><span class="t">08:00 – 12:00, 13:00 – 17:00 Uhr</span></div>
+          <div class="hrow"><span class="d">Fr</span><span class="t">08:00 – 12:30 Uhr</span></div>
+          <p class="zk-note">Terminbuchung auch online möglich – bequem über arzt-direkt.</p>
+        </div>
+        <div>
+          <span class="eyebrow light">Kontakt &amp; Anfahrt</span>
+          <h3 style="margin-top:.7rem">Orthopädie Dr. Russ</h3>
+          <div class="cline">
+            <div class="ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div><b>Anschrift</b><span>St.-Nepomuk-Str. 13, 97218 Gerbrunn – kostenfreie Parkplätze vor Ort</span></div>
+          </div>
+          <div class="cline">
+            <div class="ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+            <div><b>Telefon</b><span>0931 730 425 40</span></div>
+          </div>
+          <div class="cline">
+            <div class="ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></div>
+            <div><b>E-Mail</b><span>info@orthopaedie-russ.de</span></div>
+          </div>
+          <div class="zk-ctas">
+            <a href="https://app.arzt-direkt.de/dr-russ/booking" target="_blank" rel="noopener" class="btn btn-lime">Online Termin buchen</a>
+            <a href="tel:093173042540" class="btn btn-light">Jetzt anrufen</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="band" id="termin" style="padding-top:1rem">
+  <div class="wrap">
+    <div class="cta reveal">
+      <span class="eyebrow center" style="justify-content:center">Termin</span>
+      <h2>Vereinbaren Sie einen Termin!</h2>
+      <p>Zeitnahe Termine, kostenfreie Parkplätze vor Ort – und die Terminbuchung ist auch online möglich.</p>
+      <div class="cta-actions">
+        <a href="https://app.arzt-direkt.de/dr-russ/booking" target="_blank" rel="noopener" class="btn btn-dark">Jetzt online buchen</a>
+        <a href="tel:093173042540" class="btn btn-light">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          0931 730 425 40
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img src="assets_02/ru-logo.svg" alt="">
+        <div class="wm">
+          <b>Orthopädie Dr. Russ</b>
+          <small>GERBRUNN BEI WÜRZBURG</small>
+          <p>Ihr Experte für Orthopädie, Unfallchirurgie und Sportmedizin – mit moderner Medizin für Ihre Gesundheit.</p>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Praxis</h4>
+        <a href="#praxis">Über die Praxis</a>
+        <a href="#leistungen">Leistungen</a>
+        <a href="#zeiten">Sprechzeiten</a>
+        <a href="#kontakt">Kontakt</a>
+      </div>
+      <div class="foot-col">
+        <h4>Kontakt</h4>
+        <span>St.-Nepomuk-Str. 13</span>
+        <span>97218 Gerbrunn</span>
+        <a href="tel:093173042540">0931 730 425 40</a>
+        <a href="mailto:info@orthopaedie-russ.de">info@orthopaedie-russ.de</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Orthopädie Dr. med. Florian Russ · Gerbrunn</span>
+      <span><a href="#top">Impressum</a> · <a href="#top">Datenschutz</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const header=document.getElementById('header');
+  const onScroll=()=>header.classList.toggle('scrolled',window.scrollY>30);
+  onScroll();window.addEventListener('scroll',onScroll,{passive:true});
+  const burger=document.getElementById('burger');
+  const menu=document.getElementById('mobileMenu');
+  burger.addEventListener('click',()=>menu.classList.toggle('open'));
+  menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>menu.classList.remove('open')));
+  const io=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.14,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal:not(.in)').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
