@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HNO-Praxis & Schlafmedizinisches Zentrum Dr. Andreas Meyer – Rimpar bei Würzburg</title>
+<meta name="description" content="Praxis für HNO-Heilkunde und Schlafmedizinisches Zentrum Dr. med. Andreas Meyer in Rimpar bei Würzburg, Kirchenstraße 5. Hördiagnostik, Allergologie, Schwindel- und Tinnitus-Abklärung, Schlaflabor seit 2003. Termin: 09365 88 24 50.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Frank+Ruhl+Libre:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sky:#6ba3f2;
+    --sky-soft:#eaf2fe;
+    --sky-wash:#f5f9ff;
+    --royal:#1155a8;
+    --royal-deep:#0d4488;
+    --midnight:#0e2140;
+    --midnight-2:#16305c;
+    --paper:#ffffff;
+    --ink:#1e2c42;
+    --muted:#66748c;
+    --line:#dfe9f8;
+    --radius:22px;
+    --shadow:0 26px 60px -28px rgba(14,33,64,.35);
+    --shadow-sm:0 14px 34px -20px rgba(14,33,64,.4);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Sora',system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.66;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  h1,h2,h3{line-height:1.16;letter-spacing:-.015em}
+  .serif{font-family:'Frank Ruhl Libre',Georgia,serif;font-weight:600}
+  .serif-i{font-family:'Frank Ruhl Libre',Georgia,serif;font-style:italic;font-weight:500}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{width:min(1160px,92vw);margin:0 auto}
+  .eyebrow{display:inline-flex;align-items:center;gap:.55em;font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--royal)}
+  .eyebrow::before{content:"";width:11px;height:11px;border-radius:50%;background:var(--sky)}
+  .eyebrow::after{content:"";width:11px;height:11px;border-radius:50% 0 0 50%;background:var(--royal);margin-left:-.35em}
+  .eyebrow.center{justify-content:center;display:flex}
+  .eyebrow.light{color:#a9c7f5}
+  .btn{display:inline-flex;align-items:center;gap:.55em;font-weight:700;font-size:.95rem;padding:.9em 1.65em;border-radius:14px;transition:transform .25s ease,box-shadow .25s ease,background .25s ease;cursor:pointer;border:none}
+  .btn-primary{background:var(--royal);color:#fff;box-shadow:0 14px 30px -12px rgba(17,85,168,.55)}
+  .btn-primary:hover{transform:translateY(-3px);background:var(--royal-deep);box-shadow:0 20px 38px -12px rgba(17,85,168,.65)}
+  .btn-ghost{background:#fff;color:var(--royal);border:1.5px solid var(--line)}
+  .btn-ghost:hover{transform:translateY(-3px);border-color:var(--sky);box-shadow:var(--shadow-sm)}
+  .btn-light{background:#fff;color:var(--midnight)}
+  .btn-light:hover{transform:translateY(-3px);box-shadow:0 16px 32px -14px rgba(0,0,0,.3)}
+
+  /* Header */
+  header{position:fixed;top:0;left:0;right:0;z-index:100;padding:.9rem 0;transition:padding .3s,background .3s,box-shadow .3s}
+  header.scrolled{padding:.5rem 0;background:rgba(255,255,255,.88);backdrop-filter:blur(16px) saturate(1.3);-webkit-backdrop-filter:blur(16px) saturate(1.3);box-shadow:0 1px 0 rgba(14,33,64,.08)}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+  .brand{display:flex;align-items:center;gap:.7rem}
+  .brand img{height:34px;width:auto}
+  .brand .bt b{display:block;font-size:.95rem;font-weight:700;color:var(--ink);line-height:1.2}
+  .brand .bt span{font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .nav-links{display:flex;align-items:center;gap:1.6rem}
+  .nav-links a{font-size:.92rem;font-weight:600;color:var(--ink);opacity:.8;transition:opacity .2s}
+  .nav-links a:hover{opacity:1}
+  .nav-cta{display:flex;align-items:center;gap:1rem}
+  .nav-phone{font-weight:700;color:var(--ink);font-size:.92rem;white-space:nowrap}
+  .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
+  .burger span{width:24px;height:2.5px;background:var(--ink);border-radius:2px;transition:.3s}
+  .mobile-menu{display:none}
+
+  /* Hero */
+  .hero{position:relative;padding:8.8rem 0 5rem;overflow:hidden;background:linear-gradient(180deg,#fff 0%,var(--sky-wash) 100%)}
+  .hero .circle1{position:absolute;width:420px;height:420px;border-radius:50%;background:var(--sky-soft);right:-90px;top:-60px}
+  .hero .circle2{position:absolute;width:230px;height:230px;border-radius:115px 0 0 115px;background:rgba(17,85,168,.08);right:-10px;top:300px;transform:rotate(90deg)}
+  .hero-in{position:relative;max-width:860px}
+  .hero-in .tag{display:inline-flex;align-items:center;gap:.55rem;background:rgba(255,255,255,.85);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:100px;padding:.5rem 1.1rem;font-size:.82rem;font-weight:600;color:var(--ink);margin-bottom:1.6rem;box-shadow:var(--shadow-sm)}
+  .hero-in .tag .dot{width:8px;height:8px;border-radius:50%;background:var(--sky)}
+  .hero-in h1{font-size:clamp(1.9rem,3.9vw,3rem);color:var(--ink);margin-bottom:1.2rem;letter-spacing:-.02em}
+  .hero-in h1 .hl-t{color:var(--royal)}
+  .hero-in h1 .hl-n{color:var(--midnight)}
+  .hero-in p.lead{font-size:1.1rem;color:var(--muted);max-width:38em;margin-bottom:1.9rem}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:.85rem;align-items:center}
+  .hero-trust{display:flex;gap:2rem;flex-wrap:wrap;margin-top:2.3rem;padding-top:1.7rem;border-top:1px solid rgba(14,33,64,.12)}
+  .hero-trust div{font-size:.84rem;color:var(--muted)}
+  .hero-trust b{display:block;font-family:'Frank Ruhl Libre',serif;font-size:1.42rem;color:var(--royal);font-weight:600;line-height:1.25}
+
+  /* Sections */
+  .band{padding:5.4rem 0}
+  .sec-head{max-width:700px;margin-bottom:2.8rem}
+  .sec-head.center{margin-inline:auto;text-align:center}
+  .sec-head h2{font-size:clamp(1.8rem,3.2vw,2.45rem);color:var(--ink);margin:.85rem 0 .75rem}
+  .sec-head h2 .serif-i{color:var(--royal)}
+  .sec-head p{color:var(--muted);font-size:1.02rem}
+
+  /* Ablauf */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
+  .step{position:relative;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:2rem;transition:transform .3s,box-shadow .3s}
+  .step:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+  .step .no{font-family:'Frank Ruhl Libre',serif;font-style:italic;font-size:2.2rem;color:var(--sky);line-height:1;margin-bottom:.7rem}
+  .step h3{font-size:1.12rem;color:var(--ink);margin-bottom:.45rem}
+  .step p{font-size:.92rem;color:var(--muted)}
+
+  /* HNO Leistungen */
+  .leist{background:linear-gradient(180deg,var(--sky-wash) 0%,#fff 100%)}
+  .lst-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
+  .lcard{background:#fff;border:1px solid var(--line);border-radius:18px;padding:1.7rem;transition:transform .3s,box-shadow .3s,border-color .3s}
+  .lcard:hover{transform:translateY(-5px);box-shadow:var(--shadow-sm);border-color:var(--sky)}
+  .lcard .ic{width:46px;height:46px;border-radius:50%;background:var(--sky-soft);color:var(--royal);display:grid;place-items:center;margin-bottom:.95rem}
+  .lcard h3{font-size:1.05rem;color:var(--ink);margin-bottom:.4rem}
+  .lcard p{font-size:.87rem;color:var(--muted)}
+
+  /* Schlafzentrum (Nacht) */
+  .night{position:relative;overflow:hidden;background:linear-gradient(150deg,var(--midnight-2),var(--midnight));color:#fff;border-radius:30px}
+  .night::before{content:"";position:absolute;width:380px;height:380px;border-radius:50%;background:rgba(107,163,242,.08);right:-110px;top:-110px}
+  .night .moon{position:absolute;right:8%;top:2.6rem;color:#cfe0fb;opacity:.9}
+  .night .stars{position:absolute;inset:0;pointer-events:none}
+  .night .stars span{position:absolute;width:3px;height:3px;border-radius:50%;background:#cfe0fb;opacity:.7}
+  .night-in{position:relative;padding:3.2rem;display:grid;grid-template-columns:1.05fr .95fr;gap:2.8rem;align-items:center}
+  .night h2{font-size:clamp(1.8rem,3vw,2.4rem);margin:.8rem 0 1rem}
+  .night h2 .serif-i{color:#a9c7f5}
+  .night p{color:rgba(255,255,255,.85);font-size:.98rem;margin-bottom:.9rem}
+  .night-stats{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+  .nstat{background:rgba(255,255,255,.07);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:1.3rem 1.4rem}
+  .nstat b{display:block;font-family:'Frank Ruhl Libre',serif;font-size:1.7rem;color:#a9c7f5;font-weight:600;line-height:1.15}
+  .nstat span{font-size:.84rem;color:rgba(255,255,255,.8)}
+
+  /* Zeiten & Kontakt */
+  .zk-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:2.2rem;align-items:stretch}
+  .hours-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:2.3rem;box-shadow:var(--shadow-sm)}
+  .hours-card h3{font-size:1.28rem;color:var(--ink);margin-bottom:1.2rem}
+  .hrow{display:flex;justify-content:space-between;gap:1rem;padding:.6rem 0;border-bottom:1px solid var(--line);font-size:.95rem}
+  .hrow:last-of-type{border-bottom:none}
+  .hrow .d{font-weight:700;color:var(--royal);min-width:7em}
+  .hrow .t{color:var(--muted);text-align:right;white-space:nowrap}
+  .hours-note{font-size:.86rem;color:var(--muted);margin-top:1rem}
+  .hours-ctas{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.4rem}
+  .contact-side{border-radius:var(--radius);overflow:hidden;position:relative;background:linear-gradient(155deg,var(--royal),var(--royal-deep));color:#fff;padding:2.5rem;display:flex;flex-direction:column;justify-content:center}
+  .contact-side::before{content:"";position:absolute;width:300px;height:300px;border-radius:50%;background:rgba(107,163,242,.22);right:-90px;top:-90px}
+  .contact-side .in{position:relative}
+  .contact-side .serif{font-size:1.55rem;display:block;margin-bottom:.9rem}
+  .cline{display:flex;gap:.85rem;align-items:flex-start;margin-bottom:1.05rem}
+  .cline .ic{width:38px;height:38px;border-radius:12px;background:rgba(255,255,255,.14);color:#cfe0fb;display:grid;place-items:center;flex:none}
+  .cline b{display:block;font-size:.93rem}
+  .cline span{color:rgba(255,255,255,.8);font-size:.87rem;word-break:break-word}
+
+  /* CTA */
+  .cta{position:relative;overflow:hidden;text-align:center;background:linear-gradient(150deg,var(--sky-soft),var(--sky-wash));border-radius:26px;padding:3.4rem}
+  .cta .c1{position:absolute;width:220px;height:220px;border-radius:50%;background:rgba(107,163,242,.18);left:-60px;top:-60px}
+  .cta .c2{position:absolute;width:150px;height:150px;border-radius:75px 0 0 75px;background:rgba(17,85,168,.1);right:-10px;bottom:-40px;transform:rotate(90deg)}
+  .cta>*{position:relative}
+  .cta h2{font-size:clamp(1.8rem,3vw,2.45rem);color:var(--ink);margin-bottom:.7rem}
+  .cta h2 .serif-i{color:var(--royal)}
+  .cta p{color:var(--muted);max-width:36em;margin:0 auto 1.8rem;font-size:1.02rem}
+  .cta-actions{display:flex;gap:.9rem;justify-content:center;flex-wrap:wrap}
+
+  /* Footer */
+  footer{background:var(--midnight);color:rgba(255,255,255,.72);padding:3.4rem 0 2rem;margin-top:5rem}
+  .foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:2.4rem;padding-bottom:2.4rem;border-bottom:1px solid rgba(255,255,255,.13)}
+  .foot-brand{display:flex;gap:1rem;align-items:flex-start}
+  .foot-brand img{width:46px;height:auto}
+  .foot-brand .wm b{display:block;font-family:'Frank Ruhl Libre',serif;font-size:1.18rem;color:#fff;font-weight:600;line-height:1.3}
+  .foot-brand .wm small{display:block;font-size:.68rem;letter-spacing:.18em;color:#a9c7f5;font-weight:700;margin-top:.3rem}
+  .foot-brand .wm p{font-size:.88rem;max-width:24em;margin-top:.8rem;color:rgba(255,255,255,.72)}
+  .foot-col h4{color:#fff;font-size:.8rem;letter-spacing:.13em;text-transform:uppercase;margin-bottom:1rem;font-weight:700}
+  .foot-col a,.foot-col span{display:block;font-size:.9rem;margin-bottom:.55rem;color:rgba(255,255,255,.72);transition:color .2s;word-break:break-word}
+  .foot-col a:hover{color:#a9c7f5}
+  .foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;padding-top:1.6rem;font-size:.82rem}
+  .foot-bottom a:hover{color:#fff}
+
+  /* Reveal */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal[data-d="1"]{transition-delay:.08s}
+  .reveal[data-d="2"]{transition-delay:.16s}
+  .reveal[data-d="3"]{transition-delay:.24s}
+
+  @media(max-width:960px){
+    .steps{grid-template-columns:1fr}
+    .lst-grid{grid-template-columns:1fr 1fr}
+    .night-in{grid-template-columns:1fr;padding:2.2rem}
+    .zk-grid{grid-template-columns:1fr}
+    .foot-grid{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:640px){
+    .nav-links,.nav-phone,.nav-cta{display:none}
+    .burger{display:flex}
+    .mobile-menu{display:block;position:fixed;inset:0 0 auto 0;top:0;z-index:99;background:rgba(255,255,255,.97);backdrop-filter:blur(20px);padding:5rem 2rem 2.4rem;transform:translateY(-100%);transition:transform .4s cubic-bezier(.4,0,.2,1);box-shadow:var(--shadow)}
+    .mobile-menu.open{transform:translateY(0)}
+    .mobile-menu a{display:block;font-size:1.12rem;font-weight:600;color:var(--ink);padding:.85rem 0;border-bottom:1px solid var(--line)}
+    .mobile-menu .btn{margin-top:1.4rem;width:100%;justify-content:center}
+    .hero{padding-top:7.2rem}
+    .band{padding:4rem 0}
+    .lst-grid{grid-template-columns:1fr}
+    .night .moon{display:none}
+    .night-in,.hours-card,.contact-side,.cta{padding:1.8rem}
+    .night,.cta{border-radius:20px}
+    .night-stats{grid-template-columns:1fr}
+    .foot-grid{grid-template-columns:1fr}
+    .foot-brand{flex-direction:column}
+    .hrow{font-size:.87rem}
+    .hrow .d{min-width:5.5em}
+  }
+</style>
+</head>
+<body>
+
+<header id="header">
+  <div class="wrap nav">
+    <a href="#top" class="brand">
+      <img src="assets_02/am-logo.png" alt="Logo Praxis Dr. Meyer">
+      <span class="bt"><b>Dr. med. Andreas Meyer</b><span>HNO-Heilkunde · Schlafmedizin · Rimpar</span></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#ablauf">Praxis</a>
+      <a href="#hno">HNO-Heilkunde</a>
+      <a href="#schlaf">Schlafzentrum</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <div class="nav-cta">
+      <span class="nav-phone">09365 88 24 50</span>
+      <a href="tel:09365882450" class="btn btn-primary">Termin vereinbaren</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#ablauf">Praxis</a>
+  <a href="#hno">HNO-Heilkunde</a>
+  <a href="#schlaf">Schlafzentrum</a>
+  <a href="#kontakt">Kontakt</a>
+  <a href="tel:09365882450" class="btn btn-primary">Termin vereinbaren</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="circle1"></div>
+  <div class="circle2"></div>
+  <div class="wrap hero-in reveal in">
+    <span class="tag"><span class="dot"></span>Praxis für HNO-Heilkunde · Schlafmedizinisches Zentrum · Rimpar bei Würzburg</span>
+    <h1>Wer gut <span class="serif-i hl-t">hört</span>, nimmt aktiv am Leben teil.<br>Wer gut <span class="serif-i hl-n">schläft</span>, ist ausgeglichen und belastbar.</h1>
+    <p class="lead">Atmen bedeutet Leben, Düfte heben die Stimmung, Schmecken ist Genuss, Hören ermöglicht ein Miteinander – alles zusammen verkörpert Lebensqualität. Ihr Wohlergehen ist uns ein besonderes Anliegen.</p>
+    <div class="hero-actions">
+      <a href="tel:09365882450" class="btn btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        09365 88 24 50
+      </a>
+      <a href="#schlaf" class="btn btn-ghost">Zum Schlafzentrum</a>
+    </div>
+    <div class="hero-trust">
+      <div><b>Seit 2003</b>schlafmedizinische Erfahrung</div>
+      <div><b>Ortsmitte Rimpar</b>Parkmöglichkeiten vorhanden</div>
+      <div><b>Doctolib</b>Termine online oder telefonisch</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABLAUF -->
+<section class="band" id="ablauf">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Was können wir für Sie tun?</span>
+      <h2>Vom Gespräch zum <span class="serif-i">persönlichen Therapieplan</span></h2>
+      <p>Sie kommen mit einem Beschwerdebild im Hals-Nasen-Ohren-Bereich zu uns – so gehen wir gemeinsam vor:</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="no">01</div>
+        <h3>Persönliches Gespräch</h3>
+        <p>Im persönlichen Gespräch interpretieren wir Ihre Symptome – mit Zeit und Aufmerksamkeit.</p>
+      </div>
+      <div class="step reveal" data-d="1">
+        <div class="no">02</div>
+        <h3>Moderne Diagnostik</h3>
+        <p>Dabei stehen uns modernste Untersuchungsgeräte und Messmethoden zur Verfügung.</p>
+      </div>
+      <div class="step reveal" data-d="2">
+        <div class="no">03</div>
+        <h3>Ihr Therapieplan</h3>
+        <p>Im Anschluss erläutern wir die Diagnose und erstellen Ihren persönlichen Therapieplan.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HNO -->
+<section class="band leist" id="hno">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow center">HNO-Heilkunde</span>
+      <h2>Schwerpunkte unseres <span class="serif-i">Leistungsangebotes</span></h2>
+    </div>
+    <div class="lst-grid">
+      <div class="lcard reveal">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 18 0M6 12a6 6 0 0 1 12 0M9 12a3 3 0 0 1 6 0v5a3 3 0 0 1-6 0"/></svg></div>
+        <h3>Hördiagnostik</h3>
+        <p>Audiometrie und Hörgeräteberatung – damit Hören wieder Miteinander ermöglicht.</p>
+      </div>
+      <div class="lcard reveal" data-d="1">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c2 4 5 6.5 5 10a5 5 0 0 1-10 0c0-3.5 3-6 5-10z"/><path d="M8 20h8"/></svg></div>
+        <h3>Allergologie</h3>
+        <p>Allergiediagnostik und Hyposensibilisierungsbehandlungen.</p>
+      </div>
+      <div class="lcard reveal" data-d="2">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <h3>Schwindel &amp; Tinnitus</h3>
+        <p>Schwindel- und Gleichgewichtsdiagnostik, Tinnitus-Abklärung, Innenohrerkrankungen wie Hörsturz und Morbus Menière.</p>
+      </div>
+      <div class="lcard reveal">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <h3>Stimme, Sprache &amp; Sinne</h3>
+        <p>Stimm- und Sprachtherapie sowie Abklärung von Geruchs- und Geschmacksstörungen.</p>
+      </div>
+      <div class="lcard reveal" data-d="1">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h4l3-8 4 16 3-8h6"/></svg></div>
+        <h3>Ultraschall &amp; Endoskopie</h3>
+        <p>Sonographie, Endoskopie und Tumordiagnostik mit modernen Untersuchungsgeräten.</p>
+      </div>
+      <div class="lcard reveal" data-d="2">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 2 4 4-14 14H4v-4L18 2z"/><path d="m14.5 5.5 4 4"/></svg></div>
+        <h3>HNO- &amp; Laser-Chirurgie</h3>
+        <p>HNO-Chirurgie, Laser-Chirurgie und plastische Operationen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCHLAFZENTRUM -->
+<section class="band" id="schlaf" style="padding-top:.5rem">
+  <div class="wrap">
+    <div class="night reveal">
+      <svg class="moon" width="54" height="54" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"/></svg>
+      <div class="stars"><span style="left:12%;top:18%"></span><span style="left:28%;top:9%"></span><span style="left:55%;top:14%"></span><span style="left:70%;top:26%"></span><span style="left:86%;top:52%"></span><span style="left:40%;top:80%"></span><span style="left:64%;top:88%"></span></div>
+      <div class="night-in">
+        <div>
+          <span class="eyebrow light">Schlafmedizinisches Zentrum</span>
+          <h2>Erholsamer Schlaf ist nicht <span class="serif-i">selbstverständlich</span></h2>
+          <p>Schlafstörungen sind vielfältig – die moderne Schlafmedizin unterscheidet mehr als 80 verschiedene Formen. Unser Zentrum für Schlafmedizin in Rimpar diagnostiziert sie mit gezielten diagnostischen Verfahren und modernster Technik.</p>
+          <p>Die Untersuchungen finden in eigens dafür ausgestatteten, freundlich eingerichteten Einzelzimmern statt – die ganze Nacht betreut von unserem speziell geschulten Personal.</p>
+        </div>
+        <div class="night-stats">
+          <div class="nstat"><b>Seit 2003</b><span>behandeln wir Patienten mit nächtlichen Atemstörungen und nicht erholsamem Schlaf</span></div>
+          <div class="nstat"><b>80+</b><span>Formen von Schlafstörungen kennt die moderne Schlafmedizin</span></div>
+          <div class="nstat"><b>~20 %</b><span>der Bevölkerung leiden unter zu viel, zu wenig oder nicht erholsamem Schlaf</span></div>
+          <div class="nstat"><b>Einzelzimmer</b><span>freundlich eingerichtet, mit Betreuung während der gesamten Nacht</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ZEITEN & KONTAKT -->
+<section class="band" id="kontakt">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Sprechzeiten &amp; Kontakt</span>
+      <h2>So erreichen Sie <span class="serif-i">uns</span></h2>
+    </div>
+    <div class="zk-grid">
+      <div class="hours-card reveal">
+        <h3>Sprechzeiten</h3>
+        <div class="hrow"><span class="d">Montag</span><span class="t">8:30 – 11:30 &amp; 14:00 – 17:00</span></div>
+        <div class="hrow"><span class="d">Dienstag</span><span class="t">8:30 – 11:30 &amp; 14:00 – 17:00</span></div>
+        <div class="hrow"><span class="d">Mittwoch</span><span class="t">8:00 – 11:30</span></div>
+        <div class="hrow"><span class="d">Donnerstag</span><span class="t">9:00 – 12:00 &amp; 14:00 – 17:00</span></div>
+        <p class="hours-note">Termin-Anfragen und -Absagen sind über das Doctolib-Portal oder telefonisch möglich.</p>
+        <div class="hours-ctas">
+          <a href="tel:09365882450" class="btn btn-primary">09365 88 24 50</a>
+        </div>
+      </div>
+      <div class="contact-side reveal" data-d="1">
+        <div class="in">
+          <span class="serif">Mitten in Rimpar.</span>
+          <div class="cline">
+            <div class="ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div><b>Anschrift</b><span>Kirchenstraße 5, 97222 Rimpar – in der Ortsmitte, in unmittelbarer Nähe von Würzburg. Parkmöglichkeiten vorhanden.</span></div>
+          </div>
+          <div class="cline">
+            <div class="ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+            <div><b>Telefon / Fax</b><span>09365 88 24 50 · Fax 09365 88 24 40</span></div>
+          </div>
+          <div class="cline">
+            <div class="ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></div>
+            <div><b>E-Mail</b><span>Dr.Andreas-Meyer@web.de</span></div>
+          </div>
+          <a href="tel:09365882450" class="btn btn-light" style="margin-top:.6rem">Jetzt anrufen</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="band" id="termin" style="padding-top:1rem">
+  <div class="wrap">
+    <div class="cta reveal">
+      <div class="c1"></div><div class="c2"></div>
+      <span class="eyebrow center" style="justify-content:center">Termin</span>
+      <h2>Ihr Wohlergehen ist uns ein <span class="serif-i">besonderes Anliegen</span></h2>
+      <p>Wir möchten Ihnen helfen, gesund zu werden und gesund zu bleiben – vereinbaren Sie Ihren Termin telefonisch oder über das Doctolib-Portal.</p>
+      <div class="cta-actions">
+        <a href="tel:09365882450" class="btn btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          09365 88 24 50
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img src="assets_02/am-logo.png" alt="">
+        <div class="wm">
+          <b>Praxis für HNO-Heilkunde<br>Schlafmedizinisches Zentrum</b>
+          <small>DR. MED. ANDREAS MEYER · RIMPAR</small>
+          <p>Facharzt für HNO-Heilkunde – Allergologie, Stimm- und Sprachstörungen und Schlafmedizin.</p>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Praxis</h4>
+        <a href="#ablauf">Über die Praxis</a>
+        <a href="#hno">HNO-Heilkunde</a>
+        <a href="#schlaf">Schlafzentrum</a>
+        <a href="#kontakt">Sprechzeiten</a>
+      </div>
+      <div class="foot-col">
+        <h4>Kontakt</h4>
+        <span>Kirchenstraße 5</span>
+        <span>97222 Rimpar</span>
+        <a href="tel:09365882450">09365 88 24 50</a>
+        <a href="mailto:Dr.Andreas-Meyer@web.de">Dr.Andreas-Meyer@web.de</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Praxis für HNO-Heilkunde &amp; Schlafmedizinisches Zentrum Dr. med. Andreas Meyer · Rimpar</span>
+      <span><a href="#top">Impressum</a> · <a href="#top">Datenschutz</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const header=document.getElementById('header');
+  const onScroll=()=>header.classList.toggle('scrolled',window.scrollY>30);
+  onScroll();window.addEventListener('scroll',onScroll,{passive:true});
+  const burger=document.getElementById('burger');
+  const menu=document.getElementById('mobileMenu');
+  burger.addEventListener('click',()=>menu.classList.toggle('open'));
+  menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>menu.classList.remove('open')));
+  const io=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.14,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal:not(.in)').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
