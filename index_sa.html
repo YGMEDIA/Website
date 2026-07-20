@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zahnarztpraxis Sebastian Appold – Zahnarzt in Schweinfurt am Georg-Wichtermann-Platz</title>
+<meta name="description" content="Zahnarztpraxis Sebastian Appold in Schweinfurt, Georg-Wichtermann-Platz 10. Komplett erneuerte Praxis: Zahnerhalt, Zahnersatz, Implantate, Behandlung unter Narkose, Seniorenheim-Betreuung. Tel. 09721 18393.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --brick:#a40d04;
+    --brick-2:#cf1619;
+    --cyan:#009ee0;
+    --ice:#e8f6fd;
+    --ice-2:#d3eefa;
+    --paper:#ffffff;
+    --cool:#f6f9fb;
+    --ink:#22272b;
+    --muted:#5c6770;
+    --line:#dde6ec;
+    --radius:18px;
+    --shadow:0 26px 60px -28px rgba(34,39,43,.3);
+    --shadow-sm:0 14px 32px -20px rgba(34,39,43,.35);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'IBM Plex Sans',system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.68;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  h1,h2,h3{line-height:1.14;letter-spacing:-.014em;color:var(--ink)}
+  .serif{font-family:'IBM Plex Serif',Georgia,serif;font-weight:600}
+  .serif-i{font-family:'IBM Plex Serif',Georgia,serif;font-style:italic;font-weight:500}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{width:min(1180px,92vw);margin:0 auto}
+  .eyebrow{display:inline-flex;align-items:center;gap:.55em;font-size:.72rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--cyan)}
+  .eyebrow::before{content:"";width:26px;height:2px;background:var(--cyan);border-radius:2px}
+  .eyebrow.center{justify-content:center;display:flex}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:.55em;font-weight:700;font-size:.95rem;padding:.92em 1.7em;border-radius:100px;transition:transform .25s ease,box-shadow .25s ease,background .25s ease,border-color .25s ease;cursor:pointer;border:none}
+  .btn-brick{background:var(--brick);color:#fff;box-shadow:0 14px 30px -12px rgba(164,13,4,.45)}
+  .btn-brick:hover{transform:translateY(-3px);background:var(--brick-2)}
+  .btn-ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+  .btn-ghost:hover{transform:translateY(-3px);border-color:var(--cyan);box-shadow:var(--shadow-sm);background:#fff}
+  .btn-light{background:#fff;color:var(--brick)}
+  .btn-light:hover{transform:translateY(-3px);box-shadow:0 16px 34px -14px rgba(0,0,0,.3)}
+
+  header{position:fixed;top:0;left:0;right:0;z-index:100;padding:.95rem 0;transition:padding .3s,background .3s,box-shadow .3s}
+  header.scrolled{padding:.5rem 0;background:rgba(255,255,255,.93);backdrop-filter:blur(16px) saturate(1.2);-webkit-backdrop-filter:blur(16px) saturate(1.2);box-shadow:0 1px 0 rgba(34,39,43,.1)}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+  .brand{display:inline-flex;align-items:center;gap:.15rem;background:var(--brick);color:#fff;border-radius:10px;padding:.55rem .95rem;box-shadow:var(--shadow-sm);line-height:1.15}
+  .brand b{font-size:.98rem;letter-spacing:.01em}
+  .brand span{font-size:.68rem;opacity:.85;display:block;letter-spacing:.14em;text-transform:uppercase}
+  .nav-links{display:flex;align-items:center;gap:1.55rem}
+  .nav-links a{font-size:.93rem;font-weight:600;color:var(--ink);opacity:.8;transition:opacity .2s}
+  .nav-links a:hover{opacity:1}
+  .nav-cta{display:flex;align-items:center;gap:.9rem}
+  .nav-burger{display:none;background:none;border:none;cursor:pointer;padding:.4rem}
+  .nav-burger span{display:block;width:24px;height:2.5px;background:var(--ink);margin:5px 0;border-radius:2px;transition:transform .3s,opacity .3s}
+  .mobile-nav{display:none;position:fixed;inset:0;background:rgba(34,39,43,.98);z-index:99;padding:6.5rem 8vw;flex-direction:column;gap:1.6rem;opacity:0;pointer-events:none;transition:opacity .3s}
+  .mobile-nav.open{opacity:1;pointer-events:auto}
+  .mobile-nav a{color:#fff;font-size:1.35rem;font-weight:700}
+  body.nav-open .nav-burger span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+  body.nav-open .nav-burger span:nth-child(2){opacity:0}
+  body.nav-open .nav-burger span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+
+  /* Hero mit Offset-Doppelrahmen */
+  .hero{background:linear-gradient(170deg,var(--cool) 0%,#fff 70%);padding:9.5rem 0 4.6rem;position:relative;overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:3.6rem;align-items:center}
+  .hero h1{font-size:clamp(2.3rem,4.4vw,3.5rem)}
+  .hero h1 .serif-i{color:var(--brick)}
+  .hero-sub{font-size:1.06rem;color:var(--muted);max-width:34em;margin-top:1.2rem}
+  .hero-ctas{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:1.9rem}
+  .hero-note{margin-top:1.6rem;display:inline-flex;align-items:center;gap:.55em;font-size:.88rem;font-weight:600;color:var(--ink);background:var(--ice);border:1px solid var(--ice-2);padding:.6em 1.1em;border-radius:100px}
+  .hero-note svg{width:16px;height:16px;stroke:var(--cyan)}
+  .hero-media{position:relative;padding:1.4rem 1.4rem 0 0}
+  .hero-media::before{content:"";position:absolute;top:0;right:0;width:78%;height:82%;background:var(--ice);border-radius:var(--radius);z-index:0}
+  .hero-media::after{content:"";position:absolute;left:-14px;bottom:-14px;width:60%;height:55%;border:2px solid var(--brick);border-radius:var(--radius);z-index:0}
+  .hero-media img{position:relative;z-index:1;border-radius:var(--radius);box-shadow:var(--shadow);aspect-ratio:4/3;object-fit:cover;width:100%}
+  .hero-media figcaption{position:absolute;z-index:2;left:1.1rem;bottom:1.1rem;background:rgba(255,255,255,.9);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:100px;font-size:.8rem;font-weight:600;padding:.5em 1em;color:var(--ink)}
+
+  /* Service-Leiste */
+  .services-strip{background:var(--ink);color:#fff;padding:1.6rem 0}
+  .strip-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:1rem}
+  .strip-item{display:flex;flex-direction:column;align-items:center;text-align:center;gap:.45rem;font-size:.78rem;font-weight:600;color:#cfd8de}
+  .strip-item svg{width:24px;height:24px;stroke:var(--cyan)}
+
+  section{padding:5.6rem 0}
+  .sec-head{max-width:660px;margin-bottom:2.8rem}
+  .sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
+  .sec-head h2{font-size:clamp(1.7rem,3vw,2.4rem);margin-top:.6rem}
+  .sec-head p{color:var(--muted);margin-top:.8rem}
+
+  /* Praxis + Galerie-Mosaik */
+  .praxis-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:3.2rem;align-items:center}
+  .praxis-text .lead{font-family:'IBM Plex Serif',Georgia,serif;font-size:1.45rem;line-height:1.42;color:var(--ink);margin:.9rem 0 1.1rem}
+  .praxis-text .lead em{color:var(--brick);font-style:italic}
+  .praxis-text p{color:var(--muted)}
+  .praxis-text p+p{margin-top:1rem}
+  .praxis-points{margin-top:1.5rem;display:grid;gap:.7rem}
+  .ppoint{display:flex;gap:.7rem;align-items:flex-start;background:var(--cool);border:1px solid var(--line);border-radius:14px;padding:.85rem 1.05rem;font-size:.93rem;font-weight:600;color:var(--ink)}
+  .ppoint svg{width:18px;height:18px;flex:none;margin-top:.15em;stroke:var(--cyan)}
+  .mosaic{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:150px;gap:.9rem}
+  .mosaic figure{overflow:hidden;border-radius:14px;box-shadow:var(--shadow-sm)}
+  .mosaic figure:nth-child(1){grid-column:span 2;grid-row:span 2}
+  .mosaic img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+  .mosaic figure:hover img{transform:scale(1.05)}
+
+  /* Team-Band */
+  .team{background:var(--cool)}
+  .team-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:3rem;align-items:center}
+  .team-media img{border-radius:var(--radius);box-shadow:var(--shadow);width:100%;object-fit:cover;aspect-ratio:16/9;object-position:right center}
+  .team h2{font-size:clamp(1.7rem,3vw,2.4rem);margin-top:.6rem}
+  .team p{color:var(--muted);margin-top:1rem}
+
+  /* Behandlungen: Pill-Gruppen */
+  .treat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+  .treat-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:1.9rem 1.8rem;transition:transform .3s ease,box-shadow .3s ease}
+  .treat-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+  .treat-head{display:flex;align-items:center;gap:.85rem;margin-bottom:1.2rem}
+  .treat-head .ic{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:var(--ice);flex:none}
+  .treat-head .ic svg{width:22px;height:22px;stroke:var(--cyan)}
+  .treat-head.brick .ic{background:#fbeae8}
+  .treat-head.brick .ic svg{stroke:var(--brick)}
+  .treat-card h3{font-size:1.15rem}
+  .pills{display:flex;flex-wrap:wrap;gap:.55rem}
+  .pill{background:var(--cool);border:1px solid var(--line);color:var(--ink);font-size:.85rem;font-weight:600;padding:.5em 1em;border-radius:100px;transition:border-color .2s,transform .2s}
+  .pill:hover{border-color:var(--cyan);transform:translateY(-2px)}
+
+  /* Zeiten + Kontakt */
+  .hours{background:linear-gradient(180deg,var(--cool) 0%,#fff 100%)}
+  .hours-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:1.6rem;align-items:stretch}
+  .hours-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:2.2rem 2.4rem;box-shadow:var(--shadow-sm)}
+  .hours-card h3{font-size:1.25rem;margin-bottom:1.3rem}
+  .hours-table{width:100%;border-collapse:collapse}
+  .hours-table tr+tr{border-top:1px solid var(--line)}
+  .hours-table td{padding:.74em 0;font-size:.94rem}
+  .hours-table td:first-child{font-weight:700;color:var(--ink);width:34%}
+  .hours-table td:last-child{text-align:right;color:var(--muted)}
+  .hours-table tr.late td{color:var(--brick)}
+  .hours-table tr.late td:last-child{font-weight:700}
+  .late-chip{display:inline-flex;align-items:center;gap:.5em;background:#fbeae8;border:1px solid #f3d2cf;color:var(--brick);font-size:.83rem;font-weight:700;padding:.55em 1.05em;border-radius:100px;margin-top:1.2rem}
+  .late-chip svg{width:15px;height:15px}
+  .contact-card{background:var(--brick);color:#fff;border-radius:var(--radius);padding:2.2rem 2.4rem;display:flex;flex-direction:column;box-shadow:var(--shadow)}
+  .contact-card h3{color:#fff;font-size:1.25rem;margin-bottom:1.2rem}
+  .contact-row{display:flex;gap:.85rem;align-items:flex-start;padding:.7rem 0;font-size:.96rem}
+  .contact-row+.contact-row{border-top:1px solid rgba(255,255,255,.16)}
+  .contact-row svg{width:19px;height:19px;flex:none;margin-top:.2em;stroke:#f2b8b3}
+  .contact-row a:hover{text-decoration:underline}
+  .contact-card .note{font-size:.85rem;color:#f2c5c1;margin-top:1rem}
+  .contact-card .btn{margin-top:auto;align-self:flex-start}
+
+  /* Notdienst */
+  .notdienst{background:#fff;padding:0 0 5.6rem}
+  .nd-card{display:flex;gap:1.6rem;align-items:center;background:var(--ice);border:1px solid var(--ice-2);border-radius:var(--radius);padding:1.8rem 2rem;flex-wrap:wrap}
+  .nd-card svg{width:34px;height:34px;stroke:var(--cyan);flex:none}
+  .nd-card b{display:block;font-size:1.05rem}
+  .nd-card p{font-size:.92rem;color:var(--muted)}
+  .nd-card .btn{margin-left:auto}
+
+  .cta{background:var(--ink);color:#fff}
+  .cta-inner{text-align:center;max-width:640px;margin:0 auto}
+  .cta h2{color:#fff;font-size:clamp(1.7rem,3vw,2.4rem)}
+  .cta p{color:#aeb9c1;margin:1rem 0 1.9rem}
+  .cta-btns{display:flex;gap:.9rem;justify-content:center;flex-wrap:wrap}
+
+  footer{background:#1a1e21;color:#aeb9c1;padding:3.4rem 0 2rem}
+  .foot-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:2.5rem;padding-bottom:2.2rem;border-bottom:1px solid rgba(255,255,255,.12)}
+  .foot-grid h4{color:#fff;font-size:.95rem;margin-bottom:.9rem}
+  .foot-grid p,.foot-grid a{font-size:.9rem;line-height:1.9}
+  .foot-grid a:hover{color:#fff}
+  .foot-bottom{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding-top:1.6rem;font-size:.82rem}
+  .foot-bottom a{opacity:.8}
+  .foot-bottom a:hover{opacity:1}
+
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  @media (max-width:1020px){
+    .hero-grid,.praxis-grid,.team-grid,.hours-grid{grid-template-columns:1fr;gap:2.4rem}
+    .treat-grid{grid-template-columns:1fr;max-width:560px;margin:0 auto}
+    .strip-grid{grid-template-columns:repeat(3,1fr);gap:1.3rem}
+    .foot-grid{grid-template-columns:1fr 1fr}
+  }
+  @media (max-width:640px){
+    .nav-links{display:none}
+    .nav-cta .btn{display:none}
+    .nav-burger{display:block}
+    .mobile-nav{display:flex}
+    .strip-grid{grid-template-columns:repeat(2,1fr)}
+    .mosaic{grid-auto-rows:120px}
+    .hours-card,.contact-card{padding:1.7rem 1.5rem}
+    .nd-card .btn{margin-left:0}
+    section{padding:4rem 0}
+  }
+</style>
+</head>
+<body>
+
+<header id="header">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Zahnarztpraxis Sebastian Appold – Startseite">
+      <div><b>Sebastian Appold</b><span>Zahnarzt · Schweinfurt</span></div>
+    </a>
+    <nav class="nav-links" aria-label="Hauptnavigation">
+      <a href="#praxis">Praxis</a>
+      <a href="#team">Team</a>
+      <a href="#behandlung">Behandlung</a>
+      <a href="#zeiten">Sprechzeiten</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-brick" href="tel:0972118393">09721 18393</a>
+      <button class="nav-burger" id="burger" aria-label="Menü öffnen" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="#praxis">Praxis</a>
+  <a href="#team">Team</a>
+  <a href="#behandlung">Behandlung</a>
+  <a href="#zeiten">Sprechzeiten</a>
+  <a href="#kontakt">Kontakt</a>
+  <a class="btn btn-brick" href="tel:0972118393">09721 18393 anrufen</a>
+</div>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero" style="padding-bottom:4.2rem">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Zahnarztpraxis am Georg-Wichtermann-Platz</span>
+        <h1 style="margin-top:.8rem">Ihre Zahnarztpraxis <span class="serif-i">mitten in Schweinfurt.</span></h1>
+        <p class="hero-sub">Willkommen bei Sebastian Appold: eine komplett erneuerte, modern eingerichtete Praxis – mit Fahrstuhl, Tiefgarage direkt im Haus und einem Team, das sich Zeit für Sie nimmt.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-brick" href="tel:0972118393">Termin vereinbaren</a>
+          <a class="btn btn-ghost" href="mailto:info@zahnarzt-appold.de">E-Mail schreiben</a>
+        </div>
+        <span class="hero-note">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          Dienstags Sprechzeiten bis 19 Uhr
+        </span>
+      </div>
+      <figure class="hero-media reveal">
+        <img src="assets_02/sa-galerie-01.jpg" alt="Behandlungszimmer der komplett erneuerten Zahnarztpraxis Appold" fetchpriority="high">
+        <figcaption>Unsere Praxis – vor Kurzem komplett erneuert</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- SERVICE-LEISTE -->
+  <div class="services-strip">
+    <div class="wrap strip-grid">
+      <div class="strip-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="3" y="8" width="18" height="12" rx="2"/><path d="M7 8V6a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2M8 14h8"/></svg>Tiefgarage im Haus</div>
+      <div class="strip-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="4" y="3" width="16" height="14" rx="3"/><path d="M8 21h8M7 17v4M17 17v4M4 11h16"/></svg>Bushaltestelle vor der Tür</div>
+      <div class="strip-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M8 3v3M16 3v3M4 9h16"/><rect x="4" y="5" width="16" height="16" rx="2"/></svg>Terminerinnerung (Recall)</div>
+      <div class="strip-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/><circle cx="12" cy="12" r="3.5"/></svg>Digitales Röntgen</div>
+      <div class="strip-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M16 4a4 4 0 1 1-8 0M12 8v13M8 21h8M5 12h14"/></svg>Betreuung im Seniorenheim</div>
+      <div class="strip-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 2 3 7v6c0 5 3.8 8.4 9 9 5.2-.6 9-4 9-9V7z"/><path d="M12 8v5M12 16.5v.5"/></svg>Zahnärztlicher Notdienst</div>
+    </div>
+  </div>
+
+  <!-- PRAXIS + GALERIE -->
+  <section id="praxis">
+    <div class="wrap praxis-grid">
+      <div class="praxis-text reveal">
+        <span class="eyebrow">Die Praxis</span>
+        <p class="lead">Modern eingerichtet, <em>komplett erneuert</em> – damit Sie sich wohlfühlen und wir ergonomisch arbeiten können.</p>
+        <p>Bei der Planung unserer Räume war uns beides wichtig: eine Atmosphäre, in der Sie sich gut aufgehoben fühlen – und Arbeitsbedingungen, die einen erfolgreichen Behandlungsverlauf unterstützen.</p>
+        <div class="praxis-points">
+          <div class="ppoint"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg> 3. Obergeschoss – bequem mit Fahrstuhl erreichbar</div>
+          <div class="ppoint"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg> Tiefgarage direkt im Haus, Bushaltestelle vor der Tür</div>
+          <div class="ppoint"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg> Zentral am Georg-Wichtermann-Platz (ehemals Postplatz)</div>
+        </div>
+      </div>
+      <div class="mosaic reveal" aria-label="Bilder aus der Praxis">
+        <figure><img src="assets_02/sa-galerie-02.jpg" alt="Empfangsbereich der Praxis" loading="lazy"></figure>
+        <figure><img src="assets_02/sa-galerie-03.jpg" alt="Behandlungszimmer" loading="lazy"></figure>
+        <figure><img src="assets_02/sa-galerie-04.jpg" alt="Praxisausstattung" loading="lazy"></figure>
+        <figure><img src="assets_02/sa-galerie-05.jpg" alt="Wartebereich" loading="lazy"></figure>
+        <figure><img src="assets_02/sa-galerie-06.jpg" alt="Blick in die Praxisräume" loading="lazy"></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="team" id="team">
+    <div class="wrap team-grid">
+      <div class="team-media reveal">
+        <img src="assets_02/sa-team.jpg" alt="Das Team der Zahnarztpraxis Sebastian Appold" loading="lazy">
+      </div>
+      <div class="reveal">
+        <span class="eyebrow">Das Team</span>
+        <h2>Gemeinsam für <span class="serif-i" style="color:var(--brick)">Ihr Lächeln</span></h2>
+        <p>Unser eingespieltes Team erreicht gemeinsam ein für Sie ideales Ergebnis – von der Anmeldung bis zur Behandlung. Kommen Sie vorbei und lernen Sie uns persönlich kennen. Wir sind gerne für Sie da.</p>
+        <div class="hero-ctas" style="margin-top:1.6rem">
+          <a class="btn btn-brick" href="tel:0972118393">Persönlich kennenlernen</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEHANDLUNGEN -->
+  <section id="behandlung">
+    <div class="wrap">
+      <div class="sec-head center reveal">
+        <span class="eyebrow center">Die Behandlung</span>
+        <h2>Zahnmedizin für <span class="serif-i" style="color:var(--brick)">die ganze Familie</span></h2>
+        <p>Vom Zahnerhalt bis zum Implantat – und mit Narkose-Behandlung sowie Seniorenheim-Betreuung auch dann für Sie da, wenn es besondere Wege braucht.</p>
+      </div>
+      <div class="treat-grid">
+        <article class="treat-card reveal">
+          <div class="treat-head">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 2 3 7v6c0 5 3.8 8.4 9 9 5.2-.6 9-4 9-9V7z"/></svg></span>
+            <h3>Zahnerhalt &amp; Vorsorge</h3>
+          </div>
+          <div class="pills">
+            <span class="pill">Füllungstherapie</span>
+            <span class="pill">Wurzelkanalbehandlung</span>
+            <span class="pill">Zahnfleischbehandlung</span>
+            <span class="pill">Kinderzahnheilkunde</span>
+          </div>
+        </article>
+        <article class="treat-card reveal">
+          <div class="treat-head brick">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M7 3h10l2 7-9 11L1 10z" transform="translate(2 0)"/></svg></span>
+            <h3>Zahnersatz &amp; Chirurgie</h3>
+          </div>
+          <div class="pills">
+            <span class="pill">Festsitzender Zahnersatz</span>
+            <span class="pill">Herausnehmbarer Zahnersatz</span>
+            <span class="pill">Zahnimplantate</span>
+            <span class="pill">Zahnärztliche Chirurgie</span>
+          </div>
+        </article>
+        <article class="treat-card reveal">
+          <div class="treat-head">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 3c2 3 6 4 6 9a6 6 0 0 1-12 0c0-5 4-6 6-9z"/></svg></span>
+            <h3>Ästhetik &amp; Besonderes</h3>
+          </div>
+          <div class="pills">
+            <span class="pill">Ästhetische Zahnmedizin</span>
+            <span class="pill">Zahnaufhellungen</span>
+            <span class="pill">Schienentherapie</span>
+            <span class="pill">Behandlung unter Narkose</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ZEITEN + KONTAKT -->
+  <section class="hours" id="zeiten">
+    <div class="wrap">
+      <div class="sec-head center reveal">
+        <span class="eyebrow center">Sprechzeiten &amp; Kontakt</span>
+        <h2>Wir sind <span class="serif-i" style="color:var(--brick)">für Sie da</span></h2>
+      </div>
+      <div class="hours-grid">
+        <div class="hours-card reveal">
+          <h3>Unsere Sprechzeiten</h3>
+          <table class="hours-table">
+            <tr><td>Montag</td><td>08:00 – 12:00 &amp; 13:30 – 18:00 Uhr</td></tr>
+            <tr class="late"><td>Dienstag</td><td>08:00 – 12:00 &amp; 13:30 – 19:00 Uhr</td></tr>
+            <tr><td>Mittwoch</td><td>08:00 – 12:00 Uhr</td></tr>
+            <tr><td>Donnerstag</td><td>08:00 – 12:00 &amp; 13:30 – 18:00 Uhr</td></tr>
+            <tr><td>Freitag</td><td>08:00 – 12:00 Uhr</td></tr>
+          </table>
+          <span class="late-chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            Dienstags bis 19 Uhr – ideal nach der Arbeit
+          </span>
+        </div>
+        <div class="contact-card reveal" id="kontakt">
+          <h3>Zahnarztpraxis Sebastian Appold</h3>
+          <div class="contact-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Georg-Wichtermann-Platz 10 (ehemals Postplatz)<br>97421 Schweinfurt</span>
+          </div>
+          <div class="contact-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></svg>
+            <a href="tel:0972118393">09721 18393</a>
+          </div>
+          <div class="contact-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+            <a href="mailto:info@zahnarzt-appold.de">info@zahnarzt-appold.de</a>
+          </div>
+          <p class="note">Termine nach Vereinbarung – rufen Sie uns einfach an.</p>
+          <a class="btn btn-light" href="tel:0972118393">Jetzt Termin vereinbaren</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOTDIENST -->
+  <section class="notdienst">
+    <div class="wrap">
+      <div class="nd-card reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 2 3 7v6c0 5 3.8 8.4 9 9 5.2-.6 9-4 9-9V7z"/><path d="M12 8v5M12 16.5v.5"/></svg>
+        <div>
+          <b>Zahnärztlicher Notdienst</b>
+          <p>Außerhalb unserer Sprechzeiten und an Feiertagen: Welche Praxis in Ihrer Nähe Notdienst hat, erfahren Sie unter notdienst-zahn.de.</p>
+        </div>
+        <a class="btn btn-ghost" href="https://www.notdienst-zahn.de" target="_blank" rel="noopener">Zum Notdienst</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="wrap cta-inner reveal">
+      <span class="eyebrow center">Ihr nächster Schritt</span>
+      <h2 style="margin-top:.6rem">Vereinbaren Sie <span class="serif-i" style="color:#f2b8b3">Ihren Termin</span></h2>
+      <p>Alle Ihre Fragen beantworten wir gerne in einem persönlichen Gespräch. Wir freuen uns auf Sie!</p>
+      <div class="cta-btns">
+        <a class="btn btn-brick" href="tel:0972118393">09721 18393 anrufen</a>
+        <a class="btn btn-light" href="mailto:info@zahnarzt-appold.de">E-Mail schreiben</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <span class="brand" style="margin-bottom:1rem"><div><b>Sebastian Appold</b><span>Zahnarzt · Schweinfurt</span></div></span>
+        <p style="margin-top:1rem">Ihre Zahnarztpraxis mitten in Schweinfurt –<br>für die ganze Familie.</p>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <p>Georg-Wichtermann-Platz 10 · 97421 Schweinfurt<br>
+        <a href="tel:0972118393">09721 18393</a><br>
+        <a href="mailto:info@zahnarzt-appold.de">info@zahnarzt-appold.de</a></p>
+      </div>
+      <div>
+        <h4>Sprechzeiten</h4>
+        <p>Mo, Do: 08–12 &amp; 13:30–18 Uhr<br>Di: 08–12 &amp; 13:30–19 Uhr<br>Mi, Fr: 08–12 Uhr</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Zahnarztpraxis Sebastian Appold, Schweinfurt</span>
+      <span><a href="https://zahnarzt-appold.de/impressum.html" target="_blank" rel="noopener">Impressum</a> &nbsp;·&nbsp; <a href="https://zahnarzt-appold.de/datenschutz.html" target="_blank" rel="noopener">Datenschutz</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const header=document.getElementById('header');
+  addEventListener('scroll',()=>{header.classList.toggle('scrolled',scrollY>24)},{passive:true});
+
+  const burger=document.getElementById('burger'),mnav=document.getElementById('mobileNav');
+  burger.addEventListener('click',()=>{
+    const open=mnav.classList.toggle('open');
+    document.body.classList.toggle('nav-open',open);
+    burger.setAttribute('aria-expanded',open);
+    burger.setAttribute('aria-label',open?'Menü schließen':'Menü öffnen');
+  });
+  mnav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+    mnav.classList.remove('open');document.body.classList.remove('nav-open');
+    burger.setAttribute('aria-expanded','false');
+  }));
+
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.14});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
