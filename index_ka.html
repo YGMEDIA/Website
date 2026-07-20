@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>die Physiotherapeuten, Kamphans & Kollegen – Physiotherapie in Würzburg</title>
+<meta name="description" content="die Physiotherapeuten, Kamphans & Kollegen in Würzburg, Mergentheimer Straße 10 an der Ludwigsbrücke. Physiotherapie für Orthopädie/Chirurgie und Lymphologie, Akutsprechstunde, TotalGym-Training. Termin: 0931 99 169 222.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Gelasio:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --leaf:#2f7d1a;
+    --leaf-deep:#245f14;
+    --forest:#1c3d13;
+    --spring:#63c433;
+    --sage:#eef6e9;
+    --sage-2:#dfeed6;
+    --greige:#f4f3ee;
+    --paper:#ffffff;
+    --ink:#22301e;
+    --muted:#6b7a64;
+    --line:#e2ead9;
+    --radius:22px;
+    --shadow:0 26px 60px -28px rgba(28,61,19,.32);
+    --shadow-sm:0 14px 34px -20px rgba(28,61,19,.38);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Hanken Grotesk',system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.66;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  h1,h2,h3{line-height:1.13;letter-spacing:-.015em}
+  .serif{font-family:'Gelasio',Georgia,serif;font-weight:600}
+  .serif-i{font-family:'Gelasio',Georgia,serif;font-style:italic;font-weight:500}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{width:min(1180px,92vw);margin:0 auto}
+  .eyebrow{display:inline-flex;align-items:center;gap:.55em;font-size:.73rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--leaf)}
+  .eyebrow::before{content:"";width:12px;height:12px;border-radius:50%;border:3px solid var(--spring)}
+  .eyebrow.center{justify-content:center;display:flex}
+  .eyebrow.light{color:#b7e39a}
+  .eyebrow.light::before{border-color:#b7e39a}
+  .btn{display:inline-flex;align-items:center;gap:.55em;font-weight:800;font-size:.96rem;padding:.9em 1.7em;border-radius:100px;transition:transform .25s ease,box-shadow .25s ease,background .25s ease;cursor:pointer;border:none}
+  .btn-primary{background:var(--leaf);color:#fff;box-shadow:0 14px 30px -12px rgba(47,125,26,.6)}
+  .btn-primary:hover{transform:translateY(-3px);background:var(--leaf-deep);box-shadow:0 20px 38px -12px rgba(47,125,26,.7)}
+  .btn-ghost{background:#fff;color:var(--forest);border:1.5px solid var(--line)}
+  .btn-ghost:hover{transform:translateY(-3px);border-color:var(--leaf);box-shadow:var(--shadow-sm)}
+  .btn-light{background:#fff;color:var(--forest)}
+  .btn-light:hover{transform:translateY(-3px);box-shadow:0 16px 32px -14px rgba(0,0,0,.3)}
+
+  /* Header */
+  header{position:fixed;top:0;left:0;right:0;z-index:100;padding:.9rem 0;transition:padding .3s,background .3s,box-shadow .3s}
+  header.scrolled{padding:.5rem 0;background:rgba(255,255,255,.88);backdrop-filter:blur(16px) saturate(1.3);-webkit-backdrop-filter:blur(16px) saturate(1.3);box-shadow:0 1px 0 rgba(28,61,19,.08)}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+  .brand{display:flex;align-items:center;gap:.7rem;background:#fff;border:1px solid var(--line);border-radius:14px;padding:.4rem .8rem;box-shadow:var(--shadow-sm)}
+  .brand img{height:36px;width:auto}
+  .brand .bt b{display:block;font-size:.98rem;font-weight:800;color:var(--forest);line-height:1.12}
+  .brand .bt span{font-size:.63rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700}
+  .nav-links{display:flex;align-items:center;gap:1.6rem}
+  .nav-links a{font-size:.93rem;font-weight:700;color:var(--forest);opacity:.8;transition:opacity .2s}
+  .nav-links a:hover{opacity:1}
+  .nav-cta{display:flex;align-items:center;gap:1rem}
+  .nav-phone{font-weight:800;color:var(--forest);font-size:.93rem;white-space:nowrap}
+  .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
+  .burger span{width:24px;height:2.5px;background:var(--forest);border-radius:2px;transition:.3s}
+  .mobile-menu{display:none}
+
+  /* Hero */
+  .hero{position:relative;padding:8.8rem 0 5rem;overflow:hidden;background:linear-gradient(180deg,#fff 0%,var(--sage) 100%)}
+  .hero::before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;border:70px solid var(--sage-2);right:-160px;top:-120px;opacity:.7}
+  .hero-grid{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:3.2rem;align-items:center}
+  .hero-copy .tag{display:inline-flex;align-items:center;gap:.55rem;background:rgba(255,255,255,.85);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:100px;padding:.5rem 1.1rem;font-size:.83rem;font-weight:700;color:var(--forest);margin-bottom:1.5rem;box-shadow:var(--shadow-sm)}
+  .hero-copy .tag .dot{width:8px;height:8px;border-radius:50%;background:var(--spring)}
+  .hero-copy h1{font-size:clamp(2.3rem,4.4vw,3.5rem);color:var(--forest);margin-bottom:1.1rem;letter-spacing:-.02em}
+  .hero-copy h1 .serif-i{color:var(--leaf)}
+  .hero-copy p.lead{font-size:1.1rem;color:var(--muted);max-width:34em;margin-bottom:1.9rem}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:.85rem;align-items:center}
+  .hero-trust{display:flex;gap:1.8rem;flex-wrap:wrap;margin-top:2.2rem;padding-top:1.7rem;border-top:1px solid rgba(28,61,19,.12)}
+  .hero-trust div{font-size:.85rem;color:var(--muted)}
+  .hero-trust b{display:block;font-family:'Gelasio',serif;font-size:1.42rem;color:var(--leaf);font-weight:600;line-height:1.25}
+
+  .hero-visual{position:relative}
+  .ring-photo{position:relative;width:min(430px,100%);aspect-ratio:1/1;border-radius:50%;overflow:hidden;box-shadow:var(--shadow);border:12px solid #fff;outline:6px solid var(--spring);outline-offset:4px;margin-left:auto}
+  .ring-photo img{width:100%;height:100%;object-fit:cover}
+  .akut-chip{position:absolute;left:0;bottom:1.6rem;z-index:2;background:rgba(255,255,255,.86);backdrop-filter:blur(14px) saturate(1.3);-webkit-backdrop-filter:blur(14px) saturate(1.3);border:1px solid rgba(255,255,255,.75);border-radius:16px;box-shadow:var(--shadow-sm);padding:.85rem 1.1rem;max-width:250px}
+  .akut-chip b{display:block;font-size:.85rem;color:var(--forest)}
+  .akut-chip span{font-size:.75rem;color:var(--muted)}
+
+  /* Sections */
+  .band{padding:5.4rem 0}
+  .sec-head{max-width:700px;margin-bottom:2.8rem}
+  .sec-head.center{margin-inline:auto;text-align:center}
+  .sec-head h2{font-size:clamp(1.85rem,3.3vw,2.5rem);color:var(--forest);margin:.85rem 0 .75rem}
+  .sec-head h2 .serif-i{color:var(--leaf)}
+  .sec-head p{color:var(--muted);font-size:1.03rem}
+
+  /* Schwerpunkte */
+  .spez-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+  .spez{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:2.2rem;transition:transform .3s,box-shadow .3s;position:relative;overflow:hidden}
+  .spez::before{content:"";position:absolute;width:150px;height:150px;border-radius:50%;border:22px solid var(--sage);right:-50px;top:-50px}
+  .spez:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+  .spez .ic{width:52px;height:52px;border-radius:16px;background:var(--sage);color:var(--leaf);display:grid;place-items:center;margin-bottom:1.1rem}
+  .spez h3{font-size:1.25rem;color:var(--forest);margin-bottom:.5rem}
+  .spez p{color:var(--muted);font-size:.95rem;position:relative}
+
+  /* Leistungen */
+  .leist{background:linear-gradient(180deg,var(--sage) 0%,#fff 100%)}
+  .lst-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}
+  .lcard{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:2rem;transition:transform .3s,box-shadow .3s}
+  .lcard:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+  .lcard .head{display:flex;align-items:center;gap:1rem;margin-bottom:1rem}
+  .lcard .ic{width:46px;height:46px;border-radius:13px;background:var(--sage);color:var(--leaf);display:grid;place-items:center;flex:none}
+  .lcard h3{font-size:1.14rem;color:var(--forest)}
+  .lcard ul{list-style:none}
+  .lcard li{display:flex;gap:.65rem;align-items:flex-start;padding:.3rem 0;font-size:.92rem;color:var(--ink)}
+  .lcard li svg{flex:none;margin-top:.3rem;color:var(--leaf)}
+  .lst-note{margin-top:1.8rem;text-align:center;color:var(--muted);font-size:.92rem}
+
+  /* TotalGym Band */
+  .gym{position:relative;overflow:hidden;background:linear-gradient(140deg,var(--leaf-deep),var(--forest));color:#fff;border-radius:28px}
+  .gym::before{content:"";position:absolute;width:440px;height:440px;border-radius:50%;border:56px solid rgba(99,196,51,.2);right:-130px;bottom:-170px}
+  .gym-in{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:2.6rem;padding:3rem;align-items:center}
+  .gym h2{font-size:clamp(1.7rem,2.9vw,2.3rem);margin:.8rem 0 .9rem}
+  .gym h2 .serif-i{color:#b7e39a}
+  .gym p{color:rgba(255,255,255,.85);font-size:.98rem;margin-bottom:1rem}
+  .gym-chips{display:flex;flex-direction:column;gap:.75rem}
+  .gchip{display:flex;align-items:center;gap:.8rem;background:rgba(255,255,255,.09);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.16);border-radius:14px;padding:.85rem 1.1rem;font-weight:700;font-size:.94rem}
+  .gchip svg{flex:none;color:#b7e39a}
+
+  /* Team */
+  .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+  .tcard{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:transform .3s,box-shadow .3s}
+  .tcard:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+  .tcard .ph{aspect-ratio:3/2;overflow:hidden}
+  .tcard .ph img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+  .tcard:hover .ph img{transform:scale(1.05)}
+  .tcard .tx{padding:1.1rem 1.3rem 1.3rem}
+  .tcard b{display:block;font-size:1.02rem;color:var(--forest)}
+  .tcard span{font-size:.85rem;color:var(--muted)}
+  .team-note{margin-top:1.6rem;text-align:center;color:var(--muted);font-size:.93rem}
+
+  /* Verbände */
+  .verb{background:var(--greige);border-radius:24px;padding:2.4rem;text-align:center}
+  .verb h3{font-size:1.15rem;color:var(--forest);margin-bottom:1.2rem}
+  .verb-pills{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center}
+  .vpill{background:#fff;border:1px solid var(--line);border-radius:100px;padding:.5rem 1.05rem;font-size:.82rem;font-weight:700;color:var(--ink)}
+
+  /* Termin & Kontakt */
+  .zk{position:relative;overflow:hidden;background:#fff;border:1px solid var(--line);border-radius:28px;box-shadow:var(--shadow-sm)}
+  .zk-in{display:grid;grid-template-columns:1.05fr .95fr;gap:0}
+  .zk-left{padding:2.8rem}
+  .zk-left h3{font-size:1.5rem;color:var(--forest);margin-bottom:.8rem}
+  .zk-left h3 .serif-i{color:var(--leaf)}
+  .zk-left p{color:var(--muted);font-size:.97rem;margin-bottom:1.1rem}
+  .zk-ctas{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.4rem}
+  .zk-right{background:linear-gradient(155deg,var(--leaf),var(--forest));color:#fff;padding:2.8rem}
+  .cline{display:flex;gap:.85rem;align-items:flex-start;margin-bottom:1.05rem}
+  .cline .ic{width:38px;height:38px;border-radius:12px;background:rgba(183,227,154,.2);color:#b7e39a;display:grid;place-items:center;flex:none}
+  .cline b{display:block;font-size:.94rem}
+  .cline span{color:rgba(255,255,255,.8);font-size:.88rem}
+
+  /* Footer */
+  footer{background:var(--forest);color:rgba(255,255,255,.75);padding:3.4rem 0 2rem;margin-top:5rem}
+  .foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:2.4rem;padding-bottom:2.4rem;border-bottom:1px solid rgba(255,255,255,.13)}
+  .foot-brand .wm{font-family:'Gelasio',serif;font-size:1.32rem;color:#fff;font-weight:600}
+  .foot-brand .wm small{display:block;font-family:'Hanken Grotesk',sans-serif;font-size:.7rem;letter-spacing:.2em;color:#b7e39a;font-weight:800;margin-top:.25rem}
+  .foot-brand p{font-size:.9rem;max-width:26em;margin-top:1rem}
+  .foot-col h4{color:#fff;font-size:.8rem;letter-spacing:.13em;text-transform:uppercase;margin-bottom:1rem;font-weight:800}
+  .foot-col a,.foot-col span{display:block;font-size:.9rem;margin-bottom:.55rem;color:rgba(255,255,255,.75);transition:color .2s}
+  .foot-col a:hover{color:#b7e39a}
+  .foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;padding-top:1.6rem;font-size:.82rem}
+  .foot-bottom a:hover{color:#fff}
+
+  /* Reveal */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal[data-d="1"]{transition-delay:.08s}
+  .reveal[data-d="2"]{transition-delay:.16s}
+  .reveal[data-d="3"]{transition-delay:.24s}
+
+  @media(max-width:960px){
+    .hero-grid{grid-template-columns:1fr;gap:2.8rem}
+    .hero-visual{max-width:430px;margin:0 auto;width:100%}
+    .spez-grid{grid-template-columns:1fr}
+    .lst-grid{grid-template-columns:1fr}
+    .gym-in{grid-template-columns:1fr;padding:2.2rem}
+    .team-grid{grid-template-columns:1fr 1fr}
+    .zk-in{grid-template-columns:1fr}
+    .foot-grid{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:640px){
+    .nav-links,.nav-phone,.nav-cta{display:none}
+    .burger{display:flex}
+    .mobile-menu{display:block;position:fixed;inset:0 0 auto 0;top:0;z-index:99;background:rgba(255,255,255,.97);backdrop-filter:blur(20px);padding:5rem 2rem 2.4rem;transform:translateY(-100%);transition:transform .4s cubic-bezier(.4,0,.2,1);box-shadow:var(--shadow)}
+    .mobile-menu.open{transform:translateY(0)}
+    .mobile-menu a{display:block;font-size:1.12rem;font-weight:700;color:var(--forest);padding:.85rem 0;border-bottom:1px solid var(--line)}
+    .mobile-menu .btn{margin-top:1.4rem;width:100%;justify-content:center}
+    .hero{padding-top:7.4rem}
+    .band{padding:4rem 0}
+    .team-grid{grid-template-columns:1fr}
+    .zk-left,.zk-right,.gym-in,.verb{padding:1.8rem}
+    .gym,.zk{border-radius:20px}
+    .foot-grid{grid-template-columns:1fr}
+    .akut-chip{left:0;bottom:.5rem}
+  }
+</style>
+</head>
+<body>
+
+<header id="header">
+  <div class="wrap nav">
+    <a href="#top" class="brand">
+      <img src="assets_02/ka-logo.gif" alt="Logo die Physiotherapeuten">
+      <span class="bt"><b>die Physiotherapeuten</b><span>Kamphans &amp; Kollegen</span></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#schwerpunkte">Schwerpunkte</a>
+      <a href="#leistungen">Leistungen</a>
+      <a href="#training">Training</a>
+      <a href="#team">Team</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <div class="nav-cta">
+      <span class="nav-phone">0931 99 169 222</span>
+      <a href="tel:093199169222" class="btn btn-primary">Termin vereinbaren</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#schwerpunkte">Schwerpunkte</a>
+  <a href="#leistungen">Leistungen</a>
+  <a href="#training">Training</a>
+  <a href="#team">Team</a>
+  <a href="#kontakt">Kontakt</a>
+  <a href="tel:093199169222" class="btn btn-primary">Termin vereinbaren</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="hero-copy reveal in">
+      <span class="tag"><span class="dot"></span>An der Ludwigsbrücke · Mergentheimer Straße 10</span>
+      <h1>Moderne Physiotherapie macht <span class="serif-i">beweglich</span> – und <span class="serif-i">bewegt.</span></h1>
+      <p class="lead">Ihre Gesundheit und Ihr Wohlbefinden sind unsere Ziele. Wir gehen gemeinsam mit Ihnen den Ursachen Ihrer Beschwerden auf den Grund – mit einem persönlichen Therapieplan und individuellen Übungen, die Sie weiterbringen.</p>
+      <div class="hero-actions">
+        <a href="tel:093199169222" class="btn btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          0931 99 169 222
+        </a>
+        <a href="#kontakt" class="btn btn-ghost">Termin anfragen</a>
+      </div>
+      <div class="hero-trust">
+        <div><b>Akut-Sprechstunde</b>auch ohne ärztliche Verordnung</div>
+        <div><b>Parken kostenlos</b>direkt am Haus, beste ÖPNV-Anbindung</div>
+        <div><b>Telephysiotherapie</b>Therapie auch live &amp; online</div>
+      </div>
+    </div>
+    <div class="hero-visual reveal in" data-d="1">
+      <div class="ring-photo"><img src="assets_02/ka-behandlung.jpg" alt="Physiotherapeutische Behandlung der Schulter"></div>
+      <div class="akut-chip"><b>Ihre Bewegung ist unser Geschäft</b><span>Experten rund um den Bewegungsapparat</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SCHWERPUNKTE -->
+<section class="band" id="schwerpunkte">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Unsere Schwerpunkte</span>
+      <h2>Zwei Spezialgebiete, <span class="serif-i">ein starkes Team</span></h2>
+      <p>Unterschiedliche Interessen, Kompetenzen und Erfahrungen machen uns zu einem starken Team – wir bieten Ihnen individuelle Lösungen für Ihre Probleme.</p>
+    </div>
+    <div class="spez-grid">
+      <div class="spez reveal">
+        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <h3>Orthopädie &amp; Chirurgie</h3>
+        <p>Experten rund um den Bewegungsapparat: Knochen, Kapseln und Bänder, Gelenke, Sehnen, Muskeln und Nerven – die gezielte Untersuchung macht eine effektive und genaue Behandlung erst möglich.</p>
+      </div>
+      <div class="spez reveal" data-d="1">
+        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c3 4 6 7.5 6 11a6 6 0 0 1-12 0c0-3.5 3-7 6-11z"/></svg></div>
+        <h3>Lymphologie</h3>
+        <p>Beschwerden am Lymph- und Venensystem behandeln wir auf hohem Niveau – von der Manuellen Lymphdrainage bis zur Kompressionsbandagierung.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEISTUNGEN -->
+<section class="band leist" id="leistungen">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Unser Leistungsspektrum</span>
+      <h2>Neue und bewährte Methoden der <span class="serif-i">Physiotherapie</span></h2>
+      <p>Egal, woher Ihre Beschwerden im Bewegungs-, Lymph- oder Venensystem kommen – ob durch Bewegungsmangel, ungünstige Alltagshaltungen oder Unfall und Verletzung: Bei uns sind Sie in erfahrenen Händen.</p>
+    </div>
+    <div class="lst-grid">
+      <div class="lcard reveal">
+        <div class="head"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><h3>Krankengymnastik &amp; Manuelle Therapie</h3></div>
+        <ul>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Allgemeine Krankengymnastik (KG) und KG am Gerät (KGG)</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Manuelle Therapie (MT)</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>KG ZNS &amp; Krankengymnastik auf neurophysiologischer Grundlage</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>PNF, Atemtherapie, Traktionsbehandlung/Schlingentisch</li>
+        </ul>
+      </div>
+      <div class="lcard reveal" data-d="1">
+        <div class="head"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 12h12M6 12a3 3 0 0 1 0-6h1M18 12a3 3 0 0 0 0 6h-1"/><circle cx="12" cy="12" r="9"/></svg></div><h3>Massage &amp; physikalische Therapie</h3></div>
+        <ul>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Klassische Massagetherapie, Bindegewebs- &amp; Segmentmassage</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Elektrotherapie</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Wärmetherapie (Heißluft, Heiße Rolle, Ultraschall, Fango) &amp; Kältetherapie</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Hausbesuche</li>
+        </ul>
+      </div>
+      <div class="lcard reveal" data-d="1">
+        <div class="head"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c3 4 6 7.5 6 11a6 6 0 0 1-12 0c0-3.5 3-7 6-11z"/></svg></div><h3>Lymphologie &amp; Venen</h3></div>
+        <ul>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Manuelle Lymphdrainage (MLD)</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Kompressionsbandagierung</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Behandlung von Lymph- und Venenbeschwerden auf hohem Niveau</li>
+        </ul>
+      </div>
+      <div class="lcard reveal" data-d="2">
+        <div class="head"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.8H20l-4.9 3.6 1.9 5.8L12 14.6 7 18.2l1.9-5.8L4 8.8h6.1L12 3z"/></svg></div><h3>Spezialtechniken</h3></div>
+        <ul>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Therapie nach Mulligan &amp; Mobilisation des Nervensystems (Butler)</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Myofasziale Triggerpunkt-Therapie &amp; segmentale Stabilisation</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Spiegeltherapie, Fußreflexzonen- &amp; Craniosacrale Therapie</li>
+        </ul>
+      </div>
+    </div>
+    <p class="lst-note reveal" data-d="2">Alle Kassenleistungen werden bei einer Therapieverordnung von den gesetzlichen Krankenkassen übernommen.</p>
+  </div>
+</section>
+
+<!-- TOTALGYM -->
+<section class="band" id="training" style="padding-top:.5rem">
+  <div class="wrap">
+    <div class="gym reveal">
+      <div class="gym-in">
+        <div>
+          <span class="eyebrow light">Training erleben</span>
+          <h2>Training am TotalGym – <span class="serif-i">einzigartig in Würzburg</span></h2>
+          <p>Gesund und funktionell trainieren unter therapeutischer Anleitung und Kontrolle: Am TotalGym bewegen Sie sich auf einem Schlitten gegen die Schwerkraft – gelenkschonend, dreidimensional und individuell auf Sie einstellbar.</p>
+          <p>Unser Trainingsraum ist die persönliche Alternative zu großen, unpersönlichen Fitnessstudios – Ihre Trainingstermine legen Sie selbst fest.</p>
+        </div>
+        <div class="gym-chips">
+          <div class="gchip"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Kein Vertrag, keine Mitgliedschaft</div>
+          <div class="gchip"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Training auf Rezept – auch für KG am Gerät (KGG)</div>
+          <div class="gchip"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Mit Leistungsanalyse und therapeutischer Begleitung</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="band" id="team">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow center">Unser Team</span>
+      <h2>Erfahrene Hände, <span class="serif-i">echte Menschen</span></h2>
+    </div>
+    <div class="team-grid">
+      <div class="tcard reveal">
+        <div class="ph"><img src="assets_02/ka-team-jkamphans.jpg" alt="Herr Kamphans, Physiotherapeut und Praxisinhaber"></div>
+        <div class="tx"><b>Herr Kamphans</b><span>Physiotherapeut · Heilpraktiker für Physiotherapie · Fachlehrer am UKW · Praxisinhaber</span></div>
+      </div>
+      <div class="tcard reveal" data-d="1">
+        <div class="ph"><img src="assets_02/ka-team-skamphans.jpg" alt="Frau Kamphans, Physiotherapeutin"></div>
+        <div class="tx"><b>Frau Kamphans</b><span>Physiotherapeutin · onkologische Fachphysiotherapeutin</span></div>
+      </div>
+      <div class="tcard reveal" data-d="2">
+        <div class="ph"><img src="assets_02/ka-team-gross.jpg" alt="Frau Groß, Physiotherapeutin"></div>
+        <div class="tx"><b>Frau Groß</b><span>Physiotherapeutin · u. a. Manuelle Therapie &amp; Lymphdrainage</span></div>
+      </div>
+      <div class="tcard reveal">
+        <div class="ph"><img src="assets_02/ka-team-bachmeier.jpg" alt="Herr Bachmeier, Physiotherapeut"></div>
+        <div class="tx"><b>Herr Bachmeier</b><span>Physiotherapeut</span></div>
+      </div>
+      <div class="tcard reveal" data-d="1">
+        <div class="ph"><img src="assets_02/ka-team-kuehn.jpg" alt="Frau Kühn, Physiotherapeutin"></div>
+        <div class="tx"><b>Frau Kühn</b><span>Physiotherapeutin</span></div>
+      </div>
+      <div class="tcard reveal" data-d="2">
+        <div class="ph"><img src="assets_02/ka-team-knapp.jpg" alt="Frau Knapp, Physiotherapeutin"></div>
+        <div class="tx"><b>Frau Knapp</b><span>Physiotherapeutin</span></div>
+      </div>
+    </div>
+    <p class="team-note reveal" data-d="2">An der Rezeption sind Frau Wegener-Wick, Frau Brand und Frau Witscher-Kamphans für Sie da.</p>
+  </div>
+</section>
+
+<!-- VERBÄNDE -->
+<section class="band" style="padding-top:.5rem">
+  <div class="wrap">
+    <div class="verb reveal">
+      <h3>Wir sind Mitglied in starken Fachverbänden</h3>
+      <div class="verb-pills">
+        <span class="vpill">DVMT – Maitland® Konzept</span>
+        <span class="vpill">Deutsche Gesellschaft für Lymphologie</span>
+        <span class="vpill">Bundesverband selbst. Physiotherapeuten (IFK)</span>
+        <span class="vpill">Forum Gesunder Rücken e.V.</span>
+        <span class="vpill">Deutscher Nordic Walking Verband</span>
+        <span class="vpill">Lymphologicum</span>
+        <span class="vpill">Deutsche Schmerzgesellschaft</span>
+        <span class="vpill">Deutsche Krebsgesellschaft</span>
+        <span class="vpill">Deutsche Vereinigung Morbus Bechterew e.V.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TERMIN & KONTAKT -->
+<section class="band" id="kontakt" style="padding-top:.5rem">
+  <div class="wrap">
+    <div class="zk reveal">
+      <div class="zk-in">
+        <div class="zk-left">
+          <span class="eyebrow">Termine</span>
+          <h3 style="margin-top:.7rem">Termine nach <span class="serif-i">Vereinbarung</span></h3>
+          <p>Vereinbaren Sie Ihren Behandlungstermin einfach telefonisch oder über unsere Online-Terminanfrage – nennen Sie uns Ihre Terminwünsche, wir melden uns umgehend bei Ihnen.</p>
+          <p>Sie haben akute Beschwerden und keine ärztliche Verordnung? Über unsere Akutsprechstunde (Heilpraktikertermin) helfen wir schnell und direkt.</p>
+          <div class="zk-ctas">
+            <a href="tel:093199169222" class="btn btn-primary">0931 99 169 222</a>
+            <a href="mailto:info@diephysiotherapeuten.com" class="btn btn-ghost">Termin anfragen</a>
+          </div>
+        </div>
+        <div class="zk-right">
+          <span class="eyebrow light">Kontakt &amp; Anfahrt</span>
+          <h3 style="margin:.7rem 0 1.2rem;font-size:1.4rem">die Physiotherapeuten</h3>
+          <div class="cline">
+            <div class="ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div><b>Anschrift</b><span>Mergentheimer Straße 10, Würzburg – direkt an der Ludwigsbrücke (Festungsseite)</span></div>
+          </div>
+          <div class="cline">
+            <div class="ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="6" width="15" height="10" rx="2"/><path d="M16 10h3l4 3v3h-7M5.5 19a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM18.5 19a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/></svg></div>
+            <div><b>Anfahrt</b><span>Kostenlose Praxisparkplätze am Haus, beste Bus- und Straßenbahnanbindung vor der Türe</span></div>
+          </div>
+          <div class="cline">
+            <div class="ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+            <div><b>Telefon / E-Mail</b><span>0931 99 169 222 · info@diephysiotherapeuten.com</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="wm">die Physiotherapeuten<small>KAMPHANS &amp; KOLLEGEN · WÜRZBURG</small></div>
+        <p>Physiotherapeutische Praxis für Orthopädie/Chirurgie und Lymphologie – direkt an der Würzburger Ludwigsbrücke.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Praxis</h4>
+        <a href="#schwerpunkte">Schwerpunkte</a>
+        <a href="#leistungen">Leistungen</a>
+        <a href="#training">Training am TotalGym</a>
+        <a href="#team">Team</a>
+      </div>
+      <div class="foot-col">
+        <h4>Kontakt</h4>
+        <span>Mergentheimer Straße 10</span>
+        <span>Würzburg</span>
+        <a href="tel:093199169222">0931 99 169 222</a>
+        <a href="mailto:info@diephysiotherapeuten.com">info@diephysiotherapeuten.com</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 die Physiotherapeuten, Kamphans &amp; Kollegen · Würzburg</span>
+      <span><a href="#top">Impressum</a> · <a href="#top">Datenschutz</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const header=document.getElementById('header');
+  const onScroll=()=>header.classList.toggle('scrolled',window.scrollY>30);
+  onScroll();window.addEventListener('scroll',onScroll,{passive:true});
+  const burger=document.getElementById('burger');
+  const menu=document.getElementById('mobileMenu');
+  burger.addEventListener('click',()=>menu.classList.toggle('open'));
+  menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>menu.classList.remove('open')));
+  const io=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.14,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal:not(.in)').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
