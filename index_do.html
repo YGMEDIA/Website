@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Dr. Andra Dobre – Fachärztin für Orthopädie und Unfallchirurgie in Würzburg</title>
+<meta name="description" content="Orthopädische Praxis Dr. Dr. Andra Dobre in Würzburg, Moltkestraße 7. Fachärztin für Orthopädie und Unfallchirurgie, D-Ärztin – Unfallchirurgie, Chirotherapie, Akupunktur, Infiltrationen, moderne Diagnostik. Termin: 0931 44 027 oder online über Doctolib.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Bitter:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#253861;
+    --navy-deep:#1b2a4a;
+    --navy-night:#131f38;
+    --sky:#6aace2;
+    --blue:#257bc1;
+    --ice:#eef4fa;
+    --ice-2:#e0ebf6;
+    --steel:#757170;
+    --paper:#ffffff;
+    --ink:#24304a;
+    --muted:#69748c;
+    --line:#e2e9f2;
+    --radius:20px;
+    --shadow:0 26px 60px -28px rgba(19,31,56,.38);
+    --shadow-sm:0 14px 34px -20px rgba(19,31,56,.42);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Figtree',system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  h1,h2,h3{line-height:1.13;letter-spacing:-.015em}
+  .serif{font-family:'Bitter',Georgia,serif;font-weight:600}
+  .serif-i{font-family:'Bitter',Georgia,serif;font-style:italic;font-weight:500}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{width:min(1180px,92vw);margin:0 auto}
+  .eyebrow{display:inline-flex;align-items:center;gap:.55em;font-size:.73rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--blue)}
+  .eyebrow::before{content:"";width:26px;height:2px;background:var(--sky);border-radius:2px}
+  .eyebrow.center{justify-content:center;display:flex}
+  .eyebrow.light{color:var(--sky)}
+  .btn{display:inline-flex;align-items:center;gap:.55em;font-weight:700;font-size:.96rem;padding:.9em 1.65em;border-radius:12px;transition:transform .25s ease,box-shadow .25s ease,background .25s ease;cursor:pointer;border:none}
+  .btn-primary{background:var(--navy);color:#fff;box-shadow:var(--shadow-sm)}
+  .btn-primary:hover{transform:translateY(-3px);background:var(--navy-deep);box-shadow:var(--shadow)}
+  .btn-sky{background:var(--sky);color:var(--navy-night)}
+  .btn-sky:hover{transform:translateY(-3px);background:#84bce9;box-shadow:0 16px 34px -14px rgba(106,172,226,.7)}
+  .btn-ghost{background:#fff;color:var(--navy);border:1.5px solid var(--line)}
+  .btn-ghost:hover{transform:translateY(-3px);border-color:var(--navy);box-shadow:var(--shadow-sm)}
+  .btn-light{background:#fff;color:var(--navy)}
+  .btn-light:hover{transform:translateY(-3px);box-shadow:0 16px 32px -14px rgba(0,0,0,.3)}
+
+  /* Header */
+  header{position:fixed;top:0;left:0;right:0;z-index:100;padding:.9rem 0;transition:padding .3s,background .3s,box-shadow .3s}
+  header.scrolled{padding:.5rem 0;background:rgba(255,255,255,.88);backdrop-filter:blur(16px) saturate(1.3);-webkit-backdrop-filter:blur(16px) saturate(1.3);box-shadow:0 1px 0 rgba(19,31,56,.08)}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+  .brand{display:flex;align-items:center;gap:.7rem}
+  .brand img{height:44px;width:auto}
+  .brand .bt b{display:block;font-size:1rem;font-weight:700;color:var(--navy);line-height:1.15;letter-spacing:-.01em}
+  .brand .bt span{font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .nav-links{display:flex;align-items:center;gap:1.7rem}
+  .nav-links a{font-size:.93rem;font-weight:600;color:var(--navy);opacity:.8;transition:opacity .2s}
+  .nav-links a:hover{opacity:1}
+  .nav-cta{display:flex;align-items:center;gap:1rem}
+  .nav-phone{font-weight:700;color:var(--navy);font-size:.93rem;white-space:nowrap}
+  .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
+  .burger span{width:24px;height:2.5px;background:var(--navy);border-radius:2px;transition:.3s}
+  .mobile-menu{display:none}
+
+  /* Hero */
+  .hero{position:relative;padding:8.8rem 0 5rem;overflow:hidden;background:linear-gradient(180deg,#fff 0%,var(--ice) 100%)}
+  .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(720px 480px at 90% 6%,var(--ice-2) 0%,rgba(224,235,246,0) 60%)}
+  .hero-grid{position:relative;display:grid;grid-template-columns:1.04fr .96fr;gap:3.2rem;align-items:center}
+  .hero-copy .tag{display:inline-flex;align-items:center;gap:.55rem;background:rgba(255,255,255,.85);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:100px;padding:.5rem 1.1rem;font-size:.83rem;font-weight:600;color:var(--navy);margin-bottom:1.5rem;box-shadow:var(--shadow-sm)}
+  .hero-copy .tag .dot{width:8px;height:8px;border-radius:50%;background:var(--sky)}
+  .hero-copy h1{font-size:clamp(2.25rem,4.3vw,3.4rem);color:var(--navy-night);margin-bottom:.9rem;letter-spacing:-.02em}
+  .hero-copy h1 .serif-i{color:var(--blue)}
+  .hero-copy .subtitle{font-size:1.05rem;font-weight:600;color:var(--navy);margin-bottom:1rem}
+  .hero-copy p.lead{font-size:1.09rem;color:var(--muted);max-width:34em;margin-bottom:1.9rem}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:.85rem;align-items:center}
+  .hero-trust{display:flex;gap:1.8rem;flex-wrap:wrap;margin-top:2.2rem;padding-top:1.7rem;border-top:1px solid rgba(37,56,97,.14)}
+  .hero-trust div{font-size:.85rem;color:var(--muted)}
+  .hero-trust b{display:block;font-family:'Bitter',serif;font-size:1.42rem;color:var(--navy);font-weight:600;line-height:1.25}
+
+  .hero-visual{position:relative;padding:1.4rem 1.4rem 0 0}
+  .hero-photo{position:relative;border-radius:18px;overflow:hidden;box-shadow:var(--shadow);aspect-ratio:4/3;z-index:1}
+  .hero-photo img{width:100%;height:100%;object-fit:cover}
+  .hero-frame{position:absolute;top:0;right:0;left:2.4rem;bottom:-1.4rem;border:3px solid var(--navy);border-radius:18px;z-index:0;opacity:.85}
+  .darzt-chip{position:absolute;left:-.8rem;bottom:1.2rem;z-index:2;background:rgba(255,255,255,.85);backdrop-filter:blur(14px) saturate(1.3);-webkit-backdrop-filter:blur(14px) saturate(1.3);border:1px solid rgba(255,255,255,.75);border-radius:16px;box-shadow:var(--shadow-sm);padding:.85rem 1.1rem}
+  .darzt-chip b{display:block;font-size:.85rem;color:var(--navy-night)}
+  .darzt-chip span{font-size:.74rem;color:var(--muted)}
+
+  /* Notfall-Band */
+  .notfall{background:linear-gradient(135deg,var(--navy),var(--navy-night));color:#fff;border-radius:24px;position:relative;overflow:hidden}
+  .notfall::before{content:"";position:absolute;inset:0;background:radial-gradient(560px 340px at 88% 10%,rgba(106,172,226,.28),transparent 60%)}
+  .notfall-in{position:relative;display:grid;grid-template-columns:auto 1fr auto;gap:1.8rem;align-items:center;padding:2rem 2.4rem}
+  .notfall .ic{width:58px;height:58px;border-radius:16px;background:rgba(106,172,226,.2);color:var(--sky);display:grid;place-items:center;flex:none}
+  .notfall b{display:block;font-size:1.15rem;margin-bottom:.2rem}
+  .notfall p{color:rgba(255,255,255,.82);font-size:.93rem;max-width:44em}
+  .notfall .zeit{background:rgba(255,255,255,.1);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:.9rem 1.3rem;text-align:center;white-space:nowrap}
+  .notfall .zeit b{font-family:'Bitter',serif;font-size:1.3rem;margin:0}
+  .notfall .zeit span{font-size:.76rem;color:var(--sky);font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+
+  /* Sections */
+  .band{padding:5.4rem 0}
+  .sec-head{max-width:680px;margin-bottom:2.8rem}
+  .sec-head.center{margin-inline:auto;text-align:center}
+  .sec-head h2{font-size:clamp(1.85rem,3.3vw,2.5rem);color:var(--navy-night);margin:.85rem 0 .75rem}
+  .sec-head h2 .serif-i{color:var(--blue)}
+  .sec-head p{color:var(--muted);font-size:1.04rem}
+
+  /* Willkommen */
+  .wk-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:3.2rem;align-items:center}
+  .wk-copy h2{font-size:clamp(1.85rem,3.2vw,2.5rem);color:var(--navy-night);margin:.85rem 0 1rem}
+  .wk-copy h2 .serif-i{color:var(--blue)}
+  .wk-copy p{color:var(--muted);margin-bottom:1rem;font-size:1.02rem}
+  .wk-points{display:grid;gap:.8rem;margin-top:1.4rem}
+  .wk-point{display:flex;gap:.8rem;align-items:flex-start}
+  .wk-point .ci{flex:none;width:26px;height:26px;border-radius:50%;background:var(--ice);color:var(--blue);display:grid;place-items:center;margin-top:.15rem}
+  .wk-point p{margin:0;font-size:.96rem;color:var(--ink)}
+  .wk-photo{position:relative;border-radius:18px;overflow:hidden;box-shadow:var(--shadow);aspect-ratio:3/3.6}
+  .wk-photo img{width:100%;height:100%;object-fit:cover}
+  .wk-sign{margin-top:1.5rem;font-family:'Bitter',serif;font-style:italic;font-size:1.2rem;color:var(--blue)}
+  .wk-sign small{display:block;font-family:'Figtree',sans-serif;font-style:normal;font-size:.78rem;color:var(--muted);letter-spacing:.05em;margin-top:.2rem}
+
+  /* Leistungen */
+  .leist{background:linear-gradient(180deg,var(--ice) 0%,#fff 100%)}
+  .lst-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
+  .lcard{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:1.8rem;transition:transform .3s,box-shadow .3s;position:relative;overflow:hidden}
+  .lcard::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:linear-gradient(90deg,var(--sky),var(--blue));transform:scaleX(0);transform-origin:left;transition:transform .35s}
+  .lcard:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+  .lcard:hover::after{transform:scaleX(1)}
+  .lcard .ic{width:50px;height:50px;border-radius:13px;background:var(--ice);color:var(--blue);display:grid;place-items:center;margin-bottom:1rem;transition:.3s}
+  .lcard:hover .ic{background:var(--navy);color:#fff}
+  .lcard h3{font-size:1.1rem;color:var(--navy-night);margin-bottom:.45rem}
+  .lcard p{color:var(--muted);font-size:.89rem}
+
+  /* Diagnostik */
+  .diag-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}
+  .dcard{display:grid;grid-template-columns:auto 1fr;gap:1.3rem;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:1.9rem;transition:transform .3s,box-shadow .3s}
+  .dcard:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+  .dcard .ic{width:56px;height:56px;border-radius:15px;background:var(--navy);color:var(--sky);display:grid;place-items:center}
+  .dcard h3{font-size:1.15rem;color:var(--navy-night);margin-bottom:.4rem}
+  .dcard p{color:var(--muted);font-size:.91rem}
+
+  /* Zeiten & Kontakt */
+  .zk-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:2.2rem;align-items:stretch}
+  .hours-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:2.3rem;box-shadow:var(--shadow-sm)}
+  .hours-card h3{font-size:1.28rem;color:var(--navy-night);margin-bottom:1.2rem}
+  .hrow{display:flex;justify-content:space-between;gap:1rem;padding:.62rem 0;border-bottom:1px solid var(--line);font-size:.96rem}
+  .hrow .d{font-weight:700;color:var(--navy)}
+  .hrow .t{color:var(--muted);text-align:right;white-space:nowrap}
+  .hrow.notdienst{border:none;margin-top:.9rem;background:var(--ice);border-radius:12px;padding:.85rem 1.1rem}
+  .hrow.notdienst .d{display:flex;align-items:center;gap:.5rem;color:var(--blue)}
+  .hrow.notdienst .t{color:var(--navy);font-weight:700}
+  .hours-ctas{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.5rem}
+  .contact-side{border-radius:var(--radius);overflow:hidden;position:relative;background:linear-gradient(155deg,var(--navy),var(--navy-night));color:#fff;padding:2.5rem;display:flex;flex-direction:column;justify-content:center}
+  .contact-side::before{content:"";position:absolute;inset:0;background:radial-gradient(460px 320px at 84% 10%,rgba(106,172,226,.3),transparent 60%)}
+  .contact-side .in{position:relative}
+  .contact-side .serif{font-size:1.55rem;display:block;margin-bottom:.9rem}
+  .cline{display:flex;gap:.85rem;align-items:flex-start;margin-bottom:1.05rem}
+  .cline .ic{width:38px;height:38px;border-radius:11px;background:rgba(106,172,226,.18);color:var(--sky);display:grid;place-items:center;flex:none}
+  .cline b{display:block;font-size:.94rem}
+  .cline span{color:rgba(255,255,255,.78);font-size:.88rem}
+
+  /* CTA */
+  .cta{position:relative;overflow:hidden;text-align:center;background:linear-gradient(150deg,var(--ice-2),var(--ice));border-radius:26px;padding:3.4rem}
+  .cta::before{content:"";position:absolute;width:300px;height:300px;border-radius:50%;border:3px solid rgba(37,56,97,.1);right:-80px;top:-80px}
+  .cta>*{position:relative}
+  .cta h2{font-size:clamp(1.85rem,3vw,2.5rem);color:var(--navy-night);margin-bottom:.7rem}
+  .cta h2 .serif-i{color:var(--blue)}
+  .cta p{color:var(--muted);max-width:36em;margin:0 auto 1.8rem;font-size:1.03rem}
+  .cta-actions{display:flex;gap:.9rem;justify-content:center;flex-wrap:wrap}
+
+  /* Footer */
+  footer{background:var(--navy-night);color:rgba(255,255,255,.72);padding:3.4rem 0 2rem;margin-top:5rem}
+  .foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:2.4rem;padding-bottom:2.4rem;border-bottom:1px solid rgba(255,255,255,.13)}
+  .foot-brand{display:flex;gap:1rem;align-items:flex-start}
+  .foot-brand img{width:48px;height:auto;background:#fff;border-radius:50%;padding:3px}
+  .foot-brand .wm b{display:block;font-family:'Bitter',serif;font-size:1.2rem;color:#fff;font-weight:600}
+  .foot-brand .wm small{display:block;font-size:.68rem;letter-spacing:.2em;color:var(--sky);font-weight:700;margin-top:.25rem}
+  .foot-brand .wm p{font-size:.88rem;max-width:24em;margin-top:.8rem;color:rgba(255,255,255,.72)}
+  .foot-col h4{color:#fff;font-size:.8rem;letter-spacing:.13em;text-transform:uppercase;margin-bottom:1rem;font-weight:700}
+  .foot-col a,.foot-col span{display:block;font-size:.9rem;margin-bottom:.55rem;color:rgba(255,255,255,.72);transition:color .2s}
+  .foot-col a:hover{color:var(--sky)}
+  .foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;padding-top:1.6rem;font-size:.82rem}
+  .foot-bottom a:hover{color:#fff}
+
+  /* Reveal */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal[data-d="1"]{transition-delay:.08s}
+  .reveal[data-d="2"]{transition-delay:.16s}
+  .reveal[data-d="3"]{transition-delay:.24s}
+
+  @media(max-width:960px){
+    .hero-grid{grid-template-columns:1fr;gap:3rem}
+    .hero-visual{max-width:520px;margin:0 auto;width:100%}
+    .notfall-in{grid-template-columns:1fr;text-align:center;gap:1.2rem}
+    .notfall .ic{margin:0 auto}
+    .notfall p{max-width:none}
+    .wk-grid{grid-template-columns:1fr;gap:2.4rem}
+    .wk-photo{max-width:440px;margin:0 auto;width:100%}
+    .lst-grid{grid-template-columns:1fr 1fr}
+    .diag-grid{grid-template-columns:1fr}
+    .zk-grid{grid-template-columns:1fr}
+    .foot-grid{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:640px){
+    .nav-links,.nav-phone,.nav-cta{display:none}
+    .burger{display:flex}
+    .mobile-menu{display:block;position:fixed;inset:0 0 auto 0;top:0;z-index:99;background:rgba(255,255,255,.97);backdrop-filter:blur(20px);padding:5rem 2rem 2.4rem;transform:translateY(-100%);transition:transform .4s cubic-bezier(.4,0,.2,1);box-shadow:var(--shadow)}
+    .mobile-menu.open{transform:translateY(0)}
+    .mobile-menu a{display:block;font-size:1.12rem;font-weight:600;color:var(--navy);padding:.85rem 0;border-bottom:1px solid var(--line)}
+    .mobile-menu .btn{margin-top:1.4rem;width:100%;justify-content:center}
+    .hero{padding-top:7.2rem}
+    .band{padding:4rem 0}
+    .hero-visual{padding:1rem 1rem 0 0}
+    .darzt-chip{left:0}
+    .lst-grid{grid-template-columns:1fr}
+    .dcard{grid-template-columns:1fr}
+    .notfall-in,.hours-card,.contact-side,.cta{padding:1.8rem}
+    .cta,.notfall{border-radius:20px}
+    .foot-grid{grid-template-columns:1fr}
+    .foot-brand{flex-direction:column}
+    .hrow{font-size:.88rem}
+  }
+</style>
+</head>
+<body>
+
+<header id="header">
+  <div class="wrap nav">
+    <a href="#top" class="brand">
+      <img src="assets_02/do-logo.png" alt="Logo Dr. Dr. Andra Dobre">
+      <span class="bt"><b>Dr. Dr. Andra Dobre</b><span>Orthopädie &amp; Unfallchirurgie</span></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#praxis">Praxis</a>
+      <a href="#notfall">Unfall &amp; D-Arzt</a>
+      <a href="#leistungen">Leistungen</a>
+      <a href="#zeiten">Sprechzeiten</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <div class="nav-cta">
+      <span class="nav-phone">0931 44 027</span>
+      <a href="https://www.doctolib.de/einzelpraxis/wuerzburg/orthopaedische-praxis-dr-dr-andra-dobre" target="_blank" rel="noopener" class="btn btn-primary">Termin buchen</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#praxis">Praxis</a>
+  <a href="#notfall">Unfall &amp; D-Arzt</a>
+  <a href="#leistungen">Leistungen</a>
+  <a href="#zeiten">Sprechzeiten</a>
+  <a href="#kontakt">Kontakt</a>
+  <a href="https://www.doctolib.de/einzelpraxis/wuerzburg/orthopaedische-praxis-dr-dr-andra-dobre" target="_blank" rel="noopener" class="btn btn-primary">Jetzt Termin buchen</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="hero-copy reveal in">
+      <span class="tag"><span class="dot"></span>Moltkestraße 7 · Würzburg</span>
+      <h1>Dr. Dr. <span class="serif-i">Andra Dobre</span></h1>
+      <p class="subtitle">Fachärztin für Orthopädie und Unfallchirurgie · Spezielle Unfallchirurgie · D-Ärztin</p>
+      <p class="lead">Unfallchirurgie, Orthopädie, moderne Diagnostik und akute Notfälle – wir sind für Sie da. Mit fachlicher Kompetenz, moderner Ausstattung und einem engagierten Team: persönlich, zuverlässig und auf Augenhöhe.</p>
+      <div class="hero-actions">
+        <a href="https://www.doctolib.de/einzelpraxis/wuerzburg/orthopaedische-praxis-dr-dr-andra-dobre" target="_blank" rel="noopener" class="btn btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4M16 2v4M3 10h18"/><rect x="3" y="4" width="18" height="18" rx="2"/></svg>
+          Termin online buchen
+        </a>
+        <a href="tel:093144027" class="btn btn-ghost">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          0931 44 027
+        </a>
+      </div>
+      <div class="hero-trust">
+        <div><b>D-Ärztin</b>bei Arbeits-, Wege- &amp; Schulunfällen</div>
+        <div><b>Akut &amp; chronisch</b>Verletzungen und Beschwerden</div>
+        <div><b>Zentral</b>Moltkestraße 7, Würzburg</div>
+      </div>
+    </div>
+    <div class="hero-visual reveal in" data-d="1">
+      <div class="hero-frame"></div>
+      <div class="hero-photo"><img src="assets_02/do-empfang.jpg" alt="Empfangsbereich der Praxis Dr. Dr. Andra Dobre"></div>
+      <div class="darzt-chip"><b>D-Arzt-Praxis</b><span>Zugelassen für die gesetzliche Unfallversicherung</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- NOTFALL-BAND -->
+<section class="band" id="notfall" style="padding-top:2.2rem;padding-bottom:1rem">
+  <div class="wrap">
+    <div class="notfall reveal">
+      <div class="notfall-in">
+        <div class="ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+        <div>
+          <b>Unfall? Wir sind D-Arzt-Praxis.</b>
+          <p>Nach einem Arbeits- oder Wegeunfall ist der Besuch eines Durchgangsarztes erforderlich, wenn die Arbeitsunfähigkeit über den Unfalltag hinaus andauert. Gleiches gilt für Kinder nach Unfällen in Schule oder Kita – wir übernehmen Diagnose, Erstbehandlung und das gesamte Heilverfahren.</p>
+        </div>
+        <div class="zeit"><span>Notfälle</span><b>08:00 – 16:00</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WILLKOMMEN -->
+<section class="band" id="praxis">
+  <div class="wrap wk-grid">
+    <div class="wk-copy reveal">
+      <span class="eyebrow">Herzlich willkommen</span>
+      <h2>In meiner orthopädischen Praxis stehen <span class="serif-i">Sie im Mittelpunkt</span></h2>
+      <p>Erkrankungen und Beschwerden des Bewegungsapparates sind weit verbreitet und können die Lebensqualität erheblich einschränken. Mein Team und ich haben es uns zum Ziel gesetzt, Ihnen schnell und wirkungsvoll zu helfen.</p>
+      <div class="wk-points">
+        <div class="wk-point">
+          <div class="ci"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+          <p>Zunächst steht die <b>Linderung akuter Schmerzen</b> im Vordergrund.</p>
+        </div>
+        <div class="wk-point">
+          <div class="ci"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+          <p>Langfristig behandeln wir – sofern möglich – <b>gezielt die Ursachen</b> Ihrer Beschwerden.</p>
+        </div>
+        <div class="wk-point">
+          <div class="ci"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+          <p>Für <b>nachhaltige und dauerhafte</b> Behandlungserfolge.</p>
+        </div>
+      </div>
+      <div class="wk-sign">Ihre Dr. Dr. Andra Dobre<small>FACHÄRZTIN FÜR ORTHOPÄDIE UND UNFALLCHIRURGIE</small></div>
+    </div>
+    <div class="wk-photo reveal" data-d="1"><img src="assets_02/do-wartezimmer.jpg" alt="Wartebereich der Praxis"></div>
+  </div>
+</section>
+
+<!-- LEISTUNGEN -->
+<section class="band leist" id="leistungen">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow center">Unsere Leistungen</span>
+      <h2>Von der Unfallversorgung bis zur <span class="serif-i">Schmerztherapie</span></h2>
+    </div>
+    <div class="lst-grid">
+      <div class="lcard reveal">
+        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+        <h3>Unfallchirurgie &amp; D-Arzt</h3>
+        <p>Rasche Diagnose, fachgerechte Erstversorgung und Koordination des gesamten Heilverfahrens – in enger Zusammenarbeit mit spezialisierten Kliniken.</p>
+      </div>
+      <div class="lcard reveal" data-d="1">
+        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <h3>Orthopädie</h3>
+        <p>Behandlung akuter und chronischer Beschwerden des Bewegungsapparates – individuell und auf Augenhöhe.</p>
+      </div>
+      <div class="lcard reveal" data-d="2">
+        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg></div>
+        <h3>Chirotherapie</h3>
+        <p>Blockierungen gezielt manuell lösen – mit umfassender Zusatzqualifikation in Manueller Medizin.</p>
+      </div>
+      <div class="lcard reveal">
+        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="9"/></svg></div>
+        <h3>Akupunktur (TCM)</h3>
+        <p>Von der WHO bei chronischen Schmerzen empfohlen – fester Bestandteil unserer Schmerztherapie.</p>
+      </div>
+      <div class="lcard reveal" data-d="1">
+        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 2 4 4-14 14H4v-4L18 2z"/><path d="m14.5 5.5 4 4"/></svg></div>
+        <h3>Infiltrationen</h3>
+        <p>Minimalinvasive Schmerztherapie: Das Medikament wirkt gezielt direkt an der Ursache – ambulant und risikoarm.</p>
+      </div>
+      <div class="lcard reveal" data-d="2">
+        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c-3 0-4.5 2-4.5 5 0 2 .5 3 .5 6s-1 5 1 8c.8 1 1.5-1 2-3s1-3 1-3 .5 1 1 3 1.2 4 2 3c2-3 1-5 1-8s.5-4 .5-6c0-3-1.5-5-4.5-5z"/></svg></div>
+        <h3>Hyaluronsäure &amp; Eigenblut</h3>
+        <p>Bei Arthrose und Knorpelschäden: Gelenkfunktion verbessern, Entzündungen hemmen, Schmerzen lindern.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIAGNOSTIK -->
+<section class="band" id="diagnostik" style="padding-top:1rem">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Moderne Diagnostik</span>
+      <h2>Präzise Diagnose als <span class="serif-i">Grundlage</span></h2>
+    </div>
+    <div class="diag-grid">
+      <div class="dcard reveal">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h4l3-8 4 16 3-8h6"/></svg></div>
+        <div>
+          <h3>Digitale Sonografie</h3>
+          <p>Schnelle, präzise Diagnostik ganz ohne Strahlenbelastung – schonend, schmerzfrei und risikolos. Verfahren der ersten Wahl, auch bei kindlichen Hüfterkrankungen.</p>
+        </div>
+      </div>
+      <div class="dcard reveal" data-d="1">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M12 7v10M7 12h10"/></svg></div>
+        <div>
+          <h3>Digitales Röntgen &amp; MRT</h3>
+          <p>Moderne Röntgentechnologie mit deutlich geringerer Strahlenbelastung – feine Fissuren früh erkennen. Weiterführende MRT-Diagnostik über unsere Kooperationspartner.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPRECHZEITEN & KONTAKT -->
+<section class="band leist" id="zeiten">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Sprechzeiten &amp; Kontakt</span>
+      <h2>So erreichen Sie <span class="serif-i">uns</span></h2>
+    </div>
+    <div class="zk-grid" id="kontakt">
+      <div class="hours-card reveal">
+        <h3>Sprechzeiten</h3>
+        <div class="hrow"><span class="d">Mo – Fr</span><span class="t">08:00 – 12:00 Uhr</span></div>
+        <div class="hrow"><span class="d">Mo – Do</span><span class="t">13:30 – 17:30 Uhr</span></div>
+        <div class="hrow"><span class="d">Freitag</span><span class="t">13:30 – 16:00 Uhr</span></div>
+        <div class="hrow notdienst">
+          <span class="d"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>Notfälle / Unfälle</span>
+          <span class="t">08:00 – 16:00 Uhr</span>
+        </div>
+        <div class="hours-ctas">
+          <a href="https://www.doctolib.de/einzelpraxis/wuerzburg/orthopaedische-praxis-dr-dr-andra-dobre" target="_blank" rel="noopener" class="btn btn-primary">Termin über Doctolib</a>
+          <a href="tel:093144027" class="btn btn-ghost">0931 44 027</a>
+        </div>
+      </div>
+      <div class="contact-side reveal" data-d="1">
+        <div class="in">
+          <span class="serif">Mitten in Würzburg.</span>
+          <div class="cline">
+            <div class="ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div><b>Anschrift</b><span>Moltkestraße 7, 97082 Würzburg</span></div>
+          </div>
+          <div class="cline">
+            <div class="ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+            <div><b>Telefon</b><span>0931 44 027</span></div>
+          </div>
+          <div class="cline">
+            <div class="ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></div>
+            <div><b>E-Mail</b><span>info@orthopaedie-dobre.de</span></div>
+          </div>
+          <a href="tel:093144027" class="btn btn-sky" style="margin-top:.6rem">Jetzt anrufen</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="band" id="termin" style="padding-top:1rem">
+  <div class="wrap">
+    <div class="cta reveal">
+      <span class="eyebrow center" style="justify-content:center">Termin</span>
+      <h2>Wir nehmen uns Zeit für <span class="serif-i">Ihr Anliegen</span></h2>
+      <p>Von der präzisen Diagnostik über die individuelle Beratung bis zur gezielten Behandlung – vereinbaren Sie jetzt Ihren Termin.</p>
+      <div class="cta-actions">
+        <a href="https://www.doctolib.de/einzelpraxis/wuerzburg/orthopaedische-praxis-dr-dr-andra-dobre" target="_blank" rel="noopener" class="btn btn-primary">Jetzt online buchen</a>
+        <a href="tel:093144027" class="btn btn-light">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          0931 44 027
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img src="assets_02/do-logo.png" alt="">
+        <div class="wm">
+          <b>Dr. Dr. Andra Dobre</b>
+          <small>ORTHOPÄDIE &amp; UNFALLCHIRURGIE · WÜRZBURG</small>
+          <p>Fachärztin für Orthopädie und Unfallchirurgie, Spezielle Unfallchirurgie, D-Ärztin – Chirotherapie und Akupunktur.</p>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Praxis</h4>
+        <a href="#praxis">Über die Praxis</a>
+        <a href="#notfall">Unfall &amp; D-Arzt</a>
+        <a href="#leistungen">Leistungen</a>
+        <a href="#zeiten">Sprechzeiten</a>
+      </div>
+      <div class="foot-col">
+        <h4>Kontakt</h4>
+        <span>Moltkestraße 7</span>
+        <span>97082 Würzburg</span>
+        <a href="tel:093144027">0931 44 027</a>
+        <a href="mailto:info@orthopaedie-dobre.de">info@orthopaedie-dobre.de</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Dr. Dr. Andra Dobre · Würzburg</span>
+      <span><a href="#top">Impressum</a> · <a href="#top">Datenschutz</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const header=document.getElementById('header');
+  const onScroll=()=>header.classList.toggle('scrolled',window.scrollY>30);
+  onScroll();window.addEventListener('scroll',onScroll,{passive:true});
+  const burger=document.getElementById('burger');
+  const menu=document.getElementById('mobileMenu');
+  burger.addEventListener('click',()=>menu.classList.toggle('open'));
+  menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>menu.classList.remove('open')));
+  const io=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.14,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal:not(.in)').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
