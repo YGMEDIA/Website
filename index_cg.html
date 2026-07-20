@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HNO-Praxis Dr. med. Christoph Gebhardt – Hals-Nasen-Ohrenarzt in Schweinfurt</title>
+<meta name="description" content="HNO-Praxis Dr. med. Christoph Gebhardt in Schweinfurt, Hadergasse 6. Facharztpraxis für Hals-Nasen-Ohrenheilkunde: Hördiagnostik, Gleichgewicht, Allergie, Endoskopie, Sonographie. Offene Sprechstunde Mo–Fr 9–10 Uhr. Tel. 09721 26779.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Zilla+Slab:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --red:#e5404e;
+    --red-deep:#c22f3c;
+    --red-soft:#fdecee;
+    --coal:#1f1f1f;
+    --coal-2:#363636;
+    --warm:#f7f5f3;
+    --warm-2:#efeae5;
+    --paper:#ffffff;
+    --ink:#232323;
+    --muted:#6c6c6c;
+    --line:#e4ddd6;
+    --radius:20px;
+    --shadow:0 26px 60px -28px rgba(31,31,31,.32);
+    --shadow-sm:0 14px 32px -20px rgba(31,31,31,.38);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Space Grotesk',system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.66;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  h1,h2,h3{line-height:1.13;letter-spacing:-.015em;color:var(--coal)}
+  .serif-i{font-family:'Zilla Slab',Georgia,serif;font-style:italic;font-weight:500}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{width:min(1180px,92vw);margin:0 auto}
+  .eyebrow{display:inline-flex;align-items:center;gap:.55em;font-size:.72rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--red)}
+  .eyebrow::before{content:"";width:26px;height:2px;background:var(--red);border-radius:2px}
+  .eyebrow.center{justify-content:center;display:flex}
+  .eyebrow.light{color:#f0a6ac}
+  .eyebrow.light::before{background:rgba(240,166,172,.7)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:.55em;font-weight:700;font-size:.95rem;padding:.92em 1.7em;border-radius:100px;transition:transform .25s ease,box-shadow .25s ease,background .25s ease,border-color .25s ease;cursor:pointer;border:none}
+  .btn-red{background:var(--red);color:#fff;box-shadow:0 14px 30px -12px rgba(229,64,78,.5)}
+  .btn-red:hover{transform:translateY(-3px);background:var(--red-deep)}
+  .btn-dark{background:var(--coal);color:#fff;box-shadow:var(--shadow-sm)}
+  .btn-dark:hover{transform:translateY(-3px);background:var(--coal-2)}
+  .btn-ghost{background:transparent;color:var(--coal);border:1.5px solid var(--line)}
+  .btn-ghost:hover{transform:translateY(-3px);border-color:var(--red);box-shadow:var(--shadow-sm);background:#fff}
+  .btn-light{background:#fff;color:var(--coal)}
+  .btn-light:hover{transform:translateY(-3px);box-shadow:0 16px 34px -14px rgba(0,0,0,.3)}
+
+  header{position:fixed;top:0;left:0;right:0;z-index:100;padding:.95rem 0;transition:padding .3s,background .3s,box-shadow .3s}
+  header.scrolled{padding:.5rem 0;background:rgba(255,255,255,.93);backdrop-filter:blur(16px) saturate(1.2);-webkit-backdrop-filter:blur(16px) saturate(1.2);box-shadow:0 1px 0 rgba(31,31,31,.1)}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+  .brand{display:inline-flex;align-items:baseline;gap:.1rem;background:#fff;border:1px solid var(--line);border-radius:10px;padding:.6rem 1rem;box-shadow:var(--shadow-sm);line-height:1}
+  .brand b{font-size:1.05rem;letter-spacing:-.01em;color:var(--coal)}
+  .brand b span{color:var(--red)}
+  .brand i{font-style:normal;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-left:.5rem}
+  .nav-links{display:flex;align-items:center;gap:1.55rem}
+  .nav-links a{font-size:.93rem;font-weight:600;color:var(--coal);opacity:.8;transition:opacity .2s}
+  .nav-links a:hover{opacity:1}
+  .nav-cta{display:flex;align-items:center;gap:.9rem}
+  .nav-burger{display:none;background:none;border:none;cursor:pointer;padding:.4rem}
+  .nav-burger span{display:block;width:24px;height:2.5px;background:var(--coal);margin:5px 0;border-radius:2px;transition:transform .3s,opacity .3s}
+  .mobile-nav{display:none;position:fixed;inset:0;background:rgba(31,31,31,.98);z-index:99;padding:6.5rem 8vw;flex-direction:column;gap:1.6rem;opacity:0;pointer-events:none;transition:opacity .3s}
+  .mobile-nav.open{opacity:1;pointer-events:auto}
+  .mobile-nav a{color:#fff;font-size:1.35rem;font-weight:700}
+  body.nav-open .nav-burger span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+  body.nav-open .nav-burger span:nth-child(2){opacity:0}
+  body.nav-open .nav-burger span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+
+  /* Hero: Steckbrief + Kreis-Duo */
+  .hero{background:linear-gradient(168deg,var(--warm) 0%,#fff 74%);padding:9.5rem 0 4.6rem;position:relative;overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center}
+  .hero h1{font-size:clamp(2.3rem,4.4vw,3.5rem)}
+  .hero h1 .serif-i{color:var(--red)}
+  .hero-sub{font-size:1.05rem;color:var(--muted);max-width:34em;margin-top:1.2rem}
+  .hero-ctas{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:1.9rem}
+  .hero-chips{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.7rem}
+  .chip{display:inline-flex;align-items:center;gap:.5em;background:#fff;border:1px solid var(--line);color:var(--coal);font-size:.84rem;font-weight:600;padding:.55em 1.05em;border-radius:100px}
+  .chip svg{width:15px;height:15px;stroke:var(--red)}
+  .chip.red{background:var(--red-soft);border-color:#f6cdd1;color:var(--red-deep)}
+  .hero-media{position:relative;min-height:430px}
+  .circle{position:absolute;border-radius:50%;overflow:hidden;box-shadow:var(--shadow)}
+  .circle img{width:100%;height:100%;object-fit:cover}
+  .circle.c1{width:300px;height:300px;top:0;right:8%;border:6px solid #fff}
+  .circle.c2{width:220px;height:220px;bottom:0;right:38%;border:6px solid #fff}
+  .ring{position:absolute;border-radius:50%;border:2px dashed var(--red);opacity:.55}
+  .ring.r1{width:340px;height:340px;top:-20px;right:calc(8% - 20px)}
+  .ring.r2{width:120px;height:120px;bottom:34%;right:12%;border-color:var(--coal);opacity:.2}
+
+  /* Offene Sprechstunde Band */
+  .open-band{background:var(--red);color:#fff;padding:2rem 0}
+  .open-grid{display:flex;gap:1.6rem;align-items:center;flex-wrap:wrap}
+  .open-grid svg{width:38px;height:38px;flex:none;stroke:#fff}
+  .open-grid b{display:block;font-size:1.15rem}
+  .open-grid p{font-size:.9rem;color:#fbd9dc;max-width:56em}
+  .open-time{margin-left:auto;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.35);border-radius:14px;padding:.9rem 1.4rem;text-align:center;flex:none}
+  .open-time b{font-size:1.3rem;display:block}
+  .open-time span{font-size:.78rem;color:#fbd9dc}
+
+  section{padding:5.6rem 0}
+  .sec-head{max-width:680px;margin-bottom:2.8rem}
+  .sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
+  .sec-head h2{font-size:clamp(1.7rem,3vw,2.4rem);margin-top:.6rem}
+  .sec-head p{color:var(--muted);margin-top:.8rem}
+
+  /* Vita */
+  .vita{background:#fff}
+  .vita-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:3.4rem;align-items:start}
+  .vita-intro .lead{font-family:'Zilla Slab',Georgia,serif;font-size:1.42rem;line-height:1.42;color:var(--coal);margin:.9rem 0 1.1rem}
+  .vita-intro .lead em{color:var(--red);font-style:italic}
+  .vita-intro p{color:var(--muted)}
+  .vita-tradition{margin-top:1.6rem;background:var(--warm);border:1px solid var(--line);border-radius:14px;padding:1.1rem 1.3rem;font-size:.92rem;color:var(--ink)}
+  .vita-tradition b{color:var(--coal)}
+  .timeline{position:relative;padding-left:1.6rem}
+  .timeline::before{content:"";position:absolute;left:6px;top:8px;bottom:8px;width:2px;background:var(--line)}
+  .tl-item{position:relative;padding:0 0 1.35rem 1.2rem}
+  .tl-item::before{content:"";position:absolute;left:-1.6rem;top:.42em;width:14px;height:14px;border-radius:50%;background:#fff;border:3px solid var(--red)}
+  .tl-item:last-child{padding-bottom:0}
+  .tl-item b{display:block;color:var(--coal);font-size:.98rem}
+  .tl-item span{font-size:.85rem;color:var(--muted)}
+
+  /* Spektrum */
+  .spek{background:linear-gradient(180deg,var(--warm) 0%,#fff 100%)}
+  .spek-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem}
+  .spek-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:2rem 1.9rem;transition:transform .3s ease,box-shadow .3s ease}
+  .spek-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+  .spek-head{display:flex;align-items:center;gap:.85rem;margin-bottom:1.2rem}
+  .spek-head .ic{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:var(--red-soft);flex:none}
+  .spek-head .ic svg{width:22px;height:22px;stroke:var(--red)}
+  .spek-card h3{font-size:1.18rem}
+  .spek-card ul{list-style:none;columns:1}
+  .spek-card li{display:flex;gap:.6rem;align-items:flex-start;padding:.4em 0;font-size:.92rem;color:var(--muted);break-inside:avoid}
+  .spek-card li::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--red);flex:none;margin-top:.55em}
+  .op-note{margin-top:1.6rem;display:flex;gap:1.2rem;align-items:flex-start;background:var(--coal);color:#fff;border-radius:var(--radius);padding:1.6rem 1.9rem}
+  .op-note svg{width:30px;height:30px;flex:none;stroke:var(--red);margin-top:.2em}
+  .op-note b{display:block;margin-bottom:.3rem}
+  .op-note p{font-size:.9rem;color:#c9c9c9}
+
+  /* FAQ / Gut zu wissen */
+  .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem}
+  .faq-card{background:var(--warm);border:1px solid var(--line);border-radius:var(--radius);padding:1.9rem 1.8rem}
+  .faq-card h3{font-size:1.1rem;margin-bottom:.8rem;display:flex;gap:.6rem;align-items:center}
+  .faq-card h3 svg{width:20px;height:20px;stroke:var(--red);flex:none}
+  .faq-card p{font-size:.93rem;color:var(--muted)}
+  .faq-card p+p{margin-top:.7rem}
+
+  /* Team + Standort */
+  .place{background:#fff}
+  .place-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:3rem;align-items:center}
+  .place-media{position:relative;overflow:hidden;border-radius:var(--radius);box-shadow:var(--shadow)}
+  .place-media img{width:106%;max-width:106%;margin:-2% 0 0 -3%;aspect-ratio:16/10;object-fit:cover}
+  .place-points{margin-top:1.5rem;display:grid;gap:.7rem}
+  .ppoint{display:flex;gap:.7rem;align-items:flex-start;background:var(--warm);border:1px solid var(--line);border-radius:14px;padding:.85rem 1.05rem;font-size:.92rem;font-weight:500;color:var(--ink)}
+  .ppoint svg{width:18px;height:18px;flex:none;margin-top:.15em;stroke:var(--red)}
+  .team-line{margin-top:1.5rem;font-size:.93rem;color:var(--muted)}
+  .team-line b{color:var(--coal)}
+
+  /* Zeiten + Kontakt */
+  .hours{background:linear-gradient(180deg,var(--warm) 0%,#fff 100%)}
+  .hours-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:1.6rem;align-items:stretch}
+  .hours-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:2.2rem 2.4rem;box-shadow:var(--shadow-sm)}
+  .hours-card h3{font-size:1.25rem;margin-bottom:1.3rem}
+  .hours-table{width:100%;border-collapse:collapse}
+  .hours-table tr+tr{border-top:1px solid var(--line)}
+  .hours-table td{padding:.74em 0;font-size:.94rem}
+  .hours-table td:first-child{font-weight:700;color:var(--coal);width:38%}
+  .hours-table td:last-child{text-align:right;color:var(--muted)}
+  .open-chip{display:inline-flex;align-items:center;gap:.5em;background:var(--red-soft);border:1px solid #f6cdd1;color:var(--red-deep);font-size:.83rem;font-weight:700;padding:.55em 1.05em;border-radius:100px;margin-top:1.2rem}
+  .open-chip svg{width:15px;height:15px}
+  .contact-card{background:var(--coal);color:#fff;border-radius:var(--radius);padding:2.2rem 2.4rem;display:flex;flex-direction:column;box-shadow:var(--shadow)}
+  .contact-card h3{color:#fff;font-size:1.25rem;margin-bottom:1.2rem}
+  .contact-row{display:flex;gap:.85rem;align-items:flex-start;padding:.7rem 0;font-size:.96rem}
+  .contact-row+.contact-row{border-top:1px solid rgba(255,255,255,.16)}
+  .contact-row svg{width:19px;height:19px;flex:none;margin-top:.2em;stroke:var(--red)}
+  .contact-row a:hover{text-decoration:underline}
+  .contact-card .note{font-size:.84rem;color:#b9b9b9;margin-top:1rem}
+  .contact-card .btn{margin-top:auto;align-self:flex-start}
+
+  /* Notfall */
+  .notfall{padding:0 0 5.6rem}
+  .nf-card{display:flex;gap:1.6rem;align-items:center;background:var(--warm);border:1px solid var(--line);border-radius:var(--radius);padding:1.8rem 2rem;flex-wrap:wrap}
+  .nf-card svg{width:34px;height:34px;stroke:var(--red);flex:none}
+  .nf-card b{display:block;font-size:1.05rem}
+  .nf-card p{font-size:.92rem;color:var(--muted);max-width:52em}
+  .nf-nums{margin-left:auto;display:flex;gap:.8rem;flex:none}
+  .nf-num{background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:.7rem 1.2rem;text-align:center}
+  .nf-num b{font-size:1.2rem;color:var(--red-deep)}
+  .nf-num span{display:block;font-size:.72rem;color:var(--muted)}
+
+  .cta{background:var(--coal);color:#fff}
+  .cta-inner{text-align:center;max-width:660px;margin:0 auto}
+  .cta h2{color:#fff;font-size:clamp(1.7rem,3vw,2.4rem)}
+  .cta p{color:#c9c9c9;margin:1rem 0 1.9rem}
+  .cta-btns{display:flex;gap:.9rem;justify-content:center;flex-wrap:wrap}
+
+  footer{background:#171717;color:#b5b5b5;padding:3.4rem 0 2rem}
+  .foot-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:2.5rem;padding-bottom:2.2rem;border-bottom:1px solid rgba(255,255,255,.12)}
+  .foot-grid h4{color:#fff;font-size:.95rem;margin-bottom:.9rem}
+  .foot-grid p,.foot-grid a{font-size:.9rem;line-height:1.9}
+  .foot-grid a:hover{color:#fff}
+  .foot-bottom{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding-top:1.6rem;font-size:.82rem}
+  .foot-bottom a{opacity:.8}
+  .foot-bottom a:hover{opacity:1}
+
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  @media (max-width:1020px){
+    .hero-grid,.vita-grid,.place-grid,.hours-grid{grid-template-columns:1fr;gap:2.4rem}
+    .spek-grid,.faq-grid{grid-template-columns:1fr}
+    .hero-media{min-height:360px;margin:0 auto;width:min(420px,100%)}
+    .circle.c1{width:260px;height:260px;right:0}
+    .ring.r1{width:300px;height:300px;right:-20px}
+    .circle.c2{width:190px;height:190px;right:auto;left:0}
+    .foot-grid{grid-template-columns:1fr 1fr}
+    .open-time{margin-left:0}
+    .nf-nums{margin-left:0}
+  }
+  @media (max-width:640px){
+    .nav-links{display:none}
+    .nav-cta .btn{display:none}
+    .nav-burger{display:block}
+    .mobile-nav{display:flex}
+    .hours-card,.contact-card{padding:1.7rem 1.5rem}
+    section{padding:4rem 0}
+  }
+</style>
+</head>
+<body>
+
+<header id="header">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="HNO-Praxis Dr. Gebhardt – Startseite">
+      <b>hno<span>gebhardt</span></b><i>Facharztpraxis</i>
+    </a>
+    <nav class="nav-links" aria-label="Hauptnavigation">
+      <a href="#praxis">Praxis</a>
+      <a href="#spektrum">Spektrum</a>
+      <a href="#wissen">Gut zu wissen</a>
+      <a href="#standort">Standort</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-red" href="tel:0972126779">09721 26779</a>
+      <button class="nav-burger" id="burger" aria-label="Menü öffnen" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="#praxis">Praxis</a>
+  <a href="#spektrum">Spektrum</a>
+  <a href="#wissen">Gut zu wissen</a>
+  <a href="#standort">Standort</a>
+  <a href="#kontakt">Kontakt</a>
+  <a class="btn btn-red" href="tel:0972126779">09721 26779 anrufen</a>
+</div>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero" style="padding-bottom:4.2rem">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">HNO-Facharztpraxis · Schweinfurt</span>
+        <h1 style="margin-top:.8rem">HNO in Schweinfurt – <span class="serif-i">gut zuhören, genau hinsehen.</span></h1>
+        <p class="hero-sub">Willkommen in der Facharztpraxis für Hals-, Nasen- und Ohrenheilkunde von Dr. med. Christoph Gebhardt – mitten in Schweinfurt, am Rande der Fußgängerzone in der Hadergasse.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-red" href="tel:0972126779">Termin vereinbaren</a>
+          <a class="btn btn-ghost" href="#wissen">Was Sie mitbringen sollten</a>
+        </div>
+        <div class="hero-chips">
+          <span class="chip red">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            Offene Sprechstunde Mo – Fr 9 – 10 Uhr
+          </span>
+          <span class="chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
+            Facharzt seit über 25 Jahren
+          </span>
+        </div>
+      </div>
+      <div class="hero-media reveal" aria-hidden="false">
+        <span class="ring r1"></span>
+        <span class="ring r2"></span>
+        <div class="circle c1"><img src="assets_02/cg-behandlung.jpg" alt="Behandlungsraum mit moderner HNO-Einheit" fetchpriority="high"></div>
+        <div class="circle c2"><img src="assets_02/cg-wartezimmer.jpg" alt="Wartezimmer der HNO-Praxis" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFFENE SPRECHSTUNDE BAND -->
+  <div class="open-band">
+    <div class="wrap open-grid">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+      <div>
+        <b>Offene Sprechstunde – ohne Termin</b>
+        <p>Montag bis Freitag von 9 bis 10 Uhr können Sie sich grundsätzlich ohne Termin vorstellen. Längere Untersuchungen brauchen allerdings eine vorherige Absprache – wir empfehlen daher, wenn möglich vorab anzurufen.</p>
+      </div>
+      <div class="open-time"><b>9 – 10 Uhr</b><span>Mo – Fr</span></div>
+    </div>
+  </div>
+
+  <!-- VITA / PRAXIS -->
+  <section class="vita" id="praxis">
+    <div class="wrap vita-grid">
+      <div class="vita-intro reveal">
+        <span class="eyebrow">Die Praxis</span>
+        <p class="lead">„Wir gestalten Termine zeitnah und nach Ihren Wünschen – und reduzieren die <em>Behandlungsqualität niemals unter Zeitdruck</em>.“</p>
+        <p>Die HNO-Praxis wird seit 2008 an bewährter Stelle durch den HNO-Facharzt Dr. med. Christoph Gebhardt geführt. Das Team der medizinischen Fachangestellten ist erfahren und der Praxis seit vielen Jahren verbunden.</p>
+        <div class="vita-tradition">
+          <b>Eine Praxis mit Geschichte:</b> gegründet 1988 durch Dr. med. Georg Wieczorek, seit 1994 in der Hadergasse 6 – und seit 2008 unter der Leitung von Dr. Gebhardt.
+        </div>
+        <p class="team-line">Ihr Praxisteam: <b>Claudia Mehren, Nina Scheller, Margit Steindor</b></p>
+      </div>
+      <div class="reveal">
+        <span class="eyebrow">Dr. med. Christoph Gebhardt · Werdegang</span>
+        <div class="timeline" style="margin-top:1.3rem">
+          <div class="tl-item"><b>Studium der Humanmedizin</b><span>Martin-Luther-Universität Halle-Wittenberg, 1989 – 1995 · Promotion 1998</span></div>
+          <div class="tl-item"><b>Facharztausbildung HNO-Heilkunde</b><span>Zentralklinikum Suhl, 1995 – 2000</span></div>
+          <div class="tl-item"><b>Facharzt</b><span>Städtisches Klinikum Magdeburg (2000), Klinikum Bitterfeld-Wolfen (2000 – 2008)</span></div>
+          <div class="tl-item"><b>Oberarzt, ab 2007 leitender Oberarzt</b><span>HNO-Klinik, ab 2003</span></div>
+          <div class="tl-item"><b>Niederlassung in eigener Praxis</b><span>Schweinfurt, seit 2008</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPEKTRUM -->
+  <section class="spek" id="spektrum">
+    <div class="wrap">
+      <div class="sec-head center reveal">
+        <span class="eyebrow center">Das Spektrum</span>
+        <h2>Diagnostik &amp; Behandlung <span class="serif-i" style="color:var(--red)">aus einer Hand</span></h2>
+        <p>Von der Abklärung bis zur Therapie – das Leistungsspektrum unserer Facharztpraxis im Überblick.</p>
+      </div>
+      <div class="spek-grid">
+        <article class="spek-card reveal">
+          <div class="spek-head">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 2 3 7v6c0 5 3.8 8.4 9 9 5.2-.6 9-4 9-9V7z"/></svg></span>
+            <h3>Konservative Diagnostik &amp; Behandlung</h3>
+          </div>
+          <ul>
+            <li>Entzündungen im HNO-Bereich (Ohr, Nase, Nebenhöhlen, Hals, Kehlkopf, Gesicht)</li>
+            <li>Hör- und Gleichgewichtsstörungen, Schwindel</li>
+            <li>Kopfschmerzsymptomatik (HNO)</li>
+            <li>Funktionsstörungen der Nase, Nasenatmungsbehinderung</li>
+            <li>Tumorerkrankungen – in Zusammenarbeit mit HNO-Kliniken</li>
+            <li>Fremdkörper- und Globusgefühle im Rachen</li>
+            <li>Allergiediagnostik (HNO)</li>
+            <li>Stimm- und Sprachstörungen</li>
+          </ul>
+        </article>
+        <article class="spek-card reveal">
+          <div class="spek-head">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></span>
+            <h3>Spezifische HNO-Diagnostik</h3>
+          </div>
+          <ul>
+            <li>Ton- und Sprachverstehens-Hörteste (Audiometrie), Tinnitusdiagnostik</li>
+            <li>Reflex- und Druckmessungen am Mittelohr</li>
+            <li>Kindliche und Neugeborenen-Hörteste (OAE, BERA)</li>
+            <li>Gleichgewichtsdiagnostik (Videonystagmographie)</li>
+            <li>Geschmacks- und Riechtest (Gustometrie, Olfaktometrie)</li>
+            <li>Ultraschall der Nasennebenhöhlen und Halsweichteile</li>
+            <li>Flexible und starre Endoskopie</li>
+            <li>Allergologische Abklärung inhalativer Allergien</li>
+          </ul>
+        </article>
+      </div>
+      <div class="op-note reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="9"/></svg>
+        <div>
+          <b>Wenn eine Operation ansteht</b>
+          <p>Ambulante und stationäre Eingriffe erfolgen zum Teil in Schweinfurt durch die hier operativ tätigen Kollegen – bei Bedarf in einer HNO-Klinik der Umgebung (u. a. Universitätskliniken Würzburg und Erlangen).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUT ZU WISSEN -->
+  <section id="wissen">
+    <div class="wrap">
+      <div class="sec-head center reveal">
+        <span class="eyebrow center">Gut zu wissen</span>
+        <h2>Ihr Besuch, <span class="serif-i" style="color:var(--red)">gut vorbereitet</span></h2>
+      </div>
+      <div class="faq-grid">
+        <div class="faq-card reveal">
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Wie lange dauert die Untersuchung?</h3>
+          <p>Anamnese und Behandlungseinleitung dauern meist ca. 10 Minuten, ein Hörtest ebenfalls bis zu 10 Minuten.</p>
+          <p>Komplexe Untersuchungen des Hörvermögens, Gleichgewichtstests und die Allergiediagnostik können mehr als 30 Minuten dauern – bitte planen Sie diese Zeiten zusätzlich ein.</p>
+        </div>
+        <div class="faq-card reveal">
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 3h6l1 3h3a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h3z"/><path d="M9 13h6M9 17h4"/></svg> Was sollten Sie mitbringen?</h3>
+          <p>Überweisung, Vorbefunde oder Röntgenbilder, sofern vorhanden – außerdem Ihre Medikamentenliste und Ihren Allergiepass.</p>
+          <p>Gesetzlich Versicherte benötigen die elektronische Gesundheitskarte als Berechtigungsnachweis.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STANDORT -->
+  <section class="place" id="standort">
+    <div class="wrap place-grid">
+      <div class="place-media reveal">
+        <img src="assets_02/cg-gebaeude.jpg" alt="Das Praxisgebäude in der Hadergasse 6, Schweinfurt" loading="lazy">
+      </div>
+      <div class="reveal">
+        <span class="eyebrow">Der Standort</span>
+        <h2 style="margin-top:.6rem">Mitten in Schweinfurt – <span class="serif-i" style="color:var(--red)">gut erreichbar</span></h2>
+        <div class="place-points">
+          <div class="ppoint"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Hadergasse 6 – am Rande der Fußgängerzone</div>
+          <div class="ppoint"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="8" width="18" height="12" rx="2"/><path d="M7 8V6a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2M8 14h8"/></svg> Parkhäuser in 100 – 200 m, u. a. Parkhaus Kunsthalle mit Fußgänger-Ausgang zur Hadergasse</div>
+          <div class="ppoint"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="4" y="3" width="16" height="14" rx="3"/><path d="M8 21h8M7 17v4M17 17v4M4 11h16"/></svg> ÖPNV-Zentrum am Roßmarkt in ca. 100 m</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ZEITEN + KONTAKT -->
+  <section class="hours" id="zeiten">
+    <div class="wrap">
+      <div class="sec-head center reveal">
+        <span class="eyebrow center">Öffnungszeiten &amp; Kontakt</span>
+        <h2>Wir sind <span class="serif-i" style="color:var(--red)">für Sie da</span></h2>
+      </div>
+      <div class="hours-grid">
+        <div class="hours-card reveal">
+          <h3>Öffnungszeiten der Praxis</h3>
+          <table class="hours-table">
+            <tr><td>Montag</td><td>08:00 – 13:00 &amp; 14:00 – 16:30 Uhr</td></tr>
+            <tr><td>Dienstag</td><td>08:00 – 13:00 &amp; 14:00 – 16:30 Uhr</td></tr>
+            <tr><td>Mittwoch</td><td>08:00 – 13:00 Uhr</td></tr>
+            <tr><td>Donnerstag</td><td>08:00 – 13:00 Uhr</td></tr>
+            <tr><td>Freitag</td><td>08:00 – 13:00 Uhr</td></tr>
+          </table>
+          <span class="open-chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            Offene Sprechstunde Mo – Fr 9 – 10 Uhr · sonst nach Vereinbarung
+          </span>
+        </div>
+        <div class="contact-card reveal" id="kontakt">
+          <h3>HNO-Praxis Dr. med. Christoph Gebhardt</h3>
+          <div class="contact-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Hadergasse 6<br>97421 Schweinfurt</span>
+          </div>
+          <div class="contact-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></svg>
+            <a href="tel:0972126779">09721 26779</a>
+          </div>
+          <p class="note">Termine vereinbaren Sie am besten telefonisch innerhalb der Öffnungszeiten – auch in dringenden Fällen rufen Sie bitte zunächst an. Wir finden eine Lösung.</p>
+          <a class="btn btn-red" href="tel:0972126779">Jetzt anrufen</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOTFALL -->
+  <section class="notfall">
+    <div class="wrap">
+      <div class="nf-card reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 2 3 7v6c0 5 3.8 8.4 9 9 5.2-.6 9-4 9-9V7z"/><path d="M12 8v5M12 16.5v.5"/></svg>
+        <div>
+          <b>Die Praxis ist geschlossen – was tun in dringenden Fällen?</b>
+          <p>Wenn die Behandlung keinesfalls bis zum nächsten Tag warten kann, wenden Sie sich an den Ärztlichen Bereitschaftsdienst. In lebensbedrohlichen Notfällen alarmieren Sie den Rettungsdienst.</p>
+        </div>
+        <div class="nf-nums">
+          <div class="nf-num"><b>116 117</b><span>Bereitschaftsdienst</span></div>
+          <div class="nf-num"><b>112</b><span>Notruf</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="wrap cta-inner reveal">
+      <span class="eyebrow light center">Ihr nächster Schritt</span>
+      <h2 style="margin-top:.6rem">Vereinbaren Sie <span class="serif-i" style="color:#f0a6ac">Ihren Termin</span></h2>
+      <p>Wir gestalten Termine zeitnah und nach Ihren Wünschen – rufen Sie uns innerhalb der Öffnungszeiten an.</p>
+      <div class="cta-btns">
+        <a class="btn btn-red" href="tel:0972126779">09721 26779 anrufen</a>
+        <a class="btn btn-light" href="#zeiten">Öffnungszeiten ansehen</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <span class="brand" style="margin-bottom:1rem"><b style="color:var(--coal)">hno<span style="color:var(--red)">gebhardt</span></b><i>Facharztpraxis</i></span>
+        <p style="margin-top:1rem">Facharztpraxis für Hals-, Nasen-<br>und Ohrenheilkunde in Schweinfurt.</p>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <p>Hadergasse 6 · 97421 Schweinfurt<br>
+        <a href="tel:0972126779">09721 26779</a><br>
+        <a href="mailto:post@hno-gebhardt.de">post@hno-gebhardt.de</a></p>
+      </div>
+      <div>
+        <h4>Öffnungszeiten</h4>
+        <p>Mo, Di: 08–13 &amp; 14–16:30 Uhr<br>Mi – Fr: 08–13 Uhr<br>Offene Sprechstunde: Mo – Fr 9–10 Uhr</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 HNO-Praxis Dr. med. Christoph Gebhardt, Schweinfurt</span>
+      <span><a href="https://hno-gebhardt.de/impressum.htm" target="_blank" rel="noopener">Impressum</a> &nbsp;·&nbsp; <a href="https://hno-gebhardt.de/impressum.htm#Datenschutzwstart" target="_blank" rel="noopener">Datenschutz</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const header=document.getElementById('header');
+  addEventListener('scroll',()=>{header.classList.toggle('scrolled',scrollY>24)},{passive:true});
+
+  const burger=document.getElementById('burger'),mnav=document.getElementById('mobileNav');
+  burger.addEventListener('click',()=>{
+    const open=mnav.classList.toggle('open');
+    document.body.classList.toggle('nav-open',open);
+    burger.setAttribute('aria-expanded',open);
+    burger.setAttribute('aria-label',open?'Menü schließen':'Menü öffnen');
+  });
+  mnav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+    mnav.classList.remove('open');document.body.classList.remove('nav-open');
+    burger.setAttribute('aria-expanded','false');
+  }));
+
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.14});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
