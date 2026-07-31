@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Frau Om kocht · Koreanisches Restaurant in Würzburg, Peterstraße 14</title>
+<meta name="description" content="Frau Om kocht – original koreanische Küche in der Würzburger Altstadt, Peterstr. 14. Tischgrill-BBQ, Dolsot Bibimbap im Steintopf, hausgemachte Teigtaschen und koreanische Getränke. Ohne Geschmacksverstärker. Tel. 0931 27 89 65 70.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Petrona:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!--
+  §A6 · Bild-Hinweis für den Kunden (bewusst offen dokumentiert):
+  Sämtliche Fotos liegen auf dem bestehenden Server ausschließlich in 170 x 170 px vor.
+  Das ist dort bereits das Original – größere Dateien existieren nicht. Sie werden deshalb
+  in dieser Vorschau nur klein und scharf eingesetzt (runde Insets, kleine Kacheln),
+  niemals hochskaliert und niemals als großflächiges Hero- oder Hintergrundbild.
+  Es existiert außerdem KEIN Foto des Gastraums, der Außenansicht oder einer gedeckten Tafel.
+  Für ein großes Aufmacherbild wird neues Material benötigt (offener Punkt für den Kunden).
+  Es wurden bewusst keine Stockfotos ergänzt.
+-->
+
+<style>
+  :root{
+    /* §A1 – Farben ausschließlich aus dem Kunden-CD */
+    --orange:#f04e23;          /* Marken-Orange: CSS des Originals + Logo-Schrägbalken + Schürzenstreifen */
+    --orange-deep:#d23f18;     /* dunklere Abstufung derselben Farbe — Buttonflaeche, Weiss darauf 4,7:1 */
+    --orange-deeper:#b33614;   /* noch dunkler, nur fuer Hover/Active — Weiss darauf 6,1:1 */
+    --orange-soft:#fdeae3;     /* Aufhellung derselben Farbe (Flächen) */
+    --anthra:#474747;          /* Anthrazit aus dem Original-Body */
+    --anthra-deep:#333131;
+    --ink:#3a3a3a;             /* Fließtext des Originals */
+    --muted:#736c66;
+    /* neutrale, warme Grundfläche – keine zweite Markenfarbe */
+    --paper:#fbf8f4;
+    --paper-2:#f4ede4;
+    --white:#ffffff;
+    --line:#e7ded2;
+    --line-soft:#f0e8dd;
+    --radius:20px;
+    --shadow:0 28px 60px -34px rgba(71,71,71,.42);
+    --shadow-sm:0 14px 34px -22px rgba(71,71,71,.45);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Schibsted Grotesk',system-ui,-apple-system,sans-serif;color:var(--ink);background:var(--paper);line-height:1.72;-webkit-font-smoothing:antialiased;overflow-x:hidden;overflow-wrap:break-word}
+  h1,h2,h3,.serif{font-family:'Petrona',Georgia,serif;font-weight:600;line-height:1.14;letter-spacing:-.008em;color:var(--anthra)}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{width:min(1160px,91vw);margin:0 auto}
+  section{scroll-margin-top:80px}
+
+  /* ---------- Marken-Motiv: die zwei Schrägbalken aus dem Logo ---------- */
+  .slashes{display:block;width:58px;flex:none}
+  .slashes i{display:block;height:5px;border-radius:1.5px;background:var(--orange);transform:rotate(-1.5deg);transform-origin:left center}
+  .slashes i:nth-child(2){margin-top:5px;margin-left:14%;width:86%;transform:rotate(-2.8deg)}
+  .slashes.sm{width:34px}
+  .slashes.sm i{height:3px}
+  .slashes.sm i:nth-child(2){margin-top:3px}
+  .slashes.light i{background:#fff}
+  .slashes.center{margin:0 auto}
+
+  .eyebrow{display:inline-flex;align-items:center;gap:.8em;font-size:.71rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--orange-deep)}
+  .eyebrow.on-dark{color:#f9a68d}
+  .sec-head{max-width:660px}
+  .sec-head.center{margin:0 auto;text-align:center}
+  .sec-head.center .eyebrow{justify-content:center}
+  .sec-head h2{font-size:clamp(1.95rem,4vw,3rem);margin:.75rem 0 1rem}
+  .sec-head p{color:var(--muted);font-size:1.05rem}
+  .sec-head.on-dark h2{color:#fff}
+  .sec-head.on-dark p{color:rgba(255,255,255,.76)}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:.6em;font-family:'Schibsted Grotesk',sans-serif;font-weight:700;font-size:.95rem;padding:.95em 1.75em;border-radius:100px;border:1.5px solid transparent;cursor:pointer;transition:transform .25s ease,box-shadow .25s ease,background .25s ease,border-color .25s ease,color .25s}
+  .btn-orange{background:var(--orange-deep);color:#fff;box-shadow:0 16px 32px -16px rgba(240,78,35,.6)}
+  .btn-orange:hover{background:var(--orange-deeper);transform:translateY(-3px)}
+  .btn-ghost{background:transparent;color:var(--anthra);border-color:var(--line)}
+  .btn-ghost:hover{border-color:var(--orange);color:var(--orange-deep);transform:translateY(-3px);background:#fff}
+  .btn-light{background:#fff;color:var(--anthra)}
+  .btn-light:hover{transform:translateY(-3px);box-shadow:0 18px 36px -18px rgba(0,0,0,.5)}
+
+  /* ---------- Header ---------- */
+  header{position:fixed;top:0;left:0;right:0;z-index:100;padding:1rem 0;transition:padding .3s,background .3s,box-shadow .3s}
+  header.scrolled{padding:.5rem 0;background:rgba(251,248,244,.94);backdrop-filter:blur(16px) saturate(1.25);-webkit-backdrop-filter:blur(16px) saturate(1.25);box-shadow:0 1px 0 rgba(71,71,71,.11)}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:1.2rem}
+  .brand img{height:34px;width:auto}
+  .nav-links{display:flex;align-items:center;gap:1.45rem}
+  .nav-links a{font-size:.88rem;font-weight:600;color:var(--anthra);opacity:.82;position:relative;transition:opacity .2s,color .2s}
+  .nav-links a::after{content:"";position:absolute;left:0;right:100%;bottom:-5px;height:2px;background:var(--orange);transform:skewX(-18deg);transition:right .28s ease}
+  .nav-links a:hover{opacity:1;color:var(--orange-deep)}
+  .nav-links a:hover::after{right:0}
+  .nav-cta{display:flex;align-items:center;gap:.85rem}
+  .nav-cta .btn{padding:.72em 1.35em;font-size:.88rem}
+  /* Kompakter Anruf-Knopf, nur Mobil (Aktivierung unten im 760px-Block).
+     Grund: Reservierung läuft bei Frau Om ausschließlich telefonisch, unter 760 px fällt
+     der Nummern-Button aus dem Header. Der Header ist fixiert, der Knopf sitzt also auf
+     jeder Scrollposition neben dem Hamburger – ein Fingertipp, ohne Inhalt zu verdecken.
+     46 x 46 px Fläche (> 44); Weiß auf --orange-deep ergibt 4,7:1 Kontrast.
+     Auf Desktop bleibt er aus, dort steht die volle Nummer im Header. */
+  .nav-call{display:none;align-items:center;justify-content:center;width:46px;height:46px;flex:none;border-radius:100px;background:var(--orange-deep);color:#fff;box-shadow:0 12px 26px -14px rgba(210,63,24,.9);transition:transform .2s ease}
+  .nav-call svg{display:block;width:21px;height:21px}
+  .nav-call:active{transform:scale(.94)}
+  .nav-call:focus-visible{outline:3px solid var(--anthra);outline-offset:3px}
+  .nav-burger{display:none;background:none;border:none;cursor:pointer;padding:.4rem}
+  .nav-burger span{display:block;width:24px;height:2.5px;background:var(--anthra);margin:5px 0;border-radius:2px;transition:transform .3s,opacity .3s}
+  .mobile-nav{display:none;position:fixed;inset:0;background:rgba(51,49,49,.985);z-index:99;padding:6.4rem 9vw;flex-direction:column;gap:1.35rem;opacity:0;pointer-events:none;transition:opacity .3s}
+  .mobile-nav.open{opacity:1;pointer-events:auto}
+  .mobile-nav a{color:#fff;font-family:'Petrona',serif;font-size:1.6rem;font-weight:500}
+  .mobile-nav .btn{margin-top:1rem;align-self:flex-start}
+  body.nav-open{overflow:hidden}
+  body.nav-open .nav-burger span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+  body.nav-open .nav-burger span:nth-child(2){opacity:0}
+  body.nav-open .nav-burger span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+  /* Bei offenem Menü liegt der dunkle Overlay unter dem Header: Header hell absetzen,
+     sonst stehen Logo und Schließen-Kreuz (Anthrazit) unsichtbar auf dunklem Grund. */
+  body.nav-open header{background:rgba(251,248,244,.96);backdrop-filter:blur(16px) saturate(1.25);-webkit-backdrop-filter:blur(16px) saturate(1.25);box-shadow:0 1px 0 rgba(71,71,71,.11)}
+
+  /* ---------- Hero (P-3 · typografisch, kein großes Foto) ---------- */
+  .hero{position:relative;padding:9.6rem 0 4.8rem;background:linear-gradient(163deg,var(--paper-2) 0%,var(--paper) 52%,#fff 100%);overflow:hidden}
+  .hero-deco{position:absolute;pointer-events:none;user-select:none}
+  .hero-deco.d1{top:14%;right:-16%;width:60vw;opacity:.075}
+  .hero-deco.d2{bottom:-6%;left:-14%;width:44vw;opacity:.055}
+  .hero-deco i{display:block;height:2.6vw;border-radius:4px;background:var(--orange);transform:rotate(-2deg)}
+  .hero-deco i:nth-child(2){margin-top:2.2vw;margin-left:12%;width:88%;transform:rotate(-3.6deg)}
+  .hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1.12fr .88fr;gap:4rem;align-items:center}
+  .hero-logo{width:252px;margin-bottom:1.9rem}
+  .hero-greet{font-family:'Petrona',serif;font-style:italic;font-size:1.18rem;color:var(--orange-deep);margin-bottom:.15rem}
+  .hero-greet-sub{font-size:.9rem;color:var(--muted);margin-bottom:1.5rem}
+  .hero h1{font-size:clamp(2.5rem,5.6vw,4.15rem);letter-spacing:-.02em}
+  .hero h1 .mark{position:relative;display:inline-block;white-space:nowrap}
+  .hero h1 .mark::after{content:"";position:absolute;left:-.06em;right:-.06em;bottom:.02em;height:.16em;background:var(--orange);opacity:.28;transform:skewX(-16deg);border-radius:3px;z-index:-1}
+  .hero-lead{font-size:1.1rem;color:var(--muted);max-width:44ch;margin:1.5rem 0 2.2rem}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:.85rem}
+
+  .hero-card{background:#fff;border:1px solid var(--line);border-radius:26px;padding:2.1rem 2rem 1.8rem;box-shadow:var(--shadow);position:relative}
+  .hero-card::before{content:"";position:absolute;top:0;left:2rem;right:2rem;height:4px;background:var(--orange);border-radius:0 0 3px 3px;transform:skewX(-18deg)}
+  .hero-portrait{display:flex;align-items:center;gap:1.05rem;padding-bottom:1.35rem;border-bottom:1px dashed var(--line)}
+  /* §A6: 170x170-Original, hier auf 92px verkleinert = scharf */
+  .hero-portrait img{width:92px;height:92px;border-radius:50%;object-fit:cover;flex:none;border:3px solid #fff;box-shadow:0 0 0 2px var(--orange-soft),var(--shadow-sm)}
+  .hero-portrait b{display:block;font-size:1.02rem;color:var(--anthra);font-weight:700}
+  .hero-portrait span{font-size:.85rem;color:var(--muted)}
+  .hero-hours{padding-top:1.35rem}
+  .hero-hours h3{font-size:.72rem;font-family:'Schibsted Grotesk',sans-serif;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.9rem}
+  .hrow{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;font-size:.92rem;padding:.34rem 0}
+  .hrow b{font-weight:600;color:var(--anthra);white-space:nowrap}
+  .hrow span{color:var(--muted);text-align:right}
+  .hrow.closed span{color:var(--orange-deep);font-weight:600}
+  .hero-addr{margin-top:1.2rem;padding-top:1.1rem;border-top:1px dashed var(--line);font-size:.9rem;color:var(--muted)}
+  .hero-addr b{color:var(--anthra)}
+
+  /* ---------- Merkmal-Leiste ---------- */
+  .facts{background:#fff;border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
+  .facts-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.6rem;padding:2.1rem 0}
+  .fact{display:flex;gap:.9rem;align-items:flex-start}
+  .fact b{display:block;font-size:.97rem;color:var(--anthra);font-weight:700;line-height:1.35}
+  .fact span{font-size:.85rem;color:var(--muted);line-height:1.5}
+
+  /* ---------- Geschichte ---------- */
+  .story{position:relative;padding:6rem 0;background:var(--paper);overflow:hidden}
+  .story-deco{position:absolute;top:8%;left:-10%;width:34vw;opacity:.06;pointer-events:none}
+  .story-deco i{display:block;height:2.2vw;border-radius:4px;background:var(--anthra);transform:rotate(-2deg)}
+  .story-deco i:nth-child(2){margin-top:1.8vw;margin-left:12%;width:88%;transform:rotate(-3.6deg)}
+  .story-grid{position:relative;z-index:2;display:grid;grid-template-columns:300px 1fr;gap:4rem;align-items:start}
+  .story-media{position:sticky;top:100px}
+  /* §A6: beide Fotos 170x170-Original, hier kleiner dargestellt (Rahmen inklusive) */
+  .story-photo{width:170px;height:170px;border-radius:50%;object-fit:cover;border:5px solid #fff;box-shadow:var(--shadow)}
+  .story-photo-2{width:132px;height:132px;border-radius:22px;object-fit:cover;border:5px solid #fff;box-shadow:var(--shadow-sm);margin:-38px 0 0 112px;position:relative}
+  .story-cap{margin-top:1.5rem;font-size:.84rem;color:var(--muted);line-height:1.55;max-width:250px}
+  .story-cap b{color:var(--anthra);display:block;font-size:.95rem}
+  .story-body p{margin-bottom:1.25rem;font-size:1.06rem;color:#524b45}
+  .story-quote{font-family:'Petrona',serif;font-size:clamp(1.35rem,2.4vw,1.72rem);line-height:1.42;color:var(--anthra);font-weight:500;padding-left:1.7rem;border-left:4px solid var(--orange);margin:2rem 0 2.1rem}
+  .story-stat{display:flex;align-items:center;gap:1.4rem;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:1.5rem 1.8rem;margin:2.2rem 0;box-shadow:var(--shadow-sm)}
+  .story-stat .num{font-family:'Petrona',serif;font-size:3.1rem;line-height:1;font-weight:700;color:var(--orange);flex:none}
+  .story-stat p{font-size:.98rem;color:var(--muted);margin:0}
+  .story-stat p b{color:var(--anthra)}
+  .story-sign{display:flex;align-items:center;gap:1rem;margin-top:2rem}
+  .story-sign .serif{font-size:1.25rem;font-style:italic;color:var(--anthra)}
+
+  /* ---------- Küche ---------- */
+  .kitchen{padding:6rem 0;background:#fff}
+  .taste-row{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;margin:2rem 0 3.2rem}
+  .taste{font-family:'Petrona',serif;font-size:1.05rem;color:var(--anthra);background:var(--paper-2);border-radius:100px;padding:.45em 1.25em;border:1px solid var(--line)}
+  .kitchen-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.7rem}
+  .kcard{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:2rem 1.8rem;transition:transform .3s ease,box-shadow .3s ease,border-color .3s}
+  .kcard:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:#ddd0be}
+  /* §A6: 170x170-Original auf 84px verkleinert */
+  .kcard img{width:84px;height:84px;border-radius:50%;object-fit:cover;border:4px solid #fff;box-shadow:var(--shadow-sm);margin-bottom:1.15rem}
+  .kcard h3{font-size:1.3rem;margin-bottom:.6rem}
+  .kcard p{font-size:.95rem;color:var(--muted)}
+  .spice{margin-top:3rem;background:var(--paper-2);border-radius:var(--radius);padding:2.4rem 2.2rem;display:grid;grid-template-columns:250px 1fr;gap:2.4rem;align-items:center}
+  .spice h3{font-size:1.35rem;margin-bottom:.4rem}
+  .spice > div > p{font-size:.92rem;color:var(--muted)}
+  .pills{display:flex;flex-wrap:wrap;gap:.55rem}
+  .pill{background:#fff;border:1px solid var(--line);border-radius:100px;padding:.42em 1.05em;font-size:.88rem;font-weight:600;color:var(--anthra)}
+  .no-msg{margin-top:1.35rem;font-family:'Petrona',serif;font-size:1.18rem;color:var(--orange-deep);font-weight:600}
+
+  /* ---------- BBQ (dunkler Signature-Block) ---------- */
+  .bbq{position:relative;padding:6rem 0;background:var(--anthra);color:#fff;overflow:hidden}
+  .bbq::before{content:"";position:absolute;top:-12%;right:-8%;width:46vw;height:46vw;background:radial-gradient(circle,rgba(240,78,35,.28),transparent 62%);pointer-events:none}
+  .bbq-deco{position:absolute;left:-6%;bottom:6%;width:36vw;opacity:.12;pointer-events:none}
+  .bbq-deco i{display:block;height:2.4vw;border-radius:4px;background:var(--orange);transform:rotate(-2deg)}
+  .bbq-deco i:nth-child(2){margin-top:2vw;margin-left:12%;width:88%;transform:rotate(-3.6deg)}
+  .bbq-inner{position:relative;z-index:2}
+  .bbq-top{display:grid;grid-template-columns:1fr 190px;gap:3rem;align-items:center;margin-bottom:3.2rem}
+  .bbq-quote{font-family:'Petrona',serif;font-size:clamp(1.5rem,3vw,2.05rem);line-height:1.4;color:#fff;font-weight:500;margin:1rem 0 1.2rem}
+  .bbq-note{color:rgba(255,255,255,.72);font-size:1rem;max-width:56ch}
+  /* §A6: 170x170-Original auf 170px = 1:1, nicht hochskaliert */
+  .bbq-photo{width:170px;height:170px;border-radius:24px;object-fit:cover;border:5px solid rgba(255,255,255,.14);box-shadow:0 30px 60px -30px rgba(0,0,0,.7);justify-self:end}
+  .bbq-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+  .bbq-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:var(--radius);padding:1.9rem 1.7rem;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:transform .3s ease,background .3s,border-color .3s;display:flex;flex-direction:column}
+  .bbq-card:hover{transform:translateY(-6px);background:rgba(255,255,255,.1);border-color:rgba(240,78,35,.55)}
+  .bbq-card h3{color:#fff;font-size:1.42rem;margin-bottom:.15rem}
+  .bbq-card .kr{font-size:.85rem;color:rgba(255,255,255,.5);margin-bottom:.9rem}
+  .bbq-card p{font-size:.92rem;color:rgba(255,255,255,.72);margin-bottom:1.2rem}
+  /* Preiszeile am Kartenboden ausrichten – gleicht unterschiedlich lange Beschreibungen aus */
+  .bbq-price{display:flex;align-items:baseline;gap:.5rem;margin-top:auto;padding-top:1.1rem;border-top:1px solid rgba(255,255,255,.14)}
+  .bbq-price b{font-family:'Petrona',serif;font-size:1.75rem;font-weight:700;color:var(--orange)}
+  .bbq-price span{font-size:.8rem;color:rgba(255,255,255,.6);letter-spacing:.04em}
+  .bbq-foot{margin-top:2.2rem;display:flex;flex-wrap:wrap;gap:.6rem}
+  .chip-dark{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:100px;padding:.45em 1.1em;font-size:.85rem;color:rgba(255,255,255,.85);font-weight:600}
+
+  /* ---------- Speisekarte ---------- */
+  .menu{padding:6rem 0;background:var(--paper-2)}
+  .legend{display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem;margin-top:1.8rem}
+  .menu-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:1.7rem;margin-top:3rem;align-items:start}
+  .mblock{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:2.2rem 2rem;box-shadow:var(--shadow-sm)}
+  .mblock.span12{grid-column:span 12}
+  .mblock.span6{grid-column:span 6}
+  .mblock-head{display:flex;align-items:center;gap:1rem;padding-bottom:1.1rem;margin-bottom:.4rem;border-bottom:2px solid var(--paper-2)}
+  .mblock-head h3{font-size:1.6rem}
+  .mblock-head .meta{margin-left:auto;font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);text-align:right}
+  .dish-list{display:grid;grid-template-columns:1fr}
+  .dish-list.two{grid-template-columns:1fr 1fr;column-gap:2.8rem}
+  .dish{display:grid;grid-template-columns:1fr auto;gap:.25rem 1.2rem;padding:1.05rem 0;border-bottom:1px dashed var(--line-soft);align-items:baseline}
+  .dish-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:.5rem}
+  .dish-name{font-weight:700;font-size:1.03rem;color:var(--anthra)}
+  .dish-kr{font-size:.85rem;color:#a89e93;font-weight:500}
+  .dish-price{font-family:'Petrona',serif;font-weight:700;font-size:1.12rem;color:var(--orange-deep);white-space:nowrap}
+  .dish-desc{grid-column:1/-1;font-size:.92rem;color:var(--muted);line-height:1.6;max-width:56ch}
+  .tag{font-size:.63rem;font-weight:800;letter-spacing:.11em;text-transform:uppercase;padding:.32em .7em;border-radius:100px;line-height:1.5;white-space:nowrap}
+  .tag-v{background:var(--paper-2);color:#6b625a;border:1px solid var(--line)}
+  .tag-sig{background:var(--orange-soft);color:var(--orange-deep);border:1px solid #f7cdbe}
+  .mnote{margin-top:1.4rem;font-size:.87rem;color:var(--muted);font-style:italic}
+
+  .lunch{background:linear-gradient(140deg,#fff 0%,var(--orange-soft) 100%);border:1px solid #f5d3c6}
+  .lunch-grid{display:grid;grid-template-columns:250px 1fr;gap:2.6rem;align-items:start}
+  .lunch-price{text-align:center;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:1.6rem 1rem;box-shadow:var(--shadow-sm)}
+  .lunch-price b{display:block;font-family:'Petrona',serif;font-size:2.6rem;font-weight:700;color:var(--orange);line-height:1}
+  .lunch-price span{font-size:.82rem;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;font-weight:700}
+  .lunch-price .soup{margin-top:1rem;padding-top:.95rem;border-top:1px dashed var(--line);font-size:.9rem;color:var(--muted);text-transform:none;letter-spacing:0}
+  .lunch-price .soup b{display:inline;font-size:1rem;color:var(--orange-deep)}
+  .lunch q{display:block;font-family:'Petrona',serif;font-size:1.12rem;color:#524b45;font-style:italic;quotes:none;margin-bottom:1.4rem}
+
+  /* ---------- Catering ---------- */
+  .catering{padding:5.5rem 0;background:#fff}
+  .cat-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:3.4rem;align-items:center}
+  .cat-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
+  .cat-card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:1.7rem 1.2rem;text-align:center;transition:transform .3s ease,box-shadow .3s ease,border-color .3s}
+  .cat-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:var(--orange)}
+  .cat-card span{font-size:.75rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .cat-card b{display:block;font-family:'Petrona',serif;font-size:2.15rem;font-weight:700;color:var(--orange);line-height:1.1;margin-top:.5rem}
+  .cat-card small{display:block;font-size:.8rem;color:var(--muted);margin-top:.15rem}
+  .cat-note{margin-top:1.4rem;font-size:.9rem;color:var(--muted)}
+
+  /* ---------- Vertrauen / Presse ---------- */
+  .trust{padding:6rem 0;background:var(--paper)}
+  .press-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.7rem;margin-top:3rem}
+  .press{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:2.1rem 2rem;box-shadow:var(--shadow-sm);transition:transform .3s ease,box-shadow .3s}
+  .press:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+  .press .src{font-size:.72rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--orange-deep)}
+  .press h3{font-size:1.35rem;margin:.8rem 0 .55rem}
+  .press p{font-size:.94rem;color:var(--muted)}
+  .press .date{margin-top:1.1rem;padding-top:.9rem;border-top:1px dashed var(--line);font-size:.85rem;color:var(--muted)}
+  .qual-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem;margin-top:1.7rem}
+  .qual{background:#fff;border:1px solid var(--line);border-radius:18px;padding:1.6rem 1.4rem;transition:transform .3s ease,border-color .3s}
+  .qual:hover{transform:translateY(-5px);border-color:var(--orange)}
+  .qual b{display:block;font-size:1rem;color:var(--anthra);margin:.9rem 0 .35rem}
+  .qual p{font-size:.88rem;color:var(--muted);line-height:1.55}
+  /* §A6: 170x170-Original auf 62px verkleinert */
+  .qual img{width:62px;height:62px;border-radius:14px;object-fit:cover;box-shadow:var(--shadow-sm)}
+
+  /* ---------- Kontakt ---------- */
+  .contact{padding:6rem 0;background:#fff}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.9rem;margin-top:3rem;align-items:stretch}
+  .hours-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:2.4rem 2.2rem}
+  .hours-card h3{font-size:1.5rem;margin-bottom:1.4rem}
+  .drow{display:flex;justify-content:space-between;align-items:baseline;gap:1.2rem;padding:.85rem 0;border-bottom:1px dashed var(--line)}
+  .drow:last-of-type,.drow.no-line{border-bottom:none}
+  .drow b{font-weight:700;color:var(--anthra);font-size:.98rem;white-space:nowrap}
+  .drow span{text-align:right;color:var(--muted);font-size:.95rem}
+  .drow.rest span{color:var(--orange-deep);font-weight:700}
+  .hours-hint{margin-top:1.3rem;background:#fff;border:1px solid var(--line);border-left:4px solid var(--orange);border-radius:12px;padding:1rem 1.2rem;font-size:.9rem;color:var(--muted)}
+  .hours-hint b{color:var(--anthra)}
+  .reserve-card{background:var(--anthra);color:#fff;border-radius:var(--radius);padding:2.4rem 2.2rem;display:flex;flex-direction:column;position:relative;overflow:hidden}
+  .reserve-card::before{content:"";position:absolute;top:-30%;right:-25%;width:70%;height:80%;background:radial-gradient(circle,rgba(240,78,35,.3),transparent 65%);pointer-events:none}
+  .reserve-card > *{position:relative;z-index:2}
+  .reserve-card h3{color:#fff;font-size:1.5rem;margin-bottom:1rem}
+  .reserve-card q{display:block;quotes:none;font-family:'Petrona',serif;font-size:1.1rem;font-style:italic;color:rgba(255,255,255,.82);margin-bottom:1.6rem}
+  .clink{display:flex;align-items:center;gap:.9rem;padding:.85rem 0;border-bottom:1px solid rgba(255,255,255,.12);transition:color .25s}
+  .clink:last-of-type{border-bottom:none}
+  .clink small{font-size:.73rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5);width:78px;flex:none;font-weight:700;white-space:nowrap}
+  .clink b{font-size:1.06rem;font-weight:600;color:#fff;min-width:0;overflow-wrap:anywhere}
+  a.clink:hover b{color:var(--orange)}
+  .reserve-card .btn{margin-top:1.8rem;align-self:flex-start}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--anthra-deep);color:rgba(255,255,255,.72);padding:4.2rem 0 2rem;font-size:.93rem}
+  .foot-grid{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:3rem;padding-bottom:2.6rem;border-bottom:1px solid rgba(255,255,255,.12)}
+  .foot-brand{display:inline-block;background:#fff;border-radius:14px;padding:.85rem 1.1rem;margin-bottom:1.2rem}
+  .foot-brand img{height:38px;width:auto}
+  footer h4{font-family:'Schibsted Grotesk',sans-serif;font-size:.74rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#fff;margin-bottom:1rem}
+  footer a:hover{color:var(--orange)}
+  .foot-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.8rem;padding-top:1.6rem;font-size:.83rem;color:rgba(255,255,255,.5)}
+
+  /* ---------- Reveal ---------- */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .75s ease,transform .75s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .reveal{opacity:1;transform:none;transition:none}
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:1040px){
+    .hero-inner{grid-template-columns:1fr;gap:2.8rem}
+    .hero-card{max-width:520px}
+    .story-grid{grid-template-columns:1fr;gap:2.6rem}
+    .story-media{position:static;display:flex;align-items:flex-end;gap:1.4rem;flex-wrap:wrap}
+    .story-photo-2{margin:0}
+    .story-cap{margin-top:0;flex:1 1 220px}
+    .kitchen-grid{grid-template-columns:1fr}
+    .kcard{display:grid;grid-template-columns:84px 1fr;gap:1.4rem;align-items:start}
+    .kcard img{margin-bottom:0}
+    .spice{grid-template-columns:1fr;gap:1.5rem}
+    .bbq-top{grid-template-columns:1fr;gap:2rem}
+    .bbq-photo{justify-self:start}
+    .bbq-cards{grid-template-columns:1fr}
+    .dish-list.two{grid-template-columns:1fr}
+    .mblock.span6{grid-column:span 12}
+    .lunch-grid{grid-template-columns:1fr;gap:1.8rem}
+    .lunch-price{max-width:330px}
+    .cat-grid{grid-template-columns:1fr;gap:2.2rem}
+    .press-grid{grid-template-columns:1fr}
+    .qual-grid{grid-template-columns:1fr 1fr}
+    .contact-grid{grid-template-columns:1fr}
+    .facts-grid{grid-template-columns:1fr 1fr;gap:1.4rem}
+    .foot-grid{grid-template-columns:1fr 1fr;gap:2.2rem}
+  }
+  @media (max-width:760px){
+    .nav-links{display:none}
+    .nav-cta .btn{display:none}
+    .nav-call{display:inline-flex}
+    .nav-burger{display:block}
+    .mobile-nav{display:flex}
+    .hero{padding:7.6rem 0 3.4rem}
+    .hero-logo{width:210px}
+    .hero-deco.d1{width:110vw;right:-40%}
+    .hero-deco.d2{display:none}
+    .hero-deco i{height:5.5vw}
+    .hero-deco i:nth-child(2){margin-top:4.5vw}
+    .story-deco,.bbq-deco{display:none}
+    section{padding-top:4.2rem;padding-bottom:4.2rem}
+    .story,.kitchen,.bbq,.menu,.catering,.trust,.contact{padding:4.2rem 0}
+    .facts-grid{grid-template-columns:1fr;gap:1.25rem;padding:1.8rem 0}
+    /* 12-Spalten-Raster auf Mobil auflösen – 11 Gaps passen sonst nicht in die Breite */
+    .menu-grid{grid-template-columns:1fr;gap:1.3rem}
+    .mblock.span12,.mblock.span6{grid-column:auto}
+    .mblock,.hours-card,.reserve-card{padding:1.75rem 1.4rem}
+    .mblock-head{flex-wrap:wrap;gap:.7rem}
+    .mblock-head .meta{margin-left:0;width:100%;text-align:left}
+    .story-quote{padding-left:1.2rem;margin:1.6rem 0}
+    .story-stat{flex-direction:column;align-items:flex-start;gap:.6rem;padding:1.4rem}
+    .cat-cards{grid-template-columns:1fr}
+    .qual-grid{grid-template-columns:1fr}
+    .foot-grid{grid-template-columns:1fr;gap:2rem}
+    .dish-price{font-size:1.05rem}
+    .hero-card{padding:1.8rem 1.5rem 1.5rem}
+    .hero-card::before{left:1.5rem;right:1.5rem}
+    .taste-row{margin:1.5rem 0 2.4rem}
+    .drow{flex-wrap:wrap;gap:.2rem}
+    .drow span{text-align:left;width:100%}
+    .hero-actions .btn{flex:1 1 100%}
+    /* lange deutsche Komposita auf sehr schmalen Geräten sauber trennen –
+       H1 bewusst ausgenommen, sonst wird die Hauptzeile getrennt ("willkom-men") */
+    h2,h3{hyphens:auto;-webkit-hyphens:auto}
+  }
+</style>
+<!-- Sicherheitsnetz: ohne JavaScript bleiben die .reveal-Blöcke sonst unsichtbar -->
+<noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
+</head>
+<body>
+
+<header id="header">
+  <div class="wrap nav">
+    <a href="#top" class="brand" aria-label="Frau Om kocht – Startseite">
+      <img src="assets_02/om-logo.png" alt="Frau Om kocht – Original Korean Cooking">
+    </a>
+    <nav class="nav-links" aria-label="Hauptnavigation">
+      <a href="#geschichte">Geschichte</a>
+      <a href="#kueche">Küche</a>
+      <a href="#bbq">Tischgrill</a>
+      <a href="#karte">Speisekarte</a>
+      <a href="#catering">Catering</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <div class="nav-cta">
+      <!-- Mobil-Anruf: gleiche Nummer, gleicher tel:-Link wie der Header-Button daneben.
+           Sichtbar nur unter 760 px, wo der Nummern-Button ausgeblendet wird. -->
+      <a href="tel:+4993127896570" class="nav-call" aria-label="Anrufen: 0931 27 89 65 70">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+          <path d="M3.9 2.4H7.3a1.4 1.4 0 0 1 1.4 1.2c.15 1.3.45 2.55.9 3.7a1.1 1.1 0 0 1-.28 1.2L7.2 10.3a15.6 15.6 0 0 0 6.5 6.5l1.8-2.1a1.1 1.1 0 0 1 1.2-.28c1.15.45 2.4.75 3.7.9a1.4 1.4 0 0 1 1.2 1.4v3.4a1.5 1.5 0 0 1-1.6 1.5C10.6 21.4 2.6 13.4 2.4 4a1.5 1.5 0 0 1 1.5-1.6Z"/>
+        </svg>
+      </a>
+      <a href="tel:+4993127896570" class="btn btn-orange">0931 27 89 65 70</a>
+      <button class="nav-burger" id="burger" aria-label="Menü öffnen" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="#geschichte">Geschichte</a>
+  <a href="#kueche">Küche</a>
+  <a href="#bbq">Tischgrill-BBQ</a>
+  <a href="#karte">Speisekarte</a>
+  <a href="#catering">Catering</a>
+  <a href="#kontakt">Kontakt</a>
+  <a href="tel:+4993127896570" class="btn btn-orange">0931 27 89 65 70</a>
+</div>
+
+<!-- ============================ HERO (P-3, typografisch) ============================ -->
+<section class="hero" id="top">
+  <div class="hero-deco d1" aria-hidden="true"><i></i><i></i></div>
+  <div class="hero-deco d2" aria-hidden="true"><i></i><i></i></div>
+  <div class="wrap hero-inner">
+    <div>
+      <img src="assets_02/om-logo.png" alt="Frau Om kocht – Original Korean Cooking" class="hero-logo">
+      <p class="hero-greet">„Ma-ssit-ge D-seyo …"</p>
+      <p class="hero-greet-sub">… heißt auf Deutsch: guten Appetit!</p>
+      <h1>Herzlich willkommen in <span class="mark">meiner Küche</span>.</h1>
+      <p class="hero-lead">„… in der ich Ihnen – gemeinsam mit meinem Team – gerne einige Köstlichkeiten aus meiner Heimat zubereite."</p>
+      <div class="hero-actions">
+        <a href="tel:+4993127896570" class="btn btn-orange">Tisch reservieren</a>
+        <a href="#karte" class="btn btn-ghost">Zur Speisekarte</a>
+      </div>
+    </div>
+
+    <aside class="hero-card">
+      <div class="hero-portrait">
+        <img src="assets_02/om-inhaberin-schuerze.jpg" alt="Myung Shin Om in ihrer Küche, mit Schürze mit Frau-Om-kocht-Logo">
+        <div>
+          <b>Myung Shin Om</b>
+          <span>Inhaberin</span>
+        </div>
+      </div>
+      <div class="hero-hours">
+        <h3>Öffnungszeiten</h3>
+        <div class="hrow closed"><b>Montag</b><span>Ruhetag</span></div>
+        <div class="hrow"><b>Di – Do</b><span>11.30 – 14.30 &amp; 17.30 – 23.00</span></div>
+        <div class="hrow"><b>Fr – So</b><span>17.30 – 23.00</span></div>
+      </div>
+      <p class="hero-addr"><b>Peterstraße 14</b> · 97070 Würzburg<br>Mitten im Herzen der Altstadt</p>
+    </aside>
+  </div>
+</section>
+
+<!-- ============================ MERKMALE ============================ -->
+<div class="facts">
+  <div class="wrap facts-grid">
+    <div class="fact reveal">
+      <span class="slashes sm" aria-hidden="true"><i></i><i></i></span>
+      <div><b>BBQ direkt am Tisch</b><span>Sie grillen selbst, ab 2 Personen</span></div>
+    </div>
+    <div class="fact reveal">
+      <span class="slashes sm" aria-hidden="true"><i></i><i></i></span>
+      <div><b>Ohne Geschmacksverstärker</b><span>Fein komponiert mit Pasten und Gewürzen</span></div>
+    </div>
+    <div class="fact reveal">
+      <span class="slashes sm" aria-hidden="true"><i></i><i></i></span>
+      <div><b>Hausgemacht</b><span>Teigtaschen und koreanische Getränke</span></div>
+    </div>
+    <div class="fact reveal">
+      <span class="slashes sm" aria-hidden="true"><i></i><i></i></span>
+      <div><b>Vegan &amp; vegetarisch</b><span>Eigene Fassungen quer durch die Karte</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================ GESCHICHTE (Signature 1) ============================ -->
+<section class="story" id="geschichte">
+  <div class="story-deco" aria-hidden="true"><i></i><i></i></div>
+  <div class="wrap story-grid">
+    <div class="story-media reveal">
+      <!-- §A6: beide Fotos liegen nur in 170x170 vor, hier bewusst klein gesetzt -->
+      <img src="assets_02/om-inhaberin-portrait.jpg" alt="Myung Shin Om, Inhaberin von Frau Om kocht" class="story-photo">
+      <img src="assets_02/om-inhaberin-hanbok-herd.jpg" alt="Myung Shin Om in koreanischer Tracht am Herd" class="story-photo-2">
+      <p class="story-cap"><b>Myung Shin Om</b>stammt aus Ichon, etwa 60 km südöstlich von Seoul. Seit rund 30 Jahren in Würzburg.</p>
+    </div>
+
+    <div class="story-body">
+      <div class="reveal">
+        <span class="eyebrow"><span class="slashes sm" aria-hidden="true"><i></i><i></i></span>Das kulinarische Kollektiv</span>
+        <h2 style="font-size:clamp(1.95rem,4vw,3rem);margin:.75rem 0 1.4rem">Hilfe zur Selbsthilfe</h2>
+      </div>
+
+      <div class="reveal">
+        <p>„Vor ca. 30 Jahren kam die koreanische Studentin Myung Shin Om nach Würzburg, um ihr Germanistikstudium hier fortzuführen. Während sie ihre Dissertation schrieb, kam es, wie es so oft kommt: Sie verliebte sich und brachte ihren Sohn zur Welt. Als alleinerziehende Mutter musste sie schließlich ihr Studium abbrechen …"</p>
+        <p>„So entstand die Idee des ‚kulinarischen Kollektivs'. 15 Freunde und Partner schlossen sich zusammen, um Myung Shin mit einer Anschubfinanzierung zu helfen und mit dem kollektiven Wissen zu unterstützen."</p>
+      </div>
+
+      <div class="story-stat reveal">
+        <span class="num">15</span>
+        <p><b>Freunde und Partner</b> haben das Restaurant gemeinsam möglich gemacht – als Anschubfinanzierung und mit ihrem Wissen.</p>
+      </div>
+
+      <blockquote class="story-quote reveal">„Ziel ist dabei nicht, eine maximale Rendite und möglichst schnelle Rückzahlung des eingesetzten Kapitals zu erlangen, sondern der Jungunternehmerin Hilfe zur Selbsthilfe zu leisten und ihr eine langfristige Perspektive am Markt zu geben."</blockquote>
+
+      <div class="reveal">
+        <p>„Mein Name ist Myung Shin Om. Ich stamme aus Ichon, das etwa 60 km südöstlich von Seoul gelegen ist. Meine Urgroßmutter hat bereits für das Königshaus gekocht. Die Koch-Kunst hat in unserer Familie also bereits seit über einem Jahrhundert Tradition."</p>
+        <div class="story-sign">
+          <span class="slashes" aria-hidden="true"><i></i><i></i></span>
+          <span class="serif">Myung Shin Om</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ KÜCHE ============================ -->
+<section class="kitchen" id="kueche">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow"><span class="slashes sm" aria-hidden="true"><i></i><i></i></span>Koreanische Koch-Kunst</span>
+      <h2>Vier Geschmacksrichtungen, eine Handschrift</h2>
+      <p>„Unser koreanisches Essen bietet eine ganze Vielfalt von Geschmacksrichtungen: scharf, süß-sauer, mild und salzig."</p>
+    </div>
+
+    <div class="taste-row reveal">
+      <span class="taste">scharf</span>
+      <span class="taste">süß-sauer</span>
+      <span class="taste">mild</span>
+      <span class="taste">salzig</span>
+    </div>
+
+    <div class="kitchen-grid">
+      <article class="kcard reveal">
+        <img src="assets_02/om-bulgogi-pfanne.jpg" alt="Mariniertes Bulgogi-Fleisch wird in der Pfanne gewendet">
+        <div>
+          <h3>Öle, Pasten, Gewürze</h3>
+          <p>„Für die Zubereitung verwende ich nur wertvolle Pflanzenöle wie Wildsesamöl, Sesamöl oder Distelöl – und natürlich original koreanische Pasten und Gewürze."</p>
+        </div>
+      </article>
+      <article class="kcard reveal">
+        <img src="assets_02/om-kimchi-schale.jpg" alt="Kimchi in einer weißen Schale">
+        <div>
+          <h3>Leicht und bekömmlich</h3>
+          <p>„Die koreanische Küche ist sehr gesund – wertvolle Nährstoffe bleiben durch die besonders schonende Zubereitungsart erhalten. Fettarme Zubereitung macht das Essen leicht und bekömmlich."</p>
+        </div>
+      </article>
+      <article class="kcard reveal">
+        <img src="assets_02/om-bantschan-schalen.jpg" alt="Mehrere weiße Schalen mit Bantschan – Kimchi, Spinat, Sprossen">
+        <div>
+          <h3>Bantschan zu jedem Gericht</h3>
+          <p>Alle Gerichte werden mit verschiedenen Bantschan (Beilagen) und Reis serviert – dazu frische, qualitativ hochwertige Zutaten aus der Region.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="spice reveal">
+      <div>
+        <span class="eyebrow"><span class="slashes sm" aria-hidden="true"><i></i><i></i></span>Grundgewürze</span>
+        <h3 style="margin-top:.7rem">Sieben, die alles tragen</h3>
+        <p>Aus diesen Zutaten entsteht der Geschmack jedes Gerichts.</p>
+      </div>
+      <div>
+        <div class="pills">
+          <span class="pill">Knoblauch</span>
+          <span class="pill">Frühlingszwiebel</span>
+          <span class="pill">Sojasoße</span>
+          <span class="pill">Ingwer</span>
+          <span class="pill">Peperoni-Pulver</span>
+          <span class="pill">Peperoni-Paste</span>
+          <span class="pill">Sojabohnenpaste</span>
+        </div>
+        <p class="no-msg">„Alles wird ohne Geschmacksverstärker geschmacklich fein komponiert."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ TISCHGRILL-BBQ (Signature-Block) ============================ -->
+<section class="bbq" id="bbq">
+  <div class="bbq-deco" aria-hidden="true"><i></i><i></i></div>
+  <div class="wrap bbq-inner">
+    <div class="bbq-top">
+      <div class="reveal">
+        <span class="eyebrow on-dark"><span class="slashes sm light" aria-hidden="true"><i></i><i></i></span>Special</span>
+        <p class="bbq-quote">„Wir bieten Ihnen als Besonderheit ein BBQ, das Sie direkt am Tisch frisch grillen."</p>
+        <p class="bbq-note">„Sie grillen selbst direkt an Ihrem Tisch. Dazu servieren wir Reis, Salatblätter, Bantschan (Beilagen) und pikante Soße. Ab 2 Personen und mit gleicher Fleischsorte. Preis pro Person – Vorbestellung ist erwünscht."</p>
+      </div>
+      <!-- §A6: 170x170-Original, hier 1:1 dargestellt – kein Upscaling -->
+      <img src="assets_02/om-bbq-tischgrill.jpg" alt="Fleischscheiben auf dem Grillrost des Tischgrills" class="bbq-photo reveal">
+    </div>
+
+    <div class="bbq-cards">
+      <article class="bbq-card reveal">
+        <h3>So-Bulgogi</h3>
+        <p class="kr">소 불고기</p>
+        <p>Fein geschnetzelte Rinderhüfte, mariniert in Birne, Sojasoße, Frühlingszwiebeln und Knoblauch.</p>
+        <div class="bbq-price"><b>26,90 €</b><span>pro Person</span></div>
+      </article>
+      <article class="bbq-card reveal">
+        <h3>Samkyup-Sal</h3>
+        <p class="kr">삼겹살</p>
+        <p>Hauchdünn geschnittenes Schweinebauchfleisch.</p>
+        <div class="bbq-price"><b>23,90 €</b><span>pro Person</span></div>
+      </article>
+      <article class="bbq-card reveal">
+        <h3>Roast Beef</h3>
+        <p class="kr">로스트 비프</p>
+        <p>Hauchdünn geschnitten.</p>
+        <div class="bbq-price"><b>29,90 €</b><span>pro Person</span></div>
+      </article>
+    </div>
+
+    <div class="bbq-foot reveal">
+      <span class="chip-dark">Ab 2 Personen</span>
+      <span class="chip-dark">Gleiche Fleischsorte</span>
+      <span class="chip-dark">Vorbestellung erwünscht</span>
+      <span class="chip-dark">Mit Reis, Salatblättern, Bantschan &amp; pikanter Soße</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ SPEISEKARTE (Signature 2) ============================ -->
+<section class="menu" id="karte">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow"><span class="slashes sm" aria-hidden="true"><i></i><i></i></span>Unsere Karte</span>
+      <h2>Von der Vorspeise bis zum hausgemachten Getränk</h2>
+      <p>„Alle, die fleischfreie oder komplett vegane Küche bevorzugen, werden unsere schmackhaften koreanischen Gerichte mögen." – zu vielen Gerichten gibt es eine ausdrücklich vegane Fassung, vom Bibimbap im Steintopf bis zum Nachtisch.</p>
+      <div class="legend">
+        <span class="tag tag-sig">Signature</span>
+        <span class="tag tag-v">vegan</span>
+        <span class="tag tag-v">vegetarisch</span>
+      </div>
+    </div>
+
+    <div class="menu-grid">
+
+      <!-- Hauptgerichte -->
+      <div class="mblock span12 reveal">
+        <div class="mblock-head">
+          <h3>Hauptgerichte</h3>
+          <span class="meta">mit Bantschan &amp; Reis</span>
+        </div>
+        <div class="dish-list two">
+          <div class="dish">
+            <div class="dish-head"><span class="dish-name">So-Bulgogi</span><span class="dish-kr">소불고기</span><span class="tag tag-sig">Signature</span></div>
+            <span class="dish-price">22,00 €</span>
+            <p class="dish-desc">Fein geschnetzelte Rinderhüfte mit Pilzen, Chinakohl, Zucchini und Karotten – mariniert in Birne, Sojasoße, Frühlingszwiebeln und Knoblauch.</p>
+          </div>
+          <div class="dish">
+            <div class="dish-head"><span class="dish-name">Dolsot Bibimbap</span><span class="dish-kr">돌솥 비빔밥</span><span class="tag tag-sig">Signature</span></div>
+            <span class="dish-price">18,50 €</span>
+            <p class="dish-desc">Reis mit verschiedenen Beilagen im heißen Steintopf, mit Spiegelei, mariniertem Rindfleisch – mit milden oder scharfen Soßen.</p>
+          </div>
+          <div class="dish">
+            <div class="dish-head"><span class="dish-name">Dolsot Bibimbap</span><span class="tag tag-v">vegan</span></div>
+            <span class="dish-price">18,00 €</span>
+            <p class="dish-desc">Reis mit verschiedenen Beilagen im heißen Steintopf – mit oder ohne Ei.</p>
+          </div>
+          <div class="dish">
+            <div class="dish-head"><span class="dish-name">Dösie-Bulgogi</span><span class="dish-kr">돼지 불고기</span></div>
+            <span class="dish-price">17,50 €</span>
+            <p class="dish-desc">Geschnetzeltes Schweinefleisch, mariniert in Peperoni-Paste, Sojasoße, Ingwer, Frühlingszwiebeln und Knoblauch – scharf.</p>
+          </div>
+          <div class="dish">
+            <div class="dish-head"><span class="dish-name">Zaptschae</span><span class="dish-kr">잡채</span></div>
+            <span class="dish-price">16,50 €</span>
+            <p class="dish-desc">Glasnudeln mit Morcheln, Shiitakepilzen, Spinat, Gurken, Karotten, Peperoni, mariniertem Rindfleisch.</p>
+          </div>
+          <div class="dish">
+            <div class="dish-head"><span class="dish-name">Dakdori-tang</span><span class="dish-kr">닭도리탕</span></div>
+            <span class="dish-price">17,90 €</span>
+            <p class="dish-desc">Hühnerfleisch mit Karotten und Shiitakepilzen in Sojasoße, Ingwer, Frühlingszwiebeln und Knoblauch.</p>
+          </div>
+          <div class="dish">
+            <div class="dish-head"><span class="dish-name">Hämul-bokm</span><span class="dish-kr">해물볶음</span></div>
+            <span class="dish-price">19,90 €</span>
+            <p class="dish-desc">Tintenfisch, Garnelen und Grünschal-Muscheln mit grünen und roten Peperoni, Peperoni-Paste, Sojasoße, Ingwer.</p>
+          </div>
+          <div class="dish">
+            <div class="dish-head"><span class="dish-name">Kimtschi-Zigä</span><span class="dish-kr">김치찌개</span></div>
+            <span class="dish-price">16,90 €</span>
+            <p class="dish-desc">Eintopf mit Kimtschi und Schweinefleisch, Tofu mit Knoblauch.</p>
+          </div>
+          <div class="dish">
+            <div class="dish-head"><span class="dish-name">Dububokm</span><span class="dish-kr">두부볶음</span><span class="tag tag-v">vegan</span></div>
+            <span class="dish-price">16,90 €</span>
+            <p class="dish-desc">Gebratener Tofu mit verschiedenen Gemüsen und Knoblauch.</p>
+          </div>
+        </div>
+        <p class="mnote">„Alle Gerichte werden mit verschiedenen Bantschan (Beilagen) und Reis serviert."</p>
+      </div>
+
+      <!-- Vorspeisen -->
+      <div class="mblock span6 reveal">
+        <div class="mblock-head"><h3>Vorspeisen</h3></div>
+        <div class="dish-list">
+          <div class="dish">
+            <div class="dish-head"><span class="dish-name">Bätschu-zon</span><span class="dish-kr">배추전</span><span class="tag tag-v">vegetarisch</span></div>
+            <span class="dish-price">6,50 €</span>
+            <p class="dish-desc">Panierte Chinakohlblätter, gefüllt mit Tofu, Frühlingszwiebel und Knoblauch.</p>
+          </div>
+          <div class="dish">
+            <div class="dish-head"><span class="dish-name">Goguma-tügim</span><span class="dish-kr">고구마 튀김</span><span class="tag tag-v">vegan</span></div>
+            <span class="dish-price">6,30 €</span>
+            <p class="dish-desc">Frittierte Süßkartoffel.</p>
+          </div>
+          <div class="dish">
+            <div class="dish-head"><span class="dish-name">Nokdu-zon</span><span class="dish-kr">녹두전</span></div>
+            <span class="dish-price">6,50 €</span>
+            <p class="dish-desc">Hausgemachte Gemüsepfannkuchen mit pürierten Mungbohnen, Klebereis, Frühlingszwiebeln, Kimtschi und Schweinefleisch.</p>
+          </div>
+          <div class="dish">
+            <div class="dish-head"><span class="dish-name">Kimtschi-mandu</span><span class="dish-kr">김치만두</span></div>
+            <span class="dish-price">6,70 €</span>
+            <p class="dish-desc">Hausgemachte gebratene Teigtasche mit Kimtschi, Tofu, Rettich, Sojasprossen und Schweinehackfleisch.</p>
+          </div>
+          <div class="dish">
+            <div class="dish-head"><span class="dish-name">Butschu-mandu</span><span class="dish-kr">부추만두</span></div>
+            <span class="dish-price">6,70 €</span>
+            <p class="dish-desc">Hausgemachte gebratene Teigtasche mit Silberknoblauch, Glasnudeln und Schweinehackfleisch.</p>
+          </div>
+          <div class="dish">
+            <div class="dish-head"><span class="dish-name">Modeum-zon</span><span class="dish-kr">모듬전</span></div>
+            <span class="dish-price">12,90 €</span>
+            <p class="dish-desc">Gemischter Vorspeisenteller mit verschiedenen panierten Teilen: Rinderhack-Taler, Chinakohl, gefüllte Peperoni, Kabeljaufilet, Zucchini, Aubergine, Mungbohnen-Pfannkuchen.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Suppen -->
+      <div class="mblock span6 reveal">
+        <div class="mblock-head"><h3>Suppen</h3></div>
+        <div class="dish-list">
+          <div class="dish">
+            <div class="dish-head"><span class="dish-name">Yukgesang</span><span class="dish-kr">육개장</span></div>
+            <span class="dish-price">6,50 €</span>
+            <p class="dish-desc">Scharfe Suppe mit Rindfleisch, Sojasprossen, Adlerfarn, Frühlingszwiebeln und Knoblauch – sehr scharf.</p>
+          </div>
+          <div class="dish">
+            <div class="dish-head"><span class="dish-name">Miyuk-kuk</span><span class="dish-kr">미역국</span></div>
+            <span class="dish-price">5,90 €</span>
+            <p class="dish-desc">Suppe aus Rinderbrühe und Algen.</p>
+          </div>
+          <div class="dish">
+            <div class="dish-head"><span class="dish-name">Dönsang-kuk</span><span class="dish-kr">된장국</span><span class="tag tag-v">vegan</span></div>
+            <span class="dish-price">5,90 €</span>
+            <p class="dish-desc">Gemüsesuppe gewürzt mit Sojapaste und Knoblauch.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mittagstisch -->
+      <div class="mblock span12 lunch reveal">
+        <div class="mblock-head">
+          <h3>Mittagstisch</h3>
+          <span class="meta">Di – Do · 11.30 – 14.30 Uhr</span>
+        </div>
+        <div class="lunch-grid">
+          <div class="lunch-price">
+            <b>11,50 €</b>
+            <span>jedes Hauptgericht</span>
+            <div class="soup">Tagessuppe <b>4,10 €</b></div>
+          </div>
+          <div>
+            <q>„Mittags muss es für die meisten rasch gehen. Damit Sie lecker und bekömmlich essen können, bereiten wir im Wechsel 2 bis 3 Speisen aus unserem Repertoire zum günstigen Preis. Außerdem eine Zusammenstellung koreanischer Sushi-Variationen, die es auch zum Mitnehmen gibt."</q>
+            <div class="pills">
+              <span class="pill">So-Bulgogi</span>
+              <span class="pill">Dösie-Bulgogi</span>
+              <span class="pill">Zazang Myun</span>
+              <span class="pill">Zaptschae (vegan)</span>
+              <span class="pill">Ozingo-bokm</span>
+              <span class="pill">Kongnamulbap</span>
+              <span class="pill">Bibimbap</span>
+              <span class="pill">Curryreis</span>
+              <span class="pill">Dakdori-tang</span>
+              <span class="pill">Dububokm</span>
+            </div>
+            <p class="mnote">„Alle Gerichte werden mit einer Beilage serviert."</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Nachspeisen -->
+      <div class="mblock span6 reveal">
+        <div class="mblock-head"><h3>Nachspeisen</h3></div>
+        <div class="dish-list">
+          <div class="dish">
+            <div class="dish-head"><span class="dish-name">Kyungdan</span><span class="dish-kr">경단</span></div>
+            <span class="dish-price">6,50 €</span>
+            <p class="dish-desc">Klebereisbällchen, gefüllt mit Walnuss, Maronen und Pinienkernen – Kochzeit ca. 20 Minuten.</p>
+          </div>
+          <div class="dish">
+            <div class="dish-head"><span class="dish-name">Yakbap</span><span class="dish-kr">약밥</span><span class="tag tag-v">vegan</span></div>
+            <span class="dish-price">6,50 €</span>
+            <p class="dish-desc">Süßer Reis mit roten Datteln und Maronen, gewürzt mit Sojasoße, Sesamöl, Zimt und Braunzucker.</p>
+          </div>
+          <div class="dish">
+            <div class="dish-head"><span class="dish-name">Yakgwa</span><span class="dish-kr">약과</span><span class="tag tag-v">vegan</span></div>
+            <span class="dish-price">4,20 €</span>
+            <p class="dish-desc">Traditionelles koreanisches Gebäck mit Reissirup.</p>
+          </div>
+          <div class="dish">
+            <div class="dish-head"><span class="dish-name">Tschapssal-ttok</span><span class="dish-kr">찹쌀떡</span><span class="tag tag-v">vegan</span></div>
+            <span class="dish-price">4,60 €</span>
+            <p class="dish-desc">Klebereiskuchen gefüllt mit rotem Bohnenpürree.</p>
+          </div>
+        </div>
+        <p class="mnote">Traditionellerweise gehört zum koreanischen Nachtisch auch ein koreanisches Getränk – beides ergänzt sich harmonisch.</p>
+      </div>
+
+      <!-- Getränke -->
+      <div class="mblock span6 reveal">
+        <!-- §A5: kein pauschales „hausgemacht" über der Liste – belegt ist das nur für
+             Sikhye, Suzong-Gwa und den Kornelkirsch-Tee, nicht für Jusa-tscha und Cass. -->
+        <div class="mblock-head"><h3>Getränke</h3></div>
+        <div class="dish-list">
+          <div class="dish">
+            <div class="dish-head"><span class="dish-name">Sikhye</span><span class="dish-kr">식혜</span></div>
+            <span class="dish-price">3,90 €</span>
+            <p class="dish-desc">Koreanisches Malzgetränk mit fermentiertem Reis, ein Hauch von Ingwer und Pinienkernen – hausgemacht.</p>
+          </div>
+          <div class="dish">
+            <div class="dish-head"><span class="dish-name">Suzong-Gwa</span><span class="dish-kr">수정과</span></div>
+            <span class="dish-price">3,90 €</span>
+            <p class="dish-desc">Koreanisches Ingwergetränk mit Zimt und getrockneten Kakifrüchten – hausgemacht.</p>
+          </div>
+          <div class="dish">
+            <div class="dish-head"><span class="dish-name">Sansuju-tscha</span><span class="dish-kr">산수유차</span></div>
+            <span class="dish-price">3,90 €</span>
+            <p class="dish-desc">Kornelkirsch-Tee – hausgemacht.</p>
+          </div>
+          <div class="dish">
+            <div class="dish-head"><span class="dish-name">Jusa-tscha</span><span class="dish-kr">유자차</span></div>
+            <span class="dish-price">3,90 €</span>
+            <p class="dish-desc">In Honig eingelegter Zitronenfrucht-Tee.</p>
+          </div>
+          <div class="dish">
+            <div class="dish-head"><span class="dish-name">Cass</span></div>
+            <span class="dish-price">4,20 €</span>
+            <p class="dish-desc">Koreanisches Bier, 0,33 l.</p>
+          </div>
+        </div>
+        <p class="mnote">Unsere Weine kommen vom Weingut Geiger &amp; Söhne, die Biere von Herbsthäuser.</p>
+      </div>
+
+    </div>
+    <p class="mnote reveal" style="text-align:center;margin-top:2rem">Auszug aus unserer Speisekarte.</p>
+  </div>
+</section>
+
+<!-- ============================ CATERING ============================ -->
+<section class="catering" id="catering">
+  <div class="wrap cat-grid">
+    <div class="sec-head reveal">
+      <span class="eyebrow"><span class="slashes sm" aria-hidden="true"><i></i><i></i></span>Catering</span>
+      <h2>Ein Buffet aus unserer Küche</h2>
+      <p>Wir stellen ein koreanisches Buffet für Ihre Veranstaltung zusammen – ab 20 Personen, in drei Menü-Stufen.</p>
+      <p class="cat-note">Anfragen telefonisch unter <a href="tel:+4993127896570" style="color:var(--orange-deep);font-weight:600">0931 27 89 65 70</a> oder per E-Mail an <a href="mailto:menue@frau-om-kocht.de" style="color:var(--orange-deep);font-weight:600">menue@frau-om-kocht.de</a>.</p>
+    </div>
+    <div class="cat-cards reveal">
+      <div class="cat-card">
+        <span>Menü 1</span>
+        <b>18 €</b>
+        <small>pro Person</small>
+      </div>
+      <div class="cat-card">
+        <span>Menü 2</span>
+        <b>22 €</b>
+        <small>pro Person</small>
+      </div>
+      <div class="cat-card">
+        <span>Menü 3</span>
+        <b>26 €</b>
+        <small>pro Person</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ VERTRAUEN / PRESSE ============================ -->
+<section class="trust">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow"><span class="slashes sm" aria-hidden="true"><i></i><i></i></span>Presse &amp; Handwerk</span>
+      <h2>Worüber berichtet wurde – und was von Hand entsteht</h2>
+    </div>
+
+    <div class="press-grid">
+      <article class="press reveal">
+        <span class="src">Bayerischer Rundfunk</span>
+        <h3>Frankenschau aktuell</h3>
+        <p>In der Frankenschau aktuell des Bayerischen Fernsehens lief ein Beitrag unter dem Titel „Asiatisches Catering Würzburg".</p>
+        <p class="date">TV-Beitrag · Bayerisches Fernsehen</p>
+      </article>
+      <article class="press reveal">
+        <span class="src">Main-Post</span>
+        <h3>Artikel in der Main-Post</h3>
+        <!-- §A5: kein Gründungsjahr behauptet – die Analyse belegt nur, dass der Artikel
+             vom 5. Juni 2012 auf der Seite „Das kulinarische Kollektiv" liegt. -->
+        <p>Der Zeitungsartikel vom 5. Juni 2012 gehört zur Geschichte des kulinarischen Kollektivs.</p>
+        <p class="date">Zeitungsartikel · 5. Juni 2012</p>
+      </article>
+    </div>
+
+    <div class="qual-grid">
+      <!-- §A6/§A5: Von Teigtaschen und Getränken existiert kein Foto. Statt sachfremder
+           Food-Bilder stehen hier Aufnahmen aus der eigenen Küche – das belegt „hausgemacht",
+           ohne etwas zu zeigen, was die Überschrift nicht hergibt. -->
+      <div class="qual reveal">
+        <img src="assets_02/om-inhaberin-schuerze.jpg" alt="Myung Shin Om in ihrer Küche">
+        <b>Hausgemachte Mandu</b>
+        <p>Die Teigtaschen – mit Kimtschi oder mit Silberknoblauch – werden im Haus gemacht.</p>
+      </div>
+      <div class="qual reveal">
+        <img src="assets_02/om-inhaberin-hanbok-herd.jpg" alt="Myung Shin Om am Herd">
+        <b>Hausgemachte Getränke</b>
+        <p>Sikhye, Suzong-Gwa und Kornelkirsch-Tee entstehen ebenfalls in der eigenen Küche.</p>
+      </div>
+      <div class="qual reveal">
+        <img src="assets_02/om-bulgogi-pfanne.jpg" alt="Bulgogi wird in der Pfanne gewendet">
+        <b>Ohne Geschmacksverstärker</b>
+        <p>„Alles wird ohne Geschmacksverstärker geschmacklich fein komponiert."</p>
+      </div>
+      <div class="qual reveal">
+        <img src="assets_02/om-kimchi-schale.jpg" alt="Kimchi in einer weißen Schale">
+        <b>Franken trifft Korea</b>
+        <p>Die Weine kommen vom Weingut Geiger &amp; Söhne, die Biere von Herbsthäuser.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ KONTAKT ============================ -->
+<section class="contact" id="kontakt">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow"><span class="slashes sm" aria-hidden="true"><i></i><i></i></span>Kontakt &amp; Öffnungszeiten</span>
+      <h2>Unser kleines, aber feines Restaurant</h2>
+      <p>Mitten im Herzen Würzburgs, in der Peterstraße 14. Hier verwöhnen wir Sie mit ausgesuchten Speisen und original koreanischen Getränken.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="hours-card reveal">
+        <h3>Öffnungszeiten</h3>
+        <div class="drow rest"><b>Montag</b><span>Ruhetag</span></div>
+        <div class="drow"><b>Dienstag – Donnerstag</b><span>11.30 – 14.30 Uhr<br>17.30 – 23.00 Uhr</span></div>
+        <div class="drow no-line"><b>Freitag – Sonntag</b><span>17.30 – 23.00 Uhr</span></div>
+        <div class="hours-hint"><b>Die Küche hat bis 22.00 geöffnet.</b><br>Mittagstisch nur Dienstag bis Donnerstag, 11.30 – 14.30 Uhr.</div>
+      </div>
+
+      <div class="reserve-card reveal">
+        <h3>Reservierung</h3>
+        <q>„Für den entspannten Aufenthalt am Abend empfehlen wir die rechtzeitige Reservierung."</q>
+        <a class="clink" href="tel:+4993127896570"><small>Telefon</small><b>0931 / 27 89 65 70</b></a>
+        <a class="clink" href="tel:+491703150931"><small>Mobil</small><b>0170 / 3 15 09 31</b></a>
+        <a class="clink" href="mailto:menue@frau-om-kocht.de"><small>E-Mail</small><b>menue@frau-om-kocht.de</b></a>
+        <div class="clink"><small>Adresse</small><b>Peterstraße 14 · 97070 Würzburg</b></div>
+        <a href="tel:+4993127896570" class="btn btn-orange">Jetzt anrufen</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ FOOTER ============================ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <span class="foot-brand"><img src="assets_02/om-logo.png" alt="Frau Om kocht – Original Korean Cooking"></span>
+        <p>Original koreanische Küche<br>mitten in der Würzburger Altstadt.</p>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <p>Peterstraße 14 · 97070 Würzburg<br>
+        Tel. <a href="tel:+4993127896570">0931 / 27 89 65 70</a><br>
+        Mobil <a href="tel:+491703150931">0170 / 3 15 09 31</a><br>
+        Fax 0931 / 27 89 65 71<br>
+        <a href="mailto:menue@frau-om-kocht.de">menue@frau-om-kocht.de</a></p>
+      </div>
+      <div>
+        <h4>Öffnungszeiten</h4>
+        <p>Montag: Ruhetag<br>
+        Di – Do: 11.30 – 14.30 &amp; 17.30 – 23.00<br>
+        Fr – So: 17.30 – 23.00<br>
+        Die Küche hat bis 22.00 geöffnet.</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Frau Om kocht · Inhaberin: Myung Shin Om</span>
+      <span>Peterstraße 14 · 97070 Würzburg</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const header=document.getElementById('header');
+  addEventListener('scroll',()=>{header.classList.toggle('scrolled',scrollY>24)},{passive:true});
+
+  const burger=document.getElementById('burger'),mnav=document.getElementById('mobileNav');
+  burger.addEventListener('click',()=>{
+    const open=mnav.classList.toggle('open');
+    document.body.classList.toggle('nav-open',open);
+    burger.setAttribute('aria-expanded',open);
+    burger.setAttribute('aria-label',open?'Menü schließen':'Menü öffnen');
+  });
+  mnav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+    mnav.classList.remove('open');document.body.classList.remove('nav-open');
+    burger.setAttribute('aria-expanded','false');
+    burger.setAttribute('aria-label','Menü öffnen');
+  }));
+
+  const io=new IntersectionObserver(es=>es.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}
+  }),{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
