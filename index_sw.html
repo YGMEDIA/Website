@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+  <meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Landgasthof Schwarzer Adler · Diebach-Unteroestheim — Feiern, Tagen und Übernachten</title>
+<meta name="description" content="Landgasthof Schwarzer Adler in Diebach-Unteroestheim an der Romantischen Straße: 33 Betten, Saal für Feiern und Tagungen bis 120 Personen, fränkische Küche vom eigenen Hof. Familie Wildermann, seit vier Generationen.">
+<meta name="theme-color" content="#F5C43A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400&family=Marcellus&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   Landgasthof Schwarzer Adler — Vorschau YG MEDIA
+   Farbwelt (§A1): Gold #F5C43A + Heraldik-Schwarz #1E1F24 aus dem
+   gemalten Kopfbanner-Schild; Creme #FBF0E1 = Fassadenputz.
+   Die grellen #FF0000/#FFFF00 der alten Seite sind Alarm-Kästen,
+   kein Markendesign — bewusst nicht verwendet.
+
+   §A6 BILDREGEL — HART: alle Originalfotos sind klein.
+   Maximale Anzeigebreiten (nie überschreiten, nie hochskalieren):
+     sw-adler-wappen.png ............ 376 x 393  -> max 376 px
+     sw-aussenansicht-gasthof ....... 555 x 368  -> max 555 px
+     sw-gaststube-kachelofen ........ 555 x 369  -> max 555 px
+     sw-separee-nische-hochkant ..... 335 x 491  -> max 335 px
+     alle uebrigen Kacheln .......... 365-375 x 250 -> max 365 px
+   Deshalb kein bildschirmfuellender Foto-Hero, sondern ein
+   typografischer Hero (P-3) mit dem Adler-Wappen als Markenanker.
+   ============================================================ */
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+
+:root{
+  --gold:#F5C43A;
+  --gold-bright:#FFCC00;
+  --gold-deep:#FE9A00;
+  --gold-text:#8A5F0A;
+  --ink:#1E1F24;
+  --ink-70:rgba(30,31,36,.70);
+  --ink-55:rgba(30,31,36,.66);   /* Prüfung 01.08.: .56 ergab nur 3,7:1 auf Creme — auf .66 = 4,9:1 angehoben */
+  --ink-line:rgba(30,31,36,.14);
+  --creme:#FBF0E1;
+  --paper:#FFFAF1;
+  --paper-2:#FDF6EA;
+  --blue:#1874A3;
+  --brick:#BD7356;
+  --shadow-s:0 1px 2px rgba(30,31,36,.05), 0 10px 24px -18px rgba(30,31,36,.45);
+  --shadow-m:0 2px 4px rgba(30,31,36,.05), 0 26px 50px -30px rgba(30,31,36,.55);
+  --sans:'Instrument Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  --serif:'Marcellus','Iowan Old Style','Palatino Linotype',Palatino,Georgia,serif;
+  --wrap:1160px;
+}
+
+body{
+  font-family:var(--sans);
+  background:var(--creme);
+  color:var(--ink);
+  font-size:17px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+
+.wrap{width:100%;max-width:var(--wrap);margin:0 auto;padding:0 26px}
+section{scroll-margin-top:86px}
+
+/* ---------- Typo-Bausteine ---------- */
+h1,h2,h3,h4{font-family:var(--serif);font-weight:400;margin:0;letter-spacing:.005em;line-height:1.14}
+.eyebrow{
+  font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--gold-text);margin:0 0 16px;display:flex;align-items:center;gap:12px;
+}
+.eyebrow::before{content:"";width:26px;height:1px;background:currentColor;flex:none;opacity:.65}
+.eyebrow.center{justify-content:center}
+.eyebrow.center::after{content:"";width:26px;height:1px;background:currentColor;flex:none;opacity:.65}
+.h-sec{font-size:clamp(2rem,4.2vw,2.9rem);line-height:1.1}
+.lede{font-size:1.075rem;color:var(--ink-70);max-width:60ch;margin:20px 0 0}
+.muted{color:var(--ink-55)}
+
+/* Rautenlinie – heraldisches Ornament, ersetzt jedes rustikale Klischee */
+.rule{display:flex;align-items:center;gap:14px;margin:0}
+.rule::before,.rule::after{content:"";height:1px;background:var(--ink-line);flex:1}
+.rule i{width:7px;height:7px;background:var(--gold);transform:rotate(45deg);flex:none;box-shadow:0 0 0 1px rgba(30,31,36,.22)}
+
+/* ---------- Buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  font-family:var(--sans);font-size:.95rem;font-weight:600;letter-spacing:.01em;
+  padding:14px 26px;border-radius:2px;text-decoration:none;border:1px solid transparent;
+  transition:transform .22s cubic-bezier(.2,.7,.3,1),box-shadow .22s,background .22s,color .22s;
+  white-space:nowrap;
+}
+.btn-gold{background:var(--ink);color:var(--gold);box-shadow:var(--shadow-s)}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 14px 30px -14px rgba(30,31,36,.6);background:#2a2c33}
+.btn-ghost{border-color:rgba(30,31,36,.28);color:var(--ink);background:transparent}
+.btn-ghost:hover{transform:translateY(-2px);background:rgba(30,31,36,.05);border-color:var(--ink)}
+.btn-onink{background:var(--gold);color:var(--ink)}
+.btn-onink:hover{transform:translateY(-2px);background:var(--gold-bright);box-shadow:0 14px 30px -14px rgba(0,0,0,.55)}
+
+/* ---------- Header ---------- */
+.site-head{
+  position:sticky;top:0;z-index:60;
+  background:rgba(251,240,225,.86);
+  backdrop-filter:saturate(150%) blur(12px);
+  -webkit-backdrop-filter:saturate(150%) blur(12px);
+  border-bottom:1px solid transparent;
+  transition:border-color .25s,box-shadow .25s,background .25s;
+}
+.site-head.is-stuck{border-bottom-color:var(--ink-line);box-shadow:0 8px 26px -22px rgba(30,31,36,.85)}
+.head-in{display:flex;align-items:center;gap:22px;height:74px}
+.brand{display:flex;align-items:center;gap:13px;text-decoration:none;flex:none}
+.brand img{height:36px;width:auto}           /* Wappen: Quelle 376x393 -> 36 px hoch, weit unter Originalgroesse */
+.brand-tx{display:flex;flex-direction:column;line-height:1}
+.brand-tx b{font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-text)}
+.brand-tx span{font-family:var(--serif);font-size:1.16rem;letter-spacing:.02em;margin-top:4px}
+
+.nav{margin-left:auto;display:flex;align-items:center;gap:6px}
+.nav a{
+  text-decoration:none;font-size:.925rem;font-weight:500;color:var(--ink-70);
+  padding:9px 13px;border-radius:2px;position:relative;transition:color .2s;
+}
+.nav a::after{
+  content:"";position:absolute;left:13px;right:13px;bottom:4px;height:1px;
+  background:var(--gold-deep);transform:scaleX(0);transform-origin:left;transition:transform .25s cubic-bezier(.2,.7,.3,1);
+}
+.nav a:hover{color:var(--ink)}
+.nav a:hover::after{transform:scaleX(1)}
+.head-cta{margin-left:14px;padding:11px 20px;font-size:.9rem}
+.burger{
+  display:none;margin-left:auto;width:44px;height:44px;border:1px solid var(--ink-line);
+  background:transparent;border-radius:2px;cursor:pointer;padding:0;align-items:center;justify-content:center;
+}
+.burger span{display:block;width:19px;height:1.5px;background:var(--ink);position:relative;transition:background .2s}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0;width:19px;height:1.5px;background:var(--ink);transition:transform .25s}
+.burger span::before{top:-6px}
+.burger span::after{top:6px}
+.burger[aria-expanded="true"] span{background:transparent}
+.burger[aria-expanded="true"] span::before{transform:translateY(6px) rotate(45deg)}
+.burger[aria-expanded="true"] span::after{transform:translateY(-6px) rotate(-45deg)}
+.mob-nav{display:none}
+
+/* ---------- Hero (typografisch, P-3) ---------- */
+.hero{position:relative;overflow:hidden;padding:72px 0 0;text-align:center}
+.hero::before{
+  content:"";position:absolute;inset:-40% -20% auto;height:640px;
+  background:radial-gradient(60% 70% at 50% 0%,rgba(245,196,58,.55),rgba(245,196,58,0) 68%);
+  pointer-events:none;
+}
+.hero::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:repeating-linear-gradient(135deg,rgba(30,31,36,.028) 0 1px,transparent 1px 13px);
+  -webkit-mask-image:linear-gradient(to bottom,rgba(0,0,0,.9),transparent 62%);
+  mask-image:linear-gradient(to bottom,rgba(0,0,0,.9),transparent 62%);
+}
+.hero-in{position:relative;z-index:2}
+
+/* Das Schild: goldene Tafel mit dem Adler-Wappen aus dem Kopfbanner */
+.crest{
+  display:inline-flex;flex-direction:column;align-items:center;gap:10px;
+  background:linear-gradient(180deg,#FFD34F,var(--gold) 52%,#ECA918);
+  padding:20px 30px 16px;border-radius:3px;position:relative;
+  box-shadow:0 1px 0 rgba(255,255,255,.4) inset,0 26px 46px -26px rgba(30,31,36,.7);
+}
+.crest::before{content:"";position:absolute;inset:5px;border:1px solid rgba(30,31,36,.24);border-radius:2px;pointer-events:none}
+.crest img{height:104px;width:auto}          /* 104 px hoch = ca. 100 px breit, Quelle 376x393 */
+.crest small{
+  font-family:var(--sans);font-size:9.5px;font-weight:700;letter-spacing:.26em;
+  /* Prüfung 01.08.: .72 ergab am dunklen Verlaufsende nur 4,4:1 — auf .86 = 6,0:1 angehoben */
+  text-transform:uppercase;color:rgba(30,31,36,.86);
+}
+.hero h1{
+  font-size:clamp(2.3rem,5.8vw,4rem);line-height:1.07;margin:34px auto 0;max-width:17ch;
+  letter-spacing:-.005em;text-wrap:balance;
+}
+.hero h1 em{font-style:normal;color:var(--gold-text);position:relative;white-space:nowrap}
+.hero-sub{
+  font-size:clamp(1.02rem,1.6vw,1.16rem);color:var(--ink-70);
+  max-width:62ch;margin:24px auto 0;
+}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin:36px 0 0}
+.hero-meta{
+  margin:38px auto 0;max-width:640px;font-size:.83rem;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--ink-55);font-weight:600;
+}
+.hero .rule{max-width:760px;margin:52px auto 0}
+.hero-pad{height:66px}
+
+/* ---------- Zahlenband (dunkel) ---------- */
+.facts{background:var(--ink);color:var(--creme);position:relative}
+.facts::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold-bright),var(--gold-deep))}
+.facts-in{display:grid;grid-template-columns:repeat(4,1fr);padding:46px 0}
+.fact{padding:6px 26px;border-left:1px solid rgba(251,240,225,.16);text-align:left}
+.fact:first-child{border-left:0;padding-left:0}
+.fact b{display:block;font-family:var(--serif);font-size:2.5rem;line-height:1;color:var(--gold);letter-spacing:.01em}
+.fact span{display:block;margin-top:10px;font-size:.9rem;color:rgba(251,240,225,.72);line-height:1.45}
+
+/* ---------- Sektions-Rahmen ---------- */
+.sec{padding:96px 0}
+.sec-paper{background:var(--paper-2)}
+.sec-head{max-width:64ch}
+.sec-head.center{margin:0 auto;text-align:center}
+.sec-head.center .eyebrow{justify-content:center}
+.sec-head.center .eyebrow::after{content:"";width:26px;height:1px;background:currentColor;flex:none;opacity:.65}
+.sec-head.center .lede{margin-left:auto;margin-right:auto}
+
+/* ---------- Bild-Kacheln ---------- */
+figure{margin:0}
+.tile{
+  background:var(--paper);border:1px solid var(--ink-line);border-radius:3px;overflow:hidden;
+  box-shadow:var(--shadow-s);transition:transform .3s cubic-bezier(.2,.7,.3,1),box-shadow .3s;
+}
+.tile:hover{transform:translateY(-4px);box-shadow:var(--shadow-m)}
+.tile img{width:100%}
+/* Alle Querformat-Kacheln auf 3:2 vereinheitlicht (Originale 365-375 x 250).
+   Das ist ein minimaler Zuschnitt nach unten, nie eine Vergroesserung. */
+.grid-tiles .tile img,.feier-left .tile img{aspect-ratio:3/2;object-fit:cover}
+.tile figcaption{
+  padding:12px 15px 13px;font-size:.815rem;letter-spacing:.055em;text-transform:uppercase;
+  color:var(--ink-55);font-weight:600;border-top:1px solid var(--ink-line);
+}
+/* Raster mit harter Spaltenbreite -> Kacheln koennen nie ueber 365 px wachsen */
+.grid-tiles{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(0,365px));justify-content:center}
+.grid-tiles.cols-4{grid-template-columns:repeat(4,minmax(0,365px))}
+.grid-tiles.cols-3{grid-template-columns:repeat(3,minmax(0,365px))}
+.grid-tiles.cols-2{grid-template-columns:repeat(2,minmax(0,365px))}
+
+/* ---------- Übernachten ---------- */
+.stay-top{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:start}
+.price-card{
+  background:var(--ink);color:var(--creme);border-radius:3px;padding:34px 34px 28px;
+  box-shadow:var(--shadow-m);position:relative;overflow:hidden;
+}
+.price-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold-bright),var(--gold-deep))}
+.price-card h3{font-size:1.5rem;color:#fff;margin-bottom:4px}
+.price-card .pc-note{font-size:.86rem;color:rgba(251,240,225,.6);margin:6px 0 22px}
+.prow{display:flex;align-items:baseline;gap:14px;padding:13px 0;border-top:1px solid rgba(251,240,225,.14)}
+.prow:first-of-type{border-top:0}
+.prow .pn{flex:1;font-size:.985rem;line-height:1.4}
+.prow .pn small{display:block;font-size:.8rem;color:rgba(251,240,225,.6);margin-top:2px}
+.prow .pp{font-family:var(--serif);font-size:1.32rem;color:var(--gold);white-space:nowrap}
+.prow .pp.soft{font-family:var(--sans);font-size:.9rem;color:rgba(251,240,225,.72);font-weight:500}
+.pc-foot{
+  margin-top:22px;padding-top:18px;border-top:1px solid rgba(251,240,225,.14);
+  font-size:.8rem;color:rgba(251,240,225,.58);line-height:1.55;
+}
+.chips{display:flex;flex-wrap:wrap;gap:9px;margin:26px 0 0;padding:0;list-style:none}
+.chips li{
+  font-size:.86rem;font-weight:500;padding:8px 15px;border:1px solid var(--ink-line);
+  border-radius:999px;background:var(--paper);color:var(--ink-70);
+}
+.chips li b{font-weight:600;color:var(--ink)}
+.stay-cta{display:flex;flex-wrap:wrap;align-items:center;gap:18px;margin-top:30px}
+.stay-cta p{margin:0;font-size:.9rem;color:var(--ink-55);max-width:34ch}
+
+/* ---------- Feiern ---------- */
+.feier{display:grid;grid-template-columns:minmax(0,1fr) 335px;gap:34px;align-items:start}
+.feier-left{display:grid;gap:22px;grid-template-columns:repeat(2,minmax(0,365px));justify-content:start}
+.feier-side{max-width:335px}
+.feier-side img{width:100%}
+.quote-cell{
+  display:flex;flex-direction:column;justify-content:center;gap:14px;
+  background:rgba(245,196,58,.16);border:1px solid rgba(30,31,36,.12);border-radius:3px;
+  padding:28px 30px;
+}
+.quote-cell p{
+  margin:0;font-family:var(--serif);font-size:1.24rem;line-height:1.42;
+}
+.quote-cell span{
+  font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--gold-text);
+}
+.cardrow{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:46px}
+.card{
+  background:var(--paper);border:1px solid var(--ink-line);border-radius:3px;padding:26px 26px 24px;
+  box-shadow:var(--shadow-s);transition:transform .3s cubic-bezier(.2,.7,.3,1),box-shadow .3s,border-color .3s;
+}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow-m);border-color:rgba(30,31,36,.24)}
+.card .ic{width:34px;height:34px;display:grid;place-items:center;margin-bottom:16px;color:var(--gold-text)}
+.card .ic svg{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+.card h4{font-size:1.22rem;margin-bottom:8px}
+.card p{margin:0;font-size:.94rem;color:var(--ink-70)}
+
+/* ---------- Haus & Herkunft ---------- */
+.split{display:grid;grid-template-columns:555px minmax(0,1fr);gap:56px;align-items:center}
+.split.rev{grid-template-columns:minmax(0,1fr) 555px}
+.framed{position:relative;max-width:555px}
+.fimg{position:relative;display:block}
+.fimg img{border-radius:3px;box-shadow:var(--shadow-m);position:relative;z-index:2}
+.fimg::before{
+  content:"";position:absolute;inset:-15px -15px 15px 15px;border:1px solid var(--gold-deep);
+  border-radius:3px;opacity:.7;z-index:1;
+}
+.framed figcaption{
+  margin-top:20px;font-size:.815rem;letter-spacing:.055em;text-transform:uppercase;
+  color:var(--ink-55);font-weight:600;
+}
+.quote{
+  font-family:var(--serif);font-size:clamp(1.3rem,2.4vw,1.65rem);line-height:1.42;
+  margin:0 0 22px;padding-left:22px;border-left:2px solid var(--gold);
+}
+.mini{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:34px;border-top:1px solid var(--ink-line)}
+.mini div{padding:20px 24px 4px;border-right:1px solid var(--ink-line)}
+.mini div:first-child{padding-left:0}
+.mini div:last-child{border-right:0;padding-right:0}
+.mini b{display:block;font-family:var(--serif);font-size:1.65rem;color:var(--ink);line-height:1.1}
+.mini b.sm{font-size:1.18rem;letter-spacing:.01em}
+.mini span{display:block;margin-top:8px;font-size:.85rem;color:var(--ink-55);line-height:1.45}
+
+/* ---------- Küche / Karte ---------- */
+.menu-card{
+  background:var(--paper);border:1px solid var(--ink-line);border-radius:3px;
+  padding:40px 42px 34px;box-shadow:var(--shadow-s);
+}
+.menu-block+.menu-block{margin-top:34px}
+.menu-h{
+  font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--gold-text);margin:0 0 16px;padding-bottom:10px;border-bottom:1px solid var(--ink-line);
+}
+.dishes{list-style:none;margin:0;padding:0}
+.dishes.two{columns:2;column-gap:52px}
+.dish{display:flex;align-items:baseline;gap:8px;padding:9px 0;break-inside:avoid}
+.dish .dn{font-size:.985rem;line-height:1.45}
+.dish .dots{flex:1;border-bottom:1px dotted rgba(30,31,36,.32);transform:translateY(-4px);min-width:18px}
+.dish .dp{font-family:var(--serif);font-size:1.02rem;white-space:nowrap;color:var(--ink)}
+.menu-foot{margin:26px 0 0;font-size:.83rem;color:var(--ink-55);font-style:italic}
+
+.slot{
+  margin-top:26px;border:1.5px dashed rgba(30,31,36,.3);border-radius:3px;
+  padding:26px 28px;background:rgba(245,196,58,.10);
+}
+.slot .tag{
+  display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  background:var(--ink);color:var(--gold);padding:5px 11px;border-radius:2px;margin-bottom:14px;
+}
+.slot h4{font-size:1.22rem;margin-bottom:8px}
+.slot p{margin:0;font-size:.93rem;color:var(--ink-70);max-width:66ch}
+.slot ul{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 0;padding:0;list-style:none}
+.slot ul li{
+  font-size:.83rem;padding:6px 13px;border:1px dashed rgba(30,31,36,.32);border-radius:999px;color:var(--ink-70);
+}
+
+/* ---------- Zeiten & Kontakt ---------- */
+.zk{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:stretch}
+.panel{
+  background:var(--paper);border:1px solid var(--ink-line);border-radius:3px;
+  padding:36px 36px 32px;box-shadow:var(--shadow-s);
+}
+.panel.dark{background:var(--ink);color:var(--creme);border-color:transparent}
+.panel h3{font-size:1.55rem;margin-bottom:6px}
+.panel.dark h3{color:#fff}
+.zrow{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:15px 0;border-top:1px solid var(--ink-line)}
+.zrow:first-of-type{border-top:0}
+.zrow .zd{font-weight:600;font-size:1rem}
+/* Zusatz aus der Prüfung 01.08.: die Zeitspanne Di–So darf keinen einzelnen Tag
+   zusichern (Donnerstag und Samstagmittag sind nachweislich nicht verlässlich) */
+.zrow .zd small{display:block;margin-top:4px;font-weight:500;font-size:.82rem;
+  letter-spacing:0;color:var(--ink-55);max-width:22ch;line-height:1.4}
+.zrow .zt{text-align:right;font-size:.95rem;color:var(--ink-70);line-height:1.5}
+.zrow.off .zd,.zrow.off .zt{color:var(--ink-55)}
+.zhint{
+  margin-top:20px;padding:18px 20px;background:rgba(245,196,58,.16);
+  border-left:3px solid var(--gold-deep);border-radius:0 3px 3px 0;
+}
+.zhint p{margin:0;font-size:.9rem;color:var(--ink-70);line-height:1.6}
+.zhint p+p{margin-top:10px}
+.zhint b{color:var(--ink)}
+.zbadge{
+  display:inline-flex;align-items:center;gap:9px;margin-top:20px;padding:9px 16px;
+  background:var(--ink);color:var(--gold);border-radius:999px;font-size:.85rem;font-weight:600;
+}
+.zbadge::before{content:"";width:7px;height:7px;background:var(--gold);transform:rotate(45deg)}
+
+.kline{display:flex;gap:16px;padding:16px 0;border-top:1px solid rgba(251,240,225,.14);align-items:flex-start}
+.kline:first-of-type{border-top:0}
+.kline svg{width:20px;height:20px;stroke:var(--gold);fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;flex:none;margin-top:3px}
+.kline .kt{font-size:.98rem;line-height:1.5}
+.kline .kt small{display:block;font-size:.82rem;color:rgba(251,240,225,.6);margin-top:3px}
+.kline a{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(245,196,58,.4);transition:border-color .2s}
+.kline a:hover{border-bottom-color:var(--gold)}
+.panel.dark .btn{margin-top:26px}
+
+/* ---------- Abschluss-Band ---------- */
+.cta-band{
+  background:linear-gradient(140deg,var(--gold-bright),var(--gold) 48%,var(--gold-deep));
+  padding:72px 0;position:relative;overflow:hidden;text-align:center;
+}
+.cta-band::before{
+  content:"";position:absolute;inset:0;
+  background:repeating-linear-gradient(45deg,rgba(30,31,36,.05) 0 1px,transparent 1px 15px);
+}
+.cta-band>.wrap{position:relative;z-index:2}
+.cta-band img{height:66px;width:auto;margin:0 auto 22px}
+.cta-band h2{font-size:clamp(1.9rem,4vw,2.7rem);max-width:20ch;margin:0 auto}
+.cta-band p{margin:16px auto 0;max-width:52ch;color:rgba(30,31,36,.76);font-size:1.02rem}
+.cta-actions{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:32px}
+
+/* ---------- Footer ---------- */
+.site-foot{background:var(--ink);color:rgba(251,240,225,.72);padding:64px 0 30px;font-size:.93rem}
+.foot-grid{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:44px}
+.foot-brand{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+/* Das Wappen ist heraldik-schwarz — auf dunklem Grund wird es per Maske vergoldet.
+   Prüfung 01.08.: als Datei-URL scheiterte die Maske unter file:// an CORS
+   (Konsolenfehler + Wappen unsichtbar). Maske daher als Daten-URI eingebettet
+   (112x117 Alpha-Silhouette aus assets_02/sw-adler-wappen.png) — lädt überall,
+   ohne Netz-Anfrage und ohne Konsolenfehler. */
+.eagle-gold{
+  display:block;flex:none;width:42px;height:44px;background:var(--gold);
+  -webkit-mask:url("data:image/png;base64,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") center/contain no-repeat;
+  mask:url("data:image/png;base64,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") center/contain no-repeat;
+}
+.foot-brand b{font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);display:block}
+.foot-brand span{font-family:var(--serif);font-size:1.2rem;color:#fff;display:block;margin-top:4px}
+.site-foot h5{
+  font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--gold);margin:0 0 16px;
+}
+.site-foot p{margin:0 0 10px;line-height:1.65}
+.site-foot a{color:rgba(251,240,225,.86);text-decoration:none;transition:color .2s}
+.site-foot a:hover{color:var(--gold)}
+.foot-bottom{
+  margin-top:46px;padding-top:22px;border-top:1px solid rgba(251,240,225,.14);
+  display:flex;flex-wrap:wrap;gap:12px 26px;justify-content:space-between;
+  font-size:.83rem;color:rgba(251,240,225,.5);
+}
+
+/* ---------- Reveal ---------- */
+.rv{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.3,1)}
+.rv.in{opacity:1;transform:none}
+
+/* ---------- Responsive ---------- */
+@media (max-width:1080px){
+  .split,.split.rev{grid-template-columns:1fr;gap:38px}
+  .framed{max-width:555px;margin-inline:auto}
+  .feier{grid-template-columns:1fr;gap:26px}
+  .feier-left{grid-template-columns:repeat(2,minmax(0,365px));justify-content:center}
+  .feier-side{max-width:335px;margin-inline:auto}
+  .grid-tiles.cols-4{grid-template-columns:repeat(2,minmax(0,365px))}
+  .stay-top{grid-template-columns:1fr;gap:38px}
+}
+@media (max-width:900px){
+  .nav,.head-cta{display:none}
+  .burger{display:flex}
+  .mob-nav{
+    display:block;position:fixed;inset:74px 0 auto;z-index:55;background:var(--creme);
+    border-bottom:1px solid var(--ink-line);box-shadow:0 24px 40px -26px rgba(30,31,36,.7);
+    max-height:0;overflow:hidden;transition:max-height .34s cubic-bezier(.2,.7,.3,1);
+  }
+  .mob-nav.open{max-height:520px}
+  .mob-nav ul{list-style:none;margin:0;padding:12px 26px 26px}
+  .mob-nav li{border-top:1px solid var(--ink-line)}
+  .mob-nav li:first-child{border-top:0}
+  .mob-nav a{display:block;padding:15px 2px;text-decoration:none;font-size:1.02rem;font-weight:500}
+  .mob-nav .btn{width:100%;margin-top:18px}
+  .facts-in{grid-template-columns:repeat(2,1fr);gap:30px 0;padding:40px 0}
+  .fact{padding:0 20px}
+  .fact:nth-child(odd){border-left:0;padding-left:0}
+  .cardrow{grid-template-columns:1fr;gap:18px}
+  .zk{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr 1fr;gap:34px}
+  .dishes.two{columns:1}
+  .menu-card{padding:30px 26px 26px}
+  .sec{padding:74px 0}
+  .hero{padding-top:52px}
+  .hero-pad{height:52px}
+}
+@media (max-width:620px){
+  body{font-size:16px}
+  .wrap{padding:0 20px}
+  .head-in{height:66px}
+  .mob-nav{inset:66px 0 auto}
+  .brand img{height:32px}
+  .brand-tx span{font-size:1.06rem}
+  .grid-tiles,.grid-tiles.cols-4,.grid-tiles.cols-3,.grid-tiles.cols-2,.feier-left{grid-template-columns:minmax(0,365px);justify-content:center}
+  .facts-in{grid-template-columns:1fr;gap:26px 0}
+  .fact{border-left:0;padding:0}
+  .fact b{font-size:2.1rem}
+  .mini{grid-template-columns:1fr}
+  .mini div{border-right:0;border-bottom:1px solid var(--ink-line);padding:16px 0}
+  .mini div:last-child{border-bottom:0}
+  .crest{padding:16px 22px 13px}
+  .crest img{height:86px}
+  .price-card,.panel{padding:26px 22px 24px}
+  .foot-grid{grid-template-columns:1fr;gap:30px}
+  .btn{width:100%;padding:15px 20px}
+  .hero-cta .btn,.cta-actions .btn,.stay-cta .btn{width:100%}
+  .stay-cta{gap:12px}
+  .quote{font-size:1.18rem;padding-left:16px}
+  .menu-card{padding:24px 20px 22px}
+  .slot{padding:22px 20px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .rv{opacity:1;transform:none;transition:none}
+  *{animation-duration:.001ms !important;transition-duration:.001ms !important}
+}
+</style>
+</head>
+<body>
+
+<header class="site-head" id="top">
+  <div class="wrap head-in">
+    <a class="brand" href="#top" aria-label="Landgasthof Schwarzer Adler — zum Seitenanfang">
+      <img src="assets_02/sw-adler-wappen.png" alt="Wappen-Adler des Landgasthofs Schwarzer Adler">
+      <span class="brand-tx"><b>Landgasthof</b><span>Schwarzer Adler</span></span>
+    </a>
+    <nav class="nav" aria-label="Hauptnavigation">
+      <a href="#uebernachten">Übernachten</a>
+      <a href="#feiern">Feiern &amp; Tagen</a>
+      <a href="#haus">Das Haus</a>
+      <a href="#kueche">Küche</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <a class="btn btn-gold head-cta" href="tel:+499868845">09868 845</a>
+    <button class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobnav"><span></span></button>
+  </div>
+</header>
+<div class="mob-nav" id="mobnav">
+  <ul>
+    <li><a href="#uebernachten">Übernachten</a></li>
+    <li><a href="#feiern">Feiern &amp; Tagen</a></li>
+    <li><a href="#haus">Das Haus</a></li>
+    <li><a href="#kueche">Küche</a></li>
+    <li><a href="#kontakt">Öffnungszeiten &amp; Kontakt</a></li>
+  </ul>
+  <div style="padding:0 26px 26px"><a class="btn btn-gold" href="tel:+499868845">Anrufen · 09868 845</a></div>
+</div>
+
+<section class="hero" aria-labelledby="h1">
+  <div class="wrap hero-in">
+    <div class="crest rv">
+      <img src="assets_02/sw-adler-wappen.png" alt="Schwarzer heraldischer Adler — das Wappen des Hauses">
+      <small>Unteroestheim</small>
+    </div>
+    <h1 id="h1" class="rv">Feiern, tagen und <em>übernachten</em> am Fuße der Frankenhöhe</h1>
+    <p class="hero-sub rv">Landgasthof mit Gästezimmern, eigenem Bauernhof und Platz für Gesellschaften
+      bis 120 Personen — an der Romantischen Straße, seit vier Generationen in der Hand der Familie Wildermann.</p>
+    <div class="hero-cta rv">
+      <a class="btn btn-gold" href="tel:+499868845">Anrufen · 09868 845</a>
+      <a class="btn btn-ghost" href="#uebernachten">Zimmer &amp; Preise</a>
+    </div>
+    <p class="hero-meta rv">33 Betten · Sauna im Haus · Gruppen und Busse willkommen</p>
+    <div class="rule rv"><i></i></div>
+  </div>
+  <div class="hero-pad"></div>
+</section>
+
+<section class="facts" aria-label="Das Haus in Zahlen">
+  <div class="wrap facts-in">
+    <div class="fact rv"><b>33</b><span>Betten in gepflegten Gästezimmern</span></div>
+    <div class="fact rv"><b>120</b><span>Personen bei Feiern und Tagungen</span></div>
+    <div class="fact rv"><b>4</b><span>Generationen in Familienbesitz</span></div>
+    <div class="fact rv"><b>30 ha</b><span>eigener Bauernhof</span></div>
+  </div>
+</section>
+
+<section class="sec" id="uebernachten">
+  <div class="wrap">
+    <div class="stay-top">
+      <div>
+        <p class="eyebrow rv">Übernachten</p>
+        <h2 class="h-sec rv">33 Betten an der<br>Romantischen Straße</h2>
+        <p class="lede rv">Unsere gepflegten, freundlichen Gästezimmer sind komfortabel eingerichtet —
+          alle Zimmer mit Dusche und WC. Wer die Frankenhöhe erwandert, mit dem Rad unterwegs ist oder
+          mit einer Gruppe anreist, wohnt hier ruhig und bodenständig, mit dem Frühstück aus der eigenen Küche.</p>
+        <ul class="chips rv">
+          <li><b>W-LAN</b> im Haus</li>
+          <li><b>Sauna</b> im Haus</li>
+          <li>Hunde willkommen</li>
+          <li>Wohnmobil-Übernachtungsplatz</li>
+          <li>Gruppen und Busse</li>
+          <li>Fahrradunterstellmöglichkeit</li>
+          <li>familienfreundlicher Betrieb</li>
+        </ul>
+        <div class="stay-cta rv">
+          <a class="btn btn-gold" href="tel:+499868845">Zimmer anfragen · 09868 845</a>
+          <p>Zimmer vergeben wir persönlich am Telefon — ein Anruf, und Sie wissen, was frei ist.</p>
+        </div>
+      </div>
+
+      <div class="price-card rv">
+        <h3>Zimmer &amp; Preise</h3>
+        <p class="pc-note">Übernachtung mit Frühstück, pro Zimmer und Nacht</p>
+
+        <div class="prow"><span class="pn">Doppelzimmer<small>Dusche/WC</small></span><span class="pp">85 €</span></div>
+        <div class="prow"><span class="pn">Doppelzimmer zur Einzelnutzung<small>Dusche/WC</small></span><span class="pp">ab 65 €</span></div>
+        <div class="prow"><span class="pn">Einzelzimmer<small>Dusche/WC</small></span><span class="pp">62 €</span></div>
+        <div class="prow"><span class="pn">Dreibettzimmer<small>Dusche/WC</small></span><span class="pp">98 €</span></div>
+        <div class="prow"><span class="pn">Vierbettzimmer<small>Dusche/WC</small></span><span class="pp soft">auf Anfrage</span></div>
+        <div class="prow"><span class="pn">Halbpension</span><span class="pp soft">auf Anfrage</span></div>
+        <div class="prow"><span class="pn">Hund<small>pro Nacht</small></span><span class="pp">+ 5 €</span></div>
+
+        <p class="pc-foot">Preisstand Gastgeberverzeichnis 2026. Verbindliche Auskunft und Reservierung
+          gern telefonisch unter 09868 845.</p>
+      </div>
+    </div>
+
+    <div class="grid-tiles cols-4 rv" style="margin-top:62px">
+      <figure class="tile">
+        <img src="assets_02/sw-zimmer-doppelbett-sofa.jpg" width="372" height="250" loading="lazy" alt="Gästezimmer mit Doppelbett und Sofa">
+        <figcaption>Doppelzimmer</figcaption>
+      </figure>
+      <figure class="tile">
+        <img src="assets_02/sw-zimmer-doppelbett-tuer.jpg" width="375" height="250" loading="lazy" alt="Gästezimmer mit Doppelbett, Nachttischen und Leseleuchten">
+        <figcaption>Doppelzimmer</figcaption>
+      </figure>
+      <figure class="tile">
+        <img src="assets_02/sw-zimmer-sitzecke-tv.jpg" width="366" height="250" loading="lazy" alt="Gästezimmer mit Sitzecke und Schreibtisch">
+        <figcaption>Sitzecke im Zimmer</figcaption>
+      </figure>
+      <figure class="tile">
+        <img src="assets_02/sw-zimmer-badezimmer.jpg" width="375" height="250" loading="lazy" alt="Zimmerbad mit zwei Waschbecken und zwei Spiegeln">
+        <figcaption>Zimmerbad</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-paper" id="feiern">
+  <div class="wrap">
+    <div class="sec-head rv" style="margin-bottom:44px">
+      <p class="eyebrow">Feiern &amp; Tagen</p>
+      <h2 class="h-sec">Das Haus für Feierlichkeiten<br>jeder Art — bis 120 Personen</h2>
+      <p class="lede">Saal, Nebenzimmer und ein Séparée unter dem Holzbaldachin: Für Hochzeit, Geburtstag,
+        Familienfeier, Vereinsabend oder Tagung stellen wir den passenden Raum — vom kleinen Tisch in der
+        Nische bis zur großen Gesellschaft. Menüs und Buffet stimmen wir vorher in Ruhe mit Ihnen ab.</p>
+    </div>
+
+    <div class="feier">
+      <div class="feier-left rv">
+        <figure class="tile">
+          <img src="assets_02/sw-saal-feierlichkeiten.jpg" width="365" height="250" loading="lazy" alt="Saal mit vielen eingedeckten Tischen">
+          <figcaption>Saal für Feierlichkeiten</figcaption>
+        </figure>
+        <figure class="tile">
+          <img src="assets_02/sw-nebenzimmer-lange-tafel.jpg" width="375" height="250" loading="lazy" alt="Nebenzimmer mit langer heller Tafel und Bankbestuhlung">
+          <figcaption>Nebenzimmer mit langer Tafel</figcaption>
+        </figure>
+        <figure class="tile">
+          <img src="assets_02/sw-nebenzimmer-eckbank.jpg" width="365" height="250" loading="lazy" alt="Nebenzimmer mit Eckbank und Fensterfront">
+          <figcaption>Nebenzimmer mit Eckbank</figcaption>
+        </figure>
+        <div class="quote-cell">
+          <span>Aus dem Haus</span>
+          <p>„Das Lokal für Feierlichkeiten jeder Art.“</p>
+        </div>
+      </div>
+      <figure class="tile feier-side rv">
+        
+        <img src="assets_02/sw-separee-nische-hochkant.jpg" width="335" height="491" loading="lazy" alt="Séparée unter Holzbaldachin mit Krügen und Geweihen">
+        <figcaption>Séparée unter dem Baldachin</figcaption>
+      </figure>
+    </div>
+
+    <div class="cardrow">
+      <div class="card rv">
+        <span class="ic"><svg viewBox="0 0 24 24"><path d="M4 20V9l8-5 8 5v11"/><path d="M9 20v-6h6v6"/><path d="M3 20h18"/></svg></span>
+        <h4>Saal &amp; Nebenzimmer</h4>
+        <p>Räume für kleine Runden bis zu Gesellschaften mit 120 Personen — je nach Anlass und Tischform.</p>
+      </div>
+      <div class="card rv">
+        <span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M8 20h8M12 16v4"/></svg></span>
+        <h4>Tagen im Landgasthof</h4>
+        <p>Tagungen nach Rücksprache, mit W-LAN, Beamer, Tageslichtprojektor und Flipchart — und Zimmern im selben Haus.</p>
+      </div>
+      <div class="card rv">
+        <span class="ic"><svg viewBox="0 0 24 24"><path d="M5 11h14l-1.2 8.2a1.6 1.6 0 0 1-1.6 1.4H7.8a1.6 1.6 0 0 1-1.6-1.4Z"/><path d="M8.5 8c0-1.6 1.6-1.9 1.6-3.5M12 8c0-1.9 1.9-2.2 1.9-4M15.5 8c0-1.4 1.3-1.7 1.3-3"/></svg></span>
+        <h4>Außer Haus</h4>
+        <p>Wir kochen auch für Anlässe außerhalb des Hauses — Außer-Haus-Service auf Anfrage.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="haus">
+  <div class="wrap">
+    <div class="split">
+      <figure class="framed rv">
+        <span class="fimg"><img src="assets_02/sw-aussenansicht-gasthof.jpg" width="555" height="368" loading="lazy" alt="Außenansicht des Landgasthofs Schwarzer Adler mit Terrasse und Sonnenschirmen"></span>
+        <figcaption>Der Landgasthof an der Würzburger Straße</figcaption>
+      </figure>
+      <div>
+        <p class="eyebrow rv">Das Haus</p>
+        <blockquote class="quote rv">„Unser Landgasthof am Fuße der schönen Frankenhöhe ist seit vier
+          Generationen im Besitz unserer Familie.“</blockquote>
+        <p class="lede rv">Zum Gasthof gehört ein Bauernhof mit rund 30 Hektar. Das Rind- und Schweinefleisch,
+          das bei uns auf den Teller kommt, stammt zum Großteil aus eigener Aufzucht, das Wild aus eigener Jagd.
+          Was hier auf der Karte steht, hat meist nur einen kurzen Weg hinter sich — und wir wissen genau,
+          woher es kommt.</p>
+        <div class="mini rv">
+          <div><b>4</b><span>Generationen Familie Wildermann</span></div>
+          <div><b>30 ha</b><span>eigene landwirtschaftliche Fläche</span></div>
+          <div><b class="sm">Eigene Jagd</b><span>Wildspezialitäten aus der Region</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rule rv" style="margin:72px 0 46px"><i></i></div>
+
+    <div class="sec-head center rv" style="margin-bottom:36px">
+      <p class="eyebrow center">Die Stuben</p>
+      <h3 style="font-size:clamp(1.5rem,3vw,2rem)">Holz, Kachelofen und gedeckte Tische</h3>
+    </div>
+    <div class="grid-tiles cols-3 rv">
+      <figure class="tile">
+        <img src="assets_02/sw-gaststube-fensterfront.jpg" width="375" height="250" loading="lazy" alt="Gaststube mit Kachelofen, gestreifter Bank und Fensterfront">
+        <figcaption>Gaststube mit Fensterfront</figcaption>
+      </figure>
+      <figure class="tile">
+        <img src="assets_02/sw-gaststube-eckbank-holz.jpg" width="365" height="250" loading="lazy" alt="Vertäfelte Ecke mit Wandtellern und geschnitzter Bank">
+        <figcaption>Vertäfelte Ecke mit Wandtellern</figcaption>
+      </figure>
+      <figure class="tile">
+        <img src="assets_02/sw-gaststube-holzvertaefelung.jpg" width="375" height="250" loading="lazy" alt="Gaststube mit Holzvertäfelung und Krügen auf dem Sims">
+        <figcaption>Gaststube mit Holzvertäfelung</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-paper" id="kueche">
+  <div class="wrap">
+    <div class="split rev" style="margin-bottom:56px">
+      <div>
+        <p class="eyebrow rv">Küche</p>
+        <h2 class="h-sec rv">Fränkisch, ehrlich,<br>zum großen Teil vom eigenen Hof</h2>
+        <p class="lede rv">Sauerbraten, Bratwürste, Schnitzel und Knödel — dazu Wild aus heimischer Jagd,
+          Fisch und vegetarische Gerichte. Die Karte wechselt mit den Jahreszeiten, der Kern bleibt.
+          Bitte beachten Sie: <b>à la carte nur nach vorheriger Reservierung.</b></p>
+      </div>
+      <figure class="framed rv">
+        <span class="fimg"><img src="assets_02/sw-gaststube-kachelofen.jpg" width="555" height="369" loading="lazy" alt="Gaststube mit Holzdecke, Kachelofen und geschnitzten Stühlen"></span>
+        <figcaption>Gaststube mit Kachelofen</figcaption>
+      </figure>
+    </div>
+
+    <div class="menu-card rv">
+      <div class="menu-block">
+        <p class="menu-h">Zum Anfang</p>
+        <ul class="dishes">
+          <li class="dish"><span class="dn">Tagessuppe</span><span class="dots"></span><span class="dp">4,00 €</span></li>
+        </ul>
+      </div>
+
+      <div class="menu-block">
+        <p class="menu-h">Aus der Küche</p>
+        <ul class="dishes two">
+          <li class="dish"><span class="dn">1 Paar Fränkische Bratwürste mit verschiedenen Salaten</span><span class="dots"></span><span class="dp">11,50 €</span></li>
+          <li class="dish"><span class="dn">Gebackener Hirtenkäse an bunten Salaten</span><span class="dots"></span><span class="dp">11,50 €</span></li>
+          <li class="dish"><span class="dn">Spinatknödel in pikanter Käsesoße mit Gemüsestreifen</span><span class="dots"></span><span class="dp">12,80 €</span></li>
+          <li class="dish"><span class="dn">Gebackenes Schweineschnitzel mit Kartoffelsalat &amp; Salat</span><span class="dots"></span><span class="dp">14,50 €</span></li>
+          <li class="dish"><span class="dn">Feine Pilzravioli mit Champignons in Sahnesoße, Salat</span><span class="dots"></span><span class="dp">15,00 €</span></li>
+          <li class="dish"><span class="dn">Hähnchenbrustfilet in Kräutersahne, Spätzle, Salat</span><span class="dots"></span><span class="dp">15,20 €</span></li>
+          <li class="dish"><span class="dn">Wildermann’s Käseschnitzel mit Röstzwiebeln, Pommes frites und Salat</span><span class="dots"></span><span class="dp">16,80 €</span></li>
+          <li class="dish"><span class="dn">Braten vom Wild aus heimischer Jagd, Preiselbeeren, Knödel &amp; Salat</span><span class="dots"></span><span class="dp">17,20 €</span></li>
+          <li class="dish"><span class="dn">Schweinelendchen im Pfefferrahm, Spätzle, Salat</span><span class="dots"></span><span class="dp">17,20 €</span></li>
+          <li class="dish"><span class="dn">Fränkischer Sauerbraten mit Knödel &amp; Salat</span><span class="dots"></span><span class="dp">17,80 €</span></li>
+          <li class="dish"><span class="dn">Fränkisches Zanderknusper an Kartoffelsalat &amp; Salat</span><span class="dots"></span><span class="dp">18,80 €</span></li>
+          <li class="dish"><span class="dn">Lammpfännchen mit Gemüse, Knoblauch &amp; Honig, Rösti</span><span class="dots"></span><span class="dp">19,80 €</span></li>
+        </ul>
+        <p class="menu-foot">Auszug aus unserer Speisekarte — Änderungen vorbehalten.</p>
+      </div>
+
+      <div class="slot">
+        <span class="tag">Platzhalter · Vorschlag</span>
+        <h4>Hier stehen die Gerichte der Saison</h4>
+        <p>Der feste Kern der Karte bleibt das ganze Jahr über gleich — daneben wechseln einige Plätze mit
+          der Jahreszeit. Dieser Bereich ist dafür vorgesehen und wird vom Haus selbst gepflegt.
+          In den vergangenen Monaten standen dort unter anderem:</p>
+        <ul>
+          <li>Fränkischer Spargel im Frühjahr</li>
+          <li>Oestheimer Dinkelnudel mit Spargel</li>
+          <li>½ Fränkischer Karpfen (auf Vorbestellung)</li>
+          <li>Wild aus eigener Jagd</li>
+          <li>Fränkische Schäufele als Tagesessen</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="kontakt">
+  <div class="wrap">
+    <div class="sec-head rv" style="margin-bottom:44px">
+      <p class="eyebrow">Öffnungszeiten &amp; Kontakt</p>
+      <h2 class="h-sec">Ein Anruf, und wir sagen Ihnen,<br>wann Ihr Tisch steht</h2>
+    </div>
+
+    <div class="zk">
+      <div class="panel rv">
+        <h3>Öffnungszeiten</h3>
+        <p class="muted" style="margin:6px 0 20px;font-size:.92rem">Richtzeiten der warmen Küche — verbindlich ist der Anruf</p>
+
+        <div class="zrow off"><span class="zd">Montag</span><span class="zt">Ruhetag</span></div>
+        <div class="zrow">
+          <span class="zd">Dienstag – Sonntag<small>Richtzeit — nicht jeden Tag beide Schichten</small></span>
+          <span class="zt">11:30 – 13:30 Uhr<br>18:00 – 21:00 Uhr</span>
+        </div>
+
+        <div class="zbadge">Mittwochs verlässlich mittags und abends geöffnet</div>
+
+        <div class="zhint">
+          <p><b>Bitte kurz anrufen, bevor Sie kommen.</b> Einzelne Tage und Schichten wechseln bei uns von
+            Woche zu Woche: An Wochenenden ist das Haus mittags häufig für geschlossene Gesellschaften
+            reserviert, und auch unter der Woche kann eine Schicht einmal entfallen.</p>
+          <p>Wir sagen Ihnen am Telefon in einem Satz, wann Sie kommen können — und <b>à la carte servieren
+            wir nur nach vorheriger Reservierung.</b></p>
+        </div>
+      </div>
+
+      <div class="panel dark rv">
+        <h3>So erreichen Sie uns</h3>
+        <p class="pc-note" style="margin:6px 0 20px;font-size:.92rem;color:rgba(251,240,225,.6)">
+          Tisch, Zimmer und Feier laufen bei uns persönlich über das Telefon.</p>
+
+        <div class="kline">
+          <svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1.1 1A16 16 0 0 1 4 5.1 1 1 0 0 1 5 4Z"/></svg>
+          <span class="kt"><a href="tel:+499868845">09868 845</a><small>Reservierung, Zimmer und Feiern</small></span>
+        </div>
+        <div class="kline">
+          <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          <span class="kt"><a href="mailto:info@landgasthof-schwarzeradler.de">info@landgasthof-schwarzeradler.de</a><small>für Anfragen mit etwas mehr Vorlauf</small></span>
+        </div>
+        <div class="kline">
+          <svg viewBox="0 0 24 24"><path d="M12 21s7-5.4 7-11a7 7 0 1 0-14 0c0 5.6 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>
+          <span class="kt">Würzburger Str. 8 · 91583 Diebach-Unteroestheim<small>an der Romantischen Straße, am Fuße der Frankenhöhe</small></span>
+        </div>
+        <div class="kline">
+          <svg viewBox="0 0 24 24"><path d="M3 17h18"/><path d="M5 17V9l4-3h6l4 3v8"/><circle cx="8" cy="17" r="1.6"/><circle cx="16" cy="17" r="1.6"/></svg>
+          <span class="kt">Gruppen, Busse und Wohnmobile<small>Übernachtungsplatz für Wohnmobile am Haus</small></span>
+        </div>
+
+        <a class="btn btn-onink" href="tel:+499868845">Jetzt anrufen · 09868 845</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <img src="assets_02/sw-adler-wappen.png" alt="" aria-hidden="true">
+    <h2>Tisch, Zimmer oder Feier — sprechen Sie uns an</h2>
+    <p>Familie Wildermann · Landgasthof Schwarzer Adler · Diebach-Unteroestheim</p>
+    <div class="cta-actions">
+      <a class="btn btn-gold" href="tel:+499868845">09868 845 anrufen</a>
+      <a class="btn btn-ghost" href="mailto:info@landgasthof-schwarzeradler.de">E-Mail schreiben</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <span class="eagle-gold" aria-hidden="true"></span>
+          <span><b>Landgasthof</b><span>Schwarzer Adler</span></span>
+        </div>
+        <p>Landgasthof mit Gästezimmern, Räumen für Feiern und Tagungen und eigenem Bauernhof —
+          seit vier Generationen in Familienhand.</p>
+      </div>
+      <div>
+        <h5>Kontakt</h5>
+        <p>Würzburger Str. 8<br>91583 Diebach-Unteroestheim</p>
+        <p>Telefon <a href="tel:+499868845">09868 845</a><br>Telefax 09868 7374</p>
+        <p><a href="mailto:info@landgasthof-schwarzeradler.de">info@landgasthof-schwarzeradler.de</a></p>
+      </div>
+      <div>
+        <h5>Impressum</h5>
+        <p>Landgasthof Schwarzer Adler<br>Thomas Wildermann</p>
+        <p>Geschäftsführer und inhaltlich verantwortlich (§ 7 TMG):<br>Thomas Wildermann</p>
+        <p>USt-IdNr. gem. § 27a UStG:<br>DE 239862476</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="jahr">2026</span> Landgasthof Schwarzer Adler · Familie Wildermann</span>
+      <span>Montag Ruhetag · à la carte nur nach vorheriger Reservierung</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var head=document.querySelector('.site-head');
+  var burger=document.getElementById('burger');
+  var mob=document.getElementById('mobnav');
+
+  // Sticky-Zustand
+  var onScroll=function(){ head.classList.toggle('is-stuck', window.scrollY>8); };
+  onScroll(); window.addEventListener('scroll',onScroll,{passive:true});
+
+  // Mobiles Menü
+  burger.addEventListener('click',function(){
+    var open=mob.classList.toggle('open');
+    burger.setAttribute('aria-expanded',open?'true':'false');
+    burger.setAttribute('aria-label',open?'Menü schließen':'Menü öffnen');
+  });
+  mob.addEventListener('click',function(e){
+    if(e.target.tagName==='A'){
+      mob.classList.remove('open');
+      burger.setAttribute('aria-expanded','false');
+      burger.setAttribute('aria-label','Menü öffnen');
+    }
+  });
+
+  // Sanftes Einblenden (§A4) – bei prefers-reduced-motion sofort sichtbar
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var items=[].slice.call(document.querySelectorAll('.rv'));
+  if(reduce||!('IntersectionObserver' in window)){
+    items.forEach(function(el){el.classList.add('in');});
+  }else{
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          var el=en.target;
+          var sibs=[].slice.call(el.parentNode.children).filter(function(n){return n.classList&&n.classList.contains('rv');});
+          el.style.transitionDelay=(Math.min(sibs.indexOf(el),5)*70)+'ms';
+          el.classList.add('in');
+          io.unobserve(el);
+        }
+      });
+    },{rootMargin:'0px 0px -8% 0px',threshold:.08});
+    items.forEach(function(el){io.observe(el);});
+  }
+
+  document.getElementById('jahr').textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>

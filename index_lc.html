@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+  <meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gasthaus Linde · Wachbach — Biergarten, Saal &amp; Gästezimmer in Bad Mergentheim</title>
+<meta name="description" content="Gasthaus Linde in Bad Mergentheim-Wachbach: Naturbiergarten unter der Linde, Saal mit 80–100 Sitzplätzen, Bistro und moderne Gästezimmer. Familiär geführt von Familie Sari.">
+<link rel="icon" href="assets_02/lc-logo-linde.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Vollkorn:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+<style>
+/* ==========================================================================
+   1 · Tokens
+   ========================================================================== */
+:root{
+  /* Marke — alles aus dem Bestand des Kunden (§A1) */
+  --leaf:#00a651;          /* Logo-Grün, Leitfarbe */
+  --leaf-dk:#008a44;       /* dunklere Stufe für Hover */
+  --forest:#2e5e17;        /* Template-Grün, Text & Headlines */
+  --forest-dk:#1e3f0f;     /* tiefe Stufe für das dunkle Band */
+  --sage:#79b676;          /* Template-Akzent */
+  --mint:#cfe2cf;          /* helle Template-Fläche */
+  --mint-lt:#e6f0e4;
+
+  /* helle, luftige Grundfläche (§A4) */
+  --paper:#fbfdfa;
+  --paper-2:#f4f8f2;
+  --white:#ffffff;
+
+  --ink:#1b2a16;
+  --ink-2:#3f5238;
+  --ink-3:#66755f;
+  --line:#dde8da;
+  --line-2:#eaf1e8;
+
+  --sans:'Be Vietnam Pro',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
+  --serif:'Vollkorn',Georgia,'Times New Roman',serif;
+
+  --wrap:1200px;
+  --pad:clamp(18px,5vw,52px);
+  --hdr:76px;
+
+  --r-s:10px;
+  --r-m:18px;
+  --r-l:28px;
+
+  --sh-s:0 2px 10px rgba(30,63,15,.05);
+  --sh-m:0 16px 38px -20px rgba(30,63,15,.30), 0 2px 8px rgba(30,63,15,.05);
+  --sh-l:0 38px 78px -38px rgba(30,63,15,.42), 0 6px 18px rgba(30,63,15,.06);
+}
+
+/* ==========================================================================
+   2 · Reset & Grundlagen
+   ========================================================================== */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink-2);
+  font-family:var(--sans);
+  font-size:17px;
+  line-height:1.7;
+  font-weight:400;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+button{font:inherit;color:inherit}
+h1,h2,h3,h4{margin:0;font-family:var(--serif);color:var(--forest);font-weight:600;line-height:1.14;letter-spacing:-.005em}
+h1,h2{text-wrap:balance}
+p{margin:0}
+table{border-collapse:collapse;width:100%}
+:focus-visible{outline:3px solid var(--leaf);outline-offset:3px;border-radius:4px}
+
+.wrap{width:100%;max-width:var(--wrap);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+.sec{position:relative;padding:clamp(66px,9vw,120px) 0}
+.sec--tight{padding:clamp(52px,7vw,88px) 0}
+.pb-s{padding-bottom:clamp(18px,2.4vw,32px)}
+.pt-s{padding-top:clamp(18px,2.4vw,32px)}
+section[id],footer[id]{scroll-margin-top:calc(var(--hdr) + 14px)}
+
+/* ==========================================================================
+   3 · Typografie-Bausteine
+   ========================================================================== */
+/* Blockelement mit fit-content: liegt immer auf einer eigenen Zeile */
+.eyebrow{
+  display:flex;width:fit-content;max-width:100%;align-items:flex-start;gap:10px;
+  font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--leaf);margin:0 0 18px;
+}
+.eyebrow::before{
+  content:"";width:26px;height:3px;background:var(--leaf);border-radius:2px;flex:none;margin-top:7px;
+}
+.eyebrow--light{color:var(--mint)}
+.eyebrow--light::before{background:var(--sage)}
+
+.h1{font-size:clamp(38px,6.4vw,74px);letter-spacing:-.02em;line-height:1.06}
+.h2{font-size:clamp(29px,4vw,48px);letter-spacing:-.015em}
+.h3{font-size:clamp(21px,2.2vw,27px)}
+em.acc{font-style:italic;color:var(--leaf)}
+
+/* Logo-Zitat: die Grundlinie des Schriftzugs läuft unter dem ganzen Wort durch */
+.uline{position:relative;display:block;width:fit-content;max-width:100%;padding-bottom:.2em}
+.uline::after{
+  content:"";position:absolute;left:0;bottom:0;height:5px;width:100%;
+  background:var(--leaf);border-radius:2px;
+  transform:scaleX(0);transform-origin:left center;transition:transform .8s cubic-bezier(.2,.7,.25,1) .1s;
+}
+.in .uline::after,.uline.in::after{transform:scaleX(1)}
+
+.lede{font-size:clamp(17px,1.35vw,19.5px);color:var(--ink-2);max-width:62ch}
+.small{font-size:14.5px;line-height:1.62;color:var(--ink-3)}
+
+/* Das „L" des Logos als Trennelement: kurzer Abstrich, Fuß läuft durch */
+.lrule{position:relative;height:30px;margin:clamp(44px,6vw,72px) 0}
+.lrule::before{content:"";position:absolute;left:0;bottom:0;width:5px;height:30px;background:var(--leaf);border-radius:2px}
+.lrule::after{content:"";position:absolute;left:0;bottom:0;height:5px;width:100%;background:linear-gradient(90deg,var(--leaf) 0%,var(--leaf) 34%,var(--line) 100%);border-radius:2px}
+
+/* ==========================================================================
+   4 · Buttons
+   ========================================================================== */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:15px 26px;border-radius:999px;border:2px solid transparent;
+  font-size:15.5px;font-weight:600;letter-spacing:.005em;text-decoration:none;
+  cursor:pointer;transition:transform .25s ease,box-shadow .25s ease,background-color .25s ease,color .25s ease,border-color .25s ease;
+  white-space:nowrap;
+}
+.btn svg{width:18px;height:18px;flex:none}
+.btn--pri{background:var(--forest);color:#fff;box-shadow:0 12px 26px -14px rgba(30,63,15,.75)}
+.btn--pri:hover{background:var(--forest-dk);transform:translateY(-2px);box-shadow:0 18px 34px -14px rgba(30,63,15,.8)}
+.btn--leaf{background:var(--leaf);color:#fff;box-shadow:0 12px 26px -14px rgba(0,166,81,.85)}
+.btn--leaf:hover{background:var(--leaf-dk);transform:translateY(-2px)}
+.btn--out{background:transparent;color:var(--forest);border-color:var(--line)}
+.btn--out:hover{border-color:var(--leaf);color:var(--leaf);transform:translateY(-2px)}
+.btn--glass{background:rgba(255,255,255,.14);color:#fff;border-color:rgba(255,255,255,.42);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.btn--glass:hover{background:rgba(255,255,255,.24);transform:translateY(-2px)}
+.cta-row{display:flex;flex-wrap:wrap;gap:14px}
+
+/* ==========================================================================
+   5 · Header
+   ========================================================================== */
+.hdr{
+  position:fixed;top:0;left:0;right:0;z-index:70;
+  height:var(--hdr);
+  display:flex;align-items:center;
+  transition:background-color .3s ease,box-shadow .3s ease,backdrop-filter .3s ease;
+}
+.hdr::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--line);
+  opacity:0;transition:opacity .3s ease;
+}
+.hdr.scrolled{background:rgba(251,253,250,.93);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 4px 24px -18px rgba(30,63,15,.5)}
+.hdr.scrolled::after{opacity:1}
+.hdr-in{width:100%;max-width:var(--wrap);margin:0 auto;padding:0 var(--pad);display:flex;align-items:center;gap:20px}
+
+.brand{display:flex;align-items:center;flex:none;text-decoration:none}
+.brand img{width:152px;height:auto}
+/* Auf dem farbigen Hero steht das grüne Logo auf einer weißen Karte —
+   sonst verschwindet die Federzeichnung im Bild (vgl. K15-Regel). */
+.brand-chip{background:rgba(255,255,255,.94);border-radius:12px;padding:9px 14px;box-shadow:var(--sh-s);transition:background-color .3s ease,padding .3s ease,box-shadow .3s ease}
+.hdr.scrolled .brand-chip{background:transparent;box-shadow:none;padding:9px 0}
+
+.nav{margin-left:auto;display:flex;align-items:center;gap:clamp(14px,1.9vw,28px)}
+.nav a{
+  position:relative;text-decoration:none;font-size:15px;font-weight:500;color:var(--forest);
+  padding:6px 0;transition:color .2s ease;
+}
+.hdr:not(.scrolled) .nav a{color:#fff;text-shadow:0 1px 12px rgba(20,40,12,.55)}
+.nav a::after{
+  content:"";position:absolute;left:0;bottom:0;height:3px;width:100%;background:var(--leaf);
+  border-radius:2px;transform:scaleX(0);transform-origin:left center;transition:transform .3s cubic-bezier(.2,.7,.25,1);
+}
+.nav a:hover::after{transform:scaleX(1)}
+.hdr:not(.scrolled) .nav a::after{background:#fff}
+.hdr-tel{padding:11px 20px;font-size:14.5px}
+.hdr:not(.scrolled) .hdr-tel{background:rgba(255,255,255,.16);color:#fff;border-color:rgba(255,255,255,.5);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.hdr:not(.scrolled) .hdr-tel:hover{background:rgba(255,255,255,.28)}
+
+.burger{
+  display:none;margin-left:auto;width:46px;height:46px;border:0;border-radius:12px;
+  background:rgba(255,255,255,.92);box-shadow:var(--sh-s);
+  align-items:center;justify-content:center;cursor:pointer;flex-direction:column;gap:5px;
+}
+.hdr.scrolled .burger{background:var(--mint-lt);box-shadow:none}
+.burger span{display:block;width:20px;height:2px;background:var(--forest);border-radius:2px;transition:transform .3s ease,opacity .25s ease}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+.mnav{
+  position:fixed;top:var(--hdr);left:0;right:0;z-index:69;
+  background:rgba(251,253,250,.985);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--line);
+  max-height:0;overflow:hidden;transition:max-height .38s cubic-bezier(.2,.7,.25,1);
+}
+.mnav.open{max-height:78vh;overflow-y:auto}
+.mnav-in{padding:14px var(--pad) 28px;display:flex;flex-direction:column}
+.mnav a{
+  text-decoration:none;color:var(--forest);font-size:18px;font-weight:500;
+  padding:15px 0;border-bottom:1px solid var(--line-2);
+}
+.mnav a:last-of-type{border-bottom:0}
+/* Spezifität: .mnav a würde Farbe/Padding des Buttons überschreiben */
+.mnav a.btn{margin-top:18px;width:100%;padding:16px 22px;font-size:16px;border-bottom:0}
+.mnav a.btn--pri{color:#fff}
+
+/* ==========================================================================
+   6 · Hero
+   ========================================================================== */
+.hero{position:relative;min-height:clamp(600px,88vh,830px);display:flex;align-items:flex-end;overflow:hidden}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:58% 52%}
+.hero-scrim{
+  position:absolute;inset:0;
+  background:
+    linear-gradient(to top,rgba(12,28,6,.90) 0%,rgba(12,28,6,.58) 32%,rgba(16,36,10,.16) 64%,rgba(16,36,10,.30) 100%),
+    linear-gradient(102deg,rgba(24,52,12,.58) 0%,rgba(24,52,12,.14) 52%,rgba(24,52,12,0) 76%);
+}
+.hero-in{position:relative;z-index:2;padding-top:calc(var(--hdr) + 60px);padding-bottom:clamp(56px,7vw,92px)}
+.hero h1{color:#fff;max-width:16ch;text-shadow:0 2px 30px rgba(10,26,6,.42)}
+.hero h1 em{font-style:italic;color:#fff}
+.hero h1 .ul{
+  position:relative;display:inline-block;padding-bottom:.06em;
+}
+.hero h1 .ul::after{
+  content:"";position:absolute;left:0;bottom:0;height:6px;width:100%;
+  background:var(--leaf);border-radius:3px;
+  transform:scaleX(0);transform-origin:left center;
+  animation:grow 1.1s cubic-bezier(.2,.7,.25,1) .55s forwards;
+}
+@keyframes grow{to{transform:scaleX(1)}}
+.hero-quote{
+  margin-top:26px;max-width:56ch;color:rgba(255,255,255,.93);
+  font-family:var(--serif);font-size:clamp(17px,1.6vw,21px);font-style:italic;line-height:1.62;
+  text-shadow:0 1px 18px rgba(10,26,6,.5);
+}
+.hero .cta-row{margin-top:34px}
+.hero-src{
+  position:absolute;right:var(--pad);bottom:18px;z-index:2;
+  font-size:11.5px;letter-spacing:.05em;color:rgba(255,255,255,.62);
+}
+
+/* Fakten-Leiste, die über die Hero-Unterkante greift */
+.shelf-wrap{position:relative;z-index:5;margin-top:-58px}
+.shelf{
+  background:var(--white);border-radius:var(--r-l);box-shadow:var(--sh-l);
+  display:grid;grid-template-columns:repeat(4,1fr);overflow:hidden;
+}
+.shelf-item{padding:26px clamp(18px,2.2vw,30px);border-right:1px solid var(--line-2)}
+.shelf-item:last-child{border-right:0}
+.shelf-k{display:block;font-size:11.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--leaf);margin-bottom:8px}
+.shelf-v{font-family:var(--serif);font-size:clamp(18px,1.7vw,22px);font-weight:600;color:var(--forest);line-height:1.25;display:block}
+.shelf-s{display:block;margin-top:5px;font-size:13.5px;color:var(--ink-3);line-height:1.5}
+
+/* ==========================================================================
+   7 · Willkommen
+   ========================================================================== */
+.welcome{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(34px,5vw,76px);align-items:center}
+.welcome-txt p+p{margin-top:18px}
+.sign{margin-top:30px;display:flex;align-items:center;gap:16px}
+.sign-name{font-family:var(--serif);font-size:26px;font-style:italic;font-weight:600;color:var(--forest)}
+.sign-line{height:2px;flex:1;max-width:120px;background:linear-gradient(90deg,var(--leaf),rgba(0,166,81,0))}
+.welcome-fig{position:relative}
+.welcome-fig .frame{
+  position:relative;border-radius:var(--r-l);overflow:hidden;box-shadow:var(--sh-l);
+  aspect-ratio:4/3;
+}
+.welcome-fig img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s cubic-bezier(.2,.7,.25,1)}
+.welcome-fig:hover img{transform:scale(1.035)}
+.cap{
+  margin-top:14px;font-size:13.5px;color:var(--ink-3);display:flex;align-items:center;gap:9px;
+}
+.cap::before{content:"";width:16px;height:2px;background:var(--sage);border-radius:2px;flex:none}
+
+/* Baum-Wasserzeichen: exakter Ausschnitt aus dem Original-Logo — nur Krone und
+   Stamm der Federzeichnung. Die Krone besteht aus hunderten Blattbüscheln und
+   liefert damit die Textur, ohne dass etwas nachgezeichnet werden müsste. */
+.tree-wm{position:absolute;overflow:hidden;height:var(--th,300px);width:calc(var(--th,300px)*.704);opacity:.075;pointer-events:none;z-index:0}
+.tree-wm img{position:absolute;top:0;right:calc(var(--th,300px)*-.0282);height:100%;width:auto;max-width:none}
+/* auf dunklem Grund: Zeichnung in Weiß umgefärbt */
+.tree-wm--light{opacity:.07}
+.tree-wm--light img{filter:brightness(0) invert(1)}
+
+/* ==========================================================================
+   8 · Räume (Mosaik)
+   ========================================================================== */
+.sec-head{max-width:64ch}
+.sec-head .lede{margin-top:20px}
+.sec-head--split{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,4vw,60px);align-items:end;max-width:none}
+.sec-head--split .lede{margin-top:0}
+
+/* Feste Zeilenhöhen — so stehen je Zeile beide Kacheln bündig */
+.mosaic{
+  display:grid;grid-template-columns:repeat(12,1fr);
+  grid-template-rows:clamp(250px,27vw,392px) clamp(228px,24vw,338px);
+  gap:clamp(14px,1.8vw,24px);margin-top:clamp(34px,4.5vw,56px);
+}
+.tile{
+  position:relative;border-radius:var(--r-m);overflow:hidden;background:var(--mint-lt);
+  box-shadow:var(--sh-m);text-decoration:none;display:block;height:100%;
+}
+.tile img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s cubic-bezier(.2,.7,.25,1)}
+.tile:hover img{transform:scale(1.05)}
+.tile::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(14,32,8,.80) 0%,rgba(14,32,8,.30) 42%,rgba(14,32,8,0) 72%);
+}
+.tile-lb{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:24px clamp(18px,2vw,28px)}
+.tile-lb h3{color:#fff;font-size:clamp(19px,1.9vw,25px)}
+.tile-lb p{margin-top:6px;color:rgba(255,255,255,.86);font-size:14px;line-height:1.5}
+.t-a{grid-column:span 7}
+.t-b{grid-column:span 5}
+.t-c{grid-column:span 5}
+.t-d{grid-column:span 7}
+
+/* ==========================================================================
+   9 · Der Saal — dunkles Band (Signature)
+   ========================================================================== */
+.saal{position:relative;background:var(--forest-dk);color:rgba(255,255,255,.82);overflow:hidden}
+.saal h2,.saal h3{color:#fff}
+.saal .wrap{position:relative;z-index:2}
+.saal-top{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(26px,4vw,64px);align-items:end}
+.saal-lede{color:rgba(255,255,255,.80);font-size:clamp(16.5px,1.3vw,18.5px);line-height:1.72}
+.saal .uline::after{background:var(--sage)}
+
+.pano{
+  margin:clamp(34px,4.5vw,52px) 0 0;border-radius:var(--r-m);overflow:hidden;
+  box-shadow:0 40px 90px -46px rgba(0,0,0,.9);border:1px solid rgba(255,255,255,.10);
+}
+.pano img{width:100%;height:auto;display:block}
+.pano-cap{margin-top:14px;font-size:13.5px;color:rgba(255,255,255,.58);display:flex;align-items:flex-start;gap:9px}
+.pano-cap::before{content:"";width:16px;height:2px;background:var(--sage);border-radius:2px;flex:none;margin-top:10px}
+.only-m{display:none}
+
+.caps{display:flex;flex-wrap:wrap;gap:12px;margin-top:clamp(28px,3.4vw,40px)}
+.cap-pill{
+  display:inline-flex;align-items:baseline;gap:10px;
+  padding:14px 22px;border-radius:999px;
+  background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+}
+.cap-pill b{font-family:var(--serif);font-size:20px;color:#fff;font-weight:600}
+.cap-pill span{font-size:14.5px;color:rgba(255,255,255,.75)}
+
+.saal-foot{margin-top:clamp(30px,4vw,46px);display:flex;flex-wrap:wrap;gap:18px;align-items:center}
+
+/* Ehrlicher Hinweis (§A5/§A6) — schlichte Notiz, kein Platzhalter-Kasten */
+.note{
+  display:flex;gap:16px;align-items:flex-start;
+  margin-top:clamp(28px,3.4vw,40px);padding:20px 24px;
+  border-radius:var(--r-s);border:1px solid var(--line);background:var(--paper-2);
+}
+.note .ic{
+  flex:none;width:38px;height:38px;border-radius:10px;background:var(--mint);
+  display:flex;align-items:center;justify-content:center;color:var(--forest);
+}
+.note .ic svg{width:19px;height:19px}
+.note b{display:block;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--leaf);margin-bottom:5px;font-weight:600}
+.note p{font-size:14.5px;line-height:1.62;color:var(--ink-3)}
+.note--dark{border-color:rgba(255,255,255,.16);background:rgba(255,255,255,.05)}
+.note--dark .ic{background:rgba(255,255,255,.10);color:#fff}
+.note--dark b{color:var(--sage)}
+.note--dark p{color:rgba(255,255,255,.72)}
+
+/* ==========================================================================
+   10 · Küche & Speisen
+   ========================================================================== */
+.kueche{background:var(--white)}
+.dish-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,1.8vw,24px);margin-top:clamp(30px,4vw,44px)}
+.dish{position:relative;border-radius:var(--r-m);overflow:hidden;box-shadow:var(--sh-m);aspect-ratio:4/3;background:var(--mint-lt)}
+.dish img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.25,1)}
+.dish:hover img{transform:scale(1.05)}
+
+.sunday{
+  margin-top:clamp(30px,4vw,44px);
+  display:grid;grid-template-columns:auto 1fr;gap:clamp(20px,3vw,36px);align-items:center;
+  padding:clamp(26px,3.4vw,40px);border-radius:var(--r-m);
+  background:linear-gradient(120deg,var(--mint-lt) 0%,var(--paper-2) 100%);
+  border:1px solid var(--line);
+}
+.sunday-badge{
+  flex:none;width:96px;height:96px;border-radius:50%;
+  background:var(--white);border:2px solid var(--leaf);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  box-shadow:var(--sh-m);
+}
+.sunday-badge b{font-family:var(--serif);font-size:26px;color:var(--forest);line-height:1}
+.sunday-badge span{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--leaf);margin-top:5px;font-weight:600}
+.sunday h3{margin-bottom:10px}
+.sunday p{font-size:15.5px;line-height:1.68;color:var(--ink-2)}
+
+/* Platzhalter-Bereich für die Speisekarte (§A5) */
+.ph{
+  margin-top:clamp(36px,5vw,60px);
+  border:2px dashed var(--sage);border-radius:var(--r-l);
+  background:
+    repeating-linear-gradient(135deg,rgba(121,182,118,.045) 0 12px,rgba(121,182,118,0) 12px 24px),
+    var(--paper);
+  padding:clamp(26px,4vw,48px);
+}
+.ph-label{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:7px 15px;border-radius:999px;background:var(--sage);color:#fff;
+  font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+}
+.ph-head{max-width:70ch}
+.ph-head h3{margin:18px 0 12px}
+.ph-head p{font-size:15.5px;line-height:1.7;color:var(--ink-2)}
+.ph-head p+p{margin-top:12px}
+.ph-menu{
+  margin-top:clamp(26px,3.4vw,38px);padding:clamp(22px,3vw,34px);
+  background:var(--white);border-radius:var(--r-m);border:1px solid var(--line);
+  display:grid;grid-template-columns:1fr 1fr;gap:clamp(26px,4vw,56px);
+}
+.ph-cat{display:block;height:13px;border-radius:4px;background:var(--mint);margin:0 0 20px}
+.ph-cat.w1{width:132px}
+.ph-cat.w2{width:104px}
+.ph-row{display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid var(--line-2)}
+.ph-row:last-child{border-bottom:0}
+.ph-t{height:11px;border-radius:4px;background:var(--line-2);flex:none}
+.ph-dots{flex:1;height:1px;border-bottom:2px dotted var(--line);min-width:24px}
+.ph-p{height:11px;width:46px;border-radius:4px;background:var(--line-2);flex:none}
+.ph-foot{margin-top:20px;font-size:13.5px;color:var(--ink-3);display:flex;align-items:flex-start;gap:9px}
+.ph-foot::before{content:"";width:16px;height:2px;background:var(--sage);border-radius:2px;flex:none;margin-top:10px}
+
+/* ==========================================================================
+   11 · Übernachten
+   ========================================================================== */
+.zimmer{background:var(--paper-2);position:relative;overflow:hidden}
+.z-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,1.8vw,24px);margin-top:clamp(30px,4vw,46px)}
+.z-fig{border-radius:var(--r-m);overflow:hidden;box-shadow:var(--sh-m);position:relative;aspect-ratio:3/2;background:var(--mint-lt)}
+.z-fig img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s cubic-bezier(.2,.7,.25,1)}
+.z-fig:hover img{transform:scale(1.04)}
+.z-tag{
+  position:absolute;left:16px;top:16px;z-index:2;
+  padding:8px 15px;border-radius:999px;background:rgba(255,255,255,.94);
+  font-size:12.5px;font-weight:600;color:var(--forest);box-shadow:var(--sh-s);
+}
+.z-split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,60px);margin-top:clamp(34px,4.5vw,52px);align-items:start}
+/* Ohne min-width:0 wächst eine 1fr-Spalte auf die min-content-Breite ihres
+   breitesten Kindes (hier der Telefon-Knopf) und läuft schmal aus dem Raster. */
+.z-split>*{min-width:0}
+.price-card{background:var(--white);border-radius:var(--r-m);box-shadow:var(--sh-m);padding:clamp(24px,3vw,36px);border:1px solid var(--line-2)}
+.price-card h3{margin-bottom:4px}
+.price-card .small{margin-bottom:20px}
+.p-tab th,.p-tab td{text-align:left;padding:14px 0;border-bottom:1px solid var(--line-2);vertical-align:baseline}
+.p-tab tr:last-child th,.p-tab tr:last-child td{border-bottom:0}
+.p-tab th{font-weight:500;font-size:16px;color:var(--ink-2)}
+.p-tab td{text-align:right;font-family:var(--serif);font-size:20px;font-weight:600;color:var(--forest);white-space:nowrap;padding-left:14px}
+.p-tab .fr th,.p-tab .fr td{color:var(--ink-3)}
+.p-tab .fr td{color:var(--forest)}
+.price-note{margin-top:18px;font-size:13.5px;color:var(--ink-3);line-height:1.6}
+.z-info li{position:relative;padding-left:30px;margin-bottom:14px;list-style:none;font-size:16px;color:var(--ink-2);line-height:1.6}
+.z-info ul{margin:22px 0 0;padding:0}
+.z-info li::before{
+  content:"";position:absolute;left:0;top:9px;width:14px;height:14px;border-radius:50%;
+  border:3px solid var(--leaf);
+}
+
+/* ==========================================================================
+   12 · Umgebung
+   ========================================================================== */
+.umgebung{position:relative;overflow:hidden}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.chip{
+  display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;
+  background:var(--white);border:1px solid var(--line);font-size:14.5px;color:var(--ink-2);
+  transition:border-color .25s ease,transform .25s ease,color .25s ease;
+}
+.chip:hover{border-color:var(--sage);transform:translateY(-2px);color:var(--forest)}
+.chip .dot{width:7px;height:7px;border-radius:50%;background:var(--leaf);flex:none}
+
+/* ==========================================================================
+   13 · Öffnungszeiten
+   ========================================================================== */
+.zeiten{background:var(--mint-lt)}
+.z-wrap{display:grid;grid-template-columns:1fr 1.06fr;gap:clamp(28px,4.5vw,64px);align-items:start}
+.h-card{background:var(--white);border-radius:var(--r-m);box-shadow:var(--sh-m);overflow:hidden;border:1px solid var(--line-2)}
+.h-tab th,.h-tab td{padding:16px clamp(20px,2.4vw,30px);border-bottom:1px solid var(--line-2)}
+.h-tab tr:last-child th,.h-tab tr:last-child td{border-bottom:0}
+.h-tab th{text-align:left;font-weight:600;font-size:16px;color:var(--forest);width:38%}
+.h-tab td{text-align:right;font-size:16px;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.h-tab .rest{background:var(--paper-2)}
+.h-tab .rest th{color:var(--ink-3);font-weight:500}
+.h-tab .rest td{color:var(--ink-3);font-style:italic}
+.h-tab .hl th,.h-tab .hl td{background:rgba(0,166,81,.05)}
+.h-tab td .two{display:block}
+.h-tab td .two+.two{margin-top:3px}
+
+/* ==========================================================================
+   14 · Kontakt
+   ========================================================================== */
+.kontakt{background:var(--white)}
+.k-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(32px,5vw,72px);align-items:center}
+.k-list{margin:30px 0 0;padding:0;list-style:none}
+.k-list li{display:flex;gap:16px;align-items:flex-start;padding:16px 0;border-bottom:1px solid var(--line-2)}
+.k-list li:last-child{border-bottom:0}
+.k-ic{
+  flex:none;width:42px;height:42px;border-radius:12px;background:var(--mint-lt);
+  display:flex;align-items:center;justify-content:center;color:var(--forest);
+}
+.k-ic svg{width:19px;height:19px}
+.k-k{display:block;font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--leaf);margin-bottom:3px}
+.k-v{font-size:17px;color:var(--forest);font-weight:500;text-decoration:none;line-height:1.5}
+a.k-v{transition:color .2s ease}
+a.k-v:hover{color:var(--leaf)}
+.k-fig{border-radius:var(--r-l);overflow:hidden;box-shadow:var(--sh-l);aspect-ratio:1/1;position:relative}
+/* Ausschnitt bewusst rechts: der Lieferwagen am linken Bildrand bleibt außen
+   vor — der Lieferservice ist in seinem Status unbelegt (§A5/§A6).
+   WICHTIG: Der Wagen belegt die linken ~20 % der Datei (0–320 px von 1600).
+   Bei object-position:100% schneidet „cover" links (1 − Kastenformat/1,501) ab.
+   Das Kastenformat darf deshalb NIE breiter als ~1,1:1 werden — 1:1 schneidet
+   33 % ab (sicher), 4:3 nur 11 % (Wagen wäre sichtbar). Gilt auch mobil. */
+.k-fig img{width:100%;height:100%;object-fit:cover;object-position:100% 52%}
+
+/* ==========================================================================
+   15 · Footer
+   ========================================================================== */
+.ftr{position:relative;background:var(--forest-dk);color:rgba(255,255,255,.72);padding:clamp(52px,6.5vw,80px) 0 30px;overflow:hidden}
+.ftr .wrap{position:relative;z-index:2}
+.ftr h4{color:#fff;font-family:var(--sans);font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;margin:0 0 16px}
+.ftr-grid{display:grid;grid-template-columns:1.35fr 1fr 1fr 1fr;gap:clamp(26px,3.6vw,52px)}
+.f-logo{background:#fff;border-radius:14px;padding:14px 18px;display:inline-block;box-shadow:0 12px 30px -18px rgba(0,0,0,.8)}
+.f-logo img{width:190px;height:auto}
+.f-claim{margin-top:20px;font-family:var(--serif);font-style:italic;font-size:17px;color:rgba(255,255,255,.80);max-width:34ch;line-height:1.6}
+.fline{display:block;font-size:15px;line-height:1.85}
+.fline a{text-decoration:none;transition:color .2s ease}
+.fline a:hover{color:var(--sage)}
+.ftr-legal{
+  margin-top:clamp(38px,5vw,58px);padding-top:24px;border-top:1px solid rgba(255,255,255,.14);
+  display:flex;flex-wrap:wrap;gap:12px 26px;justify-content:space-between;align-items:center;
+  font-size:13.5px;color:rgba(255,255,255,.55);
+}
+.ftr-legal a{text-decoration:none}
+.ftr-legal a:hover{color:var(--sage)}
+.ftr-imp{margin-top:14px;font-size:12.5px;color:rgba(255,255,255,.42);line-height:1.7}
+
+/* ==========================================================================
+   16 · Reveal (§A4)
+   ========================================================================== */
+[data-rev]{opacity:0;transform:translateY(22px);transition:opacity .8s cubic-bezier(.2,.7,.25,1),transform .8s cubic-bezier(.2,.7,.25,1)}
+[data-rev].in{opacity:1;transform:none}
+
+/* ==========================================================================
+   17 · Responsive
+   ========================================================================== */
+@media (max-width:1080px){
+  .nav,.hdr-tel{display:none}
+  .burger{display:flex}
+  .welcome,.saal-top,.z-split,.k-grid,.z-wrap,.sec-head--split{grid-template-columns:1fr}
+  .welcome-fig{order:-1}
+  .shelf{grid-template-columns:1fr 1fr}
+  .shelf-item:nth-child(2){border-right:0}
+  .shelf-item:nth-child(1),.shelf-item:nth-child(2){border-bottom:1px solid var(--line-2)}
+  .t-a,.t-b,.t-c,.t-d{grid-column:span 6}
+  .ftr-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:760px){
+  body{font-size:16.5px}
+  :root{--hdr:66px}
+  .hero{min-height:auto}
+  .hero-in{padding-top:calc(var(--hdr) + 96px);padding-bottom:56px}
+  .hero-img{object-position:62% 50%}
+  .hero h1{max-width:none}
+  .shelf-wrap{margin-top:-30px}
+  .shelf{grid-template-columns:1fr}
+  .shelf-item{border-right:0;border-bottom:1px solid var(--line-2)}
+  .shelf-item:last-child{border-bottom:0}
+  .mosaic{grid-template-columns:1fr;grid-template-rows:none;grid-auto-rows:clamp(206px,56vw,300px)}
+  .t-a,.t-b,.t-c,.t-d{grid-column:span 1}
+  .dish-grid,.z-grid,.ph-menu{grid-template-columns:1fr}
+  .ph-menu{gap:0}
+  .ph-col+.ph-col{margin-top:26px;padding-top:26px;border-top:1px solid var(--line-2)}
+  .sunday{grid-template-columns:1fr;text-align:left}
+  .sunday-badge{margin-bottom:4px}
+  .brand img{width:142px}
+  .ftr-grid{grid-template-columns:1fr}
+  .f-logo img{width:170px}
+  .cta-row .btn{width:100%}
+  .caps{gap:10px}
+  .cap-pill{padding:12px 18px}
+  /* 1:1 beibehalten (siehe Regel bei .k-fig): bei 4/3 würde der Lieferwagen
+     am linken Bildrand sichtbar. */
+  .k-fig img{object-position:100% 55%}
+  .note{flex-direction:column;gap:12px}
+  /* Panorama (3,9 : 1) wäre am Handy nur ein Streifen — daher in voller
+     Höhe zeigen und seitlich schwenkbar machen. */
+  .pano{overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch}
+  .pano img{height:215px;width:auto;max-width:none}
+  .only-m{display:inline}
+  .saal .tree-wm{--th:640px!important;right:-170px!important;top:-40px!important}
+  .zimmer .tree-wm{--th:300px!important;right:-52px!important}
+}
+@media (max-width:400px){
+  /* Bei 320 px sind „Saal anfragen · 07931 43232" (310 px) und
+     „Zimmer anfragen · 07931 43232" (306 px) breiter als die Inhaltsspalte
+     (284 px) und wurden vom overflow:hidden der Abschnitte abgeschnitten.
+     Hier darf die Beschriftung deshalb umbrechen. */
+  .btn{white-space:normal;text-align:center;padding-left:20px;padding-right:20px}
+  .saal-foot .btn{width:100%}
+  .hero-quote{font-size:16px}
+  .cap-pill b{font-size:18px}
+  .p-tab td{font-size:18px}
+  .h-tab th,.h-tab td{padding:14px 16px;font-size:15px}
+  .k-list li{gap:12px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+  [data-rev]{opacity:1;transform:none}
+  .hero h1 .ul::after,.uline::after{transform:scaleX(1)}
+}
+</style>
+</head>
+
+<body id="top">
+
+<header class="hdr" id="hdr">
+  <div class="hdr-in">
+    <a class="brand" href="#top" aria-label="Gasthaus Linde — zum Seitenanfang">
+      <span class="brand-chip">
+        <img src="assets_02/lc-schriftzug-linde-baum.png" alt="Logo Gasthaus Linde: Schriftzug mit gezeichneter Linde" width="1200" height="355">
+      </span>
+    </a>
+
+    <nav class="nav" aria-label="Hauptnavigation">
+      <a href="#haus">Das Haus</a>
+      <a href="#saal">Der Saal</a>
+      <a href="#kueche">Küche</a>
+      <a href="#zimmer">Übernachten</a>
+      <a href="#zeiten">Öffnungszeiten</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+
+    <a class="btn btn--out hdr-tel" href="tel:+49793143232">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.2 3.5h3l1.5 3.7-1.9 1.4a12.5 12.5 0 0 0 5.6 5.6l1.4-1.9 3.7 1.5v3a1.8 1.8 0 0 1-2 1.8A15.8 15.8 0 0 1 4.4 5.5a1.8 1.8 0 0 1 1.8-2z"/></svg>
+      07931 43232
+    </a>
+
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="mnav" aria-label="Menü öffnen">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<nav class="mnav" id="mnav" aria-label="Navigation (mobil)">
+  <div class="mnav-in">
+    <a href="#haus">Das Haus</a>
+    <a href="#saal">Der Saal</a>
+    <a href="#kueche">Küche</a>
+    <a href="#zimmer">Übernachten</a>
+    <a href="#zeiten">Öffnungszeiten</a>
+    <a href="#kontakt">Kontakt</a>
+    <a class="btn btn--pri" href="tel:+49793143232">Anrufen · 07931 43232</a>
+  </div>
+</nav>
+
+<main>
+
+<section class="hero" aria-labelledby="hero-h">
+  <img class="hero-img" src="assets_02/lc-biergarten-gaeste.jpg"
+       alt="Gut besuchter Biergarten des Gasthauses Linde in der Abendsonne: Gäste an langen Tischen unter weißen Sonnenschirmen, in der Mitte der mächtige Stamm der Linde, darüber der grüne Bogen mit der Aufschrift Biergarten"
+       width="1600" height="900" fetchpriority="high">
+  <div class="hero-scrim" aria-hidden="true"></div>
+
+  <div class="wrap hero-in">
+    <p class="eyebrow eyebrow--light">Gasthaus Linde · Bad Mergentheim-Wachbach</p>
+    <h1 class="h1" id="hero-h">Ein schattiger Platz<br><span class="ul"><em>unter unserer Linde</em></span></h1>
+    <p class="hero-quote">„Im Sommer lädt unser ruhig gelegener Biergarten zum Erholen ein. Auch an heißen&nbsp;Tagen findet man einen schattigen Platz unter unserer Linde."</p>
+    <div class="cta-row">
+      <a class="btn btn--leaf" href="tel:+49793143232">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.2 3.5h3l1.5 3.7-1.9 1.4a12.5 12.5 0 0 0 5.6 5.6l1.4-1.9 3.7 1.5v3a1.8 1.8 0 0 1-2 1.8A15.8 15.8 0 0 1 4.4 5.5a1.8 1.8 0 0 1 1.8-2z"/></svg>
+        Tisch anfragen · 07931 43232
+      </a>
+      <a class="btn btn--glass" href="#saal">Saal, Bistro &amp; Biergarten</a>
+    </div>
+  </div>
+</section>
+
+<div class="shelf-wrap">
+  <div class="wrap">
+    <div class="shelf" data-rev>
+      <div class="shelf-item">
+        <span class="shelf-k">Draußen</span>
+        <span class="shelf-v">Naturbiergarten</span>
+        <span class="shelf-s">ruhig gelegen, schattig unter der Linde</span>
+      </div>
+      <div class="shelf-item">
+        <span class="shelf-k">Für große Runden</span>
+        <span class="shelf-v">Saal · 80 – 100 Plätze</span>
+        <span class="shelf-s">dazu Nebenzimmer und Bistro</span>
+      </div>
+      <div class="shelf-item">
+        <span class="shelf-k">Übernachten</span>
+        <span class="shelf-v">9 Betten</span>
+        <span class="shelf-s">vier Doppelzimmer, ein Einzelzimmer</span>
+      </div>
+      <div class="shelf-item">
+        <span class="shelf-k">Geführt von</span>
+        <span class="shelf-v">Familie Sari</span>
+        <span class="shelf-s">familiär geführt in der Ortsmitte</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="sec pb-s" aria-labelledby="welcome-h">
+  <div class="wrap">
+    <div class="welcome">
+      <div class="welcome-txt">
+        <p class="eyebrow" data-rev>Willkommen</p>
+        <h2 class="h2 uline" id="welcome-h" data-rev style="transition-delay:.05s">Lernen Sie unsere <em class="acc">Gastfreundschaft</em> kennen</h2>
+        <p class="lede" data-rev style="transition-delay:.1s;margin-top:26px">
+          Unser familiär geführtes Gasthaus liegt in der Ortsmitte von Wachbach, einem Stadtteil
+          von Bad Mergentheim — mitten im „Lieblichen Taubertal".
+        </p>
+        <p class="lede" data-rev style="transition-delay:.15s">
+          Unsere Kunden schätzen die hochwertige Qualität der Zutaten und die gute Zubereitung
+          unserer Speisen. Gaststube, Bistro, Saal und der Naturbiergarten gehören zusammen —
+          und über allem steht die Linde, die dem Haus ihren Namen gegeben hat.
+        </p>
+        <div class="sign" data-rev style="transition-delay:.2s">
+          <span class="sign-name">Familie Sari</span>
+          <span class="sign-line" aria-hidden="true"></span>
+        </div>
+      </div>
+
+      <figure class="welcome-fig" data-rev style="transition-delay:.1s;margin:0">
+        <div class="frame">
+          <img src="assets_02/lc-gastgeber-team.jpg"
+               alt="Vier Gastgeberinnen und Gastgeber des Gasthauses Linde an und hinter der beleuchteten Holztheke"
+               width="1600" height="1200" loading="lazy">
+        </div>
+        <figcaption class="cap">Ihre Gastgeber im Gasthaus Linde</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="lrule" aria-hidden="true"></div></div>
+
+<section class="sec sec--tight pt-s" id="haus" aria-labelledby="haus-h">
+  <div class="wrap">
+    <div class="sec-head sec-head--split">
+      <div>
+        <p class="eyebrow" data-rev>Das Haus</p>
+        <h2 class="h2 uline" id="haus-h" data-rev style="transition-delay:.05s">Vier Räume, <em class="acc">ein Haus</em></h2>
+      </div>
+      <p class="lede" data-rev style="transition-delay:.1s">
+        Gastraum, Theke, Nebenraum und der Naturbiergarten — je nachdem, ob Sie zu zweit
+        kommen, mit Freunden oder mit der ganzen Gesellschaft.
+      </p>
+    </div>
+
+    <div class="mosaic">
+      <figure class="tile t-a" data-rev style="margin:0">
+        <img src="assets_02/lc-gastraum-tische.jpg"
+             alt="Gastraum des Gasthauses Linde mit hellen Tischen, Polsterbänken, schwarz-goldenen Pendelleuchten und Fensterfront"
+             width="1600" height="1200" loading="lazy">
+        <figcaption class="tile-lb">
+          <h3>Gastraum</h3>
+          <p>Bank-Landschaft mit hellen Tischen und viel Tageslicht</p>
+        </figcaption>
+      </figure>
+
+      <figure class="tile t-b" data-rev style="margin:0;transition-delay:.06s">
+        <img src="assets_02/lc-gastraum-theke.jpg"
+             alt="Moderne Holztheke des Gasthauses Linde mit hinterleuchteten Natursteinfeldern, Gläserregal und Blumenstrauß"
+             width="1600" height="1200" loading="lazy">
+        <figcaption class="tile-lb">
+          <h3>Unsere Theke</h3>
+          <p>hinterleuchteter Naturstein, Holz und Blumen</p>
+        </figcaption>
+      </figure>
+
+      <figure class="tile t-c" data-rev style="margin:0;transition-delay:.06s">
+        <img src="assets_02/lc-gastraum-fenster.jpg"
+             alt="Heller Nebenraum des Gasthauses Linde mit umlaufender Polsterbank, hellen Holzstühlen und Tischen mit Windlichtern"
+             width="1600" height="1200" loading="lazy">
+        <figcaption class="tile-lb">
+          <h3>Nebenraum am Fenster</h3>
+          <p>umlaufende Polsterbank, Tische mit Windlichtern</p>
+        </figcaption>
+      </figure>
+
+      <figure class="tile t-d" data-rev style="margin:0;transition-delay:.12s">
+        <img src="assets_02/lc-biergarten-linde.jpg"
+             alt="Naturbiergarten des Gasthauses Linde: der große Lindenstamm mittig, eingezäunte Bestuhlung, üppige Blumenkübel und der grüne Bogen Biergarten am Haus"
+             width="1600" height="1066" loading="lazy">
+        <figcaption class="tile-lb">
+          <h3>Naturbiergarten</h3>
+          <p>rund um die Linde, mit Blumenkübeln und Laternen</p>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec saal" id="saal" aria-labelledby="saal-h">
+  
+  <span class="tree-wm tree-wm--light" aria-hidden="true" style="--th:940px;right:-130px;top:-90px">
+    <img src="assets_02/lc-schriftzug-linde-baum.png" alt="" loading="lazy">
+  </span>
+
+  <div class="wrap">
+    <div class="saal-top">
+      <div>
+        <p class="eyebrow eyebrow--light" data-rev>Der Saal</p>
+        <h2 class="h2 uline" id="saal-h" data-rev style="transition-delay:.05s">Achtzig bis hundert Plätze</h2>
+      </div>
+      <p class="saal-lede" data-rev style="transition-delay:.1s">
+        Der größte Raum im Haus — mit langen Tafeln und Platz für die ganze Gesellschaft.
+        Dazu ein Nebenzimmer mit 20 Sitzplätzen und unser Bistro.
+      </p>
+    </div>
+
+    <figure class="pano" data-rev tabindex="0" aria-label="Panoramaaufnahme des Saals — seitlich schwenkbar" style="transition-delay:.1s">
+      <img src="assets_02/lc-saal-festlich.jpg"
+           alt="Der Saal des Gasthauses Linde, festlich eingedeckt: U-förmig gestellte lange Tafeln mit weißen Decken, dunkle Stühle und rote Serviettendekoration an jedem Platz"
+           width="1600" height="411" loading="lazy">
+    </figure>
+    <p class="pano-cap" data-rev><span>Der Saal, festlich eingedeckt<span class="only-m"> · zum Schwenken seitlich wischen</span></span></p>
+
+    <div class="caps">
+      <span class="cap-pill" data-rev><b>80 – 100</b> <span>Sitzplätze im Saal</span></span>
+      <span class="cap-pill" data-rev style="transition-delay:.05s"><b>20</b> <span>Sitzplätze im Nebenzimmer</span></span>
+      <span class="cap-pill" data-rev style="transition-delay:.1s"><b>+</b> <span>Bistro, Gastraum und Naturbiergarten</span></span>
+    </div>
+
+    <div class="saal-foot" data-rev>
+      <a class="btn btn--leaf" href="tel:+49793143232">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.2 3.5h3l1.5 3.7-1.9 1.4a12.5 12.5 0 0 0 5.6 5.6l1.4-1.9 3.7 1.5v3a1.8 1.8 0 0 1-2 1.8A15.8 15.8 0 0 1 4.4 5.5a1.8 1.8 0 0 1 1.8-2z"/></svg>
+        Saal anfragen · 07931 43232
+      </a>
+      <a class="btn btn--glass" href="mailto:info@linde-wachbach.de?subject=Anfrage%20Saal%20-%20Gasthaus%20Linde">Anfrage per E-Mail</a>
+    </div>
+
+    <div class="note note--dark" data-rev>
+      <span class="ic" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg>
+      </span>
+      <div>
+        <b>Hinweis zur Vorschau</b>
+        <p>
+          An dieser Stelle gehören Ihre Angaben zum Saal hin: welche Anlässe Sie ausrichten,
+          welche Menüs oder Buffets es dazu gibt, wie es um Technik, Bestuhlung und Vorlauf
+          steht. In Ihren heutigen Unterlagen findet sich dazu nur die eine Zeile
+          „Saal mit 80 – 100 Sitzplätzen" — mehr steht dort nicht, und wir ergänzen nichts
+          von uns aus.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec kueche" id="kueche" aria-labelledby="kueche-h">
+  <div class="wrap">
+    <div class="sec-head sec-head--split">
+      <div>
+        <p class="eyebrow" data-rev>Küche</p>
+        <h2 class="h2 uline" id="kueche-h" data-rev style="transition-delay:.05s">Deutsch, international — <em class="acc">und auf Wunsch türkisch</em></h2>
+      </div>
+      <p class="lede" data-rev style="transition-delay:.1s">
+        „In unserem Hause wird Ihnen deutsche und internationale Küche angeboten. Bei Anfragen
+        bereiten wir Ihnen auch gerne Gerichte aus der türkischen Küche vor."
+      </p>
+    </div>
+
+    <div class="dish-grid">
+      <figure class="dish" data-rev style="margin:0">
+        <img src="assets_02/lc-speise-grillteller.jpg"
+             alt="Teller mit Grillfleisch, Kräuterbutter, Pommes frites und grünen Bohnen aus der Küche des Gasthauses Linde"
+             width="1600" height="1200" loading="lazy">
+      </figure>
+      <figure class="dish" data-rev style="margin:0;transition-delay:.06s">
+        <img src="assets_02/lc-speise-fladen.jpg"
+             alt="Aufgeklapptes Fladenbrot mit gegrillten Hähnchenstreifen, Salat, Gurken- und Tomatenscheiben und Joghurt-Kräutersauce aus der Küche des Gasthauses Linde"
+             width="1600" height="1200" loading="lazy">
+      </figure>
+    </div>
+    <p class="cap" data-rev>Zwei Aufnahmen aus der eigenen Küche</p>
+
+    <div class="sunday" data-rev>
+      <div class="sunday-badge" aria-hidden="true">
+        <b>So</b><span>Angebot</span>
+      </div>
+      <div>
+        <h3 class="h3">Sonntags-Angebot</h3>
+        <p>
+          „Liebe Gäste, wir haben jeden Sonntag verschiedene Tagesessen (z. B. Braten) mit
+          Beilagen (z. B. Pommes oder Kroketten) und Beilagensalat für Sie zur Auswahl."
+        </p>
+      </div>
+    </div>
+
+    <div class="ph" data-rev>
+      <div class="ph-head">
+        <span class="ph-label">Platzhalter · Vorschlag</span>
+        <h3 class="h3">Hier steht künftig Ihre Speisekarte</h3>
+        <p>
+          Gerichte nach Gruppen sortiert, jede Zeile mit Preis, direkt auf der Seite lesbar —
+          auf dem Handy genauso wie am Rechner, ohne PDF und ohne Download.
+        </p>
+        <p>
+          Wir haben die Karte bewusst leer gelassen: In Ihren vorhandenen Unterlagen ist kein
+          einziges Gericht und kein einziger Preis hinterlegt. Wir denken uns nichts aus —
+          sobald Sie uns Ihre Karte geben, steht sie an genau dieser Stelle.
+        </p>
+      </div>
+
+      <div class="ph-menu" aria-hidden="true">
+        <div class="ph-col">
+          <span class="ph-cat w1"></span>
+          <div class="ph-row"><span class="ph-t" style="width:58%"></span><span class="ph-dots"></span><span class="ph-p"></span></div>
+          <div class="ph-row"><span class="ph-t" style="width:44%"></span><span class="ph-dots"></span><span class="ph-p"></span></div>
+          <div class="ph-row"><span class="ph-t" style="width:64%"></span><span class="ph-dots"></span><span class="ph-p"></span></div>
+          <div class="ph-row"><span class="ph-t" style="width:38%"></span><span class="ph-dots"></span><span class="ph-p"></span></div>
+          <div class="ph-row"><span class="ph-t" style="width:52%"></span><span class="ph-dots"></span><span class="ph-p"></span></div>
+        </div>
+        <div class="ph-col">
+          <span class="ph-cat w2"></span>
+          <div class="ph-row"><span class="ph-t" style="width:48%"></span><span class="ph-dots"></span><span class="ph-p"></span></div>
+          <div class="ph-row"><span class="ph-t" style="width:62%"></span><span class="ph-dots"></span><span class="ph-p"></span></div>
+          <div class="ph-row"><span class="ph-t" style="width:41%"></span><span class="ph-dots"></span><span class="ph-p"></span></div>
+          <div class="ph-row"><span class="ph-t" style="width:56%"></span><span class="ph-dots"></span><span class="ph-p"></span></div>
+          <div class="ph-row"><span class="ph-t" style="width:35%"></span><span class="ph-dots"></span><span class="ph-p"></span></div>
+        </div>
+      </div>
+
+      <p class="ph-foot">
+        <span>Bis dahin gilt der kurze Weg: Rufen Sie uns an — <a class="k-v" href="tel:+49793143232">07931 43232</a>.</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="sec zimmer" id="zimmer" aria-labelledby="zimmer-h">
+  <span class="tree-wm" aria-hidden="true" style="--th:420px;right:-40px;top:8%">
+    <img src="assets_02/lc-schriftzug-linde-baum.png" alt="">
+  </span>
+
+  <div class="wrap">
+    <div class="sec-head sec-head--split">
+      <div>
+        <p class="eyebrow" data-rev>Übernachten</p>
+        <h2 class="h2 uline" id="zimmer-h" data-rev style="transition-delay:.05s">Seien Sie <em class="acc">unser Gast</em></h2>
+      </div>
+      <p class="lede" data-rev style="transition-delay:.1s">
+        Zum Übernachten stehen Ihnen vier modern eingerichtete Doppelzimmer und ein
+        Einzelzimmer zur Verfügung — zusammen neun Betten, mitten im Ort.
+      </p>
+    </div>
+
+    <div class="z-grid">
+      <figure class="z-fig" data-rev style="margin:0">
+        <span class="z-tag">Doppelzimmer</span>
+        <img src="assets_02/lc-zimmer-doppelzimmer.jpg"
+             alt="Doppelzimmer im Gasthaus Linde mit breitem Bett, hellem Holzkopfteil, grün-weiß gestreifter Wand und offener Tür zum eigenen Bad"
+             width="2592" height="1728" loading="lazy">
+      </figure>
+      <figure class="z-fig" data-rev style="margin:0;transition-delay:.06s">
+        <span class="z-tag">Einzelzimmer</span>
+        <img src="assets_02/lc-zimmer-einzelzimmer.jpg"
+             alt="Einzelzimmer im Gasthaus Linde mit hellem Holzbett, grün-weiß gestreifter Wand, Nachttisch und hohem Schrank"
+             width="2592" height="1728" loading="lazy">
+      </figure>
+    </div>
+
+    <div class="z-split">
+      <div class="z-info" data-rev>
+        <h3 class="h3">Ankommen und bleiben</h3>
+        <ul>
+          <li>Vier modern eingerichtete Doppelzimmer und ein Einzelzimmer — insgesamt 9 Betten.</li>
+          <li>Mitten in der Ortsmitte von Wachbach, einem Stadtteil von Bad Mergentheim.</li>
+          <li>Im „Lieblichen Taubertal" — guter Ausgangspunkt für Radtouren und Wanderungen.</li>
+          <li>Zimmeranfragen nehmen wir gerne persönlich am Telefon entgegen.</li>
+        </ul>
+        <div class="cta-row" style="margin-top:28px">
+          <a class="btn btn--pri" href="tel:+49793143232">Zimmer anfragen · 07931 43232</a>
+          <a class="btn btn--out" href="mailto:info@linde-wachbach.de?subject=Zimmeranfrage%20-%20Gasthaus%20Linde">E-Mail schreiben</a>
+        </div>
+      </div>
+
+      <div class="price-card" data-rev style="transition-delay:.06s">
+        <h3 class="h3">Preise</h3>
+        <p class="small">pro Nacht</p>
+        <table class="p-tab">
+          <caption class="visually-hidden" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Zimmerpreise des Gasthauses Linde</caption>
+          <tbody>
+            <tr><th scope="row">Einzelzimmer</th><td>55,00 €</td></tr>
+            <tr><th scope="row">Doppelzimmer</th><td>86,00 €</td></tr>
+            <tr><th scope="row">Doppelzimmer zur Einzelnutzung</th><td>58,00 €</td></tr>
+            <tr class="fr"><th scope="row">Frühstück pro Person</th><td>8,50 €</td></tr>
+          </tbody>
+        </table>
+        <p class="price-note">Alle Zimmerpreise verstehen sich ohne Frühstück. Das Frühstück kann pro Person dazugebucht werden.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="lrule" aria-hidden="true"></div></div>
+
+<section class="sec sec--tight umgebung" aria-labelledby="umgebung-h">
+  <div class="wrap">
+    <div class="sec-head sec-head--split">
+      <div>
+        <p class="eyebrow" data-rev>Rundherum</p>
+        <h2 class="h2 uline" id="umgebung-h" data-rev style="transition-delay:.05s">Mitten im <em class="acc">Lieblichen Taubertal</em></h2>
+      </div>
+      <p class="lede" data-rev style="transition-delay:.1s">
+        „Im Main-Tauber-Kreis finden Sie ein großes kulturelles Angebot" — dazu ein ebenso
+        großes Angebot an sportlichen Freizeitaktivitäten, vom Reiten bis zum Baden.
+      </p>
+    </div>
+
+    <div class="chips" data-rev>
+      <span class="chip"><span class="dot" aria-hidden="true"></span>Mergentheimer Schloss</span>
+      <span class="chip"><span class="dot" aria-hidden="true"></span>Weikersheimer Schloss</span>
+      <span class="chip"><span class="dot" aria-hidden="true"></span>Bad Mergentheim</span>
+      <span class="chip"><span class="dot" aria-hidden="true"></span>Weikersheim</span>
+      <span class="chip"><span class="dot" aria-hidden="true"></span>Rothenburg</span>
+      <span class="chip"><span class="dot" aria-hidden="true"></span>Wildtierpark Bad Mergentheim</span>
+      <span class="chip"><span class="dot" aria-hidden="true"></span>Reiten</span>
+      <span class="chip"><span class="dot" aria-hidden="true"></span>Golf</span>
+      <span class="chip"><span class="dot" aria-hidden="true"></span>Radtouren</span>
+      <span class="chip"><span class="dot" aria-hidden="true"></span>Wanderungen</span>
+      <span class="chip"><span class="dot" aria-hidden="true"></span>Thermalbad</span>
+    </div>
+  </div>
+</section>
+
+<section class="sec zeiten" id="zeiten" aria-labelledby="zeiten-h">
+  <div class="wrap">
+    <div class="z-wrap">
+      <div>
+        <p class="eyebrow" data-rev>Öffnungszeiten</p>
+        <h2 class="h2 uline" id="zeiten-h" data-rev style="transition-delay:.05s">Wann wir <em class="acc">für Sie da sind</em></h2>
+        <p class="lede" data-rev style="transition-delay:.1s;margin-top:26px">
+          Unsere Gaststätte ist wie folgt für Sie geöffnet. Montag und Dienstag sind Ruhetage.
+        </p>
+        <p class="small" data-rev style="transition-delay:.15s;margin-top:16px">
+          An Feiertagen und während unserer Betriebsferien können die Zeiten abweichen —
+          rufen Sie in dem Fall bitte kurz an.
+        </p>
+        <div class="cta-row" data-rev style="margin-top:28px">
+          <a class="btn btn--pri" href="tel:+49793143232">Anrufen · 07931 43232</a>
+        </div>
+      </div>
+
+      <div class="h-card" data-rev style="transition-delay:.06s">
+        <table class="h-tab">
+          <caption style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Öffnungszeiten des Gasthauses Linde</caption>
+          <tbody>
+            <tr class="rest"><th scope="row">Montag</th><td>Ruhetag</td></tr>
+            <tr class="rest"><th scope="row">Dienstag</th><td>Ruhetag</td></tr>
+            <tr><th scope="row">Mittwoch</th><td>17.00 – 24.00 Uhr</td></tr>
+            <tr><th scope="row">Donnerstag</th><td>17.00 – 24.00 Uhr</td></tr>
+            <tr><th scope="row">Freitag</th><td>17.00 – 24.00 Uhr</td></tr>
+            <tr><th scope="row">Samstag</th><td>17.00 – 24.00 Uhr</td></tr>
+            <tr class="hl"><th scope="row">Sonn- &amp; Feiertag</th><td><span class="two">11.00 – 14.00 Uhr</span><span class="two">17.00 – 24.00 Uhr</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec kontakt" id="kontakt" aria-labelledby="kontakt-h">
+  <div class="wrap">
+    <div class="k-grid">
+      <div>
+        <p class="eyebrow" data-rev>Kontakt</p>
+        <h2 class="h2 uline" id="kontakt-h" data-rev style="transition-delay:.05s">Wir freuen uns <em class="acc">auf Sie</em></h2>
+        <p class="lede" data-rev style="transition-delay:.1s;margin-top:26px">
+          Für einen Tisch, den Saal oder ein Zimmer: Ein kurzer Anruf genügt — oder schreiben
+          Sie uns eine E-Mail.
+        </p>
+
+        <ul class="k-list" data-rev style="transition-delay:.15s">
+          <li>
+            <span class="k-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>
+            </span>
+            <span>
+              <span class="k-k">Adresse</span>
+              <span class="k-v">Dorfstraße 118<br>97980 Bad Mergentheim-Wachbach</span>
+            </span>
+          </li>
+          <li>
+            <span class="k-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6.2 3.5h3l1.5 3.7-1.9 1.4a12.5 12.5 0 0 0 5.6 5.6l1.4-1.9 3.7 1.5v3a1.8 1.8 0 0 1-2 1.8A15.8 15.8 0 0 1 4.4 5.5a1.8 1.8 0 0 1 1.8-2z"/></svg>
+            </span>
+            <span>
+              <span class="k-k">Telefon</span>
+              <a class="k-v" href="tel:+49793143232">07931 43232</a>
+            </span>
+          </li>
+          <li>
+            <span class="k-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.6 6.6 8.4 6 8.4-6"/></svg>
+            </span>
+            <span>
+              <span class="k-k">E-Mail</span>
+              <a class="k-v" href="mailto:info@linde-wachbach.de">info@linde-wachbach.de</a>
+            </span>
+          </li>
+          <li>
+            <span class="k-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.6"/><path d="M12 7v5.2l3.2 2"/></svg>
+            </span>
+            <span>
+              <span class="k-k">Geöffnet</span>
+              <span class="k-v">Mi – Sa ab 17.00 Uhr · So &amp; Feiertag ab 11.00 Uhr</span>
+            </span>
+          </li>
+        </ul>
+
+        <div class="cta-row" data-rev style="transition-delay:.2s;margin-top:30px">
+          <a class="btn btn--leaf" href="tel:+49793143232">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.2 3.5h3l1.5 3.7-1.9 1.4a12.5 12.5 0 0 0 5.6 5.6l1.4-1.9 3.7 1.5v3a1.8 1.8 0 0 1-2 1.8A15.8 15.8 0 0 1 4.4 5.5a1.8 1.8 0 0 1 1.8-2z"/></svg>
+            Jetzt anrufen
+          </a>
+          <a class="btn btn--out" href="mailto:info@linde-wachbach.de?subject=Anfrage%20-%20Gasthaus%20Linde">E-Mail schreiben</a>
+        </div>
+      </div>
+
+      <figure class="k-fig" data-rev style="margin:0;transition-delay:.1s">
+        <img src="assets_02/lc-haus-aussenansicht.jpg"
+             alt="Außenansicht des Gasthauses Linde in der Dorfstraße: weiß verputztes Haus mit rotem Ziegeldach, Leuchtschild Gasthaus Linde — moderne Gästezimmer über dem Eingang und einer Wendeltreppe zum Obergeschoss"
+             width="1600" height="1066" loading="lazy">
+      </figure>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="ftr">
+  <span class="tree-wm tree-wm--light" aria-hidden="true" style="--th:560px;right:-70px;bottom:-110px;opacity:.055">
+    <img src="assets_02/lc-schriftzug-linde-baum.png" alt="" loading="lazy">
+  </span>
+
+  <div class="wrap">
+    <div class="ftr-grid">
+      <div>
+        <span class="f-logo">
+          <img src="assets_02/lc-schriftzug-linde-baum.png" alt="Logo Gasthaus Linde: Schriftzug mit gezeichneter Linde" width="1200" height="355" loading="lazy">
+        </span>
+        <p class="f-claim">„Auch an heißen Tagen findet man einen schattigen Platz unter unserer Linde."</p>
+      </div>
+
+      <div>
+        <h4>Adresse</h4>
+        <span class="fline">Dorfstraße 118</span>
+        <span class="fline">97980 Bad Mergentheim-Wachbach</span>
+        <span class="fline"><a href="tel:+49793143232">Tel. 07931 43232</a></span>
+        <span class="fline"><a href="mailto:info@linde-wachbach.de">info@linde-wachbach.de</a></span>
+      </div>
+
+      <div>
+        <h4>Öffnungszeiten</h4>
+        <span class="fline">Mo &amp; Di &nbsp;·&nbsp; Ruhetag</span>
+        <span class="fline">Mi – Sa &nbsp;·&nbsp; 17.00 – 24.00 Uhr</span>
+        <span class="fline" style="margin-top:8px">So &amp; Feiertag</span>
+        <span class="fline">11.00 – 14.00 Uhr</span>
+        <span class="fline">17.00 – 24.00 Uhr</span>
+      </div>
+
+      <div>
+        <h4>Schnell zum Ziel</h4>
+        <span class="fline"><a href="#haus">Das Haus</a></span>
+        <span class="fline"><a href="#saal">Der Saal</a></span>
+        <span class="fline"><a href="#kueche">Küche</a></span>
+        <span class="fline"><a href="#zimmer">Übernachten</a></span>
+        <span class="fline"><a href="#kontakt">Kontakt</a></span>
+      </div>
+    </div>
+
+    <div class="ftr-legal">
+      <span>© 2026 Gasthaus Linde · Inh. Sinasi Sari</span>
+      <span>
+        <a href="tel:+49793143232">07931 43232</a> ·
+        <a href="mailto:info@linde-wachbach.de">info@linde-wachbach.de</a>
+      </span>
+    </div>
+    <p class="ftr-imp">
+      Gasthaus Linde · Inh. Sinasi Sari · Dorfstraße 118 · 97980 Bad Mergentheim-Wachbach ·
+      Umsatzsteuer-Identifikationsnummer nach §&nbsp;27a Umsatzsteuergesetz: 42 61 98 09 35 5
+    </p>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Restaurant",
+  "name":"Gasthaus Linde",
+  "address":{
+    "@type":"PostalAddress",
+    "streetAddress":"Dorfstraße 118",
+    "postalCode":"97980",
+    "addressLocality":"Bad Mergentheim-Wachbach",
+    "addressCountry":"DE"
+  },
+  "telephone":"+49 7931 43232",
+  "email":"info@linde-wachbach.de",
+  "servesCuisine":["Deutsche Küche","Internationale Küche"],
+  "openingHoursSpecification":[
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Wednesday","Thursday","Friday","Saturday"],"opens":"17:00","closes":"24:00"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"11:00","closes":"14:00"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"17:00","closes":"24:00"}
+  ]
+}
+</script>
+
+<script>
+(function(){
+  "use strict";
+
+  /* Sticky-Header */
+  var hdr = document.getElementById('hdr');
+  var onScroll = function(){
+    if (window.scrollY > 24) hdr.classList.add('scrolled');
+    else hdr.classList.remove('scrolled');
+  };
+  onScroll();
+  window.addEventListener('scroll', onScroll, {passive:true});
+
+  /* Mobile-Navigation */
+  var burger = document.getElementById('burger');
+  var mnav   = document.getElementById('mnav');
+  var close  = function(){
+    mnav.classList.remove('open');
+    burger.setAttribute('aria-expanded','false');
+    burger.setAttribute('aria-label','Menü öffnen');
+  };
+  burger.addEventListener('click', function(){
+    var open = mnav.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    burger.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+  });
+  mnav.addEventListener('click', function(e){ if (e.target.closest('a')) close(); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') close(); });
+  window.addEventListener('resize', function(){ if (window.innerWidth > 1080) close(); });
+
+  /* Sanftes Einblenden beim Scrollen (§A4) */
+  var items  = document.querySelectorAll('[data-rev]');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || !('IntersectionObserver' in window)) {
+    Array.prototype.forEach.call(items, function(el){ el.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, {threshold:0.12, rootMargin:'0px 0px -6% 0px'});
+    Array.prototype.forEach.call(items, function(el){ io.observe(el); });
+  }
+})();
+</script>
+
+</body>
+</html>

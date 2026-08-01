@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ristorante Da Ricci · Biergarten und Kochschule in Würzburg</title>
+<meta name="description" content="Ristorante Da Ricci, Wolfskeelstraße 22 in Würzburg: Biergarten mit altem Baumbestand, Trüffel als Spezialität und Gewürze aus dem eigenen Garten. Kochschule immer montags um 18 Uhr, 5-Gänge-Menü, 100 € pro Person. Mittwoch bis Sonntag geöffnet.">
+<meta name="theme-color" content="#361C0E">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23361C0E'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' font-weight='700' fill='%23F7EBD3' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..800;1,400..600&family=Instrument+Sans:ital,wght@0,400..700;1,400..600&display=swap" rel="stylesheet">
+<style>
+/* =================================================================
+   Ristorante Da Ricci · Würzburg — Startseiten-Vorschau
+   YG MEDIA · Kürzel: dr
+
+   ORTSTEIL (§A5): "Rottenbauer" steht NICHT auf der Kundenseite; die Angabe
+   stammt allein aus dem WürzburgWiki, das analyse.md 10.3 ausdrücklich als
+   "nicht für die Vorschau" kennzeichnet (offener Punkt 11.1 Nr. 9).
+   Deshalb hier bewusst nur "Würzburg" — nach Bestätigung durch den Kunden
+   kann der Ortsteil in Title, Hero-Zeile, Kontakt und Footer ergänzt werden.
+
+   FARBEN (§A1): Die alte Seite enthält keinen einzigen Hex-Wert.
+   Alle Töne unten sind deshalb AUS DEN ORIGINALFOTOS DES BETRIEBS
+   GEMESSEN (siehe analyse.md 7.2) — nicht erfunden:
+     #95886B Naturstein warm (Leitfarbe, tisch.jpg)
+     #F7EBD3 Naturstein hell (ristorante.jpg, besonnte Fassade)
+     #908163 / #867657 / #77684C / #675337  Naturstein-Stufen
+     #6D6654 Textil gedeckt (Tischläufer)
+     #361C0E Holz dunkel (Stuhllehne / Pfeffermühle)
+     #0E0905 Braunschwarz (Bildschatten)
+     #10130E / #2F2F2C / #4B4D32  Laubgrün (Bewuchs an der Fassade)
+     #538B50 Logo-Grün · #D94E42 Logo-Rot (Rundschild am Haus)
+   Aufgehellte/abgedunkelte Stufen sind als "abgeleitet" markiert.
+
+   MOTIV: das rote Sandstein-Gewände der Fassade — Bilder und
+   Signature-Flächen tragen einen versetzten Rahmen in Logo-Rot.
+
+   BILDREGEL (§A6): Der Bestand hat zwei Qualitätsklassen.
+     GROSS  (vollbild-tauglich):
+       dr-gastraum-gedeckter-tisch.jpg   5184 x 3456
+       dr-vorspeise-garnele-champignon.jpg 5184 x 3456
+       dr-aussenansicht.jpg              1600 x 1066
+     KLEIN  (640 x 480 — NIE über ca. 320 px darstellen):
+       alle Tellerfotos + dr-chefkoch-mit-lachs.jpg
+     Die Obergrenze ist unten hart per CSS gesetzt (.tile, .chef-img).
+   ================================================================= */
+
+*,*::before,*::after{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;}
+body{margin:0;}
+img{max-width:100%;display:block;}
+a{color:inherit;}
+
+:root{
+  /* gemessen */
+  --sand:#F7EBD3;
+  --stone:#95886B;
+  --stone-2:#908163;
+  --stone-3:#867657;
+  --stone-4:#77684C;
+  --stone-5:#675337;
+  --taupe:#6D6654;
+  --wood:#361C0E;
+  --ink:#0E0905;
+  --leaf:#4B4D32;
+  --leaf-2:#2F2F2C;
+  --leaf-3:#10130E;
+  --green:#538B50;
+  --red:#D94E42;
+  /* abgeleitete Stufen (aufgehellt aus #F7EBD3 / gemischt aus #0E0905 + #95886B) */
+  --paper:#FDF8EE;
+  --paper-2:#FAF2E2;
+  --sand-2:#F1E1C2;
+  --text:#2E241A;
+  --muted:#6E6353;
+  --line:rgba(149,136,107,.34);
+  --line-soft:rgba(149,136,107,.20);
+  --sh-s:0 2px 10px rgba(54,28,14,.06);
+  --sh-m:0 24px 52px -32px rgba(54,28,14,.5);
+  --sh-l:0 40px 80px -44px rgba(54,28,14,.62);
+  --gut:clamp(18px,4vw,44px);
+  --max:1180px;
+  --ff-sans:"Instrument Sans","Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --ff-serif:"Alegreya","Iowan Old Style",Palatino,Georgia,serif; /* bewusst NICHT Times New Roman (Schrift der alten Seite) */
+}
+
+body{
+  font-family:var(--ff-sans);
+  background:var(--paper);
+  color:var(--text);
+  font-size:17px;
+  line-height:1.68;
+  letter-spacing:.002em;
+  -webkit-font-smoothing:antialiased;
+}
+
+h1,h2,h3,h4,blockquote{font-family:var(--ff-serif);color:var(--ink);margin:0;line-height:1.14;letter-spacing:-.005em;}
+p{margin:0;}
+
+.wrap{width:100%;max-width:var(--max);margin:0 auto;padding-inline:var(--gut);}
+.sec{padding-block:clamp(64px,9vw,116px);position:relative;}
+
+/* --- Sandstein-Lagen: dezentes Fugenmuster als durchgehendes Motiv --- */
+.courses{
+  background-image:repeating-linear-gradient(
+    to bottom,
+    rgba(149,136,107,.055) 0,
+    rgba(149,136,107,.055) 1px,
+    transparent 1px,
+    transparent 46px);
+}
+
+/* --- Eyebrow mit Gewände-Marker --- */
+.eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:11.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--stone-5);margin:0 0 18px;
+}
+.eyebrow::before{content:"";width:7px;height:7px;background:var(--red);flex:none;}
+.eyebrow.on-dark{color:var(--sand);opacity:.85;}
+
+.h-xl{font-size:clamp(40px,7.4vw,80px);font-weight:600;}
+.h-lg{font-size:clamp(30px,4.4vw,50px);font-weight:600;}
+.h-md{font-size:clamp(23px,2.6vw,31px);font-weight:600;}
+.lead{font-size:clamp(17px,1.55vw,19.5px);color:var(--muted);max-width:60ch;}
+
+/* --- Buttons --- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  font-family:var(--ff-sans);font-size:15px;font-weight:600;letter-spacing:.01em;
+  padding:14px 24px;border-radius:2px;text-decoration:none;border:1.5px solid transparent;
+  transition:transform .25s ease,box-shadow .25s ease,background-color .25s ease,color .25s ease,border-color .25s ease;
+  cursor:pointer;
+}
+.btn svg{flex:none;}
+.btn-primary{background:var(--wood);color:var(--sand);box-shadow:0 12px 26px -16px rgba(54,28,14,.85);}
+.btn-primary:hover{background:var(--ink);transform:translateY(-2px);box-shadow:0 18px 34px -16px rgba(54,28,14,.9);}
+.btn-ghost{border-color:var(--line);color:var(--ink);background:transparent;}
+.btn-ghost:hover{border-color:var(--stone-4);background:rgba(149,136,107,.10);transform:translateY(-2px);}
+.btn-light{background:var(--sand);color:var(--wood);}
+.btn-light:hover{background:#fff;transform:translateY(-2px);}
+.btn-outline-light{border-color:rgba(247,235,211,.42);color:var(--sand);}
+.btn-outline-light:hover{border-color:var(--sand);background:rgba(247,235,211,.10);transform:translateY(-2px);}
+
+/* --- Gewände-Rahmen: versetzter Rahmen in Logo-Rot hinter dem Bild --- */
+.frame{position:relative;}
+.frame > .frame-img{position:relative;z-index:1;overflow:hidden;box-shadow:var(--sh-m);background:var(--sand-2);}
+.frame::after{
+  content:"";position:absolute;z-index:0;
+  inset:20px -20px -20px 20px;
+  border:1.5px solid rgba(217,78,66,.6);
+  pointer-events:none;
+}
+.frame.flip::after{inset:20px 20px -20px -20px;}
+.frame img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s cubic-bezier(.2,.7,.2,1);}
+.frame:hover img{transform:scale(1.028);}
+
+.cap{
+  display:inline-flex;align-items:center;gap:9px;
+  font-size:12.5px;letter-spacing:.045em;color:var(--muted);
+  margin-top:26px;
+}
+.cap::before{content:"";width:22px;height:1px;background:var(--stone);flex:none;}
+
+/* =========================== HEADER =========================== */
+.skip{position:absolute;left:-9999px;top:0;background:var(--wood);color:var(--sand);padding:12px 18px;z-index:200;}
+.skip:focus{left:12px;top:12px;}
+
+.header{
+  position:sticky;top:0;z-index:100;
+  transition:background-color .3s ease,box-shadow .3s ease,border-color .3s ease;
+  border-bottom:1px solid transparent;
+  background:rgba(253,248,238,.0);
+}
+.header.is-solid{
+  background:rgba(253,248,238,.94);
+  -webkit-backdrop-filter:saturate(150%) blur(12px);
+  backdrop-filter:saturate(150%) blur(12px);
+  border-bottom-color:var(--line-soft);
+  box-shadow:0 1px 24px rgba(54,28,14,.07);
+}
+.header-in{display:flex;align-items:center;justify-content:space-between;gap:20px;height:78px;}
+
+/* typografische Wortmarke — es existiert KEINE Logodatei (analyse.md 7.3),
+   das Schild am Haus wird bewusst NICHT nachgebaut */
+.mark{display:flex;flex-direction:column;line-height:1;text-decoration:none;flex:none;}
+.mark .mark-top{
+  display:flex;align-items:center;gap:7px;
+  font-size:9.5px;font-weight:600;letter-spacing:.34em;text-transform:uppercase;color:var(--stone-5);
+}
+.mark .mark-top::before{content:"";width:5px;height:5px;background:var(--red);flex:none;}
+.mark .mark-name{font-family:var(--ff-serif);font-size:26px;font-weight:600;color:var(--ink);margin-top:5px;letter-spacing:-.01em;}
+
+.nav{display:flex;align-items:center;gap:4px;}
+.nav a{
+  position:relative;text-decoration:none;font-size:14.5px;font-weight:500;color:var(--text);
+  padding:9px 13px;transition:color .2s ease;
+}
+.nav a::after{
+  content:"";position:absolute;left:13px;right:13px;bottom:2px;height:1.5px;
+  background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .3s cubic-bezier(.2,.7,.2,1);
+}
+.nav a:hover{color:var(--ink);}
+.nav a:hover::after,.nav a.is-active::after{transform:scaleX(1);}
+.nav a.is-active{color:var(--ink);font-weight:600;}
+
+.header-cta{display:inline-flex;align-items:center;gap:9px;text-decoration:none;
+  font-size:14.5px;font-weight:600;color:var(--wood);border:1.5px solid var(--line);
+  padding:10px 17px;border-radius:2px;transition:border-color .25s ease,background-color .25s ease,transform .25s ease;white-space:nowrap;}
+.header-cta:hover{border-color:var(--stone-4);background:rgba(149,136,107,.1);transform:translateY(-1px);}
+
+.burger{display:none;width:46px;height:44px;border:1.5px solid var(--line);background:transparent;border-radius:2px;
+  position:relative;cursor:pointer;flex:none;}
+.burger span{position:absolute;left:12px;right:12px;height:1.6px;background:var(--ink);transition:transform .3s ease,opacity .2s ease;}
+.burger span:nth-child(1){top:15px;}
+.burger span:nth-child(2){top:21px;}
+.burger span:nth-child(3){top:27px;}
+.burger.is-open span:nth-child(1){transform:translateY(6px) rotate(45deg);}
+.burger.is-open span:nth-child(2){opacity:0;}
+.burger.is-open span:nth-child(3){transform:translateY(-6px) rotate(-45deg);}
+
+.mnav{display:none;border-top:1px solid var(--line-soft);background:var(--paper);}
+.mnav.is-open{display:block;}
+.mnav ul{list-style:none;margin:0;padding:10px 0 18px;}
+.mnav a{display:block;text-decoration:none;font-size:16px;font-weight:500;padding:13px 0;border-bottom:1px solid var(--line-soft);}
+.mnav .mnav-cta{display:flex;flex-direction:column;gap:10px;padding:18px 0 22px;}
+
+/* ============================ HERO ============================ */
+.hero{position:relative;overflow:clip;padding-block:clamp(46px,7vw,86px) clamp(20px,3vw,40px);}
+.hero::before{
+  content:"";position:absolute;inset:0;z-index:0;
+  background:
+    radial-gradient(120% 90% at 8% 0%, rgba(247,235,211,.9) 0%, rgba(253,248,238,0) 62%),
+    radial-gradient(80% 70% at 100% 18%, rgba(149,136,107,.16) 0%, rgba(253,248,238,0) 60%);
+}
+.hero-in{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);gap:clamp(34px,5.5vw,74px);align-items:center;}
+.hero h1{margin:0;}
+.hero h1 .h1-top{
+  display:block;font-family:var(--ff-sans);font-size:clamp(11px,1.3vw,14px);font-weight:600;
+  letter-spacing:.28em;text-transform:uppercase;color:var(--stone-5);margin-bottom:16px;line-height:1.6;
+}
+.hero h1 .h1-name{display:block;font-size:clamp(52px,9vw,104px);font-weight:600;letter-spacing:-.022em;}
+.hero-rule{display:flex;align-items:center;gap:14px;margin:26px 0 22px;}
+.hero-rule i{display:block;height:1px;background:linear-gradient(to right,var(--stone),rgba(149,136,107,0));flex:1;}
+.hero-rule b{width:7px;height:7px;background:var(--green);flex:none;}
+.hero-quote{
+  font-family:var(--ff-serif);font-size:clamp(20px,2.15vw,25px);line-height:1.42;
+  color:var(--stone-5);font-style:italic;max-width:30ch;font-weight:400;
+}
+.hero-sub{margin-top:22px;color:var(--muted);max-width:44ch;font-size:16.5px;}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px;}
+.hero-meta{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:30px;padding-top:22px;border-top:1px solid var(--line-soft);
+  font-size:13.5px;color:var(--muted);}
+.hero-meta span{display:inline-flex;align-items:center;gap:8px;}
+.hero-meta span::before{content:"";width:4px;height:4px;background:var(--stone);flex:none;}
+
+.hero-figure{position:relative;margin:0;}
+.hero-figure .frame-img{aspect-ratio:4/5;}
+.hero-badge{
+  position:absolute;z-index:2;left:-16px;bottom:34px;
+  background:var(--paper);border:1px solid var(--line);
+  padding:14px 18px;box-shadow:var(--sh-m);max-width:250px;
+}
+.hero-badge .hb-k{display:block;font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--red);}
+.hero-badge .hb-v{display:block;font-family:var(--ff-serif);font-size:17px;font-weight:600;color:var(--ink);margin-top:6px;line-height:1.32;}
+
+/* ======================= FAKTEN-LEISTE ======================= */
+.facts{border-block:1px solid var(--line-soft);background:var(--paper-2);}
+.facts-in{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));}
+.fact{display:flex;align-items:flex-start;gap:13px;padding:26px 26px 26px 0;border-right:1px solid var(--line-soft);}
+.fact:last-child{border-right:0;padding-right:0;}
+.fact:not(:first-child){padding-left:26px;}
+.fact svg{flex:none;margin-top:2px;color:var(--stone-4);}
+.fact-k{font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--stone-5);}
+.fact-v{font-size:15px;font-weight:600;color:var(--ink);margin-top:3px;line-height:1.35;}
+
+/* ======================== KOCHSCHULE ========================= */
+.school{background:var(--wood);color:var(--sand);position:relative;overflow:clip;}
+.school::before{
+  content:"";position:absolute;inset:0;opacity:.5;
+  background-image:repeating-linear-gradient(to bottom,rgba(247,235,211,.055) 0,rgba(247,235,211,.055) 1px,transparent 1px,transparent 38px);
+}
+.school::after{
+  content:"";position:absolute;right:-140px;top:-140px;width:420px;height:420px;border:1.5px solid rgba(217,78,66,.28);border-radius:50%;
+}
+.school-in{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.18fr) minmax(0,.82fr);gap:clamp(34px,5vw,66px);align-items:start;}
+.school h2{color:var(--sand);}
+.school h2 em{font-style:italic;color:#F3D9A6;} /* aufgehellte Sandstein-Stufe, abgeleitet */
+.school-lead{color:rgba(247,235,211,.82);font-size:clamp(17px,1.5vw,19px);margin-top:20px;max-width:52ch;}
+.school-specs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;margin-top:38px;background:rgba(247,235,211,.16);border:1px solid rgba(247,235,211,.16);}
+.spec{background:var(--wood);padding:20px 20px 22px;}
+.spec-k{font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:rgba(247,235,211,.55);}
+.spec-v{font-family:var(--ff-serif);font-size:clamp(18px,1.75vw,22px);font-weight:600;color:var(--sand);margin-top:8px;line-height:1.25;}
+.school-note{display:flex;gap:13px;margin-top:30px;color:rgba(247,235,211,.72);font-size:15.5px;max-width:56ch;}
+.school-note svg{flex:none;margin-top:4px;color:var(--green);}
+
+.school-card{background:var(--paper);color:var(--text);padding:clamp(26px,3vw,36px);box-shadow:var(--sh-l);position:relative;}
+.school-card::after{content:"";position:absolute;inset:16px -16px -16px 16px;border:1.5px solid rgba(217,78,66,.55);z-index:-1;}
+.price{display:flex;align-items:baseline;gap:10px;}
+.price b{font-family:var(--ff-serif);font-size:clamp(46px,6vw,62px);font-weight:700;color:var(--ink);line-height:1;letter-spacing:-.02em;}
+.price span{font-size:15px;color:var(--muted);font-weight:500;}
+.price-k{font-size:10.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--stone-5);margin-bottom:12px;}
+.gift{display:flex;gap:12px;align-items:flex-start;margin-top:24px;padding:16px 18px;background:rgba(83,139,80,.09);border-left:2.5px solid var(--green);}
+.gift svg{flex:none;margin-top:3px;color:var(--green);}
+.gift b{display:block;font-size:14.5px;color:var(--ink);}
+.gift p{font-size:14px;color:var(--muted);margin-top:3px;line-height:1.55;}
+.book{margin-top:24px;padding-top:22px;border-top:1px solid var(--line-soft);font-size:14.5px;color:var(--muted);}
+.school-card .btns{display:flex;flex-direction:column;gap:10px;margin-top:20px;}
+
+/* ==================== BIERGARTEN / GASTSTUBE ================== */
+.garden{background:var(--paper);}
+.garden-head{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(26px,4vw,60px);align-items:end;}
+.garden-quote{
+  font-family:var(--ff-serif);font-size:clamp(21px,2.35vw,28px);line-height:1.48;font-style:italic;
+  color:var(--stone-5);border-left:2px solid var(--red);padding-left:clamp(18px,2.4vw,28px);
+}
+.garden-figure{margin-top:clamp(40px,5vw,64px);}
+.garden-figure .frame-img{aspect-ratio:16/9;}
+.duo{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(20px,2.6vw,32px);margin-top:clamp(46px,5vw,66px);}
+.card{
+  background:var(--paper-2);border:1px solid var(--line-soft);padding:clamp(24px,2.8vw,34px);
+  transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s ease,border-color .3s ease;
+}
+.card:hover{transform:translateY(-4px);box-shadow:var(--sh-m);border-color:var(--line);}
+.card-k{display:inline-flex;align-items:center;gap:9px;font-size:10.5px;font-weight:600;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--stone-5);margin-bottom:14px;}
+.card-k::before{content:"";width:6px;height:6px;background:var(--green);flex:none;}
+.card.is-in-house .card-k::before{background:var(--red);}
+.card h3{font-size:clamp(21px,2.1vw,25px);}
+.card p{margin-top:13px;color:var(--muted);font-size:16px;}
+.card .said{font-family:var(--ff-serif);font-style:italic;color:var(--stone-5);font-size:17px;line-height:1.55;}
+
+/* Ehrliche Platzhalter-Hinweise (§A5/§A6) */
+.note{
+  display:flex;gap:14px;align-items:flex-start;
+  border:1.5px dashed var(--stone);background:rgba(149,136,107,.07);
+  padding:clamp(18px,2.2vw,24px);
+}
+.note svg{flex:none;margin-top:3px;color:var(--stone-4);}
+.note b{color:var(--ink);font-size:13px;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:6px;}
+.note p{font-size:15px;color:var(--muted);line-height:1.6;}
+.note.on-dark{border-color:rgba(247,235,211,.42);background:rgba(247,235,211,.06);}
+.note.on-dark b{color:var(--sand);}
+.note.on-dark p{color:rgba(247,235,211,.72);}
+.note.on-dark svg{color:rgba(247,235,211,.6);}
+
+/* ========================= AUS DER KÜCHE ====================== */
+.kitchen{background:var(--paper-2);border-block:1px solid var(--line-soft);}
+.band{width:100%;overflow:hidden;background:var(--sand-2);}
+.band img{width:100%;height:100%;object-fit:cover;object-position:50% 82%;}
+.band-tall{aspect-ratio:21/9;}
+.trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(20px,2.6vw,30px);margin-top:clamp(40px,5vw,58px);}
+.trio .card{background:var(--paper);}
+
+.menu-block{margin-top:clamp(52px,6vw,80px);}
+.menu-frame{border:1.5px dashed var(--stone);background:rgba(149,136,107,.055);padding:clamp(22px,3.2vw,44px);position:relative;}
+.ph-label{
+  position:absolute;top:-12px;left:clamp(20px,3vw,36px);
+  background:var(--paper-2);padding:0 12px;
+  font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--stone-5);
+}
+.menu-frame h3{font-size:clamp(23px,2.5vw,30px);}
+.menu-frame > p{margin-top:14px;color:var(--muted);max-width:74ch;font-size:16px;}
+.chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px;}
+.chip{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:var(--paper);
+  padding:8px 15px;font-size:13.5px;font-weight:500;color:var(--stone-5);border-radius:999px;}
+.chip::before{content:"";width:5px;height:5px;background:var(--red);border-radius:50%;flex:none;}
+
+/* Tellerfotos: 640 x 480 px im Original — Darstellung hart auf 320 px begrenzt (§A6) */
+.tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(14px,1.8vw,22px);margin-top:30px;}
+.tile{max-width:320px;width:100%;margin-inline:auto;position:relative;}
+.tile-img{overflow:hidden;background:var(--sand-2);aspect-ratio:4/3;box-shadow:var(--sh-s);}
+.tile img{width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.2,.7,.2,1);}
+.tile:hover img{transform:scale(1.05);}
+.tile-tag{
+  position:absolute;top:10px;left:10px;z-index:2;
+  background:rgba(253,248,238,.93);color:var(--stone-5);
+  font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:5px 9px;
+}
+
+/* =========================== DAS HAUS ========================= */
+.house{background:var(--paper);}
+.house-in{display:grid;grid-template-columns:240px minmax(0,1fr);gap:clamp(34px,5vw,68px);align-items:center;}
+.house-quote{
+  margin:22px 0 0;font-family:var(--ff-serif);font-style:italic;font-weight:400;
+  font-size:clamp(19px,2vw,23px);line-height:1.52;color:var(--stone-5);
+  border-left:2px solid var(--red);padding-left:clamp(16px,2vw,24px);max-width:44ch;
+}
+/* Chefkoch-Foto: Datei 640 x 480 px, per EXIF hochkant (480 x 640 im Browser).
+   Darstellung hart auf 240 x 320 px begrenzt — exakt die halbe Originalgröße (§A6). */
+.chef-img{max-width:240px;width:100%;}
+.chef-img .frame-img{aspect-ratio:3/4;}
+.people{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(16px,2.2vw,24px);margin-top:32px;}
+.person{border:1px solid var(--line-soft);background:var(--paper-2);padding:22px 24px;transition:transform .3s ease,box-shadow .3s ease;}
+.person:hover{transform:translateY(-3px);box-shadow:var(--sh-s);}
+.person .p-role{font-size:10.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--red);}
+.person .p-name{font-family:var(--ff-serif);font-size:22px;font-weight:600;color:var(--ink);margin-top:7px;}
+.said-big{
+  font-family:var(--ff-serif);font-size:clamp(24px,3.2vw,40px);line-height:1.32;font-style:italic;
+  color:var(--ink);text-align:center;max-width:22ch;margin:clamp(52px,6vw,78px) auto 0;font-weight:500;
+}
+.said-src{display:block;font-family:var(--ff-sans);font-style:normal;font-size:12px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--stone-5);margin-top:22px;font-weight:600;}
+
+/* ======================= ÖFFNUNGSZEITEN ======================= */
+.hours{background:var(--leaf-3);color:var(--sand);position:relative;overflow:clip;}
+.hours::before{
+  content:"";position:absolute;inset:0;opacity:.55;
+  background-image:repeating-linear-gradient(to bottom,rgba(247,235,211,.05) 0,rgba(247,235,211,.05) 1px,transparent 1px,transparent 38px);
+}
+.hours-in{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(30px,4.6vw,64px);align-items:start;}
+.hours h2{color:var(--sand);}
+.hours .lead{color:rgba(247,235,211,.72);margin-top:18px;}
+.hrow{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;
+  padding:22px 0;border-bottom:1px solid rgba(247,235,211,.16);}
+.hrow:first-of-type{border-top:1px solid rgba(247,235,211,.16);}
+.hday{font-family:var(--ff-serif);font-size:clamp(20px,2.1vw,25px);font-weight:600;color:var(--sand);}
+.htimes{display:flex;flex-wrap:wrap;gap:9px;}
+.time{border:1px solid rgba(247,235,211,.3);padding:8px 15px;font-size:14.5px;font-weight:600;color:var(--sand);
+  font-variant-numeric:tabular-nums;}
+.time.off{border-style:dashed;border-color:rgba(247,235,211,.24);color:rgba(247,235,211,.5);font-weight:500;}
+.hflag{display:inline-flex;align-items:center;gap:10px;margin-top:26px;
+  background:rgba(83,139,80,.2);border:1px solid rgba(83,139,80,.5);padding:11px 17px;
+  font-size:14.5px;font-weight:600;color:#BFE0BD;} /* aufgehellte Stufe von #538B50, abgeleitet */
+.hflag svg{flex:none;}
+
+/* =========================== KONTAKT ========================== */
+.contact{background:var(--paper);}
+/* z-index:1 erzeugt hier den Stacking-Kontext, damit der versetzte Gewände-Rahmen
+   (.cbox::after, z-index:-1) über dem Sektions-Hintergrund liegt und sichtbar bleibt. */
+.contact-in{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(34px,5vw,70px);align-items:start;}
+.contact h2{max-width:16ch;}
+.contact .lead{margin-top:20px;}
+.contact-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px;}
+.cbox{border:1px solid var(--line);background:var(--paper-2);padding:clamp(24px,3vw,36px);position:relative;}
+.cbox::after{content:"";position:absolute;inset:16px -16px -16px 16px;border:1.5px solid rgba(217,78,66,.5);z-index:-1;}
+.crow{display:flex;gap:15px;padding:18px 0;border-bottom:1px solid var(--line-soft);}
+.crow:first-child{padding-top:0;}
+.crow:last-child{border-bottom:0;padding-bottom:0;}
+.crow svg{flex:none;margin-top:3px;color:var(--stone-4);}
+.crow .c-k{font-size:10.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--stone-5);}
+.crow .c-v{font-size:16.5px;color:var(--ink);margin-top:5px;line-height:1.5;}
+.crow a{text-decoration:none;font-weight:600;border-bottom:1.5px solid rgba(217,78,66,.45);transition:border-color .25s ease,color .25s ease;}
+.crow a:hover{border-bottom-color:var(--red);color:var(--red);}
+.c-note{font-size:14px;color:var(--muted);margin-top:6px;}
+
+/* ============================ FOOTER ========================== */
+.footer{background:var(--ink);color:rgba(247,235,211,.72);padding-block:clamp(52px,6vw,72px) 34px;}
+.footer-in{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.9fr) minmax(0,.9fr);gap:clamp(28px,4vw,54px);}
+.footer .mark-name{color:var(--sand);font-size:30px;}
+.footer .mark-top{color:rgba(247,235,211,.55);}
+.f-text{margin-top:18px;font-size:15px;max-width:38ch;line-height:1.65;}
+.f-h{font-size:10.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(247,235,211,.5);margin-bottom:16px;}
+.f-list{list-style:none;margin:0;padding:0;font-size:15.5px;line-height:1.95;}
+.f-list a{text-decoration:none;transition:color .2s ease;}
+.f-list a:hover{color:var(--sand);}
+.f-bottom{margin-top:clamp(38px,4.6vw,58px);padding-top:24px;border-top:1px solid rgba(247,235,211,.14);
+  display:flex;flex-wrap:wrap;gap:14px 26px;justify-content:space-between;align-items:center;font-size:13px;color:rgba(247,235,211,.5);}
+
+/* ========================== ANIMATION ========================= */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0ms);}
+.reveal.is-in{opacity:1;transform:none;}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  .reveal{opacity:1!important;transform:none!important;transition:none!important;}
+  .frame img,.tile img{transition:none;}
+}
+
+/* ========================= RESPONSIVE ========================= */
+@media (max-width:1080px){
+  .nav,.header-cta{display:none;}
+  .burger{display:block;}
+  .hero-in,.school-in,.house-in,.hours-in,.contact-in,.garden-head{grid-template-columns:minmax(0,1fr);}
+  .hero-in{gap:44px;}
+  .hero-figure .frame-img{aspect-ratio:3/2;}
+  .hero-badge{left:auto;right:-10px;bottom:-18px;}
+  .garden-head{gap:26px;}
+  .footer-in{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .school-card{margin-top:8px;}
+}
+@media (max-width:860px){
+  .facts-in{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .fact{padding:22px;border-bottom:1px solid var(--line-soft);}
+  .fact:nth-child(2n){border-right:0;}
+  .fact:nth-child(1),.fact:nth-child(2){padding-top:26px;}
+  .fact:not(:first-child){padding-left:22px;}
+  .fact:nth-child(odd){padding-left:0;}
+  .fact:nth-child(even){padding-right:0;}
+  .fact:nth-last-child(-n+2){border-bottom:0;}
+  .school-specs{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .tiles{grid-template-columns:repeat(3,minmax(0,1fr));}
+  .trio{grid-template-columns:minmax(0,1fr);}
+  .band-tall{aspect-ratio:16/9;}
+}
+@media (max-width:680px){
+  body{font-size:16.5px;}
+  .duo,.people{grid-template-columns:minmax(0,1fr);}
+  .tiles{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .footer-in{grid-template-columns:minmax(0,1fr);}
+  .frame::after{inset:12px -12px -12px 12px;}
+  .frame.flip::after{inset:12px 12px -12px -12px;}
+  .school-card::after,.cbox::after{inset:10px -10px -10px 10px;}
+  .hero-badge{position:static;max-width:none;margin-top:26px;box-shadow:none;}
+  .band-tall{aspect-ratio:4/3;}
+  .hrow{flex-direction:column;align-items:flex-start;gap:12px;}
+  .btn{width:100%;}
+  .hero-actions .btn,.contact-actions .btn{width:100%;}
+}
+@media (max-width:400px){
+  .facts-in{grid-template-columns:minmax(0,1fr);}
+  .fact{border-right:0;padding-left:0!important;padding-right:0!important;}
+  .fact:nth-last-child(-n+2){border-bottom:1px solid var(--line-soft);}
+  .fact:last-child{border-bottom:0;}
+  .school-specs{grid-template-columns:minmax(0,1fr);}
+  .tiles{grid-template-columns:minmax(0,1fr);}
+  .tile{max-width:320px;}
+  .mark .mark-name{font-size:23px;}
+}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Zum Inhalt springen</a>
+
+<header class="header" id="header">
+  <div class="wrap header-in">
+    <a class="mark" href="#top" aria-label="Ristorante Da Ricci – zum Seitenanfang">
+      <span class="mark-top">Ristorante</span>
+      <span class="mark-name">Da Ricci</span>
+    </a>
+
+    <nav class="nav" aria-label="Hauptnavigation">
+      <a href="#kochschule">Kochschule</a>
+      <a href="#biergarten">Biergarten</a>
+      <a href="#kueche">Küche</a>
+      <a href="#zeiten">Öffnungszeiten</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+
+    <a class="header-cta" href="tel:+4993166685830">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+      0931/666 858 30
+    </a>
+
+    <button class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div class="mnav" id="mobile-nav">
+    <div class="wrap">
+      <ul>
+        <li><a href="#kochschule">Kochschule</a></li>
+        <li><a href="#biergarten">Biergarten &amp; Gaststube</a></li>
+        <li><a href="#kueche">Aus der Küche</a></li>
+        <li><a href="#haus">Das Haus</a></li>
+        <li><a href="#zeiten">Öffnungszeiten</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+      <div class="mnav-cta">
+        <a class="btn btn-primary" href="tel:+4993166685830">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+          0931/666 858 30
+        </a>
+        <a class="btn btn-ghost" href="mailto:info@daricci.de">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="m3 6 9 6.5L21 6"/></svg>
+          info@daricci.de
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero courses" id="top">
+  <div class="wrap hero-in">
+
+    <div class="hero-copy">
+      <h1 class="reveal">
+        <span class="h1-top">Ristorante · Würzburg</span>
+        <span class="h1-name">Da Ricci</span>
+      </h1>
+
+      <div class="hero-rule reveal" style="--d:80ms" aria-hidden="true"><b></b><i></i></div>
+
+      <p class="hero-quote reveal" style="--d:140ms">
+        „Unser Biergarten mit altem Baumbestand lädt zum Verweilen ein.“
+      </p>
+
+      <p class="hero-sub reveal" style="--d:200ms">
+        Sie sitzen gemütlich unter Kastanienbäumen und genießen eine Auszeit der
+        besonderen Art. Lassen Sie sich kulinarisch verwöhnen.
+      </p>
+
+      <div class="hero-actions reveal" style="--d:260ms">
+        <a class="btn btn-primary" href="tel:+4993166685830">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+          Tisch anrufen
+        </a>
+        <a class="btn btn-ghost" href="#kochschule">Kochschule ansehen</a>
+      </div>
+
+      <div class="hero-meta reveal" style="--d:320ms">
+        <span>Mittwoch bis Sonntag</span>
+        <span>11:30–14:30 &amp; 17:30–22:00 Uhr</span>
+        <span>Wolfskeelstraße 22</span>
+      </div>
+    </div>
+
+    <figure class="hero-figure reveal" style="--d:180ms;margin:0;">
+      <div class="frame">
+        <div class="frame-img">
+          
+          <img src="assets_02/dr-gastraum-gedeckter-tisch.jpg"
+               alt="Eingedeckter Tisch mit weißem Tuch und braunem Läufer vor einer hellen Natursteinwand, dazu Kerzenleuchter, dunkle Pfeffermühle, große Kupfervase und Holzstühle"
+               width="1200" height="1500" style="object-position:52% 56%;">
+        </div>
+      </div>
+      <figcaption class="hero-badge">
+        <span class="hb-k">Der Gastraum</span>
+        <span class="hb-v">Naturstein, dunkles Holz, gedeckte Tische</span>
+      </figcaption>
+    </figure>
+
+  </div>
+</section>
+
+<section class="facts" aria-label="Auf einen Blick">
+  <div class="wrap facts-in">
+    <div class="fact reveal">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5.2l3.2 2"/></svg>
+      <div><div class="fact-k">Geöffnet</div><div class="fact-v">Mittwoch bis Sonntag</div></div>
+    </div>
+    <div class="fact reveal" style="--d:90ms">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21V11"/><path d="M12 11c0-4.4 3.1-8 7-8 .3 3.8-2.6 8-7 8Z"/><path d="M12 14c-3.6 0-6.4-2.6-7-6 3.4-.3 6.5 2.1 7 6Z"/></svg>
+      <div><div class="fact-k">Draußen</div><div class="fact-v">Biergarten mit altem Baumbestand</div></div>
+    </div>
+    <div class="fact reveal" style="--d:180ms">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5 20 12l-8 8.5L4 12Z"/></svg>
+      <div><div class="fact-k">Spezialität</div><div class="fact-v">Trüffel</div></div>
+    </div>
+    <div class="fact reveal" style="--d:270ms">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11h16a8 8 0 0 1-8 8 8 8 0 0 1-8-8Z"/><path d="M9 7.5c0-1 1-1.4 1-2.5M12.5 7.5c0-1 1-1.4 1-2.5M16 7.5c0-1 1-1.4 1-2.5"/></svg>
+      <div><div class="fact-k">Kochschule</div><div class="fact-v">Montags, 18 Uhr</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec school" id="kochschule">
+  <div class="wrap school-in">
+
+    <div>
+      <p class="eyebrow on-dark reveal">Das Angebot des Hauses</p>
+      <h2 class="h-lg reveal" style="--d:60ms">Kochschule <em>„Da Ricci“</em></h2>
+
+      <p class="school-lead reveal" style="--d:120ms">
+        Der Meisterkoch bereitet gemeinsam mit Ihnen ein 5-Gänge-Menü zu.
+        Ziel ist es, die italienische Kochkunst Schritt für Schritt gemeinsam zu erlernen.
+      </p>
+
+      <div class="school-specs reveal" style="--d:180ms">
+        <div class="spec"><div class="spec-k">Termin</div><div class="spec-v">Montags,&nbsp;18&nbsp;Uhr</div></div>
+        <div class="spec"><div class="spec-k">Dauer</div><div class="spec-v">etwa 3&nbsp;Stunden</div></div>
+        <div class="spec"><div class="spec-k">Umfang</div><div class="spec-v">5-Gänge-Menü</div></div>
+      </div>
+
+      <div class="school-note reveal" style="--d:240ms">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4.5 12.5 5 5 10-11"/></svg>
+        <p>Gekocht wird mit frischem Fisch und Fleisch und den passenden Gewürzen aus dem Garten.</p>
+      </div>
+    </div>
+
+    <aside class="school-card reveal" style="--d:220ms">
+      <div class="price-k">Teilnahmegebühr</div>
+      <div class="price"><b>100 €</b><span>pro Person</span></div>
+
+      <div class="gift">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8.5" width="18" height="12" rx="1.5"/><path d="M3 12.5h18M12 8.5v12"/><path d="M12 8.5S10.5 3.5 8 3.5a2.2 2.2 0 0 0 0 5Zm0 0s1.5-5 4-5a2.2 2.2 0 0 1 0 5Z"/></svg>
+        <div>
+          <b>Auch als Geschenkgutschein</b>
+          <p>Das Kocherlebnis ist auch als Geschenkgutschein zu haben.</p>
+        </div>
+      </div>
+
+      <p class="book">
+        Bei Interesse am Kurs oder für die Buchung bitten wir Sie, uns
+        <strong style="color:var(--ink)">2 Wochen vorher</strong> telefonisch oder per E-Mail zu kontaktieren.
+      </p>
+
+      <div class="btns">
+        <a class="btn btn-primary" href="tel:+4993166685830">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+          0931/666 858 30
+        </a>
+        <a class="btn btn-ghost" href="mailto:info@daricci.de">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="m3 6 9 6.5L21 6"/></svg>
+          info@daricci.de
+        </a>
+      </div>
+    </aside>
+
+  </div>
+</section>
+
+<section class="sec garden" id="biergarten">
+  <div class="wrap">
+
+    <div class="garden-head">
+      <div>
+        <p class="eyebrow reveal">Biergarten &amp; Gaststube</p>
+        <h2 class="h-lg reveal" style="--d:60ms">Unter alten<br>Kastanien</h2>
+      </div>
+      <blockquote class="garden-quote reveal" style="--d:120ms">
+        „Sie sitzen gemütlich unter Kastanienbäumen und genießen eine Auszeit
+        der besonderen Art. Lassen Sie sich kulinarisch verwöhnen.
+        Beispielsweise mit einem 3-Gänge-Menü.“
+      </blockquote>
+    </div>
+
+    <figure class="garden-figure reveal" style="--d:120ms;margin:0;">
+      <div class="frame flip">
+        <div class="frame-img">
+          
+          <img src="assets_02/dr-aussenansicht.jpg"
+               alt="Das Haus des Ristorante Da Ricci in der Wolfskeelstraße: Sandsteinfassade mit roten Sandsteingewänden, weiße Markise, Blumenkästen, dichter Efeu und alter Baumbestand im Nachmittagslicht"
+               width="1600" height="900" loading="lazy" style="object-position:50% 46%;">
+        </div>
+      </div>
+      <figcaption class="cap">Das Haus in der Wolfskeelstraße — Sandsteinfassade, Efeu und alter Baumbestand</figcaption>
+    </figure>
+
+    <div class="duo">
+      <article class="card reveal">
+        <span class="card-k">Draußen</span>
+        <h3>Der Biergarten</h3>
+        <p class="said">„Unser Biergarten mit altem Baumbestand lädt zum Verweilen ein.“</p>
+        
+        <p>Alter Baumbestand, Kastanienbäume — und dazu die Küche des Hauses.</p>
+      </article>
+
+      <article class="card is-in-house reveal" style="--d:120ms">
+        <span class="card-k">Drinnen</span>
+        <h3>Die Gaststube</h3>
+        <p class="said">„Sollte das Wetter Ihre Pläne für den Biergartenbesuch durchkreuzen,
+          dann kommen Sie herein in unsere geschmackvoll eingerichtete Gaststube.
+          Wir halten Ihnen gerne einen Platz frei!“</p>
+      </article>
+    </div>
+
+    <div class="note reveal" style="--d:100ms;margin-top:28px;">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 16v-5M12 8h.01"/></svg>
+      <p>
+        <b>Platzhalter · Vorschlag</b>
+        Vom Biergarten selbst liegt bislang kein Foto vor — der stärkste Satz Ihrer Seite hat
+        also noch kein Bild. An dieser Stelle stehen künftig Ihre eigenen Aufnahmen von den
+        Tischen unter den Kastanien. Bis dahin trägt der Abschnitt bewusst nur Ihre Worte;
+        das Foto oben zeigt das Haus, nicht den Garten.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section class="sec kitchen" id="kueche">
+  <div class="wrap">
+    <p class="eyebrow reveal">Aus der Küche</p>
+    <h2 class="h-lg reveal" style="--d:60ms">Fisch, Fleisch, Trüffel —<br>und Gewürze aus dem eigenen Garten</h2>
+
+    <div class="trio">
+      <article class="card reveal">
+        <span class="card-k">Frisch</span>
+        <h3>Sofort serviert</h3>
+        <p class="said">„Ob Fisch oder Fleisch, alles wird stets frisch zubereitet und sofort serviert.“</p>
+      </article>
+      <article class="card reveal" style="--d:110ms">
+        <span class="card-k">Spezialität</span>
+        <h3>Trüffel</h3>
+        <p class="said">„Trüffel sind seine Spezialität.“</p>
+        <p>Zwei der Motive aus der eigenen Bildergalerie zeigen sie: auf der Vorspeise und auf dem Fischgang.</p>
+      </article>
+      <article class="card reveal" style="--d:220ms">
+        <span class="card-k">Eigener Garten</span>
+        <h3>Täglich frisch geerntet</h3>
+        <p class="said">„Die Gewürze kommen aus unserem eigenen Garten und werden täglich frisch geerntet.“</p>
+      </article>
+    </div>
+  </div>
+
+  <div class="wrap" style="margin-top:clamp(44px,5vw,66px);">
+    <div class="band band-tall reveal">
+      
+      <img src="assets_02/dr-vorspeise-garnele-champignon.jpg"
+           alt="Vorspeisenteller: gefüllter Champignonkopf mit Garnele und Paprikawürfeln, Blätterteig-Pastetchen mit Gemüse und eine Zucchinischeibe mit Käse auf hellem Saucenspiegel"
+           width="1600" height="686" loading="lazy">
+    </div>
+  </div>
+
+  <div class="wrap menu-block">
+    <div class="menu-frame reveal">
+      <span class="ph-label">Platzhalter · Vorschlag</span>
+
+      <h3>Die Speisekarte</h3>
+      <p>
+        Eine Speisekarte ist bislang nirgends veröffentlicht — weder als Seite noch als PDF.
+        An dieser Stelle steht künftig Ihre Karte: nach Gängen gegliedert, mit Preisen, auf dem
+        Telefon lesbar und für Suchmaschinen auffindbar.
+      </p>
+      <p style="margin-top:12px">
+        Die acht Motive unten stammen aus der Bildergalerie Ihrer bisherigen Seite. Sie stehen
+        hier bewusst <strong style="color:var(--ink)">ohne Bezeichnung und ohne Preis</strong> —
+        beides ist nirgends veröffentlicht, und wir erfinden nichts dazu.
+      </p>
+
+      <div class="chips">
+        <span class="chip">Fisch</span>
+        <span class="chip">Fleisch</span>
+        <span class="chip">Trüffel</span>
+        <span class="chip">Gewürze aus dem eigenen Garten</span>
+        <span class="chip">3-Gänge-Menü</span>
+      </div>
+
+      <div class="tiles">
+        <figure class="tile reveal" style="margin:0">
+          <div class="tile-img"><img src="assets_02/dr-trueffel-vorspeise.jpg" alt="Cremiger weißer Käse mit orangefarbenen Einschlüssen, großzügig mit schwarzen Trüffelscheiben belegt, daneben Tomatensugo und frische Basilikumblätter auf handgetöpfertem Teller" width="320" height="240" loading="lazy"></div>
+          <span class="tile-tag">Beispiel</span>
+        </figure>
+        <figure class="tile reveal" style="--d:80ms;margin:0">
+          <div class="tile-img"><img src="assets_02/dr-fisch-trueffel.jpg" alt="Zwei Fischstücke auf Kartoffelscheiben, belegt mit Trüffelscheiben, dazu heller Sud und Safransauce auf ovalem weißem Teller" width="320" height="240" loading="lazy"></div>
+          <span class="tile-tag">Beispiel</span>
+        </figure>
+        <figure class="tile reveal" style="--d:160ms;margin:0">
+          <div class="tile-img"><img src="assets_02/dr-meeresfruechte-sud.jpg" alt="Jakobsmuschel, Miesmuscheln, Tintenfisch und Fisch in klarem Fischsud, garniert mit violetten und gelben essbaren Blüten in tiefem weißem Teller" width="320" height="240" loading="lazy"></div>
+          <span class="tile-tag">Beispiel</span>
+        </figure>
+        <figure class="tile reveal" style="--d:240ms;margin:0">
+          <div class="tile-img"><img src="assets_02/dr-tintenfisch-oktopus.jpg" alt="Gegrillter Kalmar mit Kräutern, dazu Oktopusarme, gelbe und rote Tomaten und Olivenöl auf ovalem mintgrünem Teller" width="320" height="240" loading="lazy"></div>
+          <span class="tile-tag">Beispiel</span>
+        </figure>
+        <figure class="tile reveal" style="margin:0">
+          <div class="tile-img"><img src="assets_02/dr-jakobsmuscheln.jpg" alt="Zwei gratinierte Muscheln in der Schale mit Kräuterkruste und Tomatensugo, dazu ein Schälchen roter Sauce auf weißem Teller" width="320" height="240" loading="lazy"></div>
+          <span class="tile-tag">Beispiel</span>
+        </figure>
+        <figure class="tile reveal" style="--d:80ms;margin:0">
+          <div class="tile-img"><img src="assets_02/dr-pochiertes-ei-pesto.jpg" alt="Pochiertes Ei auf gerösteter Weißbrotscheibe mit Paprika, umgeben von grünem Kräuterpesto und Olivenöl auf grauem Steinzeugteller" width="320" height="240" loading="lazy"></div>
+          <span class="tile-tag">Beispiel</span>
+        </figure>
+        <figure class="tile reveal" style="--d:160ms;margin:0">
+          <div class="tile-img"><img src="assets_02/dr-fisch-garnele-muschel.jpg" alt="Gebratenes paniertes Fischstück mit Garnele, Venusmuschel und weißem Spargel auf Tomatensugo, garniert mit einem gelben Stiefmütterchen" width="320" height="240" loading="lazy"></div>
+          <span class="tile-tag">Beispiel</span>
+        </figure>
+        <figure class="tile reveal" style="--d:240ms;margin:0">
+          <div class="tile-img"><img src="assets_02/dr-dessert-variation.jpg" alt="Dessertvariation auf dunklem Schieferteller: Kuchenschnitten mit Beeren, Brombeeren, Himbeeren, Johannisbeeren und Zitrusgranité mit Saucenpunkten" width="320" height="240" loading="lazy"></div>
+          <span class="tile-tag">Beispiel</span>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec house" id="haus">
+  <div class="wrap">
+    <div class="house-in">
+
+      <figure class="chef-img reveal" style="margin:0">
+        <div class="frame">
+          <div class="frame-img">
+            
+            <img src="assets_02/dr-chefkoch-mit-lachs.jpg"
+                 alt="Der Chefkoch in weißer Kochjacke in der Edelstahlküche, hält mit beiden Händen einen ganzen Lachs"
+                 width="240" height="320" loading="lazy">
+          </div>
+        </div>
+        <figcaption class="cap">Der Chefkoch in der Küche</figcaption>
+      </figure>
+
+      <div>
+        <p class="eyebrow reveal">Das Haus</p>
+        <h2 class="h-lg reveal" style="--d:60ms">Wer hier kocht</h2>
+        <blockquote class="house-quote reveal" style="--d:120ms">
+          „Ricci, unser Chefkoch, lässt sich immer etwas Besonderes für Genießer einfallen.
+          Kreativität ist sein Markenzeichen.“
+        </blockquote>
+
+        <div class="people">
+          <div class="person reveal" style="--d:160ms">
+            <div class="p-role">Chefkoch</div>
+            <div class="p-name">Riza Durro</div>
+          </div>
+          <div class="person reveal" style="--d:240ms">
+            <div class="p-role">Chefin</div>
+            <div class="p-name">Teuta Durro</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <blockquote class="said-big reveal">
+      „RICCI und sein Team freuen sich auf ein Wiedersehen.“
+      <span class="said-src">Ristorante Da Ricci</span>
+    </blockquote>
+  </div>
+</section>
+
+<section class="sec hours" id="zeiten">
+  <div class="wrap hours-in">
+
+    <div>
+      <p class="eyebrow on-dark reveal">Öffnungszeiten</p>
+      <h2 class="h-lg reveal" style="--d:60ms">Mittwoch<br>bis Sonntag</h2>
+      <p class="lead reveal" style="--d:120ms">
+        Mittags und abends geöffnet. Montag und Dienstag ist Ruhetag —
+        montags um 18 Uhr beginnt die Kochschule.
+      </p>
+      <div class="hflag reveal" style="--d:180ms">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4.5 12.5 5 5 10-11"/></svg>
+        An Feiertagen geöffnet
+      </div>
+    </div>
+
+    <div>
+      <div class="hrow reveal">
+        <span class="hday">Mittwoch – Sonntag</span>
+        <span class="htimes">
+          <span class="time">11:30 – 14:30 Uhr</span>
+          <span class="time">17:30 – 22:00 Uhr</span>
+        </span>
+      </div>
+      <div class="hrow reveal" style="--d:90ms">
+        <span class="hday">Montag &amp; Dienstag</span>
+        <span class="htimes"><span class="time off">Ruhetag</span></span>
+      </div>
+
+      <div class="note on-dark reveal" style="--d:180ms;margin-top:30px;">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 16v-5M12 8h.01"/></svg>
+        <p>
+          <b>Platzhalter · Vorschlag</b>
+          Eine Hinweiszeile für kurzfristige Mitteilungen — geänderte Zeiten, Feiertage,
+          Sonderöffnungen. Sie bleibt ausgeblendet, solange nichts anliegt, und lässt sich in
+          zwei Minuten selbst ändern, ohne HTML zu bearbeiten.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="sec contact" id="kontakt">
+  <div class="wrap contact-in">
+
+    <div>
+      <p class="eyebrow reveal">Kontakt</p>
+      <h2 class="h-lg reveal" style="--d:60ms">„Wir halten Ihnen gerne einen Platz frei!“</h2>
+      <p class="lead reveal" style="--d:120ms">
+        Sie erreichen uns telefonisch oder per E-Mail. Für die Kochschule bitten wir um
+        Kontakt zwei Wochen vor dem gewünschten Termin.
+      </p>
+      <div class="contact-actions reveal" style="--d:180ms">
+        <a class="btn btn-primary" href="tel:+4993166685830">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+          Jetzt anrufen
+        </a>
+        <a class="btn btn-ghost" href="mailto:info@daricci.de">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="m3 6 9 6.5L21 6"/></svg>
+          E-Mail schreiben
+        </a>
+      </div>
+    </div>
+
+    <div class="cbox reveal" style="--d:150ms">
+      <div class="crow">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.1 7-11a7 7 0 1 0-14 0c0 4.9 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>
+        <div>
+          <div class="c-k">Adresse</div>
+          <div class="c-v">Ristorante Da Ricci<br>Wolfskeelstraße 22<br>97084 Würzburg</div>
+        </div>
+      </div>
+
+      <div class="crow">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+        <div>
+          <div class="c-k">Telefon</div>
+          <div class="c-v"><a href="tel:+4993166685830">0931/666 858 30</a></div>
+        </div>
+      </div>
+
+      <div class="crow">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="m3 6 9 6.5L21 6"/></svg>
+        <div>
+          <div class="c-k">E-Mail</div>
+          <div class="c-v"><a href="mailto:info@daricci.de">info@daricci.de</a></div>
+        </div>
+      </div>
+
+      <div class="crow">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5.2l3.2 2"/></svg>
+        <div>
+          <div class="c-k">Geöffnet</div>
+          <div class="c-v">Mittwoch – Sonntag<br>11:30 – 14:30 &amp; 17:30 – 22:00 Uhr</div>
+          <div class="c-note">Montag &amp; Dienstag Ruhetag · An Feiertagen geöffnet</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-in">
+
+      <div>
+        <span class="mark">
+          <span class="mark-top">Ristorante</span>
+          <span class="mark-name">Da Ricci</span>
+        </span>
+        <p class="f-text">
+          Biergarten mit altem Baumbestand, eigener Garten für die Gewürze und Trüffel als
+          Spezialität des Chefkochs. Mittwoch bis Sonntag geöffnet.
+        </p>
+      </div>
+
+      <div>
+        <div class="f-h">Kontakt</div>
+        <ul class="f-list">
+          <li>Wolfskeelstraße 22</li>
+          <li>97084 Würzburg</li>
+          <li><a href="tel:+4993166685830">0931/666 858 30</a></li>
+          <li><a href="mailto:info@daricci.de">info@daricci.de</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="f-h">Öffnungszeiten</div>
+        <ul class="f-list">
+          <li>Mi – So: 11:30 – 14:30 Uhr</li>
+          <li>Mi – So: 17:30 – 22:00 Uhr</li>
+          <li>Mo &amp; Di: Ruhetag</li>
+          <li>An Feiertagen geöffnet</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="note on-dark" style="margin-top:36px;">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 16v-5M12 8h.01"/></svg>
+      <p>
+        <b>Platzhalter · Vorschlag</b>
+        Impressum und Datenschutzerklärung. Beide fehlen auf der bisherigen Seite; die
+        Pflichtangaben tragen wir mit Ihren Daten nach.
+      </p>
+    </div>
+
+    <div class="f-bottom">
+      <span>© 2026 Ristorante Da Ricci</span>
+      <span>Wolfskeelstraße 22 · 97084 Würzburg</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var header = document.getElementById('header');
+  var burger = document.getElementById('burger');
+  var mnav   = document.getElementById('mobile-nav');
+
+  /* ---- Header: fest/durchsichtig ---- */
+  function setHeader(){
+    var solid = window.scrollY > 30 || mnav.classList.contains('is-open');
+    header.classList.toggle('is-solid', solid);
+  }
+  window.addEventListener('scroll', setHeader, {passive:true});
+  setHeader();
+
+  /* ---- Mobiles Menü ---- */
+  function closeNav(){
+    mnav.classList.remove('is-open');
+    burger.classList.remove('is-open');
+    burger.setAttribute('aria-expanded','false');
+    burger.setAttribute('aria-label','Menü öffnen');
+    setHeader();
+  }
+  burger.addEventListener('click', function(){
+    var open = !mnav.classList.contains('is-open');
+    mnav.classList.toggle('is-open', open);
+    burger.classList.toggle('is-open', open);
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    burger.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+    setHeader();
+  });
+  Array.prototype.forEach.call(mnav.querySelectorAll('a'), function(a){
+    a.addEventListener('click', closeNav);
+  });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeNav(); });
+  window.addEventListener('resize', function(){ if(window.innerWidth > 1080) closeNav(); });
+
+  /* ---- Sanftes Einblenden beim Scrollen ---- */
+  var items = document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    Array.prototype.forEach.call(items, function(el){ el.classList.add('is-in'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add('is-in'); io.unobserve(en.target); }
+      });
+    }, {threshold:0.1, rootMargin:'0px 0px -8% 0px'});
+    Array.prototype.forEach.call(items, function(el){ io.observe(el); });
+  }
+
+  /* ---- Aktiver Navigationspunkt ---- */
+  var links = Array.prototype.slice.call(document.querySelectorAll('.nav a'));
+  var targets = links.map(function(a){ return document.querySelector(a.getAttribute('href')); }).filter(Boolean);
+  if('IntersectionObserver' in window && targets.length){
+    var spy = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(!en.isIntersecting) return;
+        links.forEach(function(a){
+          a.classList.toggle('is-active', a.getAttribute('href') === '#' + en.target.id);
+        });
+      });
+    }, {rootMargin:'-45% 0px -50% 0px', threshold:0});
+    targets.forEach(function(t){ spy.observe(t); });
+  }
+})();
+</script>
+</body>
+</html>
