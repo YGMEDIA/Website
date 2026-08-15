@@ -299,7 +299,7 @@ td.num{font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;text
 .ts p{font-size:12.5px;color:var(--mut)}
 .ts p b{color:var(--ink)}
 
-/* ---------- Shop-Vorschau ---------- */
+/* ---------- Shop-Konfigurator ---------- */
 .shopgrid{display:grid;grid-template-columns:1.02fr .98fr;gap:18px;align-items:stretch}
 .wheelbox{background:linear-gradient(165deg,#0e1524,#1c2c48 55%,#0d1322);border:1px solid #263751;border-radius:var(--r);padding:32px;display:grid;place-items:center;box-shadow:inset 0 0 70px rgba(30,116,236,.16)}
 .wheelbox svg{width:min(340px,100%);height:auto;filter:drop-shadow(0 26px 44px rgba(0,0,0,.5))}
@@ -487,9 +487,9 @@ td.num{font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;text
 </section>
 
 <!-- 04 GESCHAEFTSMODELL -->
-<section class="view" id="s4" data-t="So verdienen wir Geld">
+<section class="view" id="s4" data-t="Erlösmodell">
   <div class="shead">
-    <div class="eyebrow rv" style="--i:0">04 · So verdienen wir Geld</div>
+    <div class="eyebrow rv" style="--i:0">04 · Erlösmodell</div>
     <h2 class="rv" style="--i:1">Vier Einnahmequellen,<br>eine Produktion, eine Marke.</h2>
     <p class="lead rv" style="--i:2">Alle Zahlen ohne Mehrwertsteuer. "Bleibt übrig" heißt: Verkaufspreis abzüglich Material und Wareneinkauf, bevor Personal und laufende Kosten bezahlt werden.</p>
   </div>
@@ -972,7 +972,7 @@ td.num{font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;text
       </table>
     </div>
   </div>
-  <p class="note rv" style="--i:5">Annahmen: 240 Produktionstage im Jahr, 1 Satz = 4 Felgen, Preise wie im Kapitel "So verdienen wir Geld", Werte gerundet. Vollständiges Rechenmodell mit allen Einzelposten liegt zur Prüfung bereit.</p>
+  <p class="note rv" style="--i:5">Annahmen: 240 Produktionstage im Jahr, 1 Satz = 4 Felgen, Preise wie im Kapitel "Erlösmodell", Werte gerundet. Vollständiges Rechenmodell mit allen Einzelposten liegt zur Prüfung bereit.</p>
 </section>
 
 <!-- 14 FAHRPLAN -->
@@ -1076,10 +1076,10 @@ td.num{font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;text
   </div>
 </section>
 
-<!-- 17 SHOP-VORSCHAU -->
-<section class="view" id="s17" data-t="Shop-Vorschau">
+<!-- 17 SHOP-KONFIGURATOR -->
+<section class="view" id="s17" data-t="Shop-Konfigurator">
   <div class="shead">
-    <div class="eyebrow rv" style="--i:0">17 · Shop-Vorschau</div>
+    <div class="eyebrow rv" style="--i:0">17 · Shop-Konfigurator</div>
     <h2 class="rv" style="--i:1">So fühlt sich der neue<br>Online-Konfigurator an.</h2>
     <p class="lead rv" style="--i:2">Ein Vorgeschmack zum Ausprobieren: Felgendesign und Veredelung wählen, Farbe anklicken, Preis sehen. Genau so einfach sollen Kunden künftig im Shop bestellen. Die Preise entsprechen der aktuellen Liste.</p>
   </div>
@@ -1378,7 +1378,7 @@ td.num{font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;text
     var bk=document.getElementById('b_ko');if(bk)bk.style.width=st.wk+'%';
   }
 
-  // Shop-Vorschau
+  // Shop-Konfigurator
   var wsvg=document.getElementById('wheelsvg');
   if(wsvg){
     var SRV=[
