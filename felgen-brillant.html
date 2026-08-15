@@ -301,18 +301,25 @@ td.num{font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;text
 
 /* ---------- Shop-Konfigurator ---------- */
 .shopgrid{display:grid;grid-template-columns:1.02fr .98fr;gap:18px;align-items:stretch}
-.wheelbox{background:linear-gradient(165deg,#0e1524,#1c2c48 55%,#0d1322);border:1px solid #263751;border-radius:var(--r);padding:32px;display:grid;place-items:center;box-shadow:inset 0 0 70px rgba(30,116,236,.16)}
-.wheelbox svg{width:min(340px,100%);height:auto;filter:drop-shadow(0 26px 44px rgba(0,0,0,.5))}
-#wheelsvg .pf{fill:var(--wc,#0f52c4);transition:fill .35s ease}
-#wheelsvg .ps{stroke:var(--wc,#0f52c4);transition:stroke .35s ease}
+.wheelbox{background:linear-gradient(170deg,#f4f6f9,#e7ebf1);border:1px solid var(--line);border-radius:var(--r);padding:20px 18px 16px;display:flex;flex-direction:column;justify-content:center;gap:12px;overflow:hidden}
+.wview{position:relative}
+.wtrack{display:flex;transition:transform .45s cubic-bezier(.4,0,.2,1)}
+.wslide{flex:0 0 100%;display:grid;place-items:center;padding:4px 2px}
+.wslide svg{width:100%;height:auto;max-height:330px;filter:drop-shadow(0 16px 26px rgba(13,30,60,.16))}
+.wnav{position:absolute;top:50%;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.92);color:var(--brand);font-size:20px;line-height:1;font-weight:700;display:grid;place-items:center;cursor:pointer;box-shadow:0 4px 12px rgba(13,30,60,.12);transition:.2s;z-index:2}
+.wnav:hover{background:var(--brand);border-color:var(--brand);color:#fff}
+.wprev{left:-4px}
+.wnext{right:-4px}
+.wbar{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.wcap{font-family:var(--font-d);font-weight:700;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mut)}
+.wdots{display:flex;gap:7px}
+.wdots button{width:8px;height:8px;padding:0;border-radius:50%;border:none;background:#c3ccd8;cursor:pointer;transition:.2s}
+.wdots button.cur{background:var(--brand);width:20px;border-radius:4px}
 .optlab{font-family:var(--font-d);font-weight:700;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);margin:18px 0 9px}
 .optlab:first-child{margin-top:0}
-.optgrid{display:flex;flex-wrap:wrap;gap:8px}
-.optgrid button{padding:9px 13px;border-radius:10px;border:1px solid var(--line);background:#f7fafd;font-size:12.5px;font-weight:600;color:var(--mut);transition:.2s;text-align:left;line-height:1.35}
-.optgrid button:hover{border-color:var(--line2);color:var(--ink)}
-.optgrid button.cur{background:var(--brand);border-color:var(--brand);color:#fff;box-shadow:0 8px 18px rgba(15,82,196,.28)}
-.optgrid button.cur small{color:rgba(230,240,255,.8)}
-.optgrid button small{display:block;font-weight:500;font-size:10px;color:var(--mut)}
+.opsel{width:100%;padding:12px 40px 12px 14px;border-radius:11px;border:1px solid var(--line);background:#f7fafd;font-family:inherit;font-size:13.5px;font-weight:600;color:var(--ink);cursor:pointer;appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1l6 6 6-6' fill='none' stroke='%230f52c4' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;transition:border-color .2s,box-shadow .2s}
+.opsel:hover{border-color:var(--line2)}
+.opsel:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 3px rgba(15,82,196,.14)}
 .swatches{display:flex;flex-wrap:wrap;gap:9px}
 .sw2{width:36px;height:36px;border-radius:11px;border:2px solid #fff;box-shadow:0 0 0 1px var(--line),0 4px 10px rgba(13,30,60,.16);cursor:pointer;transition:transform .15s}
 .sw2:hover{transform:scale(1.09)}
@@ -1085,16 +1092,23 @@ td.num{font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;text
   </div>
   <div class="shopgrid rv" style="--i:3">
     <div class="wheelbox">
-      <svg id="wheelsvg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Felgen-Vorschau" style="--wc:#0f52c4">
+      <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
         <defs>
           <radialGradient id="wtg" cx="35%" cy="30%" r="85%"><stop offset="0" stop-color="#28303b"/><stop offset="1" stop-color="#0a0e14"/></radialGradient>
           <linearGradient id="wsteel" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6f8fb"/><stop offset=".45" stop-color="#c2cad5"/><stop offset=".7" stop-color="#eef2f6"/><stop offset="1" stop-color="#a7b1be"/></linearGradient>
           <radialGradient id="wdish" cx="50%" cy="45%" r="62%"><stop offset="0" stop-color="#1a212b"/><stop offset="1" stop-color="#090d12"/></radialGradient>
+          <linearGradient id="cbody" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e9edf3"/><stop offset="1" stop-color="#ccd5e0"/></linearGradient>
         </defs>
+      </svg>
+      <div class="wview">
+        <div class="wtrack" id="wtrack">
+          <div class="wslide"><svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Felge einzeln">
+            <g class="wheel">
         <circle cx="200" cy="200" r="192" fill="url(#wtg)"/>
-        <circle cx="200" cy="200" r="192" fill="none" stroke="#000000" stroke-opacity=".4" stroke-width="3"/>
+        <circle cx="200" cy="200" r="192" fill="none" stroke="#000000" stroke-opacity=".38" stroke-width="3"/>
+        <circle cx="200" cy="200" r="163" fill="none" stroke="#05080c" stroke-width="8" opacity=".55"/>
         <circle cx="200" cy="200" r="156" fill="url(#wdish)"/>
-        <g class="pf">
+        <g class="pf" style="fill:var(--wc,#0f52c4);transition:fill .35s ease">
           <g class="dsn" data-d="d1">
             <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(0 200 200)"/>
             <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(36 200 200)"/>
@@ -1149,8 +1163,8 @@ td.num{font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;text
           </g>
           <circle cx="200" cy="200" r="47"/>
         </g>
-        <circle class="ps" cx="200" cy="200" r="146" fill="none" stroke-width="11"/>
-        <g id="mach" style="opacity:0;transition:opacity .35s ease">
+        <circle class="ps" cx="200" cy="200" r="146" fill="none" stroke-width="11" style="stroke:var(--wc,#0f52c4);transition:stroke .35s ease"/>
+        <g class="machg" style="opacity:0;transition:opacity .35s ease">
           <circle cx="200" cy="200" r="146" fill="none" stroke="url(#wsteel)" stroke-width="11"/>
           <g fill="url(#wsteel)">
             <g class="dsnm" data-d="d1">
@@ -1218,13 +1232,569 @@ td.num{font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;text
         <circle cx="200" cy="200" r="17" fill="#0c1117" stroke="#2c3542" stroke-width="1.5"/>
         <text x="200" y="205" text-anchor="middle" font-family="Archivo,sans-serif" font-weight="700" font-size="14" fill="#5b8cf0">◆</text>
         <ellipse cx="148" cy="118" rx="92" ry="44" fill="#ffffff" opacity=".07" transform="rotate(-25 148 118)"/>
-      </svg>
+          </g>
+          </svg></div>
+          <div class="wslide"><svg viewBox="0 0 520 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Felge am Fahrzeug montiert">
+            <path fill-rule="evenodd" fill="url(#cbody)" d="M0,14 H520 V300 H0 Z M260,236 m-154,0 a154,154 0 1,0 308,0 a154,154 0 1,0 -308,0"/>
+            <rect x="0" y="282" width="106" height="18" fill="#c3ccd8"/>
+            <rect x="414" y="282" width="106" height="18" fill="#c3ccd8"/>
+            <path d="M106,236 A154,154 0 0 1 414,236" fill="none" stroke="#aeb9c7" stroke-width="3.5"/>
+            <path d="M84,44 L84,232" stroke="#c6cfda" stroke-width="2.5" fill="none"/>
+            <path d="M478,74 L478,140 Q478,152 466,152 L404,152 Q392,152 392,140 L392,74" fill="#e4e9ef" stroke="#c6cfda" stroke-width="2"/>
+            <rect x="140" y="176" width="86" height="10" rx="5" fill="#c3ccd8"/>
+            <g transform="translate(114.2,90.2) scale(0.7292)"><g class="wheel">
+        <circle cx="200" cy="200" r="192" fill="url(#wtg)"/>
+        <circle cx="200" cy="200" r="192" fill="none" stroke="#000000" stroke-opacity=".38" stroke-width="3"/>
+        <circle cx="200" cy="200" r="163" fill="none" stroke="#05080c" stroke-width="8" opacity=".55"/>
+        <circle cx="200" cy="200" r="156" fill="url(#wdish)"/>
+        <g class="pf" style="fill:var(--wc,#0f52c4);transition:fill .35s ease">
+          <g class="dsn" data-d="d1">
+            <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(0 200 200)"/>
+            <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(36 200 200)"/>
+            <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(72 200 200)"/>
+            <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(108 200 200)"/>
+            <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(144 200 200)"/>
+            <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(180 200 200)"/>
+            <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(216 200 200)"/>
+            <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(252 200 200)"/>
+            <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(288 200 200)"/>
+            <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(324 200 200)"/>
+          </g>
+          <g class="dsn" data-d="d2" style="display:none">
+            <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(-9 200 200)"/>
+            <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(9 200 200)"/>
+            <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(63 200 200)"/>
+            <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(81 200 200)"/>
+            <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(135 200 200)"/>
+            <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(153 200 200)"/>
+            <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(207 200 200)"/>
+            <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(225 200 200)"/>
+            <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(279 200 200)"/>
+            <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(297 200 200)"/>
+          </g>
+          <g class="dsn" data-d="d3" style="display:none">
+            <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(0 200 200)"/>
+            <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(40 200 200)"/>
+            <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(80 200 200)"/>
+            <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(120 200 200)"/>
+            <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(160 200 200)"/>
+            <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(200 200 200)"/>
+            <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(240 200 200)"/>
+            <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(280 200 200)"/>
+            <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(320 200 200)"/>
+          </g>
+          <g class="dsn" data-d="d4" style="display:none">
+            <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(0 200 200)"/>
+            <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(24 200 200)"/>
+            <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(48 200 200)"/>
+            <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(72 200 200)"/>
+            <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(96 200 200)"/>
+            <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(120 200 200)"/>
+            <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(144 200 200)"/>
+            <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(168 200 200)"/>
+            <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(192 200 200)"/>
+            <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(216 200 200)"/>
+            <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(240 200 200)"/>
+            <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(264 200 200)"/>
+            <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(288 200 200)"/>
+            <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(312 200 200)"/>
+            <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(336 200 200)"/>
+          </g>
+          <circle cx="200" cy="200" r="47"/>
+        </g>
+        <circle class="ps" cx="200" cy="200" r="146" fill="none" stroke-width="11" style="stroke:var(--wc,#0f52c4);transition:stroke .35s ease"/>
+        <g class="machg" style="opacity:0;transition:opacity .35s ease">
+          <circle cx="200" cy="200" r="146" fill="none" stroke="url(#wsteel)" stroke-width="11"/>
+          <g fill="url(#wsteel)">
+            <g class="dsnm" data-d="d1">
+              <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(0 200 200)"/>
+              <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(36 200 200)"/>
+              <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(72 200 200)"/>
+              <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(108 200 200)"/>
+              <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(144 200 200)"/>
+              <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(180 200 200)"/>
+              <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(216 200 200)"/>
+              <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(252 200 200)"/>
+              <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(288 200 200)"/>
+              <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(324 200 200)"/>
+            </g>
+            <g class="dsnm" data-d="d2" style="display:none">
+              <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(-9 200 200)"/>
+              <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(9 200 200)"/>
+              <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(63 200 200)"/>
+              <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(81 200 200)"/>
+              <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(135 200 200)"/>
+              <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(153 200 200)"/>
+              <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(207 200 200)"/>
+              <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(225 200 200)"/>
+              <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(279 200 200)"/>
+              <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(297 200 200)"/>
+            </g>
+            <g class="dsnm" data-d="d3" style="display:none">
+              <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(0 200 200)"/>
+              <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(40 200 200)"/>
+              <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(80 200 200)"/>
+              <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(120 200 200)"/>
+              <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(160 200 200)"/>
+              <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(200 200 200)"/>
+              <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(240 200 200)"/>
+              <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(280 200 200)"/>
+              <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(320 200 200)"/>
+            </g>
+            <g class="dsnm" data-d="d4" style="display:none">
+              <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(0 200 200)"/>
+              <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(24 200 200)"/>
+              <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(48 200 200)"/>
+              <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(72 200 200)"/>
+              <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(96 200 200)"/>
+              <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(120 200 200)"/>
+              <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(144 200 200)"/>
+              <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(168 200 200)"/>
+              <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(192 200 200)"/>
+              <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(216 200 200)"/>
+              <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(240 200 200)"/>
+              <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(264 200 200)"/>
+              <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(288 200 200)"/>
+              <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(312 200 200)"/>
+              <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(336 200 200)"/>
+            </g>
+            <circle cx="200" cy="200" r="47"/>
+          </g>
+        </g>
+        <g fill="#0c1117">
+          <circle cx="200" cy="174" r="5.5" transform="rotate(0 200 200)"/>
+          <circle cx="200" cy="174" r="5.5" transform="rotate(72 200 200)"/>
+          <circle cx="200" cy="174" r="5.5" transform="rotate(144 200 200)"/>
+          <circle cx="200" cy="174" r="5.5" transform="rotate(216 200 200)"/>
+          <circle cx="200" cy="174" r="5.5" transform="rotate(288 200 200)"/>
+        </g>
+        <circle cx="200" cy="200" r="17" fill="#0c1117" stroke="#2c3542" stroke-width="1.5"/>
+        <text x="200" y="205" text-anchor="middle" font-family="Archivo,sans-serif" font-weight="700" font-size="14" fill="#5b8cf0">◆</text>
+        <ellipse cx="148" cy="118" rx="92" ry="44" fill="#ffffff" opacity=".07" transform="rotate(-25 148 118)"/>
+          </g></g>
+            <rect x="0" y="376" width="520" height="24" fill="#dde3ea"/>
+            <ellipse cx="260" cy="380" rx="146" ry="10" fill="#0b1220" opacity=".12"/>
+          </svg></div>
+          <div class="wslide"><svg viewBox="112 112 176 176" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Detailansicht der Felge">
+            <g class="wheel">
+        <circle cx="200" cy="200" r="192" fill="url(#wtg)"/>
+        <circle cx="200" cy="200" r="192" fill="none" stroke="#000000" stroke-opacity=".38" stroke-width="3"/>
+        <circle cx="200" cy="200" r="163" fill="none" stroke="#05080c" stroke-width="8" opacity=".55"/>
+        <circle cx="200" cy="200" r="156" fill="url(#wdish)"/>
+        <g class="pf" style="fill:var(--wc,#0f52c4);transition:fill .35s ease">
+          <g class="dsn" data-d="d1">
+            <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(0 200 200)"/>
+            <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(36 200 200)"/>
+            <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(72 200 200)"/>
+            <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(108 200 200)"/>
+            <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(144 200 200)"/>
+            <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(180 200 200)"/>
+            <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(216 200 200)"/>
+            <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(252 200 200)"/>
+            <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(288 200 200)"/>
+            <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(324 200 200)"/>
+          </g>
+          <g class="dsn" data-d="d2" style="display:none">
+            <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(-9 200 200)"/>
+            <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(9 200 200)"/>
+            <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(63 200 200)"/>
+            <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(81 200 200)"/>
+            <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(135 200 200)"/>
+            <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(153 200 200)"/>
+            <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(207 200 200)"/>
+            <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(225 200 200)"/>
+            <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(279 200 200)"/>
+            <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(297 200 200)"/>
+          </g>
+          <g class="dsn" data-d="d3" style="display:none">
+            <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(0 200 200)"/>
+            <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(40 200 200)"/>
+            <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(80 200 200)"/>
+            <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(120 200 200)"/>
+            <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(160 200 200)"/>
+            <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(200 200 200)"/>
+            <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(240 200 200)"/>
+            <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(280 200 200)"/>
+            <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(320 200 200)"/>
+          </g>
+          <g class="dsn" data-d="d4" style="display:none">
+            <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(0 200 200)"/>
+            <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(24 200 200)"/>
+            <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(48 200 200)"/>
+            <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(72 200 200)"/>
+            <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(96 200 200)"/>
+            <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(120 200 200)"/>
+            <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(144 200 200)"/>
+            <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(168 200 200)"/>
+            <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(192 200 200)"/>
+            <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(216 200 200)"/>
+            <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(240 200 200)"/>
+            <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(264 200 200)"/>
+            <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(288 200 200)"/>
+            <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(312 200 200)"/>
+            <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(336 200 200)"/>
+          </g>
+          <circle cx="200" cy="200" r="47"/>
+        </g>
+        <circle class="ps" cx="200" cy="200" r="146" fill="none" stroke-width="11" style="stroke:var(--wc,#0f52c4);transition:stroke .35s ease"/>
+        <g class="machg" style="opacity:0;transition:opacity .35s ease">
+          <circle cx="200" cy="200" r="146" fill="none" stroke="url(#wsteel)" stroke-width="11"/>
+          <g fill="url(#wsteel)">
+            <g class="dsnm" data-d="d1">
+              <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(0 200 200)"/>
+              <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(36 200 200)"/>
+              <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(72 200 200)"/>
+              <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(108 200 200)"/>
+              <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(144 200 200)"/>
+              <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(180 200 200)"/>
+              <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(216 200 200)"/>
+              <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(252 200 200)"/>
+              <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(288 200 200)"/>
+              <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(324 200 200)"/>
+            </g>
+            <g class="dsnm" data-d="d2" style="display:none">
+              <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(-9 200 200)"/>
+              <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(9 200 200)"/>
+              <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(63 200 200)"/>
+              <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(81 200 200)"/>
+              <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(135 200 200)"/>
+              <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(153 200 200)"/>
+              <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(207 200 200)"/>
+              <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(225 200 200)"/>
+              <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(279 200 200)"/>
+              <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(297 200 200)"/>
+            </g>
+            <g class="dsnm" data-d="d3" style="display:none">
+              <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(0 200 200)"/>
+              <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(40 200 200)"/>
+              <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(80 200 200)"/>
+              <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(120 200 200)"/>
+              <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(160 200 200)"/>
+              <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(200 200 200)"/>
+              <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(240 200 200)"/>
+              <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(280 200 200)"/>
+              <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(320 200 200)"/>
+            </g>
+            <g class="dsnm" data-d="d4" style="display:none">
+              <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(0 200 200)"/>
+              <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(24 200 200)"/>
+              <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(48 200 200)"/>
+              <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(72 200 200)"/>
+              <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(96 200 200)"/>
+              <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(120 200 200)"/>
+              <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(144 200 200)"/>
+              <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(168 200 200)"/>
+              <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(192 200 200)"/>
+              <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(216 200 200)"/>
+              <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(240 200 200)"/>
+              <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(264 200 200)"/>
+              <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(288 200 200)"/>
+              <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(312 200 200)"/>
+              <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(336 200 200)"/>
+            </g>
+            <circle cx="200" cy="200" r="47"/>
+          </g>
+        </g>
+        <g fill="#0c1117">
+          <circle cx="200" cy="174" r="5.5" transform="rotate(0 200 200)"/>
+          <circle cx="200" cy="174" r="5.5" transform="rotate(72 200 200)"/>
+          <circle cx="200" cy="174" r="5.5" transform="rotate(144 200 200)"/>
+          <circle cx="200" cy="174" r="5.5" transform="rotate(216 200 200)"/>
+          <circle cx="200" cy="174" r="5.5" transform="rotate(288 200 200)"/>
+        </g>
+        <circle cx="200" cy="200" r="17" fill="#0c1117" stroke="#2c3542" stroke-width="1.5"/>
+        <text x="200" y="205" text-anchor="middle" font-family="Archivo,sans-serif" font-weight="700" font-size="14" fill="#5b8cf0">◆</text>
+        <ellipse cx="148" cy="118" rx="92" ry="44" fill="#ffffff" opacity=".07" transform="rotate(-25 148 118)"/>
+          </g>
+          </svg></div>
+          <div class="wslide"><svg viewBox="0 0 900 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Fahrzeugseite mit beiden Felgen">
+            <path d="M46,286 L46,224 Q48,194 86,185 L214,152 Q292,96 402,92 L548,92 Q644,97 706,152 L826,180 Q862,190 864,222 L864,286 Z" fill="url(#cbody)"/>
+            <path d="M306,112 L520,110 Q556,112 590,146 L306,150 Z" fill="#eef2f7" opacity=".9"/>
+            <path d="M292,113 L292,150 L246,150 Q262,128 292,113 Z" fill="#eef2f7" opacity=".9"/>
+            <path d="M240,158 L864,158" stroke="#c6cfda" stroke-width="2" fill="none"/>
+            <path d="M452,158 L452,286" stroke="#c6cfda" stroke-width="2" fill="none"/>
+            <rect x="466" y="196" width="64" height="8" rx="4" fill="#cdd6e1"/>
+            <circle cx="232" cy="268" r="97" fill="#eef1f5"/>
+            <circle cx="672" cy="268" r="97" fill="#eef1f5"/>
+            <path d="M135,268 A97,97 0 0 1 329,268" fill="none" stroke="#b9c3d0" stroke-width="3"/>
+            <path d="M575,268 A97,97 0 0 1 769,268" fill="none" stroke="#b9c3d0" stroke-width="3"/>
+            <g transform="translate(144.5,180.5) scale(0.4375)"><g class="wheel">
+        <circle cx="200" cy="200" r="192" fill="url(#wtg)"/>
+        <circle cx="200" cy="200" r="192" fill="none" stroke="#000000" stroke-opacity=".38" stroke-width="3"/>
+        <circle cx="200" cy="200" r="163" fill="none" stroke="#05080c" stroke-width="8" opacity=".55"/>
+        <circle cx="200" cy="200" r="156" fill="url(#wdish)"/>
+        <g class="pf" style="fill:var(--wc,#0f52c4);transition:fill .35s ease">
+          <g class="dsn" data-d="d1">
+            <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(0 200 200)"/>
+            <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(36 200 200)"/>
+            <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(72 200 200)"/>
+            <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(108 200 200)"/>
+            <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(144 200 200)"/>
+            <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(180 200 200)"/>
+            <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(216 200 200)"/>
+            <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(252 200 200)"/>
+            <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(288 200 200)"/>
+            <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(324 200 200)"/>
+          </g>
+          <g class="dsn" data-d="d2" style="display:none">
+            <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(-9 200 200)"/>
+            <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(9 200 200)"/>
+            <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(63 200 200)"/>
+            <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(81 200 200)"/>
+            <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(135 200 200)"/>
+            <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(153 200 200)"/>
+            <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(207 200 200)"/>
+            <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(225 200 200)"/>
+            <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(279 200 200)"/>
+            <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(297 200 200)"/>
+          </g>
+          <g class="dsn" data-d="d3" style="display:none">
+            <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(0 200 200)"/>
+            <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(40 200 200)"/>
+            <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(80 200 200)"/>
+            <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(120 200 200)"/>
+            <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(160 200 200)"/>
+            <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(200 200 200)"/>
+            <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(240 200 200)"/>
+            <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(280 200 200)"/>
+            <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(320 200 200)"/>
+          </g>
+          <g class="dsn" data-d="d4" style="display:none">
+            <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(0 200 200)"/>
+            <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(24 200 200)"/>
+            <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(48 200 200)"/>
+            <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(72 200 200)"/>
+            <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(96 200 200)"/>
+            <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(120 200 200)"/>
+            <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(144 200 200)"/>
+            <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(168 200 200)"/>
+            <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(192 200 200)"/>
+            <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(216 200 200)"/>
+            <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(240 200 200)"/>
+            <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(264 200 200)"/>
+            <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(288 200 200)"/>
+            <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(312 200 200)"/>
+            <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(336 200 200)"/>
+          </g>
+          <circle cx="200" cy="200" r="47"/>
+        </g>
+        <circle class="ps" cx="200" cy="200" r="146" fill="none" stroke-width="11" style="stroke:var(--wc,#0f52c4);transition:stroke .35s ease"/>
+        <g class="machg" style="opacity:0;transition:opacity .35s ease">
+          <circle cx="200" cy="200" r="146" fill="none" stroke="url(#wsteel)" stroke-width="11"/>
+          <g fill="url(#wsteel)">
+            <g class="dsnm" data-d="d1">
+              <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(0 200 200)"/>
+              <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(36 200 200)"/>
+              <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(72 200 200)"/>
+              <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(108 200 200)"/>
+              <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(144 200 200)"/>
+              <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(180 200 200)"/>
+              <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(216 200 200)"/>
+              <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(252 200 200)"/>
+              <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(288 200 200)"/>
+              <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(324 200 200)"/>
+            </g>
+            <g class="dsnm" data-d="d2" style="display:none">
+              <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(-9 200 200)"/>
+              <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(9 200 200)"/>
+              <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(63 200 200)"/>
+              <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(81 200 200)"/>
+              <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(135 200 200)"/>
+              <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(153 200 200)"/>
+              <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(207 200 200)"/>
+              <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(225 200 200)"/>
+              <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(279 200 200)"/>
+              <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(297 200 200)"/>
+            </g>
+            <g class="dsnm" data-d="d3" style="display:none">
+              <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(0 200 200)"/>
+              <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(40 200 200)"/>
+              <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(80 200 200)"/>
+              <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(120 200 200)"/>
+              <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(160 200 200)"/>
+              <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(200 200 200)"/>
+              <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(240 200 200)"/>
+              <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(280 200 200)"/>
+              <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(320 200 200)"/>
+            </g>
+            <g class="dsnm" data-d="d4" style="display:none">
+              <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(0 200 200)"/>
+              <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(24 200 200)"/>
+              <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(48 200 200)"/>
+              <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(72 200 200)"/>
+              <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(96 200 200)"/>
+              <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(120 200 200)"/>
+              <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(144 200 200)"/>
+              <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(168 200 200)"/>
+              <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(192 200 200)"/>
+              <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(216 200 200)"/>
+              <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(240 200 200)"/>
+              <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(264 200 200)"/>
+              <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(288 200 200)"/>
+              <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(312 200 200)"/>
+              <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(336 200 200)"/>
+            </g>
+            <circle cx="200" cy="200" r="47"/>
+          </g>
+        </g>
+        <g fill="#0c1117">
+          <circle cx="200" cy="174" r="5.5" transform="rotate(0 200 200)"/>
+          <circle cx="200" cy="174" r="5.5" transform="rotate(72 200 200)"/>
+          <circle cx="200" cy="174" r="5.5" transform="rotate(144 200 200)"/>
+          <circle cx="200" cy="174" r="5.5" transform="rotate(216 200 200)"/>
+          <circle cx="200" cy="174" r="5.5" transform="rotate(288 200 200)"/>
+        </g>
+        <circle cx="200" cy="200" r="17" fill="#0c1117" stroke="#2c3542" stroke-width="1.5"/>
+        <text x="200" y="205" text-anchor="middle" font-family="Archivo,sans-serif" font-weight="700" font-size="14" fill="#5b8cf0">◆</text>
+        <ellipse cx="148" cy="118" rx="92" ry="44" fill="#ffffff" opacity=".07" transform="rotate(-25 148 118)"/>
+          </g></g>
+            <g transform="translate(584.5,180.5) scale(0.4375)"><g class="wheel">
+        <circle cx="200" cy="200" r="192" fill="url(#wtg)"/>
+        <circle cx="200" cy="200" r="192" fill="none" stroke="#000000" stroke-opacity=".38" stroke-width="3"/>
+        <circle cx="200" cy="200" r="163" fill="none" stroke="#05080c" stroke-width="8" opacity=".55"/>
+        <circle cx="200" cy="200" r="156" fill="url(#wdish)"/>
+        <g class="pf" style="fill:var(--wc,#0f52c4);transition:fill .35s ease">
+          <g class="dsn" data-d="d1">
+            <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(0 200 200)"/>
+            <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(36 200 200)"/>
+            <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(72 200 200)"/>
+            <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(108 200 200)"/>
+            <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(144 200 200)"/>
+            <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(180 200 200)"/>
+            <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(216 200 200)"/>
+            <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(252 200 200)"/>
+            <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(288 200 200)"/>
+            <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(324 200 200)"/>
+          </g>
+          <g class="dsn" data-d="d2" style="display:none">
+            <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(-9 200 200)"/>
+            <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(9 200 200)"/>
+            <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(63 200 200)"/>
+            <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(81 200 200)"/>
+            <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(135 200 200)"/>
+            <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(153 200 200)"/>
+            <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(207 200 200)"/>
+            <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(225 200 200)"/>
+            <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(279 200 200)"/>
+            <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(297 200 200)"/>
+          </g>
+          <g class="dsn" data-d="d3" style="display:none">
+            <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(0 200 200)"/>
+            <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(40 200 200)"/>
+            <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(80 200 200)"/>
+            <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(120 200 200)"/>
+            <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(160 200 200)"/>
+            <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(200 200 200)"/>
+            <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(240 200 200)"/>
+            <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(280 200 200)"/>
+            <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(320 200 200)"/>
+          </g>
+          <g class="dsn" data-d="d4" style="display:none">
+            <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(0 200 200)"/>
+            <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(24 200 200)"/>
+            <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(48 200 200)"/>
+            <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(72 200 200)"/>
+            <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(96 200 200)"/>
+            <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(120 200 200)"/>
+            <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(144 200 200)"/>
+            <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(168 200 200)"/>
+            <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(192 200 200)"/>
+            <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(216 200 200)"/>
+            <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(240 200 200)"/>
+            <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(264 200 200)"/>
+            <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(288 200 200)"/>
+            <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(312 200 200)"/>
+            <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(336 200 200)"/>
+          </g>
+          <circle cx="200" cy="200" r="47"/>
+        </g>
+        <circle class="ps" cx="200" cy="200" r="146" fill="none" stroke-width="11" style="stroke:var(--wc,#0f52c4);transition:stroke .35s ease"/>
+        <g class="machg" style="opacity:0;transition:opacity .35s ease">
+          <circle cx="200" cy="200" r="146" fill="none" stroke="url(#wsteel)" stroke-width="11"/>
+          <g fill="url(#wsteel)">
+            <g class="dsnm" data-d="d1">
+              <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(0 200 200)"/>
+              <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(36 200 200)"/>
+              <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(72 200 200)"/>
+              <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(108 200 200)"/>
+              <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(144 200 200)"/>
+              <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(180 200 200)"/>
+              <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(216 200 200)"/>
+              <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(252 200 200)"/>
+              <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(288 200 200)"/>
+              <rect x="188" y="56" width="24" height="112" rx="11" transform="rotate(324 200 200)"/>
+            </g>
+            <g class="dsnm" data-d="d2" style="display:none">
+              <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(-9 200 200)"/>
+              <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(9 200 200)"/>
+              <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(63 200 200)"/>
+              <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(81 200 200)"/>
+              <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(135 200 200)"/>
+              <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(153 200 200)"/>
+              <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(207 200 200)"/>
+              <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(225 200 200)"/>
+              <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(279 200 200)"/>
+              <rect x="193.5" y="56" width="13" height="112" rx="6" transform="rotate(297 200 200)"/>
+            </g>
+            <g class="dsnm" data-d="d3" style="display:none">
+              <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(0 200 200)"/>
+              <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(40 200 200)"/>
+              <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(80 200 200)"/>
+              <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(120 200 200)"/>
+              <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(160 200 200)"/>
+              <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(200 200 200)"/>
+              <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(240 200 200)"/>
+              <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(280 200 200)"/>
+              <path d="M191,162 Q166,112 185,58 L209,58 Q190,112 215,162 Z" transform="rotate(320 200 200)"/>
+            </g>
+            <g class="dsnm" data-d="d4" style="display:none">
+              <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(0 200 200)"/>
+              <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(24 200 200)"/>
+              <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(48 200 200)"/>
+              <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(72 200 200)"/>
+              <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(96 200 200)"/>
+              <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(120 200 200)"/>
+              <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(144 200 200)"/>
+              <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(168 200 200)"/>
+              <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(192 200 200)"/>
+              <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(216 200 200)"/>
+              <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(240 200 200)"/>
+              <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(264 200 200)"/>
+              <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(288 200 200)"/>
+              <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(312 200 200)"/>
+              <rect x="195" y="56" width="10" height="112" rx="5" transform="rotate(336 200 200)"/>
+            </g>
+            <circle cx="200" cy="200" r="47"/>
+          </g>
+        </g>
+        <g fill="#0c1117">
+          <circle cx="200" cy="174" r="5.5" transform="rotate(0 200 200)"/>
+          <circle cx="200" cy="174" r="5.5" transform="rotate(72 200 200)"/>
+          <circle cx="200" cy="174" r="5.5" transform="rotate(144 200 200)"/>
+          <circle cx="200" cy="174" r="5.5" transform="rotate(216 200 200)"/>
+          <circle cx="200" cy="174" r="5.5" transform="rotate(288 200 200)"/>
+        </g>
+        <circle cx="200" cy="200" r="17" fill="#0c1117" stroke="#2c3542" stroke-width="1.5"/>
+        <text x="200" y="205" text-anchor="middle" font-family="Archivo,sans-serif" font-weight="700" font-size="14" fill="#5b8cf0">◆</text>
+        <ellipse cx="148" cy="118" rx="92" ry="44" fill="#ffffff" opacity=".07" transform="rotate(-25 148 118)"/>
+          </g></g>
+            <rect x="0" y="356" width="900" height="24" fill="#dde3ea"/>
+            <ellipse cx="450" cy="360" rx="400" ry="12" fill="#0b1220" opacity=".09"/>
+          </svg></div>
+        </div>
+        <button class="wnav wprev" id="wprev" aria-label="Vorherige Ansicht">‹</button>
+        <button class="wnav wnext" id="wnext" aria-label="Nächste Ansicht">›</button>
+      </div>
+      <div class="wbar">
+        <div class="wcap" id="wcap">Einzelansicht</div>
+        <div class="wdots" id="wdots"></div>
+      </div>
     </div>
     <div class="card" style="cursor:default">
       <div class="optlab">1 · Felgen-Design wählen</div>
-      <div class="optgrid" id="dsggrid"></div>
+      <select class="opsel" id="dsgsel" aria-label="Felgen-Design wählen"></select>
       <div class="optlab">2 · Veredelung wählen</div>
-      <div class="optgrid" id="srvgrid"></div>
+      <select class="opsel" id="srvsel" aria-label="Veredelung wählen"></select>
       <div class="optlab">3 · Farbe wählen</div>
       <div class="swatches" id="swgrid"></div>
       <div class="optlab">4 · Extras dazu</div>
@@ -1379,7 +1949,7 @@ td.num{font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;text
   }
 
   // Shop-Konfigurator
-  var wsvg=document.getElementById('wheelsvg');
+  var wsvg=document.querySelector('.wheelbox');
   if(wsvg){
     var SRV=[
       {n:'Pulverbeschichtung',p:800,m:0},
@@ -1389,10 +1959,10 @@ td.num{font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;text
       {n:'Lack + Glanzdrehen',p:1160,m:.55}
     ];
     var COLS=[['Tiefschwarz','#0e1116'],['Anthrazit','#3b434d'],['Silber','#c7ced8'],['Weiß','#eef1f6'],['Brillant-Blau','#0f52c4'],['Rennrot','#b3252e'],['Bronze','#a87a3f'],['Gold','#c8a24a']];
-    var srvGrid=document.getElementById('srvgrid');
+    var srvSel=document.getElementById('srvsel');
     var swGrid=document.getElementById('swgrid');
-    var dsgGrid=document.getElementById('dsggrid');
-    var mach=document.getElementById('mach');
+    var dsgSel=document.getElementById('dsgsel');
+    var machs=[].slice.call(wsvg.querySelectorAll('.machg'));
     var x1=document.getElementById('x1'),x2=document.getElementById('x2');
     var ptotal=document.getElementById('ptotal'),pnet=document.getElementById('pnet');
     var curSrv=SRV[0],curCol=COLS[4];
@@ -1400,27 +1970,46 @@ td.num{font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;text
     function setDsg(id){
       [].slice.call(wsvg.querySelectorAll('.dsn,.dsnm')).forEach(function(g){g.style.display=(g.getAttribute('data-d')===id)?'':'none'});
     }
-    DSG.forEach(function(d,i){
-      var b=document.createElement('button');
-      b.innerHTML=d[1]+'<small>'+d[2]+'</small>';
-      if(i===0)b.classList.add('cur');
-      b.addEventListener('click',function(){
-        [].slice.call(dsgGrid.children).forEach(function(x){x.classList.remove('cur')});
-        b.classList.add('cur');setDsg(d[0]);
-      });
-      dsgGrid.appendChild(b);
+    var CAPS=['Einzelansicht', 'Am Fahrzeug montiert', 'Detailansicht', 'Fahrzeugseite'];
+    var wtrack=document.getElementById('wtrack'),wcap=document.getElementById('wcap'),wdots=document.getElementById('wdots');
+    var wi=0;
+    function goW(n){
+      wi=(n+CAPS.length)%CAPS.length;
+      wtrack.style.transform='translateX('+(-wi*100)+'%)';
+      wcap.textContent=CAPS[wi];
+      [].slice.call(wdots.children).forEach(function(d,k){d.classList.toggle('cur',k===wi)});
+    }
+    CAPS.forEach(function(c,k){
+      var d=document.createElement('button');
+      d.setAttribute('aria-label',c);
+      d.addEventListener('click',function(){goW(k)});
+      wdots.appendChild(d);
     });
+    document.getElementById('wprev').addEventListener('click',function(){goW(wi-1)});
+    document.getElementById('wnext').addEventListener('click',function(){goW(wi+1)});
+    var tx0=null;
+    var wview=document.querySelector('.wview');
+    wview.addEventListener('touchstart',function(e){tx0=e.touches[0].clientX},{passive:true});
+    wview.addEventListener('touchend',function(e){
+      if(tx0===null)return;
+      var dx=e.changedTouches[0].clientX-tx0;
+      if(Math.abs(dx)>40)goW(wi+(dx<0?1:-1));
+      tx0=null;
+    },{passive:true});
+    goW(0);
+    DSG.forEach(function(d){
+      var o=document.createElement('option');
+      o.value=d[0];o.textContent=d[1]+' · '+d[2];
+      dsgSel.appendChild(o);
+    });
+    dsgSel.addEventListener('change',function(){setDsg(dsgSel.value)});
     setDsg('d1');
     SRV.forEach(function(s,i){
-      var b=document.createElement('button');
-      b.innerHTML=s.n+'<small>'+s.p.toLocaleString('de-DE')+' € je Satz</small>';
-      if(i===0)b.classList.add('cur');
-      b.addEventListener('click',function(){
-        [].slice.call(srvGrid.children).forEach(function(x){x.classList.remove('cur')});
-        b.classList.add('cur');curSrv=s;upd();
-      });
-      srvGrid.appendChild(b);
+      var o=document.createElement('option');
+      o.value=String(i);o.textContent=s.n+' · '+s.p.toLocaleString('de-DE')+' € je Satz';
+      srvSel.appendChild(o);
     });
+    srvSel.addEventListener('change',function(){curSrv=SRV[parseInt(srvSel.value,10)];upd()});
     COLS.forEach(function(c,i){
       var b=document.createElement('button');
       b.className='sw2'+(i===4?' cur':'');
@@ -1436,7 +2025,7 @@ td.num{font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;text
     x2.addEventListener('change',upd);
     function upd(){
       wsvg.style.setProperty('--wc',curCol[1]);
-      mach.style.opacity=curSrv.m;
+      machs.forEach(function(g){g.style.opacity=curSrv.m});
       var t=curSrv.p+(x1.checked?199:0)+(x2.checked?120:0);
       ptotal.textContent=t.toLocaleString('de-DE')+' €';
       pnet.textContent='≈ '+Math.round(t/1.19).toLocaleString('de-DE')+' € ohne MwSt';
