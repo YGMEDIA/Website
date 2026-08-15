@@ -301,7 +301,7 @@ td.num{font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;text
 
 /* ---------- Shop-Konfigurator ---------- */
 .shopgrid{display:grid;grid-template-columns:1.02fr .98fr;gap:18px;align-items:stretch}
-.wheelbox{background:linear-gradient(170deg,#f4f6f9,#e7ebf1);border:1px solid var(--line);border-radius:var(--r);padding:20px 18px 16px;display:flex;flex-direction:column;justify-content:center;gap:12px;overflow:hidden}
+.wheelbox{background:linear-gradient(170deg,#e2e7ee,#ccd4de);border:1px solid #bcc6d3;border-radius:var(--r);padding:20px 18px 16px;display:flex;flex-direction:column;justify-content:center;gap:12px;overflow:hidden}
 .wview{position:relative}
 .wtrack{display:flex;transition:transform .45s cubic-bezier(.4,0,.2,1)}
 .wslide{flex:0 0 100%;display:grid;place-items:center;padding:4px 2px}
@@ -315,6 +315,12 @@ td.num{font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;text
 .wdots{display:flex;gap:7px}
 .wdots button{width:8px;height:8px;padding:0;border-radius:50%;border:none;background:#c3ccd8;cursor:pointer;transition:.2s}
 .wdots button.cur{background:var(--brand);width:20px;border-radius:4px}
+.optgrid{display:flex;flex-wrap:wrap;gap:8px}
+.optgrid button{padding:9px 13px;border-radius:10px;border:1px solid var(--line);background:#f7fafd;font-family:inherit;font-size:12.5px;font-weight:600;color:var(--mut);cursor:pointer;transition:.2s;text-align:left;line-height:1.35}
+.optgrid button:hover{border-color:var(--line2);color:var(--ink)}
+.optgrid button.cur{background:var(--brand);border-color:var(--brand);color:#fff;box-shadow:0 8px 18px rgba(15,82,196,.28)}
+.optgrid button.cur small{color:rgba(230,240,255,.8)}
+.optgrid button small{display:block;font-weight:500;font-size:10px;color:var(--mut)}
 .optlab{font-family:var(--font-d);font-weight:700;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);margin:18px 0 9px}
 .optlab:first-child{margin-top:0}
 .opsel{width:100%;padding:12px 40px 12px 14px;border-radius:11px;border:1px solid var(--line);background:#f7fafd;font-family:inherit;font-size:13.5px;font-weight:600;color:var(--ink);cursor:pointer;appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1l6 6 6-6' fill='none' stroke='%230f52c4' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;transition:border-color .2s,box-shadow .2s}
@@ -1372,7 +1378,7 @@ td.num{font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;text
         <text x="200" y="205" text-anchor="middle" font-family="Archivo,sans-serif" font-weight="700" font-size="14" fill="#5b8cf0">◆</text>
         <ellipse cx="148" cy="118" rx="92" ry="44" fill="#ffffff" opacity=".07" transform="rotate(-25 148 118)"/>
           </g></g>
-            <rect x="0" y="376" width="520" height="24" fill="#dde3ea"/>
+            <rect x="0" y="376" width="520" height="24" fill="#c2cad6"/>
             <ellipse cx="260" cy="380" rx="146" ry="10" fill="#0b1220" opacity=".12"/>
           </svg></div>
           <div class="wslide"><svg viewBox="112 112 176 176" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Detailansicht der Felge">
@@ -1508,14 +1514,12 @@ td.num{font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;text
           </g>
           </svg></div>
           <div class="wslide"><svg viewBox="0 0 900 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Fahrzeugseite mit beiden Felgen">
-            <path d="M46,286 L46,224 Q48,194 86,185 L214,152 Q292,96 402,92 L548,92 Q644,97 706,152 L826,180 Q862,190 864,222 L864,286 Z" fill="url(#cbody)"/>
+            <path fill-rule="evenodd" fill="url(#cbody)" d="M46,286 L46,224 Q48,194 86,185 L214,152 Q292,96 402,92 L548,92 Q644,97 706,152 L826,180 Q862,190 864,222 L864,286 Z M232,268 m-97,0 a97,97 0 1,0 194,0 a97,97 0 1,0 -194,0 M672,268 m-97,0 a97,97 0 1,0 194,0 a97,97 0 1,0 -194,0"/>
             <path d="M306,112 L520,110 Q556,112 590,146 L306,150 Z" fill="#eef2f7" opacity=".9"/>
             <path d="M292,113 L292,150 L246,150 Q262,128 292,113 Z" fill="#eef2f7" opacity=".9"/>
             <path d="M240,158 L864,158" stroke="#c6cfda" stroke-width="2" fill="none"/>
             <path d="M452,158 L452,286" stroke="#c6cfda" stroke-width="2" fill="none"/>
             <rect x="466" y="196" width="64" height="8" rx="4" fill="#cdd6e1"/>
-            <circle cx="232" cy="268" r="97" fill="#eef1f5"/>
-            <circle cx="672" cy="268" r="97" fill="#eef1f5"/>
             <path d="M135,268 A97,97 0 0 1 329,268" fill="none" stroke="#b9c3d0" stroke-width="3"/>
             <path d="M575,268 A97,97 0 0 1 769,268" fill="none" stroke="#b9c3d0" stroke-width="3"/>
             <g transform="translate(144.5,180.5) scale(0.4375)"><g class="wheel">
@@ -1778,7 +1782,7 @@ td.num{font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;text
         <text x="200" y="205" text-anchor="middle" font-family="Archivo,sans-serif" font-weight="700" font-size="14" fill="#5b8cf0">◆</text>
         <ellipse cx="148" cy="118" rx="92" ry="44" fill="#ffffff" opacity=".07" transform="rotate(-25 148 118)"/>
           </g></g>
-            <rect x="0" y="356" width="900" height="24" fill="#dde3ea"/>
+            <rect x="0" y="356" width="900" height="24" fill="#c2cad6"/>
             <ellipse cx="450" cy="360" rx="400" ry="12" fill="#0b1220" opacity=".09"/>
           </svg></div>
         </div>
@@ -1794,7 +1798,7 @@ td.num{font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;text
       <div class="optlab">1 · Felgen-Design wählen</div>
       <select class="opsel" id="dsgsel" aria-label="Felgen-Design wählen"></select>
       <div class="optlab">2 · Veredelung wählen</div>
-      <select class="opsel" id="srvsel" aria-label="Veredelung wählen"></select>
+      <div class="optgrid" id="srvgrid"></div>
       <div class="optlab">3 · Farbe wählen</div>
       <div class="swatches" id="swgrid"></div>
       <div class="optlab">4 · Extras dazu</div>
@@ -1959,7 +1963,7 @@ td.num{font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;text
       {n:'Lack + Glanzdrehen',p:1160,m:.55}
     ];
     var COLS=[['Tiefschwarz','#0e1116'],['Anthrazit','#3b434d'],['Silber','#c7ced8'],['Weiß','#eef1f6'],['Brillant-Blau','#0f52c4'],['Rennrot','#b3252e'],['Bronze','#a87a3f'],['Gold','#c8a24a']];
-    var srvSel=document.getElementById('srvsel');
+    var srvGrid=document.getElementById('srvgrid');
     var swGrid=document.getElementById('swgrid');
     var dsgSel=document.getElementById('dsgsel');
     var machs=[].slice.call(wsvg.querySelectorAll('.machg'));
@@ -2005,11 +2009,15 @@ td.num{font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;text
     dsgSel.addEventListener('change',function(){setDsg(dsgSel.value)});
     setDsg('d1');
     SRV.forEach(function(s,i){
-      var o=document.createElement('option');
-      o.value=String(i);o.textContent=s.n+' · '+s.p.toLocaleString('de-DE')+' € je Satz';
-      srvSel.appendChild(o);
+      var b=document.createElement('button');
+      b.innerHTML=s.n+'<small>'+s.p.toLocaleString('de-DE')+' € je Satz</small>';
+      if(i===0)b.classList.add('cur');
+      b.addEventListener('click',function(){
+        [].slice.call(srvGrid.children).forEach(function(x){x.classList.remove('cur')});
+        b.classList.add('cur');curSrv=s;upd();
+      });
+      srvGrid.appendChild(b);
     });
-    srvSel.addEventListener('change',function(){curSrv=SRV[parseInt(srvSel.value,10)];upd()});
     COLS.forEach(function(c,i){
       var b=document.createElement('button');
       b.className='sw2'+(i===4?' cur':'');
