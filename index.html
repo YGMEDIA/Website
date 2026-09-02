@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Werbeagentur Würzburg | Website, App & KI — YG MEDIA</title>
-<meta name="description" content="Ich baue dein Business digital auf. Website, App, Marketing und Automation aus einer Hand in Würzburg. Für Unternehmer die sich auf ihr Handwerk konzentrieren wollen.">
-<meta name="keywords" content="Digitalagentur für Unternehmer, digitale Präsenz aufbauen lassen, Website und Marketing aus einer Hand, Digital Business Builder Deutschland, Webdesigner Würzburg, Digitalagentur Würzburg, Online Marketing Würzburg">
-<meta property="og:title" content="YG MEDIA — Digitaler Aufbau für Unternehmer">
-<meta property="og:description" content="Website, App, Marketing und Automation aus einer Hand.">
+<title>Digitale Agentur für Software, Marketing und Robotik — YG MEDIA</title>
+<meta name="description" content="YG MEDIA aus Würzburg entwickelt eigene digitale Produkte: USELY (Buchhaltung und ERP), YOU (Körper und Geist), SPACE SOCCER (Mobile Game) und Paukbox (Karteikarten). Partner von Felgen Brillant.">
+<meta name="keywords" content="YG MEDIA, Yasin Gündogdu, USELY, YOU App, SPACE SOCCER, Paukbox, Felgen Brillant, digitale Agentur Würzburg, Software, Marketing, Robotik">
+<meta property="og:title" content="YG MEDIA · Digitale Produkte mit eigener Handschrift">
+<meta property="og:description" content="USELY, YOU, SPACE SOCCER und Paukbox: eigene Produkte aus Würzburg. Partner von Felgen Brillant.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://yg-media.de">
 <meta property="og:image" content="https://yg-media.de/assets/og-image.png">
@@ -16,8 +16,8 @@
 <meta property="og:site_name" content="YG MEDIA">
 <meta property="og:locale" content="de_DE">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="YG MEDIA — Digitaler Aufbau für Unternehmer">
-<meta name="twitter:description" content="Website, App, Marketing und Automation aus einer Hand.">
+<meta name="twitter:title" content="YG MEDIA · Digitale Produkte mit eigener Handschrift">
+<meta name="twitter:description" content="USELY, YOU, SPACE SOCCER und Paukbox: eigene Produkte aus Würzburg. Partner von Felgen Brillant.">
 <meta name="twitter:image" content="https://yg-media.de/assets/og-image.png">
 <link rel="canonical" href="https://yg-media.de">
 <link rel="alternate" hreflang="de" href="https://yg-media.de/">
@@ -123,33 +123,12 @@ section { padding: 8rem 0; position: relative; z-index: 10; }
 /* Stat values — subtle glow */
 .card-stat-val { font-size: 1.9rem; font-weight: 900; letter-spacing: -0.03em; text-shadow: 0 0 16px rgba(28,91,130,0.25); }
 
-/* REALITÄT */
-.reality-section { padding: 8rem 0; }
-.reality-inner { max-width: 1000px; margin: 0 auto; text-align: center; }
-.reality-title { font-size: clamp(2rem, 3.4vw, 3.2rem); font-weight: 900; letter-spacing: -0.03em; line-height: 1.12; margin-bottom: 2.5rem; }
-/* Teal italic accent in Realität */
-.reality-title strong { font-family: 'Playfair Display', serif; color: var(--teal-bright); font-style: italic; font-weight: 600; text-shadow: 0 0 30px rgba(36,120,170,0.4); white-space: nowrap; letter-spacing: -0.01em; }
-.reality-text { font-size: 1.1rem; color: var(--muted); line-height: 1.9; max-width: 680px; margin: 0 auto; }
-
-/* SERVICES */
-.services-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 4rem; }
+/* SECTION-HEADER (Produkte) */
+.services-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 4rem; gap: 2rem; }
 .services-title { font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 900; letter-spacing: -0.03em; line-height: 1.08; }
-.services-sub { max-width: 360px; color: var(--muted); font-size: 0.95rem; line-height: 1.75; text-align: right; padding-bottom: 0.5rem; }
-.services-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 20px; overflow: hidden; }
-.service-card { background: var(--bg); padding: 2.5rem 2rem 2rem; transition: background 0.35s; position: relative; overflow: hidden; text-decoration: none; color: inherit; display: flex; flex-direction: column; }
-.service-card::after { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(28,91,130,0.06) 0%, transparent 60%); opacity: 0; transition: opacity 0.35s; }
-.service-card:hover { background: rgba(28,91,130,0.05); }
-.service-card:hover::after { opacity: 1; }
-.service-num { font-size: 0.7rem; font-weight: 700; color: var(--faint); letter-spacing: 0.12em; margin-bottom: 2rem; }
-.service-icon-wrap { width: 44px; height: 44px; border-radius: 12px; background: rgba(28,91,130,0.12); border: 1px solid rgba(28,91,130,0.25); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin-bottom: 1.5rem; transition: background 0.3s; }
-.service-card:hover .service-icon-wrap { background: rgba(28,91,130,0.2); }
-.service-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.8rem; letter-spacing: -0.02em; }
-.service-card p { color: var(--muted); font-size: 0.88rem; line-height: 1.7; flex: 1; }
+.services-sub { max-width: 420px; color: var(--muted); font-size: 0.95rem; line-height: 1.75; text-align: right; padding-bottom: 0.5rem; }
 .service-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1.5rem; }
 .stag { font-size: 0.65rem; font-weight: 600; padding: 0.2rem 0.6rem; border-radius: 99px; background: rgba(255,255,255,0.04); border: 1px solid var(--border); color: var(--muted); }
-/* Service arrow — teal glow on hover */
-.service-arrow { margin-top: 1.5rem; font-size: 0.82rem; font-weight: 600; color: var(--teal); display: flex; align-items: center; gap: 0.4rem; transition: gap 0.2s, text-shadow 0.2s; }
-.service-card:hover .service-arrow { gap: 0.7rem; text-shadow: 0 0 12px rgba(28,91,130,0.6); }
 
 /* REFERENZEN */
 .ref-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: end; margin-bottom: 4rem; }
@@ -184,19 +163,6 @@ section { padding: 8rem 0; position: relative; z-index: 10; }
 .vorteil-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.7rem; letter-spacing: -0.02em; }
 .vorteil-card p { color: var(--muted); font-size: 0.88rem; line-height: 1.7; }
 
-/* PROZESS */
-.prozess-inner { display: grid; grid-template-columns: 380px 1fr; gap: 6rem; align-items: start; }
-.prozess-sticky { position: sticky; top: 9rem; }
-.prozess-title { font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 900; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 1.5rem; }
-.prozess-sub { color: var(--muted); font-size: 0.97rem; line-height: 1.8; margin-bottom: 2.5rem; }
-.prozess-steps { display: flex; flex-direction: column; gap: 1rem; }
-.prozess-step { padding: 2rem 2rem; border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; background: rgba(255,255,255,0.04); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.1); display: grid; grid-template-columns: 48px 1fr; gap: 1.5rem; align-items: start; transition: border-color 0.3s; }
-.prozess-step:hover { border-color: rgba(28,91,130,0.35); }
-/* Prozess step number — glow */
-.prozess-step-num { font-size: 0.72rem; font-weight: 700; color: var(--teal); letter-spacing: 0.08em; padding-top: 0.2rem; text-shadow: 0 0 10px rgba(28,91,130,0.5); }
-.prozess-step h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.6rem; letter-spacing: -0.02em; }
-.prozess-step p { color: var(--muted); font-size: 0.9rem; line-height: 1.75; }
-
 /* ABOUT */
 .about-inner { display: grid; grid-template-columns: 1fr 400px; gap: 6rem; align-items: center; }
 .about-tagline { font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 900; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 2rem; }
@@ -205,17 +171,6 @@ section { padding: 8rem 0; position: relative; z-index: 10; }
 .about-text { color: var(--muted); font-size: 0.97rem; line-height: 1.85; margin-bottom: 1.4rem; }
 .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 2.2rem; }
 .skill-tag { font-size: 0.73rem; font-weight: 600; padding: 0.3rem 0.9rem; border-radius: 99px; background: rgba(28,91,130,0.12); border: 1px solid rgba(28,91,130,0.3); color: var(--teal); }
-.about-img-wrap { position: relative; }
-.about-img { width: 100%; border-radius: 20px; border: 1px solid var(--border); display: block; max-height: 440px; object-fit: cover; object-position: top; }
-.about-img-placeholder { width: 100%; aspect-ratio: 3/4; border-radius: 20px; background: linear-gradient(135deg, rgba(28,91,130,0.1), rgba(10,30,50,0.4)); border: 1px solid rgba(28,91,130,0.3); display: flex; align-items: center; justify-content: center; font-size: 4rem; }
-
-/* CTA */
-.cta-section { text-align: center; }
-.cta-inner { border: 1px solid rgba(255,255,255,0.15); border-radius: 28px; padding: 7rem 5rem; background: rgba(255,255,255,0.04); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.1); position: relative; overflow: hidden; }
-.cta-inner::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 600px; height: 600px; background: radial-gradient(circle, rgba(28,91,130,0.12) 0%, transparent 70%); pointer-events: none; }
-.cta-title { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; letter-spacing: -0.04em; line-height: 1.05; margin-bottom: 1.8rem; position: relative; }
-.cta-sub { font-size: 1.05rem; color: var(--muted); max-width: 500px; margin: 0 auto 3.5rem; line-height: 1.8; position: relative; }
-.cta-subtext { display: block; font-size: 0.78rem; color: var(--faint); margin-top: 1.5rem; letter-spacing: 0.04em; }
 
 /* CONTACT */
 .contact-inner { display: grid; grid-template-columns: 1fr 560px; gap: 6rem; align-items: start; }
@@ -313,14 +268,10 @@ footer { background: rgba(12,14,28,0.65); backdrop-filter: blur(28px); -webkit-b
 @media (max-width: 1100px) {
   .hero-inner { grid-template-columns: 1fr; }
   .hero-visual { display: none; }
-  .services-grid { grid-template-columns: repeat(2,1fr); }
   .vorteile-grid { grid-template-columns: repeat(2,1fr); }
   .about-inner { grid-template-columns: 1fr; }
-  .about-img-wrap { max-width: 380px; }
   .contact-inner { grid-template-columns: 1fr; }
   .contact-left { position: static; }
-  .prozess-inner { grid-template-columns: 1fr; }
-  .prozess-sticky { position: static; }
   .ref-intro { grid-template-columns: 1fr; gap: 1.5rem; }
   .vorteile-head { grid-template-columns: 1fr; gap: 1.5rem; }
   .footer-top { grid-template-columns: 1fr; }
@@ -335,14 +286,11 @@ footer { background: rgba(12,14,28,0.65); backdrop-filter: blur(28px); -webkit-b
   .nav-burger { display: flex; }
   .wrap { padding: 0 1.5rem; }
   section { padding: 5rem 0; }
-  .services-grid { grid-template-columns: 1fr; }
   .ref-grid { grid-template-columns: 1fr; }
   .vorteile-grid { grid-template-columns: 1fr; }
   .form-grid { grid-template-columns: 1fr; }
   .footer-links-grid { grid-template-columns: 1fr 1fr; }
-  .cta-inner { padding: 4rem 2rem; }
   .showcase-content { padding: 2rem; }
-  .cta-title { font-size: 2.2rem; }
 }
 
 /* LANGUAGE SWITCH */
@@ -385,6 +333,45 @@ a.lang-btn:hover { border-color: rgba(28,91,130,0.5); color: var(--text); }
 a.nav-lang-item:hover { background: rgba(255,255,255,0.06); color: var(--text); }
 .nav-lang-item.active { color: var(--text); background: rgba(28,91,130,0.15); }
 @media (max-width: 768px) { .nav-lang-menu { position: static; margin-top: 0.5rem; min-width: 0; } }
+
+/* ANKER unter fixer Nav */
+section[id] { scroll-margin-top: 70px; }
+
+/* PRODUKTE (Umbau 2026-09-02) */
+.product-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem; }
+.product-card { display: flex; flex-direction: column; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.15); border-radius: 24px; padding: 2.5rem; backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.1); transition: border-color 0.3s, transform 0.3s; position: relative; overflow: hidden; scroll-margin-top: 110px; }
+.product-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(28,91,130,0.5), transparent); transform: scaleX(0); transition: transform 0.4s; }
+.product-card:hover { border-color: rgba(28,91,130,0.35); transform: translateY(-4px); }
+.product-card:hover::before { transform: scaleX(1); }
+.product-img { width: 100%; height: 400px; object-fit: cover; object-position: center top; border-radius: 16px; margin-bottom: 1.8rem; border: 1px solid rgba(255,255,255,0.1); display: block; background: linear-gradient(135deg, rgba(28,91,130,0.15), rgba(10,30,50,0.4)); }
+.product-card h3 { font-size: clamp(1.25rem, 1.8vw, 1.55rem); font-weight: 900; letter-spacing: -0.03em; line-height: 1.2; margin-bottom: 1rem; }
+.product-card p { font-size: 0.92rem; color: var(--muted); line-height: 1.8; }
+.product-card .service-tags { margin-top: 1.4rem; }
+.product-links { display: flex; gap: 1.8rem; align-items: center; flex-wrap: wrap; margin-top: auto; }
+.ref-feature { scroll-margin-top: 110px; }
+
+/* HERO-KACHELN */
+.hero-tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 1rem; }
+.hero-tile { display: flex; align-items: center; gap: 0.7rem; padding: 0.6rem 0.7rem; border-radius: 14px; border: 1px solid var(--border); background: rgba(255,255,255,0.03); text-decoration: none; color: var(--text); transition: border-color 0.2s, background 0.2s, transform 0.2s; min-width: 0; }
+.hero-tile:hover { border-color: rgba(28,91,130,0.5); background: rgba(28,91,130,0.1); transform: translateY(-2px); }
+.hero-tile img { width: 44px; height: 44px; border-radius: 10px; object-fit: cover; flex-shrink: 0; border: 1px solid rgba(255,255,255,0.1); }
+.hero-tile span { display: flex; flex-direction: column; min-width: 0; }
+.hero-tile strong { font-size: 0.78rem; font-weight: 700; letter-spacing: -0.01em; line-height: 1.2; }
+.hero-tile small { font-size: 0.66rem; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.hero-partner { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+.hero-partner-name { font-size: 1.05rem; font-weight: 700; letter-spacing: -0.01em; }
+.hero-partner-link { color: var(--teal-bright); text-decoration: none; font-weight: 600; font-size: 0.85rem; transition: text-shadow 0.2s; }
+.hero-partner-link:hover { text-shadow: 0 0 12px rgba(36,120,170,0.6); }
+
+/* HORIZONT (3 Karten) */
+.horizont-grid { grid-template-columns: repeat(3,1fr); }
+.horizont-title { font-size: clamp(2.2rem, 3.6vw, 3.4rem); }
+
+/* FAKTEN-KARTE (Unternehmen, ersetzt das Portrait) */
+.facts-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.18); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-radius: 24px; padding: 2.2rem 2.4rem; box-shadow: 0 40px 80px -20px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.12); }
+.facts-card .card-stats { grid-template-columns: 1fr 1fr; gap: 1.4rem 1.2rem; margin-top: 1.2rem; }
+@media (max-width: 1100px) { .horizont-grid { grid-template-columns: repeat(3,1fr); } .facts-card { max-width: 480px; } }
+@media (max-width: 768px) { .product-grid { grid-template-columns: 1fr; } .product-img { height: 260px; } .product-card { padding: 1.8rem; } .horizont-grid { grid-template-columns: 1fr; } .hero-tiles { grid-template-columns: 1fr 1fr; } }
 </style>
 <script type="application/ld+json">
 {
@@ -392,9 +379,9 @@ a.nav-lang-item:hover { background: rgba(255,255,255,0.06); color: var(--text); 
   "@type": "ProfessionalService",
   "@id": "https://yg-media.de/#business",
   "name": "YG MEDIA",
-  "alternateName": "YG MEDIA – Yasin Gündogdu",
-  "description": "Digital Business Builder aus Würzburg. Website, App-Entwicklung, Online Marketing, SEO und KI-Automatisierung aus einer Hand. Ein Ansprechpartner für das komplette digitale Fundament.",
-  "url": "https://yg-media.de",
+  "alternateName": "YG MEDIA · Yasin Gündogdu",
+  "description": "Digitale Agentur aus Würzburg für Software, Marketing und Robotik. Entwickelt eigene Produkte: USELY (Buchhaltung und ERP), YOU (Körper und Geist), SPACE SOCCER (Mobile Game) und Paukbox (Karteikarten). Partner von Felgen Brillant.",
+  "url": "https://yg-media.de/",
   "email": "info@yg-media.de",
   "telephone": "+49-177-4476392",
   "founder": {
@@ -427,17 +414,15 @@ a.nav-lang-item:hover { background: rgba(255,255,255,0.06); color: var(--text); 
     }
   ],
   "knowsAbout": [
-    "Webdesign",
-    "App-Entwicklung",
+    "Softwareentwicklung",
     "iOS",
-    "SwiftUI",
+    "Web-Apps",
     "Online Marketing",
     "SEO",
     "Google Ads",
-    "KI-Automatisierung",
-    "Chatbots",
-    "Make.com",
-    "CRM"
+    "KI-Automation",
+    "E-Commerce",
+    "Robotik"
   ],
   "sameAs": [
     "https://behance.net/yasinguendogdu",
@@ -445,40 +430,24 @@ a.nav-lang-item:hover { background: rgba(255,255,255,0.06); color: var(--text); 
     "https://de.pinterest.com/YG_369/",
     "https://www.pexels.com/de-de/@ysngdu/"
   ],
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Leistungen",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Website erstellen lassen"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "App entwickeln lassen"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Online Marketing und SEO"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "KI und Automatisierung"
-        }
-      }
-    ]
-  }
+  "brand": [
+    {
+      "@type": "Brand",
+      "name": "USELY"
+    },
+    {
+      "@type": "Brand",
+      "name": "YOU"
+    },
+    {
+      "@type": "Brand",
+      "name": "SPACE SOCCER"
+    },
+    {
+      "@type": "Brand",
+      "name": "Paukbox"
+    }
+  ]
 }
 </script>
 </head>
@@ -498,11 +467,10 @@ a.nav-lang-item:hover { background: rgba(255,255,255,0.06); color: var(--text); 
       <span class="nav-logo-text">YG MEDIA</span>
     </a>
     <div class="nav-links" id="navLinks">
-      <a href="/website">Website</a>
-      <a href="/apps">Apps</a>
-      <a href="/marketing">Marketing</a>
-      <a href="/automation">Automation</a>
-      <a href="https://calendly.com/yg-media/30min" target="_blank" rel="noopener" class="nav-cta">Erstgespräch buchen</a>
+      <a href="/#produkte">Produkte</a>
+      <a href="/#konzepte">Konzepte</a>
+      <a href="/#unternehmen">Unternehmen</a>
+      <a href="/#kontakt">Kontakt</a>
       <div class="nav-lang" id="navLang">
         <button class="nav-lang-btn" aria-label="Sprache wählen" aria-haspopup="true"><svg viewBox="0 0 5 3" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="5" height="1" fill="#111"/><rect y="1" width="5" height="1" fill="#DD0000"/><rect y="2" width="5" height="1" fill="#FFCE00"/></svg><span class="nav-lang-caret">▾</span></button>
         <div class="nav-lang-menu">
@@ -519,28 +487,31 @@ a.nav-lang-item:hover { background: rgba(255,255,255,0.06); color: var(--text); 
   <div class="wrap">
     <div class="hero-inner">
       <div>
+        <span class="hero-badge"><span class="hero-badge-dot"></span>Software · Marketing · Robotik</span>
         <h1 class="hero-h1">
-          <span class="line"><span class="line-inner">Mehr Kunden.</span></span>
-          <span class="line"><span class="line-inner"><em>Digitale Markenkommunikation.</em></span></span>
+          <span class="line"><span class="line-inner">Wir bauen digitale Produkte</span></span>
+          <span class="line"><span class="line-inner"><em>mit eigener Handschrift.</em></span></span>
         </h1>
-        <p class="hero-sub">Du hast ein Unternehmen oder eine starke Idee, aber Themen wie KI, Marketing und Digitalisierung kosten dich Zeit und Nerven? Ich unterstütze dich von der Strategie bis zur Umsetzung. Von professionellen Websites über Google Ads und SEO bis hin zu KI Automatisierungen, damit dein Unternehmen sichtbar wächst und Prozesse effizienter laufen.</p>
+        <p class="hero-sub">YG MEDIA ist eine digitale Agentur aus Würzburg für Software, Marketing und Robotik. Aus der Praxis rund um unseren Partner Felgen Brillant entsteht ein wachsendes Portfolio eigener Produkte: USELY, YOU, SPACE SOCCER und Paukbox.</p>
         <div class="hero-btns">
-          <a href="https://calendly.com/yg-media/30min" target="_blank" rel="noopener" class="btn btn-primary">Kostenloses Erstgespräch <span class="btn-arrow">↗</span></a>
-          <a href="#referenzen" class="btn btn-ghost">Projekte ansehen</a>
+          <a href="#produkte" class="btn btn-primary">Produkte entdecken <span class="btn-arrow">↓</span></a>
+          <a href="#unternehmen" class="btn btn-ghost">Über YG MEDIA</a>
         </div>
       </div>
       <div class="hero-visual">
         <div class="hero-card-bg"></div>
         <div class="hero-card">
-          <div class="card-metric-label">Projekte abgeschlossen</div>
-          <div class="card-metric-val">60+</div>
-          <div class="card-metric-sub">Website · App · Marketing · Automation</div>
+          <div class="card-metric-label">Eigene Produkte</div>
+          <div class="hero-tiles">
+            <a href="#usely" class="hero-tile"><img src="assets/logo-usely.webp" alt="USELY Logo" loading="lazy"><span><strong>USELY</strong><small>Business-Software</small></span></a>
+            <a href="#you" class="hero-tile"><img src="assets/logo-you.webp" alt="YOU Logo" loading="lazy"><span><strong>YOU</strong><small>Körper und Geist</small></span></a>
+            <a href="#space-soccer" class="hero-tile"><img src="assets/logo-space-soccer.webp" alt="SPACE SOCCER Logo" loading="lazy"><span><strong>SPACE SOCCER</strong><small>Mobile Game</small></span></a>
+            <a href="#paukbox" class="hero-tile"><img src="assets/logo-paukbox.webp" alt="Paukbox Logo" loading="lazy"><span><strong>Paukbox</strong><small>Karteikarten</small></span></a>
+          </div>
           <div class="card-divider"></div>
-          <div class="card-stats">
-            <div><div class="card-stat-label">iOS Apps gelauncht</div><div class="card-stat-val">2</div></div>
-            <div><div class="card-stat-label">Erfahrung</div><div class="card-stat-val">10+ J.</div></div>
-            <div><div class="card-stat-label">Wahlkampagnen gewonnen</div><div class="card-stat-val">2</div></div>
-            <div><div class="card-stat-label">Geräte</div><div class="card-stat-val" style="font-size:1.1rem;line-height:1.3;padding-top:0.3rem">Desktop, Mobile, Tablet & VR</div></div>
+          <div class="hero-partner">
+            <div><div class="card-stat-label">Partner und Referenzfall</div><div class="hero-partner-name">Felgen Brillant</div></div>
+            <a href="#felgen-brillant" class="hero-partner-link">Mehr →</a>
           </div>
         </div>
       </div>
@@ -548,131 +519,88 @@ a.nav-lang-item:hover { background: rgba(255,255,255,0.06); color: var(--text); 
   </div>
 </section>
 
-<section class="reality-section">
-  <div class="wrap">
-    <div class="reality-inner reveal">
-      <span class="eyebrow">Die Realität</span>
-      <h2 class="reality-title">Dein Produkt ist gut.<br><strong>Aber online findet dich niemand.</strong></h2>
-      <p class="reality-text">Die meisten Unternehmer kennen das Problem. Eine veraltete Website, kaum Sichtbarkeit bei Google und jede Menge manuelle Arbeit die täglich Zeit frisst. Genau hier setze ich an. Als Digital Business Builder verbinde ich professionelles Webdesign, datengetriebenes Online Marketing und moderne KI-Automatisierung zu einem System das messbar mehr Anfragen bringt und dir Arbeit abnimmt.</p>
-    </div>
-  </div>
-</section>
-
-<section id="services">
+<section id="produkte">
   <div class="wrap">
     <div class="services-header">
       <div class="reveal-left">
-        <span class="eyebrow">Was ich mache</span>
-        <h2 class="services-title">Website. App.<br>Marketing. Automation.</h2>
+        <span class="eyebrow">Eigene Produkte</span>
+        <h2 class="services-title">Vier Produkte. Drei Märkte.<br>Eine Handschrift.</h2>
       </div>
-      <p class="services-sub reveal-right">Alles aus einer Hand. Du bekommst dein komplettes digitales Fundament für dein Unternehmen egal ob Webdesign, Marketing, App-Entwicklung und KI-Automatisierung. Sichtbarkeit und Automatisierung inklusive.</p>
-    </div>
-    <div class="services-grid reveal">
-      <a href="/website" class="service-card">
-        <div class="service-num">01</div>
-        <div class="service-icon-wrap">🌐</div>
-        <h3>Website erstellen lassen</h3>
-        <p>Eine professionelle Website die nicht nur gut aussieht, sondern bei Google gefunden wird und Besucher in Kunden verwandelt. SEO-optimiert, schnell und auf deine Zielgruppe zugeschnitten. Kein Baukasten von der Stange.</p>
-        <div class="service-tags"><span class="stag">Webdesign</span><span class="stag">WordPress</span><span class="stag">Framer</span><span class="stag">SEO</span></div>
-        <span class="service-arrow">Mehr erfahren →</span>
-      </a>
-      <a href="/apps" class="service-card">
-        <div class="service-num">02</div>
-        <div class="service-icon-wrap">📱</div>
-        <h3>App entwickeln lassen</h3>
-        <p>Aus deiner Idee wird ein fertiges Produkt im App Store. Von der Skizze bis zum Launch, alles aus einer Hand. Zwei eigene iOS Apps solo entwickelt mit moderner KI-Integration. Ich weiß was es braucht damit eine App wirklich funktioniert.</p>
-        <div class="service-tags"><span class="stag">iOS</span><span class="stag">SwiftUI</span><span class="stag">Web Apps</span><span class="stag">KI-Integration</span></div>
-        <span class="service-arrow">Mehr erfahren →</span>
-      </a>
-      <a href="/marketing" class="service-card">
-        <div class="service-num">03</div>
-        <div class="service-icon-wrap">📈</div>
-        <h3>Online Marketing und SEO</h3>
-        <p>Mehr qualifizierte Anfragen durch Google Ads, lokale Suchmaschinenoptimierung und gezielte Werbung. Ich baue keine Kampagnen die nur Budget verbrennen, sondern Systeme die nachweisbar mehr Umsatz bringen. Messbar und skalierbar.</p>
-        <div class="service-tags"><span class="stag">Google Ads</span><span class="stag">SEO</span><span class="stag">Performance</span></div>
-        <span class="service-arrow">Mehr erfahren →</span>
-      </a>
-      <a href="/automation" class="service-card">
-        <div class="service-num">04</div>
-        <div class="service-icon-wrap">⚡</div>
-        <h3>KI und Automatisierung</h3>
-        <p>Manuelle Prozesse kosten dich täglich wertvolle Zeit. Ich automatisiere deine Abläufe mit KI: Chatbots die Anfragen rund um die Uhr beantworten, Lead-Pipelines die von allein laufen und CRM-Systeme die sich selbst befüllen.</p>
-        <div class="service-tags"><span class="stag">KI-Chatbots</span><span class="stag">Make.com</span><span class="stag">CRM</span><span class="stag">Automatisierung</span></div>
-        <span class="service-arrow">Mehr erfahren →</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<section id="referenzen">
-  <div class="wrap">
-    <div class="ref-intro">
-      <div class="reveal-left"><span class="eyebrow">Referenzen</span><h2 class="ref-title">Ausgewählte Projekte.</h2></div>
-      <p class="ref-lead reveal-right">Vom Handwerksbetrieb über die Arztpraxis bis zur eigenen Software und iOS App. Echte Projekte mit messbaren Ergebnissen, nicht nur schöne Konzepte. Ich realisiere deine Vision.</p>
-    </div>
-    <div class="ref-grid">
-      <div class="ref-card reveal">
-        <img src="assets/Felgen-Brillant.jpg" alt="Felgen Brillant Marketing und Webdesign Projekt" class="ref-image" onerror="this.style.display='none'">
-        <span class="ref-tag">Automobil · TikTok · Webdesign</span>
-        <h3>Von null zur etablierten Marke im Felgen-Bereich.</h3>
-        <p>Keine Markenidentität, keine Website, null Social Media. Ich habe das komplette digitale Fundament aufgebaut: TikTok auf 3.801 Follower mit 272.000 Views, Google Ads und laufende Vermarktung. Ergebnis: mehr Bekanntheit, mehr Vertrauen, messbarer Umsatzanstieg.</p>
-        <a href="https://www.felgen-brillant.com" target="_blank" rel="noopener" class="ref-link">Website ansehen →</a>
-      </div>
-      <div class="ref-card reveal" data-delay="1">
-        <img src="assets/Kinderarzt-Praxis-TBB.png" alt="Kinderarztpraxis Tauberbischofsheim Website und App Projekt" class="ref-image" onerror="this.style.display='none'">
-        <span class="ref-tag">Arztpraxis · Website · Google My Business · App</span>
-        <h3>Neue Praxis. Vom ersten Tag an professionell positioniert.</h3>
-        <p>Dr. Karabul hat eine Kinderarztpraxis übernommen und sollte sofort als moderne, kompetente Ärztin wahrgenommen werden. Ich habe Website, Google My Business und Praxis-App aufgebaut und die fachliche Kompetenz konsequent in den Vordergrund gestellt.</p>
-        <a href="https://kinderarzt-tbb.de/" target="_blank" rel="noopener" class="ref-link">Website ansehen →</a>
-      </div>
+      <p class="services-sub reveal-right">Business-Software, Gesundheit, Gaming und Lernen. Jedes Produkt entsteht nach derselben Methode: erst am echten Fall beweisen, dann skalieren. Dunkel, Glas, Tiefe, mit einer klaren Akzentfarbe pro Marke.</p>
     </div>
 
-    <div class="ref-feature reveal">
-      <div class="ref-feature-img"><img src="assets/usely-1.png" alt="USELY Buchhaltungs App Keyvisual mit Glas-U" loading="lazy"></div>
-      <div class="ref-feature-content">
-        <span class="ref-tag">iOS App · Buchhaltung · Live im App Store</span>
-        <h3>USELY. Buchhaltungs App für Kleinunternehmer.</h3>
-        <p>Die Buchhaltungs App fürs iPhone: vor Ort beim Kunden kalkulieren und in Sekunden Angebote, Auftragsbestätigungen und Rechnungen erstellen, rechtssicher in einer lückenlosen Belegkette. Belege scannen mit automatischer Texterkennung, Ausgaben pro Projekt im Blick, E-Rechnung mit XRechnung und ZUGFeRD sowie EÜR-Export für den Steuerberater. GoBD-konform, §14 und §19 UStG automatisch berücksichtigt. Kostenlos startbar.</p>
-        <div style="display:flex;gap:1.8rem;align-items:center;flex-wrap:wrap">
+    <div class="product-grid">
+      <div class="product-card reveal" id="usely">
+        <img src="assets/logo-usely.webp" alt="USELY Keyvisual mit Glas-U" class="product-img" loading="lazy">
+        <span class="ref-tag">Business-Software · iOS und Web · Live im App Store</span>
+        <h3>USELY. Vom Rechnungs-Tool zum Betriebssystem fürs Unternehmen.</h3>
+        <p>Angebote, Rechnungen und Belege für Selbstständige und kleine Unternehmen: Belegkette mit Bezahllink, E-Rechnung mit XRechnung und ZUGFeRD, KI-Belegscan, Boards mit Zeiterfassung, Banking-Abgleich und Steuerberater-Zugang mit DATEV-Export. Native iOS-App und Web-App, beide in Echtzeit synchron. Kostenlos startbar.</p>
+        <div class="service-tags"><span class="stag">E-Rechnung</span><span class="stag">Belegkette</span><span class="stag">Boards</span><span class="stag">DATEV</span></div>
+        <div class="product-links">
           <a href="/usely" class="ref-link">Mehr erfahren →</a>
           <a href="https://apps.apple.com/de/app/usely/id6783429050" target="_blank" rel="noopener" class="badge-link"><img src="assets/app-store-badge.png" alt="Download on the App Store" loading="lazy"></a>
         </div>
       </div>
-    </div>
 
-    <div class="ref-grid">
-      <div class="ref-card reveal" data-delay="1">
-        <img src="assets/derma-1.jpg" alt="Dermatologie Website Design Projekt" class="ref-image" onerror="this.style.display='none'">
-        <span class="ref-tag">Dermatologie · Webdesign · UI/UX</span>
-        <h3>Skincare und Health Website für eine moderne Dermatologie.</h3>
-        <p>Ein klares, vertrauenswürdiges Webdesign für eine moderne Hautarztpraxis. Im Mittelpunkt stehen eine ruhige Bildsprache, eine übersichtliche Leistungsstruktur und ein professioneller Auftritt der Kompetenz und Sorgfalt vermittelt. Patienten finden sich vom ersten Moment an zurecht.</p>
-        <a href="https://www.behance.net/gallery/227766229/SkincareHealth-Website-for-a-Modern-Dermatology" target="_blank" rel="noopener" class="ref-link">Auf Behance ansehen →</a>
-      </div>
-      <div class="ref-card reveal" data-delay="2">
-        <img src="assets/audi-2.jpg" alt="Audi Dashboard Spatial Design VisionPro Concept" class="ref-image" onerror="this.style.display='none'">
-        <span class="ref-tag">Automotive · Spatial Design · Concept</span>
-        <h3>Audi Dashboard. Spatial Design Concept für VisionPro.</h3>
-        <p>Ein Konzept für ein räumliches Fahrzeug-Dashboard auf Apple VisionPro. Fahrdaten, Navigation und Fahrzeugsteuerung werden in einer immersiven, dreidimensionalen Oberfläche neu gedacht. Eine Studie darüber wie sich Mobilität und Spatial Computing in Zukunft verbinden lassen.</p>
-        <a href="https://www.behance.net/gallery/195062751/Audi-Dashboard-Spatial-Design-VisionPro-Concept" target="_blank" rel="noopener" class="ref-link">Auf Behance ansehen →</a>
-      </div>
-    </div>
-
-    <div class="ref-feature flip reveal">
-      <div class="ref-feature-content">
-        <span class="ref-tag">Gesundheit · Psychologie · iOS App · KI</span>
-        <h3>YOU. Ein persönliches Life Operating System. Solo entwickelt.</h3>
-        <p>YOU ist ein persönliches Life Operating System für Körper und Geist. Eine KI-gestützte App die durch Selbstreflexion, tägliches Training und messbaren Fortschritt dabei hilft, die beste Version seiner selbst zu werden. Mit intelligenter Plan-Engine, die individuelle Trainings- und Gewohnheitspläne erstellt.</p>
-        <div style="display:flex;gap:1.8rem;flex-wrap:wrap">
+      <div class="product-card reveal" id="you" data-delay="1">
+        <img src="assets/logo-you.webp" alt="YOU Keyvisual" class="product-img" loading="lazy">
+        <span class="ref-tag">Gesundheit · iOS App · Eigenes Wearable</span>
+        <h3>YOU. Andere messen den Körper. YOU misst Körper und Geist.</h3>
+        <p>Ein Life Operating System, das den ganzen Menschen erfasst: Training, Ernährung mit KI-Foto-Scan, Schlaf und Recovery, dazu Journal, tägliche Check-ins und ein psychologisches Profil aus einem tiefen Onboarding. Vier Ringe zeigen den Tageszustand. Das YOU Band misst rund um die Uhr, mit 30 bis 40 Tagen Akkulaufzeit.</p>
+        <div class="service-tags"><span class="stag">KI-Onboarding</span><span class="stag">YOU Band</span><span class="stag">HRV und Recovery</span><span class="stag">Widgets</span></div>
+        <div class="product-links">
           <a href="https://www.behance.net/gallery/217934173" target="_blank" rel="noopener" class="ref-link">Auf Behance ansehen →</a>
         </div>
       </div>
-      <div class="ref-feature-img"><img src="assets/You-Logo.png" alt="YOU App Keyvisual" loading="lazy"></div>
+
+      <div class="product-card reveal" id="space-soccer">
+        <img src="assets/logo-space-soccer.webp" alt="SPACE SOCCER Logo mit Ball in der Arena" class="product-img" loading="lazy">
+        <span class="ref-tag">Gaming · Mobile · Eingetragene EU-Marke</span>
+        <h3>SPACE SOCCER. Das erste Multiplayer-Fußballspiel im Weltraum.</h3>
+        <p>Schnelle 5v5-Matches mit Taktik, Power-ups und Spezialkarten in Arenen zwischen den Sternen. Team-Modus oder Solo-Modus als Captain, Levelsystem mit XP, eigenes Stadion mit Tribünen, Farben und Team-Logo. Free-to-Play für iOS und Android. Die spielbare Version läuft bereits, die Marke ist beim EUIPO eingetragen.</p>
+        <div class="service-tags"><span class="stag">5v5</span><span class="stag">Free-to-Play</span><span class="stag">iOS und Android</span><span class="stag">EU-Marke</span></div>
+        <div class="product-links">
+          <a href="https://x.com/SpaceSoccer_" target="_blank" rel="noopener" class="ref-link">Auf X folgen →</a>
+        </div>
+      </div>
+
+      <div class="product-card reveal" id="paukbox" data-delay="1">
+        <img src="assets/logo-paukbox.webp" alt="Paukbox Logo mit goldenen Karteikarten" class="product-img" loading="lazy">
+        <span class="ref-tag">Lernen · Web-App · Kostenlos starten</span>
+        <h3>Paukbox. Karteikarten, die sitzen.</h3>
+        <p>Vokabeln und Fachbegriffe als Karteikarten lernen, im Browser auf Handy, Tablet und Desktop. Listen kommen per PDF-Import, als Text oder direkt aus einer KI im Format „Wort = Bedeutung" in die App. Das Leitner-System wiederholt im Rhythmus von 1, 3, 7 und 21 Tagen, Zwischenrunden als Quiz halten das Wissen fest. 50 Karten sind kostenlos, unbegrenzt viele für einmalig 2 Euro.</p>
+        <div class="service-tags"><span class="stag">PDF-Import</span><span class="stag">Leitner-System</span><span class="stag">Quiz</span><span class="stag">Einmalig 2 €</span></div>
+        <div class="product-links">
+          <a href="https://paukbox.yg-media.de" target="_blank" rel="noopener" class="ref-link">Paukbox öffnen →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="ref-feature reveal" id="felgen-brillant">
+      <div class="ref-feature-img"><img src="assets/logo-felgen-brillant.webp" alt="Felgen Brillant Logo" loading="lazy"></div>
+      <div class="ref-feature-content">
+        <span class="ref-tag">Partner · Investor · Referenzfall</span>
+        <h3>Felgen Brillant. Der reale Fall, an dem unsere Produkte entstehen.</h3>
+        <p>Felgen Brillant bereitet beschädigte Originalfelgen komplett im eigenen Haus auf: richten, CNC-glanzdrehen, pulverbeschichten, lackieren, dazu ein eigener Shop für aufbereitete Markenfelgen. YG MEDIA baut die digitale Infrastruktur rund um das Unternehmen, vom Marketing über die Website bis zur eigenen Software.</p>
+        <p style="margin-top:1rem">Felgen Brillant finanziert die Entwicklung von USELY als Investor. Jedes Modul beweist sich zuerst im Tagesgeschäft mit echten Aufträgen, Belegen und Marktplatz-Verkäufen, bevor es für alle Nutzer ausgerollt wird.</p>
+        <div class="product-links">
+          <a href="https://www.felgen-brillant.com" target="_blank" rel="noopener" class="ref-link">Website ansehen →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="konzepte">
+  <div class="wrap">
+    <div class="ref-intro">
+      <div class="reveal-left"><span class="eyebrow">Konzepte und Studien</span><h2 class="ref-title">Wie wir denken,<br>bevor wir bauen.</h2></div>
+      <p class="ref-lead reveal-right">Designstudien aus dem eigenen Haus. Jede Idee bekommt zuerst ein Konzept, dann ein Produkt. Drei Beispiele dafür, wohin die digitale Reise geht.</p>
     </div>
 
     <div class="showcase-card reveal">
       <div class="showcase-video-wrap">
         <video autoplay muted loop playsinline>
-          
           <source src="assets/AI-Automation-Video.mp4" type="video/mp4">
         </video>
         <div class="showcase-video-overlay"></div>
@@ -680,92 +608,80 @@ a.nav-lang-item:hover { background: rgba(255,255,255,0.06); color: var(--text); 
       <div class="showcase-content">
         <span class="showcase-badge"><span class="showcase-badge-dot"></span>KI Konzept</span>
         <h3>KI-Hotel-Website mit <em>Glass Design</em> und digitalen Hologrammen.</h3>
-        <p>Ein futuristisches Konzept das zeigt wohin die digitale Reise geht. Eine Hotel-Website mit transluzentem Glass-Design, KI-gestützter Buchung und holografischen Elementen die das Erlebnis in eine neue Dimension heben. So sieht moderne, immersive Markenkommunikation von morgen aus.</p>
+        <p>Ein futuristisches Konzept, das zeigt, wohin die digitale Reise geht. Eine Hotel-Website mit transluzentem Glass-Design, KI-gestützter Buchung und holografischen Elementen, die das Erlebnis in eine neue Dimension heben. So sieht immersive Markenkommunikation von morgen aus.</p>
         <div class="showcase-tags">
           <span class="stag">KI</span><span class="stag">Glass Design</span><span class="stag">Hologramm</span><span class="stag">Motion</span>
         </div>
         <a href="https://www.behance.net/gallery/229054665/AI-Hotel-Website-Glass-Design-Digital-Hotel-Holograms" target="_blank" rel="noopener" class="showcase-link">Auf Behance ansehen →</a>
       </div>
     </div>
+
+    <div class="ref-grid" style="margin-top:1.5rem">
+      <div class="ref-card reveal" data-delay="1">
+        <img src="assets/derma-1.jpg" alt="Dermatologie Website Design Konzept" class="ref-image" onerror="this.style.display='none'">
+        <span class="ref-tag">Dermatologie · Webdesign · UI/UX</span>
+        <h3>Skincare und Health Website für eine moderne Dermatologie.</h3>
+        <p>Ein klares, vertrauenswürdiges Webdesign für eine moderne Hautarztpraxis. Im Mittelpunkt stehen eine ruhige Bildsprache, eine übersichtliche Leistungsstruktur und ein Auftritt, der Kompetenz und Sorgfalt vermittelt. Patienten finden sich vom ersten Moment an zurecht.</p>
+        <a href="https://www.behance.net/gallery/227766229/SkincareHealth-Website-for-a-Modern-Dermatology" target="_blank" rel="noopener" class="ref-link">Auf Behance ansehen →</a>
+      </div>
+      <div class="ref-card reveal" data-delay="2">
+        <img src="assets/audi-2.jpg" alt="Audi Dashboard Spatial Design VisionPro Concept" class="ref-image" onerror="this.style.display='none'">
+        <span class="ref-tag">Automotive · Spatial Design · Concept</span>
+        <h3>Audi Dashboard. Spatial Design Concept für VisionPro.</h3>
+        <p>Ein Konzept für ein räumliches Fahrzeug-Dashboard auf Apple VisionPro. Fahrdaten, Navigation und Fahrzeugsteuerung werden in einer immersiven, dreidimensionalen Oberfläche neu gedacht. Eine Studie darüber, wie sich Mobilität und Spatial Computing in Zukunft verbinden lassen.</p>
+        <a href="https://www.behance.net/gallery/195062751/Audi-Dashboard-Spatial-Design-VisionPro-Concept" target="_blank" rel="noopener" class="ref-link">Auf Behance ansehen →</a>
+      </div>
+    </div>
   </div>
 </section>
 
-<section id="vorteile" class="vorteile-section">
+<section id="horizont" class="vorteile-section">
   <div class="wrap">
     <div class="vorteile-head">
       <div class="reveal-left">
-        <h2 class="vorteile-title">
-          <span>Warum Unternehmer</span>
-          <span class="accent">mit mir arbeiten.</span>
+        <span class="eyebrow">Der nächste Horizont</span>
+        <h2 class="vorteile-title horizont-title">
+          <span>Nach der Software</span>
+          <span class="accent">kommt die Fertigung.</span>
         </h2>
       </div>
-      <p class="vorteile-sub reveal-right">Keine klassische Agentur, sondern ein Partner an deiner Seite, der dich, dein Unternehmen und deine Vision wirklich versteht und dich auf deinem Weg von unten nach oben begleitet. Kein Koordinationsaufwand zwischen Designer, Marketer und Entwickler. Du hast einen Experten der dein gesamtes digitales Wachstum verantwortet.</p>
+      <p class="vorteile-sub reveal-right">Über die eigenen Produkte hinaus arbeitet YG MEDIA an Projekten in Richtung Robotik und vollautomatisierter Fertigungsanlagen, zunächst wieder rund um Felgen Brillant gedacht, mit eigener Software als Steuerungsebene. Diese Projekte werden zu gegebener Zeit im Detail vorgestellt. Hier stehen sie bewusst nur als Richtung.</p>
     </div>
-    <div class="vorteile-grid">
-      <div class="vorteil-card reveal"><div class="vorteil-num">01</div><h3>Ein Ansprechpartner</h3><p>Du hast einen festen Ansprechpartner für Strategie, Technik, Planung und Umsetzung. Kurze Wege, klare Kommunikation und persönliche Betreuung, damit dein Unternehmen digital professionell aufgestellt wird.</p></div>
-      <div class="vorteil-card reveal" data-delay="1"><div class="vorteil-num">02</div><h3>Alles aus einer Hand</h3><p>Webdesign, SEO, Google Ads, App-Entwicklung und KI-Automatisierung. Alles greift ineinander statt aus vier Quellen zusammengestückelt zu werden die nicht zusammenpassen.</p></div>
-      <div class="vorteil-card reveal" data-delay="2"><div class="vorteil-num">03</div><h3>Nachweisbare Ergebnisse</h3><p>Über 60 Brands aufgebaut, zwei iOS Apps solo entwickelt, ein TikTok-Kanal von null auf 272.000 Views gebracht. Ich rede nicht nur, ich zeige Resultate.</p></div>
-      <div class="vorteil-card reveal" data-delay="3"><div class="vorteil-num">04</div><h3>Erfahrung aus echten Branchen</h3><p>Erfahrung mit Handwerk, Arztpraxen, Industrie, Tech Startups und E Commerce auf eigenen Shops sowie Marktplätzen wie Ebay und Amazon. Ich weiß, was in deinem Markt funktioniert.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="prozess">
-  <div class="wrap">
-    <div class="prozess-inner">
-      <div class="prozess-sticky reveal-left">
-        <span class="eyebrow">Der Prozess</span>
-        <h2 class="prozess-title">So arbeiten wir zusammen.</h2>
-        <p class="prozess-sub">Ein klarer und transparenter Ablauf in drei Schritten. Von der ersten Anfrage bis zum fertigen Ergebnis weißt du jederzeit genau wo dein Projekt steht und was als Nächstes passiert.</p>
-        <a href="https://calendly.com/yg-media/30min" target="_blank" rel="noopener" class="btn btn-primary">Jetzt starten <span class="btn-arrow">↗</span></a>
-      </div>
-      <div class="prozess-steps reveal-right">
-        <div class="prozess-step">
-          <div class="prozess-step-num">01</div>
-          <div><h3>Ich lerne dein Business kennen.</h3><p>Bevor ich irgendetwas umsetze führen wir ein ausführliches Gespräch. Ich will verstehen wo du stehst, was deine Herausforderungen sind und was du dir für die nächsten 12 Monate vorstellst. Die meisten kommen mit einem konkreten Wunsch. Oft ist das eigentliche Problem aber ein anderes.</p></div>
-        </div>
-        <div class="prozess-step">
-          <div class="prozess-step-num">02</div>
-          <div><h3>Du bekommst einen konkreten Plan, kein Angebot.</h3><p>Ich erstelle ein klares Konzept was wir umsetzen, warum wir es so umsetzen und was es kostet. Kein Fachjargon, keine versteckten Kosten. Du verstehst genau was du bekommst bevor du ja sagst.</p></div>
-        </div>
-        <div class="prozess-step">
-          <div class="prozess-step-num">03</div>
-          <div><h3>Ich übernehme. Du konzentrierst dich auf dein Business.</h3><p>Sobald wir loslegen kümmere ich mich um alles. Du wirst regelmäßig informiert, kannst jederzeit Fragen stellen, aber musst nichts selbst koordinieren. Keine fünf verschiedenen Ansprechpartner. Nur ich.</p></div>
-        </div>
-      </div>
+    <div class="vorteile-grid horizont-grid">
+      <div class="vorteil-card reveal"><div class="vorteil-num">01</div><h3>Robotik</h3><p>Automatisierung physischer Prozesse dort, wo heute noch Handarbeit den Takt vorgibt.</p></div>
+      <div class="vorteil-card reveal" data-delay="1"><div class="vorteil-num">02</div><h3>Vollautomatisierte Fertigung</h3><p>Fertigungsanlagen, die sich in die bestehende Betriebssoftware einfügen, geplant am realen Fall.</p></div>
+      <div class="vorteil-card reveal" data-delay="2"><div class="vorteil-num">03</div><h3>Eigene Software</h3><p>Die Steuerungs- und Datenebene dazu entsteht im eigenen Haus, nach derselben Methode wie alle unsere Produkte: am echten Unternehmen bauen, beweisen, dann skalieren.</p></div>
     </div>
   </div>
 </section>
 
-<section id="about">
+<section id="unternehmen">
   <div class="wrap">
     <div class="about-inner">
       <div>
-        <span class="eyebrow reveal">Über mich</span>
-        <h2 class="about-tagline reveal">Yasin Gündogdu,<br><em>Inhaber.</em></h2>
-        <p class="about-text reveal">Ich arbeite seit über 10 Jahren an der Schnittstelle von Design, Technologie und Marketing. Für über 60 Unternehmen gearbeitet. Zwei Wahlkampagnen gewonnen. Zwei eigene iOS Apps solo entwickelt und gelauncht.</p>
-        <p class="about-text reveal">Meine Kunden kommen aus Deutschland, Österreich und der Schweiz. Was mich von einer klassischen Werbeagentur in Würzburg unterscheidet: Du hast einen direkten Ansprechpartner der das Gesamtbild kennt und Verantwortung übernimmt.</p>
+        <span class="eyebrow reveal">Unternehmen</span>
+        <h2 class="about-tagline reveal">YG MEDIA®,<br><em>digitale Agentur.</em></h2>
+        <p class="about-text reveal">YG MEDIA ist die digitale Agentur von Yasin Gündogdu in Würzburg, tätig in Software, Marketing und Robotik. Seit über zehn Jahren an der Schnittstelle von Design, Technologie und Marketing: über 60 Unternehmen aus Deutschland, Österreich und der Schweiz digital aufgebaut, vom Handwerksbetrieb über Arztpraxen und Industrie bis zu Tech-Startups.</p>
+        <p class="about-text reveal">Aus dieser Praxis entstehen eigene Produkte, jedes nach denselben Prinzipien: erst am echten Fall beweisen, dann skalieren. Qualität, die man sieht und misst. Ehrlichkeit gegenüber dem Nutzer. YG MEDIA® und SPACE SOCCER sind eingetragene Marken, USELY und YOU befinden sich im markenrechtlichen Schutzverfahren.</p>
         <div class="skill-tags reveal">
-          <span class="skill-tag">Corporate Design</span><span class="skill-tag">Markenkommunikation</span><span class="skill-tag">Positionierung</span>
-          <span class="skill-tag">UI/UX Design</span><span class="skill-tag">Google Ads</span><span class="skill-tag">SEO</span>
-          <span class="skill-tag">Softwareentwicklung</span><span class="skill-tag">AI Automation</span>
+          <span class="skill-tag">Softwareentwicklung</span><span class="skill-tag">UI/UX Design</span><span class="skill-tag">Corporate Design</span>
+          <span class="skill-tag">Google Ads und SEO</span><span class="skill-tag">KI-Automation</span><span class="skill-tag">E-Commerce</span>
+          <span class="skill-tag">Robotik</span>
         </div>
       </div>
-      <div class="about-img-wrap reveal-right">
-        <img src="assets/YG-Founder.png" alt="Yasin Gündogdu, Inhaber YG MEDIA" class="about-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="about-img-placeholder" style="display:none">👤</div>
+      <div class="reveal-right">
+        <div class="facts-card">
+          <div class="card-metric-label">YG MEDIA in Zahlen</div>
+          <div class="card-stats">
+            <div><div class="card-stat-label">Eigene Produkte</div><div class="card-stat-val">4</div></div>
+            <div><div class="card-stat-label">Live im App Store</div><div class="card-stat-val">1</div></div>
+            <div><div class="card-stat-label">Unternehmen aufgebaut</div><div class="card-stat-val">60+</div></div>
+            <div><div class="card-stat-label">Jahre Erfahrung</div><div class="card-stat-val">10+</div></div>
+            <div><div class="card-stat-label">Eingetragene Marken</div><div class="card-stat-val">2</div></div>
+            <div><div class="card-stat-label">Partner</div><div class="card-stat-val" style="font-size:1.1rem;line-height:1.3;padding-top:0.3rem">Felgen Brillant</div></div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<section class="cta-section">
-  <div class="wrap">
-    <div class="cta-inner reveal">
-      <h2 class="cta-title">Lass uns dein digitales<br>Fundament aufbauen.</h2>
-      <p class="cta-sub">In einem kostenlosen Erstgespräch analysieren wir gemeinsam wo du stehst und welche Schritte dich wirklich weiterbringen. Konkret, ehrlich und ohne Verpflichtung.</p>
-      <a href="https://calendly.com/yg-media/30min" target="_blank" rel="noopener" class="btn btn-primary">Jetzt 30-Min-Termin buchen <span class="btn-arrow">↗</span></a>
-      <span class="cta-subtext">Kostenlos · Unverbindlich · 30 Minuten</span>
     </div>
   </div>
 </section>
@@ -775,14 +691,14 @@ a.nav-lang-item:hover { background: rgba(255,255,255,0.06); color: var(--text); 
     <div class="contact-inner">
       <div class="contact-left reveal-left">
         <span class="eyebrow">Kontakt</span>
-        <h2 class="contact-title">Schreib mir direkt.</h2>
-        <p class="contact-sub">Erzähl mir kurz wo du stehst und was du erreichen willst. Ich melde mich so schnell wie möglich und bearbeite jede Anfrage persönlich.</p>
+        <h2 class="contact-title">Schreib uns direkt.</h2>
+        <p class="contact-sub">Fragen zu einem Produkt, eine Partnerschaft oder eine Presseanfrage: Jede Nachricht wird persönlich beantwortet.</p>
         <div class="contact-info">
-          <div class="contact-name">YG MEDIA<br><span>Yasin Gündogdu</span></div>
+          <div class="contact-name">YG MEDIA<br><span>Yasin Gündogdu · Würzburg</span></div>
           <div class="contact-info-item"><span class="contact-info-dot"></span><a href="mailto:info@yg-media.de" style="color:inherit;text-decoration:none">info@yg-media.de</a></div>
           <div class="contact-info-item"><span class="contact-info-dot"></span><a href="tel:+491774476392" style="color:inherit;text-decoration:none">+49 177 4476392</a></div>
           <div class="contact-info-item"><span class="contact-info-dot"></span><a href="https://wa.me/491774476392?text=Hallo%20YG%20MEDIA%2C%20ich%20habe%20eine%20Anfrage." target="_blank" rel="noopener" style="color:inherit;text-decoration:none">WhatsApp schreiben</a></div>
-          <p style="margin-top:0.9rem;font-size:0.78rem;color:var(--faint);line-height:1.6">Auch telefonisch und per WhatsApp erreichbar. Auf WhatsApp-Nachrichten antworte ich so schnell wie möglich.</p>
+          <p style="margin-top:0.9rem;font-size:0.78rem;color:var(--faint);line-height:1.6">Auch telefonisch und per WhatsApp erreichbar. Antwort so schnell wie möglich.</p>
         </div>
         <div class="contact-socials">
           <a href="https://behance.net/yasinguendogdu" target="_blank" rel="noopener" class="contact-social" aria-label="Behance">Be</a>
@@ -793,15 +709,15 @@ a.nav-lang-item:hover { background: rgba(255,255,255,0.06); color: var(--text); 
           <div class="form-grid">
             <div class="form-group"><label class="form-label">Dein Name</label><input type="text" name="name" class="form-input" placeholder="Max Mustermann" required></div>
             <div class="form-group"><label class="form-label">E-Mail</label><input type="email" name="email" class="form-input" placeholder="max@firma.de" required></div>
-            <div class="form-group form-full"><label class="form-label">Bereich</label>
+            <div class="form-group form-full"><label class="form-label">Thema</label>
               <select name="bereich" class="form-select">
-                <option value="">Bereich auswählen</option>
-                <option>Website</option><option>App</option>
-                <option>Online Marketing</option><option>AI Automation</option>
-                <option>Ich bin nicht sicher</option>
+                <option value="">Thema auswählen</option>
+                <option>USELY</option><option>YOU</option>
+                <option>SPACE SOCCER</option><option>Paukbox</option>
+                <option>Partnerschaft</option><option>Sonstiges</option>
               </select>
             </div>
-            <div class="form-group form-full"><label class="form-label">Wo stehst du gerade?</label><textarea name="message" class="form-textarea" placeholder="Erzähl mir kurz was du vorhast oder wo dein Problem liegt." required></textarea></div>
+            <div class="form-group form-full"><label class="form-label">Deine Nachricht</label><textarea name="message" class="form-textarea" placeholder="Worum geht es?" required></textarea></div>
           </div>
           <button type="submit" class="btn btn-primary btn-submit">Nachricht senden</button>
         </form>
@@ -822,18 +738,18 @@ a.nav-lang-item:hover { background: rgba(255,255,255,0.06); color: var(--text); 
           <img src="assets/YG-Logo-Weiss-No-Background.png" alt="YG MEDIA" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
           <div class="footer-logo-text">YG MEDIA</div>
         </div>
-        <p class="footer-tagline">Digital Business Builder.<br>Website · App · Marketing · Automation.</p>
+        <p class="footer-tagline">Digitale Agentur aus Würzburg.<br>Software · Marketing · Robotik.</p>
       </div>
       <div class="footer-links-grid">
         <div class="footer-col">
-          <div class="footer-col-title">Services</div>
-          <a href="/website">Website</a><a href="/apps">Apps</a>
-          <a href="/marketing">Marketing</a><a href="/automation">Automation</a>
+          <div class="footer-col-title">Produkte</div>
+          <a href="/usely">USELY</a><a href="/#you">YOU</a>
+          <a href="/#space-soccer">SPACE SOCCER</a><a href="https://paukbox.yg-media.de" target="_blank" rel="noopener">Paukbox</a>
         </div>
         <div class="footer-col">
           <div class="footer-col-title">Unternehmen</div>
-          <a href="#about">Über mich</a><a href="#referenzen">Referenzen</a>
-          <a href="#prozess">Prozess</a>
+          <a href="/#unternehmen">Yasin Gündogdu</a><a href="/#felgen-brillant">Felgen Brillant</a>
+          <a href="/#konzepte">Konzepte</a><a href="/#kontakt">Kontakt</a>
         </div>
         <div class="footer-col">
           <div class="footer-col-title">Rechtliches</div>
@@ -919,7 +835,7 @@ resize(); initParticles(); animate();
 <!-- COOKIE BANNER -->
 <div class="cookie-banner" id="cookieBanner">
   <div class="cookie-title">Diese Website verwendet Cookies</div>
-  <div class="cookie-text">Ich nutze Cookies um die Nutzung der Website zu analysieren und mein Angebot zu verbessern. Du entscheidest selbst was du zulässt. Mehr dazu in der <a href="/datenschutz">Datenschutzerklärung</a>.</div>
+  <div class="cookie-text">Diese Website nutzt Cookies, um die Nutzung zu analysieren und das Angebot zu verbessern. Du entscheidest selbst was du zulässt. Mehr dazu in der <a href="/datenschutz">Datenschutzerklärung</a>.</div>
   <div class="cookie-btns">
     <button class="cookie-btn cookie-decline" id="cookieDecline">Nur notwendige</button>
     <button class="cookie-btn cookie-accept" id="cookieAccept">Alle akzeptieren</button>

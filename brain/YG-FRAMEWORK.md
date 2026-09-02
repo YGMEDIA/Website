@@ -1,6 +1,6 @@
 # YG FRAMEWORK — Das Systemdokument
 
-> **Version 1.0 · Kanonisch · 2026-07-19**
+> **Version 2.0 · Kanonisch · 2026-09-02** (Produkt-Positionierung; v1.0 vom 2026-07-19)
 > Konsolidiert aus: der echten Live-Site (20 Seiten, deployed), den Projektanweisungen v5.0, dem SEO-Konzept Rev. 4 und allen Build-Sessions seit Juni 2026.
 > Konfliktregel: Bei Widerspruch zwischen Dokumenten gewinnt dieses. Bei Widerspruch zwischen Doku und Repo gewinnt das Repo — dann wird die Doku korrigiert.
 > Muster übernommen aus den Brains von USELY, YOU und SPC (Vollautonomie, Loop-Regeln, Leseregeln, Governance); wo die drei sich widersprachen, wurde die für ein Website-Projekt sauberste Variante gewählt und hier dokumentiert.
@@ -20,29 +20,26 @@
 
 # TEIL I · GESCHÄFTSMODELL & POSITIONIERUNG
 
-## 1.1 Was YG MEDIA ist
-Digital Business Builder (Würzburg, DACH): Website-Erstellung, iOS-App-Entwicklung, Online-Marketing/SEO, KI-Automation — Ende-zu-Ende für Inhaber ohne Zeit oder Technik-Wissen. 10+ Jahre Erfahrung, 60+ Marken, zwei eigene Apps (YOU, USELY — im App Store), zwei gewonnene Politik-Kampagnen. Referenzen: Felgen Brillant, Kinderarzt TBB, Derma, Audi, KI-Hotel-Showcase.
-Die Website ist der Anfragen-Kanal: Calendly-Erstgespräch als primäre Conversion, Formular/Telefon/WhatsApp sekundär. Kontakt: info@yg-media.de · +49 177 4476392 · Behance + X (bewusst minimale Social-Präsenz, Google Business Profil pausiert).
+## 1.1 Was YG MEDIA ist (Positionierung seit 2026-09-02)
+**Digitale Agentur für Software, Marketing und Robotik** (Würzburg, Inhaber Yasin Gündogdu), die **eigene Produkte** baut und die Website als Informationsseite über diese Produkte nutzt. Dienstleistungen werden nicht mehr beworben (Entscheidung Yasin, 2026-09-02, wegen Anfragen-Flaute und Neuausrichtung). Produkte: **USELY** (Buchhaltung → ERP, live im App Store, iOS + Web), **YOU** (Körper und Geist, iOS + YOU Band), **SPACE SOCCER** (Mobile Game, EU-Marke), **Paukbox** (Karteikarten-Web-App, paukbox.yg-media.de). Partner, Investor und Referenzfall: **Felgen Brillant**. Nächster Horizont: Robotik und vollautomatisierte Fertigung. Konzepte (Hotel-KI, Derma, Audi VisionPro) bleiben als Studien. 10+ Jahre, 60+ Unternehmen, YG MEDIA® und SPACE SOCCER eingetragene Marken.
+Keine Person-Inszenierung: kein Portrait, kein "Über mich", kein Erstgespräch-CTA. Kontakt bleibt: Formular (Themen = Produkte/Partnerschaft), info@yg-media.de · +49 177 4476392 · WhatsApp · Behance + X. Quelle aller Produktaussagen: Visionskonzept `/yg-media-vision` (noindex) + Produktseiten.
+Historie: Bis 2026-09-02 war die Site der Anfragen-Kanal eines Digital Business Builders (Website/App/Marketing/Automation, Calendly). Diese Seiten sind geparkt (siehe 2.2).
 
-## 1.2 Keyword-Strategie (Destillat — Details: 03-research/keyword-strategie.md)
-| Seite | Ziel-Keyword | Logik |
+## 1.2 Keyword-Strategie (seit 2026-09-02: Brand + Produkt; Service-Tabelle archiviert in 03-research/keyword-strategie.md)
+| Seite | Ziel-Keywords | Logik |
 |---|---|---|
-| / | werbeagentur würzburg | lokale Autorität |
-| /website | webdesign würzburg (+ website entwickeln lassen) | niedrige Konkurrenz, Kern-Service |
-| /marketing | seo würzburg | lokal |
-| /apps | app entwickeln lassen | überregional, Referenzen YOU + USELY |
-| /automation | ki agentur | höchstes Volumen, Langfrist-Ziel |
-| /website-kosten | website erstellen kosten | MOFU-Ratgeber |
-| /usely | buchhaltungs app | Produkt-SEO |
-EN-Seiten adressieren "Germany, Austria and Switzerland", eigenständige Titles/Descriptions. Regel: Ein Keyword-Ziel pro Seite, keine zwei Seiten auf dasselbe Keyword.
+| / | yg media, yasin gündogdu, digitale agentur software marketing robotik | Brand (GSC: 90 % der Klicks sind Brand) |
+| /usely | usely, buchhaltungs app | Produkt-SEO; GSC 2026-09-02: 211 Impressionen für "usely", aber 0 Klicks und rankende URL /en/usely → CTR-Fall für den gsc-loop |
+| (später) | paukbox, space soccer | eigene Produktseiten erst, wenn Substanz da ist (Struktur folgt Substanz) |
+Geparkte Service-Seiten (noindex) tragen keine Keyword-Ziele mehr. EN-Seiten adressieren "Germany, Austria and Switzerland", eigenständige Titles/Descriptions. Regel: Ein Keyword-Ziel pro Seite.
 
-## 1.3 Wachstumsstufen
+## 1.3 Wachstumsstufen (neu gefasst 2026-09-02)
 | Stufe | Ziel | Messkriterium | Stand |
 |---|---|---|---|
-| 1 | Indexierung DE + EN, erste lokale Rankings | 16 URLs indexiert, würzburg-Keywords Top 20 | läuft (12 Klicks / 344 Impr. in 3 Monaten, fast nur Brand) |
-| 2 | Nicht-Brand-Traffic | Nicht-Brand-Klicks > Brand-Klicks | nächste (K1 + GSC-Loop) |
-| 3 | Anfragen aus organisch/Ads | messbare Calendly-Buchungen und Formular-Anfragen mit Quelle | danach |
-Regel: Stufe N ist messbar erreicht, bevor Aufwand in N+1 fließt.
+| 1 | Neue Positionierung indexiert | 4 Sitemap-URLs indexiert, geparkte Seiten aus dem Index (GSC "Seiten") | läuft (Baseline 2026-09-02: 33 Klicks / 1.049 Impr. in 3 Monaten, fast nur Brand) |
+| 2 | Produkt-Sichtbarkeit | Klicks auf "usely"/"paukbox"/"space soccer"-Queries > 0, /usely-CTR > 1 % | nächste (gsc-loop) |
+| 3 | Produkt-Conversions | App-Store-Klicks, Paukbox-Öffnungen, Partnerschafts-Anfragen mit Quelle (GA4) | danach |
+Regel: Stufe N ist messbar erreicht, bevor Aufwand in N+1 fließt. Kampagne K1 (Service-Landing /website) ist damit obsolet.
 
 ---
 
@@ -52,7 +49,8 @@ Regel: Stufe N ist messbar erreicht, bevor Aufwand in N+1 fließt.
 GitHub Pages (Repo derzeit öffentlich, Account GitHub Free), Domain via IONOS (CNAME www → ygmedia.github.io, 4 A-Records 185.199.108–111.153), HTTPS aktiv. **Kanonische Domain ist non-www (https://yg-media.de)** — alle Canonicals, hreflang und og:url der Live-Site nutzen sie; der CNAME-Host bleibt www. HTML/CSS/JS pur, eine Datei pro Seite. DE im Root, EN als statische, vollständig übersetzte Kopien unter /en/. KEIN JS-Sprachumschalter zur Laufzeit (hreflang braucht eigene indexierbare URLs).
 
 ## 2.2 Seitenpaare (DE ↔ EN)
-/ ↔ /en/ · /website ↔ /en/website · /apps ↔ /en/apps · /marketing ↔ /en/marketing · /automation ↔ /en/automation · /website-kosten ↔ /en/website-costs · /usely ↔ /en/usely (7 indexierbare Paare mit hreflang-Trio de/en/x-default=de).
+Indexierbar (seit 2026-09-02): / ↔ /en/ · /usely ↔ /en/usely (2 Paare mit hreflang-Trio de/en/x-default=de, Sitemap 4 URLs).
+Geparkt (noindex, volle DNA, nirgends verlinkt, Dateien bleiben bis Yasin löscht): /website ↔ /en/website · /apps ↔ /en/apps · /marketing ↔ /en/marketing · /automation ↔ /en/automation · /website-kosten ↔ /en/website-costs. Standalone-Uploads von Yasin (noindex, keine DNA): /yg-media-vision (Visionskonzept 2026), /felgen-brillant (vertrauliches Pitch-Deck).
 Rechtsseiten (noindex, nicht in Sitemap): /impressum ↔ /en/legal-notice · /datenschutz ↔ /en/privacy-policy · /nutzungsbedingungen ↔ /en/terms-of-use (EULA USELY — die DE-URL ist die App-Store-Pflicht-URL, ändert sich NIE). EN-Rechtsseiten tragen den Hinweis "German version legally binding".
 Interne Seiten (noindex, kein EN): buecher-cw, more-produkt-berater, pdfs/.
 
@@ -129,6 +127,7 @@ INDEX zuerst, dann STATUS, dann Links. CLAUDE.md < 200 Zeilen — zeigt aufs Bra
 | Datum | Version | Änderung |
 |---|---|---|
 | 2026-07-19 | 1.0 | Erstfassung: konsolidiert aus Live-Site (v4.3-Stand), Projektanweisungen v5.0, SEO-Konzept Rev. 4 und Projekthistorie Juni–Juli 2026. Systematik übernommen aus den Brains von USELY (Framework/CLAUDE.md/Spec-Kette), YOU (STATUS-Verlauf, Vollautonomie-Detailregeln) und SPC (Loop-System, Protokoll-Format, Deploy-Absicherung, verify.py als Gate). |
+| 2026-09-02 | 2.0 | **Produkt-Positionierung.** Site bewirbt nur noch eigene Produkte (USELY, YOU, SPACE SOCCER, Paukbox) + Partner Felgen Brillant; Agentur = Software, Marketing, Robotik. Teil I (1.1–1.3) und 2.2 neu; Service-Seiten geparkt (noindex), Sitemap 4 URLs; Kampagne K1 obsolet. Spec: 06-specs/SPEC-produkt-positionierung.md · Protokoll: 05-protokoll/2026-09-02-content-produkt-positionierung.md. |
 | 2026-07-19 | 1.1 | Roadmap-Blöcke A + B erledigt: Actions-Deploy aktiv (Brain bleibt privat), Sitemap 14 URLs in GSC neu eingereicht, 4 EN-URLs zur Indexierung beantragt, Enforce HTTPS aktiv (http→https 301). Details: 05-protokoll/2026-07-19-system-repo-uebernahme.md. |
 
 ---

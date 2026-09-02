@@ -9,7 +9,7 @@
 ## TEIL A · Design-DNA-Gesetze
 
 ### §A1 · Navbar, Footer und Seiten-DNA sind unantastbar [bewiesen]
-Jede Seite trägt identisch: Nav (Logo + Website/Apps/Marketing/Automation + Calendly-CTA "Erstgespräch buchen"/"Book a free call" + Sprachwechsler-Dropdown `.nav-lang`; transparent, Glass beim Scrollen, Burger mobil, aktiver Menüpunkt `.active`) · Footer (drei Spalten Services/Unternehmen/Rechtliches bzw. Services/Company/Legal, Logo + Tagline, Social nur Behance + X, DE/EN-Pills `.lang-switch`) · animierten Hintergrund (Canvas-Partikel mit Maus-Interaktion + 4 Orbs + Grid-Overlay + Grain, keine Planeten) · Glass-Cards, Reveal-Animationen, gleiche Section-Muster und Abstände. Cookie-Banner + consent-gated GA4 auf allen Seiten AUSSER Rechtsseiten (§D2). Sprachwechsler verlinkt IMMER seitenspezifisch aufs Pendant (/apps ↔ /en/apps), nie generisch auf die Startseite.
+Jede Seite trägt identisch: Nav (Logo + Produkte/Konzepte/Unternehmen/Kontakt als Anker auf die Startseite `/#…` bzw. `/en/#…` + Sprachwechsler-Dropdown `.nav-lang`; transparent, Glass beim Scrollen, Burger mobil; **seit 2026-09-02 kein Calendly-CTA und keine Service-Links mehr, verify.py prüft das**) · Footer (drei Spalten Produkte/Unternehmen/Rechtliches bzw. Products/Company/Legal, Spalte Unternehmen beginnt mit "Yasin Gündogdu", Logo + Tagline "Digitale Agentur aus Würzburg. Software · Marketing · Robotik.", Social nur Behance + X, DE/EN-Pills `.lang-switch`) · animierten Hintergrund (Canvas-Partikel mit Maus-Interaktion + 4 Orbs + Grid-Overlay + Grain, keine Planeten) · Glass-Cards, Reveal-Animationen, gleiche Section-Muster und Abstände. Cookie-Banner + consent-gated GA4 auf allen Seiten AUSSER Rechtsseiten (§D2). Sprachwechsler verlinkt IMMER seitenspezifisch aufs Pendant (/apps ↔ /en/apps), nie generisch auf die Startseite.
 Verstoß = eine öffentliche Seite ohne vollständige Nav/Footer/DNA oder mit vereinfachter Variante.
 **Scope (präzisiert 2026-07-19, Repo gewinnt):** Gilt für alle öffentlichen Seiten. Die internen noindex-Tools (buecher-cw, more-produkt-berater) sind eigenständige Projektseiten und bewusst von DNA und GA ausgenommen; verify.py prüft sie nur auf noindex, Links, lang und Em-Dashes. Kunden-Preview-Seiten (index_*.html) sind eigenständige Kundendesigns ohne YG-Copy: noindex Pflicht, von DNA/GA UND von der Em-Dash-Regel ausgenommen (Kunden-Content); verify.py prüft sie nur auf noindex + lang und dass sie nie in der Sitemap stehen.
 
@@ -26,7 +26,9 @@ NIEMALS `aspect-ratio` auf die Bildspalte der Feature-Karten legen. Desktop: Bil
 Logo immer aus echten Assets extrahieren (Keyvisual), NIE pixelweise umfärben — das zerstört die Kanten; für dunkle Flächen die weiße Version. App-Store-Badge (assets/app-store-badge.png, 494×170, per Flood-Fill freigestellt) nie umfärben, beschneiden oder verzerren (Apple-Guidelines); Einsatz als `.badge-link` (46px, Hover-Lift), kein Textlink daneben.
 
 ### §A6 · Copy-Regeln [bewiesen]
-Professionelle Agentur-Tonalität, outcome-orientiert, erste Person Singular vermeiden. Kein VR-Content ohne echte Projekte, keine generischen Checklisten. Die USELY-Startseitenkarte beschreibt die APP (Kalkulation, Belegkette, Beleg-Scan, XRechnung/ZUGFeRD, EÜR, GoBD/§14/§19, kostenlos), die Macher-Story lebt nur auf /usely.
+Professionelle Agentur-Tonalität, outcome-orientiert, erste Person Singular vermeiden (seit 2026-09-02 auch im Cookie-Text: "Diese Website nutzt Cookies…"). Kein VR-Content ohne echte Projekte, keine generischen Checklisten. Die USELY-Startseitenkarte beschreibt die APP (Belegkette mit Bezahllink, E-Rechnung XRechnung/ZUGFeRD, KI-Belegscan, Boards, Banking, DATEV, kostenlos startbar), die Macher-Story lebt nur auf /usely.
+**§A6.1 · Keine Person-Inszenierung (seit 2026-09-02):** Kein Portrait, kein "Über mich", keine Ich-Erzählung auf öffentlichen Seiten. Yasin Gündogdu erscheint nur als Inhaber im Unternehmens-Block, im Footer ("Unternehmen → Yasin Gündogdu"), in Kontakt/Impressum und im Schema (`founder`). Produkttexte beschreiben Produkte, nie den Macher.
+**§A6.2 · Quellen-Treue für Produkttexte:** Produktaussagen (Features, Status "live", Marken, Preise) stammen ausschließlich aus Yasins Quellen (Visionskonzept, Produktseiten, Uploads). Vertrauliche Dokumente (Pitch-Deck `felgen-brillant.html`) werden nie zitiert.
 
 ---
 
@@ -49,10 +51,10 @@ FAQ-Schemas, Titles und Descriptions werden auf EN eigenständig übersetzt (Sch
 ## TEIL C · SEO-Gesetze
 
 ### §C1 · Ein Keyword-Ziel pro Seite [bewiesen]
-Jede indexierbare Seite hat ihr Ziel-Keyword aus dem Keyword-Master (Framework 1.2). Keine zwei Seiten auf dasselbe Keyword. Titles/Descriptions pro Keyword sauber gesetzt.
+Jede indexierbare Seite hat ihr Ziel-Keyword aus dem Keyword-Master (Framework 1.2). Keine zwei Seiten auf dasselbe Keyword. Titles/Descriptions pro Keyword sauber gesetzt. Seit 2026-09-02 sind die Ziele Brand + Produkt (Startseite: YG MEDIA / Yasin Gündogdu / digitale Agentur Software Marketing Robotik; /usely: usely, buchhaltungs app).
 
 ### §C2 · Sitemap-Disziplin [bewiesen]
-sitemap.xml enthält ausschließlich indexierbare Seiten (aktuell 14 URLs: 7 DE + 7 EN, die 7 Seitenpaare). Rechtsseiten und interne Seiten (buecher-cw, more-produkt-berater, pdfs/) sind noindex und stehen NICHT drin. Jede neue indexierbare Seite → Sitemap + ggf. GSC-Neueinreichung (Yasin). verify.py gleicht beidseitig ab.
+sitemap.xml enthält ausschließlich indexierbare Seiten (seit 2026-09-02: 4 URLs, die Paare / ↔ /en/ und /usely ↔ /en/usely). Rechtsseiten, interne Seiten (buecher-cw, more-produkt-berater, pdfs/, yg-media-vision, felgen-brillant) und **geparkte Service-Seiten** (website, apps, marketing, automation, website-kosten + EN; noindex, nirgends verlinkt, Dateien bleiben bis Yasin löscht) sind noindex und stehen NICHT drin. Jede neue indexierbare Seite → Sitemap + ggf. GSC-Neueinreichung (Yasin). verify.py gleicht beidseitig ab.
 
 ### §C3 · Schema = sichtbare Wahrheit [bewiesen]
 FAQ-Schema nur mit Fragen/Antworten, die sichtbar auf der Seite stehen. LocalBusiness/ProfessionalService auf der Startseite mit echtem NAP (Name, Adresse, +49-177-4476392). MobileApplication auf /usely (Preis 0 €). Alle JSON-LD-Blöcke müssen valides JSON sein (verify.py prüft).
@@ -106,9 +108,13 @@ Inhaltliche Änderungen an Impressum, Datenschutzerklärung oder EULA nur mit Ya
 | Sitemap enthielt /impressum + /datenschutz trotz noindex (Drift Doku vs. Repo, von verify.py gefunden) | §C2 | **behoben 2026-07-19 (Repo-Übernahme)** — der Vormittags-Fix lag nur in der separaten v4.3-Arbeitskopie; im Repo auf 14 URLs bereinigt, Neueinreichung siehe Befund 2 |
 | Sichtbare Em-Dashes auf buecher-cw (2 Stellen) | §A2 | **behoben 2026-07-19 (Repo-Übernahme; Vormittags-Fix lag nur in der Arbeitskopie)**; JS-injizierte Buchbeschreibungen tragen weitere (intern, niedrig, Merkposten) |
 | 11 Kunden-Preview-Seiten (index_*.html) im Repo: indexierbar (kein noindex), nicht im verify-Inventar, dem Brain bisher unbekannt | §C2 | **behoben 2026-07-19** — alle 11 auf noindex, PREVIEW_PAGES-Kategorie in verify.py (noindex + lang + Sitemap-Verbot), §A1-Scope ergänzt |
+| Geparkte Service-Seiten (10 Dateien) tragen noch Service-Copy, Calendly-CTAs im Body und hreflang-Trios; erreichbar per Direkt-URL | §A6/§C2 | offen (niedrig) — endgültiges Löschen ist Yasin-Gate; bis dahin noindex + orphan (2026-09-02) |
+| Vertrauliches Pitch-Deck `felgen-brillant.html` ("Vertraulich") ist per Direkt-URL öffentlich erreichbar (noindex/nofollow, von Yasin hochgeladen) | Governance 3 | offen (Yasin: bewusst?) |
+| Kunden-Previews + assets_02/ + more-produkt-berater.html wurden am 2026-09-02 außerhalb von Claude Code aus dem Arbeitsordner entfernt (liegen in webseiten-brain/03_Vorschau_beim_Kunden/), im Repo noch vorhanden | Governance 3 (Löschen = Yasin-Gate) | offen — Yasin committet die Löschung selbst oder gibt sie frei |
 
 ## Änderungslog
 | Datum | Änderung |
 |---|---|
 | 2026-07-19 | v1.0 — Constitution aus Projektanweisungen v1–v5 und der Live-Site extrahiert; alle A/B/C/D-Gesetze durch die Build-Historie bewiesen. Teil E (Vollautonomie) nach dem Muster von SPC/YOU/USELY, angepasst auf die Website-Gates. |
+| 2026-09-02 | v1.2 — Produkt-Positionierung: §A1 Nav/Footer neu definiert (Anker statt Service-Links, kein Calendly), §A6 um Cookie-Text, §A6.1 (keine Person-Inszenierung) und §A6.2 (Quellen-Treue) ergänzt, §C1 Ziel-Keywords Brand+Produkt, §C2 Sitemap 4 URLs + Kategorie "geparkt". Drei neue Befunde (geparkte Seiten, Pitch-Deck-Erreichbarkeit, externe Löschung der Previews). Details: 05-protokoll/2026-09-02-content-produkt-positionierung.md. |
 | 2026-07-19 | v1.1 — Teil E ergänzt (Yasins Vollautonomie-Anweisung vollständig übernommen): Entscheidungs-Delegation mit Recherche- und Doku-Pflicht; Keine-Genehmigungs-Dialoge via .claude/settings.json (bypassPermissions, deny rm -rf/sudo, Änderung = Menschen-Gate, greift ab der nächsten Session). |

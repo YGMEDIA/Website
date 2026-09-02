@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # verify.py — Maschinen-Gate fuer www.yg-media.de (YG Constitution Teil E, Pattern P-7)
 # stdlib-only. Exit 0 = gruen, Exit 1 = rot. Vor JEDEM Commit gruen erforderlich.
-# Prueft: DNA-Marker, Em-Dashes, hreflang-Trios, Canonicals, Sitemap beidseitig,
+# Prueft: DNA-Marker, Nav-/Footer-Invariante, Em-Dashes, hreflang-Trios, Canonicals, Sitemap beidseitig,
 # interne Links, JSON-LD-Validitaet, lang-Attribute, noindex-Regeln, Invarianten.
 
 import json
@@ -14,29 +14,33 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = "https://yg-media.de"  # kanonische Domain ist non-www (Canonicals/hreflang/og:url der Live-Site); CNAME-Host bleibt www
 
 # Seiten-Inventar (Constitution §B/§C/§D). Neue Seiten hier eintragen.
+# Seit 2026-09-02 (Produkt-Positionierung): nur Startseite + USELY sind indexierbar.
 INDEXABLE_PAIRS = [
     ("index.html", "en/index.html"),
-    ("website.html", "en/website.html"),
-    ("apps.html", "en/apps.html"),
-    ("marketing.html", "en/marketing.html"),
-    ("automation.html", "en/automation.html"),
-    ("website-kosten.html", "en/website-costs.html"),
     ("usely.html", "en/usely.html"),
+]
+# Geparkte Service-Seiten (2026-09-02): volle DNA, noindex, nicht in der Sitemap, nicht verlinkt. Loeschung = Yasin-Gate.
+PARKED_PAGES = [
+    "website.html", "en/website.html",
+    "apps.html", "en/apps.html",
+    "marketing.html", "en/marketing.html",
+    "automation.html", "en/automation.html",
+    "website-kosten.html", "en/website-costs.html",
 ]
 LEGAL_PAGES = [
     "impressum.html", "en/legal-notice.html",
     "datenschutz.html", "en/privacy-policy.html",
     "nutzungsbedingungen.html", "en/terms-of-use.html",
 ]
-INTERNAL_PAGES = ["buecher-cw.html", "more-produkt-berater.html"]
-# Kunden-Preview-Seiten: eigenstaendige Kundendesigns, kein YG-Copy — Pruefumfang nur noindex + lang (§A1-Scope, §C2)
-PREVIEW_PAGES = [
-    "index_ac.html", "index_ak.html", "index_aw.html", "index_bw.html",
-    "index_ep.html", "index_gk.html", "index_gl.html", "index_jl.html",
-    "index_ku.html", "index_kw.html", "index_ul.html",
-]
+# Interne/eigenstaendige noindex-Seiten ohne Site-DNA: Tools + Yasins Standalone-Uploads (Visionskonzept, Pitch-Deck)
+INTERNAL_PAGES = ["buecher-cw.html", "more-produkt-berater.html", "yg-media-vision.html", "felgen-brillant.html"]
+# Kunden-Preview-Seiten: eigenstaendige Kundendesigns, kein YG-Copy — Pruefumfang nur noindex + lang (§A1-Scope, §C2).
+# Automatisch per Muster index_*.html erfasst (Yasin laedt Previews per Web-Upload hoch).
+PREVIEW_PAGES = sorted(
+    f for f in os.listdir(ROOT) if re.fullmatch(r"index_[a-z]{2}\.html", f)
+)
 
-ALL_PAGES = [p for pair in INDEXABLE_PAIRS for p in pair] + LEGAL_PAGES + INTERNAL_PAGES
+ALL_PAGES = [p for pair in INDEXABLE_PAIRS for p in pair] + PARKED_PAGES + LEGAL_PAGES + INTERNAL_PAGES
 
 errors = []
 warnings = []
@@ -105,7 +109,8 @@ def check_page(path):
     is_en = path.startswith("en/")
     is_legal = path in LEGAL_PAGES
     is_internal = path in INTERNAL_PAGES
-    is_indexable = not is_legal and not is_internal
+    is_parked = path in PARKED_PAGES
+    is_indexable = not is_legal and not is_internal and not is_parked
     full_dna = not is_internal  # interne noindex-Tools tragen bewusst keine Site-DNA/GA (§A1-Scope)
 
     # lang-Attribut (§B2)
@@ -128,6 +133,22 @@ def check_page(path):
         err(f"{path}: Nav-Sprachwechsler (.nav-lang) fehlt")
     if full_dna and "lang-switch" not in html:
         err(f"{path}: Footer-Sprachwechsler (.lang-switch) fehlt")
+
+    # Nav-/Footer-Invariante seit 2026-09-02 (§A1 v2): keine Service-Links, kein Calendly-CTA in Nav/Footer
+    if full_dna:
+        nav_block = re.search(r"<nav.*?</nav>", html, flags=re.S)
+        foot_block = re.search(r"<footer.*?</footer>", html, flags=re.S)
+        for name, block in (("Nav", nav_block), ("Footer", foot_block)):
+            if not block:
+                continue
+            b = block.group(0)
+            # Sprachwechsler-Links (nav-lang-item / lang-btn) zeigen legitim aufs Pendant (§A1) und werden ausgenommen
+            b = re.sub(r"<a[^>]*class=\"(?:nav-lang-item|lang-btn)\"[^>]*>", "", b)
+            if "calendly.com" in b:
+                err(f"{path}: {name} enthaelt Calendly-CTA (seit 2026-09-02 verboten, §A1)")
+            for old in ("/website\"", "/apps\"", "/marketing\"", "/automation\"", "/en/website\"", "/en/apps\"", "/en/marketing\"", "/en/automation\""):
+                if 'href="' + old.rstrip('"') + '"' in b:
+                    err(f"{path}: {name} verlinkt geparkte Service-Seite {old.rstrip(chr(34))} (§A1)")
 
     # Cookie/GA-Regeln (§D2/§D3)
     has_ga = "G-MHQJ0HLBM3" in html
@@ -164,8 +185,8 @@ def check_page(path):
             err(f"{path}: {len(canon)} Canonicals, erwartet genau 1")
     # noindex (§C2/§D2)
     has_noindex = bool(re.search(r"<meta[^>]*noindex", html))
-    if (is_legal or is_internal) and not has_noindex:
-        err(f"{path}: noindex fehlt (Rechts-/interne Seite)")
+    if (is_legal or is_internal or is_parked) and not has_noindex:
+        err(f"{path}: noindex fehlt (Rechts-/interne/geparkte Seite)")
     if is_indexable and has_noindex:
         err(f"{path}: indexierbare Seite traegt noindex")
 
@@ -236,6 +257,8 @@ def check_sitemap():
             err(f"sitemap.xml: Rechtsseite enthalten {u} (verboten, §C2)")
         if f in INTERNAL_PAGES:
             err(f"sitemap.xml: interne Seite enthalten {u} (verboten, §C2)")
+        if f in PARKED_PAGES:
+            err(f"sitemap.xml: geparkte Service-Seite enthalten {u} (verboten, §C2)")
         if f in PREVIEW_PAGES:
             err(f"sitemap.xml: Kunden-Preview enthalten {u} (verboten, §C2)")
     # Rueckrichtung: jede indexierbare Seite steht in der Sitemap

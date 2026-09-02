@@ -5,13 +5,26 @@
 ## P-1 · Seiten-DNA-Pattern
 **Wann:** Jede neue Seite, DE wie EN.
 **Form:** Bestehende Seite gleichen Typs als Vorlage kopieren (nie from scratch): Head mit Title "<Seite> — YG MEDIA", Description, Canonical, hreflang-Trio (nur indexierbar), og:image + Twitter Cards, ggf. Schema · Body mit vollständiger Nav (+ seitenspezifischem Sprachwechsler), Canvas/Orbs/Grid/Grain, Sections, Footer, Cookie-Banner (außer Rechtsseiten). Danach: Sitemap + verify.py.
-**Vorlage:** website.html (Service), usely.html (Produkt), impressum.html (Legal).
+**Vorlage:** index.html (Produkt-Startseite, seit 2026-09-02), usely.html (Produkt-Detailseite), impressum.html (Legal). website.html & Co. sind geparkt und keine Vorlagen mehr.
 **Gesetze:** §A1, §B3, §C2.
 
 ## P-2 · EN-Nachzieh-Pattern
 **Wann:** Jede Änderung an einer DE-Seite mit EN-Pendant.
 **Form:** DE-Master ändern → dieselbe Änderung handübersetzt in der EN-Datei (Links auf EN-Pendants, absolute Asset-Pfade, eigenständige Schema-/Meta-Übersetzung) → beide Dateien im selben Commit. Bei Massen-Änderungen Python-Replacement-Skript (COMMON/LINKS-Tabellen, Muster _build_en.py) mit QA-Scan auf deutsche Reste; Reihenfolge beachten: Link-Replaces VOR dem Sprachwechsler-Swap.
 **Gesetze:** §B1, §B2, §B4.
+
+## P-11 · Produkt-Karten-Pattern (seit 2026-09-02)
+**Wann:** Eigene Produkte auf der Startseite (USELY, YOU, SPACE SOCCER, Paukbox); Partner/Referenzfall als volle Breite.
+**Form:** `.product-grid` (2 Spalten, ≤768px 1 Spalte) aus `.product-card` (Glass, `id` = Produkt-Anker, `scroll-margin-top`): `.product-img` (feste Höhe 280/220px, object-fit cover, NIE aspect-ratio) + `.ref-tag` (Markt · Plattform · Status) + h3 "NAME. Claim." + Absatz (nur belegte Fakten aus Yasins Quellen) + `.service-tags` + `.product-links` (interner Link oder externer Produkt-Link, bei USELY zusätzlich App-Store-Badge). Partner Felgen Brillant als `.ref-feature` (P-3). Hero-Karte spiegelt die Produkte als `.hero-tile`-Kacheln mit denselben Logos.
+**Assets:** Logos aus Yasins Originalen nur skaliert (sips) und als WebP (cwebp q86–88) unter `assets/logo-<produkt>.webp`; Originale bleiben im Repo.
+**Neue Produkte:** Karte DE + EN im selben Paket, Hero-Kachel, Footer-Spalte "Produkte", Fakten-Karte ("Eigene Produkte"-Zahl), Schema `brand`-Liste.
+**Vorlage:** index.html Sektion #produkte / en/index.html #products.
+**Gesetze:** §A1, §A4, §A5, §A6.1/§A6.2, §B1.
+
+## P-12 · Nav-/Footer-Massenänderung (seit 2026-09-02)
+**Wann:** Jede Änderung an Nav-Links, Footer-Spalten, Tagline oder Cookie-Text.
+**Form:** Nie Datei für Datei von Hand: Python-Skript mit `re.subn(count=1)` + Abbruch bei 0 Treffern pro Datei (Vorlage: `scratchpad/build.py` vom 2026-09-02, dokumentiert im Protokoll). Nav-Block = alles zwischen `<div class="nav-links" id="navLinks">` und `<div class="nav-lang"`, Footer-Block = alles zwischen `<div class="footer-links-grid">` und der Spalte Rechtliches/Legal. Sprachwechsler bleiben unangetastet (seitenspezifisch, §A1). Danach verify.py (Nav-/Footer-Invariante) + grep-Zähler über alle DNA-Seiten.
+**Gesetze:** §A1, §B1, Teil E (str_replace mit Kontext, nie sed über mehrzeilige Blöcke).
 
 ## P-3 · Ref-Feature-Pattern
 **Wann:** Referenz als volle-Breite-Karte (Bild + Text).
@@ -64,4 +77,4 @@
 - Ratgeber-Pattern (Block H — /website-kosten als Vorlage, formalisieren beim zweiten Ratgeber)
 - Kampagnen-Landing-Pattern (falls K1 eigene Varianten braucht)
 
-*YG Pattern-Katalog v1.0 · 2026-07-19*
+*YG Pattern-Katalog v1.1 · 2026-09-02 (P-11 Produkt-Karten, P-12 Nav-/Footer-Massenänderung)*
