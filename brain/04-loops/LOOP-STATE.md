@@ -22,4 +22,3 @@
 | Loop/Quelle | Item |
 |---|---|
 | gsc-loop | GSC: Sitemap (4 URLs) neu einreichen + URL-Prüfung für / und /usely anstoßen; ab ~2026-09-16 Paket (Leistung 28 Tage + Seiten-Bericht) liefern |
-| (Umbau) | Löschung der Kunden-Previews/assets_02/more-produkt-berater committen oder verwerfen (Dateien wurden außerhalb von Claude Code aus dem Ordner entfernt) |

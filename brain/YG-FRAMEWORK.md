@@ -50,7 +50,7 @@ GitHub Pages (Repo derzeit öffentlich, Account GitHub Free), Domain via IONOS (
 
 ## 2.2 Seitenpaare (DE ↔ EN)
 Indexierbar (seit 2026-09-02): / ↔ /en/ · /usely ↔ /en/usely (2 Paare mit hreflang-Trio de/en/x-default=de, Sitemap 4 URLs).
-Geparkt (noindex, volle DNA, nirgends verlinkt, Dateien bleiben bis Yasin löscht): /website ↔ /en/website · /apps ↔ /en/apps · /marketing ↔ /en/marketing · /automation ↔ /en/automation · /website-kosten ↔ /en/website-costs. Standalone-Uploads von Yasin (noindex, keine DNA): /yg-media-vision (Visionskonzept 2026), /felgen-brillant (vertrauliches Pitch-Deck).
+Geparkt (noindex, volle DNA, nirgends verlinkt, Dateien bleiben bis Yasin löscht): /website ↔ /en/website · /apps ↔ /en/apps · /marketing ↔ /en/marketing · /automation ↔ /en/automation · /website-kosten ↔ /en/website-costs. Standalone-Upload von Yasin (noindex, keine DNA): /felgen-brillant (vertrauliches Pitch-Deck). Das Visionskonzept /yg-media-vision hat Yasin am 2026-09-02 gelöscht; sein Inhalt lebt als Quelle in 06-specs/SPEC-produkt-positionierung.md und im Protokoll weiter. Kunden-Previews (index_*.html, assets_02/) und interne Tools (buecher-cw, more-produkt-berater) sind seit 2026-09-02 aus dem Repo entfernt (Yasin) und liegen in ~/Desktop/webseiten-brain/.
 Rechtsseiten (noindex, nicht in Sitemap): /impressum ↔ /en/legal-notice · /datenschutz ↔ /en/privacy-policy · /nutzungsbedingungen ↔ /en/terms-of-use (EULA USELY — die DE-URL ist die App-Store-Pflicht-URL, ändert sich NIE). EN-Rechtsseiten tragen den Hinweis "German version legally binding".
 Interne Seiten (noindex, kein EN): buecher-cw, more-produkt-berater, pdfs/.
 

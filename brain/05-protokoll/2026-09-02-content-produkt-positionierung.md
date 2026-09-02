@@ -38,6 +38,9 @@
 - Geparkte Seiten tragen noch Service-Copy/CTAs im Body (nur per Direkt-URL erreichbar).
 - GSC: Sitemap (4 URLs) neu einreichen, URL-Prüfung / und /usely (Yasin-Gate).
 
+## Nachtrag 2026-09-02 (nach dem ersten Push-Versuch)
+Push wurde abgelehnt: Yasin hatte parallel per GitHub-Web 40 Lösch-Commits gepusht (alle index_*.html, assets_02/, buecher-cw.html, more-produkt-berater.html, yg-media-vision.html). Keine Datei-Überschneidung mit dem Umbau → `git pull --rebase`, verify-Inventar auf INTERNAL_PAGES = [felgen-brillant.html] reduziert, Constitution/Framework/STATUS/LOOP-STATE nachgezogen, verify grün, Push. Das Lösch-Gate wurde damit von Yasin selbst ausgeübt; das Visionskonzept ist nicht mehr online (Inhalt im Spec gesichert).
+
 ## Gelernt (Rückfluss)
 - Nav-/Footer-Massenänderung braucht ein Skript mit Treffer-Zwang und Sprachwechsler-Ausnahme → P-12; verify prüft die Invariante jetzt maschinell (§A1 v2).
 - Produkt-Logos (1:1) brauchen Bildflächen ≥ 400px Höhe mit `object-position: top`, sonst werden Schriftzüge angeschnitten → P-11.

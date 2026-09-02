@@ -32,8 +32,9 @@ LEGAL_PAGES = [
     "datenschutz.html", "en/privacy-policy.html",
     "nutzungsbedingungen.html", "en/terms-of-use.html",
 ]
-# Interne/eigenstaendige noindex-Seiten ohne Site-DNA: Tools + Yasins Standalone-Uploads (Visionskonzept, Pitch-Deck)
-INTERNAL_PAGES = ["buecher-cw.html", "more-produkt-berater.html", "yg-media-vision.html", "felgen-brillant.html"]
+# Eigenstaendige noindex-Seiten ohne Site-DNA (Yasins Standalone-Uploads). buecher-cw, more-produkt-berater und
+# yg-media-vision hat Yasin am 2026-09-02 selbst geloescht (Web-Commits).
+INTERNAL_PAGES = ["felgen-brillant.html"]
 # Kunden-Preview-Seiten: eigenstaendige Kundendesigns, kein YG-Copy — Pruefumfang nur noindex + lang (§A1-Scope, §C2).
 # Automatisch per Muster index_*.html erfasst (Yasin laedt Previews per Web-Upload hoch).
 PREVIEW_PAGES = sorted(

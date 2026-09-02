@@ -54,7 +54,7 @@ FAQ-Schemas, Titles und Descriptions werden auf EN eigenständig übersetzt (Sch
 Jede indexierbare Seite hat ihr Ziel-Keyword aus dem Keyword-Master (Framework 1.2). Keine zwei Seiten auf dasselbe Keyword. Titles/Descriptions pro Keyword sauber gesetzt. Seit 2026-09-02 sind die Ziele Brand + Produkt (Startseite: YG MEDIA / Yasin Gündogdu / digitale Agentur Software Marketing Robotik; /usely: usely, buchhaltungs app).
 
 ### §C2 · Sitemap-Disziplin [bewiesen]
-sitemap.xml enthält ausschließlich indexierbare Seiten (seit 2026-09-02: 4 URLs, die Paare / ↔ /en/ und /usely ↔ /en/usely). Rechtsseiten, interne Seiten (buecher-cw, more-produkt-berater, pdfs/, yg-media-vision, felgen-brillant) und **geparkte Service-Seiten** (website, apps, marketing, automation, website-kosten + EN; noindex, nirgends verlinkt, Dateien bleiben bis Yasin löscht) sind noindex und stehen NICHT drin. Jede neue indexierbare Seite → Sitemap + ggf. GSC-Neueinreichung (Yasin). verify.py gleicht beidseitig ab.
+sitemap.xml enthält ausschließlich indexierbare Seiten (seit 2026-09-02: 4 URLs, die Paare / ↔ /en/ und /usely ↔ /en/usely). Rechtsseiten, Standalone-Seiten (felgen-brillant, pdfs/; buecher-cw, more-produkt-berater und yg-media-vision hat Yasin am 2026-09-02 gelöscht) und **geparkte Service-Seiten** (website, apps, marketing, automation, website-kosten + EN; noindex, nirgends verlinkt, Dateien bleiben bis Yasin löscht) sind noindex und stehen NICHT drin. Jede neue indexierbare Seite → Sitemap + ggf. GSC-Neueinreichung (Yasin). verify.py gleicht beidseitig ab.
 
 ### §C3 · Schema = sichtbare Wahrheit [bewiesen]
 FAQ-Schema nur mit Fragen/Antworten, die sichtbar auf der Seite stehen. LocalBusiness/ProfessionalService auf der Startseite mit echtem NAP (Name, Adresse, +49-177-4476392). MobileApplication auf /usely (Preis 0 €). Alle JSON-LD-Blöcke müssen valides JSON sein (verify.py prüft).
@@ -110,7 +110,7 @@ Inhaltliche Änderungen an Impressum, Datenschutzerklärung oder EULA nur mit Ya
 | 11 Kunden-Preview-Seiten (index_*.html) im Repo: indexierbar (kein noindex), nicht im verify-Inventar, dem Brain bisher unbekannt | §C2 | **behoben 2026-07-19** — alle 11 auf noindex, PREVIEW_PAGES-Kategorie in verify.py (noindex + lang + Sitemap-Verbot), §A1-Scope ergänzt |
 | Geparkte Service-Seiten (10 Dateien) tragen noch Service-Copy, Calendly-CTAs im Body und hreflang-Trios; erreichbar per Direkt-URL | §A6/§C2 | offen (niedrig) — endgültiges Löschen ist Yasin-Gate; bis dahin noindex + orphan (2026-09-02) |
 | Vertrauliches Pitch-Deck `felgen-brillant.html` ("Vertraulich") ist per Direkt-URL öffentlich erreichbar (noindex/nofollow, von Yasin hochgeladen) | Governance 3 | offen (Yasin: bewusst?) |
-| Kunden-Previews + assets_02/ + more-produkt-berater.html wurden am 2026-09-02 außerhalb von Claude Code aus dem Arbeitsordner entfernt (liegen in webseiten-brain/03_Vorschau_beim_Kunden/), im Repo noch vorhanden | Governance 3 (Löschen = Yasin-Gate) | offen — Yasin committet die Löschung selbst oder gibt sie frei |
+| Kunden-Previews + assets_02/ + more-produkt-berater.html wurden am 2026-09-02 außerhalb von Claude Code aus dem Arbeitsordner entfernt (liegen in webseiten-brain/03_Vorschau_beim_Kunden/) | Governance 3 (Löschen = Yasin-Gate) | **erledigt 2026-09-02 durch Yasin selbst** (Web-Commits: alle index_*.html, assets_02/, buecher-cw, more-produkt-berater, yg-media-vision gelöscht); verify-Inventar nachgezogen |
 
 ## Änderungslog
 | Datum | Änderung |
