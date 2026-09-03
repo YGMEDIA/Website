@@ -52,6 +52,12 @@ Eine eigenständige, indexierbare Produkt-Website für USELY unter **https://use
 - **Splits (DE+EN):** 1 Rechnung RE-2026-0012 (Positionen, Netto, MwSt) · 2 Angebot AN-2026-0009 mit "Bereits umgewandelt" · 3 E-Rechnung-Menü XRechnung/ZUGFeRD · 4 Übersicht mit Jahreskurve · 5 NEU "Boards und Zeiten" (Board-Liste mit offenen Stunden) · 6 NEU "Kundenakte" (Sauer Bau GmbH). Assets `usely-app-*.webp`, 1080×2349, width/height gesetzt, konkrete Alt-Texte. Alte `usely-screen-*.webp` gelöscht.
 - **Verify:** grün (2 Seiten); DOM-Check 6/6 Bilder geladen. Protokoll: 05-protokoll/2026-09-03-dev-usely-screens-demo.md.
 
+## 3e. Nachtrag 2026-09-03 (Lighthouse-Feinschliff)
+- Fonts selbst gehostet (`assets/fonts/`, Variable Inter 300 bis 900 und Playfair Display Italic 500 bis 700, Latin-Subset, Preload, `font-display: swap`); keine Google-Fonts-Anfrage mehr.
+- Hero-Keyvisual 760 px mit `fetchpriority="high"`, Logos 96 px, Badge verlustfreies WebP mit width/height (§A5 unverändert), App-Screens 720 px.
+- Accessibility: Burger als `<button>` mit `aria-expanded`/`aria-controls`, dekorative Logo-Alts, Footer-Link unterstrichen.
+- Ergebnis: mobil 98 / 100 / 100 / 100, Desktop 99 / 100 / 100 / 100, EN mobil 97 / 100 / 100 / 100. Protokoll: 05-protokoll/2026-09-03-dev-usely-lighthouse.md.
+
 ## 4. Seitenstruktur (One-Pager, Reihenfolge = Verkaufslogik)
 | # | Sektion | Inhalt | Quelle |
 |---|---|---|---|

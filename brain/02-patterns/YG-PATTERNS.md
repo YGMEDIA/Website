@@ -75,6 +75,11 @@
 **Form:** Eigener Mandant in der Produktions-DB (RLS-isoliert: eigene company_id, eigene Membership), fiktive aber plausible Firma mit echten Umlauten, Historie über mehrere Monate, bezahlte, offene und überfällige Belege, Kette Angebot → Auftragsbestätigung → Rechnung. Daten gegen das **Client-Modell** bauen, nicht gegen das DB-Schema (nicht-optionale Felder des Decoders sind die Wahrheit; Fallback-Caches kaschieren Decoding-Fehler mit fremden Daten). Kennzahlen nach dem Laden gegen SQL-Summen prüfen. Aufnahme: Statusleiste per `simctl status_bar override` (9:41, voller Akku), `simctl io screenshot` in 3x (Punkte = Pixel/3), Sheets und Detail-Ansichten ohne Tab-Balken bevorzugen, Namen kurz genug für Listenzeilen, erst alle Screens erkunden, dann ein finaler Durchlauf. WebP 1080 breit, width/height im img, konkrete Alt-Texte, DE und EN im selben Paket. Zugangsdaten nie ins Repo.
 **Gesetze:** §A5 (nur echte Assets), §B1 (DE Master, EN im selben Paket). Herkunft: Protokoll 2026-09-03 screens-demo.
 
+## P-14 · Web-Vitals-Pattern (Lighthouse-Feinschliff)
+**Wann:** Jede neue Site vor dem ersten SEO-Paket, und jede Site einmal nach größeren Umbauten.
+**Form:** Messen mit `npx lighthouse@12 <live-url> --chrome-flags="--headless=new"` (mobil und `--preset=desktop`, DE und EN); die PageSpeed-API ohne Key drosselt sofort. Checkliste: (1) Schriften selbst hosten als Variable Fonts, Latin-Subset, `@font-face` mit Gewichtsbereich, `font-display: swap`, Preload mit `crossorigin`, keine Google-Fonts-Anfrage. (2) Bilder auf Anzeigegröße mal zwei, WebP, width/height im img, LCP-Bild `fetchpriority="high"`, Rest `loading="lazy"`; Badges verlustfrei (§A5). (3) Interaktive Elemente sind `<button>` mit `aria-expanded`/`aria-controls`, Logo-Bilder neben Wortmarke `alt=""`, Links im Fließtext unterstrichen. (4) Vor dem Push DOM-Check (`document.fonts`, Bildmaße, keine Fremd-Hosts), nach dem Deploy Nachmessung mit Vorher/Nachher-Tabelle im Protokoll. Nicht jagen: Cache-TTL auf GitHub Pages, Speed-Index-Anteil der Canvas-Animation (DNA).
+**Gesetze:** §A1 (DNA bleibt), §A5 (Badge), §B1 (DE und EN im selben Paket). Herkunft: Protokoll 2026-09-03 usely-lighthouse.
+
 ---
 
 ## Offen / noch zu definieren
@@ -82,4 +87,4 @@
 - Ratgeber-Pattern (Block H — /website-kosten als Vorlage, formalisieren beim zweiten Ratgeber)
 - Kampagnen-Landing-Pattern (falls K1 eigene Varianten braucht)
 
-*YG Pattern-Katalog v1.2 · 2026-09-03 (P-13 Demo-Mandant-Pattern)*
+*YG Pattern-Katalog v1.3 · 2026-09-03 (P-13 Demo-Mandant, P-14 Web-Vitals)*
