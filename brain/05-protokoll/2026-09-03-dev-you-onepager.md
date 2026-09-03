@@ -41,3 +41,6 @@ Yasin hat sich bei IONOS eingeloggt (kein Passwort durch Claude Code). Befund vo
 - Search Console: Sitemap eingereicht (erster Abruf scheiterte an Googles DNS-Negativ-Cache, zweite Einreichung wurde gelesen), Indexierung für / und /en/ beantragt.
 - Lighthouse auf der echten Domain: mobil DE 98 / 100 / 100 / 100 (FCP 1,1 s, LCP 1,9 s, CLS 0), Desktop 100 / 100 / 100 / 100, mobil EN 99 / 100 / 100 / 100. Offen bleiben nur Cache-TTL (GitHub Pages) und der Speed-Index-Anteil der Canvas-Animation.
 - Gelernt: Ein frisch angelegter Name kann bei Google und lokal noch als "existiert nicht" gecacht sein (Negativ-TTL 600 s). Lokale Prüfung sofort per `curl --resolve host:443:IP`, Lighthouse erst nach Ablauf des Caches (der `--host-resolver-rules`-Umweg scheitert an der Leerzeichen-Aufteilung von `--chrome-flags`).
+
+## Nachtrag: Funktionen vor die FAQ (2026-09-03, Yasin)
+Die Funktionen-Sektion steht jetzt am Ende der Seite, direkt vor der FAQ (Yasins Anweisung für beide Produktseiten). Reihenfolge YOU: Ablauf · Apps · Für wen · Free/Pro · Warum · Funktionen · FAQ · Warteliste. Nav-Links in der neuen Reihenfolge, DE und EN im selben Paket, verify grün.

@@ -37,3 +37,6 @@
 - Ein aufgelöstes Google-Ads-Konto liefert im Keyword-Planer nur Spannen (10-100, 100-1000, 1000-10000) und Artefakte wie "-90 % im Jahresvergleich". Für exakte Volumen bräuchte es eine aktive Kampagne (Geld = Yasin-Gate). Für eine Keyword-Entscheidung reichen die Spannen plus die Wettbewerbs-Spalte.
 - Das Klicken im Google-Konto-Umschalter kann eine bestehende Sitzung abmelden. Beim nächsten Mal: keine Konto-/Property-Wechsel anfassen, sondern direkt die Ziel-URL der Property aufrufen.
 - Neue Site, neues Gate: das Verify-Gate wurde um "Schema gleich sichtbar" erweitert (Preise und FAQ-Fragen müssen im Body stehen). Das gehört als Muster zurück in die YG-Patterns, sobald ein zweites Produkt eine eigene Site bekommt.
+
+## Nachtrag: Funktionen vor die FAQ (2026-09-03, Yasin)
+Die Funktionen-Sektion steht jetzt am Ende der Seite, direkt vor der FAQ (Yasins Anweisung für beide Produktseiten). Reihenfolge USELY: Kreislauf · Apps · Für wen · Preise · Warum · Funktionen · FAQ. Nav-Links in der neuen Reihenfolge, DE und EN im selben Paket, verify grün.
