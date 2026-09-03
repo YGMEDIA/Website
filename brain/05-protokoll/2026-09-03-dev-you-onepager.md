@@ -33,3 +33,11 @@
 - GA4-Property-Namen brauchen vier Zeichen; die Property-ID einer frisch angelegten Property steht am schnellsten in der GSC-Verknüpfungsliste.
 - Chrome-Fenster lassen sich per Extension nicht unter die Mindestbreite bringen; ein Iframe mit fester Breite liefert die mobile Ansicht zuverlässig.
 - Mit `scroll-behavior: smooth` müssen Screenshot-Skripte das Scrollen auf `instant` stellen, sonst fotografieren sie die alte Position.
+
+## Nachtrag: Domain live (2026-09-03, selbe Session)
+Yasin hat sich bei IONOS eingeloggt (kein Passwort durch Claude Code). Befund vorab: Auf allen vier IONOS-Nameservern gab es keinen Record am Namen `you`, die drei Subdomain-Einträge im IONOS-Portal sind karteikarten, updates und usely. Dann selbst durchgeführt:
+- Vier A-Records `you` → 185.199.108.153, .109.153, .110.153, .111.153 im DNS-Editor von yg-media.de angelegt (Formular blendet die automatische www-Vorschau bei Subdomain-Hostnamen aus, es entsteht nur `you`). Mail-Records `send.you` (MX, SPF) und `resend._domainkey.you` (DKIM) unberührt.
+- GitHub Pages: `cname=you.yg-media.de` per API gesetzt, Zertifikat nach 40 s `approved`, `https_enforced=true`. HTTP antwortet 301 auf HTTPS, TLS-Prüfung sauber, DE- und EN-Title live, Assets 200.
+- Search Console: Sitemap eingereicht (erster Abruf scheiterte an Googles DNS-Negativ-Cache, zweite Einreichung wurde gelesen), Indexierung für / und /en/ beantragt.
+- Lighthouse auf der echten Domain: mobil DE 98 / 100 / 100 / 100 (FCP 1,1 s, LCP 1,9 s, CLS 0), Desktop 100 / 100 / 100 / 100, mobil EN 99 / 100 / 100 / 100. Offen bleiben nur Cache-TTL (GitHub Pages) und der Speed-Index-Anteil der Canvas-Animation.
+- Gelernt: Ein frisch angelegter Name kann bei Google und lokal noch als "existiert nicht" gecacht sein (Negativ-TTL 600 s). Lokale Prüfung sofort per `curl --resolve host:443:IP`, Lighthouse erst nach Ablauf des Caches (der `--host-resolver-rules`-Umweg scheitert an der Leerzeichen-Aufteilung von `--chrome-flags`).

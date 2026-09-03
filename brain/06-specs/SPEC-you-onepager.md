@@ -26,7 +26,7 @@ Eigene, indexierbare Produktseite für YOU (Körper und Geist, iOS, YOU Band) in
 ## 3b. Umgesetzt am 2026-09-03
 - Repo `YGMEDIA/you-site` public, Pages über Actions, Testadresse https://ygmedia.github.io/you-site/, CNAME im Repo. DE+EN, verify grün, Glas-Prüfung mit Chrome-Aufnahmen (Desktop 1440, Mobil 390 per Iframe), zwei Befunde behoben.
 - GA4 Property "YOU App" (552723925), Webstream YOU (15714959808), Mess-ID G-KJMX0LSV2F. Search Console https://you.yg-media.de/ automatisch bestätigt, mit GA4 verknüpft.
-- Offen: IONOS-DNS (Yasin-Login), danach CNAME/HTTPS/Sitemap/Indexierung. App-Screens: Simulator-Build blockiert (Band-SDK nur arm64-Gerät), Entscheidung Option A/B in STATUS 0d. Platzhalter = Keyvisual in allen sechs Splits, Bildpfade final.
+- Domain live seit 2026-09-03 abends: vier A-Records bei IONOS, GitHub-CNAME, HTTPS erzwungen, Sitemap gelesen, Indexierung beantragt, Lighthouse live mobil 98 / Desktop 100 / EN 99. App-Screens: Simulator-Build blockiert (Band-SDK nur arm64-Gerät), Entscheidung Option A/B in STATUS 0d. Platzhalter = Keyvisual in allen sechs Splits, Bildpfade final.
 - Protokoll: 05-protokoll/2026-09-03-dev-you-onepager.md.
 
 ## 4. Gesetzes-Check
