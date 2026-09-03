@@ -14,7 +14,7 @@
 | `03-research/` | `keyword-strategie.md` (Destillat aus SEO-Konzept Rev. 4) · `raw/` (Ground Truth: GSC-Pakete, Keyword-Planner-Daten — unantastbar). | ✓ |
 | `04-loops/` | Selbstkontroll-Loops + `LOOP-STATE.md`. Jeder Lauf liest LOOP-STATE zuerst. Start: gsc-loop. Weitere Loops erst bei echtem Bedarf (Struktur folgt Substanz). | ✓ v1.0 |
 | `05-protokoll/` | Das Gedächtnis fürs Detail: datierte Einträge (dev/content/marketing/system) — WAS + WIE jeder Arbeit. | ✓ seit 2026-07-19 |
-| `06-specs/` | Größere Vorhaben nur nach freigegebenem Spec. | SPEC-produkt-positionierung (gebaut 2026-09-02) |
+| `06-specs/` | Größere Vorhaben nur nach freigegebenem Spec. | SPEC-produkt-positionierung (gebaut 2026-09-02) · SPEC-usely-onepager (Konzept 2026-09-03, wartet auf Hosting/Zugänge) |
 
 Außerhalb des Brains, gehört zum System: `/CLAUDE.md` (Einstieg für Claude Code, <200 Zeilen) · `/scripts/verify.py` (Pflicht-Gate) · `/.github/workflows/deploy.yml` (veröffentlicht die Site OHNE brain/, scripts/, CLAUDE.md — MUSS aktiviert werden, siehe STATUS Befund 1).
 

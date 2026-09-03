@@ -5,7 +5,7 @@
 > Lesereihenfolge für neue Sessions: INDEX.md → diese Datei → gezielt weiter.
 > Historie vor dem Brain (Juni bis 19.07.2026) ist unten als Kompakt-Archiv erhalten; Details liegen in den Chat-Verläufen und den Projektanweisungen v5.0.
 
-**Letzte Aktualisierung:** 2026-09-03 (Yasin-Feedback eingearbeitet: kein Investor-Claim, Felgen-Brillant-Karte visionär, Konzepte mit Adidas Vision Pro)
+**Letzte Aktualisierung:** 2026-09-03 (Feedback-Runde 1 live; Konzept USELY One-Pager als Spec angelegt)
 
 ---
 
@@ -37,7 +37,11 @@ Regel: Ein Todo steht an genau EINEM Ort; diese Tabelle verlinkt nur.
 
 ---
 
+## Laufendes Vorhaben: USELY One-Pager auf usely.yg-media.de (seit 2026-09-03)
+Spec `06-specs/SPEC-usely-onepager.md` (Konzept, 10 Schritte). Wartet auf Yasin: Hosting-Freigabe (Empfehlung GitHub-Pages-Repo `usely-site`), IONOS-CNAME, Keyword-Planner-Zugang, GA4-Stream, Web-App-Testkonto, Datenschutz-Absatz. Ohne Yasin baubar: Token-CSS, Seitengerüst, Copy, Simulator-Screenshots.
+
 ## Nächster geplanter Schritt (frische Session)
+0. **USELY One-Pager, Schritt 3 + 4** (Token-CSS, Gerüst, Copy) lokal starten, sobald Hosting entschieden ist; Spec-Abschnitt 9 abarbeiten, wenn Yasins Antworten da sind.
 1. **Live-Stichprobe nach Deploy** (Yasin oder Claude Code per curl): https://yg-media.de/ zeigt die Produkt-Startseite, /en/ die EN-Version, /website antwortet mit noindex, sitemap.xml hat 4 URLs.
 2. **Yasins Antworten einarbeiten:** Pitch-Deck-Erreichbarkeit (0c), GSC-Handgriffe (0a).
 3. **gsc-loop Lauf 2** mit dem ersten GSC-Paket nach dem Umbau (~2026-09-16): Indexierung der 4 URLs, Abgang der geparkten Seiten, CTR "usely" → ggf. Title/Description von /usely und /en/usely schärfen.
