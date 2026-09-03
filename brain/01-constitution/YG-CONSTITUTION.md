@@ -28,7 +28,7 @@ Logo immer aus echten Assets extrahieren (Keyvisual), NIE pixelweise umfärben �
 ### §A6 · Copy-Regeln [bewiesen]
 Professionelle Agentur-Tonalität, outcome-orientiert, erste Person Singular vermeiden (seit 2026-09-02 auch im Cookie-Text: "Diese Website nutzt Cookies…"). Kein VR-Content ohne echte Projekte, keine generischen Checklisten. Die USELY-Startseitenkarte beschreibt die APP (Belegkette mit Bezahllink, E-Rechnung XRechnung/ZUGFeRD, KI-Belegscan, Boards, Banking, DATEV, kostenlos startbar), die Macher-Story lebt nur auf /usely.
 **§A6.1 · Keine Person-Inszenierung (seit 2026-09-02):** Kein Portrait, kein "Über mich", keine Ich-Erzählung auf öffentlichen Seiten. Yasin Gündogdu erscheint nur als Inhaber im Unternehmens-Block, im Footer ("Unternehmen → Yasin Gündogdu"), in Kontakt/Impressum und im Schema (`founder`). Produkttexte beschreiben Produkte, nie den Macher.
-**§A6.2 · Quellen-Treue für Produkttexte:** Produktaussagen (Features, Status "live", Marken, Preise) stammen ausschließlich aus Yasins Quellen (Visionskonzept, Produktseiten, Uploads). Vertrauliche Dokumente (Pitch-Deck `felgen-brillant.html`) werden nie zitiert.
+**§A6.2 · Quellen-Treue für Produkttexte:** Produktaussagen (Features, Status "live", Marken, Preise) stammen ausschließlich aus Yasins Quellen (Visionskonzept, Produktseiten, Uploads). Vertrauliche Dokumente (Pitch-Deck `felgen-brillant.html`) werden nie zitiert. Felgen Brillant wird nie als Investor von USELY bezeichnet (Yasin, 2026-09-03), sondern als eigenes Mit-Aufbau-Projekt und Partner.
 
 ---
 

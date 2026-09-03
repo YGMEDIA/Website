@@ -44,5 +44,10 @@ www.yg-media.de bewirbt keine Dienstleistungen mehr. Die Site wird zur Informati
 - §C1–C4: Sitemap 4 URLs, Canonicals unverändert, Schema = sichtbare Wahrheit, keine toten Links.
 - §D: Rechtsseiten inhaltlich unverändert (nur Nav/Footer/Tagline).
 
+## Nachtrag 2026-09-03 (Yasin-Feedback)
+- Investor-Aussage zu Felgen Brillant entfernt; Karte neu als eigenes Mit-Aufbau-Projekt mit Robotik-Vision (Pulverbeschichtungsanlage), visionär formuliert.
+- Sektion "Konzepte und Studien" → "Konzepte" (Visionskonzepte, Richtung und Arbeitsweise); Derma-Studie raus, Adidas App Concept (Apple Vision Pro, Behance 209289491) rein, Asset `assets/concept-adidas-vision-pro.webp` aus Yasins `Adidas-Virtuell-Reality-App-1.png` (7680×4320 → 1600 breit).
+- Sitemap in GSC eingereicht (Yasin).
+
 ## Verify-Gate
 `python3 scripts/verify.py` grün (24 Seiten: 4 indexierbar + 10 geparkt + 6 legal + 4 intern; Previews per Glob). Zusätzlich: Sichtprüfung Desktop + Mobile im lokalen Server (Screenshots im Protokoll beschrieben).
