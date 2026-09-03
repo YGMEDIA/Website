@@ -70,6 +70,11 @@
 **Form:** `.github/workflows/deploy.yml` veröffentlicht die Site via Actions und schließt brain/, scripts/, CLAUDE.md, .claude/ aus. CNAME bleibt erhalten. Deploy = exakter Repo-Stand minus Ausschlussliste; nie Web-Upload-Deploys (SPC-Lektion: Web-Upload nimmt keine Dotfiles und erzeugt Zombie-Stände).
 **Gesetze:** Governance 5.
 
+## P-13 · Demo-Mandant-Pattern (Screens aus dem echten Produkt)
+**Wann:** Produkt-Screens für eine Website oder den App Store, die wie ein echtes Konto wirken sollen.
+**Form:** Eigener Mandant in der Produktions-DB (RLS-isoliert: eigene company_id, eigene Membership), fiktive aber plausible Firma mit echten Umlauten, Historie über mehrere Monate, bezahlte, offene und überfällige Belege, Kette Angebot → Auftragsbestätigung → Rechnung. Daten gegen das **Client-Modell** bauen, nicht gegen das DB-Schema (nicht-optionale Felder des Decoders sind die Wahrheit; Fallback-Caches kaschieren Decoding-Fehler mit fremden Daten). Kennzahlen nach dem Laden gegen SQL-Summen prüfen. Aufnahme: Statusleiste per `simctl status_bar override` (9:41, voller Akku), `simctl io screenshot` in 3x (Punkte = Pixel/3), Sheets und Detail-Ansichten ohne Tab-Balken bevorzugen, Namen kurz genug für Listenzeilen, erst alle Screens erkunden, dann ein finaler Durchlauf. WebP 1080 breit, width/height im img, konkrete Alt-Texte, DE und EN im selben Paket. Zugangsdaten nie ins Repo.
+**Gesetze:** §A5 (nur echte Assets), §B1 (DE Master, EN im selben Paket). Herkunft: Protokoll 2026-09-03 screens-demo.
+
 ---
 
 ## Offen / noch zu definieren
@@ -77,4 +82,4 @@
 - Ratgeber-Pattern (Block H — /website-kosten als Vorlage, formalisieren beim zweiten Ratgeber)
 - Kampagnen-Landing-Pattern (falls K1 eigene Varianten braucht)
 
-*YG Pattern-Katalog v1.1 · 2026-09-02 (P-11 Produkt-Karten, P-12 Nav-/Footer-Massenänderung)*
+*YG Pattern-Katalog v1.2 · 2026-09-03 (P-13 Demo-Mandant-Pattern)*

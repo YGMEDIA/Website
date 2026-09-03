@@ -44,6 +44,14 @@ Eine eigenständige, indexierbare Produkt-Website für USELY unter **https://use
 - **EN-Version:** `/en/index.html` mit eigenständiger Übersetzung aller 10 Sektionen, eigenem Title/Description, englischem SoftwareApplication- und FAQPage-Schema, hreflang-Trio auf beiden Seiten, Sprachwechsler DE/EN in der Nav, Rechtslinks auf die EN-Rechtsseiten von yg-media.de. Sitemap jetzt 2 URLs.
 - **verify.py erweitert:** prüft beide Seiten, hreflang-Trio, Sprachwechsler-Ziel, deutsche Reste im sichtbaren EN-Text und akzeptiert im Schema-Abgleich beide Preis-Schreibweisen (9,99 und 9.99). Der Komma-Punkt-Fall war ein echter Fund des Gates.
 
+## 3d. Nachtrag 2026-09-03 (dritte Runde: Hero-Logo, 24 Funktionen, Demo-Mandant, Simulator-Screens)
+- **Hero:** Keyvisual (Glas-U, `usely-keyvisual.webp`, quadratisch, max. 380 px) statt Onboarding-Screen. Entscheidung Yasin.
+- **FAQ:** Unterzeile "Was sonst noch offen ist: info@yg-media.de" entfernt (DE+EN).
+- **Funktionen:** 24 Karten statt 8 (Boards, Zeiten erfassen und abrechnen, Team und Rollen, Steuerberater-Zugang, Benachrichtigungen, Aktivitätsprotokoll, Kundenakte, Leads, Daten übernehmen, Echtzeit, Deutsch und Englisch), Untertitel "Alles unten ist gebaut und nutzbar, nichts davon ist angekündigt." Schema `featureList` synchron. Regel: nur Gebautes, kein Roadmap-Feature.
+- **Demo-Mandant statt Onboarding-Screens:** Screens kommen aus einem echten Konto in der USELY-Produktions-DB (RLS-isoliert), Firma Weber Elektrotechnik e. K. Zugangsdaten stehen nicht im Repo (öffentlich).
+- **Splits (DE+EN):** 1 Rechnung RE-2026-0012 (Positionen, Netto, MwSt) · 2 Angebot AN-2026-0009 mit "Bereits umgewandelt" · 3 E-Rechnung-Menü XRechnung/ZUGFeRD · 4 Übersicht mit Jahreskurve · 5 NEU "Boards und Zeiten" (Board-Liste mit offenen Stunden) · 6 NEU "Kundenakte" (Sauer Bau GmbH). Assets `usely-app-*.webp`, 1080×2349, width/height gesetzt, konkrete Alt-Texte. Alte `usely-screen-*.webp` gelöscht.
+- **Verify:** grün (2 Seiten); DOM-Check 6/6 Bilder geladen. Protokoll: 05-protokoll/2026-09-03-dev-usely-screens-demo.md.
+
 ## 4. Seitenstruktur (One-Pager, Reihenfolge = Verkaufslogik)
 | # | Sektion | Inhalt | Quelle |
 |---|---|---|---|
