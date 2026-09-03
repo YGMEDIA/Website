@@ -1,6 +1,6 @@
 # SPEC · USELY One-Pager auf usely.yg-media.de
 
-> Status: **Konzept, wartet auf Yasins Hosting-/Zugangs-Entscheidungen (Abschnitt 9)** · angelegt 2026-09-03 · Auftrag: Yasins Nachricht vom 2026-09-03 (eigene USELY-Website auf der Subdomain, indexierbar, mit Analytics, gleiche Handschrift wie yg-media.de, One-Pager reicht, SEO-optimiert, Konzept zuerst, dann Stück für Stück).
+> Status: **Schritte 1 bis 4, 6 und 8 gebaut (2026-09-03), live auf ygmedia.github.io/usely-site; wartet auf DNS + GA4-ID (Abschnitt 9)** · angelegt 2026-09-03 · Auftrag: Yasins Nachricht vom 2026-09-03 (eigene USELY-Website auf der Subdomain, indexierbar, mit Analytics, gleiche Handschrift wie yg-media.de, One-Pager reicht, SEO-optimiert, Konzept zuerst, dann Stück für Stück).
 
 ## 1. Ziel
 Eine eigenständige, indexierbare Produkt-Website für USELY unter **https://usely.yg-media.de**, die (a) für generische Buchhaltungs-/Rechnungs-Keywords ranken kann, (b) App-Store-Downloads und Web-App-Registrierungen erzeugt und (c) messbar ist (GA4, consent-gated). Ein One-Pager in der YG-Handschrift (dunkel, Glass-Cards, Orbs, Grid, Grain), aber in USELY-Farben.
@@ -27,6 +27,14 @@ Eine eigenständige, indexierbare Produkt-Website für USELY unter **https://use
 6. **Rechtstexte:** Impressum/Datenschutz/EULA werden NICHT dupliziert, sondern auf yg-media.de/impressum, /datenschutz und /nutzungsbedingungen verlinkt (gleicher Betreiber). Voraussetzung: die Datenschutzerklärung muss die Subdomain und den GA4-Stream abdecken (Rechtstext = Yasin-Gate, Abschnitt 9).
 7. **Analytics:** GA4 consent-gated wie yg-media.de (Cookie-Banner, `usely_cookie_consent`), eigener Datenstream. Events: App-Store-Klick, Web-App-Klick, Pro-Sektion gesehen, FAQ geöffnet.
 8. **Screenshots:** iPhone-Screens frisch aus dem Simulator (Build 5 / v1.2, Liquid-Glass-Design) via `~/Desktop/USELY` (Yasin hat den Simulator freigegeben); Web-App-Screens im Browser mit einem Testkonto (Yasin liefert Zugang) oder als Upload von Yasin. Bis dahin die 7 vorhandenen WebPs als Platzhalter mit identischen Dateinamen, damit der Austausch kein HTML anfasst.
+
+## 3b. Umgesetzt am 2026-09-03
+- **Repo:** `YGMEDIA/usely-site` (public), Actions-Deploy aktiv (build_type=workflow, API-bestätigt), Live-Testadresse https://ygmedia.github.io/usely-site/ (HTTP 200, Assets 200, `scripts/` 404 = Deploy-Schutz greift). `CNAME` = usely.yg-media.de liegt im Repo; die Custom-Domain lässt sich erst setzen, wenn die DNS zeigt (API-Antwort "The certificate does not exist yet").
+- **Keyword-Recherche gelaufen** (Keyword-Planer, Rohnotiz `03-research/raw/keywords/2026-09-03-keyword-planner-usely.md`). Entscheidung: Primär **"Rechnungs App für Selbstständige"** (Cluster rechnungs app / rechnungsapp / rechnung schreiben app, 100-1000 mit dem einzigen "Mittel"-Wettbewerb der ganzen Liste = die gewinnbare Nische, deckungsgleich mit USELYs Mobile-first-Positionierung). Sekundär im Text: buchhaltungs app, rechnungsprogramm kleinunternehmer, kleinunternehmer rechnung schreiben, e-rechnung erstellen, xrechnung, zugferd (+900 % Trend), eür, belege scannen app. Bewusst NICHT als Hauptziel: buchhaltungssoftware und rechnungsprogramm (1000-10000, Gebote bis 41 €, Platzhirsch-Terrain).
+- **Titel:** "USELY | Rechnungs App für Selbstständige und Kleinunternehmer" (59 Zeichen), H1 "Die Rechnungs App für Selbstständige. Kalkulieren. Abrechnen. Fertig."
+- **Seite:** 10 Sektionen wie in Abschnitt 4 geplant, gebaut mit den USELY-Tokens (#1DDEB4 auf #18181E) in der YG-DNA (Canvas-Partikel, 4 Orbs, Grid, Grain, Glass-Cards, Reveal). Vier Split-Sektionen mit echten App-Screens.
+- **Verify-Gate:** eigenes `scripts/verify.py` im usely-site-Repo, grün. Prüft zusätzlich zum YG-Gate: Title-/Description-Länge, Anker-Ziele, und dass Schema-Preise und FAQ-Fragen sichtbar auf der Seite stehen (§C3 maschinell).
+- **Offen:** GA4-Mess-ID (`const GA_ID = ''` im Consent-Block, ohne ID lädt nichts), IONOS-CNAME, GSC-Property, EN-Version, frische Screenshots aus dem Simulator (v1.2 mit Boards und Bezahllink).
 
 ## 4. Seitenstruktur (One-Pager, Reihenfolge = Verkaufslogik)
 | # | Sektion | Inhalt | Quelle |
@@ -69,11 +77,11 @@ Werkzeuge: Google Keyword Planner (Zugang von Yasin) und GSC-Query-Daten (yg-med
 ## 8. Gesetzes-Check (YG-Constitution, sinngemäß auf die Subdomain übertragen)
 §A1 DNA vollständig (eigene Nav: Features · Preise · FAQ · App laden) · §A2 keine Em-Dashes · §A4 keine aspect-ratio auf Bildspalten · §A5 App-Store-Badge unverändert, Logo aus Original · §A6 keine erste Person, keine Person-Inszenierung, keine Investor-Aussage · §C1 ein Keyword-Ziel, kein Doppel mit yg-media.de/usely · §C3 Schema = sichtbare Wahrheit · §D2 Rechtsseiten verlinkt, nicht dupliziert · §D3 Consent vor Tracking.
 
-## 9. Braucht Yasin (vor Schritt 1 bzw. 2)
-1. **Hosting-Freigabe:** GitHub-Pages-Repo `YGMEDIA/usely-site` (Empfehlung) oder Vercel wie Paukbox? Bei GitHub: darf Claude Code das Repo per `gh repo create` anlegen?
-2. **IONOS-DNS:** CNAME `usely` → `ygmedia.github.io` setzen (den A-Record 217.160.0.244 entfernen). Danach in den Repo-Settings Custom Domain + Enforce HTTPS.
-3. **Keyword-Planner:** Zugang (Google-Ads-Konto) oder Screenshots der Kandidatenliste aus Abschnitt 6.
-4. **GA4:** neuer Datenstream "USELY Website" (Measurement-ID) in der bestehenden Property oder neue Property.
+## 9. Braucht Yasin (Stand 2026-09-03, nach dem Bau)
+1. ~~Hosting-Freigabe~~ **erledigt** (Yasin: Hosting über Git). Repo `YGMEDIA/usely-site` angelegt, Pages auf Actions, erster Deploy grün.
+2. **IONOS-DNS (Blocker für die Domain):** CNAME `usely` → `ygmedia.github.io` setzen, den A-Record 217.160.0.244 entfernen. Danach setzt Claude Code die Custom Domain per API und aktiviert HTTPS; heute schlägt das mit "certificate does not exist yet" fehl, weil die DNS noch auf IONOS zeigt.
+3. ~~Keyword-Planer~~ **erledigt** (2026-09-03 selbst durchgegangen, Rohnotiz im Brain).
+4. **GA4 (Blocker fürs Tracking):** Die Google-Sitzung in Chrome meldete sich beim Property-Wechsel ab; Passwörter gibt Claude Code nicht ein. Yasin: einloggen, Datenstream "USELY Website" für https://usely.yg-media.de anlegen, Mess-ID durchgeben. Sie kommt in `const GA_ID = ''`; Consent-Gate und Events (app_store_klick, web_app_klick, faq_open) stehen bereits.
 5. **Web-App:** Testkonto für Screenshots, und: soll die Web-App später eine eigene Domain bekommen (z. B. app.usely.yg-media.de)? Bis dahin verlinkt der One-Pager usely-4lt.pages.dev.
 6. **Datenschutzerklärung:** Absatz für usely.yg-media.de (Hosting GitHub Pages, GA4-Stream) ergänzen lassen (Rechtstext-Gate).
 7. **Screenshots:** falls du lieber selbst lieferst: 6 iPhone-Screens (Übersicht, Kalkulation, Belegkette/Belegdetail, Boards, Ausgaben/Belegscan, Bezahllink) und 2 Web-Screens (Dashboard, Belegliste), PNG in Originalauflösung.
