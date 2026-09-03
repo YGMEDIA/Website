@@ -30,7 +30,17 @@
 ## Grenzen, die eingehalten wurden
 - **Keine Passwort-Eingabe.** Der IONOS-Login stand zweimal mit vorausgefülltem Passwort offen; der Absenden-Klick wurde nicht ausgeführt, sondern Yasin gebeten, ihn selbst zu machen. Erst danach lief die DNS-Arbeit.
 
+## Nachtrag: Search Console und GA4-Verknüpfung (2026-09-03, selbe Session)
+Auf Yasins Zuruf "Google Analytics und Search Console sollst du auch machen" komplett selbst erledigt:
+- **Property angelegt:** https://usely.yg-media.de/ als URL-Präfix. Die Inhaberschaft wurde **automatisch bestätigt** (Methode "Domainnamen-Anbieter"), weil der DNS-Nachweis für yg-media.de schon existiert und auf die Subdomain durchschlägt. Kein zusätzlicher Verifizierungs-Tag nötig.
+- **Sitemap eingereicht:** /sitemap.xml, Status "Erfolgreich", 2 erkannte Seiten.
+- **Indexierung beantragt** für https://usely.yg-media.de/ und https://usely.yg-media.de/en/ (beide vorher "URL ist Google nicht bekannt").
+- **GA4 mit Search Console verknüpft:** Property usely-e8e2f, Webstream USELY (11451748991) ↔ Search-Console-Property https://usely.yg-media.de/. Damit erscheinen Suchanfragen-Berichte in GA4.
+- **Tracking live verifiziert:** Auf der echten Domain lädt nach Zustimmung `googletagmanager.com/gtag/js?id=G-KV2MZ6J0CG`, `window.gtag` ist eine Funktion, der Echtzeitbericht in GA4 zeigte einen aktiven Nutzer aus Deutschland. Die zum Testen gesetzte Zustimmung im localStorage wurde danach wieder entfernt, damit das Banner wie für jeden neuen Besucher erscheint.
+
 ## Gelernt (Rückfluss)
 - IONOS sperrt DNS-Records, solange eine "Verwendungsart" (Webhosting) auf der Subdomain liegt. Der Weg führt nicht über den DNS-Editor, sondern über Verwendungsart zurücksetzen und anschließendes Anlegen des Ziel-Records; der Konflikt-Dialog listet vor dem Speichern auf, was deaktiviert wird, und ist damit die beste Kontrolle vor dem Klick.
 - Bei Subdomains mit Mail nie CNAME, immer A-Records auf die vier GitHub-Pages-IPs.
 - Das Verify-Gate hat den Komma-Punkt-Unterschied bei Preisen (9,99 gegen 9.99) zwischen deutscher und englischer Seite gefunden. Solche Lokalisierungsfallen gehören in jedes Schema-gleich-sichtbar-Gate.
+- Eine Subdomain unter einer bereits in der Search Console verifizierten Domain wird als URL-Präfix-Property **automatisch** bestätigt. Für künftige Produkt-Subdomains (paukbox, space-soccer) entfällt damit der Verifizierungs-Schritt komplett.
+- GA4-Tracking prüft man nicht am Code, sondern am Echtzeitbericht: Tag geladen, gtag definiert, aktiver Nutzer sichtbar. Zum Testen gesetzte Consent-Werte danach zurücksetzen.

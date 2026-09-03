@@ -5,7 +5,7 @@
 > Lesereihenfolge für neue Sessions: INDEX.md → diese Datei → gezielt weiter.
 > Historie vor dem Brain (Juni bis 19.07.2026) ist unten als Kompakt-Archiv erhalten; Details liegen in den Chat-Verläufen und den Projektanweisungen v5.0.
 
-**Letzte Aktualisierung:** 2026-09-03 (USELY One-Pager live auf der eigenen Domain, GA4 verbunden, Design auf echtes Schwarz, EN-Version)
+**Letzte Aktualisierung:** 2026-09-03 (USELY live auf eigener Domain; GA4 und Search Console eingerichtet und verifiziert)
 
 ---
 
@@ -40,10 +40,11 @@ Regel: Ein Todo steht an genau EINEM Ort; diese Tabelle verlinkt nur.
 ## Laufendes Vorhaben: USELY One-Pager auf usely.yg-media.de (seit 2026-09-03)
 **Gebaut und deployt am 2026-09-03.** Eigenes Repo `YGMEDIA/usely-site` (public, Pages auf Actions), Seite live auf https://ygmedia.github.io/usely-site/, eigenes verify-Gate grün. Ziel-Keyword nach eigener Keyword-Planer-Recherche: "Rechnungs App für Selbstständige" (Rohnotiz `03-research/raw/keywords/2026-09-03-keyword-planner-usely.md`). Spec `06-specs/SPEC-usely-onepager.md` Abschnitt 3b, Protokoll `05-protokoll/2026-09-03-dev-usely-onepager.md`.
 **Stand 2026-09-03 abends:** Domain verbunden (vier GitHub-A-Records bei IONOS, Zertifikat approved, HTTPS erzwungen), GA4 angeschlossen (Mess-ID G-KV2MZ6J0CG, vorhandener Webstream auf usely.yg-media.de gesetzt), Design auf echtes Schwarz gezogen (#050507 statt #18181E; App-Tokens bleiben), EN-Version unter /en/ mit hreflang-Trio und Sprachwechsler, Sitemap 2 URLs, verify grün. Protokoll: 05-protokoll/2026-09-03-dev-usely-domain-analytics-dark.md.
-**Offen:** GSC-Property anlegen und Sitemap einreichen, frische Simulator-Screenshots (v1.2 mit Boards und Bezahllink), Datenschutz-Absatz für die Subdomain (Rechtstext = Yasin).
+**Search Console + GA4 fertig (2026-09-03):** Property https://usely.yg-media.de/ angelegt (Inhaberschaft automatisch über den DNS-Nachweis von yg-media.de bestätigt), Sitemap eingereicht und erfolgreich gelesen (2 Seiten), Indexierung für / und /en/ beantragt, GA4 mit der Search Console verknüpft, Tracking im Echtzeitbericht verifiziert.
+**Offen:** frische Simulator-Screenshots (v1.2 mit Boards und Bezahllink), Datenschutz-Absatz für die Subdomain (Rechtstext = Yasin).
 
 ## Nächster geplanter Schritt (frische Session)
-0. **USELY One-Pager:** Live-Check sobald die DNS-TTL durch ist (https://usely.yg-media.de und /en/), dann GSC-Property anlegen und die Sitemap (2 URLs) einreichen. Danach frische Simulator-Screenshots aus v1.2 und Lighthouse-Feinschliff.
+0. **USELY One-Pager:** frische Simulator-Screenshots aus v1.2 (Boards, Bezahllink, Banking) statt der Onboarding-Bilder, danach Lighthouse-Feinschliff. In etwa zwei Wochen erste GSC-Zahlen für usely.yg-media.de auswerten.
 1. **Live-Stichprobe nach Deploy** (Yasin oder Claude Code per curl): https://yg-media.de/ zeigt die Produkt-Startseite, /en/ die EN-Version, /website antwortet mit noindex, sitemap.xml hat 4 URLs.
 2. **Yasins Antworten einarbeiten:** Pitch-Deck-Erreichbarkeit (0c), GSC-Handgriffe (0a).
 3. **gsc-loop Lauf 2** mit dem ersten GSC-Paket nach dem Umbau (~2026-09-16): Indexierung der 4 URLs, Abgang der geparkten Seiten, CTR "usely" → ggf. Title/Description von /usely und /en/usely schärfen.
@@ -57,7 +58,7 @@ Regel: Ein Todo steht an genau EINEM Ort; diese Tabelle verlinkt nur.
 0b. **Visionskonzept:** /yg-media-vision wurde von Yasin gelöscht (2026-09-02); der Inhalt ist als Quelle im Spec/Protokoll gesichert. Falls es wieder online soll: Datei zurück ins Repo + INTERNAL_PAGES in verify.py.
 0b1. ~~IONOS-DNS für USELY~~ **erledigt 2026-09-03**: vier GitHub-A-Records gesetzt, Parkeinträge weg, Mail unberührt, GitHub-Zertifikat und HTTPS aktiv.
 0b2. ~~GA4~~ **erledigt 2026-09-03**: Mess-ID G-KV2MZ6J0CG, vorhandener Webstream auf usely.yg-media.de gesetzt.
-0b3. **Search Console für USELY:** Property https://usely.yg-media.de anlegen und die Sitemap https://usely.yg-media.de/sitemap.xml einreichen.
+0b3. ~~Search Console für USELY~~ **erledigt 2026-09-03** (Property, Sitemap, Indexierungsanträge, GA4-Verknüpfung).
 0b4. **Datenschutz für die Subdomain:** Absatz für usely.yg-media.de (Hosting GitHub Pages, GA4-Stream G-KV2MZ6J0CG) aufnehmen lassen. Rechtstext = Yasin-Gate.
 0c. **Pitch-Deck:** /felgen-brillant ("Vertraulich") ist per Direkt-URL öffentlich erreichbar (noindex/nofollow). Bewusst so, oder in ein privates Repo?
 1. **GitHub-Plan-Entscheidung:** Pro (4 $/Monat, Repo privat; Reihenfolge: Upgrade → privat → Settings/Pages prüfen → Domain verifizieren) ODER öffentlich lassen + buecher-cw/more-produkt-berater/pdfs in separates privates Repo.

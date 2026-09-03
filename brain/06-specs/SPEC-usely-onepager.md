@@ -34,7 +34,7 @@ Eine eigenständige, indexierbare Produkt-Website für USELY unter **https://use
 - **Titel:** "USELY | Rechnungs App für Selbstständige und Kleinunternehmer" (59 Zeichen), H1 "Die Rechnungs App für Selbstständige. Kalkulieren. Abrechnen. Fertig."
 - **Seite:** 10 Sektionen wie in Abschnitt 4 geplant, gebaut mit den USELY-Tokens (#1DDEB4 auf #18181E) in der YG-DNA (Canvas-Partikel, 4 Orbs, Grid, Grain, Glass-Cards, Reveal). Vier Split-Sektionen mit echten App-Screens.
 - **Verify-Gate:** eigenes `scripts/verify.py` im usely-site-Repo, grün. Prüft zusätzlich zum YG-Gate: Title-/Description-Länge, Anker-Ziele, und dass Schema-Preise und FAQ-Fragen sichtbar auf der Seite stehen (§C3 maschinell).
-- **Offen:** GSC-Property, frische Screenshots aus dem Simulator (v1.2 mit Boards und Bezahllink).
+- **Offen:** frische Screenshots aus dem Simulator (v1.2 mit Boards und Bezahllink), Datenschutz-Absatz für die Subdomain (Rechtstext = Yasin).
 
 ## 3c. Nachtrag 2026-09-03 (zweite Runde: Domain, Analytics, Dunkelheit, EN)
 - **Design dunkler (Yasin: "das Schwarz ist zu abgeblichen"):** Website-Tokens von #18181E auf **#050507 / #0A0A0D / #0E0E12** gezogen, Orbs von 0,16-0,38 auf 0,055-0,17 Deckkraft, Grid und Grain feiner, Split-Bildflächen und CTA-Glow zurückgenommen, Nav/Footer/Cookie auf den dunklen Grund. **Die App-Tokens in `design-tokens/tokens.json` bleiben unverändert** (#18181E ist die App-Wahrheit); die Website fährt bewusst dunkler. Im HTML als Kommentar vermerkt.
@@ -89,6 +89,7 @@ Werkzeuge: Google Keyword Planner (Zugang von Yasin) und GSC-Query-Daten (yg-med
 1. ~~Hosting-Freigabe~~ **erledigt** (Yasin: Hosting über Git). Repo `YGMEDIA/usely-site` angelegt, Pages auf Actions, erster Deploy grün.
 2. ~~IONOS-DNS~~ **erledigt 2026-09-03** (Yasin hat sich eingeloggt, Claude Code hat die Records gesetzt): vier A-Records auf die GitHub-Pages-IPs, Parkeinträge weg, Mail unberührt, Custom Domain + HTTPS auf GitHub aktiv.
 3. ~~Keyword-Planer~~ **erledigt** (2026-09-03 selbst durchgegangen, Rohnotiz im Brain).
+3a. ~~Search Console~~ **erledigt 2026-09-03**: Property https://usely.yg-media.de/ als URL-Präfix angelegt, Inhaberschaft automatisch über den Domainnamen-Anbieter bestätigt (der bestehende DNS-Nachweis auf yg-media.de greift), Sitemap eingereicht und erfolgreich gelesen (2 Seiten erkannt), Indexierung für / und /en/ beantragt, GA4-Property mit der Search-Console-Property verknüpft.
 4. ~~GA4~~ **erledigt 2026-09-03**: vorhandener Webstream auf usely.yg-media.de gesetzt, Mess-ID G-KV2MZ6J0CG in beiden Seiten.
 5. **Web-App:** Testkonto für Screenshots, und: soll die Web-App später eine eigene Domain bekommen (z. B. app.usely.yg-media.de)? Bis dahin verlinkt der One-Pager usely-4lt.pages.dev.
 6. **Datenschutzerklärung:** Absatz für usely.yg-media.de (Hosting GitHub Pages, GA4-Stream) ergänzen lassen (Rechtstext-Gate).
