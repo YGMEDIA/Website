@@ -34,7 +34,15 @@ Eine eigenständige, indexierbare Produkt-Website für USELY unter **https://use
 - **Titel:** "USELY | Rechnungs App für Selbstständige und Kleinunternehmer" (59 Zeichen), H1 "Die Rechnungs App für Selbstständige. Kalkulieren. Abrechnen. Fertig."
 - **Seite:** 10 Sektionen wie in Abschnitt 4 geplant, gebaut mit den USELY-Tokens (#1DDEB4 auf #18181E) in der YG-DNA (Canvas-Partikel, 4 Orbs, Grid, Grain, Glass-Cards, Reveal). Vier Split-Sektionen mit echten App-Screens.
 - **Verify-Gate:** eigenes `scripts/verify.py` im usely-site-Repo, grün. Prüft zusätzlich zum YG-Gate: Title-/Description-Länge, Anker-Ziele, und dass Schema-Preise und FAQ-Fragen sichtbar auf der Seite stehen (§C3 maschinell).
-- **Offen:** GA4-Mess-ID (`const GA_ID = ''` im Consent-Block, ohne ID lädt nichts), IONOS-CNAME, GSC-Property, EN-Version, frische Screenshots aus dem Simulator (v1.2 mit Boards und Bezahllink).
+- **Offen:** GSC-Property, frische Screenshots aus dem Simulator (v1.2 mit Boards und Bezahllink).
+
+## 3c. Nachtrag 2026-09-03 (zweite Runde: Domain, Analytics, Dunkelheit, EN)
+- **Design dunkler (Yasin: "das Schwarz ist zu abgeblichen"):** Website-Tokens von #18181E auf **#050507 / #0A0A0D / #0E0E12** gezogen, Orbs von 0,16-0,38 auf 0,055-0,17 Deckkraft, Grid und Grain feiner, Split-Bildflächen und CTA-Glow zurückgenommen, Nav/Footer/Cookie auf den dunklen Grund. **Die App-Tokens in `design-tokens/tokens.json` bleiben unverändert** (#18181E ist die App-Wahrheit); die Website fährt bewusst dunkler. Im HTML als Kommentar vermerkt.
+- **GA4 verbunden:** Property `usely-e8e2f` (132689100/495780467) hatte bereits einen ungenutzten Webstream "USELY" (ID 11451748991) ohne URL. Statt eines zweiten Streams (Google warnt ausdrücklich vor inkonsistenten Ergebnissen bei mehreren Webstreams) wurde dessen Stream-URL auf https://usely.yg-media.de gesetzt. **Mess-ID G-KV2MZ6J0CG** steht in `const GA_ID` der DE- und EN-Seite; Consent-Gate und Events (app_store_klick, web_app_klick, faq_open) waren schon verdrahtet.
+- **Domain verbunden (IONOS + GitHub):** Die Subdomain war an das IONOS-Webhosting gebunden, deshalb waren die A/AAAA-Records gesperrt. Weg: Subdomain-Verwendungsart "Webhosting" zurückgesetzt, dann A-Record `usely` → 185.199.108.153 angelegt; IONOS meldete den Konflikt und deaktivierte dabei genau die Parkeinträge (A/AAAA usely, A/AAAA www.usely, TXT _dep_ws_mutex.usely). Danach die drei weiteren GitHub-IPs (.109/.110/.111) ergänzt. **Kein CNAME**, weil an `usely` MX- und SPF-Records für Mail hängen und ein CNAME dort DNS-ungültig wäre. Mail (MX mx00/mx01.ionos.de, SPF, DKIM, send.usely über Amazon SES) blieb unangetastet und wurde nach jedem Schritt per dig geprüft.
+- **GitHub Pages:** `cname=usely.yg-media.de` gesetzt, Zertifikat ausgestellt (state approved), `https_enforced=true`. Öffentliche Resolver liefern wegen TTL 3600 noch bis zu eine Stunde die alte IP.
+- **EN-Version:** `/en/index.html` mit eigenständiger Übersetzung aller 10 Sektionen, eigenem Title/Description, englischem SoftwareApplication- und FAQPage-Schema, hreflang-Trio auf beiden Seiten, Sprachwechsler DE/EN in der Nav, Rechtslinks auf die EN-Rechtsseiten von yg-media.de. Sitemap jetzt 2 URLs.
+- **verify.py erweitert:** prüft beide Seiten, hreflang-Trio, Sprachwechsler-Ziel, deutsche Reste im sichtbaren EN-Text und akzeptiert im Schema-Abgleich beide Preis-Schreibweisen (9,99 und 9.99). Der Komma-Punkt-Fall war ein echter Fund des Gates.
 
 ## 4. Seitenstruktur (One-Pager, Reihenfolge = Verkaufslogik)
 | # | Sektion | Inhalt | Quelle |
@@ -79,9 +87,9 @@ Werkzeuge: Google Keyword Planner (Zugang von Yasin) und GSC-Query-Daten (yg-med
 
 ## 9. Braucht Yasin (Stand 2026-09-03, nach dem Bau)
 1. ~~Hosting-Freigabe~~ **erledigt** (Yasin: Hosting über Git). Repo `YGMEDIA/usely-site` angelegt, Pages auf Actions, erster Deploy grün.
-2. **IONOS-DNS (Blocker für die Domain):** CNAME `usely` → `ygmedia.github.io` setzen, den A-Record 217.160.0.244 entfernen. Danach setzt Claude Code die Custom Domain per API und aktiviert HTTPS; heute schlägt das mit "certificate does not exist yet" fehl, weil die DNS noch auf IONOS zeigt.
+2. ~~IONOS-DNS~~ **erledigt 2026-09-03** (Yasin hat sich eingeloggt, Claude Code hat die Records gesetzt): vier A-Records auf die GitHub-Pages-IPs, Parkeinträge weg, Mail unberührt, Custom Domain + HTTPS auf GitHub aktiv.
 3. ~~Keyword-Planer~~ **erledigt** (2026-09-03 selbst durchgegangen, Rohnotiz im Brain).
-4. **GA4 (Blocker fürs Tracking):** Die Google-Sitzung in Chrome meldete sich beim Property-Wechsel ab; Passwörter gibt Claude Code nicht ein. Yasin: einloggen, Datenstream "USELY Website" für https://usely.yg-media.de anlegen, Mess-ID durchgeben. Sie kommt in `const GA_ID = ''`; Consent-Gate und Events (app_store_klick, web_app_klick, faq_open) stehen bereits.
+4. ~~GA4~~ **erledigt 2026-09-03**: vorhandener Webstream auf usely.yg-media.de gesetzt, Mess-ID G-KV2MZ6J0CG in beiden Seiten.
 5. **Web-App:** Testkonto für Screenshots, und: soll die Web-App später eine eigene Domain bekommen (z. B. app.usely.yg-media.de)? Bis dahin verlinkt der One-Pager usely-4lt.pages.dev.
 6. **Datenschutzerklärung:** Absatz für usely.yg-media.de (Hosting GitHub Pages, GA4-Stream) ergänzen lassen (Rechtstext-Gate).
 7. **Screenshots:** falls du lieber selbst lieferst: 6 iPhone-Screens (Übersicht, Kalkulation, Belegkette/Belegdetail, Boards, Ausgaben/Belegscan, Bezahllink) und 2 Web-Screens (Dashboard, Belegliste), PNG in Originalauflösung.
