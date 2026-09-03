@@ -51,7 +51,7 @@ Regel: Ein Todo steht an genau EINEM Ort; diese Tabelle verlinkt nur.
 **Offen:** App-Screens (der YOU-Stand baut nicht für den Simulator, Band-SDK nur arm64-Gerät, Entscheidung Yasin 0d), Datenschutz-Absatz (0b4), Preise nach S4 (0c2). Bis dahin Keyvisual-Platzhalter in den sechs Splits.
 
 ## Nächster geplanter Schritt (frische Session)
-00. **YOU One-Pager:** App-Screens nach Yasins Entscheidung (0d) einbauen und die sechs Splits tauschen; in etwa zwei Wochen erste GSC-Zahlen für you.yg-media.de. Startseite yg-media.de: YOU-Karte auf https://you.yg-media.de verlinken (bisher nur Behance), DE+EN, P-11.
+00. **YOU One-Pager:** App-Screens nach Yasins Entscheidung (0d) einbauen und die sechs Splits tauschen; in etwa zwei Wochen erste GSC-Zahlen für you.yg-media.de. (YOU-Karte der Startseite verlinkt seit 2026-09-03 auf https://you.yg-media.de, DE+EN, Commit 461944b.)
 0. **yg-media.de Web-Vitals-Runde nach P-14:** Google Fonts auf allen 21 Seiten selbst hosten (gleiche zwei Familien?), Hero-Bilder auf Anzeigegröße, Burger als Button, Logo-Alts. Vorher Lighthouse-Baseline mobil/desktop für / und /usely messen (npx lighthouse@12, nicht PSI-API). Autonom, kein Gate.
 0a. **USELY One-Pager:** fertig bis zu den ersten GSC-Zahlen (~2026-09-17); Demo-Mandant bleibt für künftige Screens. Falls weitere Screens gewünscht: Belegliste, Kundenliste, Timeline, Zeiten-Report, Ausgaben, Benachrichtigungen liegen als Aufnahmen vor (Session-Scratchpad, nicht im Repo) und lassen sich aus dem Demo-Mandanten jederzeit neu ziehen.
 1. **Live-Stichprobe nach Deploy** (Yasin oder Claude Code per curl): https://yg-media.de/ zeigt die Produkt-Startseite, /en/ die EN-Version, /website antwortet mit noindex, sitemap.xml hat 4 URLs.
