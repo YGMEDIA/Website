@@ -25,3 +25,6 @@ Seitenfolge jetzt: Hero · Vertrauen · Zahlen · Kreislauf · Tag · Apps (6 Sp
 ## Gelernt (Rückfluss)
 - Pattern P-15 (Produktseiten-Tiefe) angelegt: Hero mit Datenkarten, Kennzahlen-Bento, sichtbare Kette, Tages-Story, Zielgruppen-Chips. Für you.yg-media.de anwendbar, sobald echte App-Screens da sind.
 - Chrome-Extension kann das Fenster nicht verkleinern (bleibt 1920 px). Mobil-Sicht: Headless-Chrome mit temporärer Kopie (100vh raus, reveal sichtbar), Screenshot ist bei DPR 2 doppelt so breit wie `--window-size`.
+
+## Nachtrag: Zeitleiste realistisch (2026-09-03, Yasin)
+Yasins Einwand: "Ich fahre, mache ein Angebot und erledige noch am selben Tag" kommt so nicht vor, und die Karten waren handwerksspezifisch (Baustelle, Transporter). Umgebaut zu "Ein Auftrag mit USELY · Von der Anfrage bis zum Geld": Tag 1 Anfrage und Angebot, Tag 3 Zusage, Tag 4 bis 12 Zeiten und Belege nebenbei, Tag 13 Rechnung in einem Tipp, Tag 27 Zahlung (14 Tage Zahlungsziel, Erinnerung falls später). Berufsneutral formuliert (Handwerk, Beratung, Kreativarbeit, Dienstleistung), DE+EN, Commit 9edb86c. Gelernt: Storys auf der Produktseite müssen den echten Zeitverlauf eines Auftrags abbilden, sonst wirken sie wie Werbung statt wie Erfahrung.
