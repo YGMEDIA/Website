@@ -36,3 +36,6 @@ Yasins Einwand: "Ich fahre, mache ein Angebot und erledige noch am selben Tag" k
 - Lighthouse live nach dem Bild: mobil 96 / 100 / 100 / 100, LCP 2,4 s (H1), CLS 0. Commits 8357536 und 76c2fd7.
 - **Hinweis für Yasin:** Die Chips im Bild sind deutsch, das Bild läuft auch auf /en/. Eine englische Variante würde die EN-Seite runder machen.
 - Gelernt: Headless-Chrome erzwingt am Desktop eine Mindestbreite von 500 px, `--window-size=412` liefert deshalb abgeschnittene Layouts. Mobil-Sicht nur über Lighthouse-Emulation (Viewport-Screenshot `final-screenshot`, Ganzseite nur ohne 100vh-Sektionen).
+
+## Nachtrag 2 (2026-09-07): sauberes Keyvisual, Glas-Karten zurück
+Yasin hat das Motiv ohne die eingebauten Chips nachgeliefert (gleicher Dateiname in `assets/`, die alte WebP hatte er dabei entfernt). Neu konvertiert (1040 px, 96 KB) und die vier schwebenden Glas-Datenkarten wieder um das Bild gelegt, Positionen auf die 520-px-Spalte angepasst (links maximal 14 % Überhang, damit der Text nicht berührt wird). Mobil weiterhin als 2×2-Raster unter dem Bild. Ein zweites Bild (Innenarchitektin mit Positionen- und Summen-Chips) liegt unbenutzt in `assets/` (per .gitignore ausgenommen), Verwendung offen. Commit im usely-site-Repo: siehe git log 2026-09-07.
