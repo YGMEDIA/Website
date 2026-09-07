@@ -58,3 +58,6 @@ Fünftes Fotomotiv (Unternehmerin zeigt die Kundenakte Sauer Bau GmbH auf dem iP
 
 ## Nachtrag 8 (2026-09-07): Banner-Abstand
 Yasin: oben zu eng (1,4 rem zum Bento), unten zu weit (14 rem bis zum Kreislauf). Banner in eine eigene Sektion `.poster-section` ohne Innenabstand verschoben; damit trägt er zu beiden Nachbarn den halben Sektionsabstand (7 rem Desktop, 4,5 rem mobil), symmetrisch und im Raster der Seite. Gelernt: Ein Vollbreiten-Block zwischen zwei Sektionen bekommt eine eigene Sektion ohne Padding, statt innerhalb einer Sektion an deren Ende zu hängen.
+
+## Nachtrag 9 (2026-09-07): zweiter Banner
+Yasins Motiv "Buchhaltung Handwerker" (Handwerker zeigt dem Kunden das Angebot auf dem iPhone, 1941×810, ohne Text) als `usely-foto-handwerk.webp` (1600 px) in einer zweiten `.poster-section` zwischen "Warum USELY" und "Funktionen", DE+EN. Chips: "Beim Kunden vor Ort · Angebot fertig, bevor du gehst.", "Buchhaltung, die auf der Baustelle mitläuft. Belege fotografieren, Zeiten erfassen, Rechnung per Tipp.", "Abends frei. Keine Schreibtisch-Abende mehr." Seitenfolge: Hero · Vertrauen · Zahlen · Banner 1 · Kreislauf · Apps · Für wen · Preise · Warum · Banner 2 · Funktionen · FAQ · CTA.
