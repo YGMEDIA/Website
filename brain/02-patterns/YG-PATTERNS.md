@@ -80,6 +80,11 @@
 **Form:** Messen mit `npx lighthouse@12 <live-url> --chrome-flags="--headless=new"` (mobil und `--preset=desktop`, DE und EN); die PageSpeed-API ohne Key drosselt sofort. Checkliste: (1) Schriften selbst hosten als Variable Fonts, Latin-Subset, `@font-face` mit Gewichtsbereich, `font-display: swap`, Preload mit `crossorigin`, keine Google-Fonts-Anfrage. (2) Bilder auf Anzeigegröße mal zwei, WebP, width/height im img, LCP-Bild `fetchpriority="high"`, Rest `loading="lazy"`; Badges verlustfrei (§A5). (3) Interaktive Elemente sind `<button>` mit `aria-expanded`/`aria-controls`, Logo-Bilder neben Wortmarke `alt=""`, Links im Fließtext unterstrichen. (4) Vor dem Push DOM-Check (`document.fonts`, Bildmaße, keine Fremd-Hosts), nach dem Deploy Nachmessung mit Vorher/Nachher-Tabelle im Protokoll. Nicht jagen: Cache-TTL auf GitHub Pages, Speed-Index-Anteil der Canvas-Animation (DNA).
 **Gesetze:** §A1 (DNA bleibt), §A5 (Badge), §B1 (DE und EN im selben Paket). Herkunft: Protokoll 2026-09-03 usely-lighthouse.
 
+## P-15 · Produktseiten-Tiefe-Pattern (Möglichkeiten zeigen, DNA behalten)
+**Wann:** Eine Produkt-Landingpage wirkt zu dünn oder soll "verkaufen, was man damit schafft", ohne Farben oder Schrift zu ändern.
+**Form:** Fünf Ebenen über der Grundstruktur (Hero, Splits, Preise, FAQ): (1) Hero mit drei bis vier schwebenden Glas-Datenkarten mit echten Beispielwerten aus einem Demo-Mandanten, mobil als Raster; (2) Kennzahlen-Bento direkt nach der Vertrauensleiste: eine große Karte mit Kurve oder Screen, sechs Kennzahlen, die das Produkt einlöst (Zeit, Kette, Formate, Funktionen, Preis), eine breite Regel-Karte mit Pills; (3) den Kernprozess als sichtbare Kette aus Belegkarten mit Pfeilen; (4) eine Tages-Story als Zeitleiste (fünf Momente, jeder beschreibt, was die App abnimmt); (5) Zielgruppen mit Icon und Ergebnis-Chip, CTA mit Chips. Variabilität aus Kartengrößen, Richtungen und Bewegung, nie aus neuen Farben. Ehrlichkeitsregel: keine erfundenen Kundenzahlen, Testimonials oder Partnerlogos; Beispieldaten als Beispiel kennzeichnen. DE und EN im selben Paket, Lighthouse danach nachmessen (P-14).
+**Gesetze:** §A1 (DNA), §A2 (keine Gedankenstriche), §B1 (DE Master), §D (keine unlauteren Aussagen). Herkunft: Protokoll 2026-09-03 usely-tiefe.
+
 ---
 
 ## Offen / noch zu definieren
@@ -87,4 +92,4 @@
 - Ratgeber-Pattern (Block H — /website-kosten als Vorlage, formalisieren beim zweiten Ratgeber)
 - Kampagnen-Landing-Pattern (falls K1 eigene Varianten braucht)
 
-*YG Pattern-Katalog v1.3 · 2026-09-03 (P-13 Demo-Mandant, P-14 Web-Vitals)*
+*YG Pattern-Katalog v1.4 · 2026-09-03 (P-13 Demo-Mandant, P-14 Web-Vitals, P-15 Produktseiten-Tiefe)*

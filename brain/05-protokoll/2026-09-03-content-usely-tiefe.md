@@ -1,0 +1,27 @@
+# 2026-09-03 · content · USELY-Seite: mehr Ebenen, Karten und Möglichkeiten (Dream-Selling in der Corporate-DNA)
+
+**Auslöser:** Yasin zeigt sechs Referenzen (Meco- und Banking-Landingpages mit schwebenden Datenkarten, Glas-Statistikkarten "89 %", SAP-Karten-Raster, sevdesk-Startseite, Pella-Glas-Karte): "mehr Elemente, mehr Cards, einzelne Infos, das Gefühl, was man alles schaffen kann; Corporate Design gleich lassen, aber mehr Menge und Variabilität, verspielt, modern, futuristisch, hochwertig, Glas."
+
+## Was (DE und EN im selben Paket, Commit f647ab7 im usely-site-Repo)
+1. **Hero:** Keyvisual bleibt (Yasins Vorgabe), darum vier schwebende Glas-Karten mit Daten aus dem Demo-Mandanten (Rechnung bezahlt 2.839,34 €, offene Rechnungen 5.878,60 € mit Mahnung-bereit-Badge, XRechnung erzeugt, Zeiten heute 8:15 h). Sanfte Float-Animation, mobil als 2×2-Raster unter dem Logo.
+2. **Neue Sektion "Was du zurückbekommst" (#zahlen / #numbers):** Bento-Raster aus einer großen Übersichtskarte mit SVG-Jahreskurve (Umsatz/Kosten, als Beispielansicht gekennzeichnet), sechs Kennzahl-Karten (60 s bis zur Rechnung, 1 Kette, 2 Formate, 24 Funktionen, 1 Tipp Stunden zur Rechnung, 0 € zum Start) und einer breiten Regel-Karte mit Pills (XRechnung, ZUGFeRD, DATEV, GoBD, §14, §19, DSGVO, Face ID).
+3. **Kreislauf:** über den drei Schritt-Karten eine sichtbare Belegkette aus vier Glas-Belegkarten mit Pfeilen (Angebot AN-2026-0009 → AB-2026-0005 → Rechnung RE-2026-0013 → Zahlung per Bezahllink, je 1.535,10 € mit Status-Badge).
+4. **Neue Sektion "Ein Tag mit USELY" (#tag / #day):** Zeitleiste 07:40 bis 18:05 mit fünf Glas-Karten (Baustelle, Auftrag ist da, Mittagspause, Rechnung raus, Feierabend). Das ist der Möglichkeiten-Teil: jede Karte beschreibt, was die App im Alltag abnimmt.
+5. **Für wen:** Icons und ein Chip je Zielgruppe ("Vor Ort anbieten, abends nichts nachtragen", "Stunden werden Rechnungen", "§19 UStG automatisch richtig", "Rollen, Boards, Kanzlei-Zugang").
+6. **CTA:** vier Chips über der Headline (Kostenlos starten, 30 Tage Pro gratis, iPhone und Web, E-Rechnung inklusive).
+Seitenfolge jetzt: Hero · Vertrauen · Zahlen · Kreislauf · Tag · Apps (6 Splits) · Für wen · Preise · Warum · Funktionen · FAQ · CTA.
+
+## Wie
+- Ein Python-Skript mit Treffer-Zwang (P-12) für beide Sprachen: CSS-Block vor `/* RESPONSIVE */`, Responsive-Regeln vor `</style>`, Hero-Karten per Regex hinter das Keyvisual, Sektionen vor bekannten Ankern, Zielgruppen-Karten per Regex mit Icon und Chip neu zusammengesetzt.
+- Sichtprüfung: Desktop DE und EN in Yasins Chrome (lokaler Server, `.reveal` per JS sichtbar, Smooth-Scroll abgeschaltet, sektionsweise Screenshots). Mobil über eine temporäre Kopie ohne 100vh-Hero in Headless-Chrome bei 412 px (Lighthouse-Ganzseiten-Screenshot ist bei 100vh-Sektionen unbrauchbar, der Viewport wird auf volle Höhe gezogen).
+- verify grün, Lighthouse live nach Deploy: mobil 98 / 100 / 100 / 100, CLS 0, LCP 1,9 s (unverändert zur Vorstufe).
+
+## Warum so
+- **Fakten statt Fantasiezahlen:** Die Referenzen zeigen "70.000 Clients" und "+46 %". USELY hat solche Zahlen nicht; erfunden wären sie unlauter. Deshalb Kennzahlen, die die App selbst einlöst (60 s, 1 Kette, 2 Formate, 24 Funktionen, 0 €), und Beispieldaten aus dem Demo-Mandanten, die als Beispiel erkennbar sind.
+- **Keine Testimonials, keine Partnerlogos:** es gibt noch keine echten. Die Regel-Pills (Standards) ersetzen die Logo-Leiste ehrlich.
+- **Mehr Ebenen, gleiche DNA:** alle neuen Elemente nutzen die bestehenden Tokens (Teal, Glas, Border, Orbs, Grid, Inter, Playfair). Variabilität kommt aus Kartengrößen (Bento), Richtungen (Kette waagerecht, Zeitleiste) und Bewegung (Float), nicht aus neuen Farben.
+- **Keyvisual bleibt im Hero:** Yasins Entscheidung vom Vormittag; die Datenkarten liefern trotzdem das "App-Gefühl" der Referenzen.
+
+## Gelernt (Rückfluss)
+- Pattern P-15 (Produktseiten-Tiefe) angelegt: Hero mit Datenkarten, Kennzahlen-Bento, sichtbare Kette, Tages-Story, Zielgruppen-Chips. Für you.yg-media.de anwendbar, sobald echte App-Screens da sind.
+- Chrome-Extension kann das Fenster nicht verkleinern (bleibt 1920 px). Mobil-Sicht: Headless-Chrome mit temporärer Kopie (100vh raus, reveal sichtbar), Screenshot ist bei DPR 2 doppelt so breit wie `--window-size`.

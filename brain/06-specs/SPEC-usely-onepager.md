@@ -58,6 +58,11 @@ Eine eigenständige, indexierbare Produkt-Website für USELY unter **https://use
 - Accessibility: Burger als `<button>` mit `aria-expanded`/`aria-controls`, dekorative Logo-Alts, Footer-Link unterstrichen.
 - Ergebnis: mobil 98 / 100 / 100 / 100, Desktop 99 / 100 / 100 / 100, EN mobil 97 / 100 / 100 / 100. Protokoll: 05-protokoll/2026-09-03-dev-usely-lighthouse.md.
 
+## 3f. Nachtrag 2026-09-03 (Tiefe: Datenkarten, Bento, Kette, Tages-Story)
+- Yasins Referenzen verlangen mehr Elemente und "Möglichkeiten verkaufen" bei gleicher Corporate-DNA. Umgesetzt als fünf neue Ebenen (Hero-Datenkarten, Bento #zahlen, Belegkette im Kreislauf, Zeitleiste #tag, Zielgruppen-Chips, CTA-Chips), DE+EN.
+- Regel: nur Aussagen, die die App einlöst; Beispieldaten aus dem Demo-Mandanten und als Beispiel gekennzeichnet; keine Testimonials oder Partnerlogos, solange es keine echten gibt.
+- Seitenfolge: Hero · Vertrauen · Zahlen · Kreislauf · Tag · Apps · Für wen · Preise · Warum · Funktionen · FAQ · CTA. Lighthouse live mobil 98 / 100 / 100 / 100. Protokoll: 05-protokoll/2026-09-03-content-usely-tiefe.md.
+
 ## 4. Seitenstruktur (One-Pager, Reihenfolge = Verkaufslogik)
 | # | Sektion | Inhalt | Quelle |
 |---|---|---|---|
