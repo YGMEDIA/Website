@@ -45,3 +45,6 @@ Yasin legt zwei weitere Motive in `assets/` (Innenarchitektin mit Positionen- un
 
 ## Nachtrag 4 (2026-09-07): Zeitleiste raus, XRechnung-Motiv
 Yasin: Auftrags-Zeitleiste komplett entfernen. Sektion `#tag`/`#day` samt CSS und Responsive-Regeln aus DE und EN gelöscht; Seitenfolge jetzt Hero · Vertrauen · Zahlen · Kreislauf · Apps · Für wen · Preise · Warum · Funktionen · FAQ · CTA. Drittes Fotomotiv (iPhone-Mockup mit E-Rechnung und Export: XRechnung, ZUGFeRD, EÜR, DATEV, per E-Mail senden) als `usely-foto-erechnung.webp` (42 KB) in Split 3 "E-Rechnung und Export", nur DE (Oberfläche im Bild ist deutsch). Damit tragen die DE-Splits 1 bis 3 Yasins Fotomotive, 4 bis 6 die Simulator-Screens; EN zeigt in 1 bis 3 weiter die Simulator-Screens bis englische Varianten da sind (Gate 0b7).
+
+## Nachtrag 5 (2026-09-07): Aufgaben-Motiv
+Viertes Fotomotiv (iPhone auf dem Schreibtisch mit Board "Projekt Büroausbau", Liste/Kanban/Timeline, erfasste Zeit 06:30 Std., "Zeiten abrechnen") als `usely-foto-aufgaben.webp` (106 KB) in Split 5 "Boards und Zeiten", nur DE. Stand DE-Splits: 1 Rechnung (Foto), 2 Belegkette (Foto), 3 E-Rechnung (Foto), 4 Übersicht (Simulator), 5 Boards und Zeiten (Foto), 6 Kundenakte (Simulator). EN: 1 bis 6 Simulator-Screens.
