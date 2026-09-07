@@ -55,3 +55,6 @@ Fünftes Fotomotiv (Unternehmerin zeigt die Kundenakte Sauer Bau GmbH auf dem iP
 ## Nachtrag 7 (2026-09-07): Motivations-Banner, Motive in besseren Farben
 - Yasin liefert die Motive Rechnung und Belegkette neu (bessere Farben): gleiche WebP-Namen neu konvertiert, kein HTML-Umbau.
 - Neues breites Motiv (zwei Selbstständige am Laptop, 1942×810, ohne Text) als `usely-foto-start.webp` (1600 px, 89 KB) unter dem Kennzahlen-Bento in `#zahlen`/`#numbers` als `.poster`: Bild in voller Breite mit leichtem Verlauf, drei schwebende Glas-Chips ("Worauf wartest du? Dein Geschäft. Deine Regeln.", "Fang heute mit deiner Selbstständigkeit an. Kostenlos starten, die erste Rechnung in 60 Sekunden.", "0 € zum Start, 30 Tage Pro gratis"), mobil stapeln die Chips unter dem Bild. Da das Motiv keine Oberfläche zeigt, läuft es auf DE und EN (Chips als HTML übersetzt).
+
+## Nachtrag 8 (2026-09-07): Banner-Abstand
+Yasin: oben zu eng (1,4 rem zum Bento), unten zu weit (14 rem bis zum Kreislauf). Banner in eine eigene Sektion `.poster-section` ohne Innenabstand verschoben; damit trägt er zu beiden Nachbarn den halben Sektionsabstand (7 rem Desktop, 4,5 rem mobil), symmetrisch und im Raster der Seite. Gelernt: Ein Vollbreiten-Block zwischen zwei Sektionen bekommt eine eigene Sektion ohne Padding, statt innerhalb einer Sektion an deren Ende zu hängen.
