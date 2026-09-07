@@ -51,3 +51,7 @@ Viertes Fotomotiv (iPhone auf dem Schreibtisch mit Board "Projekt Büroausbau", 
 
 ## Nachtrag 6 (2026-09-07): Kunden-Motiv
 Fünftes Fotomotiv (Unternehmerin zeigt die Kundenakte Sauer Bau GmbH auf dem iPhone) als `usely-foto-kunden.webp` (77 KB) in Split 6 "Kundenakte", nur DE. Stand DE-Splits: 1 Rechnung, 2 Belegkette, 3 E-Rechnung, 5 Boards und Zeiten, 6 Kundenakte als Fotomotive; 4 Übersicht bleibt Simulator-Screen. EN: alle sechs Simulator-Screens (Gate 0b7).
+
+## Nachtrag 7 (2026-09-07): Motivations-Banner, Motive in besseren Farben
+- Yasin liefert die Motive Rechnung und Belegkette neu (bessere Farben): gleiche WebP-Namen neu konvertiert, kein HTML-Umbau.
+- Neues breites Motiv (zwei Selbstständige am Laptop, 1942×810, ohne Text) als `usely-foto-start.webp` (1600 px, 89 KB) unter dem Kennzahlen-Bento in `#zahlen`/`#numbers` als `.poster`: Bild in voller Breite mit leichtem Verlauf, drei schwebende Glas-Chips ("Worauf wartest du? Dein Geschäft. Deine Regeln.", "Fang heute mit deiner Selbstständigkeit an. Kostenlos starten, die erste Rechnung in 60 Sekunden.", "0 € zum Start, 30 Tage Pro gratis"), mobil stapeln die Chips unter dem Bild. Da das Motiv keine Oberfläche zeigt, läuft es auf DE und EN (Chips als HTML übersetzt).
