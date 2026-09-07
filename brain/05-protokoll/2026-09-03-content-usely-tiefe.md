@@ -48,3 +48,6 @@ Yasin: Auftrags-Zeitleiste komplett entfernen. Sektion `#tag`/`#day` samt CSS un
 
 ## Nachtrag 5 (2026-09-07): Aufgaben-Motiv
 Viertes Fotomotiv (iPhone auf dem Schreibtisch mit Board "Projekt Büroausbau", Liste/Kanban/Timeline, erfasste Zeit 06:30 Std., "Zeiten abrechnen") als `usely-foto-aufgaben.webp` (106 KB) in Split 5 "Boards und Zeiten", nur DE. Stand DE-Splits: 1 Rechnung (Foto), 2 Belegkette (Foto), 3 E-Rechnung (Foto), 4 Übersicht (Simulator), 5 Boards und Zeiten (Foto), 6 Kundenakte (Simulator). EN: 1 bis 6 Simulator-Screens.
+
+## Nachtrag 6 (2026-09-07): Kunden-Motiv
+Fünftes Fotomotiv (Unternehmerin zeigt die Kundenakte Sauer Bau GmbH auf dem iPhone) als `usely-foto-kunden.webp` (77 KB) in Split 6 "Kundenakte", nur DE. Stand DE-Splits: 1 Rechnung, 2 Belegkette, 3 E-Rechnung, 5 Boards und Zeiten, 6 Kundenakte als Fotomotive; 4 Übersicht bleibt Simulator-Screen. EN: alle sechs Simulator-Screens (Gate 0b7).
