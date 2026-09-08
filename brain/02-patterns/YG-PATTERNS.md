@@ -14,7 +14,7 @@
 **Gesetze:** §B1, §B2, §B4.
 
 ## P-11 · Produkt-Karten-Pattern (seit 2026-09-02)
-**Wann:** Eigene Produkte auf der Startseite (USELY, YOU, SPACE SOCCER, Paukbox); Partner/Referenzfall als volle Breite.
+**Wann:** Eigene Produkte auf der Startseite (USELY, YOU, Paukbox); Partner/Referenzfall als volle Breite.
 **Form:** `.product-grid` (2 Spalten, ≤768px 1 Spalte) aus `.product-card` (Glass, `id` = Produkt-Anker, `scroll-margin-top`): `.product-img` (feste Höhe 280/220px, object-fit cover, NIE aspect-ratio) + `.ref-tag` (Markt · Plattform · Status) + h3 "NAME. Claim." + Absatz (nur belegte Fakten aus Yasins Quellen) + `.service-tags` + `.product-links` (interner Link oder externer Produkt-Link, bei USELY zusätzlich App-Store-Badge). Partner Felgen Brillant als `.ref-feature` (P-3). Hero-Karte spiegelt die Produkte als `.hero-tile`-Kacheln mit denselben Logos.
 **Assets:** Logos aus Yasins Originalen nur skaliert (sips) und als WebP (cwebp q86–88) unter `assets/logo-<produkt>.webp`; Originale bleiben im Repo.
 **Neue Produkte:** Karte DE + EN im selben Paket, Hero-Kachel, Footer-Spalte "Produkte", Fakten-Karte ("Eigene Produkte"-Zahl), Schema `brand`-Liste.

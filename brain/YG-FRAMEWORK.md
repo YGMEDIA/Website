@@ -21,7 +21,7 @@
 # TEIL I · GESCHÄFTSMODELL & POSITIONIERUNG
 
 ## 1.1 Was YG MEDIA ist (Positionierung seit 2026-09-02)
-**Digitale Agentur für Software, Marketing und Robotik** (Würzburg, Inhaber Yasin Gündogdu), die **eigene Produkte** baut und die Website als Informationsseite über diese Produkte nutzt. Dienstleistungen werden nicht mehr beworben (Entscheidung Yasin, 2026-09-02, wegen Anfragen-Flaute und Neuausrichtung). Produkte: **USELY** (Buchhaltung → ERP, live im App Store, iOS + Web), **YOU** (Körper und Geist, iOS + YOU Band), **SPACE SOCCER** (Mobile Game, EU-Marke), **Paukbox** (Karteikarten-Web-App, paukbox.yg-media.de). **Felgen Brillant** ist ein eigenes Mit-Aufbau-Projekt und Partner (Marke, Marketing, Website, Shop, Software), NICHT als Investor zu bezeichnen (Yasin, 2026-09-03). Nächster Horizont: Robotik, konkret eine vollautomatisierte, robotergestützte Felgen-Pulverbeschichtungsanlage bei Felgen Brillant. Konzepte (Hotel-KI, Adidas Vision Pro, Audi VisionPro) stehen als Visionskonzepte, nicht als Studien; Kunden-Designstudien (Derma) sind raus. 10+ Jahre, 60+ Unternehmen, YG MEDIA® und SPACE SOCCER eingetragene Marken.
+**Digitale Agentur für Software, Marketing und Robotik** (Würzburg, Inhaber Yasin Gündogdu), die **eigene Produkte** baut und die Website als Informationsseite über diese Produkte nutzt. Dienstleistungen werden nicht mehr beworben (Entscheidung Yasin, 2026-09-02, wegen Anfragen-Flaute und Neuausrichtung). Produkte auf der Website: **USELY** (Buchhaltung → ERP, live im App Store, iOS + Web), **YOU** (Körper und Geist, iOS + YOU Band), **Paukbox** (Karteikarten-Web-App, paukbox.yg-media.de). **SPACE SOCCER** (Mobile Game, EU-Marke) wird seit 2026-09-08 auf der Website nicht mehr gezeigt (Entscheidung Yasin); die Marke bleibt bestehen, das Projekt ist damit nicht bewertet. **Felgen Brillant** ist ein eigenes Mit-Aufbau-Projekt und Partner (Marke, Marketing, Website, Shop, Software), NICHT als Investor zu bezeichnen (Yasin, 2026-09-03). Nächster Horizont: Robotik, konkret eine vollautomatisierte, robotergestützte Felgen-Pulverbeschichtungsanlage bei Felgen Brillant. Konzepte (Hotel-KI, Adidas Vision Pro, Audi VisionPro) stehen als Visionskonzepte, nicht als Studien; Kunden-Designstudien (Derma) sind raus. 10+ Jahre, 60+ Unternehmen, YG MEDIA® und SPACE SOCCER eingetragene Marken.
 Keine Person-Inszenierung: kein Portrait, kein "Über mich", kein Erstgespräch-CTA. Kontakt bleibt: Formular (Themen = Produkte/Partnerschaft), info@yg-media.de · +49 177 4476392 · WhatsApp · Behance + X. Quelle aller Produktaussagen: Visionskonzept `/yg-media-vision` (noindex) + Produktseiten.
 Historie: Bis 2026-09-02 war die Site der Anfragen-Kanal eines Digital Business Builders (Website/App/Marketing/Automation, Calendly). Diese Seiten sind geparkt (siehe 2.2).
 
@@ -30,14 +30,14 @@ Historie: Bis 2026-09-02 war die Site der Anfragen-Kanal eines Digital Business 
 |---|---|---|
 | / | yg media, yasin gündogdu, digitale agentur software marketing robotik | Brand (GSC: 90 % der Klicks sind Brand) |
 | /usely | usely, buchhaltungs app | Produkt-SEO; GSC 2026-09-02: 211 Impressionen für "usely", aber 0 Klicks und rankende URL /en/usely → CTR-Fall für den gsc-loop |
-| (später) | paukbox, space soccer | eigene Produktseiten erst, wenn Substanz da ist (Struktur folgt Substanz) |
+| (später) | paukbox | eigene Produktseite erst, wenn Substanz da ist (Struktur folgt Substanz) |
 Geparkte Service-Seiten (noindex) tragen keine Keyword-Ziele mehr. EN-Seiten adressieren "Germany, Austria and Switzerland", eigenständige Titles/Descriptions. Regel: Ein Keyword-Ziel pro Seite.
 
 ## 1.3 Wachstumsstufen (neu gefasst 2026-09-02)
 | Stufe | Ziel | Messkriterium | Stand |
 |---|---|---|---|
 | 1 | Neue Positionierung indexiert | 4 Sitemap-URLs indexiert, geparkte Seiten aus dem Index (GSC "Seiten") | läuft (Baseline 2026-09-02: 33 Klicks / 1.049 Impr. in 3 Monaten, fast nur Brand) |
-| 2 | Produkt-Sichtbarkeit | Klicks auf "usely"/"paukbox"/"space soccer"-Queries > 0, /usely-CTR > 1 % | nächste (gsc-loop) |
+| 2 | Produkt-Sichtbarkeit | Klicks auf "usely"/"paukbox"-Queries > 0, /usely-CTR > 1 % | nächste (gsc-loop) |
 | 3 | Produkt-Conversions | App-Store-Klicks, Paukbox-Öffnungen, Partnerschafts-Anfragen mit Quelle (GA4) | danach |
 Regel: Stufe N ist messbar erreicht, bevor Aufwand in N+1 fließt. Kampagne K1 (Service-Landing /website) ist damit obsolet.
 
@@ -128,6 +128,7 @@ INDEX zuerst, dann STATUS, dann Links. CLAUDE.md < 200 Zeilen — zeigt aufs Bra
 |---|---|---|
 | 2026-07-19 | 1.0 | Erstfassung: konsolidiert aus Live-Site (v4.3-Stand), Projektanweisungen v5.0, SEO-Konzept Rev. 4 und Projekthistorie Juni–Juli 2026. Systematik übernommen aus den Brains von USELY (Framework/CLAUDE.md/Spec-Kette), YOU (STATUS-Verlauf, Vollautonomie-Detailregeln) und SPC (Loop-System, Protokoll-Format, Deploy-Absicherung, verify.py als Gate). |
 | 2026-09-02 | 2.0 | **Produkt-Positionierung.** Site bewirbt nur noch eigene Produkte (USELY, YOU, SPACE SOCCER, Paukbox) + Partner Felgen Brillant; Agentur = Software, Marketing, Robotik. Teil I (1.1–1.3) und 2.2 neu; Service-Seiten geparkt (noindex), Sitemap 4 URLs; Kampagne K1 obsolet. Spec: 06-specs/SPEC-produkt-positionierung.md · Protokoll: 05-protokoll/2026-09-02-content-produkt-positionierung.md. |
+| 2026-09-08 | 2.1 | **SPACE SOCCER von der Website entfernt** (Auftrag Yasin). Produkt-Aufzählung, Hero-Kachel, Produktkarte, Footer-Link, Formular-Option, Meta/JSON-LD und Assets raus (DE+EN); Sektion jetzt "Drei Produkte. Drei Märkte." ohne Markt Gaming. Marke und Projekt selbst unberührt. Protokoll: 05-protokoll/2026-09-08-content-space-soccer-entfernt.md. |
 | 2026-07-19 | 1.1 | Roadmap-Blöcke A + B erledigt: Actions-Deploy aktiv (Brain bleibt privat), Sitemap 14 URLs in GSC neu eingereicht, 4 EN-URLs zur Indexierung beantragt, Enforce HTTPS aktiv (http→https 301). Details: 05-protokoll/2026-07-19-system-repo-uebernahme.md. |
 
 ---

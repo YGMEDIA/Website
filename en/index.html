@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Digital Studio for Software, Marketing and Robotics — YG MEDIA</title>
-<meta name="description" content="YG MEDIA from Würzburg, Germany builds its own digital products: USELY (invoicing and ERP), YOU (body and mind), SPACE SOCCER (mobile game) and Paukbox (flashcards). Partner of Felgen Brillant.">
+<meta name="description" content="YG MEDIA from Würzburg, Germany builds its own digital products: USELY (invoicing and ERP), YOU (body and mind) and Paukbox (flashcards). Partner of Felgen Brillant.">
 <meta property="og:title" content="YG MEDIA · Digital products with a signature of their own">
-<meta property="og:description" content="USELY, YOU, SPACE SOCCER and Paukbox: our own products from Würzburg, Germany. Partner of Felgen Brillant.">
+<meta property="og:description" content="USELY, YOU and Paukbox: our own products from Würzburg, Germany. Partner of Felgen Brillant.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://yg-media.de/en/">
 <meta property="og:image" content="https://yg-media.de/assets/og-image.png">
@@ -16,7 +16,7 @@
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="YG MEDIA · Digital products with a signature of their own">
-<meta name="twitter:description" content="USELY, YOU, SPACE SOCCER and Paukbox: our own products from Würzburg, Germany. Partner of Felgen Brillant.">
+<meta name="twitter:description" content="USELY, YOU and Paukbox: our own products from Würzburg, Germany. Partner of Felgen Brillant.">
 <meta name="twitter:image" content="https://yg-media.de/assets/og-image.png">
 <link rel="canonical" href="https://yg-media.de/en/">
 <link rel="alternate" hreflang="de" href="https://yg-media.de/">
@@ -351,6 +351,7 @@ section[id] { scroll-margin-top: 70px; }
 
 /* HERO-KACHELN */
 .hero-tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 1rem; }
+.hero-tiles > a:last-child:nth-child(odd) { grid-column: 1 / -1; }
 .hero-tile { display: flex; align-items: center; gap: 0.7rem; padding: 0.6rem 0.7rem; border-radius: 14px; border: 1px solid var(--border); background: rgba(255,255,255,0.03); text-decoration: none; color: var(--text); transition: border-color 0.2s, background 0.2s, transform 0.2s; min-width: 0; }
 .hero-tile:hover { border-color: rgba(28,91,130,0.5); background: rgba(28,91,130,0.1); transform: translateY(-2px); }
 .hero-tile img { width: 44px; height: 44px; border-radius: 10px; object-fit: cover; flex-shrink: 0; border: 1px solid rgba(255,255,255,0.1); }
@@ -379,7 +380,7 @@ section[id] { scroll-margin-top: 70px; }
   "@id": "https://yg-media.de/#business",
   "name": "YG MEDIA",
   "alternateName": "YG MEDIA · Yasin Gündogdu",
-  "description": "Digital studio from Würzburg, Germany, working in software, marketing and robotics. Builds its own products: USELY (invoicing and ERP), YOU (body and mind), SPACE SOCCER (mobile game) and Paukbox (flashcards). Partner of Felgen Brillant.",
+  "description": "Digital studio from Würzburg, Germany, working in software, marketing and robotics. Builds its own products: USELY (invoicing and ERP), YOU (body and mind) and Paukbox (flashcards). Partner of Felgen Brillant.",
   "url": "https://yg-media.de/en/",
   "email": "info@yg-media.de",
   "telephone": "+49-177-4476392",
@@ -440,10 +441,6 @@ section[id] { scroll-margin-top: 70px; }
     },
     {
       "@type": "Brand",
-      "name": "SPACE SOCCER"
-    },
-    {
-      "@type": "Brand",
       "name": "Paukbox"
     }
   ]
@@ -491,7 +488,7 @@ section[id] { scroll-margin-top: 70px; }
           <span class="line"><span class="line-inner">We build digital products</span></span>
           <span class="line"><span class="line-inner"><em>with a signature of their own.</em></span></span>
         </h1>
-        <p class="hero-sub">YG MEDIA is a digital studio from Würzburg, Germany, working in software, marketing and robotics. Out of the day-to-day practice around Felgen Brillant, a company we are building up ourselves, grows a portfolio of our own products: USELY, YOU, SPACE SOCCER and Paukbox.</p>
+        <p class="hero-sub">YG MEDIA is a digital studio from Würzburg, Germany, working in software, marketing and robotics. Out of the day-to-day practice around Felgen Brillant, a company we are building up ourselves, grows a portfolio of our own products: USELY, YOU and Paukbox.</p>
         <div class="hero-btns">
           <a href="#products" class="btn btn-primary">Explore the products <span class="btn-arrow">↓</span></a>
           <a href="#company" class="btn btn-ghost">About YG MEDIA</a>
@@ -504,7 +501,6 @@ section[id] { scroll-margin-top: 70px; }
           <div class="hero-tiles">
             <a href="#usely" class="hero-tile"><img src="/assets/logo-usely.webp" alt="USELY logo" loading="lazy"><span><strong>USELY</strong><small>Business software</small></span></a>
             <a href="#you" class="hero-tile"><img src="/assets/logo-you.webp" alt="YOU logo" loading="lazy"><span><strong>YOU</strong><small>Body and mind</small></span></a>
-            <a href="#space-soccer" class="hero-tile"><img src="/assets/logo-space-soccer.webp" alt="SPACE SOCCER logo" loading="lazy"><span><strong>SPACE SOCCER</strong><small>Mobile game</small></span></a>
             <a href="#paukbox" class="hero-tile"><img src="/assets/logo-paukbox.webp" alt="Paukbox logo" loading="lazy"><span><strong>Paukbox</strong><small>Flashcards</small></span></a>
           </div>
           <div class="card-divider"></div>
@@ -523,9 +519,9 @@ section[id] { scroll-margin-top: 70px; }
     <div class="services-header">
       <div class="reveal-left">
         <span class="eyebrow">Our products</span>
-        <h2 class="services-title">Four products. Three markets.<br>One signature.</h2>
+        <h2 class="services-title">Three products. Three markets.<br>One signature.</h2>
       </div>
-      <p class="services-sub reveal-right">Business software, health, gaming and learning. Every product follows the same method: prove it on a real case first, then scale. Dark, glass, depth, with one clear accent colour per brand.</p>
+      <p class="services-sub reveal-right">Business software, health and learning. Every product follows the same method: prove it on a real case first, then scale. Dark, glass, depth, with one clear accent colour per brand.</p>
     </div>
 
     <div class="product-grid">
@@ -550,17 +546,6 @@ section[id] { scroll-margin-top: 70px; }
         <div class="product-links">
           <a href="https://you.yg-media.de/en/" class="ref-link">Visit the YOU website →</a>
           <a href="https://www.behance.net/gallery/217934173" target="_blank" rel="noopener" class="ref-link">View on Behance →</a>
-        </div>
-      </div>
-
-      <div class="product-card reveal" id="space-soccer">
-        <img src="/assets/logo-space-soccer.webp" alt="SPACE SOCCER logo with ball in the arena" class="product-img" loading="lazy">
-        <span class="ref-tag">Gaming · Mobile · Registered EU trademark</span>
-        <h3>SPACE SOCCER. The first multiplayer football game in space.</h3>
-        <p>Fast 5v5 matches with tactics, power-ups and special cards in arenas between the stars. Team mode or solo mode as captain, a level system with XP, and your own stadium with stands, colours and team logo. Free-to-play for iOS and Android. A playable version is already running, and the brand is registered with the EUIPO.</p>
-        <div class="service-tags"><span class="stag">5v5</span><span class="stag">Free-to-play</span><span class="stag">iOS and Android</span><span class="stag">EU trademark</span></div>
-        <div class="product-links">
-          <a href="https://x.com/SpaceSoccer_" target="_blank" rel="noopener" class="ref-link">Follow on X →</a>
         </div>
       </div>
 
@@ -662,7 +647,7 @@ section[id] { scroll-margin-top: 70px; }
         <span class="eyebrow reveal">Company</span>
         <h2 class="about-tagline reveal">YG MEDIA®,<br><em>digital studio.</em></h2>
         <p class="about-text reveal">YG MEDIA is the digital studio of Yasin Gündogdu in Würzburg, Germany, working in software, marketing and robotics. More than ten years at the intersection of design, technology and marketing: over 60 companies from Germany, Austria and Switzerland built up digitally, from trades and medical practices to industry and tech start-ups.</p>
-        <p class="about-text reveal">Out of this practice grow our own products, each following the same principles: prove it on a real case first, then scale. Quality you can see and measure. Honesty towards the user. YG MEDIA® and SPACE SOCCER are registered trademarks; USELY and YOU are currently in the trademark registration process.</p>
+        <p class="about-text reveal">Out of this practice grow our own products, each following the same principles: prove it on a real case first, then scale. Quality you can see and measure. Honesty towards the user. YG MEDIA® is a registered trademark; USELY and YOU are currently in the trademark registration process.</p>
         <div class="skill-tags reveal">
           <span class="skill-tag">Software development</span><span class="skill-tag">UI/UX design</span><span class="skill-tag">Corporate design</span>
           <span class="skill-tag">Google Ads and SEO</span><span class="skill-tag">AI automation</span><span class="skill-tag">E-commerce</span>
@@ -713,7 +698,7 @@ section[id] { scroll-margin-top: 70px; }
               <select name="bereich" class="form-select">
                 <option value="">Select a topic</option>
                 <option>USELY</option><option>YOU</option>
-                <option>SPACE SOCCER</option><option>Paukbox</option>
+                <option>Paukbox</option>
                 <option>Partnership</option><option>Other</option>
               </select>
             </div>
@@ -744,7 +729,7 @@ section[id] { scroll-margin-top: 70px; }
         <div class="footer-col">
           <div class="footer-col-title">Products</div>
           <a href="https://usely.yg-media.de/en/">USELY</a><a href="/en/#you">YOU</a>
-          <a href="/en/#space-soccer">SPACE SOCCER</a><a href="https://paukbox.yg-media.de" target="_blank" rel="noopener">Paukbox</a>
+          <a href="https://paukbox.yg-media.de" target="_blank" rel="noopener">Paukbox</a>
         </div>
         <div class="footer-col">
           <div class="footer-col-title">Company</div>
