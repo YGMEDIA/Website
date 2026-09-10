@@ -42,4 +42,19 @@ Die Angaben zum Beleg-Postfach spiegeln die tatsächliche Technik: Empfangs-Doma
 1. **Wo eine Rechtsseite verlinkt ist, entscheidet, welche Erklärung gilt.** Vor jeder Ergänzung erst per grep prüfen, wohin App, Paywall und Store-Metadaten zeigen. Hier: alle drei auf yg-media.de/datenschutz, die Web-App auf ihre eigene Seite.
 2. **Anbieter-Firmierungen immer aus dem DPA des Anbieters ziehen.** Zwei von zwei geprüften Namen wären aus dem Gedächtnis falsch gewesen (Plus Five Five statt Resend Inc.; Anthropic Ireland statt Anthropic PBC für EWR-Kunden).
 3. **Der Em-Dash-Gurt darf nur den neuen Text prüfen** — der Bestand trägt bewusst einen im `<title>`, den `verify.py` ausblendet. Ein Ganzdatei-Gurt schlägt sonst fälschlich an (einmal passiert, vor dem Schreiben abgefangen).
-4. Offen und bei Yasin: Auftragsverarbeitungsverträge für Anthropic, Stripe und finAPI bestätigen, den Resend-DPA im Konto gegenzeichnen, Retentions-Wert für Receiving nachsehen, fachkundige Gesamtprüfung.
+4. Anbieter, für die noch kein Vertrag vorlag, wurden faktisch beschrieben, ohne einen AVV zu behaupten. Nachgezogen im Nachtrag unten.
+
+## Nachtrag (gleicher Tag): Auftragsverarbeitungsverträge bestätigt
+
+Yasin: „Auftragsverarbeitungsverträge sind bestätigt". Damit tragen **Resend, Anthropic und Stripe** denselben AVV-Satz, den Hoster und Supabase schon hatten (DE und EN); bei Stripe zusätzlich die Klarstellung, dass Apple beim Kauf über den App Store Vertragspartner des Kaufs ist und die Zahlungsdaten in eigener Verantwortung verarbeitet.
+
+**finAPI bewusst OHNE AVV-Satz**, mit Gurt im Patch-Skript: die USELY-Doku führt den finAPI-Vertrag unter „Extern geparkt" („finAPI-Vertrag + frische Keys, Trial-Keys exponiert"), es gibt also sehr wahrscheinlich noch keinen unterschriebenen Vertrag. Die Funktion ist ohnehin als „derzeit nicht allgemein freigeschaltet" benannt, es fließen keine Nutzerdaten dorthin. Sobald der Vertrag steht, kommt der Satz nach.
+
+verify.py grün (21 Seiten). Offen bleibt die Frage an Yasin, ob der Schlusssatz „Dies ist eine Vorlage und ersetzt keine individuelle Rechtsberatung. Bitte vor Veröffentlichung durch eine fachkundige Person prüfen lassen und die Platzhalter ergänzen." bleiben soll: die zweite Hälfte ist eine Anweisung an den Betreiber, die versehentlich an die Leser ausgeliefert wird, und die EN-Fassung trägt sie gar nicht.
+
+## Offen
+
+- **finAPI-AVV**, sobald der Vertrag steht (heute laut USELY-Doku noch geparkt, Trial-Keys) — dann kommt der Satz in beide Sprachfassungen.
+- **Retentions-Wert für Resend Receiving** im Anbieter-Dashboard nachsehen; im Text steht bewusst nur, was wir selbst speichern.
+- **Schlusssatz der deutschen Fassung** („Dies ist eine Vorlage … Platzhalter ergänzen"): Entscheid Yasin, s. Nachtrag.
+- **App-Datenschutz-Fragebogen** in App Store Connect gegen diese Erklärung lesen (nennt seit heute Anthropic als Empfänger). Über die ASC-API nicht erreichbar; braucht die Oberfläche.
