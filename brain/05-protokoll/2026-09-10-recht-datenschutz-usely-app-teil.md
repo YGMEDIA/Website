@@ -52,9 +52,19 @@ Yasin: „Auftragsverarbeitungsverträge sind bestätigt". Damit tragen **Resend
 
 verify.py grün (21 Seiten). Offen bleibt die Frage an Yasin, ob der Schlusssatz „Dies ist eine Vorlage und ersetzt keine individuelle Rechtsberatung. Bitte vor Veröffentlichung durch eine fachkundige Person prüfen lassen und die Platzhalter ergänzen." bleiben soll: die zweite Hälfte ist eine Anweisung an den Betreiber, die versehentlich an die Leser ausgeliefert wird, und die EN-Fassung trägt sie gar nicht.
 
+## Nachtrag 2 (gleicher Tag): Vorlagen-Schlusssatz entfernt
+
+Yasin: „schlusssatz raus". Damit endet die deutsche Erklärung wie die englische mit **„Stand: September 2026."** Der Rest des Satzes („Dies ist eine Vorlage und ersetzt keine individuelle Rechtsberatung. Bitte vor Veröffentlichung durch eine fachkundige Person prüfen lassen und die Platzhalter ergänzen.") ist weg.
+
+Das war die richtige Entscheidung, und zwar aus zwei Gründen: die zweite Hälfte war eine **Anweisung an den Betreiber**, die versehentlich an jeden Leser ausgeliefert wurde („vor Veröffentlichung prüfen lassen" steht auf einer bereits veröffentlichten Seite), und der Satz stand nur in der deutschen Fassung. Eine Erklärung, die sich selbst als unfertige Vorlage bezeichnet, schwächt außerdem genau die Zusage, die sie geben soll.
+
+**Wie:** Skript mit vier Gurten, weil es ein Rechtstext ist: genau ein Vorkommen, exakt die erwartete Zeichenzahl entfernt (170), Präfix und Suffix der Datei byte-gleich, danach kein Vorlagen-Vokabular („Vorlage", „Platzhalter", „Rechtsberatung", „fachkundige") mehr in der Datei. `verify.py` grün, 21 Seiten. Live-Gegenprobe nach dem Deploy.
+
+**Nicht mit entfernt:** Der Aufbau, die Anbieter-Angaben und die Rechtsgrundlagen bleiben unverändert. Die fachkundige Gesamtprüfung der drei Rechtstexte steht weiter in STATUS unter „Braucht Yasin" und ist durch das Entfernen des Satzes weder erledigt noch überflüssig geworden.
+
 ## Offen
 
 - **finAPI-AVV**, sobald der Vertrag steht (heute laut USELY-Doku noch geparkt, Trial-Keys) — dann kommt der Satz in beide Sprachfassungen.
 - **Retentions-Wert für Resend Receiving** im Anbieter-Dashboard nachsehen; im Text steht bewusst nur, was wir selbst speichern.
-- **Schlusssatz der deutschen Fassung** („Dies ist eine Vorlage … Platzhalter ergänzen"): Entscheid Yasin, s. Nachtrag.
+- ~~Schlusssatz der deutschen Fassung~~ **entschieden und umgesetzt, s. Nachtrag 2.**
 - **App-Datenschutz-Fragebogen** in App Store Connect gegen diese Erklärung lesen (nennt seit heute Anthropic als Empfänger). Über die ASC-API nicht erreichbar; braucht die Oberfläche.
