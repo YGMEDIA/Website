@@ -1,0 +1,45 @@
+# 2026-09-10 · Datenschutzerklärung: Teil „USELY App" ergänzt (recht)
+
+## Was
+
+Die Datenschutzerklärung von yg-media.de beschrieb bis heute ausschließlich die **Website** (Hosting, Server-Logs, Kontaktformular, Calendly, Cookies). Von der App USELY stand dort nichts, obwohl die iOS-App (Profil → Datenschutz und die Paywall) sowie die in App Store Connect hinterlegte Datenschutz-URL genau auf diese Seite zeigen. Damit sahen App-Nutzer und der App-Review eine Erklärung, die keinen einzigen App-Dienstleister nannte.
+
+Ergänzt wurden in **datenschutz.html** und **en/privacy-policy.html**:
+
+- **Abschnitt 1** um den Geltungsbereich: Website **und** App, mit Zuordnung (3 bis 7 = Website, 8 bis 14 = USELY) und dem Satz, dass die App keine Werbe- oder Analyse-Dienste und kein Tracking einsetzt.
+- **Abschnitt 2** um „und in der App USELY".
+- **Neu 8 bis 14:** Nutzerkonto und App-Daten (Supabase) · Belegversand und Beleg-Postfach (Resend) · Automatische Belegerkennung (Anthropic) · Abo und Zahlungen (Apple, Stripe) · Bankanbindung (finAPI) · Öffentliche Beleg-Links und Beweissicherung · Löschung des Kontos und Aufbewahrungsfristen.
+- Bestehende Abschnitte „Deine Rechte" 8 → **15** und „SSL/TLS" 9 → **16**; Stand auf September 2026.
+
+Jeder Abschnitt nennt Datenkategorien, Zweck, Rechtsgrundlage und Ort der Verarbeitung.
+
+## Wie
+
+Ein Skript mit **exakten Treffer-Prüfungen** (jede Ersetzung muss genau einmal passen, sonst Abbruch ohne Schreiben) hat die zehn Änderungen in beiden Dateien gesetzt; die Umlaute im deutschen Block wurden aus transportfester Umschrift zurückgewandelt und anschließend auf Reste geprüft. Gurt gegen Gedankenstriche **nur auf den eingefügten Blöcken**.
+
+**Anbieter-Angaben ausschließlich aus den Rechtsdokumenten der Anbieter**, nicht aus dem Gedächtnis:
+- `resend.com/legal/dpa`: Rechtsträger ist **Plus Five Five, Inc.** (nicht „Resend, Inc."), 2261 Market Street #5039, San Francisco; „primary processing operations take place in the United States"; Übermittlung gestützt auf **EU-U.S. Data Privacy Framework und** die EU-Standardvertragsklauseln; Unterauftragsverarbeiter-Liste öffentlich unter `resend.com/legal/subprocessors`.
+- `anthropic.com/legal/commercial-terms`: Vertragspartner für Kunden im EWR ist **Anthropic Ireland, Limited** (nicht die US-Gesellschaft); wörtlich „Anthropic may not train models on Customer Content from Services" → im Text als „dürfen nicht zum Training von Modellen verwendet werden".
+
+Die Angaben zum Beleg-Postfach spiegeln die tatsächliche Technik: Empfangs-Domain in `eu-west-1`, nur **Anhänge** werden übernommen (der Mail-Text nicht), verworfene Einträge fallen nach 30 Tagen dem Prune-Trigger zum Opfer, die Adresse ist rotierbar.
+
+## Warum so
+
+- **Diese Seite, nicht die der Web-App:** Die USELY-Web-App hat ihre eigene Erklärung, dort wurde Resend am selben Tag ergänzt (USELY-Repo, Deploy `96590d9a`). Sie wirkt aber nur für Web-Nutzer. Für iOS und Apple zählt allein diese Seite.
+- **Nicht nur Resend:** Ein Resend-Absatz in einer Erklärung, die Supabase und die Belegerkennung verschweigt, wäre unvollständig geblieben. Yasin hat auf die vorgelegte Gliederung ausdrücklich „Variante A" gesagt, damit ist der Stopp-Punkt „inhaltliche Änderungen an Rechtstexten" (CLAUDE.md) erfüllt.
+- **Zweisprachig in einem Paket** (§B): Die EN-Fassung trägt denselben Aufbau und dieselbe Nummerierung, der Hinweis auf die Verbindlichkeit der deutschen Fassung bleibt unberührt.
+- **finAPI und Bezahllink als „derzeit nicht allgemein freigeschaltet"** benannt, statt sie zu verschweigen oder als verfügbar darzustellen: Der Code ist ausgeliefert, die Funktion hängt an einem Server-Schalter.
+
+## Verify
+
+- `python3 scripts/verify.py` **GRÜN, 21 Seiten, 0 Fehler, 0 Warnungen** (DNA-Marker, Em-Dash-Scan, hreflang, Canonicals, noindex-Regeln, interne Links, JSON-LD).
+- Abschnittsfolge 1 bis 16 in beiden Sprachen kontrolliert und identisch.
+- Eingefügter deutscher Block: 6.712 Zeichen, keine Umschrift-Reste, kein Em- oder En-Dash.
+- Live-Gegenprobe nach dem Deploy an beiden URLs.
+
+## Gelernt
+
+1. **Wo eine Rechtsseite verlinkt ist, entscheidet, welche Erklärung gilt.** Vor jeder Ergänzung erst per grep prüfen, wohin App, Paywall und Store-Metadaten zeigen. Hier: alle drei auf yg-media.de/datenschutz, die Web-App auf ihre eigene Seite.
+2. **Anbieter-Firmierungen immer aus dem DPA des Anbieters ziehen.** Zwei von zwei geprüften Namen wären aus dem Gedächtnis falsch gewesen (Plus Five Five statt Resend Inc.; Anthropic Ireland statt Anthropic PBC für EWR-Kunden).
+3. **Der Em-Dash-Gurt darf nur den neuen Text prüfen** — der Bestand trägt bewusst einen im `<title>`, den `verify.py` ausblendet. Ein Ganzdatei-Gurt schlägt sonst fälschlich an (einmal passiert, vor dem Schreiben abgefangen).
+4. Offen und bei Yasin: Auftragsverarbeitungsverträge für Anthropic, Stripe und finAPI bestätigen, den Resend-DPA im Konto gegenzeichnen, Retentions-Wert für Receiving nachsehen, fachkundige Gesamtprüfung.
