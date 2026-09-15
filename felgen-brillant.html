@@ -280,6 +280,10 @@ td.num{font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;text
 .prodwide .cap{padding:16px 20px}
 .vid{position:relative;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);background:#0b1120;aspect-ratio:16/9;box-shadow:0 14px 34px rgba(13,40,90,.12)}
 .vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vvid{position:relative;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);background:#0b1120;box-shadow:0 14px 34px rgba(13,40,90,.12);min-height:560px;display:flex;align-items:center;justify-content:center}
+.vvid blockquote{margin:0!important;width:100%}
+.vvid .fb{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:#c3d3ec;text-align:center;padding:24px;z-index:0}
+.vvid .fb a{color:#7fa8ee;font-weight:700}
 .pcard{padding:0;display:flex;flex-direction:column}
 .pcard .im{position:relative;aspect-ratio:4/3;background:linear-gradient(160deg,#edf2f9,#dde7f4);overflow:hidden}
 .pcard .im::before{content:'◆';position:absolute;inset:0;display:grid;place-items:center;font-size:40px;color:#c3d3ea}
@@ -746,6 +750,27 @@ td.num{font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;text
     <div class="card rv" style="--i:3"><h3><span class="dm">◆</span>Kooperationen &amp; Exklusivverträge</h3><p>Autohäuser und Unternehmen mit Leasing-Fuhrpark binden wir über <b>feste Verträge</b>. Exklusivpartner erhalten Rabatte auf unsere Leistungen und günstigere Einkaufspreise auf Markenfelgen und Reifen. So wird aus dem ersten Auftrag planbares Stammgeschäft.</p></div>
     <div class="card rv" style="--i:4"><h3><span class="dm">◆</span>Organischer Content</h3><p>Eigener YouTube-Kanal und Social Media rund um Felgenaufbereitung, Auto und Lifestyle: Ankauf-Situationen, Einblicke in die Produktion, der <b>Alltag im Betrieb, nah dran gefilmt</b>. Informativ und nahbar, Sichtbarkeit jeden Tag, ganz ohne Werbebudget.</p></div>
     <div class="card rv" style="--i:5"><h3><span class="dm">◆</span>Szene, Events &amp; Community</h3><p>Präsenz auf <b>Tuning-Messen und Events</b>, Kooperationen mit Veranstaltern, dazu Giveaways wie T-Shirts, Tanktops und Reinigungsschaum aus der eigenen Pflegeserie. Ziel: In der Felgen- und Tuningszene kommt niemand an der Marke vorbei.</p></div>
+  </div>
+  <div class="g2 rv" style="--i:6;margin-top:16px;align-items:start">
+    <div class="vvid">
+      <div class="fb">Das Video lädt über TikTok.<br><a href="https://www.tiktok.com/@felgenbrillant/video/7470935304812121377" target="_blank" rel="noopener">Direkt auf TikTok ansehen</a></div>
+      <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@felgenbrillant/video/7470935304812121377" data-video-id="7470935304812121377" style="max-width:340px;min-width:280px;position:relative;z-index:1">
+        <section><a target="_blank" rel="noopener" title="@felgenbrillant" href="https://www.tiktok.com/@felgenbrillant">@felgenbrillant</a></section>
+      </blockquote>
+    </div>
+    <div class="card tintc" style="cursor:default">
+      <h3><span class="dm">◆</span>Was organisch entstanden ist</h3>
+      <p>Dieses eine Video hat <b>rund 220.000 Aufrufe</b> und über <b>20.600 Likes</b> erreicht. Ohne einen Euro Werbebudget, ohne Agentur, einfach aus dem Betrieb heraus gefilmt.</p>
+      <table style="margin-top:12px">
+        <tbody>
+          <tr><td>Aufrufe des Top-Videos</td><td class="num">≈ 220.000</td></tr>
+          <tr><td>Likes</td><td class="num">≈ 20.600</td></tr>
+          <tr><td>Follower auf TikTok</td><td class="num">≈ 5.900</td></tr>
+          <tr><td>Eingesetztes Werbebudget</td><td class="num">0 €</td></tr>
+        </tbody>
+      </table>
+      <p class="small" style="margin-top:10px">Genau diese Reichweite wollen wir skalieren. Sie ist der Beleg dafür, dass das Thema trägt, und sie ist der Kanal, über den Endkunden ohne Werbekosten zu uns finden.</p>
+    </div>
   </div>
   <div class="card rv" style="--i:6;margin-top:16px">
     <h3><span class="dm">◆</span>Zwei große Kampagnen tragen das Jahr</h3>
@@ -1905,6 +1930,7 @@ td.num{font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;text
   <button id="next" aria-label="Weiter">→</button>
 </div>
 
+<script async src="https://www.tiktok.com/embed.js"></script>
 <script>
 (function(){
   var views=[].slice.call(document.querySelectorAll('.view'));
