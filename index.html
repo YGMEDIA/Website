@@ -31,12 +31,12 @@
   --teal-bright: #2b86a7;
   --teal-dim: rgba(24, 59, 77, 0.2);
   --teal-glow: rgba(29, 86, 112, 0.45);
-  --bg: #07070F;
-  --surface: #0D0D1A;
-  --card: #0A1018;
+  --bg: #050505;
+  --surface: #0C0C0C;
+  --card: #0B0B0B;
   --text: #F0F0F0;
-  --muted: #8888AA;
-  --faint: #333355;
+  --muted: #8B8B94;
+  --faint: #34343A;
   --border: rgba(255,255,255,0.07);
   --glass: rgba(255, 255, 255, 0.012);
 }
@@ -48,21 +48,15 @@ body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--tex
 #bg-canvas { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
 .orb-wrap { position: fixed; inset: 0; z-index: 1; pointer-events: none; overflow: hidden; }
 .orb { position: absolute; border-radius: 50%; filter: blur(120px); }
-.orb-1 { width: 900px; height: 900px; background: radial-gradient(circle, rgba(28,91,130,0.45) 0%, transparent 70%); top: -300px; left: -200px; animation: orb1 25s ease-in-out infinite alternate; }
-.orb-2 { width: 600px; height: 600px; background: radial-gradient(circle, rgba(10,60,120,0.4) 0%, transparent 70%); bottom: 5%; right: -150px; animation: orb2 32s ease-in-out infinite alternate; }
-.orb-3 { width: 500px; height: 500px; background: radial-gradient(circle, rgba(28,91,130,0.25) 0%, transparent 70%); top: 40%; left: 45%; animation: orb3 40s ease-in-out infinite alternate; }
-.orb-4 { width: 350px; height: 350px; background: radial-gradient(circle, rgba(5,40,90,0.4) 0%, transparent 70%); top: 20%; right: 20%; animation: orb1 18s ease-in-out infinite alternate-reverse; }
+.orb-1 { width: 900px; height: 900px; background: radial-gradient(circle, rgba(215,222,230,0.11) 0%, transparent 70%); top: -300px; left: -200px; animation: orb1 25s ease-in-out infinite alternate; }
 @keyframes orb1 { 0% { transform: translate(0,0) scale(1); } 50% { transform: translate(60px,-40px) scale(1.1); } 100% { transform: translate(-30px,60px) scale(0.95); } }
-@keyframes orb2 { 0% { transform: translate(0,0) scale(1); } 100% { transform: translate(-80px,-60px) scale(1.15); } }
-@keyframes orb3 { 0% { transform: translate(0,0); } 100% { transform: translate(-60px,80px) scale(1.2); } }
 
 
-.grid-overlay { position: fixed; inset: 0; z-index: 2; pointer-events: none; background-image: linear-gradient(rgba(28,91,130,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(28,91,130,0.03) 1px, transparent 1px); background-size: 80px 80px; mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 100%); }
+.grid-overlay { position: fixed; inset: 0; z-index: 2; pointer-events: none; background-image: linear-gradient(rgba(255,255,255,0.01) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.01) 1px, transparent 1px); background-size: 80px 80px; mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 100%); }
 body::after { content: ''; position: fixed; inset: 0; z-index: 3; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E"); pointer-events: none; opacity: 0.5; }
 
 /* NAV */
 nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1.1rem 0; transition: background 0.3s, border-color 0.3s; }
-nav.scrolled { background: rgba(12,14,28,0.65); backdrop-filter: blur(28px); -webkit-backdrop-filter: blur(28px); border-bottom: 1px solid rgba(255,255,255,0.1); }
 .nav-inner { max-width: 1240px; margin: 0 auto; padding: 0 2.5rem; display: flex; align-items: center; justify-content: space-between; }
 .nav-logo img { height: 44px; width: auto; display: block; }
 .nav-logo-text { display: none; font-size: 1.2rem; font-weight: 900; color: var(--teal); letter-spacing: -0.02em; }
@@ -218,7 +212,7 @@ section { padding: 8rem 0; position: relative; z-index: 10; }
 .showcase-link { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; font-weight: 600; color: var(--teal-bright); text-decoration: none; transition: gap 0.2s, text-shadow 0.2s; width: fit-content; }
 .showcase-link:hover { gap: 0.7rem; text-shadow: 0 0 12px rgba(36,120,170,0.6); }
 
-footer { background: rgba(12,14,28,0.65); backdrop-filter: blur(28px); -webkit-backdrop-filter: blur(28px); border-top: 1px solid rgba(255,255,255,0.1); padding: 4rem 0 2.5rem; position: relative; z-index: 10; }
+footer { background: rgba(12,12,12,0.6); backdrop-filter: blur(28px); -webkit-backdrop-filter: blur(28px); border-top: 1px solid rgba(255,255,255,0.1); padding: 4rem 0 2.5rem; position: relative; z-index: 10; }
 .footer-top { display: grid; grid-template-columns: 260px 1fr; gap: 4rem; margin-bottom: 3rem; }
 .footer-logo img { height: 36px; display: block; margin-bottom: 1rem; }
 .footer-logo-text { font-size: 1.1rem; font-weight: 900; color: var(--teal); letter-spacing: -0.02em; margin-bottom: 1rem; display: none; }
@@ -234,7 +228,7 @@ footer { background: rgba(12,14,28,0.65); backdrop-filter: blur(28px); -webkit-b
 .social-btn:hover { border-color: rgba(28,91,130,0.5); color: var(--teal); }
 
 /* COOKIE BANNER */
-.cookie-banner { position: fixed; bottom: 1.5rem; left: 1.5rem; right: 1.5rem; max-width: 480px; margin: 0 auto; z-index: 2000; padding: 1.6rem 1.8rem; background: rgba(12,14,28,0.85); backdrop-filter: blur(28px); -webkit-backdrop-filter: blur(28px); border: 1px solid rgba(255,255,255,0.12); border-radius: 20px; box-shadow: 0 30px 60px -20px rgba(0,0,0,0.6); transform: translateY(150%); transition: transform 0.5s cubic-bezier(0.16,1,0.3,1); }
+.cookie-banner { position: fixed; bottom: 1.5rem; left: 1.5rem; right: 1.5rem; max-width: 480px; margin: 0 auto; z-index: 2000; padding: 1.6rem 1.8rem; background: rgba(14,14,14,0.88); backdrop-filter: blur(28px); -webkit-backdrop-filter: blur(28px); border: 1px solid rgba(255,255,255,0.12); border-radius: 20px; box-shadow: 0 30px 60px -20px rgba(0,0,0,0.6); transform: translateY(150%); transition: transform 0.5s cubic-bezier(0.16,1,0.3,1); }
 .cookie-banner.show { transform: translateY(0); }
 .cookie-title { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.5rem; letter-spacing: -0.01em; }
 .cookie-text { font-size: 0.82rem; color: var(--muted); line-height: 1.6; margin-bottom: 1.2rem; }
@@ -281,7 +275,7 @@ footer { background: rgba(12,14,28,0.65); backdrop-filter: blur(28px); -webkit-b
 @media (max-width: 768px) {
   nav { padding: 0.9rem 0; }
   .nav-inner { padding: 0 1.5rem; }
-  .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; background: rgba(7,7,15,0.97); padding: 1.5rem; gap: 1.5rem; border-bottom: 1px solid var(--border); backdrop-filter: blur(24px); }
+  .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; background: rgba(5,5,5,0.97); padding: 1.5rem; gap: 1.5rem; border-bottom: 1px solid var(--border); backdrop-filter: blur(24px); }
   .nav-links.open { display: flex; }
   .nav-burger { display: flex; }
   .wrap { padding: 0 1.5rem; }
@@ -326,7 +320,7 @@ a.lang-btn:hover { border-color: rgba(28,91,130,0.5); color: var(--text); }
 .nav-lang-btn:hover { border-color: rgba(28,91,130,0.5); color: var(--text); }
 .nav-lang-caret { transition: transform 0.2s; }
 .nav-lang.open .nav-lang-caret { transform: rotate(180deg); }
-.nav-lang-menu { position: absolute; top: calc(100% + 10px); right: 0; min-width: 160px; background: rgba(12,14,28,0.92); backdrop-filter: blur(28px); -webkit-backdrop-filter: blur(28px); border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; padding: 0.4rem; display: none; flex-direction: column; gap: 0.15rem; box-shadow: 0 20px 40px -12px rgba(0,0,0,0.6); z-index: 1001; }
+.nav-lang-menu { position: absolute; top: calc(100% + 10px); right: 0; min-width: 160px; background: rgba(14,14,14,0.94); backdrop-filter: blur(28px); -webkit-backdrop-filter: blur(28px); border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; padding: 0.4rem; display: none; flex-direction: column; gap: 0.15rem; box-shadow: 0 20px 40px -12px rgba(0,0,0,0.6); z-index: 1001; }
 .nav-lang.open .nav-lang-menu { display: flex; }
 .nav-lang-item { display: flex; align-items: center; gap: 0.6rem; padding: 0.55rem 0.8rem; border-radius: 10px; color: var(--muted); text-decoration: none; font-size: 0.82rem; font-weight: 600; transition: background 0.2s, color 0.2s; }
 .nav-lang-item svg { width: 18px; height: 13px; border-radius: 2.5px; box-shadow: 0 0 0 1px rgba(255,255,255,0.14); }
@@ -343,7 +337,7 @@ section[id] { scroll-margin-top: 70px; }
 .product-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(28,91,130,0.5), transparent); transform: scaleX(0); transition: transform 0.4s; }
 .product-card:hover { border-color: rgba(28,91,130,0.35); transform: translateY(-4px); }
 .product-card:hover::before { transform: scaleX(1); }
-.product-img { width: 100%; height: 400px; object-fit: cover; object-position: center top; border-radius: 16px; margin-bottom: 1.8rem; border: 1px solid rgba(255,255,255,0.1); display: block; background: linear-gradient(135deg, rgba(28,91,130,0.15), rgba(10,30,50,0.4)); }
+.product-img { width: 100%; height: 400px; object-fit: cover; object-position: center top; border-radius: 16px; margin-bottom: 1.8rem; border: 1px solid rgba(255,255,255,0.1); display: block; background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.015)); }
 .product-card h2, .product-card h3 { font-size: clamp(1.25rem, 1.8vw, 1.55rem); font-weight: 900; letter-spacing: -0.03em; line-height: 1.2; margin-bottom: 1rem; }
 .product-card p { font-size: 0.92rem; color: var(--muted); line-height: 1.8; }
 .product-card .service-tags { margin-top: 1.4rem; }
@@ -381,16 +375,21 @@ section[id] { scroll-margin-top: 70px; }
 #produkte .product-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.2rem; margin-bottom: 0; }
 #produkte .product-card { padding: 1.6rem; }
 #produkte .product-img { height: 230px; margin-bottom: 1.4rem; }
-#produkte .product-card h2 { font-size: 1.15rem; margin-bottom: 0.9rem; }
-#produkte .product-card p { font-size: 0.88rem; line-height: 1.75; }
+#produkte .product-card h2 { font-size: 1.5rem; margin-bottom: 0.8rem; }
+#produkte .product-card p { font-size: 0.88rem; line-height: 1.75; text-wrap: pretty; }
+#produkte .product-card .ref-tag { color: var(--teal-bright); }
 #produkte .product-links { gap: 0.6rem 1.2rem; padding-top: 1.4rem; }
 #produkte .product-links .ref-link { margin-top: 0; }
-@media (max-width: 1200px) { #produkte .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; } #produkte .product-card { padding: 2.2rem; } #produkte .product-img { height: 320px; } #produkte .product-card h2 { font-size: 1.4rem; } #produkte .product-card p { font-size: 0.92rem; } }
-@media (max-width: 768px) { #produkte { padding: 110px 0 60px; } #produkte .product-grid { grid-template-columns: 1fr; } #produkte .product-card { padding: 1.8rem; } #produkte .product-img { height: 260px; } #produkte .product-card h2 { font-size: 1.25rem; } }
+@media (max-width: 1200px) { #produkte .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; } #produkte .product-card { padding: 2.2rem; } #produkte .product-img { height: 320px; } #produkte .product-card h2 { font-size: 1.7rem; } #produkte .product-card p { font-size: 0.92rem; } }
+@media (max-width: 768px) { #produkte { padding: 110px 0 60px; } #produkte .product-grid { grid-template-columns: 1fr; } #produkte .product-card { padding: 1.8rem; } #produkte .product-img { height: 260px; } #produkte .product-card h2 { font-size: 1.55rem; } }
+/* Vier Spalten: die Karten teilen sich die Zeilen (Subgrid), damit Stichpunkt, Titel, Chips und Links
+   ueber alle Karten auf einer Linie stehen, auch wenn ein Stichpunkt zweizeilig umbricht (2026-09-19) */
+@media (min-width: 1201px) { #produkte .product-grid { row-gap: 0; } #produkte .product-card { display: grid; grid-template-rows: subgrid; grid-row: span 6; } #produkte .product-card .ref-tag { align-self: end; } }
 
-/* YG-Logo-Buehne: animiertes Logo ueber den Karten (Yasin, 2026-09-19), Skript /assets/yg-logo-anim.js */
+/* YG-Logo-Buehne: animiertes Logo ueber den Karten (Yasin, 2026-09-19), Skript /assets/yg-logo-anim.js.
+   Bewusst ohne filter/drop-shadow: Safari schneidet den Schein am SVG-Rand ab, das ergibt einen sichtbaren Kasten. */
 .yg-stage { display: flex; justify-content: center; margin: 0 auto 4.2rem; }
-.yg-logo { width: clamp(200px, 28vw, 400px); height: auto; display: block; overflow: visible; filter: drop-shadow(0 0 30px rgba(43,134,167,0.32)); }
+.yg-logo { width: clamp(200px, 28vw, 400px); height: auto; display: block; overflow: visible; }
 @media (max-width: 768px) { .yg-stage { margin-bottom: 3rem; } }
 
 /* Minimal-Chrome seit 2026-09-19 (Yasin): Nav nur Logo + Sprache, Footer nur Rechtliches + Sprache (Constitution §A1 v1.3) */
@@ -486,8 +485,7 @@ footer { padding: 2.2rem 0; }
 <canvas id="bg-canvas"></canvas>
 <div class="grid-overlay"></div>
 <div class="orb-wrap">
-  <div class="orb orb-1"></div><div class="orb orb-2"></div>
-  <div class="orb orb-3"></div><div class="orb orb-4"></div>
+  <div class="orb orb-1"></div>
 </div>
 
 <nav id="nav">
@@ -517,9 +515,9 @@ footer { padding: 2.2rem 0; }
     <div class="product-grid">
       <div class="product-card reveal" id="usely">
         <img src="assets/logo-usely.webp" alt="USELY Keyvisual mit Glas-U" class="product-img" loading="lazy">
-        <span class="ref-tag">Business-Software · iOS und Web · Live im App Store</span>
-        <h2>USELY. Vom Rechnungs-Tool zum Betriebssystem fürs Unternehmen.</h2>
-        <p>Angebote, Rechnungen und Belege für Selbstständige und kleine Unternehmen: Belegkette mit Bezahllink, E-Rechnung mit XRechnung und ZUGFeRD, KI-Belegscan, Boards mit Zeiterfassung, Banking-Abgleich und Steuerberater-Zugang mit DATEV-Export. Native iOS-App und Web-App, beide in Echtzeit synchron. Kostenlos startbar.</p>
+        <span class="ref-tag">Smarte Buchhaltung</span>
+        <h2>USELY</h2>
+        <p>Angebote, Rechnungen und Belege in Sekunden erstellen, auf dem iPhone und im Web. Mit E-Rechnung, Bezahllink und DATEV-Export für die Steuerkanzlei. Der Vorteil: Buchhaltung läuft nebenbei statt am Wochenende.</p>
         <div class="service-tags"><span class="stag">E-Rechnung</span><span class="stag">Belegkette</span><span class="stag">Boards</span><span class="stag">DATEV</span></div>
         <div class="product-links">
           <a href="https://usely.yg-media.de/" class="ref-link">Mehr erfahren →</a>
@@ -529,9 +527,9 @@ footer { padding: 2.2rem 0; }
 
       <div class="product-card reveal" id="you" data-delay="1">
         <img src="assets/logo-you.webp" alt="YOU Keyvisual" class="product-img" loading="lazy">
-        <span class="ref-tag">Gesundheit · iOS App · Eigenes Wearable</span>
-        <h2>YOU. Andere messen den Körper. YOU misst Körper und Geist.</h2>
-        <p>Ein Life Operating System, das den ganzen Menschen erfasst: Training, Ernährung mit KI-Foto-Scan, Schlaf und Recovery, dazu Journal, tägliche Check-ins und ein psychologisches Profil aus einem tiefen Onboarding. Vier Ringe zeigen den Tageszustand. Das YOU Band misst rund um die Uhr, mit 30 bis 40 Tagen Akkulaufzeit.</p>
+        <span class="ref-tag">Gesundheits-App mit eigenem Wearable</span>
+        <h2>YOU</h2>
+        <p>Training, Ernährung, Schlaf und Journal in einer App, gemessen vom eigenen YOU Band. Ein KI-Onboarding lernt dich kennen, vier Ringe zeigen deinen Tag. Der Unterschied: YOU misst Körper und Geist.</p>
         <div class="service-tags"><span class="stag">KI-Onboarding</span><span class="stag">YOU Band</span><span class="stag">HRV und Recovery</span><span class="stag">Widgets</span></div>
         <div class="product-links">
           <a href="https://you.yg-media.de/" class="ref-link">Zur YOU-Website →</a>
@@ -541,9 +539,9 @@ footer { padding: 2.2rem 0; }
 
       <div class="product-card reveal" id="paukbox" data-delay="2">
         <img src="assets/logo-paukbox.webp" alt="Paukbox Logo mit goldenen Karteikarten" class="product-img" loading="lazy">
-        <span class="ref-tag">Lernen · Web-App · Kostenlos starten</span>
-        <h2>Paukbox. Karteikarten, die sitzen.</h2>
-        <p>Vokabeln und Fachbegriffe als Karteikarten lernen, im Browser auf Handy, Tablet und Desktop. Listen kommen per PDF-Import, als Text oder direkt aus einer KI im Format „Wort = Bedeutung" in die App. Das Leitner-System wiederholt im Rhythmus von 1, 3, 7 und 21 Tagen, Zwischenrunden als Quiz halten das Wissen fest. 50 Karten sind kostenlos, unbegrenzt viele für einmalig 2 Euro.</p>
+        <span class="ref-tag">Lern-App mit Karteikarten</span>
+        <h2>Paukbox</h2>
+        <p>Vokabeln und Fachbegriffe als Karteikarten lernen, im Browser auf jedem Gerät. Listen kommen per PDF, Text oder KI in die App, das Leitner-System wiederholt im richtigen Takt. 50&nbsp;Karten gratis, unbegrenzt für einmalig 2&nbsp;Euro.</p>
         <div class="service-tags"><span class="stag">PDF-Import</span><span class="stag">Leitner-System</span><span class="stag">Quiz</span><span class="stag">Einmalig 2 €</span></div>
         <div class="product-links">
           <a href="https://paukbox.yg-media.de" target="_blank" rel="noopener" class="ref-link">Paukbox öffnen →</a>
@@ -552,10 +550,9 @@ footer { padding: 2.2rem 0; }
 
       <div class="product-card reveal" id="felgen-brillant" data-delay="3">
         <img src="assets/logo-felgen-brillant.webp" alt="Felgen Brillant Logo" class="product-img" loading="lazy">
-        <span class="ref-tag">Eigenes Projekt · Partner · Robotik-Vision</span>
-        <h2>Felgen Brillant. Das Unternehmen, das wir mit aufbauen.</h2>
-        <p>Felgen Brillant macht aus beschädigten Originalfelgen wieder neuwertige Räder, komplett im eigenen Haus: richten, CNC-glanzdrehen, pulverbeschichten, lackieren, dazu ein eigener Shop für aufbereitete Markenfelgen. YG MEDIA hat dieses Unternehmen digital mit aufgebaut und entwickelt es weiter: Marke, Marketing, Website, Shop und die Software dahinter.</p>
-        <p style="margin-top:1rem">Die Vision reicht weiter als Software. Wir arbeiten an einer vollautomatisierten, robotergestützten Felgen-Pulverbeschichtungsanlage, in der Handling, Beschichtung und Qualitätskontrolle ineinandergreifen und die eigene Betriebssoftware den Takt vorgibt. Felgen Brillant ist der Ort, an dem unsere Ideen im echten Betrieb entstehen und beweisen, was sie können.</p>
+        <span class="ref-tag">Felgenaufbereitung und Felgenhandel</span>
+        <h2>Felgen Brillant</h2>
+        <p>Aus beschädigten Originalfelgen werden wieder neuwertige Räder, dazu ein Shop für aufbereitete Markenfelgen. Wir bauen Marke, Shop und Software mit auf. Das Ziel: eine robotergestützte Pulverbeschichtungsanlage.</p>
         <div class="service-tags"><span class="stag">Marke</span><span class="stag">Shop</span><span class="stag">Betriebssoftware</span><span class="stag">Robotik-Vision</span></div>
         <div class="product-links">
           <a href="https://www.felgen-brillant.com" target="_blank" rel="noopener" class="ref-link">Website ansehen →</a>
@@ -579,8 +576,6 @@ footer { padding: 2.2rem 0; }
 </footer>
 
 <script>
-const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 40); }, { passive: true });
 const burger = document.getElementById('burger');
 const navLinks = document.getElementById('navLinks');
 burger.addEventListener('click', () => navLinks.classList.toggle('open'));
@@ -622,8 +617,8 @@ function initParticles() { particles = Array.from({length:100}, () => new Partic
 function animate() {
   ctx.clearRect(0,0,W,H);
   for (let i=0;i<particles.length;i++) {
-    for (let j=i+1;j<particles.length;j++) { const dx=particles[i].x-particles[j].x,dy=particles[i].y-particles[j].y,d=Math.sqrt(dx*dx+dy*dy); if(d<130){ctx.beginPath();ctx.strokeStyle=`rgba(28,91,130,${(1-d/130)*0.1})`;ctx.lineWidth=0.5;ctx.moveTo(particles[i].x,particles[i].y);ctx.lineTo(particles[j].x,particles[j].y);ctx.stroke();} }
-    const dx=particles[i].x-mouse.x,dy=particles[i].y-mouse.y,d=Math.sqrt(dx*dx+dy*dy); if(d<180){ctx.beginPath();ctx.strokeStyle=`rgba(28,91,130,${(1-d/180)*0.25})`;ctx.lineWidth=0.7;ctx.moveTo(particles[i].x,particles[i].y);ctx.lineTo(mouse.x,mouse.y);ctx.stroke();}
+    for (let j=i+1;j<particles.length;j++) { const dx=particles[i].x-particles[j].x,dy=particles[i].y-particles[j].y,d=Math.sqrt(dx*dx+dy*dy); if(d<130){ctx.beginPath();ctx.strokeStyle=`rgba(84,86,90,${(1-d/130)*0.1})`;ctx.lineWidth=0.5;ctx.moveTo(particles[i].x,particles[i].y);ctx.lineTo(particles[j].x,particles[j].y);ctx.stroke();} }
+    const dx=particles[i].x-mouse.x,dy=particles[i].y-mouse.y,d=Math.sqrt(dx*dx+dy*dy); if(d<180){ctx.beginPath();ctx.strokeStyle=`rgba(84,86,90,${(1-d/180)*0.25})`;ctx.lineWidth=0.7;ctx.moveTo(particles[i].x,particles[i].y);ctx.lineTo(mouse.x,mouse.y);ctx.stroke();}
   }
   particles.forEach(p => {
     p.life++; if(p.life>p.maxLife) p.reset();
@@ -631,7 +626,7 @@ function animate() {
     p.vx*=0.99;p.vy*=0.99;p.x+=p.vx;p.y+=p.vy;
     if(p.x<0)p.x=W;if(p.x>W)p.x=0;if(p.y<0)p.y=H;if(p.y>H)p.y=0;
     const fa=p.life<60?p.life/60:p.life>p.maxLife-60?(p.maxLife-p.life)/60:1;
-    ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=`rgba(28,91,130,${p.alpha*fa})`;ctx.fill();
+    ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=`rgba(84,86,90,${p.alpha*fa})`;ctx.fill();
   });
   requestAnimationFrame(animate);
 }

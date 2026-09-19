@@ -277,7 +277,7 @@
 
   // ---------- Auge (nur solange die Form eine Schlange ist) ----------
   var eye = document.createElementNS(SVGNS, 'circle');
-  eye.setAttribute('r', '0'); eye.setAttribute('fill', '#07070F'); stage.appendChild(eye);
+  eye.setAttribute('r', '0'); eye.setAttribute('fill', '#050505'); stage.appendChild(eye);
   var eyeOn = false;
   function drawEye(amount) {
     if (amount <= 0.001) { if (eyeOn) { eye.setAttribute('r', '0'); eyeOn = false; } return; }
