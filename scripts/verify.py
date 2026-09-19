@@ -133,6 +133,8 @@ def check_page(path):
         err(f"{path}: Canvas-Hintergrund fehlt")
     if full_dna and "nav-lang" not in html:
         err(f"{path}: Nav-Sprachwechsler (.nav-lang) fehlt")
+    if full_dna and 'class="nav-logo"' not in html:
+        err(f"{path}: Nav-Logo (.nav-logo) fehlt (§A1, seit 2026-09-19 wieder Pflicht)")
     if full_dna and "lang-switch" not in html:
         err(f"{path}: Footer-Sprachwechsler (.lang-switch) fehlt")
 
