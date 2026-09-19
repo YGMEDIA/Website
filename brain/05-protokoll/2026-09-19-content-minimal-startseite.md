@@ -31,3 +31,6 @@
 - Constitution v1.3 (§A1 Nav/Footer neu definiert, §A6.1), Framework v2.2 (1.1, 2.3, M1), P-6 ruht, P-11 neu gefasst.
 - Wer einen Seitenteil entfernt, prüft vorher drei Abhängigkeiten: Body-Links anderer Seiten auf die entfallenden Anker, Skripte, die auf entfallende Elemente zugreifen, und Überschriften-Hierarchie (fällt die einzige H1 weg, braucht die Seite eine neue).
 - Ein Nutzer-Verbot ("nirgends X") gehört ins Gate, nicht nur ins Protokoll; sonst kommt es mit dem nächsten kopierten Footer zurück.
+
+## Nachtrag (gleicher Tag): Name aus der Copyright-Zeile
+Yasin: "entferne unten im Footer den Namen Yasin Gündogdu und lass nur © 2026 YG MEDIA". Auf allen 20 DNA-Seiten ersetzt (eine identische Zeile pro Seite, Treffer-Zwang 20/20). Der Name steht damit sichtbar nur noch im Impressum (Pflichtangabe nach § 5 DDG, unverändert) und unsichtbar im Schema als `founder`. Constitution §A1 und §A6.1 nachgezogen.
