@@ -1,0 +1,20 @@
+<!doctype html><html><head><meta charset="utf-8"></head><body style="margin:0;background:#07070F">
+<div id="grid" style="display:grid;gap:8px;padding:8px"></div>
+<script>
+const q = new URLSearchParams(location.search);
+const times = (q.get('t') || '0,3.5,3.8,4.1,4.4,4.7,4.9,5.3,5.9,6.2,6.5,6.8,7.1,7.6,8.0,8.4,8.8,9.2,9.4,10.0,11.0,11.6,12.2,12.8,13.4,13.9,14.2,14.5,14.8,15.1,15.4').split(',').map(Number);
+const CW = +(q.get('w') || 300), CH = Math.round(CW * 250 / 300); document.getElementById('grid').style.gridTemplateColumns = 'repeat(' + (q.get('c') || 6) + ',' + CW + 'px)';
+Promise.all([fetch("../../assets/yg-logo-anim.js").then(r => r.text()), fetch('static-d.json').then(r => r.json())]).then(([src, D]) => {
+  for (const t of times) {
+    const cell = document.createElement('div');
+    cell.style.cssText = 'position:relative;width:' + CW + 'px;height:' + CH + 'px;border:1px solid #1b2233;overflow:hidden';
+    cell.innerHTML = '<svg id="ygLogo" viewBox="-260 -200 1700 1416" width="' + CW + '" height="' + CH + '" style="overflow:visible;display:block">' +
+      '<rect x="0" y="0" width="1180" height="888" fill="none" stroke="#23304a" stroke-width="4" stroke-dasharray="20 14"/>' +
+      '<g data-stage><path data-part="Y" fill="#fff" d="' + D.Y + '"/><path data-part="G" fill="#fff" d="' + D.G + '"/></g><g data-dust fill="#fff"></g></svg>' +
+      '<div style="position:absolute;left:6px;top:4px;color:#7fb3ff;font:12px monospace">' + t.toFixed(2) + ' s</div>';
+    document.getElementById('grid').appendChild(cell);
+    window.__YG_TEST_TIME = t; (0, eval)(src);
+    cell.querySelector('svg').removeAttribute('id');
+  }
+});
+</script></body></html>

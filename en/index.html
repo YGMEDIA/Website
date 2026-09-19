@@ -387,8 +387,14 @@ section[id] { scroll-margin-top: 70px; }
 @media (max-width: 1200px) { #products .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; } #products .product-card { padding: 2.2rem; } #products .product-img { height: 320px; } #products .product-card h2 { font-size: 1.4rem; } #products .product-card p { font-size: 0.92rem; } }
 @media (max-width: 768px) { #products { padding: 110px 0 60px; } #products .product-grid { grid-template-columns: 1fr; } #products .product-card { padding: 1.8rem; } #products .product-img { height: 260px; } #products .product-card h2 { font-size: 1.25rem; } }
 
+/* YG-Logo-Buehne: animiertes Logo ueber den Karten (Yasin, 2026-09-19), Skript /assets/yg-logo-anim.js */
+.yg-stage { display: flex; justify-content: center; margin: 0 auto 4.2rem; }
+.yg-logo { width: clamp(200px, 28vw, 400px); height: auto; display: block; overflow: visible; filter: drop-shadow(0 0 30px rgba(43,134,167,0.32)); }
+@media (max-width: 768px) { .yg-stage { margin-bottom: 3rem; } }
+
 /* Minimal-Chrome seit 2026-09-19 (Yasin): Nav nur Logo + Sprache, Footer nur Rechtliches + Sprache (Constitution §A1 v1.3) */
 footer { padding: 2.2rem 0; }
+.nav-inner { justify-content: flex-end; }
 .footer-bottom { border-top: 0; padding-top: 0; }
 .footer-copy { color: var(--muted); }
 .footer-legal { display: flex; gap: 1.6rem; flex-wrap: wrap; }
@@ -485,10 +491,6 @@ footer { padding: 2.2rem 0; }
 
 <nav id="nav">
   <div class="nav-inner">
-    <a href="/en/" class="nav-logo">
-      <img src="/assets/YG-Logo-Weiss-No-Background.png" alt="YG MEDIA" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-      <span class="nav-logo-text">YG MEDIA</span>
-    </a>
     <div class="nav-links" id="navLinks">
       <div class="nav-lang" id="navLang">
         <button class="nav-lang-btn" aria-label="Select language" aria-haspopup="true"><svg viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><clipPath id="ljh"><path d="M0,0 v30 h60 v-30 z"/></clipPath><g clip-path="url(#ljh)"><path d="M0,0 v30 h60 v-30 z" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#C8102E" stroke-width="4"/><path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/><path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/></g></svg><span class="nav-lang-caret">▾</span></button>
@@ -505,6 +507,12 @@ footer { padding: 2.2rem 0; }
 <section id="products">
   <div class="wrap">
     <h1 class="sr-only">YG MEDIA: Our products and projects</h1>
+    <div class="yg-stage">
+      <svg id="ygLogo" class="yg-logo" viewBox="0 0 1180 888" role="img" aria-label="YG MEDIA logo">
+        <g data-stage><path data-part="Y" fill="#fff" d="M80 80.5L80 659.5L80.5 660L295.5 660L296 659.5L296 120.5L297.2 104.5L299.2 93.5L302.2 82.5L306.1 71.5L311.1 60.5L318.2 48.5L328.1 35.5L336.5 27L343.5 21.1L353.5 14.2L367.5 7.2L376.5 4.2L390.5 1.1L403.5 0L551.5 0L552 0.5L551.8 778.5L550.8 786.5L548.8 796.5L545.7 806.5L542.9 813.5L537.8 823.5L532.8 831.5L526.9 839.5L520.7 846.5L512.4 854.5L504.5 861L494.5 867.8L487.5 871.8L472.5 878.8L460.5 882.8L448.5 885.7L441.5 886.9L426.5 888L1.5 888L0.5 887.5L80.5 808L471.5 808L472 807.5L472 80.5L471.5 80L376.5 80L376 80.5L375.8 619.5L374.8 627.5L372.9 636.5L367.9 651.5L359.9 667.5L351.9 679.5L343.9 689.5L332 701.5L323.5 708.8L312.5 716.8L298.5 724.9L290.5 728.8L280.5 732.8L270.5 735.9L256.5 738.9L242.5 740L0.5 740L0 739.5L0 1.5L0.5 0.5Z"/><path data-part="G" fill="#fff" d="M1099.5 80L712.5 80L712 80.5L712 807.5L712.5 808L1099.5 808L1100 807.5L1100 232.5L1099.5 232L1004.5 232L1004 232.5L1004 659.5L924.5 739.5L924 738.5L923.9 727.5L923.1 507.5L923.2 334.5L924 268.5L925.2 252.5L927.3 239.5L930.3 227.5L935.3 213.5L940.3 203.5L948 191.5L956.5 181.5L963.5 175.1L974.5 167.2L981.5 163.4L993.5 158.3L1004.5 155.1L1015.5 153.1L1030.5 152L1179.5 152L1180 152.5L1180 887.5L1179.5 888L632.5 888L632 887.5L632 112.5L633 99.5L634.2 92.5L636.4 83.5L639.3 74.5L644.3 63.5L653.1 49.5L663.3 37.5L668.5 32.5L677.5 25L691.5 16L705.5 9.2L716.5 5.2L734.5 1.1L747.5 0L1178.5 0L1179.5 0.5Z"/></g>
+        <g data-dust fill="#fff"></g>
+      </svg>
+    </div>
     <div class="product-grid">
       <div class="product-card reveal" id="usely">
         <img src="/assets/logo-usely.webp" alt="USELY key visual with glass U" class="product-img" loading="lazy">
@@ -666,5 +674,6 @@ resize(); initParticles(); animate();
 })();
 </script>
 
+<script src="/assets/yg-logo-anim.js" defer></script>
 </body>
 </html>
