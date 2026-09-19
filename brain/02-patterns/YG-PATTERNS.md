@@ -13,11 +13,11 @@
 **Form:** DE-Master ändern → dieselbe Änderung handübersetzt in der EN-Datei (Links auf EN-Pendants, absolute Asset-Pfade, eigenständige Schema-/Meta-Übersetzung) → beide Dateien im selben Commit. Bei Massen-Änderungen Python-Replacement-Skript (COMMON/LINKS-Tabellen, Muster _build_en.py) mit QA-Scan auf deutsche Reste; Reihenfolge beachten: Link-Replaces VOR dem Sprachwechsler-Swap.
 **Gesetze:** §B1, §B2, §B4.
 
-## P-11 · Produkt-Karten-Pattern (seit 2026-09-02)
-**Wann:** Eigene Produkte auf der Startseite (USELY, YOU, Paukbox); Partner/Referenzfall als volle Breite.
+## P-11 · Produkt-Karten-Pattern (seit 2026-09-02, Minimal-Auftritt seit 2026-09-19)
+**Wann:** Eigene Produkte und das Partnerprojekt auf der Startseite. Seit 2026-09-19 ist das Raster der einzige Inhalt der Startseite: vier Karten USELY, YOU, Paukbox, Felgen Brillant, 4 Spalten ab 1200 px, 2 Spalten bis 768 px, darunter 1; Kartentitel als h2 unter einer unsichtbaren H1; Links bündig am Kartenboden (`.product-links` mit padding-top statt margin-top am Link). Kein Hero, keine Hero-Kacheln, keine Footer-Produktspalte, keine Fakten-Karte mehr. Der Rest dieses Eintrags beschreibt die Kartenanatomie und gilt weiter.
 **Form:** `.product-grid` (2 Spalten, ≤768px 1 Spalte) aus `.product-card` (Glass, `id` = Produkt-Anker, `scroll-margin-top`): `.product-img` (feste Höhe 280/220px, object-fit cover, NIE aspect-ratio) + `.ref-tag` (Markt · Plattform · Status) + h3 "NAME. Claim." + Absatz (nur belegte Fakten aus Yasins Quellen) + `.service-tags` + `.product-links` (interner Link oder externer Produkt-Link, bei USELY zusätzlich App-Store-Badge). Partner Felgen Brillant als `.ref-feature` (P-3). Hero-Karte spiegelt die Produkte als `.hero-tile`-Kacheln mit denselben Logos.
 **Assets:** Logos aus Yasins Originalen nur skaliert (sips) und als WebP (cwebp q86–88) unter `assets/logo-<produkt>.webp`; Originale bleiben im Repo.
-**Neue Produkte:** Karte DE + EN im selben Paket, Hero-Kachel, Footer-Spalte "Produkte", Fakten-Karte ("Eigene Produkte"-Zahl), Schema `brand`-Liste.
+**Neue Produkte:** Karte DE + EN im selben Paket und Schema `brand`-Liste (seit 2026-09-19 gibt es keine Hero-Kachel, keine Footer-Spalte und keine Fakten-Karte mehr). Ab fünf Karten die Spaltenzahl neu entscheiden, fünf in einer Reihe werden zu schmal.
 **Vorlage:** index.html Sektion #produkte / en/index.html #products.
 **Gesetze:** §A1, §A4, §A5, §A6.1/§A6.2, §B1.
 
@@ -45,6 +45,7 @@
 **Gesetze:** §A1, §A6.
 
 ## P-6 · Kontakt-Pattern
+**Ruht seit 2026-09-19:** Die Startseite hat keine Kontakt-Sektion mehr (Yasin). Kontaktwege stehen nur noch im Impressum (DE+EN) und im Schema; NAP dort synchron halten. Das Muster unten gilt, falls eine Kontakt-Sektion zurückkommt.
 **Wann:** Kontaktwege anzeigen oder ändern.
 **Form:** Kontakt-Sektion mit `.contact-info-item`-Zeilen: mailto, tel:+491774476392, WhatsApp wa.me/491774476392 mit Prefill-Text, darunter der Antwortzeit-Hinweis. Nummer zusätzlich im Impressum (DE+EN) und als `telephone` im LocalBusiness-Schema (NAP synchron halten).
 **Vorlage:** index.html Kontakt-Sektion + Schema.

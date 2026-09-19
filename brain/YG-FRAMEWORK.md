@@ -1,6 +1,6 @@
 # YG FRAMEWORK — Das Systemdokument
 
-> **Version 2.0 · Kanonisch · 2026-09-02** (Produkt-Positionierung; v1.0 vom 2026-07-19)
+> **Version 2.2 · Kanonisch · 2026-09-19** (Minimal-Auftritt; v2.0 Produkt-Positionierung vom 2026-09-02, v1.0 vom 2026-07-19)
 > Konsolidiert aus: der echten Live-Site (20 Seiten, deployed), den Projektanweisungen v5.0, dem SEO-Konzept Rev. 4 und allen Build-Sessions seit Juni 2026.
 > Konfliktregel: Bei Widerspruch zwischen Dokumenten gewinnt dieses. Bei Widerspruch zwischen Doku und Repo gewinnt das Repo — dann wird die Doku korrigiert.
 > Muster übernommen aus den Brains von USELY, YOU und SPC (Vollautonomie, Loop-Regeln, Leseregeln, Governance); wo die drei sich widersprachen, wurde die für ein Website-Projekt sauberste Variante gewählt und hier dokumentiert.
@@ -22,7 +22,7 @@
 
 ## 1.1 Was YG MEDIA ist (Positionierung seit 2026-09-02)
 **Digitale Agentur für Software, Marketing und Robotik** (Würzburg, Inhaber Yasin Gündogdu), die **eigene Produkte** baut und die Website als Informationsseite über diese Produkte nutzt. Dienstleistungen werden nicht mehr beworben (Entscheidung Yasin, 2026-09-02, wegen Anfragen-Flaute und Neuausrichtung). Produkte auf der Website: **USELY** (Buchhaltung → ERP, live im App Store, iOS + Web), **YOU** (Körper und Geist, iOS + YOU Band), **Paukbox** (Karteikarten-Web-App, paukbox.yg-media.de). **SPACE SOCCER** (Mobile Game, EU-Marke) wird seit 2026-09-08 auf der Website nicht mehr gezeigt (Entscheidung Yasin); die Marke bleibt bestehen, das Projekt ist damit nicht bewertet. **Felgen Brillant** ist ein eigenes Mit-Aufbau-Projekt und Partner (Marke, Marketing, Website, Shop, Software), NICHT als Investor zu bezeichnen (Yasin, 2026-09-03). Nächster Horizont: Robotik, konkret eine vollautomatisierte, robotergestützte Felgen-Pulverbeschichtungsanlage bei Felgen Brillant. Konzepte (Hotel-KI, Adidas Vision Pro, Audi VisionPro) stehen als Visionskonzepte, nicht als Studien; Kunden-Designstudien (Derma) sind raus. 10+ Jahre, 60+ Unternehmen, YG MEDIA® und SPACE SOCCER eingetragene Marken.
-Keine Person-Inszenierung: kein Portrait, kein "Über mich", kein Erstgespräch-CTA. Kontakt bleibt: Formular (Themen = Produkte/Partnerschaft), info@yg-media.de · +49 177 4476392 · WhatsApp · Behance + X. Quelle aller Produktaussagen: Visionskonzept `/yg-media-vision` (noindex) + Produktseiten.
+Keine Person-Inszenierung: kein Portrait, kein "Über mich", kein Erstgespräch-CTA. **Seit 2026-09-19 (Yasin) zeigt die Website nur noch die vier Produktkarten (USELY, YOU, Paukbox, Felgen Brillant) und die Rechtsseiten:** kein Hero, keine Konzepte, kein Horizont, kein Unternehmens-Block, kein Kontaktformular, keine Social-Links. Kontaktwege stehen nur noch im Impressum (info@yg-media.de · +49 177 4476392). X/Twitter wird nirgends verlinkt. Quelle aller Produktaussagen: Visionskonzept `/yg-media-vision` (noindex) + Produktseiten.
 Historie: Bis 2026-09-02 war die Site der Anfragen-Kanal eines Digital Business Builders (Website/App/Marketing/Automation, Calendly). Diese Seiten sind geparkt (siehe 2.2).
 
 ## 1.2 Keyword-Strategie (seit 2026-09-02: Brand + Produkt; Service-Tabelle archiviert in 03-research/keyword-strategie.md)
@@ -55,7 +55,7 @@ Rechtsseiten (noindex, nicht in Sitemap): /impressum ↔ /en/legal-notice · /da
 Interne Seiten (noindex, kein EN): buecher-cw, more-produkt-berater, pdfs/.
 
 ## 2.3 Seitenaufbau (DNA — Details Constitution §A)
-Jede Seite: identische Nav (Logo + Website/Apps/Marketing/Automation + Calendly-CTA + Sprachwechsler-Dropdown, Glass-on-Scroll, Burger mobil, aktiver Punkt `.active`) · identischer Footer (3 Spalten Services/Unternehmen/Rechtliches, Logo + Tagline, Behance + X, DE/EN-Pills) · animierter Hintergrund (Canvas-Partikel + 4 Orbs + Grid + Grain) · Glass-Cards, Glow nur auf Teal-Text/Primär-Buttons, Playfair-Serif-Akzente · Cookie-Banner + consent-gated GA4 auf allen Seiten AUSSER Rechtsseiten.
+Jede Seite: identische Nav (seit 2026-09-19 nur Logo + Sprachwechsler-Dropdown, Glass-on-Scroll, keine Menüpunkte) · identischer Footer (eine Zeile: Copyright, Rechtliches, DE/EN-Pills; keine Social-Links) · animierter Hintergrund (Canvas-Partikel + 4 Orbs + Grid + Grain) · Glass-Cards, Glow nur auf Teal-Text/Primär-Buttons, Playfair-Serif-Akzente · Cookie-Banner + consent-gated GA4 auf allen Seiten AUSSER Rechtsseiten.
 
 ## 2.4 Design-Tokens
 --teal #226886 · --teal-bright #2b86a7 · --bg #07070F · --text #F0F0F0 · --muted #8888AA · --faint #333355 · Inter + Playfair Display italic · Hero-H1 clamp(2.2rem, 3.8vw, 4.2rem) einheitlich · Glass rgba(255,255,255,0.04)+blur(16px) · Nav/Footer rgba(12,14,28,0.65)+blur(28px).
@@ -67,7 +67,7 @@ GA4 `G-MHQJ0HLBM3` (Property 437337038), consent-gated via localStorage `yg_cook
 
 # TEIL III · MODULE
 
-**M1 Startseite** — Hero · Realität · Services (4) · Referenzen (Grid → USELY-Feature → Grid → YOU-Feature .flip → KI-Hotel 16:9) · Vorteile · Prozess · About · CTA · Kontakt (Formular + Mail/Telefon/WhatsApp). LocalBusiness-Schema mit NAP.
+**M1 Startseite (seit 2026-09-19)** — nur die Sektion #produkte: unsichtbare H1 (`.sr-only`) + vier `.product-card` (USELY, YOU, Paukbox, Felgen Brillant) mit h2, in einer Reihe ab 1200 px, darunter zwei Spalten, ab 768 px eine. Kein Hero, keine Konzepte, kein Horizont, kein Unternehmens-Block, kein Kontakt. ProfessionalService-Schema mit NAP bleibt (unsichtbar, sameAs ohne X).
 **M2 Service-Seiten (4)** — je ein Keyword, FAQ-Akkordeon mit FAQ-Schema (5 Fragen, Schema-Sprache = Seitensprache), Referenz-Highlights.
 **M3 USELY-Produktseite** — Keyvisual-Hero, 6 Feature-Blöcke mit echten Screenshots (WebP), Download-Band, Macher-Story mit Timeline, FAQ (6), MobileApplication-Schema. Die Startseiten-Karte beschreibt die APP, die Story lebt nur auf /usely.
 **M4 MOFU-Ratgeber** — /website-kosten: Preisvergleich-Grid, Kostenfaktoren, FAQ-Schema. Weitere Ratgeber (z.B. app entwickeln kosten) nach GSC-Signal.
@@ -129,6 +129,7 @@ INDEX zuerst, dann STATUS, dann Links. CLAUDE.md < 200 Zeilen — zeigt aufs Bra
 | 2026-07-19 | 1.0 | Erstfassung: konsolidiert aus Live-Site (v4.3-Stand), Projektanweisungen v5.0, SEO-Konzept Rev. 4 und Projekthistorie Juni–Juli 2026. Systematik übernommen aus den Brains von USELY (Framework/CLAUDE.md/Spec-Kette), YOU (STATUS-Verlauf, Vollautonomie-Detailregeln) und SPC (Loop-System, Protokoll-Format, Deploy-Absicherung, verify.py als Gate). |
 | 2026-09-02 | 2.0 | **Produkt-Positionierung.** Site bewirbt nur noch eigene Produkte (USELY, YOU, SPACE SOCCER, Paukbox) + Partner Felgen Brillant; Agentur = Software, Marketing, Robotik. Teil I (1.1–1.3) und 2.2 neu; Service-Seiten geparkt (noindex), Sitemap 4 URLs; Kampagne K1 obsolet. Spec: 06-specs/SPEC-produkt-positionierung.md · Protokoll: 05-protokoll/2026-09-02-content-produkt-positionierung.md. |
 | 2026-09-08 | 2.1 | **SPACE SOCCER von der Website entfernt** (Auftrag Yasin). Produkt-Aufzählung, Hero-Kachel, Produktkarte, Footer-Link, Formular-Option, Meta/JSON-LD und Assets raus (DE+EN); Sektion jetzt "Drei Produkte. Drei Märkte." ohne Markt Gaming. Marke und Projekt selbst unberührt. Protokoll: 05-protokoll/2026-09-08-content-space-soccer-entfernt.md. |
+| 2026-09-19 | 2.2 | **Minimal-Auftritt** (Auftrag Yasin): Startseite nur noch die vier Produktkarten in einer Reihe; Nav nur Logo + Sprachwahl, Footer nur Copyright + Rechtliches + Sprachwahl auf allen 20 DNA-Seiten; X/Twitter überall entfernt und per verify.py gesperrt. Kontaktwege nur noch im Impressum. Protokoll: 05-protokoll/2026-09-19-content-minimal-startseite.md. |
 | 2026-07-19 | 1.1 | Roadmap-Blöcke A + B erledigt: Actions-Deploy aktiv (Brain bleibt privat), Sitemap 14 URLs in GSC neu eingereicht, 4 EN-URLs zur Indexierung beantragt, Enforce HTTPS aktiv (http→https 301). Details: 05-protokoll/2026-07-19-system-repo-uebernahme.md. |
 
 ---
