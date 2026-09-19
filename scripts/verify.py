@@ -2,7 +2,8 @@
 # verify.py — Maschinen-Gate fuer www.yg-media.de (YG Constitution Teil E, Pattern P-7)
 # stdlib-only. Exit 0 = gruen, Exit 1 = rot. Vor JEDEM Commit gruen erforderlich.
 # Prueft: DNA-Marker, Nav-/Footer-Invariante, Em-Dashes, hreflang-Trios, Canonicals, Sitemap beidseitig,
-# interne Links, JSON-LD-Validitaet, lang-Attribute, noindex-Regeln, Invarianten, kein Link zu X/Twitter.
+# interne Links, JSON-LD-Validitaet, lang-Attribute, noindex-Regeln, Invarianten, kein Link zu X/Twitter,
+# Weiterleitungs-Stubs (Ziel, Canonical, nicht in der Sitemap).
 
 import json
 import os
@@ -14,19 +15,19 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = "https://yg-media.de"  # kanonische Domain ist non-www (Canonicals/hreflang/og:url der Live-Site); CNAME-Host bleibt www
 
 # Seiten-Inventar (Constitution §B/§C/§D). Neue Seiten hier eintragen.
-# Seit 2026-09-02 (Produkt-Positionierung): nur Startseite + USELY sind indexierbar.
+# Seit 2026-09-19 (Minimal-Auftritt): nur die Startseite ist indexierbar.
 INDEXABLE_PAIRS = [
     ("index.html", "en/index.html"),
-    ("usely.html", "en/usely.html"),
 ]
-# Geparkte Service-Seiten (2026-09-02): volle DNA, noindex, nicht in der Sitemap, nicht verlinkt. Loeschung = Yasin-Gate.
-PARKED_PAGES = [
-    "website.html", "en/website.html",
-    "apps.html", "en/apps.html",
-    "marketing.html", "en/marketing.html",
-    "automation.html", "en/automation.html",
-    "website-kosten.html", "en/website-costs.html",
-]
+# Die 10 geparkten Service-Seiten (website, apps, marketing, automation, website-kosten je DE+EN) hat Yasin am
+# 2026-09-19 zum Loeschen freigegeben; sie sind geloescht. Liste bleibt fuer kuenftige Parkfaelle.
+PARKED_PAGES = []
+# Weiterleitungs-Stubs (seit 2026-09-19): keine Inhaltsseiten, daher ohne DNA/GA/Cookie-Banner (§A1-Scope).
+# Pflicht: lang, meta refresh 0 aufs Ziel, Canonical genau aufs Ziel, nicht in der Sitemap.
+REDIRECT_PAGES = {
+    "usely.html": "https://usely.yg-media.de/",
+    "en/usely.html": "https://usely.yg-media.de/en/",
+}
 LEGAL_PAGES = [
     "impressum.html", "en/legal-notice.html",
     "datenschutz.html", "en/privacy-policy.html",
@@ -226,6 +227,28 @@ def check_preview(path):
         err(f"{path}: noindex fehlt (Kunden-Preview, §C2)")
 
 
+def check_redirect(path, target):
+    if not os.path.exists(os.path.join(ROOT, path)):
+        err(f"{path}: Datei fehlt (Weiterleitungs-Stub im Inventar)")
+        return
+    html = read(path)
+    want = "en" if path.startswith("en/") else "de"
+    m = re.search(r"<html[^>]*\blang=\"([a-zA-Z-]+)\"", html)
+    if not m or m.group(1).lower().split("-")[0] != want:
+        err(f"{path}: lang fehlt oder nicht {want} (Weiterleitungs-Stub)")
+    refresh = re.search(r"<meta[^>]*http-equiv=\"refresh\"[^>]*content=\"0;\s*url=([^\"]+)\"", html, flags=re.I)
+    if not refresh or refresh.group(1) != target:
+        err(f"{path}: meta refresh 0 auf {target} fehlt (Weiterleitungs-Stub)")
+    canon = re.findall(r"<link[^>]*rel=\"canonical\"[^>]*href=\"([^\"]+)\"", html)
+    if canon != [target]:
+        err(f"{path}: Canonical muss genau {target} sein (gefunden: {canon})")
+    if re.search(r"//(?:www\.)?(?:x|twitter)\.com\b", html):
+        err(f"{path}: Link zu X/Twitter (seit 2026-09-19 verboten, §A1)")
+    for i, line in enumerate(visible_text_for_emdash(html).splitlines(), 1):
+        if "\u2014" in line:
+            err(f"{path}: Em-Dash im sichtbaren Text (Zeile ~{i})")
+
+
 def check_hreflang():
     for de, en in INDEXABLE_PAIRS:
         for path in (de, en):
@@ -264,6 +287,8 @@ def check_sitemap():
             err(f"sitemap.xml: interne Seite enthalten {u} (verboten, §C2)")
         if f in PARKED_PAGES:
             err(f"sitemap.xml: geparkte Service-Seite enthalten {u} (verboten, §C2)")
+        if f in REDIRECT_PAGES:
+            err(f"sitemap.xml: Weiterleitungs-Stub enthalten {u} (verboten, §C2)")
         if f in PREVIEW_PAGES:
             err(f"sitemap.xml: Kunden-Preview enthalten {u} (verboten, §C2)")
     # Rueckrichtung: jede indexierbare Seite steht in der Sitemap
@@ -278,6 +303,8 @@ def main():
         check_page(p)
     for p in PREVIEW_PAGES:
         check_preview(p)
+    for p, target in REDIRECT_PAGES.items():
+        check_redirect(p, target)
     check_hreflang()
     check_sitemap()
 
@@ -288,7 +315,7 @@ def main():
             print(f"FAIL  {e}")
         print(f"\nverify.py ROT — {len(errors)} Fehler, {len(warnings)} Warnungen. NICHT committen.")
         sys.exit(1)
-    print(f"verify.py GRUEN — {len(ALL_PAGES)} Seiten + {len(PREVIEW_PAGES)} Kunden-Previews geprueft, 0 Fehler, {len(warnings)} Warnungen.")
+    print(f"verify.py GRUEN — {len(ALL_PAGES)} Seiten + {len(REDIRECT_PAGES)} Weiterleitungen + {len(PREVIEW_PAGES)} Kunden-Previews geprueft, 0 Fehler, {len(warnings)} Warnungen.")
     sys.exit(0)
 
 

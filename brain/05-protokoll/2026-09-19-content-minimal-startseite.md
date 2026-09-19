@@ -34,3 +34,10 @@
 
 ## Nachtrag (gleicher Tag): Name aus der Copyright-Zeile
 Yasin: "entferne unten im Footer den Namen Yasin Gündogdu und lass nur © 2026 YG MEDIA". Auf allen 20 DNA-Seiten ersetzt (eine identische Zeile pro Seite, Treffer-Zwang 20/20). Der Name steht damit sichtbar nur noch im Impressum (Pflichtangabe nach § 5 DDG, unverändert) und unsichtbar im Schema als `founder`. Constitution §A1 und §A6.1 nachgezogen.
+
+## Nachtrag 2 (gleicher Tag): /usely weiterleiten, Service-Seiten gelöscht
+Yasins Freigabe zu Gate 0e: "ja mach das".
+- **/usely und /en/usely** sind jetzt Weiterleitungs-Stubs: `<link rel="canonical">` und `<meta http-equiv="refresh" content="0; url=…">` auf https://usely.yg-media.de/ bzw. /en/, dazu `location.replace` und ein sichtbarer Link als Rückfall. Kein noindex, weil noindex neben Canonical und Weiterleitung widersprüchliche Signale sendet; ein Sofort-Refresh wird von Google wie eine dauerhafte Weiterleitung behandelt und überträgt die Signale auf die Subdomain. Keine DNA, kein GA, kein Cookie-Banner (keine Inhaltsseite).
+- **Gelöscht:** website, apps, marketing, automation, website-kosten je DE+EN. Vorher geprüft: außer den Seiten selbst (Canonical, hreflang, Sprachwechsler) verweist nichts im Repo auf sie. Die Assets bleiben, weil externe Verweise (Mails, Store-Einträge) nicht ausgeschlossen sind.
+- **Sitemap** auf / und /en/ reduziert.
+- **verify.py:** INDEXABLE_PAIRS nur noch die Startseite, PARKED_PAGES leer, neue Kategorie REDIRECT_PAGES (lang, meta refresh 0 aufs Ziel, Canonical genau aufs Ziel, X-Verbot, Em-Dash, Sitemap-Verbot). Negativtest: falsches Weiterleitungsziel macht das Gate rot, Rückbau wieder grün.
