@@ -86,6 +86,12 @@
 **Form:** Fünf Ebenen über der Grundstruktur (Hero, Splits, Preise, FAQ): (1) Hero mit drei bis vier schwebenden Glas-Datenkarten mit echten Beispielwerten aus einem Demo-Mandanten, mobil als Raster; (2) Kennzahlen-Bento direkt nach der Vertrauensleiste: eine große Karte mit Kurve oder Screen, sechs Kennzahlen, die das Produkt einlöst (Zeit, Kette, Formate, Funktionen, Preis), eine breite Regel-Karte mit Pills; (3) den Kernprozess als sichtbare Kette aus Belegkarten mit Pfeilen; (4) optional eine Auftrags-Story als Zeitleiste über den echten Zeitverlauf (auf USELY nach Yasins Entscheidung wieder entfernt; wenn, dann Tage statt Uhrzeiten und berufsneutral); (5) Zielgruppen mit Icon und Ergebnis-Chip, CTA mit Chips. Variabilität aus Kartengrößen, Richtungen und Bewegung, nie aus neuen Farben. Ehrlichkeitsregel: keine erfundenen Kundenzahlen, Testimonials oder Partnerlogos; Beispieldaten als Beispiel kennzeichnen. DE und EN im selben Paket, Lighthouse danach nachmessen (P-14).
 **Gesetze:** §A1 (DNA), §A2 (keine Gedankenstriche), §B1 (DE Master), §D (keine unlauteren Aussagen). Herkunft: Protokoll 2026-09-03 usely-tiefe.
 
+## P-16 · Logo-Animation-Pattern (seit 2026-09-19)
+**Wann:** Das YG-Logo (oder ein anderes Band-Logo) soll sich animieren, ohne seine exakte Form im Ruhezustand zu verlieren.
+**Form:** Geometrie nie von Hand nachzeichnen, sondern aus dem Original-PNG verfolgen (`scripts/logo/trace.js`: eigener PNG-Decoder, Marching Squares auf Alpha 0,5, Douglas-Peucker 0,3 px, Split an den schrägen Enden in zwei Seitenlinien) und per Render-Vergleich prüfen (IoU ≥ 0,999, 0 Pixel falsch). Animation in reinem JavaScript ohne Bibliothek (`scripts/logo/anim.template.js`): Ruhezustand = exakte Kontur; Formen mit Mittellinie (Schlange, Kreis) über den Tangentenwinkel; Übergänge über die Mittellinie mit Ankern im mitbewegten Rahmen, nie Kontur-zu-Kontur (sonst stülpt sich das Band um); atan2-Winkel vor Interpolation stetig machen; Nähte mit Überlappung und Gruppen-Deckkraft. Pflicht: `prefers-reduced-motion` zeigt das statische Logo, IntersectionObserver pausiert außerhalb des Bildes, statisches SVG im HTML als Fallback, feste Box (CLS 0). Bauen mit `node scripts/logo/build.js` (Engine + statische Pfade in beiden Startseiten), prüfen mit `scripts/logo/sheet.html` (Kontaktabzug) plus Detail-Zoom.
+**Vorlage:** index.html `.yg-stage` / `#ygLogo`, assets/yg-logo-anim.js.
+**Gesetze:** §A1 (DNA), §A5 (Logo nur aus echten Assets), §B1 (DE und EN im selben Paket), P-14 (Lighthouse danach messen).
+
 ---
 
 ## Offen / noch zu definieren
@@ -93,4 +99,4 @@
 - Ratgeber-Pattern (Block H — /website-kosten als Vorlage, formalisieren beim zweiten Ratgeber)
 - Kampagnen-Landing-Pattern (falls K1 eigene Varianten braucht)
 
-*YG Pattern-Katalog v1.4 · 2026-09-03 (P-13 Demo-Mandant, P-14 Web-Vitals, P-15 Produktseiten-Tiefe)*
+*YG Pattern-Katalog v1.5 · 2026-09-19 (P-13 Demo-Mandant, P-14 Web-Vitals, P-15 Produktseiten-Tiefe, P-16 Logo-Animation)*

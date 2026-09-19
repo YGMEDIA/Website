@@ -55,7 +55,7 @@ Rechtsseiten (noindex, nicht in Sitemap): /impressum ↔ /en/legal-notice · /da
 Interne Seiten (noindex, kein EN): buecher-cw, more-produkt-berater, pdfs/.
 
 ## 2.3 Seitenaufbau (DNA — Details Constitution §A)
-Jede Seite: identische Nav (seit 2026-09-19 nur Logo + Sprachwechsler-Dropdown, Glass-on-Scroll, keine Menüpunkte) · identischer Footer (eine Zeile: Copyright, Rechtliches, DE/EN-Pills; keine Social-Links) · animierter Hintergrund (Canvas-Partikel + 4 Orbs + Grid + Grain) · Glass-Cards, Glow nur auf Teal-Text/Primär-Buttons, Playfair-Serif-Akzente · Cookie-Banner + consent-gated GA4 auf allen Seiten AUSSER Rechtsseiten.
+Jede Seite: identische Nav (seit 2026-09-19 nur Sprachwechsler-Dropdown rechts, Glass-on-Scroll, kein Logo, keine Menüpunkte) · identischer Footer (eine Zeile: Copyright, Rechtliches, DE/EN-Pills; keine Social-Links) · animierter Hintergrund (Canvas-Partikel + 4 Orbs + Grid + Grain) · Glass-Cards, Glow nur auf Teal-Text/Primär-Buttons, Playfair-Serif-Akzente · Cookie-Banner + consent-gated GA4 auf allen Seiten AUSSER Rechtsseiten.
 
 ## 2.4 Design-Tokens
 --teal #226886 · --teal-bright #2b86a7 · --bg #07070F · --text #F0F0F0 · --muted #8888AA · --faint #333355 · Inter + Playfair Display italic · Hero-H1 clamp(2.2rem, 3.8vw, 4.2rem) einheitlich · Glass rgba(255,255,255,0.04)+blur(16px) · Nav/Footer rgba(12,14,28,0.65)+blur(28px).
@@ -67,7 +67,7 @@ GA4 `G-MHQJ0HLBM3` (Property 437337038), consent-gated via localStorage `yg_cook
 
 # TEIL III · MODULE
 
-**M1 Startseite (seit 2026-09-19)** — nur die Sektion #produkte: unsichtbare H1 (`.sr-only`) + vier `.product-card` (USELY, YOU, Paukbox, Felgen Brillant) mit h2, in einer Reihe ab 1200 px, darunter zwei Spalten, ab 768 px eine. Kein Hero, keine Konzepte, kein Horizont, kein Unternehmens-Block, kein Kontakt. ProfessionalService-Schema mit NAP bleibt (unsichtbar, sameAs ohne X).
+**M1 Startseite (seit 2026-09-19)** — nur die Sektion #produkte: unsichtbare H1 (`.sr-only`), darunter das animierte YG-Logo `#ygLogo` mittig (P-16, Skript /assets/yg-logo-anim.js), dann vier `.product-card` (USELY, YOU, Paukbox, Felgen Brillant) mit h2, in einer Reihe ab 1200 px, darunter zwei Spalten, ab 768 px eine. Kein Hero, keine Konzepte, kein Horizont, kein Unternehmens-Block, kein Kontakt. ProfessionalService-Schema mit NAP bleibt (unsichtbar, sameAs ohne X).
 **M2 Service-Seiten (4)** — je ein Keyword, FAQ-Akkordeon mit FAQ-Schema (5 Fragen, Schema-Sprache = Seitensprache), Referenz-Highlights.
 **M3 USELY-Produktseite** — Keyvisual-Hero, 6 Feature-Blöcke mit echten Screenshots (WebP), Download-Band, Macher-Story mit Timeline, FAQ (6), MobileApplication-Schema. Die Startseiten-Karte beschreibt die APP, die Story lebt nur auf /usely.
 **M4 MOFU-Ratgeber** — /website-kosten: Preisvergleich-Grid, Kostenfaktoren, FAQ-Schema. Weitere Ratgeber (z.B. app entwickeln kosten) nach GSC-Signal.
@@ -131,6 +131,7 @@ INDEX zuerst, dann STATUS, dann Links. CLAUDE.md < 200 Zeilen — zeigt aufs Bra
 | 2026-09-08 | 2.1 | **SPACE SOCCER von der Website entfernt** (Auftrag Yasin). Produkt-Aufzählung, Hero-Kachel, Produktkarte, Footer-Link, Formular-Option, Meta/JSON-LD und Assets raus (DE+EN); Sektion jetzt "Drei Produkte. Drei Märkte." ohne Markt Gaming. Marke und Projekt selbst unberührt. Protokoll: 05-protokoll/2026-09-08-content-space-soccer-entfernt.md. |
 | 2026-09-19 | 2.2 | **Minimal-Auftritt** (Auftrag Yasin): Startseite nur noch die vier Produktkarten in einer Reihe; Nav nur Logo + Sprachwahl, Footer nur Copyright + Rechtliches + Sprachwahl auf allen 20 DNA-Seiten; X/Twitter überall entfernt und per verify.py gesperrt. Kontaktwege nur noch im Impressum. Protokoll: 05-protokoll/2026-09-19-content-minimal-startseite.md. |
 | 2026-09-19 | 2.3 | **Aufräumen nach Yasins Freigabe:** /usely und /en/usely als Weiterleitungs-Stubs auf die Subdomain, die 10 geparkten Service-Seiten gelöscht, Sitemap 2 URLs, verify.py mit Kategorie REDIRECT_PAGES. Protokoll: 05-protokoll/2026-09-19-content-minimal-startseite.md (Nachtrag 2). |
+| 2026-09-19 | 2.4 | **Logo-Animation:** Nav-Logo entfernt, YG-Logo groß und animiert über den Produktkarten (Y und G werden Schlange, Kreis, versinken, kehren zurück), Werkzeugkette scripts/logo. Protokoll: 05-protokoll/2026-09-19-dev-logo-animation.md. |
 | 2026-07-19 | 1.1 | Roadmap-Blöcke A + B erledigt: Actions-Deploy aktiv (Brain bleibt privat), Sitemap 14 URLs in GSC neu eingereicht, 4 EN-URLs zur Indexierung beantragt, Enforce HTTPS aktiv (http→https 301). Details: 05-protokoll/2026-07-19-system-repo-uebernahme.md. |
 
 ---
