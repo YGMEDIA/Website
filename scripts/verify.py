@@ -2,7 +2,7 @@
 # verify.py — Maschinen-Gate fuer www.yg-media.de (YG Constitution Teil E, Pattern P-7)
 # stdlib-only. Exit 0 = gruen, Exit 1 = rot. Vor JEDEM Commit gruen erforderlich.
 # Prueft: DNA-Marker, Nav-/Footer-Invariante, Em-Dashes, hreflang-Trios, Canonicals, Sitemap beidseitig,
-# interne Links, JSON-LD-Validitaet, lang-Attribute, noindex-Regeln, Invarianten.
+# interne Links, JSON-LD-Validitaet, lang-Attribute, noindex-Regeln, Invarianten, kein Link zu X/Twitter.
 
 import json
 import os
@@ -150,6 +150,10 @@ def check_page(path):
             for old in ("/website\"", "/apps\"", "/marketing\"", "/automation\"", "/en/website\"", "/en/apps\"", "/en/marketing\"", "/en/automation\""):
                 if 'href="' + old.rstrip('"') + '"' in b:
                     err(f"{path}: {name} verlinkt geparkte Service-Seite {old.rstrip(chr(34))} (§A1)")
+
+    # Keine Verlinkung zu X/Twitter (Yasin, 2026-09-19): gilt fuer jede gepruefte Seite
+    if re.search(r"//(?:www\.)?(?:x|twitter)\.com\b", html):
+        err(f"{path}: Link zu X/Twitter (seit 2026-09-19 verboten, §A1)")
 
     # Cookie/GA-Regeln (§D2/§D3)
     has_ga = "G-MHQJ0HLBM3" in html

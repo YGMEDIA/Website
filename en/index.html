@@ -343,7 +343,7 @@ section[id] { scroll-margin-top: 70px; }
 .product-card:hover { border-color: rgba(28,91,130,0.35); transform: translateY(-4px); }
 .product-card:hover::before { transform: scaleX(1); }
 .product-img { width: 100%; height: 400px; object-fit: cover; object-position: center top; border-radius: 16px; margin-bottom: 1.8rem; border: 1px solid rgba(255,255,255,0.1); display: block; background: linear-gradient(135deg, rgba(28,91,130,0.15), rgba(10,30,50,0.4)); }
-.product-card h3 { font-size: clamp(1.25rem, 1.8vw, 1.55rem); font-weight: 900; letter-spacing: -0.03em; line-height: 1.2; margin-bottom: 1rem; }
+.product-card h2, .product-card h3 { font-size: clamp(1.25rem, 1.8vw, 1.55rem); font-weight: 900; letter-spacing: -0.03em; line-height: 1.2; margin-bottom: 1rem; }
 .product-card p { font-size: 0.92rem; color: var(--muted); line-height: 1.8; }
 .product-card .service-tags { margin-top: 1.4rem; }
 .product-links { display: flex; gap: 1.8rem; align-items: center; flex-wrap: wrap; margin-top: auto; }
@@ -372,6 +372,34 @@ section[id] { scroll-margin-top: 70px; }
 .facts-card .card-stats { grid-template-columns: 1fr 1fr; gap: 1.4rem 1.2rem; margin-top: 1.2rem; }
 @media (max-width: 1100px) { .horizont-grid { grid-template-columns: repeat(3,1fr); } .facts-card { max-width: 480px; } }
 @media (max-width: 768px) { .product-grid { grid-template-columns: 1fr; } .product-img { height: 260px; } .product-card { padding: 1.8rem; } .horizont-grid { grid-template-columns: 1fr; } .hero-tiles { grid-template-columns: 1fr 1fr; } }
+
+/* Startseite: nur die vier Produktkarten in einer Reihe (Yasin, 2026-09-19) */
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+#products { padding: 130px 0 90px; }
+#products .wrap { max-width: 1480px; }
+#products .product-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.2rem; margin-bottom: 0; }
+#products .product-card { padding: 1.6rem; }
+#products .product-img { height: 230px; margin-bottom: 1.4rem; }
+#products .product-card h2 { font-size: 1.15rem; margin-bottom: 0.9rem; }
+#products .product-card p { font-size: 0.88rem; line-height: 1.75; }
+#products .product-links { gap: 0.6rem 1.2rem; padding-top: 1.4rem; }
+#products .product-links .ref-link { margin-top: 0; }
+@media (max-width: 1200px) { #products .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; } #products .product-card { padding: 2.2rem; } #products .product-img { height: 320px; } #products .product-card h2 { font-size: 1.4rem; } #products .product-card p { font-size: 0.92rem; } }
+@media (max-width: 768px) { #products { padding: 110px 0 60px; } #products .product-grid { grid-template-columns: 1fr; } #products .product-card { padding: 1.8rem; } #products .product-img { height: 260px; } #products .product-card h2 { font-size: 1.25rem; } }
+
+/* Minimal-Chrome seit 2026-09-19 (Yasin): Nav nur Logo + Sprache, Footer nur Rechtliches + Sprache (Constitution §A1 v1.3) */
+footer { padding: 2.2rem 0; }
+.footer-bottom { border-top: 0; padding-top: 0; }
+.footer-copy { color: var(--muted); }
+.footer-legal { display: flex; gap: 1.6rem; flex-wrap: wrap; }
+.footer-legal a { color: var(--muted); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+.footer-legal a:hover { color: var(--text); }
+@media (max-width: 768px) {
+  .nav-links { display: flex; position: static; flex-direction: row; background: none; padding: 0; gap: 0; border-bottom: 0; backdrop-filter: none; -webkit-backdrop-filter: none; }
+  .nav-burger { display: none; }
+  .nav-lang-menu { position: absolute; top: calc(100% + 10px); right: 0; min-width: 160px; margin-top: 0; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; gap: 1.2rem; }
+}
 </style>
 <script type="application/ld+json">
 {
@@ -426,7 +454,6 @@ section[id] { scroll-margin-top: 70px; }
   ],
   "sameAs": [
     "https://behance.net/yasinguendogdu",
-    "https://x.com/ysn_gdu",
     "https://de.pinterest.com/YG_369/",
     "https://www.pexels.com/de-de/@ysngdu/"
   ],
@@ -463,10 +490,6 @@ section[id] { scroll-margin-top: 70px; }
       <span class="nav-logo-text">YG MEDIA</span>
     </a>
     <div class="nav-links" id="navLinks">
-      <a href="/en/#products">Products</a>
-      <a href="/en/#concepts">Concepts</a>
-      <a href="/en/#company">Company</a>
-      <a href="/en/#contact">Contact</a>
       <div class="nav-lang" id="navLang">
         <button class="nav-lang-btn" aria-label="Select language" aria-haspopup="true"><svg viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><clipPath id="ljh"><path d="M0,0 v30 h60 v-30 z"/></clipPath><g clip-path="url(#ljh)"><path d="M0,0 v30 h60 v-30 z" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#C8102E" stroke-width="4"/><path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/><path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/></g></svg><span class="nav-lang-caret">▾</span></button>
         <div class="nav-lang-menu">
@@ -479,56 +502,14 @@ section[id] { scroll-margin-top: 70px; }
   </div>
 </nav>
 
-<section class="hero">
-  <div class="wrap">
-    <div class="hero-inner">
-      <div>
-        <span class="hero-badge"><span class="hero-badge-dot"></span>Software · Marketing · Robotics</span>
-        <h1 class="hero-h1">
-          <span class="line"><span class="line-inner">We build digital products</span></span>
-          <span class="line"><span class="line-inner"><em>with a signature of their own.</em></span></span>
-        </h1>
-        <p class="hero-sub">YG MEDIA is a digital studio from Würzburg, Germany, working in software, marketing and robotics. Out of the day-to-day practice around Felgen Brillant, a company we are building up ourselves, grows a portfolio of our own products: USELY, YOU and Paukbox.</p>
-        <div class="hero-btns">
-          <a href="#products" class="btn btn-primary">Explore the products <span class="btn-arrow">↓</span></a>
-          <a href="#company" class="btn btn-ghost">About YG MEDIA</a>
-        </div>
-      </div>
-      <div class="hero-visual">
-        <div class="hero-card-bg"></div>
-        <div class="hero-card">
-          <div class="card-metric-label">Our products</div>
-          <div class="hero-tiles">
-            <a href="#usely" class="hero-tile"><img src="/assets/logo-usely.webp" alt="USELY logo" loading="lazy"><span><strong>USELY</strong><small>Business software</small></span></a>
-            <a href="#you" class="hero-tile"><img src="/assets/logo-you.webp" alt="YOU logo" loading="lazy"><span><strong>YOU</strong><small>Body and mind</small></span></a>
-            <a href="#paukbox" class="hero-tile"><img src="/assets/logo-paukbox.webp" alt="Paukbox logo" loading="lazy"><span><strong>Paukbox</strong><small>Flashcards</small></span></a>
-          </div>
-          <div class="card-divider"></div>
-          <div class="hero-partner">
-            <div><div class="card-stat-label">Own project and partner</div><div class="hero-partner-name">Felgen Brillant</div></div>
-            <a href="#felgen-brillant" class="hero-partner-link">More →</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section id="products">
   <div class="wrap">
-    <div class="services-header">
-      <div class="reveal-left">
-        <span class="eyebrow">Our products and projects</span>
-        <h2 class="services-title">Three products. One business.<br>One signature.</h2>
-      </div>
-      <p class="services-sub reveal-right">Business software, health and learning, plus Felgen Brillant as the real business behind it. Every product follows the same method: prove it on a real case first, then scale. Dark, glass, depth, with one clear accent colour per brand.</p>
-    </div>
-
+    <h1 class="sr-only">YG MEDIA: Our products and projects</h1>
     <div class="product-grid">
       <div class="product-card reveal" id="usely">
         <img src="/assets/logo-usely.webp" alt="USELY key visual with glass U" class="product-img" loading="lazy">
         <span class="ref-tag">Business software · iOS and web · Live on the App Store</span>
-        <h3>USELY. From invoicing tool to operating system for the business.</h3>
+        <h2>USELY. From invoicing tool to operating system for the business.</h2>
         <p>Quotes, invoices and receipts for freelancers and small businesses: a complete document chain with payment links, e-invoicing with XRechnung and ZUGFeRD, AI receipt scanning, boards with time tracking, bank reconciliation and accountant access with DATEV export. Native iOS app and web app, synced in real time. Free to start.</p>
         <div class="service-tags"><span class="stag">E-invoicing</span><span class="stag">Document chain</span><span class="stag">Boards</span><span class="stag">DATEV</span></div>
         <div class="product-links">
@@ -540,7 +521,7 @@ section[id] { scroll-margin-top: 70px; }
       <div class="product-card reveal" id="you" data-delay="1">
         <img src="/assets/logo-you.webp" alt="YOU key visual" class="product-img" loading="lazy">
         <span class="ref-tag">Health · iOS app · Own wearable</span>
-        <h3>YOU. Others measure the body. YOU measures body and mind.</h3>
+        <h2>YOU. Others measure the body. YOU measures body and mind.</h2>
         <p>A Life Operating System that captures the whole person: training, nutrition with AI photo scan, sleep and recovery, plus a journal, daily check-ins and a psychological profile built from a deep onboarding. Four rings show the state of the day. The YOU Band measures around the clock, with 30 to 40 days of battery life.</p>
         <div class="service-tags"><span class="stag">AI onboarding</span><span class="stag">YOU Band</span><span class="stag">HRV and recovery</span><span class="stag">Widgets</span></div>
         <div class="product-links">
@@ -549,10 +530,10 @@ section[id] { scroll-margin-top: 70px; }
         </div>
       </div>
 
-      <div class="product-card reveal" id="paukbox" data-delay="1">
+      <div class="product-card reveal" id="paukbox" data-delay="2">
         <img src="/assets/logo-paukbox.webp" alt="Paukbox logo with golden flashcards" class="product-img" loading="lazy">
         <span class="ref-tag">Learning · Web app · Free to start</span>
-        <h3>Paukbox. Flashcards that stick.</h3>
+        <h2>Paukbox. Flashcards that stick.</h2>
         <p>Learn vocabulary and technical terms as flashcards, right in the browser on phone, tablet and desktop. Lists come in via PDF import, as plain text or straight from an AI in the format "word = meaning". The Leitner system repeats at intervals of 1, 3, 7 and 21 days, and quiz rounds in between lock the knowledge in. 50 cards are free, unlimited cards cost a one-time 2 euros.</p>
         <div class="service-tags"><span class="stag">PDF import</span><span class="stag">Leitner system</span><span class="stag">Quiz</span><span class="stag">One-time 2 €</span></div>
         <div class="product-links">
@@ -560,10 +541,10 @@ section[id] { scroll-margin-top: 70px; }
         </div>
       </div>
 
-      <div class="product-card reveal" id="felgen-brillant" data-delay="2">
+      <div class="product-card reveal" id="felgen-brillant" data-delay="3">
         <img src="/assets/logo-felgen-brillant.webp" alt="Felgen Brillant logo" class="product-img" loading="lazy">
         <span class="ref-tag">Own project · Partner · Robotics vision</span>
-        <h3>Felgen Brillant. The company we are building up together.</h3>
+        <h2>Felgen Brillant. The company we are building up together.</h2>
         <p>Felgen Brillant turns damaged original wheel rims back into wheels as good as new, entirely in-house: straightening, CNC diamond cutting, powder coating, painting, plus its own shop for refurbished brand rims. YG MEDIA helped build this company digitally and keeps developing it: brand, marketing, website, shop and the software behind it all.</p>
         <p style="margin-top:1rem">The vision reaches beyond software. We are working on a fully automated, robot-assisted powder coating line for wheel rims, where handling, coating and quality control interlock and our own operations software sets the pace. Felgen Brillant is where our ideas are born in a real business and prove what they can do.</p>
         <div class="service-tags"><span class="stag">Brand</span><span class="stag">Shop</span><span class="stag">Operations software</span><span class="stag">Robotics vision</span></div>
@@ -575,181 +556,15 @@ section[id] { scroll-margin-top: 70px; }
   </div>
 </section>
 
-<section id="concepts">
-  <div class="wrap">
-    <div class="ref-intro">
-      <div class="reveal-left"><span class="eyebrow">Concepts</span><h2 class="ref-title">How we think<br>before we build.</h2></div>
-      <p class="ref-lead reveal-right">Vision concepts from our own studio: the directions we are growing into, and the way we want to work in the long run. Ideas that show what is possible before they become products.</p>
-    </div>
-
-    <div class="showcase-card reveal">
-      <div class="showcase-video-wrap">
-        <video autoplay muted loop playsinline>
-          <source src="/assets/AI-Automation-Video.mp4" type="video/mp4">
-        </video>
-        <div class="showcase-video-overlay"></div>
-      </div>
-      <div class="showcase-content">
-        <span class="showcase-badge"><span class="showcase-badge-dot"></span>AI concept</span>
-        <h3>AI hotel website with <em>glass design</em> and digital holograms.</h3>
-        <p>A futuristic concept that shows where the digital journey is heading. A hotel website with translucent glass design, AI-assisted booking and holographic elements that lift the experience into a new dimension. This is what immersive brand communication of tomorrow looks like.</p>
-        <div class="showcase-tags">
-          <span class="stag">AI</span><span class="stag">Glass design</span><span class="stag">Hologram</span><span class="stag">Motion</span>
-        </div>
-        <a href="https://www.behance.net/gallery/229054665/AI-Hotel-Website-Glass-Design-Digital-Hotel-Holograms" target="_blank" rel="noopener" class="showcase-link">View on Behance →</a>
-      </div>
-    </div>
-
-    <div class="ref-grid" style="margin-top:1.5rem">
-      <div class="ref-card reveal" data-delay="1">
-        <img src="/assets/concept-adidas-vision-pro.webp" alt="Adidas app concept for Apple Vision Pro in spatial design" class="ref-image" loading="lazy" onerror="this.style.display='none'">
-        <span class="ref-tag">Retail · Apple Vision Pro · Spatial Design</span>
-        <h3>Adidas App Concept. Shopping and training in spatial design.</h3>
-        <p>A concept for an Adidas app on Apple Vision Pro: the shop floats in the room as a glass interface, with collections, filters and cart on the same level as your own running data. Distance, training days and goals become part of the shopping experience. A study of how brand, sport and spatial computing grow together.</p>
-        <a href="https://www.behance.net/gallery/209289491/Adidas-App-Concept-Apple-Vision-Pro-in-Spatial-Design" target="_blank" rel="noopener" class="ref-link">View on Behance →</a>
-      </div>
-      <div class="ref-card reveal" data-delay="2">
-        <img src="/assets/audi-2.jpg" alt="Audi Dashboard Spatial Design VisionPro Concept" class="ref-image" onerror="this.style.display='none'">
-        <span class="ref-tag">Automotive · Spatial Design · Concept</span>
-        <h3>Audi Dashboard. Spatial design concept for VisionPro.</h3>
-        <p>A concept for a spatial vehicle dashboard on Apple VisionPro. Driving data, navigation and vehicle controls are reimagined in an immersive, three-dimensional interface. A study of how mobility and spatial computing can come together in the future.</p>
-        <a href="https://www.behance.net/gallery/195062751/Audi-Dashboard-Spatial-Design-VisionPro-Concept" target="_blank" rel="noopener" class="ref-link">View on Behance →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="horizon" class="vorteile-section">
-  <div class="wrap">
-    <div class="vorteile-head">
-      <div class="reveal-left">
-        <span class="eyebrow">The next horizon</span>
-        <h2 class="vorteile-title horizont-title">
-          <span>After the software</span>
-          <span class="accent">comes manufacturing.</span>
-        </h2>
-      </div>
-      <p class="vorteile-sub reveal-right">Beyond its own products, YG MEDIA is working on robotics and fully automated manufacturing lines, first and foremost a robot-assisted powder coating line for wheel rims at Felgen Brillant, with in-house software as the control layer. These projects will be presented in detail in due course. Here they stand deliberately as a direction.</p>
-    </div>
-    <div class="vorteile-grid horizont-grid">
-      <div class="vorteil-card reveal"><div class="vorteil-num">01</div><h3>Robotics</h3><p>Automating physical processes wherever manual work still sets the pace today.</p></div>
-      <div class="vorteil-card reveal" data-delay="1"><div class="vorteil-num">02</div><h3>Fully automated manufacturing</h3><p>Production lines that slot into the existing business software, planned on a real case.</p></div>
-      <div class="vorteil-card reveal" data-delay="2"><div class="vorteil-num">03</div><h3>In-house software</h3><p>The control and data layer is built in-house, following the same method as all our products: build on a real business, prove it, then scale.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="company">
-  <div class="wrap">
-    <div class="about-inner">
-      <div>
-        <span class="eyebrow reveal">Company</span>
-        <h2 class="about-tagline reveal">YG MEDIA®,<br><em>digital studio.</em></h2>
-        <p class="about-text reveal">YG MEDIA is the digital studio of Yasin Gündogdu in Würzburg, Germany, working in software, marketing and robotics. More than ten years at the intersection of design, technology and marketing: over 60 companies from Germany, Austria and Switzerland built up digitally, from trades and medical practices to industry and tech start-ups.</p>
-        <p class="about-text reveal">Out of this practice grow our own products, each following the same principles: prove it on a real case first, then scale. Quality you can see and measure. Honesty towards the user. YG MEDIA® is a registered trademark; USELY and YOU are currently in the trademark registration process.</p>
-        <div class="skill-tags reveal">
-          <span class="skill-tag">Software development</span><span class="skill-tag">UI/UX design</span><span class="skill-tag">Corporate design</span>
-          <span class="skill-tag">Google Ads and SEO</span><span class="skill-tag">AI automation</span><span class="skill-tag">E-commerce</span>
-          <span class="skill-tag">Robotics</span>
-        </div>
-      </div>
-      <div class="reveal-right">
-        <div class="facts-card">
-          <div class="card-metric-label">YG MEDIA in numbers</div>
-          <div class="card-stats">
-            <div><div class="card-stat-label">Own products</div><div class="card-stat-val">4</div></div>
-            <div><div class="card-stat-label">Live on the App Store</div><div class="card-stat-val">1</div></div>
-            <div><div class="card-stat-label">Companies built up</div><div class="card-stat-val">60+</div></div>
-            <div><div class="card-stat-label">Years of experience</div><div class="card-stat-val">10+</div></div>
-            <div><div class="card-stat-label">Registered trademarks</div><div class="card-stat-val">2</div></div>
-            <div><div class="card-stat-label">Partner</div><div class="card-stat-val" style="font-size:1.1rem;line-height:1.3;padding-top:0.3rem">Felgen Brillant</div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="contact">
-  <div class="wrap">
-    <div class="contact-inner">
-      <div class="contact-left reveal-left">
-        <span class="eyebrow">Contact</span>
-        <h2 class="contact-title">Write to us directly.</h2>
-        <p class="contact-sub">A question about a product, a partnership or a press enquiry: every message gets a personal reply.</p>
-        <div class="contact-info">
-          <div class="contact-name">YG MEDIA<br><span>Yasin Gündogdu · Würzburg, Germany</span></div>
-          <div class="contact-info-item"><span class="contact-info-dot"></span><a href="mailto:info@yg-media.de" style="color:inherit;text-decoration:none">info@yg-media.de</a></div>
-          <div class="contact-info-item"><span class="contact-info-dot"></span><a href="tel:+491774476392" style="color:inherit;text-decoration:none">+49 177 4476392</a></div>
-          <div class="contact-info-item"><span class="contact-info-dot"></span><a href="https://wa.me/491774476392?text=Hello%20YG%20MEDIA%2C%20I%20have%20an%20enquiry." target="_blank" rel="noopener" style="color:inherit;text-decoration:none">Message on WhatsApp</a></div>
-          <p style="margin-top:0.9rem;font-size:0.78rem;color:var(--faint);line-height:1.6">Also reachable by phone and WhatsApp. Replies as quickly as possible.</p>
-        </div>
-        <div class="contact-socials">
-          <a href="https://behance.net/yasinguendogdu" target="_blank" rel="noopener" class="contact-social" aria-label="Behance">Be</a>
-          <a href="https://x.com/ysn_gdu" target="_blank" rel="noopener" class="contact-social" aria-label="X">X</a>        </div>
-      </div>
-      <div class="contact-form reveal-right">
-        <form id="contactForm" action="https://formspree.io/f/xojbbzad" method="POST">
-          <div class="form-grid">
-            <div class="form-group"><label class="form-label">Your name</label><input type="text" name="name" class="form-input" placeholder="Jane Doe" required></div>
-            <div class="form-group"><label class="form-label">Email</label><input type="email" name="email" class="form-input" placeholder="jane@company.com" required></div>
-            <div class="form-group form-full"><label class="form-label">Topic</label>
-              <select name="bereich" class="form-select">
-                <option value="">Select a topic</option>
-                <option>USELY</option><option>YOU</option>
-                <option>Paukbox</option>
-                <option>Partnership</option><option>Other</option>
-              </select>
-            </div>
-            <div class="form-group form-full"><label class="form-label">Your message</label><textarea name="message" class="form-textarea" placeholder="What is it about?" required></textarea></div>
-          </div>
-          <button type="submit" class="btn btn-primary btn-submit">Send message</button>
-        </form>
-        <div class="form-success" id="formSuccess">
-          <div class="form-success-icon">✓</div>
-          <p>Your message has been sent successfully. You will hear back shortly.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <footer>
   <div class="wrap">
-    <div class="footer-top">
-      <div>
-        <div class="footer-logo">
-          <img src="/assets/YG-Logo-Weiss-No-Background.png" alt="YG MEDIA" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-          <div class="footer-logo-text">YG MEDIA</div>
-        </div>
-        <p class="footer-tagline">Digital studio from Würzburg, Germany.<br>Software · Marketing · Robotics.</p>
-      </div>
-      <div class="footer-links-grid">
-        <div class="footer-col">
-          <div class="footer-col-title">Products</div>
-          <a href="https://usely.yg-media.de/en/">USELY</a><a href="/en/#you">YOU</a>
-          <a href="https://paukbox.yg-media.de" target="_blank" rel="noopener">Paukbox</a>
-        </div>
-        <div class="footer-col">
-          <div class="footer-col-title">Company</div>
-          <a href="/en/#company">Yasin Gündogdu</a><a href="/en/#felgen-brillant">Felgen Brillant</a>
-          <a href="/en/#concepts">Concepts</a><a href="/en/#contact">Contact</a>
-        </div>
-        <div class="footer-col">
-          <div class="footer-col-title">Legal</div>
-          <a href="/en/legal-notice">Legal Notice</a><a href="/en/privacy-policy">Privacy Policy</a><a href="/en/terms-of-use">Terms of Use</a>
-        </div>
-      </div>
-    </div>
     <div class="footer-bottom">
       <p class="footer-copy">© 2026 YG MEDIA · Yasin Gündogdu</p>
+      <div class="footer-legal" aria-label="Legal"><a href="/en/legal-notice">Legal Notice</a><a href="/en/privacy-policy">Privacy Policy</a><a href="/en/terms-of-use">Terms of Use</a></div>
       <div class="lang-switch" aria-label="Sprache / Language">
         <a href="/" class="lang-btn" aria-label="Zur deutschen Version"><svg viewBox="0 0 5 3" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="5" height="1" fill="#111"/><rect y="1" width="5" height="1" fill="#DD0000"/><rect y="2" width="5" height="1" fill="#FFCE00"/></svg>DE</a>
         <span class="lang-btn active"><svg viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><clipPath id="ljc"><path d="M0,0 v30 h60 v-30 z"/></clipPath><g clip-path="url(#ljc)"><path d="M0,0 v30 h60 v-30 z" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#C8102E" stroke-width="4"/><path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/><path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/></g></svg>EN</span>
       </div>
-      <div class="footer-socials">
-        <a href="https://behance.net/yasinguendogdu" target="_blank" rel="noopener" class="social-btn" aria-label="Behance">Be</a>
-        <a href="https://x.com/ysn_gdu" target="_blank" rel="noopener" class="social-btn" aria-label="X">X</a>      </div>
     </div>
   </div>
 </footer>
