@@ -1,0 +1,36 @@
+# 2026-09-19 · design · Fast schwarz, Logo ohne Kasten, kurze Karten
+
+**Auslöser:** Yasins Feedback zur Logo-Runde (Sprachnachricht, gekürzt): Die Animation läuft auf einem "komischen viereckigen Hintergrund", sie soll keinen Hintergrund haben. Die Website hat einen dunkelblauen Stich, sie soll "so gut wie schwarz" werden, "ganz leicht minimal, mit dem hellen Fleck, den du dort so leicht animierst". Beim Scrollen wird die Nav zu Milchglas, das soll weg. Die Karten sind zu lang: Titel nur der Produktname, darüber kurz, was es ist (smarte Buchhaltung, Gesundheits-App mit eigenem Wearable, Lern-App mit Karteikarten, Felgenaufbereitung und Felgenhandel), der Text kurz und knackig (was kann es, welche Funktion, was machen wir damit, Ziel oder Vorteil), Felgen Brillant "viel, viel, viel kürzer". In den Nutzungsbedingungen steht unten groß USELY, dort soll YG MEDIA stehen.
+
+## Was
+1. **Logo ohne Kasten:** `filter: drop-shadow(0 0 30px …)` auf `#ygLogo` entfernt (DE+EN). Im CSS kommentiert, damit er nicht zurückkommt.
+2. **Fast schwarz, alle 8 DNA-Seiten:** `--bg` #07070F → #050505, `--muted` #8888AA → #8B8B94, `--faint` #333355 → #34343A (gleiche Helligkeit, ohne Violettstich), auf der Startseite `--surface`/`--card` neutral. Von vier blauen Orbs bleibt nur `.orb-1` als leiser, neutraler Lichtfleck (rgba(215,222,230,0.11), gleiche Position oben links, gleiche 25-s-Bewegung). orb-2 bis orb-4 samt ungenutzter Keyframes orb2/orb3 und Markup entfernt. Raster-Linien weiß 0,01 statt Teal 0,03, Canvas-Partikel in neutralem Grau mit gleicher Helligkeit wie vorher, Footer, Sprachmenü, Cookie-Banner und Mobil-Nav neutral statt blau. Teal bleibt Akzentfarbe (Stichpunkte, Links, Hover).
+3. **Nav ohne Milchglas:** Regel `nav.scrolled` und der Scroll-Umschalter samt der dann ungenutzten `const nav` entfernt. Die Nav bleibt beim Scrollen transparent.
+4. **Karten DE+EN:** h2 nur noch USELY, YOU, Paukbox, Felgen Brillant (1,5 rem statt 1,15 rem, weil jetzt kurz). `.ref-tag` = was es ist: "Smarte Buchhaltung", "Gesundheits-App mit eigenem Wearable", "Lern-App mit Karteikarten", "Felgenaufbereitung und Felgenhandel" (EN: Smart bookkeeping, Health app with its own wearable, Learning app with flashcards, Wheel refurbishment and wheel trading). Je ein Absatz mit rund 200 Zeichen nach dem Schema Funktion, Kernfeatures, Ziel/Vorteil; Felgen Brillant von zwei Absätzen (rund 700 Zeichen) auf einen (rund 210). Chips und Links unverändert. Kartenhöhe bei 1440 px jetzt einheitlich 744 px.
+5. **Ausrichtung:** Ab 1201 px teilen sich die Karten die Zeilen per Subgrid (`grid-template-rows: subgrid; grid-row: span 6`, Stichpunkt `align-self: end`). Zwei Stichpunkte brechen bei vier Spalten zweizeilig um; ohne Subgrid standen die Titel dadurch 17 px versetzt, jetzt stehen Stichpunkt-Unterkante, Titel, Text und Chips auf einer Linie. Dazu `text-wrap: pretty` gegen Einzelwörter in der letzten Zeile, `50&nbsp;Karten` und `2&nbsp;Euro` untrennbar, Stichpunkte in `--teal-bright` (Kontrast 4,9:1 statt 3,3:1).
+6. **Nutzungsbedingungen / Terms of Use:** H1 `<em>YG&nbsp;MEDIA</em>` statt `<em>USELY</em>` (Yasins ausdrückliche Anweisung; der übrige Text nennt USELY unverändert, die URL bleibt). Title-Tag war schon "Nutzungsbedingungen — YG MEDIA".
+7. **Nebenbefund behoben:** Auf 375 px liefen die H1 "Nutzungsbedingungen" (328 px) und "Datenschutzerklärung" (317 px) über die 261 px breite Karte, bei den Nutzungsbedingungen scrollte dadurch die ganze Seite seitlich (385 px). Jetzt weiche Trennstellen `Nutzungs&shy;bedingungen` / `Datenschutz&shy;erklärung` plus `overflow-wrap: break-word` als Netz auf allen 6 Rechtsseiten.
+8. **Weiterleitungs-Stubs und Logo-Werkzeug:** Grundfarbe #050505; Augenfarbe der Schlange im Template auf #050505, Engine neu gebaut (`node scripts/logo/build.js`, statische Pfade unverändert).
+
+## Wie
+- Ein Python-Skript für alle Seiten mit Treffer-Zwang pro Ersetzung (P-12), transaktional; vorher per Zählung geprüft, dass jede Zielstelle auf allen 8 Seiten genau einmal vorkommt.
+- Diagnose Kasten: Headless-Chrome und der eingebaute Browser (Chromium mit GPU) zeigten keine Kante. Ursache ist WebKit: Das Logo füllt seine viewBox bis an den Rand (Kontur aus der PNG, die knapp beschnitten ist), Safari begrenzt die Filterfläche des SVG auf dessen Box und schneidet den 30-px-Schein genau dort ab. Das ergibt ein sichtbares Rechteck in Teal. Ohne Filter gibt es keine Filterfläche, also in keinem Browser einen Kasten.
+- Lichtfleck kalibriert per Pixelmessung im Screenshot (eigener PNG-Leser): Grundton 6,7, Fleck-Maximum 20 bei Deckkraft 0,09, das war kaum sichtbar; 0,11 gewählt. Rasterlinien per Rechnung auf dieselbe Sichtbarkeit wie vorher gesetzt (Weiß 0,01 ergibt +2,5 Helligkeit, Teal 0,03 auf dem alten Blau ergab rund +2,3).
+
+## Warum so
+- **Ein Fleck statt vier Orbs:** Yasin spricht von "dem hellen Fleck" im Singular; der sichtbare Fleck war orb-1 oben links. Die anderen drei erzeugten den Blaustich in der Fläche.
+- **Tags ohne "Die":** "Die Gesundheits-App mit eigenem Wearable" war gesprochen; als Stichpunkt stehen alle vier ohne Artikel, damit sie gleich gebaut sind.
+- **Chips bleiben:** Yasin hat Titel, Stichpunkt und Text genannt, nicht die Chips; sie tragen die Kernfunktionen und stehen jetzt auf einer Linie.
+- **Subgrid nur ab vier Spalten:** Bei zwei Spalten passen alle Stichpunkte in eine Zeile, einspaltig muss nichts ausgerichtet werden. Subgrid ist in Safari seit 16, Chrome seit 117, Firefox seit 71 verfügbar.
+
+## Verify
+- `python3 scripts/verify.py` GRÜN (9 Seiten + 2 Weiterleitungen), vor Commit und nach jeder Nachbesserung.
+- Messungen im Browser: Startseite 1440 px: Titel-Oberkanten 863/863/863/863, Texte 904, Chips 1099, Kartenhöhe 744; `#ygLogo` filter none; body rgb(5,5,5); 1 Orb. Nav bei scrollY 400: Klasse leer, Hintergrund transparent, backdrop-filter none. 375 px: Dokumentbreite 375, kein Element ragt heraus. Rechtsseiten 375 px: alle H1 ohne Überlauf, Dokumentbreite 375. Keine Konsolenfehler.
+- Sichtprüfung: Headless-Screenshots 1440 (DE, EN), 1024 (zweispaltig), dazu der eingebaute Browser mobil (375) für Startseite und Nutzungsbedingungen.
+- Live nach Deploy (curl, Cache-Buster): / und /en/ mit --bg #050505, 1 Orb, kein drop-shadow, kein nav.scrolled, Subgrid, h2 USELY/YOU/Paukbox/Felgen Brillant; Rechtsseiten-H1 wie gebaut; Engine mit Augenfarbe #050505; /usely leitet weiter. Lighthouse mobil live: 90 / 100 / 96 / 100, LCP 2,9 s, CLS 0, TBT 0; einziger Konsolenfehler /favicon.ico 404 (alt).
+
+## Gelernt (Rückfluss)
+- Constitution v1.6 (§A1 Hintergrund und Nav neu gefasst, §A5 kein CSS-filter auf dem animierten Logo), Framework 2.5 (2.3, 2.4 Tokens), Patterns v1.6 (P-11 Kartenanatomie neu, P-16 Filter-Verbot und Augenfarbe).
+- CSS-Filter auf einem SVG, dessen Inhalt bis an die Box reicht, zeigen in Safari eine harte Kante. Wer einen Schein braucht, legt ihn als eigenes Element hinter das Logo, nie als filter auf das SVG.
+- Headless-Chrome hält mit `--window-size` unter rund 500 px nicht die gewünschte Breite; der Screenshot wirkt dann abgeschnitten. Mobile Prüfung über die Viewport-Emulation des eingebauten Browsers oder Lighthouse.
+- Wer Karten mit unterschiedlich langen Stichpunkten nebeneinanderstellt, richtet sie per Subgrid aus statt mit min-height-Tricks.

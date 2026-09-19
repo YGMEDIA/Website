@@ -1,6 +1,6 @@
 # YG FRAMEWORK — Das Systemdokument
 
-> **Version 2.2 · Kanonisch · 2026-09-19** (Minimal-Auftritt; v2.0 Produkt-Positionierung vom 2026-09-02, v1.0 vom 2026-07-19)
+> **Version 2.5 · Kanonisch · 2026-09-19** (Fast schwarz, kurze Karten; Logo-Animation 2.4; Minimal-Auftritt 2.2; v2.0 Produkt-Positionierung vom 2026-09-02, v1.0 vom 2026-07-19)
 > Konsolidiert aus: der echten Live-Site (20 Seiten, deployed), den Projektanweisungen v5.0, dem SEO-Konzept Rev. 4 und allen Build-Sessions seit Juni 2026.
 > Konfliktregel: Bei Widerspruch zwischen Dokumenten gewinnt dieses. Bei Widerspruch zwischen Doku und Repo gewinnt das Repo — dann wird die Doku korrigiert.
 > Muster übernommen aus den Brains von USELY, YOU und SPC (Vollautonomie, Loop-Regeln, Leseregeln, Governance); wo die drei sich widersprachen, wurde die für ein Website-Projekt sauberste Variante gewählt und hier dokumentiert.
@@ -55,10 +55,10 @@ Rechtsseiten (noindex, nicht in Sitemap): /impressum ↔ /en/legal-notice · /da
 Interne Seiten (noindex, kein EN): buecher-cw, more-produkt-berater, pdfs/.
 
 ## 2.3 Seitenaufbau (DNA — Details Constitution §A)
-Jede Seite: identische Nav (seit 2026-09-19 nur Sprachwechsler-Dropdown rechts, Glass-on-Scroll, kein Logo, keine Menüpunkte) · identischer Footer (eine Zeile: Copyright, Rechtliches, DE/EN-Pills; keine Social-Links) · animierter Hintergrund (Canvas-Partikel + 4 Orbs + Grid + Grain) · Glass-Cards, Glow nur auf Teal-Text/Primär-Buttons, Playfair-Serif-Akzente · Cookie-Banner + consent-gated GA4 auf allen Seiten AUSSER Rechtsseiten.
+Jede Seite: identische Nav (seit 2026-09-19 nur Sprachwechsler-Dropdown rechts, auch beim Scrollen transparent, kein Logo, keine Menüpunkte) · identischer Footer (eine Zeile: Copyright, Rechtliches, DE/EN-Pills; keine Social-Links) · fast schwarzer animierter Hintergrund (neutrale Canvas-Partikel + ein leiser Lichtfleck + schwaches Grid + Grain) · Glass-Cards, Glow nur auf Teal-Text/Primär-Buttons, Playfair-Serif-Akzente · Cookie-Banner + consent-gated GA4 auf allen Seiten AUSSER Rechtsseiten.
 
 ## 2.4 Design-Tokens
---teal #226886 · --teal-bright #2b86a7 · --bg #07070F · --text #F0F0F0 · --muted #8888AA · --faint #333355 · Inter + Playfair Display italic · Hero-H1 clamp(2.2rem, 3.8vw, 4.2rem) einheitlich · Glass rgba(255,255,255,0.04)+blur(16px) · Nav/Footer rgba(12,14,28,0.65)+blur(28px).
+--teal #226886 · --teal-bright #2b86a7 · --bg #050505 · --text #F0F0F0 · --muted #8B8B94 · --faint #34343A · Inter + Playfair Display italic · Hero-H1 clamp(2.2rem, 3.8vw, 4.2rem) einheitlich · Glass rgba(255,255,255,0.04)+blur(16px) · Nav transparent · Footer rgba(12,12,12,0.6)+blur(28px) · Lichtfleck .orb-1 rgba(215,222,230,0.11) (seit 2026-09-19, vorher Blaustich #07070F mit vier Teal-Orbs).
 
 ## 2.5 Dienste & IDs
 GA4 `G-MHQJ0HLBM3` (Property 437337038), consent-gated via localStorage `yg_cookie_consent`, IP-Anonymisierung · Formspree `xojbbzad` · Calendly `https://calendly.com/yg-media/30min` · USELY App Store `https://apps.apple.com/de/app/usely/id6783429050` · Search Console Domain-Property `yg-media.de` · Kontakt info@yg-media.de / +49 177 4476392 (tel: + wa.me).
@@ -132,6 +132,7 @@ INDEX zuerst, dann STATUS, dann Links. CLAUDE.md < 200 Zeilen — zeigt aufs Bra
 | 2026-09-19 | 2.2 | **Minimal-Auftritt** (Auftrag Yasin): Startseite nur noch die vier Produktkarten in einer Reihe; Nav nur Logo + Sprachwahl, Footer nur Copyright + Rechtliches + Sprachwahl auf allen 20 DNA-Seiten; X/Twitter überall entfernt und per verify.py gesperrt. Kontaktwege nur noch im Impressum. Protokoll: 05-protokoll/2026-09-19-content-minimal-startseite.md. |
 | 2026-09-19 | 2.3 | **Aufräumen nach Yasins Freigabe:** /usely und /en/usely als Weiterleitungs-Stubs auf die Subdomain, die 10 geparkten Service-Seiten gelöscht, Sitemap 2 URLs, verify.py mit Kategorie REDIRECT_PAGES. Protokoll: 05-protokoll/2026-09-19-content-minimal-startseite.md (Nachtrag 2). |
 | 2026-09-19 | 2.4 | **Logo-Animation:** Nav-Logo entfernt, YG-Logo groß und animiert über den Produktkarten (Y und G werden Schlange, Kreis, versinken, kehren zurück), Werkzeugkette scripts/logo. Protokoll: 05-protokoll/2026-09-19-dev-logo-animation.md. |
+| 2026-09-19 | 2.5 | **Fast schwarz und kurze Karten:** Grundton #050505 mit einem Lichtfleck, Logo ohne Schein (Safari-Kasten), Nav ohne Milchglas, Karten mit Produktname als Titel, Stichpunkt "was es ist" und einem kurzen Absatz, per Subgrid ausgerichtet; Nutzungsbedingungen-H1 "YG MEDIA". Protokoll: 05-protokoll/2026-09-19-design-schwarz-kurze-karten.md. |
 | 2026-07-19 | 1.1 | Roadmap-Blöcke A + B erledigt: Actions-Deploy aktiv (Brain bleibt privat), Sitemap 14 URLs in GSC neu eingereicht, 4 EN-URLs zur Indexierung beantragt, Enforce HTTPS aktiv (http→https 301). Details: 05-protokoll/2026-07-19-system-repo-uebernahme.md. |
 
 ---
