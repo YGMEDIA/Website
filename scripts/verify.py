@@ -16,6 +16,8 @@ SITE = "https://yg-media.de"  # kanonische Domain ist non-www (Canonicals/hrefla
 
 # Seiten-Inventar (Constitution §B/§C/§D). Neue Seiten hier eintragen.
 # Seit 2026-09-19 (Minimal-Auftritt): nur die Startseite ist indexierbar.
+# Startseiten: seit 2026-09-20 Bühne ohne Navbar (Yasin), Sprachwechsler nur im Footer
+HOME_PAGES = ("index.html", "en/index.html")
 INDEXABLE_PAIRS = [
     ("index.html", "en/index.html"),
 ]
@@ -124,17 +126,25 @@ def check_page(path):
         if m.group(1).lower().split("-")[0] != want:
             err(f"{path}: lang='{m.group(1)}', erwartet {want}")
 
-    # DNA-Marker (§A1) — nur öffentliche Seiten
-    if full_dna and "<nav" not in html:
-        err(f"{path}: Navbar fehlt")
+    # DNA-Marker (§A1) — nur öffentliche Seiten.
+    # Die Startseite ist seit 2026-09-20 eine Bühne ohne Navbar (Yasin): Logo mittig, darunter die
+    # Karten, Sprachwechsler nur noch im Footer. Alle anderen Seiten tragen weiter die volle Nav.
+    is_home = path in HOME_PAGES
     if full_dna and "<footer" not in html:
         err(f"{path}: Footer fehlt")
-    if full_dna and "<canvas" not in html:
-        err(f"{path}: Canvas-Hintergrund fehlt")
-    if full_dna and "nav-lang" not in html:
-        err(f"{path}: Nav-Sprachwechsler (.nav-lang) fehlt")
-    if full_dna and 'class="nav-logo"' not in html:
-        err(f"{path}: Nav-Logo (.nav-logo) fehlt (§A1, seit 2026-09-19 wieder Pflicht)")
+    if full_dna and 'class="flow"' not in html:
+        err(f"{path}: Flow-Hintergrund (.flow) fehlt (§A1 seit 2026-09-20)")
+    if full_dna and is_home and "<nav" in html:
+        err(f"{path}: Startseite trägt wieder eine Navbar (§A1 seit 2026-09-20: Bühne ohne Nav)")
+    if full_dna and is_home and 'class="stage-logo"' not in html:
+        err(f"{path}: Bühnen-Logo (.stage-logo) fehlt (§A1 seit 2026-09-20)")
+    if full_dna and not is_home:
+        if "<nav" not in html:
+            err(f"{path}: Navbar fehlt")
+        if "nav-lang" not in html:
+            err(f"{path}: Nav-Sprachwechsler (.nav-lang) fehlt")
+        if 'class="nav-logo"' not in html:
+            err(f"{path}: Nav-Logo (.nav-logo) fehlt (§A1, seit 2026-09-19 wieder Pflicht)")
     if full_dna and "lang-switch" not in html:
         err(f"{path}: Footer-Sprachwechsler (.lang-switch) fehlt")
 
