@@ -376,16 +376,15 @@ section[id] { scroll-margin-top: 70px; }
 #produkte .product-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.2rem; margin-bottom: 0; }
 #produkte .product-card { padding: 1.6rem; }
 #produkte .product-img { height: 230px; margin-bottom: 1.4rem; }
-#produkte .product-card h2 { font-size: 1.5rem; margin-bottom: 0.8rem; }
-#produkte .product-card p { font-size: 0.88rem; line-height: 1.75; text-wrap: pretty; }
+#produkte .product-card h2 { font-size: 1.5rem; margin-bottom: 0; }
 #produkte .product-card .ref-tag { color: var(--teal-bright); }
 #produkte .product-links { gap: 0.6rem 1.2rem; padding-top: 1.4rem; }
 #produkte .product-links .ref-link { margin-top: 0; }
-@media (max-width: 1200px) { #produkte .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; } #produkte .product-card { padding: 2.2rem; } #produkte .product-img { height: 320px; } #produkte .product-card h2 { font-size: 1.7rem; } #produkte .product-card p { font-size: 0.92rem; } }
+@media (max-width: 1200px) { #produkte .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; } #produkte .product-card { padding: 2.2rem; } #produkte .product-img { height: 320px; } #produkte .product-card h2 { font-size: 1.7rem; } }
 @media (max-width: 768px) { #produkte { padding: 110px 0 60px; } #produkte .product-grid { grid-template-columns: 1fr; } #produkte .product-card { padding: 1.8rem; } #produkte .product-img { height: 260px; } #produkte .product-card h2 { font-size: 1.55rem; } }
 /* Vier Spalten: die Karten teilen sich die Zeilen (Subgrid), damit Stichpunkt, Titel, Chips und Links
    ueber alle Karten auf einer Linie stehen, auch wenn ein Stichpunkt zweizeilig umbricht (2026-09-19) */
-@media (min-width: 1201px) { #produkte .product-grid { row-gap: 0; } #produkte .product-card { display: grid; grid-template-rows: subgrid; grid-row: span 6; } #produkte .product-card .ref-tag { align-self: end; } }
+@media (min-width: 1201px) { #produkte .product-grid { row-gap: 0; } #produkte .product-card { display: grid; grid-template-rows: subgrid; grid-row: span 5; } #produkte .product-card .ref-tag { align-self: end; } }
 
 /* Minimal-Chrome seit 2026-09-19 (Yasin): Nav nur Logo + Sprache, Footer nur Rechtliches + Sprache (Constitution §A1 v1.3) */
 footer { padding: 2.2rem 0; }
@@ -509,7 +508,6 @@ footer { padding: 2.2rem 0; }
         <img src="assets/logo-usely.webp" alt="USELY Keyvisual mit Glas-U" class="product-img" loading="lazy">
         <span class="ref-tag">Smarte Buchhaltung</span>
         <h2>USELY</h2>
-        <p>Angebote, Rechnungen und Belege in Sekunden erstellen, auf dem iPhone und im Web. Mit E-Rechnung, Bezahllink und DATEV-Export für die Steuerkanzlei. Der Vorteil: Buchhaltung läuft nebenbei statt am Wochenende.</p>
         <div class="service-tags"><span class="stag">E-Rechnung</span><span class="stag">Belegkette</span><span class="stag">Boards</span><span class="stag">DATEV</span></div>
         <div class="product-links">
           <a href="https://usely.yg-media.de/" class="ref-link">Mehr erfahren →</a>
@@ -521,7 +519,6 @@ footer { padding: 2.2rem 0; }
         <img src="assets/logo-you.webp" alt="YOU Keyvisual" class="product-img" loading="lazy">
         <span class="ref-tag">Gesundheits-App mit eigenem Wearable</span>
         <h2>YOU</h2>
-        <p>Training, Ernährung, Schlaf und Journal in einer App, gemessen vom eigenen YOU Band. Ein KI-Onboarding lernt dich kennen, vier Ringe zeigen deinen Tag. Der Unterschied: YOU misst Körper und Geist.</p>
         <div class="service-tags"><span class="stag">KI-Onboarding</span><span class="stag">YOU Band</span><span class="stag">HRV und Recovery</span><span class="stag">Widgets</span></div>
         <div class="product-links">
           <a href="https://you.yg-media.de/" class="ref-link">Zur YOU-Website →</a>
@@ -532,7 +529,6 @@ footer { padding: 2.2rem 0; }
         <img src="assets/logo-paukbox.webp" alt="Paukbox Logo mit goldenen Karteikarten" class="product-img" loading="lazy">
         <span class="ref-tag">Lern-App mit Karteikarten</span>
         <h2>Paukbox</h2>
-        <p>Vokabeln und Fachbegriffe als Karteikarten lernen, im Browser auf jedem Gerät. Listen kommen per PDF, Text oder KI in die App, das Leitner-System wiederholt im richtigen Takt. 50&nbsp;Karten gratis, unbegrenzt für einmalig 2&nbsp;Euro.</p>
         <div class="service-tags"><span class="stag">PDF-Import</span><span class="stag">Leitner-System</span><span class="stag">Quiz</span><span class="stag">Einmalig 2 €</span></div>
         <div class="product-links">
           <a href="https://paukbox.yg-media.de" target="_blank" rel="noopener" class="ref-link">Paukbox öffnen →</a>
@@ -543,7 +539,6 @@ footer { padding: 2.2rem 0; }
         <img src="assets/logo-felgen-brillant.webp" alt="Felgen Brillant Logo" class="product-img" loading="lazy">
         <span class="ref-tag">Felgenaufbereitung und Felgenhandel</span>
         <h2>Felgen Brillant</h2>
-        <p>Aus beschädigten Originalfelgen werden wieder neuwertige Räder, dazu ein Shop für aufbereitete Markenfelgen. Wir bauen Marke, Shop und Software mit auf. Das Ziel: eine robotergestützte Pulverbeschichtungsanlage.</p>
         <div class="service-tags"><span class="stag">Marke</span><span class="stag">Shop</span><span class="stag">Betriebssoftware</span><span class="stag">Robotik-Vision</span></div>
         <div class="product-links">
           <a href="https://www.felgen-brillant.com" target="_blank" rel="noopener" class="ref-link">Website ansehen →</a>

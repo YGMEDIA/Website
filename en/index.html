@@ -375,16 +375,15 @@ section[id] { scroll-margin-top: 70px; }
 #products .product-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.2rem; margin-bottom: 0; }
 #products .product-card { padding: 1.6rem; }
 #products .product-img { height: 230px; margin-bottom: 1.4rem; }
-#products .product-card h2 { font-size: 1.5rem; margin-bottom: 0.8rem; }
-#products .product-card p { font-size: 0.88rem; line-height: 1.75; text-wrap: pretty; }
+#products .product-card h2 { font-size: 1.5rem; margin-bottom: 0; }
 #products .product-card .ref-tag { color: var(--teal-bright); }
 #products .product-links { gap: 0.6rem 1.2rem; padding-top: 1.4rem; }
 #products .product-links .ref-link { margin-top: 0; }
-@media (max-width: 1200px) { #products .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; } #products .product-card { padding: 2.2rem; } #products .product-img { height: 320px; } #products .product-card h2 { font-size: 1.7rem; } #products .product-card p { font-size: 0.92rem; } }
+@media (max-width: 1200px) { #products .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; } #products .product-card { padding: 2.2rem; } #products .product-img { height: 320px; } #products .product-card h2 { font-size: 1.7rem; } }
 @media (max-width: 768px) { #products { padding: 110px 0 60px; } #products .product-grid { grid-template-columns: 1fr; } #products .product-card { padding: 1.8rem; } #products .product-img { height: 260px; } #products .product-card h2 { font-size: 1.55rem; } }
 /* Vier Spalten: die Karten teilen sich die Zeilen (Subgrid), damit Stichpunkt, Titel, Chips und Links
    ueber alle Karten auf einer Linie stehen, auch wenn ein Stichpunkt zweizeilig umbricht (2026-09-19) */
-@media (min-width: 1201px) { #products .product-grid { row-gap: 0; } #products .product-card { display: grid; grid-template-rows: subgrid; grid-row: span 6; } #products .product-card .ref-tag { align-self: end; } }
+@media (min-width: 1201px) { #products .product-grid { row-gap: 0; } #products .product-card { display: grid; grid-template-rows: subgrid; grid-row: span 5; } #products .product-card .ref-tag { align-self: end; } }
 
 /* Minimal-Chrome seit 2026-09-19 (Yasin): Nav nur Logo + Sprache, Footer nur Rechtliches + Sprache (Constitution §A1 v1.3) */
 footer { padding: 2.2rem 0; }
@@ -508,7 +507,6 @@ footer { padding: 2.2rem 0; }
         <img src="/assets/logo-usely.webp" alt="USELY key visual with glass U" class="product-img" loading="lazy">
         <span class="ref-tag">Smart bookkeeping</span>
         <h2>USELY</h2>
-        <p>Quotes, invoices and receipts in seconds, on iPhone and on the web. With e-invoicing, payment links and DATEV export for your accountant. The upside: bookkeeping runs on the side instead of on weekends.</p>
         <div class="service-tags"><span class="stag">E-invoicing</span><span class="stag">Document chain</span><span class="stag">Boards</span><span class="stag">DATEV</span></div>
         <div class="product-links">
           <a href="https://usely.yg-media.de/en/" class="ref-link">Learn more →</a>
@@ -520,7 +518,6 @@ footer { padding: 2.2rem 0; }
         <img src="/assets/logo-you.webp" alt="YOU key visual" class="product-img" loading="lazy">
         <span class="ref-tag">Health app with its own wearable</span>
         <h2>YOU</h2>
-        <p>Training, nutrition, sleep and journal in one app, measured by its own YOU Band. An AI onboarding gets to know you, four rings show your day. The difference: YOU measures body and mind.</p>
         <div class="service-tags"><span class="stag">AI onboarding</span><span class="stag">YOU Band</span><span class="stag">HRV and recovery</span><span class="stag">Widgets</span></div>
         <div class="product-links">
           <a href="https://you.yg-media.de/en/" class="ref-link">Visit the YOU website →</a>
@@ -531,7 +528,6 @@ footer { padding: 2.2rem 0; }
         <img src="/assets/logo-paukbox.webp" alt="Paukbox logo with golden flashcards" class="product-img" loading="lazy">
         <span class="ref-tag">Learning app with flashcards</span>
         <h2>Paukbox</h2>
-        <p>Learn vocabulary and technical terms as flashcards, in the browser on any device. Lists come in via PDF, text or AI, and the Leitner system repeats them at the right pace. 50&nbsp;cards free, unlimited for a one-time 2&nbsp;euros.</p>
         <div class="service-tags"><span class="stag">PDF import</span><span class="stag">Leitner system</span><span class="stag">Quiz</span><span class="stag">One-time 2 €</span></div>
         <div class="product-links">
           <a href="https://paukbox.yg-media.de" target="_blank" rel="noopener" class="ref-link">Open Paukbox →</a>
@@ -542,7 +538,6 @@ footer { padding: 2.2rem 0; }
         <img src="/assets/logo-felgen-brillant.webp" alt="Felgen Brillant logo" class="product-img" loading="lazy">
         <span class="ref-tag">Wheel refurbishment and wheel trading</span>
         <h2>Felgen Brillant</h2>
-        <p>Damaged original rims become wheels as good as new again, plus a shop for refurbished brand rims. We help build the brand, shop and software. The goal: a robot-assisted powder coating line.</p>
         <div class="service-tags"><span class="stag">Brand</span><span class="stag">Shop</span><span class="stag">Operations software</span><span class="stag">Robotics vision</span></div>
         <div class="product-links">
           <a href="https://www.felgen-brillant.com" target="_blank" rel="noopener" class="ref-link">Visit the website →</a>
