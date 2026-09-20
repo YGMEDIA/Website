@@ -384,7 +384,7 @@ section[id] { scroll-margin-top: 70px; }
 @media (max-width: 768px) { #produkte { padding: 110px 0 60px; } #produkte .product-grid { grid-template-columns: 1fr; } #produkte .product-card { padding: 1.8rem; } #produkte .product-img { height: 260px; } #produkte .product-card h2 { font-size: 1.55rem; } }
 /* Vier Spalten: die Karten teilen sich die Zeilen (Subgrid), damit Stichpunkt, Titel, Chips und Links
    ueber alle Karten auf einer Linie stehen, auch wenn ein Stichpunkt zweizeilig umbricht (2026-09-19) */
-@media (min-width: 1201px) { #produkte .product-grid { row-gap: 0; } #produkte .product-card { display: grid; grid-template-rows: subgrid; grid-row: span 5; } #produkte .product-card .ref-tag { align-self: end; } }
+@media (min-width: 1201px) { #produkte .product-grid { row-gap: 0; } #produkte .product-card { display: grid; grid-template-rows: subgrid; grid-row: span 4; } #produkte .product-card .ref-tag { align-self: end; } }
 
 /* Minimal-Chrome seit 2026-09-19 (Yasin): Nav nur Logo + Sprache, Footer nur Rechtliches + Sprache (Constitution §A1 v1.3) */
 footer { padding: 2.2rem 0; }
@@ -508,7 +508,6 @@ footer { padding: 2.2rem 0; }
         <img src="assets/logo-usely.webp" alt="USELY Keyvisual mit Glas-U" class="product-img" loading="lazy">
         <span class="ref-tag">Smarte Buchhaltung</span>
         <h2>USELY</h2>
-        <div class="service-tags"><span class="stag">E-Rechnung</span><span class="stag">Belegkette</span><span class="stag">Boards</span><span class="stag">DATEV</span></div>
         <div class="product-links">
           <a href="https://usely.yg-media.de/" class="ref-link">Mehr erfahren →</a>
           <a href="https://apps.apple.com/de/app/usely/id6783429050" target="_blank" rel="noopener" class="badge-link"><img src="assets/app-store-badge.png" alt="Download on the App Store" loading="lazy"></a>
@@ -519,7 +518,6 @@ footer { padding: 2.2rem 0; }
         <img src="assets/logo-you.webp" alt="YOU Keyvisual" class="product-img" loading="lazy">
         <span class="ref-tag">Gesundheits-App mit eigenem Wearable</span>
         <h2>YOU</h2>
-        <div class="service-tags"><span class="stag">KI-Onboarding</span><span class="stag">YOU Band</span><span class="stag">HRV und Recovery</span><span class="stag">Widgets</span></div>
         <div class="product-links">
           <a href="https://you.yg-media.de/" class="ref-link">Zur YOU-Website →</a>
         </div>
@@ -529,7 +527,6 @@ footer { padding: 2.2rem 0; }
         <img src="assets/logo-paukbox.webp" alt="Paukbox Logo mit goldenen Karteikarten" class="product-img" loading="lazy">
         <span class="ref-tag">Lern-App mit Karteikarten</span>
         <h2>Paukbox</h2>
-        <div class="service-tags"><span class="stag">PDF-Import</span><span class="stag">Leitner-System</span><span class="stag">Quiz</span><span class="stag">Einmalig 2 €</span></div>
         <div class="product-links">
           <a href="https://paukbox.yg-media.de" target="_blank" rel="noopener" class="ref-link">Paukbox öffnen →</a>
         </div>
@@ -539,7 +536,6 @@ footer { padding: 2.2rem 0; }
         <img src="assets/logo-felgen-brillant.webp" alt="Felgen Brillant Logo" class="product-img" loading="lazy">
         <span class="ref-tag">Felgenaufbereitung und Felgenhandel</span>
         <h2>Felgen Brillant</h2>
-        <div class="service-tags"><span class="stag">Marke</span><span class="stag">Shop</span><span class="stag">Betriebssoftware</span><span class="stag">Robotik-Vision</span></div>
         <div class="product-links">
           <a href="https://www.felgen-brillant.com" target="_blank" rel="noopener" class="ref-link">Website ansehen →</a>
         </div>

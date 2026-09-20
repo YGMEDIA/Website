@@ -22,3 +22,6 @@
 
 ## Beobachten
 Die Startseite trägt damit fast keinen Fließtext mehr: sichtbar nur noch vier Stichpunkte, vier Produktnamen und die Chips. Für Google bleiben Title, Description, die unsichtbare H1 und das ProfessionalService-Schema. Ob die Sichtbarkeit darunter leidet, gehört in den nächsten gsc-loop-Lauf (Impressionen der Startseite vorher/nachher). Falls ja, ist der Weg nicht der alte Kartentext, sondern eigene Produktseiten (P-11/P-1), auf denen der Text Platz hat.
+
+## Nachtrag (gleicher Tag): auch die Schlagwörter raus
+Yasin: "die Schlagwörter auch weg". Die `.service-tags` der vier Karten sind entfernt (DE+EN), Subgrid auf `span 4`. Eine Karte ist jetzt Bild, Stichpunkt, Produktname, Link. Das CSS zu `.service-tags`/`.stag` bleibt stehen, falls Chips zurückkommen. Verify: verify.py grün; 1440 px: 0 Chips im Dokument, Kartenhöhe einheitlich 479 px (vorher 559), Stichpunkt-Unterkante 475 und Titel 494 auf allen vier Karten gleich, Seite weiter ohne Scrollen auf 900 px. Live nach Deploy geprüft. Damit steht auf der Startseite sichtbar nur noch: vier Stichpunkte, vier Namen, vier Links.
