@@ -307,7 +307,8 @@ a.lang-btn:hover { border-color: rgba(28,91,130,0.5); color: var(--text); }
 .ref-feature-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
 .badge-link { display: inline-flex; align-items: center; margin-top: 1.4rem; }
 .badge-link img { height: 46px; width: auto; display: block; transition: transform 0.2s; }
-.badge-link:hover img { transform: translateY(-2px); }
+.badge-link img { transform-origin: right center; }
+.badge-link:hover img { transform: scale(1.08); }
 .ref-feature-content { padding: 3.5rem; display: flex; flex-direction: column; justify-content: center; }
 .ref-feature-content h3 { font-size: clamp(1.5rem, 2.4vw, 2rem); font-weight: 900; letter-spacing: -0.03em; line-height: 1.15; margin: 1rem 0 1.2rem; }
 .ref-feature-content p { color: var(--muted); font-size: 0.95rem; line-height: 1.85; }
@@ -383,7 +384,9 @@ section[id] { scroll-margin-top: 70px; }
 #products .product-img { height: auto; align-self: start; margin-bottom: 1.4rem; }
 #products .product-card h2 { font-size: 1.5rem; margin-bottom: 0; }
 #products .product-card .ref-tag { color: var(--teal-bright); }
-#products .product-links { gap: 0.6rem 0.9rem; padding-top: 1.4rem; }
+#products .product-links { gap: 0.6rem 0.9rem; padding-top: 1.4rem; justify-content: space-between; }
+#products .ref-link { transform-origin: left center; transition: transform 0.25s ease, gap 0.2s, text-shadow 0.2s, color 0.2s; }
+#products .ref-link:hover { transform: scale(1.09); text-shadow: 0 0 12px rgba(36,120,170,0.6); }
 #products .product-links .ref-link { margin-top: 0; }
 @media (max-width: 1200px) { #products .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; } #products .product-card { padding: 2.2rem; } #products .product-card h2 { font-size: 1.7rem; } }
 @media (max-width: 768px) { #products { padding: 110px 0 60px; } #products .product-grid { grid-template-columns: 1fr; } #products .product-card { padding: 1.8rem; } #products .product-card h2 { font-size: 1.55rem; } }
@@ -519,8 +522,8 @@ a.lang-btn:hover, .lang-btn.active { background: none; border: 0; }
         <span class="ref-tag">Smart bookkeeping</span>
         <h2>USELY</h2>
         <div class="product-links">
-          <a href="https://usely.yg-media.de/en/" class="ref-link">Learn more →</a>
-          <a href="https://apps.apple.com/de/app/usely/id6783429050" target="_blank" rel="noopener" class="badge-link"><img src="/assets/app-store-badge.png" alt="Download on the App Store" width="494" height="170" loading="lazy"></a>
+          <a href="https://usely.yg-media.de/en/" class="ref-link" aria-label="Learn more about USELY">Learn more →</a>
+          <a href="https://apps.apple.com/de/app/usely/id6783429050" target="_blank" rel="noopener" class="badge-link"><img src="/assets/app-store-badge.png" alt="USELY, Download on the App Store" width="494" height="170" loading="lazy"></a>
         </div>
       </div>
 
@@ -529,8 +532,8 @@ a.lang-btn:hover, .lang-btn.active { background: none; border: 0; }
         <span class="ref-tag">Health app with its own wearable</span>
         <h2>YOU</h2>
         <div class="product-links">
-          <a href="https://you.yg-media.de/en/" class="ref-link">Visit the YOU website →</a>
-          <a href="https://apps.apple.com/de/app/you-body-mind/id6810715398" target="_blank" rel="noopener" class="badge-link"><img src="/assets/app-store-badge.png" alt="Download on the App Store" width="494" height="170" loading="lazy"></a>
+          <a href="https://you.yg-media.de/en/" class="ref-link" aria-label="Learn more about YOU">Learn more →</a>
+          <a href="https://apps.apple.com/de/app/you-body-mind/id6810715398" target="_blank" rel="noopener" class="badge-link"><img src="/assets/app-store-badge.png" alt="YOU, Download on the App Store" width="494" height="170" loading="lazy"></a>
         </div>
       </div>
 
@@ -539,8 +542,8 @@ a.lang-btn:hover, .lang-btn.active { background: none; border: 0; }
         <span class="ref-tag">Learning app with flashcards</span>
         <h2>Paukbox</h2>
         <div class="product-links">
-          <a href="https://paukbox.yg-media.de" target="_blank" rel="noopener" class="ref-link">Open Paukbox →</a>
-          <a href="https://apps.apple.com/de/app/paukbox/id6810703491" target="_blank" rel="noopener" class="badge-link"><img src="/assets/app-store-badge.png" alt="Download on the App Store" width="494" height="170" loading="lazy"></a>
+          <a href="https://paukbox.yg-media.de" target="_blank" rel="noopener" class="ref-link" aria-label="Learn more about Paukbox">Learn more →</a>
+          <a href="https://apps.apple.com/de/app/paukbox/id6810703491" target="_blank" rel="noopener" class="badge-link"><img src="/assets/app-store-badge.png" alt="Paukbox, Download on the App Store" width="494" height="170" loading="lazy"></a>
         </div>
       </div>
 
@@ -549,7 +552,7 @@ a.lang-btn:hover, .lang-btn.active { background: none; border: 0; }
         <span class="ref-tag">Wheel refurbishment and wheel trading</span>
         <h2>Felgen Brillant</h2>
         <div class="product-links">
-          <a href="https://www.felgen-brillant.com" target="_blank" rel="noopener" class="ref-link">Visit the website →</a>
+          <a href="https://www.felgen-brillant.com" target="_blank" rel="noopener" class="ref-link" aria-label="Learn more about Felgen Brillant">Learn more →</a>
         </div>
       </div>
     </div>
