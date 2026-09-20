@@ -67,7 +67,7 @@ GA4 `G-MHQJ0HLBM3` (Property 437337038), consent-gated via localStorage `yg_cook
 
 # TEIL III · MODULE
 
-**M1 Startseite (seit 2026-09-19)** — nur die Sektion #produkte: unsichtbare H1 (`.sr-only`), darunter vier `.product-card` (USELY, YOU, Paukbox, Felgen Brillant) mit h2, in einer Reihe ab 1200 px, darunter zwei Spalten, ab 768 px eine. Kein Hero, keine Konzepte, kein Horizont, kein Unternehmens-Block, kein Kontakt. ProfessionalService-Schema mit NAP bleibt (unsichtbar, sameAs ohne X).
+**M1 Startseite (seit 2026-09-19)** — nur die Sektion #produkte: unsichtbare H1 (`.sr-only`), darunter vier `.product-card` (USELY, YOU, Paukbox, Felgen Brillant) mit Bild, Stichpunkt, h2 und Chips, seit 2026-09-20 ohne Beschreibungstext, in einer Reihe ab 1200 px, darunter zwei Spalten, ab 768 px eine. Kein Hero, keine Konzepte, kein Horizont, kein Unternehmens-Block, kein Kontakt. ProfessionalService-Schema mit NAP bleibt (unsichtbar, sameAs ohne X).
 **M2 Service-Seiten (4)** — je ein Keyword, FAQ-Akkordeon mit FAQ-Schema (5 Fragen, Schema-Sprache = Seitensprache), Referenz-Highlights.
 **M3 USELY-Produktseite** — Keyvisual-Hero, 6 Feature-Blöcke mit echten Screenshots (WebP), Download-Band, Macher-Story mit Timeline, FAQ (6), MobileApplication-Schema. Die Startseiten-Karte beschreibt die APP, die Story lebt nur auf /usely.
 **M4 MOFU-Ratgeber** — /website-kosten: Preisvergleich-Grid, Kostenfaktoren, FAQ-Schema. Weitere Ratgeber (z.B. app entwickeln kosten) nach GSC-Signal.
