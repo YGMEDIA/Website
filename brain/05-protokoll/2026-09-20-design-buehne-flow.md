@@ -52,6 +52,6 @@ Yasin: überall "Mehr erfahren" statt vier verschiedener Linktexte, den App-Stor
 Yasin: "das ® überall wo YG MEDIA steht" und "mach das YG MEDIA auf der Nutzungsseite als Subtitle, im Titelstil, aber kleiner".
 - **Rückfrage vor dem Bauen:** Das ® behauptet eine eingetragene Marke; ohne Eintragung ist das in Deutschland eine Abmahnfalle (§ 5 UWG, irreführende Werbung). Yasin hat bestätigt, dass die Wortmarke eingetragen ist. Erst danach umgesetzt.
 - **Gesetzt:** `<span class="rm">&reg;</span>` (0,62 em, hochgestellt) im Footer aller 8 Seiten, im Nav-Logo-Textrückfall der Rechtsseiten und in den Namenszeilen von Impressum, Datenschutz und Nutzungsbedingungen (DE+EN).
-- **Nicht gesetzt:** `<title>`, Meta-Tags (og/twitter/description/keywords), JSON-LD und `alt`-Texte. Das sind Namensfelder für Maschinen und Suchergebnisse; dort verwässert ein ® den Namen.
+- **Zuerst nicht gesetzt, auf Yasins Ansage nachgezogen:** `<title>` aller 10 Seiten ("Seite — YG MEDIA®") und die Marken-Metas der Startseiten (description, og:title, og:site_name, twitter:title). Ohne Zeichen bleiben `keywords` (dort steht der reine Suchbegriff), JSON-LD `name`/`alternateName` (Entitätsname, den Suchmaschinen abgleichen) und `alt`-Texte.
 - **Unterzeile:** `.legal h1 em` ist jetzt eine eigene Zeile, weiter Playfair-Kursiv in Teal, aber auf 0,42 em verkleinert. Auf der Nutzungsbedingungen-Seite steht damit groß "Nutzungsbedingungen" und darunter klein "YG MEDIA®" (EN entsprechend).
 - **Verify:** verify.py grün, Screenshots 1100 px und 375 px, danach live geprüft.

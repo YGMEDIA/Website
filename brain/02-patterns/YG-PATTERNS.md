@@ -4,7 +4,7 @@
 
 ## P-1 · Seiten-DNA-Pattern
 **Wann:** Jede neue Seite, DE wie EN.
-**Form:** Bestehende Seite gleichen Typs als Vorlage kopieren (nie from scratch): Head mit Title "<Seite> — YG MEDIA", Description, Canonical, hreflang-Trio (nur indexierbar), og:image + Twitter Cards, ggf. Schema · Body mit vollständiger Nav (+ seitenspezifischem Sprachwechsler), Canvas/Orbs/Grid/Grain, Sections, Footer, Cookie-Banner (außer Rechtsseiten). Danach: Sitemap + verify.py.
+**Form:** Bestehende Seite gleichen Typs als Vorlage kopieren (nie from scratch): Head mit Title "<Seite> — YG MEDIA®" (Markenzeichen seit 2026-09-20, §A5), Description, Canonical, hreflang-Trio (nur indexierbar), og:image + Twitter Cards, ggf. Schema · Body mit vollständiger Nav (+ seitenspezifischem Sprachwechsler), Canvas/Orbs/Grid/Grain, Sections, Footer, Cookie-Banner (außer Rechtsseiten). Danach: Sitemap + verify.py.
 **Vorlage:** index.html (Produkt-Startseite, seit 2026-09-02), usely.html (Produkt-Detailseite), impressum.html (Legal). website.html & Co. sind geparkt und keine Vorlagen mehr.
 **Gesetze:** §A1, §B3, §C2.
 
