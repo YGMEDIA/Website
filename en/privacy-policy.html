@@ -33,7 +33,7 @@ body::after { content: ''; position: fixed; inset: 0; z-index: 3; background-ima
 .legal{padding:10rem 0 6rem}
 .legal-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:24px;padding:3.5rem;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:inset 0 1px 0 rgba(255,255,255,0.1)}
 .legal h1{font-size:clamp(2rem,4vw,3rem);font-weight:900;letter-spacing:-0.03em;margin-bottom:2.5rem;overflow-wrap:break-word}
-.legal h1 em{font-family:'Playfair Display',serif;font-style:italic;font-weight:600;color:var(--teal-bright)}
+.legal h1 em{font-family:'Playfair Display',serif;font-style:italic;font-weight:600;color:var(--teal-bright);display:block;font-size:0.42em;line-height:1.2;margin-top:0.7rem;letter-spacing:0}
 .legal h2{font-size:1.1rem;font-weight:700;margin:2.2rem 0 0.8rem;letter-spacing:-0.01em}
 .legal p{color:var(--muted);font-size:0.95rem;margin-bottom:0.6rem}
 .legal a{color:var(--teal-bright);text-decoration:none}
@@ -122,6 +122,9 @@ footer { background: none; backdrop-filter: none; -webkit-backdrop-filter: none;
 .lang-switch { gap: 1.1rem; }
 .lang-btn { padding: 0; border: 0; background: none; border-radius: 0; }
 a.lang-btn:hover, .lang-btn.active { background: none; border: 0; }
+
+/* Markenzeichen hinter der Wortmarke (Yasin 2026-09-20): klein und hochgestellt */
+.rm { font-size: 0.62em; vertical-align: 0.4em; letter-spacing: 0; margin-left: 0.06em; }
 </style>
 </head>
 <body>
@@ -130,7 +133,7 @@ a.lang-btn:hover, .lang-btn.active { background: none; border: 0; }
   <div class="nav-inner">
     <a href="/en/" class="nav-logo">
       <img src="/assets/YG-Logo-Weiss-No-Background.png" alt="YG MEDIA" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-      <span class="nav-logo-text">YG MEDIA</span>
+      <span class="nav-logo-text">YG MEDIA<span class="rm">&reg;</span></span>
     </a>
     <div class="nav-links" id="navLinks">
       <div class="nav-lang" id="navLang">
@@ -154,7 +157,7 @@ a.lang-btn:hover, .lang-btn.active { background: none; border: 0; }
 
       <h2>2. Controller</h2>
       <p>The controller responsible for data processing on this website and in the app USELY is:</p>
-      <p><strong>YG MEDIA</strong>, Yasin Gündogdu</p>
+      <p><strong>YG MEDIA<span class="rm">&reg;</span></strong>, Yasin Gündogdu</p>
       <p>Rottendorferstraße 99, 97074 Würzburg, Germany</p>
       <p>Email: <a href="mailto:info@yg-media.de">info@yg-media.de</a></p>
 
@@ -216,7 +219,7 @@ a.lang-btn:hover, .lang-btn.active { background: none; border: 0; }
 <footer>
   <div class="wrap">
     <div class="footer-bottom">
-      <p class="footer-copy">© 2026 YG MEDIA</p>
+      <p class="footer-copy">© 2026 YG MEDIA<span class="rm">&reg;</span></p>
       <div class="footer-legal" aria-label="Legal"><a href="/en/legal-notice">Legal Notice</a><a href="/en/privacy-policy">Privacy Policy</a><a href="/en/terms-of-use">Terms of Use</a></div>
       <div class="lang-switch" aria-label="Sprache / Language">
         <a href="/datenschutz" class="lang-btn" aria-label="Zur deutschen Version wechseln"><svg viewBox="0 0 5 3" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="5" height="1" fill="#111"/><rect y="1" width="5" height="1" fill="#DD0000"/><rect y="2" width="5" height="1" fill="#FFCE00"/></svg>DE</a>
