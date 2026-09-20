@@ -1,6 +1,6 @@
 # YG FRAMEWORK — Das Systemdokument
 
-> **Version 2.6 · Kanonisch · 2026-09-19** (Nav-Logo und Milchglas zurück; Fast schwarz, kurze Karten 2.5; Minimal-Auftritt 2.2; v2.0 Produkt-Positionierung vom 2026-09-02, v1.0 vom 2026-07-19)
+> **Version 2.7 · Kanonisch · 2026-09-20** (Startseite als Bühne mit Flow-Hintergrund; Nav-Logo und Milchglas 2.6; Fast schwarz, kurze Karten 2.5; Minimal-Auftritt 2.2; v2.0 Produkt-Positionierung vom 2026-09-02, v1.0 vom 2026-07-19)
 > Konsolidiert aus: der echten Live-Site (20 Seiten, deployed), den Projektanweisungen v5.0, dem SEO-Konzept Rev. 4 und allen Build-Sessions seit Juni 2026.
 > Konfliktregel: Bei Widerspruch zwischen Dokumenten gewinnt dieses. Bei Widerspruch zwischen Doku und Repo gewinnt das Repo — dann wird die Doku korrigiert.
 > Muster übernommen aus den Brains von USELY, YOU und SPC (Vollautonomie, Loop-Regeln, Leseregeln, Governance); wo die drei sich widersprachen, wurde die für ein Website-Projekt sauberste Variante gewählt und hier dokumentiert.
@@ -55,10 +55,10 @@ Rechtsseiten (noindex, nicht in Sitemap): /impressum ↔ /en/legal-notice · /da
 Interne Seiten (noindex, kein EN): buecher-cw, more-produkt-berater, pdfs/.
 
 ## 2.3 Seitenaufbau (DNA — Details Constitution §A)
-Jede Seite: identische Nav (Logo links, Sprachwechsler-Dropdown rechts, Milchglas beim Scrollen, keine Menüpunkte) · identischer Footer (eine Zeile: Copyright, Rechtliches, DE/EN-Pills; keine Social-Links) · fast schwarzer animierter Hintergrund (neutrale Canvas-Partikel + ein leiser Lichtfleck + schwaches Grid + Grain) · Glass-Cards, Glow nur auf Teal-Text/Primär-Buttons, Playfair-Serif-Akzente · Cookie-Banner + consent-gated GA4 auf allen Seiten AUSSER Rechtsseiten.
+Jede Seite außer der Startseite: identische Nav (Logo links, Sprachwechsler-Dropdown rechts, Milchglas beim Scrollen, keine Menüpunkte). Startseite seit 2026-09-20: Bühne ohne Nav (Logo mittig, Karten auf der zweiten Bildschirmseite). Überall: identischer Footer als freier Text (Copyright, Rechtliches, DE/EN; kein Glas) · Flow-Hintergrund (drei schwingende blaue Farbfelder auf #020C12 plus Grain) · Glass-Cards, Glow nur auf Teal-Text/Primär-Buttons, Playfair-Serif-Akzente · Cookie-Banner + consent-gated GA4 auf allen Seiten AUSSER Rechtsseiten.
 
 ## 2.4 Design-Tokens
---teal #226886 · --teal-bright #2b86a7 · --bg #050505 · --text #F0F0F0 · --muted #8B8B94 · --faint #34343A · Inter + Playfair Display italic · Hero-H1 clamp(2.2rem, 3.8vw, 4.2rem) einheitlich · Glass rgba(255,255,255,0.04)+blur(16px) · Nav transparent, beim Scrollen rgba(12,12,12,0.65)+blur(28px) · Footer rgba(12,12,12,0.6)+blur(28px) · Lichtfleck .orb-1 rgba(215,222,230,0.11) (seit 2026-09-19, vorher Blaustich #07070F mit vier Teal-Orbs).
+--teal #226886 · --teal-bright #2b86a7 · --bg #020C12 · --text #F0F0F0 · --muted #8B8B94 · --faint #34343A · Inter + Playfair Display italic · Hero-H1 clamp(2.2rem, 3.8vw, 4.2rem) einheitlich · Glass rgba(255,255,255,0.04)+blur(16px) · Nav transparent, beim Scrollen rgba(12,12,12,0.65)+blur(28px) · Footer ohne Flaeche (freier Text) · Flow-Felder rgba(16,122,176,0.58) / rgba(10,96,146,0.18) / rgba(6,62,100,0.20) auf #020C12 (seit 2026-09-20, nach Yasins Bildvorlage gemessen).
 
 ## 2.5 Dienste & IDs
 GA4 `G-MHQJ0HLBM3` (Property 437337038), consent-gated via localStorage `yg_cookie_consent`, IP-Anonymisierung · Formspree `xojbbzad` · Calendly `https://calendly.com/yg-media/30min` · USELY App Store `https://apps.apple.com/de/app/usely/id6783429050` · Search Console Domain-Property `yg-media.de` · Kontakt info@yg-media.de / +49 177 4476392 (tel: + wa.me).
@@ -67,7 +67,7 @@ GA4 `G-MHQJ0HLBM3` (Property 437337038), consent-gated via localStorage `yg_cook
 
 # TEIL III · MODULE
 
-**M1 Startseite (seit 2026-09-19)** — nur die Sektion #produkte: unsichtbare H1 (`.sr-only`), darunter vier `.product-card` (USELY, YOU, Paukbox, Felgen Brillant) mit Bild, Stichpunkt, h2 und Link, seit 2026-09-20 ohne Beschreibungstext und ohne Chips, in einer Reihe ab 1200 px, darunter zwei Spalten, ab 768 px eine. Kein Hero, keine Konzepte, kein Horizont, kein Unternehmens-Block, kein Kontakt. ProfessionalService-Schema mit NAP bleibt (unsichtbar, sameAs ohne X).
+**M1 Startseite (seit 2026-09-20)** — zwei Bildschirmseiten: `section.stage` (100 svh) mit unsichtbarer H1 (`.sr-only`) und dem YG-Logo mittig (blendet beim Scrollen aus), darunter `#produkte` (100 svh, mittig) mit vier `.product-card` (USELY, YOU, Paukbox, Felgen Brillant) mit Bild, Stichpunkt, h2 und Link, seit 2026-09-20 ohne Beschreibungstext und ohne Chips, in einer Reihe ab 1200 px, darunter zwei Spalten, ab 768 px eine. Kein Hero, keine Konzepte, kein Horizont, kein Unternehmens-Block, kein Kontakt. ProfessionalService-Schema mit NAP bleibt (unsichtbar, sameAs ohne X).
 **M2 Service-Seiten (4)** — je ein Keyword, FAQ-Akkordeon mit FAQ-Schema (5 Fragen, Schema-Sprache = Seitensprache), Referenz-Highlights.
 **M3 USELY-Produktseite** — Keyvisual-Hero, 6 Feature-Blöcke mit echten Screenshots (WebP), Download-Band, Macher-Story mit Timeline, FAQ (6), MobileApplication-Schema. Die Startseiten-Karte beschreibt die APP, die Story lebt nur auf /usely.
 **M4 MOFU-Ratgeber** — /website-kosten: Preisvergleich-Grid, Kostenfaktoren, FAQ-Schema. Weitere Ratgeber (z.B. app entwickeln kosten) nach GSC-Signal.
@@ -134,6 +134,7 @@ INDEX zuerst, dann STATUS, dann Links. CLAUDE.md < 200 Zeilen — zeigt aufs Bra
 | 2026-09-19 | 2.4 | **Logo-Animation:** Nav-Logo entfernt, YG-Logo groß und animiert über den Produktkarten (Y und G werden Schlange, Kreis, versinken, kehren zurück), Werkzeugkette scripts/logo. Protokoll: 05-protokoll/2026-09-19-dev-logo-animation.md. |
 | 2026-09-19 | 2.5 | **Fast schwarz und kurze Karten:** Grundton #050505 mit einem Lichtfleck, Logo ohne Schein (Safari-Kasten), Nav ohne Milchglas, Karten mit Produktname als Titel, Stichpunkt "was es ist" und einem kurzen Absatz, per Subgrid ausgerichtet; Nutzungsbedingungen-H1 "YG MEDIA". Protokoll: 05-protokoll/2026-09-19-design-schwarz-kurze-karten.md. |
 | 2026-09-19 | 2.6 | **Nav-Logo zurück:** Logo-Animation entfernt (P-16 ruht), Logo wieder links in der Nav, Milchglas beim Scrollen wie vorher (neutral getönt), YOU-Karte ohne Behance-Link, verify.py prüft das Nav-Logo. Protokoll: 05-protokoll/2026-09-19-design-nav-logo-zurueck.md. |
+| 2026-09-20 | 2.7 | **Bühne und Flow:** Startseite ohne Nav, Logo mittig auf der ersten Bildschirmseite, Karten auf der zweiten, Footer als freier Text; Hintergrund als drei schwingende Farbfelder (nach Yasins Bildvorlage gemessen) statt Orbs, Raster und Partikel. Protokoll: 05-protokoll/2026-09-20-design-buehne-flow.md. |
 | 2026-07-19 | 1.1 | Roadmap-Blöcke A + B erledigt: Actions-Deploy aktiv (Brain bleibt privat), Sitemap 14 URLs in GSC neu eingereicht, 4 EN-URLs zur Indexierung beantragt, Enforce HTTPS aktiv (http→https 301). Details: 05-protokoll/2026-07-19-system-repo-uebernahme.md. |
 
 ---

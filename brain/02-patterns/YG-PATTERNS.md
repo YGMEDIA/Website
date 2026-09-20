@@ -93,6 +93,16 @@
 **Vorlage:** Commit aa3283d (index.html `.yg-stage` / `#ygLogo`), `scripts/logo/`.
 **Gesetze:** §A1 (DNA), §A5 (Logo nur aus echten Assets), §B1 (DE und EN im selben Paket), P-14 (Lighthouse danach messen).
 
+
+## P-17 · Bühne-und-Flow-Pattern (seit 2026-09-20)
+**Wann:** Eine Seite soll als ruhige Bühne wirken (erste Bildschirmseite nur Marke, Inhalt erst beim Scrollen) und der Hintergrund soll leben, ohne zu zappeln.
+**Form Bühne:** `section.stage` mit `min-height: 100vh; min-height: 100svh`, Inhalt per Flex mittig, darin die unsichtbare H1 und das Logo als **Bilddatei** (`assets/yg-logo.svg`, `<img>` mit width/height und `fetchpriority="high"`). Kein eingebettetes `<svg>`: das ist kein LCP-Kandidat, Lighthouse meldet dann NO_LCP und liefert gar keinen Leistungswert mehr. Beim Scrollen blendet das Logo aus und zieht nach oben (`--stage-o`, `--stage-y`, gesetzt in einem `requestAnimationFrame`-gedrosselten Scroll-Listener). Der nächste Abschnitt ist ebenfalls `100svh` hoch und mittig, damit er sich wie eine zweite Seite anfühlt.
+**Form Flow:** `.flow` (fixed, z-index 0) mit drei `span`, jedes ein `radial-gradient(closest-side, …)` ohne Blur-Filter und ohne harte Kante, animiert nur per `transform` (unterschiedliche Laufzeiten 40 bis 75 s, `ease-in-out`, `alternate`). Drei überlagerte Felder lassen die Farbfläche atmen, ohne dass man einzelne Kreise sieht; `prefers-reduced-motion` schaltet die Animation ab; das Grain darüber verhindert Streifen im Verlauf.
+**Farben aus einer Vorlage übernehmen:** Bild nach PNG wandeln, mit eigenem Decoder ein Raster von Punkten abtasten (Grundton, Spitzenwert, Randwerte), daraus Mitte und Radien der Ellipse ableiten, CSS setzen, Screenshot an denselben relativen Punkten gegenmessen und in zwei bis drei Runden angleichen. Nie nach Gefühl mischen.
+**Fallen:** Ohne Nav muss der Sprachwechsel woanders stehen (bei uns im Footer, §B) und Unterseiten brauchen weiter eine Nav, sonst gibt es keinen Rückweg. Im ausgeblendeten Browser-Bereich laufen keine Animationsframes, dort lässt sich die Scroll-Logik nicht prüfen.
+**Vorlage:** index.html `section.stage` + `.flow`, verify.py (Nav-Verbot auf der Startseite, `.flow`-Pflicht).
+**Gesetze:** §A1 (DNA), §A2, §B1 (DE und EN im selben Paket), P-14 (danach messen).
+
 ---
 
 ## Offen / noch zu definieren
@@ -100,4 +110,4 @@
 - Ratgeber-Pattern (Block H — /website-kosten als Vorlage, formalisieren beim zweiten Ratgeber)
 - Kampagnen-Landing-Pattern (falls K1 eigene Varianten braucht)
 
-*YG Pattern-Katalog v1.7 · 2026-09-19 (P-13 Demo-Mandant, P-14 Web-Vitals, P-15 Produktseiten-Tiefe, P-16 Logo-Animation, ruht; v1.6: P-11 kurze Karten mit Subgrid, P-16 ohne filter; v1.7: P-16 ruht)*
+*YG Pattern-Katalog v1.8 · 2026-09-20 (P-13 Demo-Mandant, P-14 Web-Vitals, P-15 Produktseiten-Tiefe, P-16 Logo-Animation, ruht; v1.6: P-11 kurze Karten mit Subgrid, P-16 ohne filter; v1.7: P-16 ruht; v1.8: P-17 Bühne und Flow)*
