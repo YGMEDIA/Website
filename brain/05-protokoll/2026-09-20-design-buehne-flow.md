@@ -25,8 +25,9 @@
 ## Verify
 - `python3 scripts/verify.py` GRÜN. Gegenproben: Flow-Klasse verfälscht → rot; Nav in die Startseite gesetzt → rot; Rückbau → grün.
 - Messungen 1440 × 810: Bühne 810 hoch, Karten-Abschnitt 810, Footer bei 1620, Dokument 1713; keine Nav im DOM; Footer-Hintergrund transparent, kein Rahmen, Sprachpillen ohne Rand. 375 × 812: Bühne 812, Logo 100 × 75, Karten einspaltig, Dokumentbreite 375, kein Überlauf.
-- Lighthouse lokal (Desktop): Barrierefreiheit 100, Best Practices 96 (nur /favicon.ico), SEO 100. Der Leistungswert fiel lokal wegen eines Trace-Fehlers der Lighthouse-Version aus und wird live nachgemessen.
+- Lighthouse lokal (Desktop): Barrierefreiheit 100, Best Practices 96 (nur /favicon.ico), SEO 100. Der Leistungswert fehlte zuerst ganz: Lighthouse meldete NO_LCP, weil ein eingebettetes `<svg>` kein LCP-Kandidat ist und sonst nichts im ersten Bild steht. Seitdem das Logo als Datei `assets/yg-logo.svg` (1,5 KB, `<img>` mit Maßen und fetchpriority) eingebunden ist, misst Lighthouse wieder: live mobil 89 / 100 / 96 / 100, LCP 2,8 s, CLS 0, TBT 0. Der LCP hängt weiter am renderblockierenden Google-Fonts-CSS (offener P-14-Punkt).
 - Hinweis fürs nächste Mal: Im ausgeblendeten Browser-Bereich laufen keine Animationsframes, deshalb lässt sich dort eine `requestAnimationFrame`-Logik (Logo-Ausblendung) nicht prüfen; dafür Live-Test oder ein sichtbares Fenster nutzen.
+- Live nach Deploy geprüft: Startseite DE+EN mit `.flow` und `.stage-logo`, ohne Nav, ohne Canvas und Orbs; Rechtsseiten mit Nav; Footer überall ohne Fläche; /assets/yg-logo.svg antwortet 200 (1481 Bytes).
 
 ## Gelernt (Rückfluss)
 - Constitution v1.8 (§A1 neu: Startseite als Bühne ohne Nav, Flow-Hintergrund, freier Footer), Framework 2.7, neues Pattern P-17 (Bühne und Flow), P-11 Karten sitzen jetzt auf der zweiten Bildschirmseite.
