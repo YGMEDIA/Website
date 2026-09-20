@@ -47,3 +47,11 @@ Yasin: überall "Mehr erfahren" statt vier verschiedener Linktexte, den App-Stor
 - `justify-content: space-between` in der Linkzeile: Textlink links, Badge rechts. Gemessen bei 1440 px: Badge-Rechtskante 339 / 684 / 1029 px, exakt die Rechtskante der Bilder darüber.
 - Hover: Textlink `scale(1.09)` mit Ursprung links plus leichtem Schein, Badge `scale(1.08)` mit Ursprung rechts, damit er in der Flucht bleibt. Beides über `transform`, also ohne Umbruch des Layouts.
 - Verify: verify.py grün; Regeln im Stylesheet nachgewiesen; Live-Stichprobe nach Deploy.
+
+## Nachtrag 3 (gleicher Tag): Markenzeichen und Unterzeile
+Yasin: "das ® überall wo YG MEDIA steht" und "mach das YG MEDIA auf der Nutzungsseite als Subtitle, im Titelstil, aber kleiner".
+- **Rückfrage vor dem Bauen:** Das ® behauptet eine eingetragene Marke; ohne Eintragung ist das in Deutschland eine Abmahnfalle (§ 5 UWG, irreführende Werbung). Yasin hat bestätigt, dass die Wortmarke eingetragen ist. Erst danach umgesetzt.
+- **Gesetzt:** `<span class="rm">&reg;</span>` (0,62 em, hochgestellt) im Footer aller 8 Seiten, im Nav-Logo-Textrückfall der Rechtsseiten und in den Namenszeilen von Impressum, Datenschutz und Nutzungsbedingungen (DE+EN).
+- **Nicht gesetzt:** `<title>`, Meta-Tags (og/twitter/description/keywords), JSON-LD und `alt`-Texte. Das sind Namensfelder für Maschinen und Suchergebnisse; dort verwässert ein ® den Namen.
+- **Unterzeile:** `.legal h1 em` ist jetzt eine eigene Zeile, weiter Playfair-Kursiv in Teal, aber auf 0,42 em verkleinert. Auf der Nutzungsbedingungen-Seite steht damit groß "Nutzungsbedingungen" und darunter klein "YG MEDIA®" (EN entsprechend).
+- **Verify:** verify.py grün, Screenshots 1100 px und 375 px, danach live geprüft.

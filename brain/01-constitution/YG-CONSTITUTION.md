@@ -22,7 +22,8 @@ Farben/Größen aus den CSS-Variablen (--teal #226886, --teal-bright #2b86a7, --
 ### §A4 · Safari-Regel für .ref-feature [bewiesen, teuer gelernt]
 NIEMALS `aspect-ratio` auf die Bildspalte der Feature-Karten legen. Desktop: Bildspalte `position: relative; min-height: 480px`, Bild absolut mit object-fit: cover. Mobile/Tablet (≤1100px): einspaltig, Bild `position: static; height: auto`, `.flip` per `order: -1`. Safari berechnet aspect-ratio anders (Lücke am Desktop-Rand, kollabierende Bilder mobil) — genau dieser Bug wurde behoben und darf nie zurückkehren. Bilder müssen bei JEDER Skalierung sichtbar bleiben.
 
-### §A5 · Logo- und Badge-Integrität [bewiesen]
+### §A5 · Logo-, Badge- und Marken-Integrität [bewiesen]
+**Markenzeichen (seit 2026-09-20, Yasin bestätigt die Eintragung):** Im sichtbaren Text steht hinter der Wortmarke ein `<span class="rm">&reg;</span>` (0,62 em, hochgestellt): Footer aller Seiten, Nav-Logo-Textrückfall, Namenszeilen der Rechtsseiten. NICHT in `<title>`, Meta-Tags, JSON-LD und `alt`-Texten, dort gehört der reine Name hin. Das ® setzt eine eingetragene Marke voraus; fällt die Eintragung weg, muss es zurück (sonst § 5 UWG).
 Logo immer aus echten Assets extrahieren (Keyvisual), NIE pixelweise umfärben — das zerstört die Kanten; für dunkle Flächen die weiße Version. App-Store-Badge (assets/app-store-badge.png, 494×170, per Flood-Fill freigestellt) nie umfärben, beschneiden oder verzerren (Apple-Guidelines); Einsatz als `.badge-link` (46px, Hover-Lift), kein Textlink daneben. Kommt die Logo-Animation (P-16) je zurück: kein CSS-`filter`/`drop-shadow` auf dem SVG. Es füllt seine viewBox bis an den Rand, Safari schneidet den Schein an der Box ab und zeigt einen Kasten (2026-09-19).
 
 ### §A6 · Copy-Regeln [bewiesen]
@@ -122,5 +123,6 @@ Inhaltliche Änderungen an Impressum, Datenschutzerklärung oder EULA nur mit Ya
 | 2026-09-19 | v1.5 — Nav ohne Logo (nur Sprachwahl, rechtsbündig) auf allen DNA-Seiten; das Logo lebt als Animation `#ygLogo` über den Produktkarten der Startseite (P-16). |
 | 2026-09-19 | v1.6 — Fast schwarz (Yasin): §A1 Grundton #050505 mit einem neutralen Lichtfleck statt vier blauer Orbs, Nav auch beim Scrollen transparent; §A5 kein CSS-filter auf dem animierten Logo. |
 | 2026-09-19 | v1.7 — Zurück zum Nav-Logo (Yasin): §A1 Nav = Logo links + Sprachwahl rechts, Milchglas beim Scrollen (neutral getönt); Logo-Animation entfernt, P-16 ruht; verify.py prüft `.nav-logo`. |
+| 2026-09-20 | v1.9 — Markenzeichen: ® hinter der Wortmarke im sichtbaren Text (§A5), nicht in Title/Meta/JSON-LD; Rechtsseiten-H1 mit kleiner Unterzeile "YG MEDIA®". |
 | 2026-09-20 | v1.8 — Bühne und Flow (Yasin, nach Bildvorlage): §A1 Startseite ohne Nav (Logo mittig, Karten auf der zweiten Bildschirmseite, Sprachwechsel im Footer), Hintergrund als drei schwingende Farbfelder auf #020C12 statt Orbs/Raster/Partikel, Footer überall freier Text ohne Glas. Neues Pattern P-17. |
 | 2026-07-19 | v1.1 — Teil E ergänzt (Yasins Vollautonomie-Anweisung vollständig übernommen): Entscheidungs-Delegation mit Recherche- und Doku-Pflicht; Keine-Genehmigungs-Dialoge via .claude/settings.json (bypassPermissions, deny rm -rf/sudo, Änderung = Menschen-Gate, greift ab der nächsten Session). |
