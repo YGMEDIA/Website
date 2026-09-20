@@ -40,3 +40,10 @@ Yasin mit einer Gradient-Vorlage von YouTube (`gradients-bg`, Prinzip: mehrere F
 - **Punkte:** `.dots` fix am rechten Rand, oben gefüllt/Ring, ab halber Bildschirmhöhe umgekehrt; beide sind Links auf `#start` und `#produkte`.
 - **Scroll-Logik:** ohne `requestAnimationFrame`, dafür direkt im Scroll-Listener. Gleich sparsam, aber im ausgeblendeten Testbrowser prüfbar.
 - **Verify:** verify.py grün (Nav-Verbot der Startseite jetzt präzise auf die Navbar `#nav` bezogen, sonst hätte jedes `nav`-Element das Gate rot gemacht). Gemessen bei 1440 × 810: scrollY 0 → Punkt 1 gefüllt, Logo-Deckkraft 1,000; scrollY 300 → Deckkraft 0,383, Versatz -43 px, Punkte unverändert; scrollY 700 → Deckkraft 0,000, Punkt 2 gefüllt; zurück auf 0 → Ausgangszustand. Zwei Aufnahmen im Abstand von neun Sekunden zeigen deutlich verschobene Wellenformen.
+
+## Nachtrag 2 (gleicher Tag): Karten-Links und Hover
+Yasin: überall "Mehr erfahren" statt vier verschiedener Linktexte, den App-Store-Badge bündig zur rechten Kante des Kartenbilds, und beim Überfahren sollen Link und Badge sichtbar größer werden.
+- Linktexte vereinheitlicht (DE "Mehr erfahren →", EN "Learn more →"). Damit Screenreader die vier gleichnamigen Links unterscheiden können, trägt jeder ein `aria-label` mit Produktnamen ("Mehr erfahren über USELY"), und die Badge-Bilder haben den Produktnamen im `alt`. Der sichtbare Text steckt im Label, WCAG 2.5.3 bleibt erfüllt.
+- `justify-content: space-between` in der Linkzeile: Textlink links, Badge rechts. Gemessen bei 1440 px: Badge-Rechtskante 339 / 684 / 1029 px, exakt die Rechtskante der Bilder darüber.
+- Hover: Textlink `scale(1.09)` mit Ursprung links plus leichtem Schein, Badge `scale(1.08)` mit Ursprung rechts, damit er in der Flucht bleibt. Beides über `transform`, also ohne Umbruch des Layouts.
+- Verify: verify.py grün; Regeln im Stylesheet nachgewiesen; Live-Stichprobe nach Deploy.
