@@ -13,16 +13,19 @@
 html{scroll-behavior:smooth}
 body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
 
-/* Flow-Hintergrund seit 2026-09-20 (Yasin): zwei blaue Farbfelder, die auf der Stelle ineinander schwingen.
-   Keine Orbs, kein Raster, keine Canvas-Partikel mehr; das Grain darunter haelt den Verlauf frei von Streifen. */
-.flow { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
-.flow span { position: absolute; display: block; }
-.flow-a { width: 90vw; height: 170vh; top: -70vh; right: -20vw; background: radial-gradient(closest-side, rgba(16,122,176,0.58), rgba(14,104,152,0.30) 45%, transparent 100%); animation: flowA 44s ease-in-out infinite alternate; }
-.flow-b { width: 70vw; height: 110vh; top: -10vh; right: -20vw; background: radial-gradient(closest-side, rgba(10,96,146,0.18), transparent 100%); animation: flowB 61s ease-in-out infinite alternate; }
-.flow-c { width: 80vw; height: 90vh; bottom: -40vh; right: -20vw; background: radial-gradient(closest-side, rgba(6,62,100,0.20), transparent 100%); animation: flowC 73s ease-in-out infinite alternate; }
-@keyframes flowA { from { transform: translate3d(0,0,0) scale(1); } to { transform: translate3d(-5vw,3vh,0) scale(1.06); } }
-@keyframes flowB { from { transform: translate3d(0,0,0) scale(1.04); } to { transform: translate3d(4vw,-4vh,0) scale(0.98); } }
-@keyframes flowC { from { transform: translate3d(0,0,0) scale(1); } to { transform: translate3d(-3vw,-3vh,0) scale(1.08); } }
+/* Flow-Hintergrund seit 2026-09-20 (Yasin, Prinzip aus seiner Gradient-Vorlage): mehrere weiche Farbfelder,
+   additiv ueberblendet (screen) und unscharf, die um versetzte Drehpunkte wandern und dadurch wie Wasser
+   ineinanderfliessen. Kein einzelner grosser Ring, keine Orbs, kein Raster, keine Partikel. */
+.flow { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; background: linear-gradient(118deg, #01070B 0%, #020C14 44%, #05263D 100%); }
+.flow span { position: absolute; display: block; mix-blend-mode: screen; filter: blur(52px); }
+.flow-a { width: 76vw; height: 74vh; top: -6vh; left: 40vw; background: radial-gradient(circle at 50% 50%, rgba(16,118,174,0.46), rgba(16,118,174,0) 62%); transform-origin: 38% 64%; animation: flowA 46s linear infinite; }
+.flow-b { width: 64vw; height: 68vh; top: 10vh; left: 56vw; background: radial-gradient(circle at 50% 50%, rgba(10,88,146,0.42), rgba(10,88,146,0) 64%); transform-origin: 62% 36%; animation: flowB 63s linear infinite reverse; }
+.flow-c { width: 88vw; height: 60vh; top: 34vh; left: 34vw; background: radial-gradient(circle at 50% 50%, rgba(22,142,192,0.24), rgba(22,142,192,0) 60%); transform-origin: 44% 56%; animation: flowC 81s linear infinite; }
+.flow-d { width: 58vw; height: 58vh; top: -2vh; left: 66vw; background: radial-gradient(circle at 50% 50%, rgba(8,70,118,0.38), rgba(8,70,118,0) 64%); animation: flowD 54s ease-in-out infinite alternate; }
+@keyframes flowA { to { transform: rotate(360deg); } }
+@keyframes flowB { to { transform: rotate(360deg); } }
+@keyframes flowC { to { transform: rotate(360deg); } }
+@keyframes flowD { from { transform: translate3d(-5vw,-3vh,0); } to { transform: translate3d(3vw,5vh,0); } }
 @media (prefers-reduced-motion: reduce) { .flow span { animation: none; } }
 body::after { content: ''; position: fixed; inset: 0; z-index: 3; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E"); pointer-events: none; opacity: 0.5; }
 
@@ -122,7 +125,7 @@ a.lang-btn:hover, .lang-btn.active { background: none; border: 0; }
 </style>
 </head>
 <body>
-<div class="flow" aria-hidden="true"><span class="flow-a"></span><span class="flow-b"></span><span class="flow-c"></span></div>
+<div class="flow" aria-hidden="true"><span class="flow-a"></span><span class="flow-b"></span><span class="flow-c"></span><span class="flow-d"></span></div>
 <nav id="nav">
   <div class="nav-inner">
     <a href="/" class="nav-logo">
