@@ -67,7 +67,7 @@ GA4 `G-MHQJ0HLBM3` (Property 437337038), consent-gated via localStorage `yg_cook
 
 # TEIL III · MODULE
 
-**M1 Startseite (seit 2026-09-20)** — zwei Bildschirmseiten: `section.stage` (100 svh) mit unsichtbarer H1 (`.sr-only`) und dem YG-Logo mittig (blendet beim Scrollen aus), darunter `#produkte` (100 svh, mittig) mit vier `.product-card` (USELY, YOU, Paukbox, Felgen Brillant) mit Bild, Stichpunkt, h2 und Link, seit 2026-09-20 ohne Beschreibungstext und ohne Chips, in einer Reihe ab 1200 px, darunter zwei Spalten, ab 768 px eine. Kein Hero, keine Konzepte, kein Horizont, kein Unternehmens-Block, kein Kontakt. ProfessionalService-Schema mit NAP bleibt (unsichtbar, sameAs ohne X).
+**M1 Startseite (seit 2026-09-21)** — eine Bildschirmseite: `section.stage` mit unsichtbarer H1 (`.sr-only`) und dem YG-Logo mittig, darunter der freie Footer (Copyright mit ®, Rechtliches, DE/EN). Keine Produktkarten, keine Navigation, kein Scrollen. Die Produkte sind weiter über ihre eigenen Seiten erreichbar (usely.yg-media.de, you.yg-media.de, paukbox.yg-media.de, felgen-brillant.com), aber nicht mehr von der Startseite aus verlinkt. ProfessionalService-Schema mit NAP bleibt (unsichtbar, sameAs ohne X).
 **M2 Service-Seiten (4)** — je ein Keyword, FAQ-Akkordeon mit FAQ-Schema (5 Fragen, Schema-Sprache = Seitensprache), Referenz-Highlights.
 **M3 USELY-Produktseite** — Keyvisual-Hero, 6 Feature-Blöcke mit echten Screenshots (WebP), Download-Band, Macher-Story mit Timeline, FAQ (6), MobileApplication-Schema. Die Startseiten-Karte beschreibt die APP, die Story lebt nur auf /usely.
 **M4 MOFU-Ratgeber** — /website-kosten: Preisvergleich-Grid, Kostenfaktoren, FAQ-Schema. Weitere Ratgeber (z.B. app entwickeln kosten) nach GSC-Signal.
