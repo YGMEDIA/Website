@@ -37,7 +37,8 @@ LEGAL_PAGES = [
 ]
 # Eigenstaendige noindex-Seiten ohne Site-DNA (Yasins Standalone-Uploads). buecher-cw, more-produkt-berater und
 # yg-media-vision hat Yasin am 2026-09-02 selbst geloescht (Web-Commits).
-INTERNAL_PAGES = ["felgen-brillant.html"]
+# Yasin hat felgen-brillant.html am 2026-09-21 per Web-Commit geloescht; Liste bleibt fuer kuenftige Standalone-Uploads.
+INTERNAL_PAGES = []
 # Kunden-Preview-Seiten: eigenstaendige Kundendesigns, kein YG-Copy — Pruefumfang nur noindex + lang (§A1-Scope, §C2).
 # Automatisch per Muster index_*.html erfasst (Yasin laedt Previews per Web-Upload hoch).
 PREVIEW_PAGES = sorted(
