@@ -32,7 +32,7 @@ Von der Startseite führt jetzt kein Link mehr zu USELY, YOU, Paukbox und Felgen
 
 ## Nachtrag (2026-09-22): Vorschaubild fuers Teilen erneuert
 Yasin schickte einen Screenshot einer Link-Vorschau: Dort lief noch das og:image vom 19.07. mit den alten Claims ("Digital Business Builder", "Website · App · Marketing · Automation"). Das passte zum neuen Auftritt nicht mehr.
-- **Neu:** `assets/og-image-2026.jpg`, 1200 × 630, im aktuellen Look: Flow-Verlauf wie auf der Seite, Logo mittig, darunter klein die Wortmarke mit ®.
+- **Neu:** `assets/og-image-2026.jpg`, 1200 × 630, im aktuellen Look: Flow-Verlauf wie auf der Seite, Logo mittig. Die erste Fassung hatte darunter noch die Wortmarke mit ®; auf Yasins Ansage ("ohne das YG MEDIA darunter") ist sie raus, das Logo dafür von 230 auf 250 px. Die Seite selbst zeigt ja auch nur das Logo, damit ist die Vorschau konsistent.
 - **Gebaut** aus `scripts/og/og-image.html` (liegt im Repo, wird nicht ausgeliefert) mit Headless-Chrome, danach JPEG q92: 68,7 KB statt 621 KB als PNG. Qualitätsprüfung per Pixelvergleich PNG gegen JPEG: Abweichung max. 16 von 255, fast ausschließlich im feinen Rauschen; q86 bis q97 nehmen sich nichts, also q92.
 - **Neuer Dateiname statt Überschreiben:** WhatsApp, LinkedIn und Google merken sich Vorschaubilder pro URL. Unter neuem Namen holen sie das Bild neu.
 - Dazu `og:image:type` und `og:image:alt`. Das alte `assets/og-image.png` bleibt liegen, weil geteilte Links von früher noch darauf zeigen können.
