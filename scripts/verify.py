@@ -192,10 +192,13 @@ def check_page(path):
             snippet = line.strip()[:90]
             err(f"{path}: Em-Dash im sichtbaren Text (Zeile ~{i}): {snippet}")
 
-    # Title-Konvention
+    # Title-Konvention: seit 2026-10-23 traegt der Tab nur die Wortmarke (Yasin), vorher "Seite — YG MEDIA".
+    # Geprueft wird nur, dass ein Title da ist und die Marke samt Zeichen enthaelt.
     t = re.search(r"<title>(.*?)</title>", html, flags=re.S)
     if not t:
         err(f"{path}: kein <title>")
+    elif "YG MEDIA\u00ae" not in t.group(1):
+        err(f"{path}: Title ohne Wortmarke 'YG MEDIA\u00ae' ({t.group(1)[:40]})")
 
     # Canonical (§B3)
     canon = re.findall(r"<link[^>]*rel=\"canonical\"[^>]*href=\"([^\"]+)\"", html)
