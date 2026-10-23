@@ -37,8 +37,9 @@ LEGAL_PAGES = [
 ]
 # Eigenstaendige noindex-Seiten ohne Site-DNA (Yasins Standalone-Uploads). buecher-cw, more-produkt-berater und
 # yg-media-vision hat Yasin am 2026-09-02 selbst geloescht (Web-Commits).
-# Yasin hat felgen-brillant.html am 2026-09-21 per Web-Commit geloescht; Liste bleibt fuer kuenftige Standalone-Uploads.
-INTERNAL_PAGES = []
+# Standalone-Uploads von Yasin: noindex, ohne Site-DNA (§A1-Scope). felgen-brillant.html war am 2026-09-21
+# geloescht und ist am 2026-10-18 per Web-Upload zurueckgekommen (Investmentangebot).
+INTERNAL_PAGES = ["felgen-brillant.html"]
 # Kunden-Preview-Seiten: eigenstaendige Kundendesigns, kein YG-Copy — Pruefumfang nur noindex + lang (§A1-Scope, §C2).
 # Automatisch per Muster index_*.html erfasst (Yasin laedt Previews per Web-Upload hoch).
 PREVIEW_PAGES = sorted(
@@ -197,7 +198,7 @@ def check_page(path):
     t = re.search(r"<title>(.*?)</title>", html, flags=re.S)
     if not t:
         err(f"{path}: kein <title>")
-    elif "YG MEDIA\u00ae" not in t.group(1):
+    elif full_dna and "YG MEDIA\u00ae" not in t.group(1):
         err(f"{path}: Title ohne Wortmarke 'YG MEDIA\u00ae' ({t.group(1)[:40]})")
 
     # Canonical (§B3)
